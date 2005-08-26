@@ -1,0 +1,639 @@
+# translation of ta.po to Tamil
+# Tamil translation of Tamil Procman 2.4.
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Dinesh Nadarajah <n_dinesh@yahoo.com>, 2003.
+# Jayaradha N <jaya@pune.redhat.com>, 2004.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2004-09-04 15:44+0530\n"
+"Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
+"Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"0500\n"
+"X-Generator: KBabel 1.3.1\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
+"\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "அமைப்புக் கண்காணி"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "தற்போதைய செயல் மற்றும் கணினியின் நிலையை பார்க்கவும்"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "கேவில் வான்டஸ்லூட்"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "ஜோர்ஜென் ஸ்ஹெபென்பெர் <mfcn@gmx.de> - சாதன காட்சி"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr "மொழிபெயர்ப்பர் பற்று"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "(C) 2001 கேவில் வான்டஸ்லூட்"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "வளங்கள் கண்கானிப்பு"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "தற்போது எந்த செயலும் மறைக்கப்படவில்லை"
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "மறைந்த செயலை மேலாண்மை செய்"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "(_H)மறைந்த செயல்கள்:"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "(_R)பட்டியலிலிருந்து நீக்கு"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "குறிப்பு:"
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"இவை நீங்கள் மறைந்த மற்ற செயல்களாகும். இந்த பட்டியலிலிருந்து நீக்கினால் இந்த செயல்களை நீங்கள் "
+"பார்க்கலாம்"
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "செயல் தகவல்"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "கட்டளை:"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "நிலை:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "முன்னுரிமை:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "நினைவக பயன்பாடு"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "மொத்தம்:"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "RSS:"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "பகிரப்பட்ட:"
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "மிக அதிகம் - நன்று %d"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "அதிகம் - நன்று %d"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "இயல்பான நன்று %d"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "குறைந்தகம் - நன்று %d"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "மிக குறைந்த ம் - நன்று %d"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "(_C)முன்னுரிமையை மாற்று..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "செயலின் முக்கியத்துவத்தை மாற்று"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "(_H)செயலை மறை"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "செயலை மறை"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "(_P)செயலை முடி"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "செயல் முடிய வலியுறுத்து"
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "(_K)செயலை கொல்"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "செயலை இப்போதே முடிக்க வலியுறுத்து"
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "(_H)மறைந்த செயல்கள்"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "மறைந்த செயல்களை திருத்து"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "(_M)நினைவக வரைபடம்"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "செயலோடு தொடர்புடைய நினைவக வரைபடங்களை பார்"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "(_D)சார்ந்த செயல்கள்"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "தொடர்புடைய செயல்களை கிளைகளாக காட்டு"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "(_T)இழைகள்"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "இழைகளை காட்டு(துணை செயல்கள்)"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "(_E)செயல்களை முடி"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "செயல்களை முடிக்க வலியுறுத்து"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "செயல்களை முடிக்க இப்போதே வலியுறுத்து"
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "(_r)தேடு:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "எல்லா செயல்களும்"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "என் செயல்கள்"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "செயலில் உள்ள செயல்கள்"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "(_w)பார்:"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "(_I)அதிக தகவல்"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "`பெயர்ப்படி"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "அடைவு"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "þனம்"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "மொத்தம்"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "பயன்படுத்தப்பட்ட"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "CPU வரலாறு"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "CPU%d:"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "நினைவகம் மற்றும் ஸ்வாப் வரலாறு"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "பயன்படுத்தப்பட்ட நினைவகம்:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "மொத்தம்"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "பயன்படுத்தப்பட்ட ஸ்வாப்:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "சாதனம்"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "கவனிக்கும் செயல்கள்"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "வளங்கள் கண்கானிப்பு"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "பயன்பாடு மேலாளர்"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "பயன்பாட்டை இயக்குகிறது"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "(_C)பயன்பாட்டை மூடு"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "(_I)அதிக தகவல் >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "(_I)<< குறைந்த தகவல்"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "கோப்புப்பெயர்"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "VM துவக்கம்"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "VM முடிவு"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "VM அளவு"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "குறிகள்"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "VM ஒதுக்கம்"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "சாதனம்"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inode"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "நினைவக வரைபடம்"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "செயல் பெயர்"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "இப்படி ஒரு செயல் இல்லை"
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"செயல் பெயர்: %s \n"
+"\n"
+"இந்த செயலின் முன்னுரிமையை மாற்ற உங்களுக்கு அனுமதி இல்லை. மூல கடவுச்சொல்லை உள்ளிட்டு "
+"அனுமதி பெறலாம்."
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"செயல் பெயர்: %s \n"
+"\n"
+"செயலை 0 க்கும் குறைவாக முன்னுரிமை தர நீங்கள் முதன்மை பயனீட்டாளராக இருக்க வேண்டும். மூல "
+"கடவுச்சொல்லை உள்ளிட்டு அனுமதி பெறலாம்."
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"செயல் பெயர்: %s \n"
+"\n"
+"இந்த செயலை முடிக்க உங்களுக்கு அனுமதி இல்லை. மூல கடவுச்சொல்லை உள்ளிட்டு அனுமதி பெறலாம்."
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "செயலை கொல்லும் போது பிழை நேர்ந்தது"
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "செயலை மறைக்க வேண்டுமா?"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr "இந்த செயலை மறைத்தால். மீண்டும் பார்க்க 'மறைந்த செயல்கள்' மெனுவை அணுகவும்"
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "(_S)இந்த பெட்டியை அடுத்த முறை காட்டு"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr "இந்த செயலை கொல்ல விருப்பமா?"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "இந்த செயலை கொன்றால், சேமிக்காத தகவல்களை இழக்க நேரும்"
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "இந்த செயலை முடிக்க விருப்பமா?"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "இந்த செயலை முடித்தால் சேமிக்காத தகவல்களை இழக்க நேரும்"
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "(மிக முக்கியத்துவம்)"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "(முக்கியத்துவம்)"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "(இயல்பான முன்னுரிமை)"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "(குறைவான முன்னுரிமை)"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "(மிக குறைவான முன்னுரிமை)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "முன்னுரிமையை மாற்று"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "(_P)முன்னுரிமையை மாற்று"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "(_N)நல்ல மதிப்பு:"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"இந்த செயலுக்கு மிக நல்ல மதிப்பு தரப்பட்டுள்ளது. குறைந்த நன்மதிப்பு மிகமுக்கிய செயலை "
+"குறிக்கும்"
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "சின்னம்"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "விருப்பங்கள்"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "ஒழுக்கம்"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "(_U)புதுப்பிக்கும் கால இடைவெளி:"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "நொடிகள்"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "(_k)செயலை கொல்லும் போதோ முடிக்கும் போதோ எச்சரிக்கை செய்தியை காட்டு"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "(_h)செயலை மறைக்கும் போது எச்சரிக்கை செய்தியை காட்டு"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "செயல் புலங்கள்"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "வரைபடம்"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "(_B)பின்னனி வண்ணம்:"
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "(_G)கட்டங்களின் வண்ணம்:"
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "(_i)புதுப்பிக்கும் கால இடைவெளி:"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "செயலை கொல்"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "செயலை முடி"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "Root கடவுச்சொல் :"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "தவறான கடவுச்சொல்:"
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "செயலை முடித்து வெளியேற சுலபமான உரையாடல் பெட்டியை காட்டு"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "செயல் பெயர்"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "அளவுருக்கள்"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "பயனர்"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "நிலை"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "நினைவகம்"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "இருப்பிட நினைவகம்"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "பகிரப்பட்ட நினைவகம்"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "RSS நினைவகம்"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "X சேவகன் நினைவிடம்"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "நன்று"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "எண்"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "செயற்படுகிரது"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "நிறுத்தப்பட்டது"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "தூங்குகிறது"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr " (இழை)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s காணவில்லை"
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "libgtop பயன்படுத்தும் சுலபமான செயல்காட்சி"
+
+#~ msgid "X window system"
+#~ msgstr "X சாளர கணினி"
+
+#~ msgid "bourne again shell"
+#~ msgstr "ப்ரேனி ஷெல்"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome-Session"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d பைட்"
+#~ msgstr[1] "%d பைட்"
+
+#~ msgid "%d K"
+#~ msgstr "%d K"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f MB"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f MB"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f GB"

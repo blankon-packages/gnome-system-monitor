@@ -1,0 +1,735 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2003-02-06 23:34+0700\n"
+"Last-Translator: Mohammad DAMT <mdamt@bisnisweb.com>\n"
+"Language-Team: Indonesia <id@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "Monitor Sistem"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "Lihat proses yang ada dan monitor kondisi sistem"
+
+#: src/callbacks.c:125
+#, fuzzy
+msgid "Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:126
+#, fuzzy
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "Jrgen Scheibengruber <mfcn@gmx.de> - nicer devices treeview"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr "Mohammad DAMT <mdamt@bisnisweb.com>"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "Monitor Sistem"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "Tidak ada proses yang sembunyi."
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "Mengatur Proses yang Sembunyi"
+
+#: src/favorites.c:388
+#, fuzzy
+msgid "_Hidden processes:"
+msgstr "_Proses yang Tersembunyi"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "_Hapus dari daftar"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr ""
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"Berikut adalah daftar proses yang Anda pilih untuk disembunyikan. Anda bisa "
+"kembali menampilkannya dengan cara menghapusnya dari daftar ini."
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "Informasi Proses"
+
+#: src/infoview.c:91
+#, fuzzy
+msgid "Command:"
+msgstr "Perintah: "
+
+#: src/infoview.c:95
+#, fuzzy
+msgid "Status:"
+msgstr "Kondisi"
+
+#: src/infoview.c:99
+#, fuzzy
+msgid "Priority:"
+msgstr "Prioritas: "
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "Penggunaan Memori"
+
+#: src/infoview.c:137
+#, fuzzy
+msgid "Total:"
+msgstr "Total:"
+
+#: src/infoview.c:141
+#, fuzzy
+msgid "RSS:"
+msgstr "RSS : "
+
+#: src/infoview.c:145
+#, fuzzy
+msgid "Shared:"
+msgstr "Shared: "
+
+#: src/infoview.c:189
+#, fuzzy, c-format
+msgid "Very high - nice %d"
+msgstr "Sangat tinggi (Nilai Nice %d)"
+
+#: src/infoview.c:191
+#, fuzzy, c-format
+msgid "High - nice %d"
+msgstr "Tinggi (Nilai Nice %d)"
+
+#: src/infoview.c:193
+#, fuzzy, c-format
+msgid "Normal - nice %d"
+msgstr "Normal (Nilai Nice %d)"
+
+#: src/infoview.c:195
+#, fuzzy, c-format
+msgid "Low - nice %d"
+msgstr "Rendah (Nilai Nice %d)"
+
+#: src/infoview.c:197
+#, fuzzy, c-format
+msgid "Very low - nice %d"
+msgstr "Sangat Rendah (Nilai Nice %d)"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "_Ubah Prioritas..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "Ubah nilai nice (tingkat prioritas) proses"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "_Sembunyikan Proses"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "Menyembunyikan Proses"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "Hentikan _Proses"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "Paksa suatu proses untuk berhenti."
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "Mati_kan Proses"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "Paksa suatu proses untuk berhenti sekarang."
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "_Proses yang Tersembunyi"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "Lihat dan edit daftar proses yang tersembunyi"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "Peta _Memori"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "Lihat peta memori yang berhubungan dengan sebuah proses"
+
+#: src/interface.c:95
+#, fuzzy
+msgid "Process _Dependencies"
+msgstr "Tampilkan ketergantungan proses"
+
+#: src/interface.c:95
+#, fuzzy
+msgid "Display a tree showing process dependencies"
+msgstr "Tampilkan ketergantungan proses"
+
+#: src/interface.c:100
+#, fuzzy
+msgid "_Threads"
+msgstr "Tampilkan thread"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr ""
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "H_entikan Proses"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "Paksa suatu proses untuk berhenti"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "Paksa suatu proses untuk berhenti sekarang"
+
+#: src/interface.c:188
+#, fuzzy
+msgid "Sea_rch:"
+msgstr "Ca_ri:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "Semua Proses"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "Proses Saya"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "Proses yang Aktif"
+
+#: src/interface.c:209
+#, fuzzy
+msgid "Vie_w:"
+msgstr "_Lihat"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "_Info Detil"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "Nama"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "Direktori"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "Tipe"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "Total"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "Dipakai"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "Catatan penggunaan CPU"
+
+#: src/interface.c:402
+#, fuzzy, c-format
+msgid "CPU%d:"
+msgstr "CPU yang dipakai:"
+
+#: src/interface.c:421
+#, fuzzy
+msgid "Memory and Swap History"
+msgstr "Catatan Penggunaan Memori/Swap"
+
+#: src/interface.c:454
+#, fuzzy
+msgid "Used memory:"
+msgstr "Dipakai:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr ""
+
+#: src/interface.c:486
+#, fuzzy
+msgid "Used swap:"
+msgstr "Dipakai:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "Perangkat"
+
+#: src/interface.c:638 src/procdialogs.c:729
+#, fuzzy
+msgid "Process Listing"
+msgstr "Daftar Proses"
+
+#: src/interface.c:644 src/procdialogs.c:816
+#, fuzzy
+msgid "Resource Monitor"
+msgstr "Monitor Sistem"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "Manajer Aplikasi"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "Aplikasi yang sedang jalan"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "_Tutup Aplikasi"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "_Info detil >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< _Info singkat"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "Nama file"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "VM Awal"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "VM Akhir"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "Ukuran VM"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "Tanda"
+
+#: src/memmaps.c:261
+#, fuzzy
+msgid "VM Offset"
+msgstr "Offset VM"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "Perangkat"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inode"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "Peta Memori"
+
+#: src/memmaps.c:364
+#, fuzzy
+msgid "Process name:"
+msgstr "Nama Proses:"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "Proses tidak ada."
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"Nama Proses: %s\n"
+"\n"
+"Anda tidak memiliki hak untuk merubah proses ini. Silakan masukkan password "
+"root untuk memperoleh hak tersebut."
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Nama Proses: %s\n"
+"\n"
+"Anda harus login sebagai root untuk dapat merubah nilai nice sebuah proses "
+"menjadi lebih rendah dari 0. Silakan masukkan password rootnya."
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Nama Proses: %s\n"
+"\n"
+"Anda tidak memiliki hak untuk menghentikan proses ini. Silakan masukkan "
+"password root untuk mendapatkan hak tersebut."
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "Ada error terjadi saat mematikan proses."
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr ""
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+#, fuzzy
+msgid "_Show this dialog next time"
+msgstr "Tampilkan dialog ini pada saat mendatang."
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr ""
+
+#: src/procdialogs.c:219
+#, fuzzy
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "Data yang belum disimpan akan hilang."
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr ""
+
+#: src/procdialogs.c:224
+#, fuzzy
+msgid "If you end a process, unsaved data will be lost."
+msgstr "Data yang belum disimpan akan hilang."
+
+#: src/procdialogs.c:321
+#, fuzzy
+msgid "(Very High Priority)"
+msgstr "(Prioritas Sangat Tinggi)"
+
+#: src/procdialogs.c:323
+#, fuzzy
+msgid "(High Priority)"
+msgstr "(Prioritas Utama)"
+
+#: src/procdialogs.c:325
+#, fuzzy
+msgid "(Normal Priority)"
+msgstr "(Prioritas Normal)"
+
+#: src/procdialogs.c:327
+#, fuzzy
+msgid "(Low Priority)"
+msgstr "(Prioritas Rendah)"
+
+#: src/procdialogs.c:329
+#, fuzzy
+msgid "(Very Low Priority)"
+msgstr "(Prioritas sangat Rendah)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "Ubah Prioritas"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "Ubah _Prioritas"
+
+#: src/procdialogs.c:424
+#, fuzzy
+msgid "_Nice value:"
+msgstr "Nilai Nice:"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"Prioritas suatu proses ditentukan oleh nilai nice. Semakin rendah nilai "
+"nicenya, maka semakin tinggi prioritasnya."
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "Ikon"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "Setting"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr ""
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+#, fuzzy
+msgid "_Update interval:"
+msgstr "Interval update (dalam detik):"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr ""
+
+#: src/procdialogs.c:778
+#, fuzzy
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "Tampilkan dialog peringatan saat menghentikan atau mematikan proses"
+
+#: src/procdialogs.c:788
+#, fuzzy
+msgid "Show warning dialog when _hiding processes"
+msgstr "Tampilkan dialog peringatan saat menyembunyikan proses"
+
+#: src/procdialogs.c:798
+#, fuzzy
+msgid "Process Fields"
+msgstr "Kolom-kolom proses"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "Grafik"
+
+#: src/procdialogs.c:866
+#, fuzzy
+msgid "_Background color:"
+msgstr "Warna latar belakang:"
+
+#: src/procdialogs.c:885
+#, fuzzy
+msgid "_Grid color:"
+msgstr "Warna Garis:"
+
+#: src/procdialogs.c:923
+#, fuzzy
+msgid "Update _interval:"
+msgstr "Interval update (dalam detik):"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "Matikan proses"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "Hentikan Proses"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "Password Root:"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "Password salah."
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "tampilkan dialog sederhana untuk menghentikan proses, dan logout"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "Nama proses"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "Argumen"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "User"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "Kondisi"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "Memori"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "Memori residen"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "Memori Share"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "Memori RSS"
+
+#: src/proctable.c:126
+#, fuzzy
+msgid "X Server Memory"
+msgstr "Memori Share"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Nilai Nice"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "Berjalan"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "Berhenti"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "Tidur"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr " (thread)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s tidak ditemukan."
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "Pemantau proses sederhana, dibuat dengan libgtop"
+
+#~ msgid "X window system"
+#~ msgstr "X window system"
+
+#~ msgid "bourne again shell"
+#~ msgstr "bourne again shell"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome-Session"
+
+#, fuzzy
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d byte"
+#~ msgstr[1] "%d byte"
+
+#~ msgid "%d K"
+#~ msgstr "%d K"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f MB"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f MB"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f GB"
+
+#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
+#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
+
+#~ msgid "View processes being run by all users"
+#~ msgstr "Lihat proses-proses yang sedang dijalankan semua user"
+
+#~ msgid "View processes being run by you"
+#~ msgstr "Lihat proses-proses yang sedang dijalankan oleh Anda"
+
+#~ msgid "View only active processes"
+#~ msgstr "Lihat proses yang aktif saja"
+
+#, fuzzy
+#~ msgid "Used CPU:"
+#~ msgstr "Dipakai:"
+
+#~ msgid "Erik Johnsson (zaphod@linux.nu) - initial icon support"
+#~ msgstr "Erik Johnsson (zaphod@linux.nu) - icon support awal"
+
+#~ msgid "Hidden Processes"
+#~ msgstr "Proses tersembunyi"
+
+#~ msgid "Status : "
+#~ msgstr "Kondisi: "
+
+#~ msgid "Total : "
+#~ msgstr "Total: "
+
+#~ msgid "Change Priority ..."
+#~ msgstr "Ubah Prioritas..."
+
+#~ msgid "Hide Process"
+#~ msgstr "Sembunyikan Proses"
+
+#~ msgid "Swap"
+#~ msgstr "Swap"
+
+#~ msgid "System _Monitor"
+#~ msgstr "_Monitor Sistem"
+
+#~ msgid ""
+#~ "Are you sure you want to hide this process?\n"
+#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
+#~ msgstr ""
+#~ "Apakah Anda benar ingin menyembunyikan proses ini?\n"
+#~ "(Pilih 'Proses Tersembunyi' pada menu Setting untuk menampilkannya "
+#~ "kembali)"
+
+#~ msgid "_Set"
+#~ msgstr "_Set"
+
+#~ msgid "Update Speed ( seconds ) :"
+#~ msgstr "Kecepatan update (dalam detik):"
+
+#~ msgid "Se_t"
+#~ msgstr "Se_t"
+
+#~ msgid "Used Space"
+#~ msgstr "Ruang yang dipakai"
+
+#~ msgid "Total Space"
+#~ msgstr "Total ruangan"

@@ -1,0 +1,722 @@
+# translation of procman.HEAD.mk.po to 
+# translation of procman.HEAD.mk.po to Macedonian
+# translation of procman.HEAD.mk.po to
+# Procman translated on Macedonian
+# Copyright (C) 2002,2003 Free Software Foundation, Inc.
+# Stojcev Darko | <atom1c@linux.net.mk | 2002
+# http://www.linux.net.mk
+# , 2003
+# Vladislav Bidikov <bidikovi@mail.com.mk>, 2003
+msgid ""
+msgstr ""
+"Project-Id-Version: procman.HEAD.mk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2003-06-15 09:41+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <mk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "Надгледувач на системот"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "Погледни ги моментално активните процеси и состојбата на системот"
+
+#: src/callbacks.c:125
+#, fuzzy
+msgid "Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:126
+#, fuzzy
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "Jorgen Scheibengruber <mfcn@gmx.de> - подобар излгед"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr "Заслуги на преведувачите"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "Надгледувач на ресурси"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "Ниеден процес не е скриен"
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "Ажурирај ги скриените процеси"
+
+#: src/favorites.c:388
+#, fuzzy
+msgid "_Hidden processes:"
+msgstr "_Скриени процеси"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "_Одстрани од листа"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr ""
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"Ова се процесите кои ги избравте за да бидат скриени. Можете повторно даги "
+"направите видливи доколку ги тргнете од оваа листа"
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "Информации за процесот"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "Команда :"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "Статус:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "Приоритет :"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "Искористена меморија"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "Вкупно :"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "RSS :"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "Заедничка : "
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "Многу високо  ( убаво %d )"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "Високо  ( убаво %d )"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "Нормално  ( убаво %d )"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "Ниско  ( убаво %d )"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "Многу ниско  ( убаво %d )"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "_Смени го приоритетот.."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "Смени ја важноста на одреден процес"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "_Скриј процес"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "Скриј го процесот"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "Прекини _процес"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "Присили го процесот да прекине"
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "_Терминирај процес"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "Присили го процесот да прекине веднаш"
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "_Скриени процеси"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "Погледни ја листата на твоите скриени процеси"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "_Мемориски мапи"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "Погледни ги мемориските мапи поврзани со одреден процес"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "Покажи ја зависноста на процесот од други процеси"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "Покажи ја зависноста на процесот од други процеси"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "Покажи ги thread-овите"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "Прикажи подпроцеси"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "_Прекини го процесот"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "Присили го процесот да прекине"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "Присили го процесот да прекине сега"
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "Преба_рај:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "Сите процеси"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "Моите процеси"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "Активни процеси"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "Прегле_дај:"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "Повеќе _информации"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "Име"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "Директориум"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "Тип"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "Вкупно "
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "Искористено "
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "Претходна искористеност на процесорот"
+
+#: src/interface.c:402
+#, fuzzy, c-format
+msgid "CPU%d:"
+msgstr "Употребеност на процесорот :"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "% претходна искористеност на меморијата и Swap меморијата"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "Искористена меморија:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "од"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "Искористен свап:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "Уреди"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "Листа на _процеси"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "Надгледувач на ресурси"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "Ажурирање на апликации"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "Активни апликации"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "_Затвори апликација"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "Повеќе _информации >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< Помалку _информации"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "Име на датотека"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "VM старт"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "VM крај"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "VM големина"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "Атрибути"
+
+#: src/memmaps.c:261
+#, fuzzy
+msgid "VM Offset"
+msgstr "VM offset"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "Уред"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inode"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "Мемориски мапи"
+
+#: src/memmaps.c:364
+#, fuzzy
+msgid "Process name:"
+msgstr "Име на процесот :"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "Не постои таков процес."
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"Име на процесот : %s \n"
+"\n"
+"Немаш дозвола да го смениш приоритетот на овој процес. Внесување на "
+"rootлозинката ќе ти овозможи доволни привилегии"
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Име на процесот : %s \n"
+"\n"
+"Мора да бидеш логиран како root за да ?? процес помал од 0. Внесување наroot "
+"лозинката ќе ти овозможи доволни привилегии"
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Име на процесот : %s \n"
+"\n"
+"Немаш дозвола да го завршиш овој процес. Внесување на rootлозинката ќе ти "
+"овозможи доволни привилегии"
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "Се јави грешка при терминирањето на процесот."
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr ""
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+#, fuzzy
+msgid "_Show this dialog next time"
+msgstr "Покажи го овој дијалог прозорец следен пат"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr ""
+
+#: src/procdialogs.c:219
+#, fuzzy
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "Незачуваните податоци ќе бидат изгубени"
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr ""
+
+#: src/procdialogs.c:224
+#, fuzzy
+msgid "If you end a process, unsaved data will be lost."
+msgstr "Незачуваните податоци ќе бидат изгубени"
+
+#: src/procdialogs.c:321
+#, fuzzy
+msgid "(Very High Priority)"
+msgstr "( Многу висок приоритет )"
+
+#: src/procdialogs.c:323
+#, fuzzy
+msgid "(High Priority)"
+msgstr "( Висок приоритет )"
+
+#: src/procdialogs.c:325
+#, fuzzy
+msgid "(Normal Priority)"
+msgstr "( Нормален приоритет )"
+
+#: src/procdialogs.c:327
+#, fuzzy
+msgid "(Low Priority)"
+msgstr "( Низок приоритет )"
+
+#: src/procdialogs.c:329
+#, fuzzy
+msgid "(Very Low Priority)"
+msgstr "( Многу низок приоритет)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "Смени го приоритетот"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "Смени го _приоритетот"
+
+#: src/procdialogs.c:424
+#, fuzzy
+msgid "_Nice value:"
+msgstr "Убава вредност :"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"Приоритетот на процесот е зависен од неговата убава вредност. Понискаубава "
+"вредност одговара на повисок приоритет"
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "Икона"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "Параметри"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "Однесување"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+#, fuzzy
+msgid "_Update interval:"
+msgstr "Интервал на освежување ( во секунди ) :"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr ""
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr ""
+"Покажи дијалог прозорец со предупредување кога се прекинува или терминира "
+"процес"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "Покажи дијалог прозорец со предупредување кога се кријат процеси"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "Полиња за _процеси"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "Графикони"
+
+#: src/procdialogs.c:866
+#, fuzzy
+msgid "_Background color:"
+msgstr "Боја на позадината :"
+
+#: src/procdialogs.c:885
+#, fuzzy
+msgid "_Grid color:"
+msgstr "Боја на мрежата :"
+
+#: src/procdialogs.c:923
+#, fuzzy
+msgid "Update _interval:"
+msgstr "Интервал на освежување ( во секунди ) :"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "Терминирај го процесот"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "Заврши го процесот"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "root лозинка :"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "Погрешна лозинка"
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "Прикажи едноставен диалог за да се прекинат процесите приодлогирање"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "Име на процесот"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "Аргументи"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "Корисник"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "Статус"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "Меморија"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "Меморија"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "Share-увана меморија"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "RSS меморија"
+
+#: src/proctable.c:126
+#, fuzzy
+msgid "X Server Memory"
+msgstr "Share-увана меморија"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Убаво"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "Работи"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "Стопирано"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "Спие"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr "(thread)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s неможе да биде најдено."
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr ""
+#~ "Едноставен надгледувач на процеси кој ја користи libgtopбиблиотеката"
+
+#~ msgid "X window system"
+#~ msgstr "X графички систем"
+
+#~ msgid "bourne again shell"
+#~ msgstr "bash - bourne again shell"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome сесија"
+
+#, fuzzy
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d бајти"
+#~ msgstr[1] "%d бајти"
+
+#~ msgid "%d K"
+#~ msgstr "%d К"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f MB"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f MB"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f GB"
+
+#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
+#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
+
+#~ msgid "View processes being run by all users"
+#~ msgstr "Погледни ги процесите што ги стартувале сите корисници"
+
+#~ msgid "View processes being run by you"
+#~ msgstr "Погледни ги твоите процеси"
+
+#~ msgid "View only active processes"
+#~ msgstr "Погледни ги само активните процеси"
+
+#~ msgid "Used CPU:"
+#~ msgstr "Искористеност на процесор:"
+
+#~ msgid "Change Priority ..."
+#~ msgstr "Смени го приоритетот"
+
+#~ msgid "Hide Process"
+#~ msgstr "Скриј го процесот"
+
+#~ msgid ""
+#~ "Are you sure you want to hide this process?\n"
+#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
+#~ msgstr ""
+#~ "Дали си сигурен дека сакаш да го скриеш овој процес?\n"
+#~ "(Избери 'Скриени процеси' во Settings менито за да го вратиш)"
+
+#~ msgid "Erik Johnsson (zaphod@linux.nu) - icon support"
+#~ msgstr "Erik Johnsson (zaphod@linux.nu) - icon support"
+
+#~ msgid "Hidden Processes"
+#~ msgstr "Скриени процеси"
+
+#~ msgid "Status : "
+#~ msgstr "Статус :"
+
+#~ msgid "Total : "
+#~ msgstr "Вкупно :"
+
+#~ msgid "Used Space"
+#~ msgstr "Употребен дисковен простор"
+
+#~ msgid "Total Space"
+#~ msgstr "Вкупно дисковен простор"
+
+#~ msgid "Swap"
+#~ msgstr "Swap меморија"
+
+#~ msgid "System _Monitor"
+#~ msgstr "Надгледување на _системот"
+
+#~ msgid "_Set"
+#~ msgstr "_Подеси"
+
+#~ msgid "Update Speed ( seconds ) :"
+#~ msgstr "Надградување на брзината ( секунди )"
+
+#~ msgid "Se_t"
+#~ msgstr "Поде_си"

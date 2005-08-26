@@ -1,0 +1,736 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2002-06-21 11:57GMT+0200\n"
+"Last-Translator: Peteris Krisjanis <pecisk@inbox.lv>\n"
+"Language-Team: Latvian <ll10nt@inbox.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "Sistēmas Monitors"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "Skatīt pašreizējos procesus un monitorēt sistēmas stāvokli"
+
+#: src/callbacks.c:125
+#, fuzzy
+msgid "Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr ""
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr "Pēteris Krišjānis <pecisk@inbox.lv>"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "Sistēmas Monitors"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "Nav slēptu procesu."
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "Pārvaldīt Slēptos Procesus"
+
+#: src/favorites.c:388
+#, fuzzy
+msgid "_Hidden processes:"
+msgstr "_Slēptie Procesi"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "_Izņemt No Saraksta"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr ""
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"Šie ir procesi, kurus jūs esat izvēlējies slēpt. Jūs varat procesu atkal "
+"padarīt redzamu, izņemot no šā saraksta."
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "Procesa Informācija"
+
+#: src/infoview.c:91
+#, fuzzy
+msgid "Command:"
+msgstr "Komanda:"
+
+#: src/infoview.c:95
+#, fuzzy
+msgid "Status:"
+msgstr "Statuss"
+
+#: src/infoview.c:99
+#, fuzzy
+msgid "Priority:"
+msgstr "Prioritāte:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "Atmiņas Lietojums"
+
+#: src/infoview.c:137
+#, fuzzy
+msgid "Total:"
+msgstr "Kopā:"
+
+#: src/infoview.c:141
+#, fuzzy
+msgid "RSS:"
+msgstr "RSS : "
+
+#: src/infoview.c:145
+#, fuzzy
+msgid "Shared:"
+msgstr "Kopējā:"
+
+#: src/infoview.c:189
+#, fuzzy, c-format
+msgid "Very high - nice %d"
+msgstr "Ļoti Augsts ( Jauki %d )"
+
+#: src/infoview.c:191
+#, fuzzy, c-format
+msgid "High - nice %d"
+msgstr "Augsts ( Jauki %d )"
+
+#: src/infoview.c:193
+#, fuzzy, c-format
+msgid "Normal - nice %d"
+msgstr "Normāls ( Jauki %d )"
+
+#: src/infoview.c:195
+#, fuzzy, c-format
+msgid "Low - nice %d"
+msgstr "Zems ( Jauks %d )"
+
+#: src/infoview.c:197
+#, fuzzy, c-format
+msgid "Very low - nice %d"
+msgstr "Ļoti Zems ( Jauks %d )"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "_Izmainīt Prioritāti..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "Izmainīt procesa svarīgumu (jauko vērtību)"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "_Slēpt Procesu"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "Slēpt procesu"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "Beigt _Procesu"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "Piespiest procesu beigties"
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "_Nobeigt Procesu"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "Piespiest procesu beigties tūlīt"
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "_Slēptie Procesi"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "Skatīt un rediģēt jūsu slēpto procesu sarakstu"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "_Atmiņas Kartes"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "Parādīt atmiņu kartes saistītas ar procesu"
+
+#: src/interface.c:95
+#, fuzzy
+msgid "Process _Dependencies"
+msgstr "Parādīt Procesu Atkarības"
+
+#: src/interface.c:95
+#, fuzzy
+msgid "Display a tree showing process dependencies"
+msgstr "Parādīt Procesu Atkarības"
+
+#: src/interface.c:100
+#, fuzzy
+msgid "_Threads"
+msgstr "Parādīt Sazarojumus"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr ""
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "_Beigu Process"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "Piespiest procesu beigties"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "Piespeist procesu beigties tūlīt"
+
+#: src/interface.c:188
+#, fuzzy
+msgid "Sea_rch:"
+msgstr "M_eklēt:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "Visus Procesus"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "Mani Procesi"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "Aktīvos Procesus"
+
+#: src/interface.c:209
+#, fuzzy
+msgid "Vie_w:"
+msgstr "Skatīt"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "Vairāk _Info"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "Nosaukums"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "Direktorija"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr ""
+
+#: src/interface.c:337
+#, fuzzy
+msgid "Total"
+msgstr "Kopā:"
+
+#: src/interface.c:338
+#, fuzzy
+msgid "Used"
+msgstr "Lietots:"
+
+#: src/interface.c:362
+#, fuzzy
+msgid "CPU History"
+msgstr "% CPU Lietojuma Vēsture"
+
+#: src/interface.c:402
+#, fuzzy, c-format
+msgid "CPU%d:"
+msgstr "CPU Izmantots :"
+
+#: src/interface.c:421
+#, fuzzy
+msgid "Memory and Swap History"
+msgstr "% Atmiņas / Maiņatmiņas Lietojuma Vēsture"
+
+#: src/interface.c:454
+#, fuzzy
+msgid "Used memory:"
+msgstr "Lietots:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr ""
+
+#: src/interface.c:486
+#, fuzzy
+msgid "Used swap:"
+msgstr "Lietots:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "Iekārtas"
+
+#: src/interface.c:638 src/procdialogs.c:729
+#, fuzzy
+msgid "Process Listing"
+msgstr "Procesu _Saraksts"
+
+#: src/interface.c:644 src/procdialogs.c:816
+#, fuzzy
+msgid "Resource Monitor"
+msgstr "Sistēmas Monitors"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "Aplikāciju Pārvaldnieks"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "Ejošas Aplikācijas"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "_Aizvērt Aplikāciju"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "Vairāk _Info >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< Mazāk _Info"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "Faila nosaukums"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "VA Sākums"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "VA Beigas"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "VA Izmērs"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "Karodziņi"
+
+#: src/memmaps.c:261
+#, fuzzy
+msgid "VM Offset"
+msgstr "VA ofsets"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "Iekārta"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inode"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "Atmiņu Kartes"
+
+#: src/memmaps.c:364
+#, fuzzy
+msgid "Process name:"
+msgstr "Procesa Nosaukums:"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "Nav tāda procesa"
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"Procesa Nosaukums : %s \n"
+"\n"
+"Jums nav atļaujas lai izmainītu procesa prioritāti. Jūs varat ievadīt root "
+"paroli lai dabūtu nepieciešamo atļauju."
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Procesa Nosaukums : %s \n"
+"\n"
+"Jums jābūt root lai paceltu procesu, zemāku par 0. Jums jāievada root parole "
+"lai dabūtu nepieciešamo atļauju."
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Procesa Nosaukums : %s \n"
+"\n"
+"Jums nav atļaujas lai beigtu šo procesu. Jūs varat ievadīt root paroli un "
+"dabūt nepieciešamo atļauju."
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "Kļūda nobeidzot procesu."
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr ""
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+#, fuzzy
+msgid "_Show this dialog next time"
+msgstr "Parādīt šo dialogu nākošo reizi"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr ""
+
+#: src/procdialogs.c:219
+#, fuzzy
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "Nesaglabātie dati tiks zaudēti."
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr ""
+
+#: src/procdialogs.c:224
+#, fuzzy
+msgid "If you end a process, unsaved data will be lost."
+msgstr "Nesaglabātie dati tiks zaudēti."
+
+#: src/procdialogs.c:321
+#, fuzzy
+msgid "(Very High Priority)"
+msgstr "( Ļoti Augsta Prioritāte )"
+
+#: src/procdialogs.c:323
+#, fuzzy
+msgid "(High Priority)"
+msgstr "( Augsta Prioritāte )"
+
+#: src/procdialogs.c:325
+#, fuzzy
+msgid "(Normal Priority)"
+msgstr "( Normāla Prioritāte )"
+
+#: src/procdialogs.c:327
+#, fuzzy
+msgid "(Low Priority)"
+msgstr "( Zema Prioritāte )"
+
+#: src/procdialogs.c:329
+#, fuzzy
+msgid "(Very Low Priority)"
+msgstr "( Ļoti Zema Prioritāte)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "Mainīt Prioritāti"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "Mainīt _Prioritāti"
+
+#: src/procdialogs.c:424
+#, fuzzy
+msgid "_Nice value:"
+msgstr "Jauka Vērtība :"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"Procesa prioritāte tiek piešķirta caur šo jauko vērtību. Zemāka jaukā "
+"vērtība atbilst augstākai prioritātei."
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "Ikona"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "Preferences"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr ""
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+#, fuzzy
+msgid "_Update interval:"
+msgstr "Atjaunošanas Intervals ( sekundes ) :"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr ""
+
+#: src/procdialogs.c:778
+#, fuzzy
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "Parādīt brīdinājumu dialogu kad beidz vai nobeidz procesus"
+
+#: src/procdialogs.c:788
+#, fuzzy
+msgid "Show warning dialog when _hiding processes"
+msgstr "Parādīt brīdinājumu pirms slēp procesus"
+
+#: src/procdialogs.c:798
+#, fuzzy
+msgid "Process Fields"
+msgstr "Procesu _Lauki"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "Grafiki"
+
+#: src/procdialogs.c:866
+#, fuzzy
+msgid "_Background color:"
+msgstr "Fona Krāsa :"
+
+#: src/procdialogs.c:885
+#, fuzzy
+msgid "_Grid color:"
+msgstr "Režģa Krāsa:"
+
+#: src/procdialogs.c:923
+#, fuzzy
+msgid "Update _interval:"
+msgstr "Atjaunošanas Intervals ( sekundes ) :"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "Nobeigt Procesu"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "Beigt Procesu"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "Root Parole :"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "Nepareiza Parole."
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "parādīt vienkāršu dialogu lai beigtu procesus un izvadu"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "Procesa Nosaukums"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "Argumenti"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "Lietotājs"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "Statuss"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "Atmiņa"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "Pastāvīgā Atmiņa"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "Kopējā Atmiņa"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "RSS Atmiņa"
+
+#: src/proctable.c:126
+#, fuzzy
+msgid "X Server Memory"
+msgstr "Kopējā Atmiņa"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Jauks"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "Ejošs"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "Apstādināts"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "Guļošs"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr " (sazarojums)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s nevarēja tikt atrasts."
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "Vienkāršs procesu pārlūks, izmantojot libgtop"
+
+#~ msgid "X window system"
+#~ msgstr "X logu sistēma"
+
+#~ msgid "bourne again shell"
+#~ msgstr "bourne again shell"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome-Sesija"
+
+#, fuzzy
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d baiti"
+#~ msgstr[1] "%d baiti"
+
+#~ msgid "%d K"
+#~ msgstr "%d K"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f MB"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f MB"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f GB"
+
+#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
+#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
+
+#~ msgid "View processes being run by all users"
+#~ msgstr "Parādīt visu lietotāju procesus"
+
+#~ msgid "View processes being run by you"
+#~ msgstr "Parādīt tavus procesus"
+
+#~ msgid "View only active processes"
+#~ msgstr "Parādīt tikai aktīvos procesus"
+
+#, fuzzy
+#~ msgid "Used CPU:"
+#~ msgstr "Lietots:"
+
+#~ msgid "Erik Johnsson (zaphod@linux.nu) - icon support"
+#~ msgstr "Erik Johnsson (zaphod@linux.nu) - ikonu atbalsts"
+
+#~ msgid "Hidden Processes"
+#~ msgstr "Slēptie Procesi"
+
+#~ msgid "Status : "
+#~ msgstr "Status:"
+
+#~ msgid "Total : "
+#~ msgstr "Kopā:"
+
+#~ msgid "Change Priority ..."
+#~ msgstr "Izmainīt Prioritāti ..."
+
+#~ msgid "Hide Process"
+#~ msgstr "Slēpt Procesu"
+
+#~ msgid "Used Space"
+#~ msgstr "Izmantotā Vieta"
+
+#~ msgid "Total Space"
+#~ msgstr "Vieta Kopā"
+
+#~ msgid "Swap"
+#~ msgstr "Maiņatmiņa"
+
+#~ msgid "System _Monitor"
+#~ msgstr "Sistēmas _Monitors"
+
+#~ msgid ""
+#~ "Are you sure you want to hide this process?\n"
+#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
+#~ msgstr ""
+#~ "Vai jūs esat pārliecināts, ka vēlaties slēpt šo procesu?\n"
+#~ "(Izvēlieties 'Slēptie Procesi' Uzstādījumi izvēlnē lai parādītu)"
+
+#~ msgid "_Set"
+#~ msgstr "Uz_stādīt"
+
+#~ msgid "Update Speed ( seconds ) :"
+#~ msgstr "Atjaunināšanas Ātrums ( sekundes ) :"
+
+#~ msgid "Se_t"
+#~ msgstr "Uzstādī_t"

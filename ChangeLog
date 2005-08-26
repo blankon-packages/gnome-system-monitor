@@ -1,0 +1,925 @@
+2004-12-04  Benoît Dejean  <tazforever@dlfp.org>
+
+	* NEWS: Released 2.8.1.
+
+2004-11-24  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/interface.c: (toggle_infoview): Fixed (More|Less) labels.
+	
+	* src/procman.c: Added missing #include for old libgtop.
+
+2004-11-22  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/proctable.c: (sort_ints): Fixed stupid typo. CPU and RES columns
+	are now correctly sorted.
+
+2004-11-13  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/callbacks.c: (cb_about_activate):
+	* src/proctable.c: (get_process_status): Removed added i18n strings.
+
+2004-11-12  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/util.c: (get_size_string):
+	* src/util.h: Removed and replace by gnome_vfs_file_size...
+	* src/callbacks.c: (compare_disks), (add_new_disks):
+	* src/infoview.c: (infoview_update):
+	* src/load-graph.c: (get_memory):
+	* src/memmaps.c: (add_new_maps):
+	
+	* src/proctable.c: (insert_info_to_tree), (update_info):
+	
+	* src/procman.h: More guint64. libgtop uses a lot of guint64, so don't
+	truncate to int. This should solve overflows on systems with >= 2GB of
+	physical memory.
+	
+	* src/load-graph.c: (get_memory): Fixed mem%. Is used physical memory %,
+	including cached + buffer.
+
+2004-10-29  Benoît Dejean  <tazforever@dlfp.org>
+
+	* * s/(MEM|CPU)_GRAPH/LOAD_GRAPH_$1/g
+
+	* src/load-graph.c: (get_load), (load_graph_update),
+	(load_graph_alloc), (load_graph_new): Replace a bunch of = with memcpy.
+	Tuned loops.
+	
+	* src/procman.h: cpu_time, cpu_last, cpu_time_last are guint64.
+	cpu -> guint8 pcpu
+	
+	* src/proctable.c: (sort_ints), (insert_info_to_tree),
+	(update_info), (get_info): Updated.
+	
+	libgtop struct have a lot of guint64 members. currently they are boxed
+	into gint which is obviously bad. More work has to be done to fix all of
+	this.
+	
+	* src/proctable.h: Stronger #ifdef.
+
+2004-10-28  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/memmaps.c: (vmoff_tostring): Renamed vmoff_strdup_printf.
+	
+	* src/memmaps.h: Moved some declarations to memmaps.c.
+	* src/memmaps.c: (add_new_maps), (update_memmaps_dialog), (sort_guint64),
+	(create_memmaps_tree): Renamed COL_* to MMAP_COL* to avoid conflict.
+	Use MMAP_COL_* wherever possible.
+	(sort_guint64): Don't truncate guint64 to gint anymore.
+	
+	* src/proctable.c: Removed useless #includes.
+
+2004-10-27  Benoît Dejean  <tazforever@dlfp.org>
+
+	* configure.in: Added new dependency on GNOME VFS 2.6.
+	* src/callbacks.c: (get_icon_for_device): Re-implemented using GNOME VFS.
+	The icon lookup is much better.	
+	
+	(cb_preferences_activate), (cb_renice),
+	(cb_end_process), (cb_kill_process), (cb_show_memory_maps),
+	(cb_show_hidden_processes), (cb_hide_process), (cb_about_activate),
+	(cb_close_simple_dialog), (cb_proc_combo_changed),
+	(popup_menu_renice), (popup_menu_show_memory_maps),
+	(popup_menu_hide_process), (popup_menu_end_process),
+	(popup_menu_kill_process), (popup_menu_about_process),
+	(cb_end_process_button_pressed), (cb_info_button_pressed),
+	(cb_search), (cb_mem_color_changed), (cb_swap_color_changed),
+	(cb_bg_color_changed), (cb_frame_color_changed), (cb_row_selected),
+	(cb_tree_row_activated), (cb_tree_button_pressed),
+	(cb_tree_popup_menu), (cb_switch_page), (compare_disks),
+	(get_icon_for_device), (add_new_disks), (cb_update_disks),
+	(cb_timeout): Paranoid cleanup.
+	
+	* src/defaulttable.h: Updated.
+
+2004-10-25  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/callbacks.c: (cb_preferences_activate), (cb_end_process),
+	(cb_kill_process), (cb_show_memory_maps),
+	(cb_show_hidden_processes), (cb_hide_process), (cb_about_activate),
+	(cb_app_exit), (cb_app_delete), (cb_close_simple_dialog),
+	(cb_proc_combo_changed), (popup_menu_renice),
+	(popup_menu_show_memory_maps), (popup_menu_hide_process),
+	(popup_menu_end_process), (popup_menu_kill_process),
+	(popup_menu_about_process), (cb_end_process_button_pressed),
+	(cb_info_button_pressed), (cb_search), (change_gconf_color),
+	(cb_cpu_color_changed), (cb_mem_color_changed),
+	(cb_swap_color_changed), (cb_bg_color_changed),
+	(cb_frame_color_changed), (get_last_selected), (cb_row_selected),
+	(cb_tree_row_activated), (cb_tree_button_pressed),
+	(cb_switch_page), (fsusage_stats), (compare_disks),
+	(get_icon_for_device), (add_new_disks), (cb_update_disks),
+	(cb_timeout):
+	* src/callbacks.h: Big cleanup.
+	(add_new_disks): possible leak. Added comment on libgtop behaviour.
+	(fsusage_stats): Added. Devices stats code is now shared.
+	(change_gconf_color): Added.
+	
+	* src/interface.c: Removed useless
+	global variables.
+	(create_proc_view), (toggle_infoview): Marked static.
+	
+	* src/procdialogs.c: (get_nice_level),
+	(procdialog_create_preferences_dialog): Moved bg_color_changed/frame_color_changed
+	to src/callbacks.c.
+
+2004-10-25  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/procman.c: static const popt.
+	* src/procman.h: Changed cpu_initialized type to gboolean.
+
+2004-10-24  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/proctable.c: (refresh_list): s/g_list_prepend/g_list_append/
+	0K, it does matter here :/
+
+2004-10-24  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/memmaps.c: (compare_memmaps):
+	* src/callbacks.c: (compare_disks):
+	* src/favorites.c: (add_to_blacklist), (add_single_to_blacklist),
+	(remove_item): s/g_list_append/g_list_prepend/ as order doesn't matter.
+	
+	* src/load-graph.c: (load_graph_configure), (load_graph_expose),
+	(load_graph_destroy), (load_graph_new): s/g_list_append/g_list_prepend/
+	as order doesn't matter. Little cleanup.
+	
+	* src/prettytable.h:
+	* src/procman.h:
+	* src/load-graph.h: Better ifdef.
+	
+	* src/prettytable.c: (new_application), (application_finished),
+	(pretty_table_new), (pretty_table_add_table),
+	(pretty_table_get_icon): Whitespace cleanup.
+	(load_table_from_file): Added (WIP). Currently excluded.
+	
+	* src/proctable.c: (proctable_new): Cleaned.
+	(proctable_free_info): prevent memory leak.
+	(get_process_name): Re-implemented using g_get_path_basename(). 
+	(remove_info_from_list): Big cleanup. Improved performances. Scales much
+	better.
+	(update_info): CLAMP cpu%.
+	(get_info): Re-added thread detection code. ThreadView works again.
+	(refresh_list): removal_list is now a g_ptr_array for performance.
+	(proctable_update_list),(proctable_update_all), (proctable_clear_tree),
+	(proctable_free_table): Cleanups.
+
+2004-10-24  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/proctable.c: (proctable_free_info), (insert_info_to_tree),
+	(remove_children_from_tree), (find_match_in_new_list),
+	(refresh_list): Cleaned.
+	(proctable_search_table): Removed unused static variable index.
+
+2004-10-24  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/proctable.c: (sort_ints), (proctable_new),
+	(get_process_status), (get_process_name), (proctable_find_process),
+	(find_parent), (insert_info_to_tree), (remove_children_from_tree),
+	(remove_info_from_tree), (remove_info_from_list), (update_info),
+	(get_info), (find_match_in_new_list), (refresh_list),
+	(proctable_update_list), (proctable_update_all),
+	(proctable_clear_tree), (proctable_free_table),
+	(proctable_search_table): c-set-style linux.
+
+2004-10-24  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/defaulttable.h: Updated.
+
+	* src/memmaps.c: (vmoff_strdup_printf): Added to handle 64/32bits hex
+	format.
+	(add_new_maps),
+	(compare_memmaps), (update_memmaps_dialog), (close_memmaps_dialog),
+	(sort_ints), (create_memmaps_tree), (memmaps_timer),
+	(create_single_memmaps_dialog), (create_memmaps_dialog): Big cleanup, 
+	including whitespaces.
+
+2004-10-23  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/defaulttable.h: Updated.
+
+2004-10-23  Benoît Dejean  <tazforever@dlfp.org>
+
+	* configure.in: Added --enable-more-warnings.
+
+2004-10-23  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/interface.c: (cpu_size_request): Cleaned.
+	(create_sys_view): Fixed display on SMP systems.
+	* src/load-graph.c: (get_load): Cleaned.
+
+2004-10-23  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/load-graph.c: (load_graph_draw), (get_load), (get_memory),
+	(load_graph_update), (load_graph_unalloc), (load_graph_alloc),
+	(load_graph_configure), (load_graph_expose), (load_graph_destroy),
+	(load_graph_new), (load_graph_start), (load_graph_stop): c-set-style linux
+
+2004-10-23  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/defaulttable.h: Updated.
+	
+	* src/prettytable.c: (new_application), (application_finished),
+	(pretty_table_new), (pretty_table_add_table),
+	(pretty_table_get_icon), :
+	* src/prettytable.h: pretty_table.app_hash now uses direct_hash/equal.
+	Updated icon lookup.
+	(free_entry), (free_value), (free_key) excluded.
+
+2004-10-23  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/callbacks.c: (compare_disks), (get_icon_for_device),
+	(add_new_disks), (cb_update_disks):
+	* src/callbacks.h:
+	* src/cellrenderer.c:
+	* src/favorites.c:
+	* src/infoview.c: (infoview_create), (infoview_update):
+	* src/interface.c:
+	* src/memmaps.c:
+	* src/prettytable.c:
+	* src/procactions.c:
+	* src/procdialogs.c:
+	* src/procdialogs.h:
+	* src/procman.c:
+	* src/proctable.c:
+	* src/util.c: Marked private global variables as static. Closes #147361.
+	Some cleanups (including whitespaces cleanups :)
+
+2004-10-23  Benoît Dejean  <tazforever@dlfp.org>
+
+	* po/POTFILES.in: Updated.
+
+	* src/cellrenderer.h:
+	* src/cellrenderer.c: (procman_cell_renderer_progress_init),
+	(procman_cell_renderer_progress_get_size),
+	(procman_cell_renderer_progress_render): UTF-8-ified. Removed unused
+	variables.
+	
+	* src/prettytable.c: (application_finished), (pretty_table_new),
+	(pretty_table_get_icon):
+	* src/procactions.c: (kill_single_process):
+	* src/procdialogs.c: (procdialog_create_hide_dialog):
+	* src/callbacks.c: (cb_about_activate):
+	* src/infoview.c: (infoview_update):
+	* src/memmaps.c: (create_memmaps_tree):
+	* src/procman.c: (main):
+	* src/proctable.c: (proctable_new):
+	* src/interface.c: (create_sys_view): Removed unused variables.
+	Used PROCMAN_GETTEXT_ARRAY_INIT.
+	
+	* src/memmaps.h:
+	* src/interface.h: 
+	* src/proctable.h:
+	* src/load-graph.h: Stronger ifndef.
+	Removed non-ANSI enum trailing comma.
+	
+	* src/util.h: Added PROCMAN_GETTEXT_ARRAY_INIT(array) macro to initialize
+	i18n strings arrays. Closes #134136.
+
+2004-10-22  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/callbacks.c: (cb_about_activate): New description. Closes #131801.
+	
+	* src/procman.h:
+	* src/interface.c: (create_sys_view):
+	* src/load-graph.c: (get_memory): Added memory and swap % in load-graph.
+	Original patch from Dennis Cranston <dennis_cranston at yahoo com>.
+	Closes #63523.
+	
+2004-10-22  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/procman.png: New icon. Closes #117790.
+
+2004-10-22  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/load-graph.c: (get_load): Ensure that cpu load is in [0.0f;100.0f].
+	Closes #134958.
+
+2004-10-22  Benoît Dejean  <tazforever@dlfp.org>
+
+	* .cvsignore:
+	* help/C/.cvsignore: Updated.
+	
+	* src/proctable.c: (get_process_status): Fixed glibtop_proc_state.state
+	usage. Closes #153600. Change prototype. This disables a dirty hack and
+	makes gsm procstate works everywhere.
+	(remove_info_from_tree),(update_info), (get_info): Small cleanups.
+
+2004-10-22  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/proctable.c: (get_process_name): Fixed empty process name. This is
+	because of a small change in libgtop. If cmdline is empty, libgtop now
+	returns "" instead of NULL (this was not documented at all).
+	Now : if procargs is NULL or "", the process name is given by procstate, else
+	procargs is parsed.
+
+2004-10-21  Benoît Dejean  <tazforever@dlfp.org>
+
+	* src/procactions.c: (renice_single_process),
+	(kill_single_process): Trim whitespaces. Closes #125380.
+
+2004-10-21  Benoît Dejean  <tazforever@dlfp.org>
+
+	* AUTHORS:
+	* src/callbacks.c: (cb_about_activate): Hello, i'm the new maintainer :)
+	
+	* src/procman.c: (procman_free_data), (main): Removed C99 comment.
+	Added missing glibtop_close().
+	
+	* src/util.c: (get_size_string): s/K/KB/ Closes #127510.
+	Fixed float constants.
+	
+	* src/interface.c: (create_main_window): Added a resize-grip.Thanks to
+	Ken Harris. Closes #144848.
+
+2004-10-17  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Post release bump.
+
+2004-10-17  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Bump version.
+	* src/infoview.c: Add missing header.
+	* src/interface.c: NULL vs. 0 fixes.
+	* src/procman.c: Add missing header.
+
+2004-08-28  Akagic Amila  <bono@linux.org.ba>
+
+        * configure.in: Added 'bs' to ALL_LINGUAS.
+
+2004-08-27  Iñaki Larrañaga  <dooteo@euskalgnu.org>
+
+	* configure.in: Added "eu" (Basque) to ALL_LINGUAS.
+
+2004-08-21  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Add «nb» to ALL_LINGUAS.
+
+2004-08-13  Vincent Noel  <vnoel@cox.net>
+
+	* src/procdialogs.c (create_proc_field_page): Set GTK_SHADOW_IN
+	for the "Process fields" in the preferences dialog. Fixes bug 150066.
+
+2004-07-19  Kevin Vandersloot <kfv101 psu edu>
+
+	* configure.in: release 2.7.0
+
+2004-04-10  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+        * configure.in: Added "gu" (Gujarati) to ALL_LINGUAS.
+
+2004-03-24  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+        * configure.in: Added "pa" (Punjabi) to ALL_LINGUAS.
+
+2004-03-21  Gareth Owen  <gowen72@yahoo.com>
+
+	* configure.in: Added en_GB to ALL_LINGUAS
+
+2004-03-21  Kevin Vandersloot <kfv101 psu edu>
+
+	* configure.in: release 2.6.0
+
+2004-03-20  Kevin Vandersloot <kfv101 psu edu>
+
+	* configure.in: require latest libgtop
+
+2004-03-14  Kevin Vandersloot <kfv101 psu edu>
+
+	* configure.in: release 2.5.4
+
+2004-02-22  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "en_CA" to ALL_LINGUAS.
+
+2004-02-19 Breda McColgan <breda.mccolgan@sun.com>
+
+	* help/C/gnome-system-monitor.xml: Updated based on peer review comments from Bill Day
+	* help/C/gnome-system-monitor-C.omf: Updated date.
+
+2004-02-15  Kevin Vandersloot
+
+	* configure.in: release 2.5.3
+
+2004-02-06 Breda McColgan <breda.mccolgan@sun.com>
+
+	* help/C/gnome-system-monitor.xml: Updated for GNOME 2.6, technical review draft	
+	* help/C/gnome-system-monitor-C.omf: Updated for GNOME 2.6
+2004-02-06 Breda McColgan <breda.mccolgan@sun.com>
+
+	* help/C/gnome-system-monitor.xml: Updated for GNOME 2.6, technical review draft	
+	* help/C/gnome-system-monitor-C.omf: Updated for GNOME 2.6
+	* help/C/l10n.txt: Added for GNOME 2.6
+	* help/C/figures/gnome-system-monitor_window.png: Added for GNOME 2.6
+
+2004-01-03  Robert Sedak  <robert.sedak@sk.htnet.hr>
+
+        * configure.in: Added "hr" in ALL_LINGUAS.
+
+2004-01-02  Christian Neumair  <chris@gnome-de.org>
+
+	* src/utils.c (get_size_string):
+	Use ngettext for plurals (#106704).
+
+2003-12-11  Kaushal Kumar  <kaushal.kumar@wipro.com>
+
+	* src/interface.c (create_sys_view):
+	Fix compilation (Bugzilla bug #129080).
+	
+2003-12-07  Kevin Vandersloot
+
+	* configure.in: release 2.5.2
+
+2003-12-02  Žygimantas Beručka  <uid0@tuxfamily.org>
+
+	* configure.in: Added "lt" to ALL_LINGUAS again because for
+	some reason it was gone.
+
+2003-11-16  Havoc Pennington  <hp@redhat.com>
+
+	* configure.in: require latest libwnck
+
+2003-11-08  Kevin Vandersloot
+
+	* configure.in: release 2.5.1
+
+2003-10-20  Bastien Nocera  <hadess@hadess.net>
+
+	* configure.in: release gnome-system-monitor 2.5.0
+
+2003-10-20  Bastien Nocera  <hadess@hadess.net>
+
+	* configure.in: require libgtop 2.5.0
+
+2003-10-20  Bastien Nocera  <hadess@hadess.net>
+
+	* configure.in: fix compilation, lt wasn't committed to CVS
+
+2003-10-07  Žygimantas Beručka  <uid0@tuxfamily.org>
+
+	* configure.in: Added "lt" to ALL_LINGUAS.
+
+2003-09-17  Fatih Demir <kabalak@gtranslator.org>
+
+	* configure.in: Added "ta" (Tamil) to the languages' list.
+
+2003-09-08  Kevin Vandersloot
+
+	* configure.in: release 2.4.0
+
+2003-08-24  Kevin Vandersloot
+
+	* configure.in: release 2.3.1
+
+2003-07-24  Dafydd Harries  <daf@parnassus.ath.cx>
+
+	* configure.in: Added "cy" (Welsh) to ALL_LINGUAS.
+
+2003-07-13 John Fleck <jfleck@inkstain.net>
+
+	* autogen.sh
+	remove:
+	* xmldocs.make, omf.make
+	update to new docs build system. latest gnome-common
+	now required
+
+2003-07-02  Jordi Mallach  <jordi@sindominio.net>
+
+	* gnome-system-monitor.desktop.in: Add Encoding and X-GNOME-Bugzilla
+	entries, and fix Terminal.
+
+2003-06-11  Kenneth Rohde Christiansen  <kenneth@gnu.org>
+
+	* configure.in: Added "li" to ALL_LINGUAS.
+
+2003-05-29  Paul Duffy <dubhthach@frink.nuigalway.ie>
+
+         * configure.in: Added "ga" to ALL_LINGUAS.
+
+2003-05-06  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+	* configure.in: Added "hi" to ALL_LINGUAS.
+
+2003-05-06  Danilo Šegan  <dsegan@gmx.net>
+
+	* configure.in: Added "sr" and "sr@Latn" to ALL_LINGUAS.
+
+2003-05-04  Taneem Ahmed  <taneem@eyetap.org>
+
+	* configure.in: Added "bn" in ALL_LINGUAS
+
+2003-03-25  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: release 2.3.0
+
+2003-03-21  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+	* configure.in: Added "ml" to ALL_LINGUAS.
+
+2003-02-24  Roozbeh Pournader  <roozbeh@sharif.edu>
+
+	* configure.in: Added "fa" to ALL_LINGUAS.
+
+2003-02-10  Mohammad DAMT  <mdamt@bisnisweb.com>
+
+	* po/id.po: Added Indonesian translation
+	* configure.in: Added "id" to ALL_LINGUAS
+
+2003-01-23  Christian Rose  <menthos@menthos.com>
+
+	* help/C/Makefile.am: Reverted. Somehow my last commit
+	replaced its contents with a PNG file. No idea how that
+	happened. Sorry all.
+
+2003-01-22  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "mn" to ALL_LINGUAS.
+
+2003-01-12  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: add startup notify support. Release 2.0.4
+
+2003-01-08  Pauli Virtanen  <pauli.virtanen@hut.fi>
+
+	* configure.in: added "fi" (Finnish) to ALL_LINGUAS.
+
+2002-11-25  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in, gnome-system-monitor.spec: release 2.0.3
+
+2002-11-22 John Fleck <jfleck@inkstain.net>
+
+	* help/C/gnome-system-monitor.xml
+	* help/C/figures/memoryMaps.png, moreInfo.png,
+	pocessListing.png, systemMonitor.png
+	checking in new help docs from Bill Day
+	(Thanks, Bill!)
+
+2002-11-09  Dmitry G. Mastrukov  <dmitry@taurussoft.org>
+
+	* configure.in: Added Belarusian to ALL_LINGUAS
+
+2002-09-26  Stanislav Brabec  <sbrabec@suse.cz>
+
+	* configure.in: Added cs to ALL_LINGUAS.
+
+2002-09-03  Marius Andreiana <mandreiana@yahoo.com>
+
+	* configure.in: added 'ro' to ALL_LINGUAS
+
+2002-08-26 Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: release 2.0.2
+
+2002-08-17  Simos Xenitellis  <simos@hellug.gr>
+
+	* configure.in: Added Greek (el) to ALL_LINGUAS.
+
+2002-07-21  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: release 2.0.1
+
+2002-06-24  Yanko Kaneti <yaneti@declera.com>
+
+	* configure.in: (ALL_LINGUAS) Added Bulgarian (bg).
+
+2002-06-10  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in, gsm.spec: release 2.0.0
+
+2002-06-07  Pablo Saratxaga  <pablo@mandrakesoft.com>
+
+	* configure.in: Added Catalan (ca) to ALL_LINGUAS
+
+2002-05-27  Chris Lyttle  <chris@wilddev.net>
+
+	* omf.make: Added for new scrollkeeper
+	* xmldocs.make: Changed for new scrollkeeper
+	* Makefile.am: added omf.make to EXTRA_DIST remove omf-install dir
+	* configure.in: remove omf-install dir
+	* help/C/Makefile.am: change figs to figdir
+	* help/C/gnome-system-monitor-C.omf: Updated to new OMF format
+
+2002-05-19  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: bump libwnck requirement and version number
+	
+	* Release 1.1.7
+
+2002-05-19  Shooby Ban <shooby@gnome.hu>
+
+	* configure.in: Added "hu", Hungarian to ALL_LINGUAS.
+
+2002-05-18  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Added "mk" Macedonian to ALL_LINGUAS.
+	
+2002-05-15  Pablo Saratxaga  <pablo@mandrakesoft.com>
+
+	* configure.in: Added Vietnamese (vi), Azeri (az) and Dutch (nl)
+	to ALL_LINGUAS
+	* src/proctable.c,src.interface.c: Added no-c-format tags to make
+	xgettext happy
+
+2002-05-14  Anders Carlsson  <andersca@gnu.org>
+
+	* configure.in:
+	Require libwnck 0.11
+	
+2002-05-02 John Fleck <jfleck@inkstain.net>
+
+	* help/C/Makefile.am
+	* help/C/gnome-system-monitor-C.omf
+	enabling docs name change to gnome-system-monitor
+
+2002-05-02  Abel Cheung  <maddog@linux.org.hk>
+
+	* .cvsignore, help/.cvsignore, help/C/.cvsignore,
+	omf-install/.cvsignore, src/.cvsignore: Ignore more files.
+
+	* src/callbacks.c: Add translator credits.
+
+2002-04-30 John Fleck <jfleck@inkstain.net>
+
+	* help/C/procman-C.omf
+	update OMF file to match new dtd for SK > 0.3.8
+
+2002-04-03  Gustavo Maciel Dias Vieira  <gdvieira@zaz.com.br>
+
+	* configure.in (ALL_LINGUAS): Added pt_BR.
+
+2002-03-31 John Fleck <jfleck@inkstain.net>
+
+	* help/C/procman-C.omf
+	fixing omf file, per bug #77052
+	thanks to martin H. for catching this
+
+2002-03-23  Kevin Vandersloot <kfv101@psu.edu>
+
+	* Release 1.1.6
+
+2002-03-04  Wang Jian  <lark@linux.net.cn>
+
+	* configure.in: Added "zh_CN" to ALL_LINGUAS.
+
+2002-02-24  Kevin Vandersloot <kfv101@psu.edu>
+	
+	* configure.in, gnome-system-monitor.spec: release 1.1.5
+
+2002-02-11  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: add ja to ALL_LINGUAS
+
+2002-02-11  Christophe Merlet  <redfox@eikonex.org>
+
+	* configure.in: Added fr to ALL_LINGUAS.
+
+2002-02-10  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: bump version, disst smldocs.make
+
+	* Makefile.am: add omf-instal so it gets disted
+
+	* release 1.1.4
+
+2002-02-06 John Fleck <jfleck@inkstain.net>
+
+	* adding xmldocs.make to help reenable docs build
+
+2002-02-07  Changwoo Ryu  <cwryu@debian.org>
+
+	* configure.in: Added "ko" to ALL_LINGUAS.
+
+2002-02-06  Kevin Vandersloot <kfv101@psu.edu>
+
+	* Makefile.am, configure.in: remove help stuff temporarily
+	to fix the build
+
+2002-02-05 John Fleck <jfleck@inkstain.net>
+
+	adding documentation by Bill Day:
+	added:
+	* help/Makefile.am
+	* help/C/Makefile.am
+	* help/C/legal.xml
+	* help/C/procman-C.omf
+	* help/C/procman.xml
+	* help/C/addColumn.png, sortButton.png, viewMenu.png,
+	changePriority.png, memoryMaps.png, sortMenu2.png, colorPanel.png,
+	moreInfo.png, sortMenu.png, columnContextMenu.png,
+	processListing.png, systemMonitor.png
+	* omf-install/Makefile.am
+	changed:
+	* Makefile.am
+	* configure.in
+
+
+2002-01-28  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in, gnome-system-monitor.spec: bump version to 1.1.3
+	and some small fixes for spec
+
+	* release 1.1.3
+
+2002-01-27  Seth Nickell  <snickell@stanford.edu>
+
+	* Makefile.am:
+	* gnome-system-monitor.desktop.in:
+	* gnome-system-monitor.spec:
+	* procman.desktop.in:
+	* procman.spec:
+
+	Renaming applications to match their menu entries.
+
+	System Monitor -> gnome-system-monitor.
+	
+2002-01-26  Kevin Vandersloot <kfv101@psu.edu>
+
+	* procman.desktop.in: use newly changed procman.png
+
+2002-01-21  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: add bt_BR to translated files
+
+2002-01-19  Kevin Vandersloot <kfv101@psu.edu>
+
+	* procman.spec: don't intall procman.png
+
+2002-01-19  Seth Nickell  <snickell@stanford.edu>
+
+	* procman.desktop.in:
+
+	Rename "System Monitor" and change the icon.
+
+2002-01-15  Hasbullah Bin Pit <sebol@ikhlas.com>
+
+	* configure.ini: Added Malay (ms)to ALL_LINGUAS.
+	* po/ms.po: Added Malay Malay Translation.
+
+2002-01-12  Kevin Vandersloot <kfv101@psu.edu>
+
+	* procman.spec: Fix the spec file
+
+2002-01-11  Kevin Vandersloot <kfv101@psu.edu>
+
+	* procman.spec: Update thanks to Havoc Pennington
+	<hp@redhat.com>
+
+2002-01-08  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: release 1.1.2. Bump requirements
+
+	* TODO: Pretty much complete :)
+
+2001-12-27  Duarte Loreto <happyguy_pt@hotmail.com>
+
+        * configure.in: Added portuguese to ALL_LINGUAS
+
+2001-12-13  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: add gconf schema support
+
+2001-12-11  Stanislav Visnovsky  <visnovsky@nenya.ms.mff.cuni.cz>
+
+	* configure.in: Added "sk" to ALL_LINGUAS.
+
+Sat Dec  8 13:09:28 2001  Owen Taylor  <otaylor@redhat.com>
+
+	* configure.in: Fix so $ACLOCAL_FLAGS is honoured
+	when aclocal is run for --enable-maintainer-mode
+
+2001-12-08  Gediminas Paulauskas <menesis@delfi.lt>
+
+	* configure.in, Makefile.am: use intltool instead of xml-i18n-tools;
+	define GETTEXT_PACKAGE
+	* acconfig.h: add template for GETTEXT_PACKAGE
+	* src/procan.c: get translated messages in UTF-8 codeset.
+	* src/Makefile.am: (INCLUDES): remove intl
+	(procman_LDADD): remove $(INTLLIBS)
+
+2001-12-03  Jesus Bravo Alvarez  <jba@pobox.com>
+
+	* configure.in: Added gl (Galician) to ALL_LINGUAS
+
+2001-11-25  Kevn Vandersloot <kfv101@psu.edu>
+
+	* configure.in: fix the check for gtk. That should
+	be gtk+-2.0 not gtk-2.0
+
+	* src/Makefile.am: remove LIBGTOP_LIBS and LIBGTOP_CFLAGS
+
+2001-11-25  Kevn Vandersloot <kfv101@psu.edu>
+
+	* configure.in: check for libgtop-2.0.pc. This makes procman
+	fully GNOME 2.0 dependant :) You have to get libgtop from a
+	as yet unknown branch. DO NOT get it from HEAD! I will make
+	a libgtop branch soon and it will be stable ported to 
+	GNOME 2.0
+
+2001-11-26  Abel Cheung  <maddog@linux.org.hk>
+
+	* configure.in: Add check for (upcoming) gtk 1.3.11. It won't
+	  even compile with gtk 1.3.10.
+
+2001-11-23  Kevin Vandersloot <kfv101@psu.edu>
+
+        * configure.in, Makefile.am: no longer need the intl/
+        and macros/ directory. Update for GNOME 2.0. Side effect
+        is that the libgtop macro is not picked up. For now 
+        you can copy the libgtop macro from /usr/share/macros/gnome-macros
+        to the gnome2-macros directory
+
+Sat Nov 24 15:00:31 2001  Kristian Rietveld  <kristian@planet.nl>
+
+	* src/callbacks.c (compare_disks): free old_name before we
+	return
+
+Fri Nov 23 14:44:26 2001  Owen Taylor  <otaylor@redhat.com>
+
+	* src/interface.c src/memmaps.c src/proctable.c: Adapt
+	to GtkTreeView changes.
+
+	* src/proctable.c: Pack icon cell renderer in the same column 
+	as the name.
+
+2001-11-14  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: remove libwnck for now
+
+2001-10-27  Yuriy Syrota  <rasta@renome.rovno.ua>
+
+	* configure.in: Added "uk" to ALL_LINGUAS.
+
+2001-10-22  Abel Cheung  <maddog@linux.org.hk
+
+	* configure.in: Added "zh_TW" to ALL_LINGUAS.
+
+2001-10-01  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: check for gconf-2 
+
+2001-09-30  Zbigniew Chyla  <cyba@gnome.pl>
+
+	* configure.in (ALL_LINGUAS): Added pl.
+
+2001-09-29  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: update for GNOME 2.0. No longer require
+	Gal
+
+2001-09-25  Carlos Perelló Marín <carlos@gnome-db.org>
+
+	* debian/*: Updated.
+
+2001-09-03  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in: added 'da'
+
+2001-08-26  Kevin Vandersloot <kfv101@psu.edu>
+
+	* procman.spec: Add the translations to the RPMS. Doh!
+
+2001-08-10  Kevin Vandersloot <kfv101@psu.edu>
+
+	* configure.in Added 'ru'.
+
+2001-08-02  Christian Meyer  <chrisime@gnome.org>
+
+	* configure.in: Added 'de'.
+
+2001-07-31  Carlos Perelló Marín <carlos@gnome-db.org>
+
+	* debian/changelog: Updated to 0.8 version.
+
+2001-07-28  Christopher R. Gabriel  <cgabriel@cgabriel.org>
+
+	* configure.in (ALL_LINGUAS): Added 'it'.
+
+2001-07-19  Fatih Demir <kabalak@gtranslator.org>
+
+	* configure.in: Added "tr" to the languages list.
+
+2001-07-15  Carlos Perelló Marín <carlos@gnome-db.org>
+
+	* debian/*: Added scripts to generate Debian
+	packages.
+	* NEWS: Added a comment to the Debian packages
+
+2001-07-08  Carlos Perelló Marín <carlos@gnome-db.org>
+
+	* ABOUT-NLS: Removed
+	* .cvsignore: shhh
+	* Updated to use xml-i18n-tools
+
+2001-07-08  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* procman.desktop: Added Norwegian translation.
+	* configure.in: Added no to ALL_LINGUAS.
+	
+2001-07-02  Christian Rose  <menthos@menthos.com>
+
+	* procman.desktop: Added Swedish entries.
+
+2001-07-02  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added sv to ALL_LINGUAS.
+

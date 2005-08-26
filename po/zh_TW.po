@@ -1,0 +1,720 @@
+# traditional Chinese translation for procman(gnome-system-monitor).
+# Copyright (C) 2001, 02, 03, 04 Free Software Foundation, Inc.
+# Abel Cheung <maddog@linux.org.hk>, 2001-2003.
+# Woodman Tuen <woodman@culturecom.com.hk>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman 2.5.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2004-03-21 07:57+0800\n"
+"Last-Translator: Woodman Tuen <woodman@culturecom.com.hk>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "系統監控"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "顯示目前的進程並監控系統的狀態"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "Kevin Vandersloot"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "Jorgen Scheibengruber  - 較好的裝置檔案樹狀顯示模式"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr ""
+"i18n 程式中文化計劃\n"
+"http://i18n.linux.org.tw/\n"
+"\n"
+"Woodman Tuen <woodman@culturecom.com.hk>, 2004\n"
+"Abel Cheung <maddog@linux.org.hk>, 2001-2003"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "版權所有 ©2001 Kevin Vandersloot"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "資源監控"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "目前沒有任何隱藏的進程。"
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "管理隱藏的進程"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "隱藏的進程(_H)："
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "從清單中移除(_R)"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "記錄："
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr "這些是您指定要隱藏的進程。只要將進程從清單中移除後，就會重新顯示出來。"
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "進程資訊"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "指令："
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "狀態："
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "優先值："
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "記憶體使用量"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "總數："
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "RSS："
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "分享記憶："
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "極高 (Nice 值為 %d)"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "高 (Nice 值為 %d)"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "正常 (Nice 值為 %d)"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "低 (Nice 值為 %d)"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "極低 (Nice 值為 %d)"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "更改優先值(_C)..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "更改進程的重要性 (nice 值)"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "隱藏進程(_H)"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "隱藏某個進程"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "終止進程(_P)"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "終止某個進程。"
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "強行終止進程(_K)"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "強迫某進程立刻終止。"
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "隱藏的進程(_H)"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "顯示及修改隱藏進程的清單"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "記憶配置(_M)"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "顯示有關某進程的記憶配置情況"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "進程間的相依性(_D)"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "以樹狀結構顯示各進程間的相依性"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "線程(_Thread)"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "顯示線程(副進程)"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "終止進程(_E)"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "終止某進程"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "強迫某進程立刻終止"
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "搜尋(_R)："
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "所有進程"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "我的進程"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "運行中的進程"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "顯示(_W)："
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "顯示詳細資訊(_I)"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "名稱"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "目錄"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "類型"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "總數"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "已使用"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "CPU 使用量紀錄"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "CPU%d："
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "記憶體/交換記憶使用量紀錄"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "已使用的記憶體："
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "of"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "已使用的交換記憶："
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "裝置"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "進程清單"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "資源監控"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "應用程式總管"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "執行中的程式"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "關閉應用程式(_C)"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "顯示詳細資訊(_I) >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< 隱藏詳細資訊(_I)"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "檔名"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "VM 開始"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "VM 終結"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "VM 大小"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "旗標"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "VM Offset"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "裝置"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inode"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "記憶配置"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "進程名稱："
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "沒有這個進程。"
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"進程名稱：%s\n"
+"\n"
+"您沒有足夠權限更改此進程的優先值。您可以輸入 root 的密碼來獲得所需的權限。"
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"進程名稱：%s\n"
+"\n"
+"您沒有足夠權限令此進程的 nice 值低於 0。您可以輸入 root 的密碼來獲得所需的權"
+"限。"
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"進程名稱：%s\n"
+"\n"
+"您沒有足夠權限終止這個進程。您可以輸入 root 的密碼來獲得所需的權限。"
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "當強行終止進程時發生錯誤。"
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "你真的要隱藏這一進程嗎?"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr "如果你要將進程隱藏，你可以在編輯選單中選擇'隱藏進程'來隱藏它。"
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "下次顯示這個對話方塊(_S)"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr "你真的要強行終止這一進程嗎?"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "如果你強行終止這進程，將會失去未儲存的資料。"
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "你真的要終止這一進程嗎?"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "如果你要停止這進程，將會失去未儲存的資料。"
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "（非常高的優先值）"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "（高優先值）"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "（正常優先值）"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "（低優先值）"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "（非常低的優先值）"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "更改優先值"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "更改優先值(_P)"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "Nice 值(_N)："
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr "進程是否優先執行可由它的 nice 值得出。較低的 nice 值表示較優先執行。"
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "圖示"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "偏好設定"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "運作方式"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "更新間隔(_U)："
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "秒"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "當進程完結或被強行中止時顯示警告訊息對話方塊(_K)"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "當隱藏進程時顯示警告訊息對話方塊(_H)"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "進程欄位"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "圖表"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "背景顏色(_B)："
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "格線顏色(_G)："
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "更新間隔(_I)："
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "強行終止進程"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "終止進程"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "Root 密碼："
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "密碼錯誤。"
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "顯示用來終止進程和登出的簡單對話方塊"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "進程名稱"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "參數"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "用戶"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "狀態"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "記憶體"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "常駐記憶"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "分享記憶"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "RSS 記憶"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "X伺服器記憶體"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Nice"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "執行中"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "已停止"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "睡眠中"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr "（線程）"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "找不到 %s。"
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "使用 libgtop 的簡單進程顯示程式"
+
+#~ msgid "X window system"
+#~ msgstr "X 視窗系統"
+
+#~ msgid "bourne again shell"
+#~ msgstr "bourne again shell (bash)"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome-Session"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d 位元組"
+
+#~ msgid "%d K"
+#~ msgstr "%d K"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f MB"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f MB"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f GB"
+
+#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
+#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
+
+#~ msgid "View processes being run by all users"
+#~ msgstr "顯示所有用戶執行的進程"
+
+#~ msgid "View processes being run by you"
+#~ msgstr "顯示您執行的進程"
+
+#~ msgid "View only active processes"
+#~ msgstr "只顯示運行中的進程"
+
+#~ msgid "Used CPU:"
+#~ msgstr "已使用的 CPU："
+
+#~ msgid "Change Priority ..."
+#~ msgstr "更改優先值..."
+
+#~ msgid "Hide Process"
+#~ msgstr "隱藏進程"
+
+#~ msgid ""
+#~ "Are you sure you want to hide this process?\n"
+#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
+#~ msgstr ""
+#~ "是否確定要隱藏這個進程？\n"
+#~ "(在設定選單中選擇「隱藏的進程」可重新顯示)"
+
+#~ msgid "Erik Johnsson (zaphod@linux.nu) - icon support"
+#~ msgstr "Erik Johnsson (zaphod@linux.nu) ─ 圖示支援"
+
+#~ msgid "Hidden Processes"
+#~ msgstr "隱藏的進程"
+
+#~ msgid "Status : "
+#~ msgstr "狀態："
+
+#~ msgid "Total : "
+#~ msgstr "總數："
+
+#~ msgid "Used Space"
+#~ msgstr "已用空間"
+
+#~ msgid "Total Space"
+#~ msgstr "總容量"
+
+#~ msgid "Swap"
+#~ msgstr "交換記憶"
+
+#~ msgid "System _Monitor"
+#~ msgstr "系統監控(_M)"
+
+#~ msgid "_Set"
+#~ msgstr "設定(_S)"
+
+#~ msgid "Update Speed ( seconds ) :"
+#~ msgstr "更新間隔(秒)："
+
+#~ msgid "Se_t"
+#~ msgstr "設定(_T)"
+
+#~ msgid "Process Manager"
+#~ msgstr "進程總管"
+
+#~ msgid "Running Processes"
+#~ msgstr "執行中的進程"
+
+#~ msgid "Show Application Names"
+#~ msgstr "顯示程式名稱"
+
+#~ msgid "Application Name"
+#~ msgstr "應用程式名稱"
+
+#~ msgid "General"
+#~ msgstr "一般"
+
+#~ msgid "Advanced"
+#~ msgstr "進階"
+
+#~ msgid "Free Space"
+#~ msgstr "可用空間"
+
+#~ msgid "Memory Used / Total :"
+#~ msgstr "已使用/總數記憶體："
+
+#~ msgid "Swap Used / Total :"
+#~ msgstr "已使用/總數交換記憶："

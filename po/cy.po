@@ -1,0 +1,665 @@
+# procman yn Gymraeg.
+# Copyright (C) 2003, The Free Software Foundation.
+# This file is distributed under the same license as the procman package.
+# Dafydd Harries <daf@muse.19inch.net>, 2003 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2004-03-12 18:21+0000\n"
+"Last-Translator: Dafydd Harries <daf@muse.19inch.net>\n"
+"Language-Team: Cymraeg <gnome-cy@www.linux.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: plurals=2; plural=(n==2) ? 1 : 0\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "Arsylwr System"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "Gweld prosesau cyfredol ac arsylwi cyflwr y system"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "Kevin Vandersloot"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "Jorgen Scheibengruber - golwg coeden neisach"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr "Dafydd Harries <daf@muse.19inch.net>"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "Arsylwr Adnoddau"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "Does dim prosesau wedi eu cuddio ar hyn o bryd."
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "Trefnu Prosesau Cudd"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "Prosesau _cudd:"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "_Gwaredu O'r Rhestr"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "Nodyn:"
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"Dyma'r prosesau rydych chi wedi dewis eu cuddio. Gallwch ailddangos proses "
+"gan ei waredu o'r rhestr hwn."
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "Gwybodaeth Proses"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "Gorchymyn:"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "Cyflwr:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "Blaenoriaeth:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "Defnydd Cof"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "Cyfanswm:"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "RSS:"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "Wedi ei Rannu:"
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "Uchel iawn - neis %d"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "Uchel - neis %d"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "Arferol - neis %d"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "Isel - neis %d"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "ISel iawn - neis %d"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "_Newid Blaenoriaeth..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "Newid pwysigrwydd (gwerth neis) proses"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "_Cuddio'r Proses"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "Cuddio Proses"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "Diewddu _Proses"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "Gorfodi proses i orffen."
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "_Llofruddio Proses"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "Gorfodi proses i orffen nawr."
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "Prosesau _Cudd"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "Gweld a golygu eich rhestr o brosesau cudd"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "_Mapiau Cof"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "Gweld y mapiau cof a gysylltir a phroses"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "_Dibynniadau Proses"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "Dangos coeden yn dangos dibynniadau proses"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "_Edau"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "Danfos edau (isbrosesau)"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "_Diweddu Proses"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "Gorfodi proses i orffen"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "Gorfodi proses i orffen nawr"
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "_Chwilio:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "Pob Proses"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "Fy Mhrosesau I"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "Prosesau Gweithredol"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "_Golwg:"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "Mwy o _Wybodaeth"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "Enw"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "Cyfeiriadur"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "Math"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "Cyfanswm"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "Defnydd"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "Hanes CPU"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "CPU%d:"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "Hanes Cof a Cyfnewid"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "Defnydd cof:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "o"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "Defnydd cyfnewid:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "Dyfeisiau"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "Rhestr Prosesau"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "Arsylwr Adnoddau"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "Rheolwr Rhaglenni"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "Rhaglenni sy'n Rhedeg"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "_Cau'r Rhaglen"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "Mwy o _Wybodaeth >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< Llai o _Wybodaeth"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "Enw Ffeil"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "Cychwyn VM"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "Diwedd VM"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "Maint VM"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "Banneri"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "Dadleoliad VM"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "Dyfais"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inôd"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "Mapiau Cof"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "Enw proses:"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "Does mo'r fath broses."
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"Enw Proses : %s \n"
+"\n"
+"Nid oes caniatad gennych i newid blaenoriaeth y proses hwn. Fe allwch roi "
+"cyfrinair yr uwchddefnyddiwr er mwyn cael y caniatad anghenrheidiol."
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Enw Proses : %s \n"
+"\n"
+"Mae'n rhaid mae'r uwchddefnyddiwr ydych chi er mwyn ailneisio proses in is "
+"na 0. Fe allwch rhoi cyfrinair yr uwchddefnyddiwr er mwyn cael y caniatad "
+"anghenrheidiol."
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Enw Proses : %s \n"
+"\n"
+"Does gennych ddim caniatad i ddiweddu'r proses hwn. Fe allwch rhoi cyfrinair "
+"yr uwchddefnyddiwr er mwyn cael y caniatad anghenrheidiol."
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "Digwyddod gwall wrth lofruddio'r proses."
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "Ydych chi'n siwr eich bod chi am guddio'r proses hwn?"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+"Os ydych chi'n cuddio proses, gallwch ei datguddio can ddewis 'Prosesu Cudd' "
+"yn y dewislen Golygu."
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "_Dangos y deialog hwn y tro nesaf"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr "Ydych chi'n siwr eich bod chi am lofruddio'r proses hwn?"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "Os ydych chi'n llofruddio proses, caiff data heb ei arbed ei golli."
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "Ydych chi'n siwr eich bod chi am terfynu's proses hwn?"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "Os ydych chi'n terfynu proses, caiff data heb ei arbed ei golli."
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "(Blaenoriaeth Uchel Iawn)"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "(Blaenoriaeth Uchel)"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "(Blaenoriaeth Normal)"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "(Blaenoriaeth Isel)"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "(Blaenoriaeth Isel Iawn)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "Newid Blaenoriaeth"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "Newid _Blaenoriaeth"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "Gwerth _Neis:"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"Rhoddir blaenoraeth proses gan ei werth neis. Mae gwerth neis is yn cyfateb "
+"i flaenoriaeth uwch."
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "Eicon"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "Hoffterau"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "Ymddygiad"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "Ysbaid _diweddaru:"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "eiliadau"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "Dangos deialog rhybudd wrth ddiweddu neu _lofruddio prosesau"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "Danfos deialog rhybudd wrth _guddio prosesau"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "Meysydd Proses"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "Graffiau"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "Lliw _cefndir:"
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "Lliw _grid:"
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "_Ysbaid diweddaru:"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "Llofruddio Proses"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "Diewddu Proses"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "Cyfrinair Root :"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "Cyfrinair Anghywir."
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "dangos deialog syml er mwyn diewddu prosesau a allgofnodi"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "Enw Proses"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "Ymresymiadau"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "Defnyddiwr"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "Cyflwr"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "Cof"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "Cof Arhosol"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "Cof Wedi ei Rannu"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "Cof RSS"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "Cof Gweinydd X"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Neis"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "Rhedeg"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "Atalwyd"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "Cysgu"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr "(edefyn)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "Methwyd canfod %s."
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "Gwelydd proses syml sy'n defnyddio libgtop"
+
+#~ msgid "X window system"
+#~ msgstr "System ffenestri X"
+
+#~ msgid "bourne again shell"
+#~ msgstr "cragen bourne again"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome-Session"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d beit"
+#~ msgstr[1] "%d feit"
+
+#~ msgid "%d K"
+#~ msgstr "%d C"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f MB"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f MB"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f GB"
+
+#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
+#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
+
+#~ msgid "View processes being run by all users"
+#~ msgstr "Dangos prosesau sy'n cael eu rhedeg gan bob defnyddiwr"
+
+#~ msgid "View processes being run by you"
+#~ msgstr "Dangos prosesau sy'n cael eu rhedeg gennych chi"
+
+#~ msgid "View only active processes"
+#~ msgstr "Dangos prosesau gweithredol yn unig"
+
+#~ msgid "Used CPU:"
+#~ msgstr "Defnydd CPU:"
+
+#~ msgid "Change Priority ..."
+#~ msgstr "Newid Blaenoriaeth ..."
+
+#~ msgid "Hide Process"
+#~ msgstr "Cuddio Proses"
+
+#~ msgid ""
+#~ "Are you sure you want to hide this process?\n"
+#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
+#~ msgstr ""
+#~ "Ydych chi'n sicr eich bod chi am guddio'r proses hwn?\n"
+#~ "(Dewiswch 'Prosesau Cudd' yn y dewislen Gosodiadau er mwyn ailddangos)"

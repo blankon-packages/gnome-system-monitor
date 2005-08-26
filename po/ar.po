@@ -1,0 +1,645 @@
+# translation of procman.po to Arabic
+# translation of procman.HEAD.ar.po to
+# Arabic translation of procman.
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
+# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002, 2004.
+# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2004-09-04 18:02+0300\n"
+"Last-Translator: Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>\n"
+"Language-Team: Arabic <support@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
+"3\n"
+"\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "مراقب النّظام"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "عرض العمليات الحالية و مراقبة حالة النظام"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "كفن فندرسلوت"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "يورغن شايبنغروبر - مشهد شجري أفضل"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr ""
+"عرفات المديني، تونس <lumina@silverpen.de>\n"
+"عصام بايزيدي، الأردن "
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "جميع الحقوق محفوظة كفن فندرسلوت (C) 2001"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "مراقب الموارد"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "لا عمليات مخفات حاليا."
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "ادر العمليات المخفات"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "_العلميات المخفات:"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "_حذف من القائمة"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "ملاحظة:"
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"هذه هي العمليات التي قررت إخفائها. يمكن إعادة إظهار عملية بحذفها من هذه "
+"القائمة."
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "معلومات العملية"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "الأمر:"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "الحالة:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "الأولوية:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "الذاكرة المستعملة"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "المجموع:"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "محاكي الصدى (RSS):"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "مشترك:"
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "مرتفع جدا - nice %d"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "مرتفع - nice %d"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "عادي - nice %d"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "منخفض - nice %d"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "منخفض جدا - nice %d"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "_تغيير الأولوية..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "تغيير مستوى أهمية عملية (قيمة nice)"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "إ_خفاء العملية"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "إخفاء عملية"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "إ_نهاء العملية"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "إجبار عملية على الإنتهاء."
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "_قتل العملية"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "إجبار عملية على الإنتهاء الآن."
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "_علميات مخفية"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "إعرض و حرر قائمتك للعمليات المخفية"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "_خرائط الذاكرة"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "عرض خرائط الذاكرة المرافقة للعملية"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "متعلقات الع_ملية"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "عرض شجرة تظهر متعلفات العملية"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "ت_شعبات"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "عرض التشعبات (العمليات المحوية)"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "إ_نهاء عملية"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "إجبار عملية على الإنتهاء."
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "إجبار عملية على الإنتهاء الآن."
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "ب_حث:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "كل العمليات"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "عملياتي"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "العمليات النشطة"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "_عرض:"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "معلومات أ_كثر"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "الإسم"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "الدليل"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "النوع"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "المجموع"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "مستخدم"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "تاريخ إستخدام المعالج"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "المعالج%d:"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "تاريخ الذاكرة و الذاكرة البديلة"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "الذاكرة المستعملة:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "من"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "الذاكرة البديلة المستخدمة:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "الأجهزة"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "سرد العمليات"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "مراقب الموارد"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "مدير التطبيقات"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "تشغيل التطبيقات"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "_غلق تطبيق"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "معلومات أ_كثر >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< معلومات أ_قل"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "إسم الملف"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "بداية الذاكرة الإفتراضية"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "نهاية الذاكرة الإفتراضية"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "حجم الذاكرة الإفتراضية"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "خيارات"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "إنحراف الذاكرة الإفتراضية"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "الجهاز"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inode"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "خرائط الذاكرة"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "إسم العملية:"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "لا عملية بهذا الإسم."
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"إسم العملية : %s \n"
+"\n"
+"إنك لا تملك الصلاحيات الكافية لتغيير أولوية هذه العملية. يمكنك إدخال كلمة سر "
+"الجذر للحصول على الصلاحيات اللازمة."
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"إسم العملية : %s\n"
+"\n"
+"يجب أن تكون الجذر حتّى تعيد تلطيف عمليّة تحت 0. يمكنك إدخال كلمة سر الجذر "
+"للحصول على التّصاريح اللّازمة"
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"إسم العملية : %s \n"
+"\n"
+"إنك لا تملك الصلاحيات الكافية لإنهاء هذه العملية. يمكنك إدخال كلمة سر الجذر "
+"للحصول على الصلاحيات اللازمة."
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "حدث خطأ أثناء قتل العملية."
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "هل أنت متأكد من أنك تريد إخفاء هذه العملية؟"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+"يمكنك إلغاء إخفاء عملية بعد إخفائها بانتقاء 'العمليات المخفية' في قائمة "
+"التحرير."
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "_عرض هذا الحوار المرة القادمة"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr "هل أنت متأكد من أنك تريد قتل هذه العملية؟"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "ستضيع البيانات الغير محفوظة إذا قتلت عملية."
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "هل أنت متأكد من أنك تريد إنهاء هذه العملية؟"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "ستضيع البيانات الغير محفوظة إذا أنهيت عملية."
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "(أولوية مرتفعة جدا)"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "(أولوية مرتفعة)"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "(أولوية عادية)"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "(أولوية منخفضة)"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "(أولوية منخفضة جدا)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "تغيير الأولوية"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "تغيير الأ_ولوية"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "قيمة_ Nice:"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr "أولوية عملية معظات بقيمة nice. قيمة nice منخفضة تعني أولوية أكبر."
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "أيقونة"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "التفضيلات"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "السلوك"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "فترة الت_حديث:"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "ثوان"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "عرض حوار تنبيه عند إنهاء أو _قتل عمليات"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "عرض حوار تنبيه عند إ_خفاء عمليات"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "حقول العمليات"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "رسوم بيانية"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "لون الخ_لفية:"
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "لون ال_شبكة:"
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "_فترة التحديث:"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "قتل العملية"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "إنهاء العملية"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "كلمة سر الجذر:"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "كلمة السر.خاطئة."
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "عرض حوار بسيط لإنهاء العمليات و الخروج"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "إسم العملية"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "المتغيرات"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "المستخدم"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "الحالة"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "الذاكرة"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "الذاكرة المقيمة"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "الذاكرة المشتركة"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "ذاكرة RSS"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "ذاكرة نادل X"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% من المعالج"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Nice"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "الهوية"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "شاغلة"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "متوقفة"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "نائمة"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr " (تشعب)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "لم يمكن ايجاد %s."
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "عارض عمليات بسيط يستعمل libgtop"
+
+#~ msgid "X window system"
+#~ msgstr "نظام النوافذ X"
+
+#~ msgid "bourne again shell"
+#~ msgstr "هيكل الحرق ثانية"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "ج_لسة جنوم"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "بايت واحدة"
+#~ msgstr[1] "بايتان"
+#~ msgstr[2] "%d بايتات"
+#~ msgstr[3] "%d بايت"
+
+#~ msgid "%d K"
+#~ msgstr "%d كيلو"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f .ميغابايت"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f ميغابايت"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f غيغابايت"

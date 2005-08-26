@@ -1,0 +1,707 @@
+# Bengali Translation of ProcMan
+# Copyright (C)  2003 Free Software Foundation, Inc.
+# This file is distributed under the same license as the ProcMan package.
+# Sayamindu Dasgupta <unmadindu@Softhome.net>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2003-04-16 17:20+0530\n"
+"Last-Translator: Khandakar Mujahidul Islam <suzan@bengalinux.org>\n"
+"Language-Team: Bengali (bn) <gnome-translation@bengalinux.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "সিস্টেম মনিটর"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "চলতি ক্রিয়ার (প্রসেসের) তালিকা দেখুন আর সিস্টেমের অবস্থার উপর নজর রাখুন"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "কেভিন ভ্যান্ডারস্লুট"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "জর্জেন স্কিবেংরুবার - সুন্দর দেখতে ডিভাইস ট্রি-ভিউ"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr "সায়মিন্দু দাশগুপ্ত <unmadindu@Softhome.net>"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "সত্ত্বাধিকার ২০০১ কেভিন ভ্যান্ডারস্লুট"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "রিসোর্স মনিটর"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "বর্তমানে চলন্ত কিন্তু তালিকায় অপ্রদর্শিত কোন ক্রিয়া (প্রসেস) চলছে না।"
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "তালিকায় অপ্রদর্শিত ক্রিয়াসমূহ (প্রসেসসমূহ) সামলান"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "আড়াল করা ক্রিয়া (প্রসেস)  সমূহ (_আ):"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "তালিকা থেকে বাদ দিন (_দ)"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "দৃষ্টব্য:"
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"এই ক্রিয়াসমূহকে (প্রসেসসমূহকে) আপনি প্রদর্শন না করার জন্য বাছাই করেছেন। যদি কোন "
+"প্রসেসকে পুনরায় প্রদর্শন করতে চান তবে এই তালিকা থেকে তা বাদ দিন।"
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "ক্রিয়া (প্রসেস) সম্বন্ধীয় তথ্য"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "কমান্ড:"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "অবস্থা:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "অগ্রাধিকার:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "মেমরি ব্যবহার"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "সর্বমোট:"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "আর.এস.এস.:"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "বণ্টিত:"
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "অনেক বেশি (নাইস %d)"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "বেশি (নাইস %d)"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "সাধারণ (নাইস %d)"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "কম (নাইস %d)"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "খুব কম (নাইস %d)"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "অগ্রাধিকার পরিবর্তন... (_প)"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "কোন ক্রিয়ার (প্রসেসের) অগ্রাধিকার (নাইসের মান) পরিবর্তন"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "ক্রিয়াকে (প্রসেসকে) আড়াল করুন (_ড়)"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "একটি ক্রিয়াকে (প্রসেসকে) আড়াল করুন"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "ক্রিয়ার (প্রসেসের) সমাপ্তি করুন (_ক)"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "জোর করে ক্রিয়ার (প্রসেসের) সমাপ্তি ঘটান"
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "ক্রিয়াকে (প্রসেসকে) মেরে ফেলুন (_ম)"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "জোর করে এখনি ক্রিয়ার (প্রসেসের) সমাপ্তি ঘটান।"
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "আড়াল করা ক্রিয়াসমূহ (প্রসেস-সমূহ)(_ল)"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "আড়াল করা ক্রিয়া (প্রসেস) দেখুন আর বদলান"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "মেমরি বন্টনচিত্র (ম্যাপ) (_র)"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "একটা ক্রিয়ার (প্রসেসের) সঙ্গে যুক্ত মেমরি বন্টনচিত্র (ম্যাপ) দেখুন"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "ক্রিয়ার (প্রসেসের) নির্ভরশীলতা (_ন)"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "ক্রিয়ার (প্রসেসের) নির্ভরশীলতা দেখাও"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "থ্রেডস (_স)"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "থ্রেডস দেখাও (উপকার্যপ্রণালী)"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "ক্রিয়ার সমাপ্তি হোক (_শ)"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "জোর করে ক্রিয়ার (প্রসেসের) সমাপ্তি ঘটান"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "জোর করে এখনি  ক্রিয়ার (প্রসেসের) সমাপ্তি ঘটান"
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "খোঁজো (_খ):"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "সমস্ত ক্রিয়া-সমূহ (প্রসেস-সমূহ)"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "আমার ব্যবহৃত ক্রিয়া-সমূহ (প্রসেস-সমূহ)"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "চলন্ত ক্রিয়া (প্রসেস)"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "প্রদর্শন (_দ):"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "বিস্তারিত তথ্য (_ত)"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "নাম"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "ডিরেক্টরি"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "ধরন"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "সর্বমোট"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "ব্যবহার হয়েছে"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "% সি.পি.ইউ. ব্যবহারের ইতিহাস"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "সি-পি-ইউ%d:"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "% মেমরি/সোয়্যাপ ব্যবহারের ইতিহাস"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "ব্যবহ্রত মেমরি:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "এর"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "সোয়্যাপ ব্যবহার হয়েছে:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "ডিভাইস"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "প্রসেসের তালিকা (_ল)"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "রিসোর্স মনিটর"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "অ্যাপলিকেশন ম্যানেজার"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "চলন্ত অ্যাপলিকেশন"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "অ্যাপলিকেশন বন্ধ কর (_ব)"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "বিস্তারিত তথ্য জানতে চাইলে (_ত) >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< কম  তথ্য জানতে চাইলে (_ত)"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "ফাইলের নাম"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "ভি.এম. শুরু"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "ভি.এম. শেষ"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "ভি.এম. আয়তন"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "পতাকা"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "ভি-এম অফসেট"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "ডিভাইস"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "আইনোড"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "মেমরি বণ্টন-চিত্র (ম্যাপ)"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "ক্রিয়ার (প্রসেসের) নাম :"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "ওই রকম কোন ক্রিয়ার অস্তিত্ব নেই।"
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"ক্রিয়ার (প্রসেসের) নাম : %s \n"
+"\n"
+"এই ক্রিয়াটির (প্রসেসটির) অগ্রাধিকার পরিবর্তনের অনুমতি আপনার নেই। প্রয়োজনীয় অনুমতি "
+"পেতে চাইলে রুট (root) পাসওয়ার্ড ব্যবহার করতে পারেন।"
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"ক্রিয়ার (প্রসেসের) নাম: %s \n"
+"\n"
+"যে কোন ক্রিয়ার (প্রসেস-এর) নাইস-কে শুন্যের নিচে নিয়ে যেতে চাইলে আপনাকে রুট (root) "
+"হতে হবে। চাইলে রুট (root) পাস-ওয়ার্ড দিয়ে দরকারি অনুমতিটি জোগাড় করে নিতে পারেন।"
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"ক্রিয়ার (প্রসেসের) নাম : %s \n"
+"\n"
+"এই ক্রিয়ার (প্রসেসের) সমাপ্তি ঘটাবার অনুমতি আপনার নেই। চাইলে রুট পাস-ওয়ার্ড দিয়ে "
+"দরকারি অনুমতিটি জোগাড় করে নিতে পারেন।"
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "ক্রিয়াটি (প্রসেসটি) বন্ধ করার সময় সমস্যা হয়েছে।"
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "আপনি কি নিশ্চিত যে এই ক্রিয়াটিকে (প্রসেসটিকে) আপনি অপ্রদর্শিত করে দিতে চান?"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+"পুনরায় ক্রিয়াটিকে দৃশ্যমান করতে চাইলে সেটিং মেনুর মধ্যে 'অপ্রদর্শিত ক্রিয়াসমূহ' "
+"নির্বাচন করুন"
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "এই ডায়ালগটিকে পরের বার-ও দেখতে চাই (_প)।"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr ""
+"আপনি কি নিশ্চিত যে এই ক্রিয়াটিকে (প্রসেসটিকে) আপনি জোর করে বন্ধ করে দিতে চান?"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "জোর করে বন্ধ করে দিলে, সংরক্ষণ না করা তথ্য হারিয়ে যাবে"
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "আপনি কি নিশ্চিত যে এই ক্রিয়াটিকে (প্রসেসটিকে) আপনি বন্ধ করে দিতে চান?"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "বন্ধ করে দিলে, সংরক্ষণ না করা তথ্য হারিয়ে যাবে"
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "( খুব বেশি অগ্রাধিকার )"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "( বেশি অগ্রাধিকার )"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "( সাধারন অগ্রাধিকার )"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "( কম অগ্রাধিকার )"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "( খুব কম অগ্রাধিকার )"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "অগ্রাধিকার‬ বদলান"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "অগ্রাধিকার ‮বদলান (_ধ)"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "নাইসের মান  (_ন):"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"কোন ক্রিয়ার অগ্রাধিকার তার নাইস-এর মান থেকে বোঝা যায়। কম নাইস-মান মানে বেশি "
+"অগ্রাধিকার।"
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "আইকন"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "পছন্দ"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "চরিত্র"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "নবায়ণের মধ্যকার বিরাম (সেকেন্ডে) (_র) :"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "সেকেন্ড"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "কোন ক্রিয়া (প্রসেস) বন্ধ বা মারার আগে সাবধানবাণী দেখান (_ম)"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "কোন ক্রিয়াকে অদৃশ্য করার আগে সাবধানবাণী দেখান (_দ)"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "ক্রিয়া (প্রসেস) ফিল্ড"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "রেখাচিত্র"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "পটভূমির রঙ (_ভ)"
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "ছাঁচের রং (_ছ):"
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "নবায়ণের মধ্যকার বিরাম (_ণ) :"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "ক্রিয়াকে মেরে ফেলুন"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "ক্রিয়ার (প্রসেসের) সমাপ্তি ঘটান"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "root পাসওয়ার্ড :"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "ভুল পাসওয়ার্ড।"
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "ক্রিয়া শেষ করে লগ-আউট করার জন্য একটা সাধারন ডায়ালগ দেখাও"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "ক্রিয়ার নাম"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "তর্কসমূহ"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "ব্যবহারকারী"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "অবস্থা"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "মেমরি"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "রেসিডেন্ট মেমরি"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "অন্যান্য প্রসেসের সাথে ভাগাভাগি করে ব্যবহৃত মেমরি"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "আর-এস-এস মেমরি"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "এক্স সার্ভার দ্বারা ব্যবহৃত মেমরি"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% সি.পি.উ."
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "নাইস"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "পরিচয়-নম্বর (আই.ডি.)"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "চলমান"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "বন্ধ"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "স্থগিত (স্লিপিন্গ)"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr "(থ্রেড)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s খুঁজে পাওয়া গেল না।"
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "লিবজীটপ ভিত্তিক চলন্ত প্রসেসের সরল তালিকা প্রদর্শক"
+
+#~ msgid "X window system"
+#~ msgstr "এক্স উইন্ডো সিস্টেম"
+
+#~ msgid "bourne again shell"
+#~ msgstr "বৌর্ন এগেইন শেল"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "গুহ্‌নোম-সেশন"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d বাইট"
+#~ msgstr[1] "%d বাইট"
+
+#~ msgid "%d K"
+#~ msgstr "%d কে"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f মেগাবাইট"
+
+# msgstr "%.1f এম-বি"
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f মেগাবাইট"
+
+# msgstr "%.0f এম-বি"
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f গিগা-বাইট"
+
+#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
+#~ msgstr "কেভিন ভ্যান্ডারস্লুট (kfv101@psu.edu)"
+
+#~ msgid "View processes being run by all users"
+#~ msgstr "সব ব্যবহারকারীদের দ্বারা চালানো সমস্ত ক্রিয়া (প্রসেস) দেখুন"
+
+#~ msgid "View processes being run by you"
+#~ msgstr "নিজের দ্বারা চালানো সমস্ত ক্রিয়া (প্রসেস) দেখুন"
+
+#~ msgid "View only active processes"
+#~ msgstr "শুধু চলমান ক্রিয়া-সমূহ (প্রসেস-সমূহ) দেখুন"
+
+#~ msgid "Used CPU:"
+#~ msgstr "সি.পি.ইউ. ব্যবহার হয়েছে:"
+
+#~ msgid "Change Priority ..."
+#~ msgstr "অগ্রাধিকার বদলান ..."
+
+#~ msgid "Hide Process"
+#~ msgstr "ক্রিয়াকে (প্রসেসকে) আড়াল করুন"
+
+#~ msgid ""
+#~ "Are you sure you want to hide this process?\n"
+#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
+#~ msgstr ""
+#~ "আপনি কি নিশ্চিত যে এই ক্রিয়াটিকে (প্রসেসটিকে) আপনি অপ্রদর্শিত করে দিতে চান?\n"
+#~ "(পুনরায় ক্রিয়াটিকে দৃশ্যমান করতে চাইলে সেটিং মেনুর মধ্যে 'অপ্রদর্শিত ক্রিয়াসমূহ' "
+#~ "নির্বাচন করুন)"
+
+#~ msgid "Erik Johnsson (zaphod@linux.nu) - icon support"
+#~ msgstr "এরিক্ জন্সন (zaphod@linux.nu) - আইকন সাপোর্ট"
+
+# msgstr "এই ক্রিয়াসমূহ-কে আপনি অদৃশ্য রাখতে বলেছেন। কোন একটা ক্রিয়া-কে পুনরায় দেখতে"
+# " চাইলে সেটাকে এই তালিকা থেকে বাদ দিন।"
+#~ msgid "Hidden Processes"
+#~ msgstr "অপ্রদর্শিত ক্রিয়াসমূহ (প্রসেসমূহ)"
+
+# msgstr "কমান্ড : "
+#~ msgid "Status : "
+#~ msgstr "অবস্থা : "
+
+#~ msgid "Total : "
+#~ msgstr "মোট :"
+
+#~ msgid "Used Space"
+#~ msgstr "ব্যবহৃত জায়গা"
+
+#~ msgid "Total Space"
+#~ msgstr "মোট জায়গা"
+
+#~ msgid "Swap"
+#~ msgstr "সোয়্যাপ"
+
+#~ msgid "System _Monitor"
+#~ msgstr "সিস্টেম _মনিটর"
+
+# UpDate-এর বাংলা কি?? 
+# Ans. "পরিবর্তন" দিয়ে কাজ চালানো যেতে পারে। 
+#~ msgid "_Set"
+#~ msgstr "_স্থির"
+
+#~ msgid "Update Speed ( seconds ) :"
+#~ msgstr "পরিবর্তনের গতি (সেকেন্ডে) :"
+
+# msgstr "খাঁচার রং :"
+#~ msgid "Se_t"
+#~ msgstr "স্থি_র"

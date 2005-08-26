@@ -1,0 +1,638 @@
+# procman ja.po.
+# Copyright (C) 2001-2004 Free Software Foundation, Inc.
+# Takeshi Aihana <aihana@gnome.gr.jp>, 2001-2004.
+# KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2004-02-16 23:18+0900\n"
+"Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "システム・モニタ"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "現在のプロセスを表示して、システム状況を監視します"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "Kevin Vandersloot"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "Jorgen Scheibengruber - クールなデバイスのツリー表示"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr ""
+"相花 毅 <aihana@gnome.gr.jp>\n"
+"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
+"日本GNOMEユーザー会 <http://www.gnome.gr.jp>"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "(C) 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "リソースの監視"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "現在、非表示のプロセスはありません。"
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "非表示のプロセスの管理"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "非表示のプロセス(_H):"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "一覧から削除(_R)"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "メモ:"
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"プロセスを非表示にすることを選択しました。再度、表示する場合はこの一覧からプ"
+"ロセスを削除して下さい。"
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "プロセス情報"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "コマンド:"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "状態:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "優先度:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "メモリ使用量"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "合計:"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "RSS:"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "共有:"
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "一番高い - Nice値 %d"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "高い - Nice値 %d"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "標準 - Nice値 %d"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "低い - Nice値 %d"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "一番低い - Nice値 %d"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "プロパティの変更(_C)..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "プロセスの優先度 (nice 値) を変更します"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "プロセスの非表示(_H)"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "プロセスを非表示にします"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "プロセスの終了(_P)"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "プロセスを強制終了します"
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "プロセスの強制終了(_K)"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "プロセスを今すぐ強制終了します"
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "非表示のプロセス(_H)"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "非表示のプロセスの一覧を表示/編集します"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "メモリ・マップ(_M)"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "プロセスに割り当てられたメモリマップを表示します"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "プロセスの依存関係(_D)"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "プロセスの依存関係をツリー形式で表示します"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "スレッド(_T)"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "スレッド (サブプロセス) を表示します"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "プロセスの終了(_E)"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "プロセスを強制終了します"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "プロセスを今すぐ終了します"
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "検索(_R):"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "全てのプロセス"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "ユーザのプロセス"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "実行中のプロセス"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "表示(_W):"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "詳細情報(_I)"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "名前"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "フォルダ"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "種類"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "合計"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "使用済み"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "CPU 使用率の履歴"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "CPU%d:"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "メモリとスワップの履歴"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "使用済みメモリ:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "/"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "使用済みスワップ:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "デバイスの一覧"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "プロセスの一覧"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "リソースの監視"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "アプリケーション・マネージャ"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "実行中のアプリケーション"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "アプリを閉じる(_C)"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "詳細情報(_I) >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< 簡易情報(_I)"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "フルネーム"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "VM の先頭"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "VM の最後"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "VM のサイズ"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "フラグ"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "VM のオフセット"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "デバイス"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "I-ノード"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "メモリ・マップ"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "プロセス名:"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "そのようなプロセスはありません。"
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"プロセス名 : %s\n"
+"\n"
+"このプロセスの優先度を変更するための権限を持っていません。root のパスワードを"
+"入力すると、必要な権限を取得することが可能です。"
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"プロセス名 : %s\n"
+"\n"
+"プロセスの Nice 値を 0 以下に変更するためには root 権限が必要です。root のパ"
+"スワードを入力すると、必要な権限を取得することが可能です。"
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"プロセス名 : %s\n"
+"\n"
+"このプロセスを終了させるための権限を持っていません。root パスワードを入力する"
+"と、必要な権限を取得することが可能です。"
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "プロセスの強制終了中にエラーが発生しました。"
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "このプロセスを隠しますか？"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+"プロセスを隠した場合、編集メニューの \"非表示のプロセス\" を選択することで、"
+"このプロセスを表示させることが可能です。"
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "次回もこのダイアログを表示する(_S)"
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr "このプロセスを強制終了しますか？"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "プロセスを強制終了すると、保存していないデータは破棄されます。"
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "このプロセスを終了しますか？"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "プロセスを終了すると、保存していないデータは破棄されます。"
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "(一番高い優先度)"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "(高い優先度)"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "(通常の優先度)"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "(低い優先度)"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "(一番低い優先度)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "プロパティの変更"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "プロパティの変更(_P)"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "Nice 値:"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"プロセスの優先度は Nice 値で与えられます。小さい Nice 値は高いプロセスに一致"
+"します。"
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "アイコン"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "設定"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "動作"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "更新間隔:"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "秒"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "プロセスが (強制) 終了した時に警告ダイアログを表示する(_K)"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "プロセスを隠した時に警告ダイアログを表示する(_H)"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "表示するプロセス情報"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "グラフ"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "背景色(_B):"
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "グリッドの色(_G):"
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "更新間隔(_I):"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "プロセスの強制終了"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "プロセスの終了"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "root パスワード :"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "パスワードが間違っています"
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "プロセス終了とログアウトで簡易ダイアログを表示する"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "プロセス名"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "引数"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "ユーザ"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "状態"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "メモリ"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "Resident メモリ"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "共有メモリ"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "RSS メモリ"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "X サーバ・メモリ"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Nice値"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "実行中"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "停止中"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "スリープ中"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr " (スレッド)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s が見つかりませんでした。"
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "libgtop を使用した簡易プロセス・ビューアです。"
+
+#~ msgid "X window system"
+#~ msgstr "X Window システム"
+
+#~ msgid "bourne again shell"
+#~ msgstr "bash シェル"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "GNOME セッション"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d バイト"
+#~ msgstr[1] "%d バイト"
+
+#~ msgid "%d K"
+#~ msgstr "%d Kバイト"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f Mバイト"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f Mバイト"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f Gバイト"

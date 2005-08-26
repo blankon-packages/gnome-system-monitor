@@ -1,0 +1,637 @@
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Yuriy Syrota <rasta@renome.rovno.ua>, 2001.
+# Maxim Dziumanenko <mvd@mylinux.com.ua>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2004-08-23 14:57+0200\n"
+"Last-Translator: Maxim Dziumanenko <mvd@mylinux.com.ua>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "Контроль системи"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "Показати поточні процеси і стан системи контролю"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "Кевін Вандерслут"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "Йорґен Шейбенґребер - деревовидний перегляд пристроїв"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr "Юрій Сирота"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "(C) 2001 Кевін Вандерслут"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "Контроль ресурсів"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "Немає прихованих процесів"
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "Менеджер прихованих процесів"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "При_ховані процеси:"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "В_идалити з списку"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "Примітка:"
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"Дані процеси приховано. Цей діалог дозволить повернути приховані процеси в "
+"список переглядача процесів."
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "Інформація про процес"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "Команда:"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "Стан:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "Пріоритет:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "Використання пам'яті"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "Всього:"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "RSS:"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "Колективна:"
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "Дуже високий (nice %d)"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "Високий (nice %d)"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "Звичайний (nice %d)"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "Низький (nice %d)"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "Дуже низький (nice %d)"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "З_мінити пріоритет..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "Змінити важливість (рівень nice) процесу"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "При_ховати процес"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "Приховати процес"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "Завершити _процес"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "Примусово завершити виконання процесу."
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "_Знищити процес"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "Примусити процес завершитись негайно."
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "При_ховані процеси"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "Перегляд та редагування вашого списку прихованих процесів"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "Мапи _пам'яті"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "Перегляд мап пам'яті, що відповідають процесу"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "_Спадкоємні процеси"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "Показати дерево спадкоємних процесів"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "_Потоки"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "Показати потоки (підпроцеси)"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "Зав_ершити процес"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "Примусово завершити виконання процесу"
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "Примусити процес завершитись негайно."
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "По_шук:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "Всі процеси"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "Приховані процеси"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "Активні процеси"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "_Відображення:"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "Більше _інформації"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "Назва"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "Каталог"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "Тип"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "Всього"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "Використано"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "Історія ЦП"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "ЦП%d:"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "Історія пам'яті та свопінгу"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "Використано пам'яті:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "з"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "Використано свопінгу:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "Пристрої"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "Список процесів"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "Контроль ресурсів"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "Менеджер програм"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "Запуск програм"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "_Закрити програму"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "Більше _інформації >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< Менше _інформації"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "Назва файлу"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "Початок ВП"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "Кінець ВП"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "Розмір ВП"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "Індикатори"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "Зсув ВП"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "Пристрій"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "I-вузол"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "Мапи пам'яті"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "Назва процесу:"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "Немає такого процесу."
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"Назва процесу: %s \n"
+"\n"
+"Ви не маєте права на зміну пріоритету даного процесу. Ви можете ввести "
+"пароль користувача root для отримання необхідного права."
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Назва процесу: %s \n"
+"\n"
+"Ви не маєте права на зміну рівня nice нижче 0. Ви можете ввести пароль "
+"користувача root для отримання необхідного права."
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Назва процесу: %s \n"
+"\n"
+"Ви не маєте права на завершення даного процесу. Ви можете ввести пароль "
+"користувача root для отримання необхідного права."
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "Помилка під час завершення процесу."
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "Ви впевнені, що хочете приховати цей процес?"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+"Якщо ви приховаєте процес, ви зможете показати відновити його вибравши "
+"\"Приховані процеси\"в меню редагування."
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "_Показувати цей діалог наступного разу."
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr "Ви впевнені, що хочете знищити цей процес?"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "Якщо ви знищите процес, незбережені дані буде втрачено."
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "Ви впевнені, що хочете завершити цей процес?"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "Якщо ви завершите процес, незбережені дані буде втрачено."
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "(Дуже високий пріоритет)"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "(Високий пріоритет)"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "(Звичайний пріоритет)"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "(Низький пріоритет)"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "(Дуже низький пріоритет)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "Змінити пріоритет"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "Змінити _пріоритет"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "Рівень _nice: "
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"Рівень nice пов'язаний з пріоритетом процесу. Менший рівень nice відповідає "
+"вищому рівню процесу."
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "Значок"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "Параметри"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "Період _оновлення:"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "секунд"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "Показувати попереджувальний діалог на _завершенні чи знищенні процесу"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "Показувати попереджувальний діалог на при_ховуванні процесу"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "Поля процесу"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "Графіки"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "Колір _тла:"
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "Колір _розмітки:"
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "Період _оновлення:"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "Знищити процес"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "Завершити процес"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "Пароль користувача root:"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "Невірний пароль."
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr "показати простий діалог для завершення процесів і виходу"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "Назва процесу"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "Аргументи"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "Користувач"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "Статус"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "Пам'ять"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "Резидентна пам'ять"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "Колективна пам'ять"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "Пам'ять RSS"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "Пам'ять сервера X Window"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Nice"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "Запущено"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "Зупинено"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "Очікування"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr " (потік)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s не знайдено."
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "Простий переглядач процесів, що використовує libgtop"
+
+#~ msgid "X window system"
+#~ msgstr "Система X window"
+
+#~ msgid "bourne again shell"
+#~ msgstr "оболонка bourne again"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome-Session"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d байт"
+#~ msgstr[1] "%d байти"
+#~ msgstr[2] "%d байтів"
+
+#~ msgid "%d K"
+#~ msgstr "%d Кб"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f Мб"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f Мб"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f Гб"

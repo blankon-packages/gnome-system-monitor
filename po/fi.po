@@ -1,0 +1,707 @@
+# procman Finnish Translation
+# Suomennos: http://gnome-fi.org/
+# Copyright (C) 2003-2004 Free Software Foundation, Inc.
+# Tarmo Toikkanen <tarmo@iki.fi>, 2002.
+# Lauri Nurmi <lanurmi@iki.fi>, 2003.
+# Pauli Virtanen <pauli.virtanen@hut.fi>, 2003-2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: procman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"PO-Revision-Date: 2004-08-19 02:31+0300\n"
+"Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
+"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+msgid "System Monitor"
+msgstr "Järjestelmän valvonta"
+
+#: gnome-system-monitor.desktop.in.h:2
+msgid "View current processes and monitor system state"
+msgstr "Katsele aktiivisia prosesseja ja valvo järjestelmän tilaa"
+
+#: src/callbacks.c:125
+msgid "Kevin Vandersloot"
+msgstr "Kevin Vandersloot"
+
+#: src/callbacks.c:126
+msgid "Jorgen Scheibengruber - nicer devices treeview"
+msgstr "Jörgen Scheibengruber - mukavampi laitteiden puunäkymä"
+
+#: src/callbacks.c:134
+msgid "translator_credits"
+msgstr ""
+"Pauli Virtanen, 2003-2004\n"
+"Lauri Nurmi, 2003\n"
+"Tarmo Toikkanen, 2002\n"
+"\n"
+"http://gnome-fi.org/"
+
+#: src/callbacks.c:153
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "© 2001 Kevin Vandersloot"
+
+#: src/callbacks.c:154
+#, fuzzy
+msgid "System resources monitor"
+msgstr "Resurssien valvonta"
+
+#: src/favorites.c:344
+msgid "No processes are currently hidden."
+msgstr "Yhtään prosessia ei ole piilotettuna."
+
+#: src/favorites.c:364
+msgid "Manage Hidden Processes"
+msgstr "Piilotetut prosessit"
+
+#: src/favorites.c:388
+msgid "_Hidden processes:"
+msgstr "Piilotetut p_rosessit:"
+
+#: src/favorites.c:410
+msgid "_Remove From List"
+msgstr "_Poista luettelosta"
+
+#: src/favorites.c:419 src/procdialogs.c:440
+msgid "Note:"
+msgstr "Huomio:"
+
+#: src/favorites.c:420
+msgid ""
+"These are the processes you have chosen to hide. You can reshow a process by "
+"removing it from this list."
+msgstr ""
+"Olet piilottanut nämä prosessit. Voit näyttää ne poistamalla ne tästä "
+"luettelosta."
+
+#: src/infoview.c:77
+msgid "Process Info"
+msgstr "Prosessin tiedot"
+
+#: src/infoview.c:91
+msgid "Command:"
+msgstr "Komento:"
+
+#: src/infoview.c:95
+msgid "Status:"
+msgstr "Tila:"
+
+#: src/infoview.c:99
+msgid "Priority:"
+msgstr "Prioriteetti:"
+
+#: src/infoview.c:123
+msgid "Memory Usage"
+msgstr "Muistin käyttö"
+
+#: src/infoview.c:137
+msgid "Total:"
+msgstr "Yhteensä:"
+
+#: src/infoview.c:141
+msgid "RSS:"
+msgstr "Keskusmuistia:"
+
+#: src/infoview.c:145
+msgid "Shared:"
+msgstr "Jaettuna:"
+
+#: src/infoview.c:189
+#, c-format
+msgid "Very high - nice %d"
+msgstr "Todella korkea - nice %d"
+
+#: src/infoview.c:191
+#, c-format
+msgid "High - nice %d"
+msgstr "Korkea - nice %d"
+
+#: src/infoview.c:193
+#, c-format
+msgid "Normal - nice %d"
+msgstr "Tavallinen - nice %d"
+
+#: src/infoview.c:195
+#, c-format
+msgid "Low - nice %d"
+msgstr "Matala - nice %d"
+
+#: src/infoview.c:197
+#, c-format
+msgid "Very low - nice %d"
+msgstr "Todella matala - nice %d"
+
+#: src/interface.c:55 src/interface.c:126
+msgid "_Change Priority..."
+msgstr "_Vaihda prioriteettia..."
+
+#: src/interface.c:55 src/interface.c:126
+msgid "Change the importance (nice value) of a process"
+msgstr "Vaihtaa prosessin prioriteettia (nice-arvo)"
+
+#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+msgid "_Hide Process"
+msgstr "_Piilota prosessi"
+
+#: src/interface.c:60 src/interface.c:137
+msgid "Hide a process"
+msgstr "Piilottaa prosessin"
+
+#: src/interface.c:66 src/interface.c:231
+msgid "End _Process"
+msgstr "_Lopeta prosessi"
+
+#: src/interface.c:66
+msgid "Force a process to finish."
+msgstr "Pakottaa prosessin sammumaan."
+
+#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
+#: src/procdialogs.c:984
+msgid "_Kill Process"
+msgstr "_Tapa prosessi"
+
+#: src/interface.c:71
+msgid "Force a process to finish now."
+msgstr "Pakottaa prosessin sammumaan välittömästi."
+
+#: src/interface.c:77
+msgid "_Hidden Processes"
+msgstr "P_iilotetut prosessit"
+
+#: src/interface.c:78
+msgid "View and edit your list of hidden processes"
+msgstr "Näytä ja muokkaa piilotettujen prosessien luetteloa"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "_Memory Maps"
+msgstr "_Muistikartat"
+
+#: src/interface.c:89 src/interface.c:131
+msgid "View the memory maps associated with a process"
+msgstr "Näyttää prosessiin liittyvät muistikartat"
+
+#: src/interface.c:95
+msgid "Process _Dependencies"
+msgstr "Näytä prosessien _riippuvuudet"
+
+#: src/interface.c:95
+msgid "Display a tree showing process dependencies"
+msgstr "Näytä prosessien riippuvuudet puukaaviona"
+
+#: src/interface.c:100
+msgid "_Threads"
+msgstr "_Säikeet"
+
+#: src/interface.c:100
+msgid "Display threads (subprocesses)"
+msgstr "Näytä säikeet (aliprosessit)"
+
+#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+msgid "_End Process"
+msgstr "_Lopeta prosessi"
+
+#: src/interface.c:143
+msgid "Force a process to finish"
+msgstr "Pakottaa prosessin sammumaan."
+
+#: src/interface.c:148
+msgid "Force a process to finish now"
+msgstr "Pakottaa prosessin sammumaan välittömästi"
+
+#: src/interface.c:188
+msgid "Sea_rch:"
+msgstr "_Etsi:"
+
+#: src/interface.c:200
+msgid "All Processes"
+msgstr "Kaikki prosessit"
+
+#: src/interface.c:201
+msgid "My Processes"
+msgstr "Omat prosessit"
+
+#: src/interface.c:202
+msgid "Active Processes"
+msgstr "Aktiiviset prosessit"
+
+#: src/interface.c:209
+msgid "Vie_w:"
+msgstr "N_äytä:"
+
+#: src/interface.c:236
+msgid "More _Info"
+msgstr "Lisää t_ietoa"
+
+#: src/interface.c:334
+msgid "Name"
+msgstr "Nimi"
+
+#: src/interface.c:335
+msgid "Directory"
+msgstr "Kansio"
+
+#: src/interface.c:336
+msgid "Type"
+msgstr "Tyyppi"
+
+#: src/interface.c:337
+msgid "Total"
+msgstr "Yhteensä"
+
+#: src/interface.c:338
+msgid "Used"
+msgstr "Käyttö"
+
+#: src/interface.c:362
+msgid "CPU History"
+msgstr "Suorittimen käyttöaste"
+
+#: src/interface.c:402
+#, c-format
+msgid "CPU%d:"
+msgstr "CPU%d:"
+
+#: src/interface.c:421
+msgid "Memory and Swap History"
+msgstr "Muistin ja sivutuksen historiikki"
+
+#: src/interface.c:454
+msgid "Used memory:"
+msgstr "Muistin käyttö:"
+
+#: src/interface.c:463 src/interface.c:495
+msgid "of"
+msgstr "/"
+
+#: src/interface.c:486
+msgid "Used swap:"
+msgstr "Sivutustilan käyttö:"
+
+#: src/interface.c:521 src/procdialogs.c:904
+msgid "Devices"
+msgstr "Laitteet"
+
+#: src/interface.c:638 src/procdialogs.c:729
+msgid "Process Listing"
+msgstr "Prosessiluettelo"
+
+#: src/interface.c:644 src/procdialogs.c:816
+msgid "Resource Monitor"
+msgstr "Resurssien valvonta"
+
+#: src/interface.c:702
+msgid "Application Manager"
+msgstr "Sovellusten hallinta"
+
+#: src/interface.c:708
+msgid "Running Applications"
+msgstr "Käynnissä olevat sovellukset"
+
+#: src/interface.c:727
+msgid "_Close Application"
+msgstr "_Sulje sovellus"
+
+#: src/interface.c:770
+msgid "More _Info >>"
+msgstr "Lisää t_ietoa >>"
+
+#: src/interface.c:777
+msgid "<< Less _Info"
+msgstr "<< Vähemmän t_ietoa"
+
+#: src/memmaps.c:256
+msgid "Filename"
+msgstr "Tiedostonimi"
+
+#: src/memmaps.c:257
+msgid "VM Start"
+msgstr "VM-alku"
+
+#: src/memmaps.c:258
+msgid "VM End"
+msgstr "VM-loppu"
+
+#: src/memmaps.c:259 src/proctable.c:122
+msgid "VM Size"
+msgstr "Virtuaalimuisti"
+
+#: src/memmaps.c:260
+msgid "Flags"
+msgstr "Liput"
+
+#: src/memmaps.c:261
+msgid "VM Offset"
+msgstr "VM-siirros"
+
+#: src/memmaps.c:262
+msgid "Device"
+msgstr "Laite"
+
+#: src/memmaps.c:263
+msgid "Inode"
+msgstr "Inode"
+
+#: src/memmaps.c:344
+msgid "Memory Maps"
+msgstr "Muistikartat"
+
+#: src/memmaps.c:364
+msgid "Process name:"
+msgstr "Prosessin nimi:"
+
+#: src/procactions.c:53
+msgid "No such process."
+msgstr "Prosessia ei löydy."
+
+#: src/procactions.c:66
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to change the priority of this process. You can "
+"enter the root password to gain the necessary permission."
+msgstr ""
+"Prosessin nimi : %s \n"
+"\n"
+"Sinulla ei ole oikeutta muuttaa tämän prosessin prioriteettia. Voit antaa "
+"pääkäyttäjän (root) salasanan saadaksesi tarvittavat oikeudet."
+
+#: src/procactions.c:73
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You must be root to renice a process lower than 0. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Prosessin nimi : %s \n"
+"\n"
+"Sinun on oltava pääkäyttäjä voidaksesi antaa prosessille nice-arvon alle 0. "
+"Voit antaa pääkäyttäjän (root) salasanan saadaksesi tarvittavat oikeudet."
+
+#: src/procactions.c:124
+#, fuzzy, c-format
+msgid ""
+"Process Name: %s \n"
+"\n"
+"You do not have permission to end this process. You can enter the root "
+"password to gain the necessary permission."
+msgstr ""
+"Prosessin nimi : %s \n"
+"\n"
+"Sinulla ei ole oikeutta lopettaa tätä prosessia. Voit antaa pääkäyttäjän "
+"(root) salasanan saadaksesi tarvittavat oikeudet."
+
+#: src/procactions.c:143
+msgid "An error occured while killing the process."
+msgstr "Virhe prosessia tapettaessa."
+
+#: src/procdialogs.c:81
+msgid "Are you sure you want to hide this process?"
+msgstr "Haluatko varmasti piilottaa tämän prosessin?"
+
+#: src/procdialogs.c:82
+msgid ""
+"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
+"the Edit menu."
+msgstr ""
+"Kun prosessi on piilotettu, sen saa näkyviin valitsemalla \"Piilotetut "
+"prosessit\" Muokkaa-valikosta."
+
+#: src/procdialogs.c:141 src/procdialogs.c:282
+msgid "_Show this dialog next time"
+msgstr "_Näytä tämä kyselyikkuna seuraavalla kerralla."
+
+#: src/procdialogs.c:218
+msgid "Are you sure you want to kill this process?"
+msgstr "Haluatko varmasti sulkea tämän prosessin väkisin?"
+
+#: src/procdialogs.c:219
+msgid "If you kill a process, unsaved data will be lost."
+msgstr "Jos suljet prosessin väkisin, tallentamattomat tiedot häviävät."
+
+#: src/procdialogs.c:223
+msgid "Are you sure you want to end this process?"
+msgstr "Haluatko varmasti sulkea tämän prosessin?"
+
+#: src/procdialogs.c:224
+msgid "If you end a process, unsaved data will be lost."
+msgstr "Jos suljet prosessin, tallentamattomat tiedot häviävät."
+
+#: src/procdialogs.c:321
+msgid "(Very High Priority)"
+msgstr "(Todella korkea prioriteetti)"
+
+#: src/procdialogs.c:323
+msgid "(High Priority)"
+msgstr "(Korkea prioriteetti)"
+
+#: src/procdialogs.c:325
+msgid "(Normal Priority)"
+msgstr "(Tavallinen prioriteetti)"
+
+#: src/procdialogs.c:327
+msgid "(Low Priority)"
+msgstr "(Matala prioriteetti)"
+
+#: src/procdialogs.c:329
+msgid "(Very Low Priority)"
+msgstr "(Todella matala prioriteetti)"
+
+#: src/procdialogs.c:382 src/procdialogs.c:992
+msgid "Change Priority"
+msgstr "Muuta prioriteettia"
+
+#: src/procdialogs.c:403 src/procdialogs.c:993
+msgid "Change _Priority"
+msgstr "Muuta _prioriteettia"
+
+#: src/procdialogs.c:424
+msgid "_Nice value:"
+msgstr "_Nice-arvo:"
+
+#: src/procdialogs.c:441
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"Prosessin prioriteetin määrää sen nice-arvo. Matalampi nice-arvo vastaa "
+"korkeampaa suoritustärkeyttä."
+
+#: src/procdialogs.c:671
+msgid "Icon"
+msgstr "Kuvake"
+
+#: src/procdialogs.c:711
+msgid "Preferences"
+msgstr "Asetukset"
+
+#: src/procdialogs.c:736
+msgid "Behavior"
+msgstr "Toiminta"
+
+#: src/procdialogs.c:755 src/procdialogs.c:842
+msgid "_Update interval:"
+msgstr "_Päivitysväli:"
+
+#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+msgid "seconds"
+msgstr "sekuntia"
+
+#: src/procdialogs.c:778
+msgid "Show warning dialog when ending or _killing processes"
+msgstr "Näytä varoittava ikkuna ennen prosessin päättämistä tai _tappamista"
+
+#: src/procdialogs.c:788
+msgid "Show warning dialog when _hiding processes"
+msgstr "Näytä varoittava kyselyikkuna ennen prosessin p_iilottamista"
+
+#: src/procdialogs.c:798
+msgid "Process Fields"
+msgstr "Prosessin kentät"
+
+#: src/procdialogs.c:823
+msgid "Graphs"
+msgstr "Graafit"
+
+#: src/procdialogs.c:866
+msgid "_Background color:"
+msgstr "_Taustaväri:"
+
+#: src/procdialogs.c:885
+msgid "_Grid color:"
+msgstr "_Ruudukon väri:"
+
+#: src/procdialogs.c:923
+msgid "Update _interval:"
+msgstr "Päivitys_väli:"
+
+#: src/procdialogs.c:983
+msgid "Kill Process"
+msgstr "Tapa prosessi"
+
+#: src/procdialogs.c:987
+msgid "End Process"
+msgstr "Lopeta prosessi"
+
+#: src/procdialogs.c:1012
+msgid "Root Password :"
+msgstr "Pääkäyttäjän (root) salasana :"
+
+#: src/procdialogs.c:1057
+msgid "Wrong Password."
+msgstr "Väärä salasana."
+
+#: src/procman.c:46
+msgid "show simple dialog to end processes and logout"
+msgstr ""
+"Näytä yksinkertainen kyselyikkuna prosessien sammuttamiseksi ja "
+"uloskirjautumiseksi"
+
+#: src/proctable.c:117
+msgid "Process Name"
+msgstr "Prosessin nimi"
+
+#: src/proctable.c:118
+msgid "Arguments"
+msgstr "Argumentit"
+
+#: src/proctable.c:119
+msgid "User"
+msgstr "Käyttäjä"
+
+#: src/proctable.c:120
+msgid "Status"
+msgstr "Tila"
+
+#: src/proctable.c:121
+msgid "Memory"
+msgstr "Muisti"
+
+#: src/proctable.c:123
+msgid "Resident Memory"
+msgstr "Käytetty muisti"
+
+#: src/proctable.c:124
+msgid "Shared Memory"
+msgstr "Jaettu muisti"
+
+#: src/proctable.c:125
+msgid "RSS Memory"
+msgstr "Keskusmuisti"
+
+#: src/proctable.c:126
+msgid "X Server Memory"
+msgstr "X-palvelimen muisti"
+
+#: src/proctable.c:127
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: src/proctable.c:128
+msgid "Nice"
+msgstr "Nice"
+
+#: src/proctable.c:129
+msgid "ID"
+msgstr "ID"
+
+#: src/proctable.c:277
+msgid "Running"
+msgstr "Käynnissä"
+
+#: src/proctable.c:282
+msgid "Stopped"
+msgstr "Pysäytetty"
+
+#: src/proctable.c:287
+msgid "Sleeping"
+msgstr "Unessa"
+
+#: src/proctable.c:382
+#, fuzzy, c-format
+msgid "%s (thread)"
+msgstr " (säie)"
+
+#: src/proctable.c:959
+#, c-format
+msgid "%s could not be found."
+msgstr "%s ei löytynyt"
+
+#~ msgid "Simple process viewer using libgtop"
+#~ msgstr "libgtop-kirjastoa käyttävä yksinkertainen prosessinäyttäjä"
+
+#~ msgid "X window system"
+#~ msgstr "X-ikkunointijärjestelmä"
+
+#~ msgid "bourne again shell"
+#~ msgstr "bourne again -komentotulkki"
+
+#~ msgid "Gnome-Session"
+#~ msgstr "Gnome-istunto"
+
+#~ msgid "%d byte"
+#~ msgid_plural "%d bytes"
+#~ msgstr[0] "%d tavu"
+#~ msgstr[1] "%d tavua"
+
+#~ msgid "%d K"
+#~ msgstr "%d kt"
+
+#~ msgid "%.1f MB"
+#~ msgstr "%.1f Mt"
+
+#~ msgid "%.0f MB"
+#~ msgstr "%.0f Mt"
+
+#~ msgid "%.1f GB"
+#~ msgstr "%.1f Gt"
+
+#~ msgid "View processes being run by all users"
+#~ msgstr "Näyttää kaikkien käyttäjien ajossa olevat prosessit"
+
+#~ msgid "View processes being run by you"
+#~ msgstr "Näyttää omat ajossa olevat prosessisi"
+
+#~ msgid "View only active processes"
+#~ msgstr "Näyttää vain aktiiviset prosessit"
+
+#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
+#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
+
+#~ msgid "Used CPU:"
+#~ msgstr "Prosessorin käyttö:"
+
+#~ msgid "Change Priority ..."
+#~ msgstr "Vaihda prioriteettia ..."
+
+#~ msgid "Hide Process"
+#~ msgstr "Piilota prosessi"
+
+#~ msgid ""
+#~ "Are you sure you want to hide this process?\n"
+#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
+#~ msgstr ""
+#~ "Haluatko varmasti piilottaa tämän prosessin?\n"
+#~ "(Valitse \"Piilotetut prosessit\" Asetukset-valikosta palauttaaksesi "
+#~ "prosessin)"
+
+#~ msgid "Erik Johnsson (zaphod@linux.nu) - initial icon support"
+#~ msgstr "Erik Johnsson (zaphod@linux.nu) - alustava kuvaketuki"
+
+#~ msgid "Hidden Processes"
+#~ msgstr "Piilotetut prosessit"
+
+#~ msgid "Status : "
+#~ msgstr "Tila : "
+
+#~ msgid "Total : "
+#~ msgstr "Yhteensä : "
+
+#~ msgid "Swap"
+#~ msgstr "Sivutus"
+
+#~ msgid "System _Monitor"
+#~ msgstr "Järjestel_män valvonta"
+
+#~ msgid "_Set"
+#~ msgstr "_Aseta"
+
+#~ msgid "Update Speed ( seconds ) :"
+#~ msgstr "Päivitysväli ( sekunteina ) :"
+
+#~ msgid "Se_t"
+#~ msgstr "Ase_ta"
+
+#~ msgid "Used Space"
+#~ msgstr "Käytetty tila"
+
+#~ msgid "Total Space"
+#~ msgstr "Tilaa yhteensä"
