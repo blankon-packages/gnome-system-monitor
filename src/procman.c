@@ -19,11 +19,19 @@
 
 #include <config.h>
 
+#include <stdlib.h>
+
+#include <glib.h>
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include <gdk/gdkx.h>
 #include <gnome.h>
-#include <libgnomeui/gnome-window-icon.h>
+#include <bacon-message-connection.h>
+#include <libgnomevfs/gnome-vfs.h>
 #include <gconf/gconf-client.h>
 #include <glibtop.h>
 #include <glibtop/close.h>
+#include <glibtop/loadavg.h>
 #include "load-graph.h"
 #include "procman.h"
 #include "interface.h"
@@ -31,37 +39,8 @@
 #include "prettytable.h"
 #include "favorites.h"
 #include "callbacks.h"
+#include "smooth_refresh.h"
 
-static GtkWidget *app = NULL;
-static int simple_view = FALSE;
-
-
-static const struct poptOption options[] = {
-  {
-    "simple",
-    's',
-    POPT_ARG_NONE,
-    &simple_view,
-    0,
-    N_("show simple dialog to end processes and logout"),
-    NULL,
-  },
-  {
-    NULL,
-    '\0',
-    0,
-    NULL,
-    0,
-    NULL,
-    NULL
-  }
-};
-
-static void
-load_desktop_files (ProcData *pd)
-{
-	pd->pretty_table = pretty_table_new (pd);
-}
 
 static void
 tree_changed_cb (GConfClient *client, guint id, GConfEntry *entry, gpointer data)
@@ -107,7 +86,7 @@ warning_changed_cb (GConfClient *client, guint id, GConfEntry *entry, gpointer d
 	const gchar *key = gconf_entry_get_key (entry);
 	GConfValue *value = gconf_entry_get_value (entry);
 	
-	if (!g_strcasecmp (key, "/apps/procman/kill_dialog")) {
+	if (g_str_equal (key, "/apps/procman/kill_dialog")) {
 		procdata->config.show_kill_warning = gconf_value_get_bool (value);
 	}
 	else {
@@ -122,91 +101,126 @@ timeouts_changed_cb (GConfClient *client, guint id, GConfEntry *entry, gpointer 
 	const gchar *key = gconf_entry_get_key (entry);
 	GConfValue *value = gconf_entry_get_value (entry);
 
-	if (!g_strcasecmp (key, "/apps/procman/update_interval")) {
+	if (g_str_equal (key, "/apps/procman/update_interval")) {
 		procdata->config.update_interval = gconf_value_get_int (value);
 		procdata->config.update_interval = 
 			MAX (procdata->config.update_interval, 1000);
-		gtk_timeout_remove (procdata->timeout);
-		procdata->timeout = gtk_timeout_add (procdata->config.update_interval, 
-						     cb_timeout, procdata);
+
+		smooth_refresh_reset(procdata->smooth_refresh);
+
+		if(procdata->timeout) {
+			g_source_remove (procdata->timeout);
+			procdata->timeout = g_timeout_add (procdata->config.update_interval,
+							   cb_timeout,
+							   procdata);
+		}
 	}
-	else if (!g_strcasecmp (key, "/apps/procman/graph_update_interval")){
+	else if (g_str_equal (key, "/apps/procman/graph_update_interval")){
 		procdata->config.graph_update_interval = gconf_value_get_int (value);
 		procdata->config.graph_update_interval = 
 			MAX (procdata->config.graph_update_interval, 
 			     250);
-		gtk_timeout_remove (procdata->cpu_graph->timer_index);
-		procdata->cpu_graph->timer_index = -1;
-		procdata->cpu_graph->speed = procdata->config.graph_update_interval;
-		
-	
-		gtk_timeout_remove (procdata->mem_graph->timer_index);
-		procdata->mem_graph->timer_index = -1;
-		procdata->mem_graph->speed = procdata->config.graph_update_interval;
-	
-		load_graph_start (procdata->cpu_graph);
-		load_graph_start (procdata->mem_graph);	
+		load_graph_change_speed(procdata->cpu_graph,
+					procdata->config.graph_update_interval);
+		load_graph_change_speed(procdata->mem_graph,
+					procdata->config.graph_update_interval);
+		load_graph_change_speed(procdata->net_graph,
+					procdata->config.graph_update_interval);
 	}
-	else {
+	else if (g_str_equal(key, "/apps/procman/disks_interval")) {
 		
 		procdata->config.disks_update_interval = gconf_value_get_int (value);
 		procdata->config.disks_update_interval = 
 			MAX (procdata->config.disks_update_interval, 1000);	
-		gtk_timeout_remove (procdata->disk_timeout);
-		procdata->disk_timeout = 
-			gtk_timeout_add (procdata->config.disks_update_interval,
-  					 cb_update_disks, procdata);	
-		
+
+		if(procdata->disk_timeout) {
+			g_source_remove (procdata->disk_timeout);
+			procdata->disk_timeout = \
+				g_timeout_add (procdata->config.disks_update_interval,
+					       cb_update_disks,
+					       procdata);
+		}
+	}
+	else {
+		g_assert_not_reached();
 	}
 }
 
 static void
 color_changed_cb (GConfClient *client, guint id, GConfEntry *entry, gpointer data)
 {
-	ProcData *procdata = data;
+	ProcData * const procdata = data;
 	const gchar *key = gconf_entry_get_key (entry);
 	GConfValue *value = gconf_entry_get_value (entry);
 	const gchar *color = gconf_value_get_string (value);
-	gint i;
 
-	if (!g_strcasecmp (key, "/apps/procman/bg_color")) {
+	if (g_str_equal (key, "/apps/procman/bg_color")) {
 		gdk_color_parse (color, &procdata->config.bg_color);
-		procdata->cpu_graph->colors[0] = procdata->config.bg_color;
-		procdata->mem_graph->colors[0] = procdata->config.bg_color;
+		load_graph_get_colors(procdata->cpu_graph)[0] = procdata->config.bg_color;
+		load_graph_get_colors(procdata->mem_graph)[0] = procdata->config.bg_color;
+		load_graph_get_colors(procdata->net_graph)[0] = procdata->config.bg_color;
 	}
-	else if (!g_strcasecmp (key, "/apps/procman/frame_color")) {
+	else if (g_str_equal (key, "/apps/procman/frame_color")) {
 		gdk_color_parse (color, &procdata->config.frame_color);
-		procdata->cpu_graph->colors[1] = procdata->config.frame_color;
-		procdata->mem_graph->colors[1] = procdata->config.frame_color;
+		load_graph_get_colors(procdata->cpu_graph)[1] = procdata->config.frame_color;
+		load_graph_get_colors(procdata->mem_graph)[1] = procdata->config.frame_color;
+		load_graph_get_colors(procdata->net_graph)[1] = procdata->config.frame_color;
 	}
-	else if (!g_strcasecmp (key, "/apps/procman/cpu_color")) {
+	else if (g_str_equal (key, "/apps/procman/cpu_color")) {
 		gdk_color_parse (color, &procdata->config.cpu_color[0]);
-		procdata->cpu_graph->colors[2] = procdata->config.cpu_color[0];
+		load_graph_get_colors(procdata->cpu_graph)[2] = procdata->config.cpu_color[0];
 	}
-	else if (g_strrstr (key, "/apps/procman/cpu_color")) {
+	else if (g_str_has_prefix (key, "/apps/procman/cpu_color")) {
+		gint i;
+
 		for (i=1;i<GLIBTOP_NCPU;i++) {
 			gchar *cpu_key;
 			cpu_key = g_strdup_printf ("/apps/procman/cpu_color%d",i);
-			if (!g_strcasecmp (key, cpu_key)) {
+			if (g_str_equal (key, cpu_key)) {
 				gdk_color_parse (color, &procdata->config.cpu_color[i]);
-				procdata->cpu_graph->colors[i+2] = procdata->config.cpu_color[i];
+				load_graph_get_colors(procdata->cpu_graph)[i+2] = procdata->config.cpu_color[i];
 			}
 			g_free (cpu_key);
 		}
 	}
-	else if (!g_strcasecmp (key, "/apps/procman/mem_color")) {
+	else if (g_str_equal (key, "/apps/procman/mem_color")) {
 		gdk_color_parse (color, &procdata->config.mem_color);
-		procdata->mem_graph->colors[2] = procdata->config.mem_color;
+		load_graph_get_colors(procdata->mem_graph)[2] = procdata->config.mem_color;
 	}
-	else if (!g_strcasecmp (key, "/apps/procman/swap_color")) {
+	else if (g_str_equal (key, "/apps/procman/swap_color")) {
 		gdk_color_parse (color, &procdata->config.swap_color);
-		procdata->mem_graph->colors[3] = procdata->config.swap_color;
+		load_graph_get_colors(procdata->mem_graph)[3] = procdata->config.swap_color;
 	}
-		
-	procdata->cpu_graph->colors_allocated = FALSE;
-	procdata->mem_graph->colors_allocated = FALSE;
-		
+	else if (g_str_equal (key, "/apps/procman/net_in_color")) {
+		gdk_color_parse (color, &procdata->config.net_in_color);
+		load_graph_get_colors(procdata->net_graph)[2] = procdata->config.net_in_color;
+	}
+	else if (g_str_equal (key, "/apps/procman/net_out_color")) {
+		gdk_color_parse (color, &procdata->config.net_out_color);
+		load_graph_get_colors(procdata->net_graph)[3] = procdata->config.net_out_color;
+	}
+	else {
+		g_assert_not_reached();
+	}
+
+	load_graph_reset_colors(procdata->cpu_graph);
+	load_graph_reset_colors(procdata->mem_graph);
+	load_graph_reset_colors(procdata->net_graph);
 }
+
+
+
+static void
+show_all_fs_changed_cb (GConfClient *client, guint id, GConfEntry *entry, gpointer data)
+{
+	ProcData * const procdata = data;
+	GConfValue *value = gconf_entry_get_value (entry);
+
+	procdata->config.show_all_fs = gconf_value_get_bool (value);
+
+	cb_update_disks (data);
+}
+
 
 static ProcData *
 procman_data_new (GConfClient *client)
@@ -217,22 +231,34 @@ procman_data_new (GConfClient *client)
 	gint swidth, sheight;
 	gint i;
 	glibtop_cpu cpu;
-	
+	glibtop_loadavg loadavg;
+	gsize nprocs;
+
 	pd = g_new0 (ProcData, 1);
 	
 	pd->tree = NULL;
-	pd->infobox = NULL;
 	pd->info = NULL;
+	pd->pids = g_hash_table_new(NULL, NULL);
 	pd->selected_process = NULL;
-	pd->timeout = -1;
+	pd->timeout = 0;
 	pd->blacklist = NULL;
 	pd->cpu_graph = NULL;
 	pd->mem_graph = NULL;
-	pd->disk_timeout = -1;
+	pd->net_graph = NULL;
+	pd->disk_timeout = 0;
+
+	glibtop_get_loadavg(&loadavg);
+	nprocs = (loadavg.nr_tasks ? 1.2f * loadavg.nr_tasks : 100);
+	pd->procinfo_allocator = g_mem_chunk_create(ProcInfo, nprocs, G_ALLOC_AND_FREE);
+
+	/* username is usually 8 chars long
+	   for caching, we create chunks of 128 chars */
+	pd->users = g_string_chunk_new(128);
+	/* push empty string */
+	g_string_chunk_insert_const(pd->users, "");
 
 	pd->config.width = gconf_client_get_int (client, "/apps/procman/width", NULL);
 	pd->config.height = gconf_client_get_int (client, "/apps/procman/height", NULL);
-	pd->config.show_more_info = gconf_client_get_bool (client, "/apps/procman/more_info", NULL);
 	pd->config.show_tree = gconf_client_get_bool (client, "/apps/procman/show_tree", NULL);
 	gconf_client_notify_add (client, "/apps/procman/show_tree", tree_changed_cb,
 				 pd, NULL, NULL);
@@ -261,11 +287,21 @@ procman_data_new (GConfClient *client)
 								 NULL);
 	gconf_client_notify_add (client, "/apps/procman/disks_interval", timeouts_changed_cb,
 				 pd, NULL, NULL);
+
+
+	/* /apps/procman/show_all_fs */
+	pd->config.show_all_fs = gconf_client_get_bool (
+		client, "/apps/procman/show_all_fs",
+		NULL);
+	gconf_client_notify_add
+		(client, "/apps/procman/show_all_fs",
+		 show_all_fs_changed_cb, pd, NULL, NULL);
+
+
 	pd->config.whose_process = gconf_client_get_int (client, "/apps/procman/view_as", NULL);
 	gconf_client_notify_add (client, "/apps/procman/view_as", view_as_changed_cb,
 				 pd, NULL, NULL);
 	pd->config.current_tab = gconf_client_get_int (client, "/apps/procman/current_tab", NULL);
-	pd->config.pane_pos = gconf_client_get_int (client, "/apps/procman/pane_pos", NULL);
 
 	color = gconf_client_get_string (client, "/apps/procman/bg_color", NULL);
 	if (!color)
@@ -285,7 +321,7 @@ procman_data_new (GConfClient *client)
 	
 	color = gconf_client_get_string (client, "/apps/procman/cpu_color", NULL);
 	if (!color)
-		color = g_strdup ("#f25915e815e8");
+		color = g_strdup ("#000000a200ff");
 	gconf_client_notify_add (client, "/apps/procman/cpu_color", 
 			  	 color_changed_cb, pd, NULL, NULL);
 	gdk_color_parse(color, &pd->config.cpu_color[0]);
@@ -306,7 +342,7 @@ procman_data_new (GConfClient *client)
 	}
 	color = gconf_client_get_string (client, "/apps/procman/mem_color", NULL);
 	if (!color)
-		color = g_strdup ("#f25915e815e8");
+		color = g_strdup ("#000000ff0082");
 	gconf_client_notify_add (client, "/apps/procman/mem_color", 
 			  	 color_changed_cb, pd, NULL, NULL);
 	gdk_color_parse(color, &pd->config.mem_color);
@@ -315,25 +351,29 @@ procman_data_new (GConfClient *client)
 	
 	color = gconf_client_get_string (client, "/apps/procman/swap_color", NULL);
 	if (!color)
-		color = g_strdup ("#212fe32b212f");
+		color = g_strdup ("#00b6000000ff");
 	gconf_client_notify_add (client, "/apps/procman/swap_color", 
 			  	 color_changed_cb, pd, NULL, NULL);
 	gdk_color_parse(color, &pd->config.swap_color);
 	g_free (color);
+
+	color = gconf_client_get_string (client, "/apps/procman/net_in_color", NULL);
+	if (!color)
+		color = g_strdup ("#000000f200f2");
+	gconf_client_notify_add (client, "/apps/procman/net_in_color",
+			  	 color_changed_cb, pd, NULL, NULL);
+	gdk_color_parse(color, &pd->config.net_in_color);
+	g_free (color);
+
+	color = gconf_client_get_string (client, "/apps/procman/net_out_color", NULL);
+	if (!color)
+		color = g_strdup ("#00f2000000c1");
+	gconf_client_notify_add (client, "/apps/procman/net_out_color",
+			  	 color_changed_cb, pd, NULL, NULL);
+	gdk_color_parse(color, &pd->config.net_out_color);
+	g_free (color);
 	
 	get_blacklist (pd, client);
-
-	pd->config.simple_view = FALSE;	
-	if (pd->config.simple_view) {
-		pd->config.width = 325;
-		pd->config.height = 400;
-		pd->config.whose_process = 1;
-		pd->config.show_more_info = FALSE;
-		pd->config.show_tree = FALSE;
-		pd->config.show_kill_warning = TRUE;
-		pd->config.show_threads = FALSE;
-		pd->config.current_tab = 0;
-	}	
 	
 	/* Sanity checks */
 	swidth = gdk_screen_width ();
@@ -344,13 +384,12 @@ procman_data_new (GConfClient *client)
 	pd->config.graph_update_interval = MAX (pd->config.graph_update_interval, 250);
 	pd->config.disks_update_interval = MAX (pd->config.disks_update_interval, 1000);
 	pd->config.whose_process = CLAMP (pd->config.whose_process, 0, 2);
-	pd->config.current_tab = CLAMP (pd->config.current_tab, 0, 1);
-	if (pd->config.pane_pos == 0)
-		pd->config.pane_pos = 300;
+	pd->config.current_tab = CLAMP (pd->config.current_tab, 0, 2);
 	
 	/* Determinie number of cpus since libgtop doesn't really tell you*/
 	pd->config.num_cpus = 0;
 	glibtop_get_cpu (&cpu);
+	pd->frequency = cpu.frequency;
 	i=0;
     	while (i < GLIBTOP_NCPU && cpu.xcpu_total[i] != 0) {
     	    pd->config.num_cpus ++;
@@ -358,7 +397,9 @@ procman_data_new (GConfClient *client)
     	}
     	if (pd->config.num_cpus == 0)
     		pd->config.num_cpus = 1;
-    	
+
+	pd->smooth_refresh = smooth_refresh_new(&pd->config.update_interval);
+
 	return pd;
 
 }
@@ -368,26 +409,26 @@ procman_free_data (ProcData *procdata)
 {
 
 	proctable_free_table (procdata);
-	
-	/* pretty_table_free (procdata->pretty_table); */
-	
+	g_hash_table_destroy(procdata->pids);
+	pretty_table_free (procdata->pretty_table);
+	smooth_refresh_destroy(procdata->smooth_refresh);
 	g_free (procdata);
 	
 }
 
 
 gboolean
-procman_get_tree_state (GConfClient *client, GtkWidget *tree, gchar *prefix)
+procman_get_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix)
 {
 	GtkTreeModel *model;
+	GList *columns, *it;
 	gint sort_col;
 	GtkSortType order;
 	gchar *key;
-	gint i = 0;
-	gboolean done = FALSE;
 	
-	g_return_val_if_fail (tree, FALSE);
-	g_return_val_if_fail (prefix, FALSE);
+
+	g_assert(tree);
+	g_assert(prefix);
 	
 	if (!gconf_client_dir_exists (client, prefix, NULL)) 
 		return FALSE;
@@ -406,51 +447,68 @@ procman_get_tree_state (GConfClient *client, GtkWidget *tree, gchar *prefix)
 		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (model),
 					      	      sort_col,
 					              order);
-	
-	while (!done) {
+
+	columns = gtk_tree_view_get_columns (GTK_TREE_VIEW (tree));
+
+	for(it = columns; it; it = it->next)
+	{
 		GtkTreeViewColumn *column;
 		GConfValue *value = NULL;
 		gint width;
 		gboolean visible;
-		
-		
-		key = g_strdup_printf ("%s/col_%d_width", prefix, i);
+		int id;
+
+		column = it->data;
+		id = gtk_tree_view_column_get_sort_column_id (column);
+
+		key = g_strdup_printf ("%s/col_%d_width", prefix, id);
 		value = gconf_client_get (client, key, NULL);
 		g_free (key);
-		
+
 		if (value != NULL) {
 			width = gconf_value_get_int(value);
 			gconf_value_free (value);
-		
-			key = g_strdup_printf ("%s/col_%d_visible", prefix, i);
+
+			key = g_strdup_printf ("%s/col_%d_visible", prefix, id);
 			visible = gconf_client_get_bool (client, key, NULL);
 			g_free (key);
-		
-			column = gtk_tree_view_get_column (GTK_TREE_VIEW (tree), i);
+
+			column = gtk_tree_view_get_column (GTK_TREE_VIEW (tree), id);
+			if(!column) continue;
 			gtk_tree_view_column_set_visible (column, visible);
 			if (width > 0)
 				gtk_tree_view_column_set_fixed_width (column, width);
 		}
-		else
-			done = TRUE;
-		
-		i++;
 	}
+
+	if(g_str_has_suffix(prefix, "proctree"))
+	{
+		GSList *order;
+		char *key;
+
+		key = g_strdup_printf("%s/columns_order", prefix);
+		order = gconf_client_get_list(client, key, GCONF_VALUE_INT, NULL);
+		proctable_set_columns_order(GTK_TREE_VIEW(tree), order);
+
+		g_slist_free(order);
+		g_free(key);
+	}
+
+	g_list_free(columns);
 	
 	return TRUE;
 }
 
 void
-procman_save_tree_state (GConfClient *client, GtkWidget *tree, gchar *prefix)
+procman_save_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix)
 {
 	GtkTreeModel *model;
-	GList *columns;
+	GList *it, *columns;
 	gint sort_col;
 	GtkSortType order;
-	gint i = 0;
 	
-	g_return_if_fail (tree);
-	g_return_if_fail (prefix);
+	g_assert(tree);
+	g_assert(prefix);
 	
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree));
 	if (gtk_tree_sortable_get_sort_column_id (GTK_TREE_SORTABLE (model), &sort_col,
@@ -467,57 +525,71 @@ procman_save_tree_state (GConfClient *client, GtkWidget *tree, gchar *prefix)
 	}			       
 	
 	columns = gtk_tree_view_get_columns (GTK_TREE_VIEW (tree));
-	
-	while (columns) {
-		GtkTreeViewColumn *column = columns->data;
+
+	for(it = columns; it; it = it->next)
+	{
+		GtkTreeViewColumn *column;
 		gboolean visible;
 		gint width;
 		gchar *key;
-		
+		int id;
+
+		column = it->data;
+		id = gtk_tree_view_column_get_sort_column_id (column);
 		visible = gtk_tree_view_column_get_visible (column);
 		width = gtk_tree_view_column_get_width (column);
-		
-		key = g_strdup_printf ("%s/col_%d_width", prefix, i);
+
+		key = g_strdup_printf ("%s/col_%d_width", prefix, id);
 		gconf_client_set_int (client, key, width, NULL);
 		g_free (key);
-		
-		key = g_strdup_printf ("%s/col_%d_visible", prefix, i);
+
+		key = g_strdup_printf ("%s/col_%d_visible", prefix, id);
 		gconf_client_set_bool (client, key, visible, NULL);
 		g_free (key);
-		
-		columns = g_list_next (columns);
-		i++;
 	}
-	
+
+	if(g_str_has_suffix(prefix, "proctree"))
+	{
+		GSList *order;
+		char *key;
+		GError *error = NULL;
+
+		key = g_strdup_printf("%s/columns_order", prefix);
+		order = proctable_get_columns_order(GTK_TREE_VIEW(tree));
+
+		if(!gconf_client_set_list(client, key, GCONF_VALUE_INT, order, &error))
+		{
+			g_error("Could not save GConf key '%s' : %s",
+				key,
+				error->message);
+			g_error_free(error);
+		}
+
+		g_slist_free(order);
+		g_free(key);
+	}
+
+	g_list_free(columns);
 }
 
 void
 procman_save_config (ProcData *data)
 {
 	GConfClient *client = data->client;
-	gint width, height, pane_pos;
+	gint width, height;
 
-	if (!data)
-		return;
-		
-	if (data->config.simple_view)
-		return;
+	g_assert(data);
 		
 	procman_save_tree_state (data->client, data->tree, "/apps/procman/proctree");
 	procman_save_tree_state (data->client, data->disk_list, "/apps/procman/disktreenew");
 		
-	gdk_window_get_size (app->window, &width, &height);
+	gdk_window_get_size (data->app->window, &width, &height);
 	data->config.width = width;
 	data->config.height = height;
 	
-	pane_pos = get_sys_pane_pos ();
-	data->config.pane_pos = pane_pos;
-	
 	gconf_client_set_int (client, "/apps/procman/width", data->config.width, NULL);
 	gconf_client_set_int (client, "/apps/procman/height", data->config.height, NULL);	
-	gconf_client_set_bool (client, "/apps/procman/more_info", data->config.show_more_info, NULL);
 	gconf_client_set_int (client, "/apps/procman/current_tab", data->config.current_tab, NULL);
-	gconf_client_set_int (client, "/apps/procman/pane_pos", data->config.pane_pos, NULL);
 	
 	save_blacklist (data, client);
 
@@ -527,65 +599,150 @@ procman_save_config (ProcData *data)
 	
 }
 
+static guint32
+get_startup_timestamp ()
+{
+	const gchar *startup_id_env;
+	gchar *startup_id = NULL;
+	gchar *time_str;
+	gulong retval = 0;
+
+	/* we don't unset the env, since startup-notification
+	 * may still need it */
+	startup_id_env = g_getenv ("DESKTOP_STARTUP_ID");
+	if (startup_id_env == NULL)
+		goto out;
+
+	startup_id = g_strdup (startup_id_env);
+
+	time_str = g_strrstr (startup_id, "_TIME");
+	if (time_str == NULL)
+		goto out;
+
+	/* Skip past the "_TIME" part */
+	time_str += 5;
+
+	retval = strtoul (time_str, NULL, 0);
+
+ out:
+	g_free (startup_id);
+
+	return retval;
+}
+
+
+static void
+cb_server (const gchar *msg, gpointer user_data)
+{
+	GdkWindow *window;
+	ProcData *procdata;
+	guint32 timestamp;
+
+	window = gdk_get_default_root_window ();
+
+	procdata = *(ProcData**)user_data;
+	g_assert (procdata != NULL);
+
+	timestamp = strtoul(msg, NULL, 0);
+
+	if (timestamp == 0)
+	{
+		/* fall back to rountripping to X */
+		timestamp = gdk_x11_get_server_time (window);
+	}
+
+	gdk_x11_window_set_user_time (window, timestamp);
+
+	gtk_window_present (GTK_WINDOW(procdata->app));
+}
+
+
+static void
+init_volume_monitor(ProcData *procdata)
+{
+	GnomeVFSVolumeMonitor *mon;
+	mon = gnome_vfs_get_volume_monitor();
+
+	g_signal_connect(mon, "volume_mounted",
+			 G_CALLBACK(cb_volume_mounted_or_unmounted), procdata);
+
+	g_signal_connect(mon, "volume_unmounted",
+			 G_CALLBACK(cb_volume_mounted_or_unmounted), procdata);
+}
+
 
 int
 main (int argc, char *argv[])
 {
+	guint32 startup_timestamp;
 	GnomeProgram *procman;
 	GConfClient *client;
 	ProcData *procdata;
-	/* GValue value = {0,};
-	poptContext pctx;
-	char **args; */
-	
+	BaconMessageConnection *conn;
+
 	bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
+	startup_timestamp = get_startup_timestamp();
+
 	procman = gnome_program_init ("gnome-system-monitor", VERSION, 
-				      LIBGNOMEUI_MODULE, argc, argv, 
-			    	      GNOME_PARAM_POPT_TABLE, options, 
+				       LIBGNOMEUI_MODULE, argc, argv,
 				      GNOME_PARAM_APP_DATADIR,DATADIR, NULL);
-	gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/procman.png");
+
+	conn = bacon_message_connection_new ("gnome-system-monitor");
+	if (!conn) g_error("Couldn't connect to gnome-system-monitor");
+
+	if (bacon_message_connection_get_is_server (conn))
+	{
+		bacon_message_connection_set_callback (conn, cb_server, &procdata);
+	}
+	else /* client */
+	{
+		char *timestamp;
+
+		timestamp = g_strdup_printf ("%" G_GUINT32_FORMAT, startup_timestamp);
+
+		bacon_message_connection_send (conn, timestamp);
+
+		gdk_notify_startup_complete ();
+
+		g_free (timestamp);
+		bacon_message_connection_free (conn);
+
+		exit (0);
+	}
+
+	gtk_window_set_default_icon_name ("gnome-monitor");
 		    
 	gconf_init (argc, argv, NULL);
 			    
 	client = gconf_client_get_default ();
 	gconf_client_add_dir(client, "/apps/procman", GCONF_CLIENT_PRELOAD_NONE, NULL);
-        		    
-	/*g_value_init (&value, G_TYPE_POINTER);
-  	g_object_get_property (G_OBJECT(procman),
-                               GNOME_PARAM_POPT_CONTEXT, &value);
-        (poptContext)pctx = g_value_get_pointer (&value);
-                               
-	args = (char**) poptGetArgs (pctx);
-	poptFreeContext(pctx);*/
-	
+
+	gnome_vfs_init ();
 	glibtop_init ();
 	
 	procdata = procman_data_new (client);
 	procdata->client = client;
-	
-	if (procdata->config.simple_view) 
-		app = create_simple_view_dialog (procdata);
-	else 
-		app = create_main_window (procdata);
-	
-	load_desktop_files (procdata);
+	pretty_table_new (procdata);
+
+	create_main_window (procdata);
 	
 	proctable_update_all (procdata);
-		 
-	
-	if (!app)
-		return 1;  
+
+	init_volume_monitor (procdata);
+
+	g_assert(procdata->app);
 			
- 	gtk_widget_show (app);	
+ 	gtk_widget_show(procdata->app);
  	
 	gtk_main ();
 	
 	procman_free_data (procdata);
 
 	glibtop_close ();
+	gnome_vfs_shutdown ();
 
 	return 0;
 }

@@ -1,638 +1,837 @@
+# translation of procman.HEAD.po to Punjabi
+# translation of procman.gnome-2-8.po to Punjabi
 # translation of procman.HEAD.pa.po to Punjabi
 # translation of pa.po to Punjabi
 # Punjabi translation of procman.HEAD.
 # Copyright (C) 2004 THE procman.HEAD'S COPYRIGHT HOLDER
 # Amanpreet Singh Alam <aalam@redhat.com>, 2004.
+# Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: procman.HEAD.pa\n"
+"Project-Id-Version: procman.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-24 16:57+0100\n"
-"PO-Revision-Date: 2004-08-21 16:34+0530\n"
-"Last-Translator: Amanpreet Singh Alam <aalam@redhat.com>\n"
+"POT-Creation-Date: 2005-09-02 14:48+0000\n"
+"PO-Revision-Date: 2005-09-02 00:59+0530\n"
+"Last-Translator: Amanpreet Singh Alam <amanpreetalam@yahoo.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 "\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.10.2\n"
 
-#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+#: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:165
+#: ../src/interface.c:680
 msgid "System Monitor"
 msgstr "ਸਿਸਟਮ ਨਿਗਰਾਨ"
 
-#: gnome-system-monitor.desktop.in.h:2
+#: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:166
 msgid "View current processes and monitor system state"
-msgstr "ਵਰਤਮਾਨ ਕਾਰਜ ਵੇਖੋ ਅਤੇ ਸਿਸਟਮ ਸਥਿਤੀ ਸੰਭਾਲੋ"
+msgstr "ਮੌਜੂਦਾ ਕਾਰਜ ਵੇਖੋ ਅਤੇ ਸਿਸਟਮ ਸਥਿਤੀ ਦੀ ਨਿਗਰਾਨੀ ਕਰੋ"
 
-#: src/callbacks.c:125
-msgid "Kevin Vandersloot"
-msgstr "ਕੇਵਿਨ ਵੈਂਡਸਲੂਟ"
-
-#: src/callbacks.c:126
+#: ../src/callbacks.c:150
 msgid "Jorgen Scheibengruber - nicer devices treeview"
-msgstr "ਜੋਰਜ਼ਨ Scheibengruber - ਜੰਤਰ ਦਾ ਵਧੀਆ ਲੜੀ ਦਰਿਸ਼"
+msgstr "ਜੋਰਜ਼ਨ Scheibengruber - ਨਾਈਸ ਜੰਤਰ ਲੜੀ ਝਲਕ"
 
-#: src/callbacks.c:134
-msgid "translator_credits"
+#: ../src/callbacks.c:151
+msgid "Benoît Dejean - maintainer"
+msgstr "Benoît Dejean - ਪਰਬੰਧਕ"
+
+#: ../src/callbacks.c:174
+msgid "translator-credits"
 msgstr ""
-"ਜਸਵਿੰਦਰ ਸਿੰਘ ਫੂਲੇਵਾਲਾ (jaswinderlinux@netscape.com) ਅਮਨਪ੍ਰੀਤ ਸਿੰਘ "
-"ਆਲਮਵਾਲਾ<aalam@redhat.com>"
+"ਜਸਵਿੰਦਰ ਸਿੰਘ ਫੂਲੇਵਾਲਾ (jaswinderphulewala@yahoo.com)\n"
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮਵਾਲਾ(amanpreetalam@yahoo.com)\n"
+"Punjab Open Source Tercels\n"
+"http://punlinux.sf.net/news"
 
-#: src/callbacks.c:153
-msgid "(C) 2001 Kevin Vandersloot"
-msgstr "੨੦੦੧ ਲਈ ਹੱਕ ਰਾਖਵੇ ਹਨ ਕੇਵਿਨ ਵੈੰਡਰਸਲੂਟ ਕੋਲ"
+#. translators: primary alert message
+#: ../src/favorites.c:348
+msgid "No hidden processes"
+msgstr "ਕੋਈ ਓਹਲੇ ਕਾਰਜ ਨਹੀਂ ਹੈ"
 
-#: src/callbacks.c:154
-#, fuzzy
-msgid "System resources monitor"
-msgstr "ਸਰੋਤ ਜਾਂਚਕਾਰ"
+#. translators: secondary alert message
+#: ../src/favorites.c:355
+msgid ""
+"There are no hidden processes in the list. To show all running processes, "
+"select the \"All processes\" option in the main window."
+msgstr "ਸੂਚੀ ਵਿੱਚ ਕੋਈ ਲੁਕਵਾਂ ਕਾਰਜ ਨਹੀਂ ਹੈ। ਸਭ ਚੱਲਦੇ ਕਾਰਜ ਵੇਖਣ ਲਈ ਮੁੱਖ ਝਰੋਖੇ ਵਿੱਚੋਂ \"ਸਭ ਕਾਰਜ\" ਚੁਣੋ।"
 
-#: src/favorites.c:344
-msgid "No processes are currently hidden."
-msgstr "ਹੁਣ ਕੋਈ ਵੀ ਕਾਰਜ ਲੁਕਵਾਂ ਨਹੀ ਰੱਖਿਆ|"
+#: ../src/favorites.c:375
+msgid "Hidden Processes"
+msgstr "ਲੁਕਵੇਂ ਕਾਰਜ"
 
-#: src/favorites.c:364
-msgid "Manage Hidden Processes"
-msgstr "ਲੁਕਵੇਂ ਕਾਰਜ ਨੂੰ ਸੰਭਾਲੋ"
+#: ../src/favorites.c:399
+msgid "Currently _hidden processes:"
+msgstr "ਮੌਜੂਦਾ ਲੁਕਵੇਂ ਕਾਰਜ(_h):"
 
-#: src/favorites.c:388
-msgid "_Hidden processes:"
-msgstr "ਲੁਕਵੇਂ ਕਾਰਜ:"
-
-#: src/favorites.c:410
+#: ../src/favorites.c:421
 msgid "_Remove From List"
-msgstr "ਸੂਚੀ ਵਿੱਚੋ ਹਟਾਓ"
+msgstr "ਸੂਚੀ ਵਿੱਚੋਂ ਹਟਾਓ(_R)"
 
-#: src/favorites.c:419 src/procdialogs.c:440
+#: ../src/favorites.c:430 ../src/procdialogs.c:282
 msgid "Note:"
-msgstr "ਟਿੱਪਣੀ:"
+msgstr "ਸੂਚਨਾ:"
 
-#: src/favorites.c:420
+#: ../src/favorites.c:431
 msgid ""
 "These are the processes you have chosen to hide. You can reshow a process by "
 "removing it from this list."
-msgstr ""
-"ਉੱਥੇ ਕਾਰਜ ਹਨ ਜੋ ਤੁਸੀ ਲੁਕਵੇਂ ਰੱਖਣ ਲਈ ਚੁਣੇ ਹਨ| ਤੁਸੀ ਇਸ ਨੂੰ ਸੂਚੀ ਵਿਚੋ ਹਟਾ ਕੇ ਮੁੜ ਵਿਖਾ ਸਕਦੇ ਹੋ|"
+msgstr "ਉੱਥੇ ਕਾਰਜ ਹਨ, ਜੋ ਤੁਸੀ ਲੁਕਵੇਂ ਰੱਖਣ ਲਈ ਚੁਣੇ ਹਨ। ਤੁਸੀ ਇਸ ਨੂੰ ਸੂਚੀ ਵਿਚੋਂ ਹਟਾ ਕੇ ਮੁੜ ਵਿਖਾ ਸਕਦੇ ਹੋ।"
 
-#: src/infoview.c:77
+#: ../src/gnome-system-monitor.schemas.in.h:1
+msgid "Column zero saved width"
+msgstr "ਕਾਲਮ ਜ਼ੀਰੋ ਸੰਭਾਲੀ ਚੌੜਾਈ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:2
+msgid "Default graph background color"
+msgstr "ਮੂਲ ਗਰਾਫ ਪਿੱਠਭੂਮੀ ਰੰਗ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:3
+msgid "Default graph cpu color"
+msgstr "ਮੂਲ ਗਰਾਫ਼ cpu ਰੰਗ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:4
+msgid "Default graph frame color"
+msgstr "ਮੂਲ ਗਰਾਫ਼ ਫਰੇਮ ਰੰਗ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:5
+msgid "Default graph mem color"
+msgstr "ਮੂਲ ਗਰਾਫ਼ ਮੈਮੋਰੀ ਰੰਗ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:6
+msgid "Default graph net in color"
+msgstr "ਮੂਲ ਗਰਾਫ਼ ਨੈਟ ਰੰਗ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:7
+msgid "Default graph net out color"
+msgstr "ਮੂਲ ਗਰਾਫ਼ ਨੈਟ ਬਾਹਰ ਰੰਗ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:8
+msgid "Default graph swap color"
+msgstr "ਮੂਲ ਗਰਾਫ਼ ਸਵੈਪ ਰੰਗ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:9
+msgid ""
+"Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
+"active"
+msgstr "ਇਹ ਚੁਣੋ ਕਿ ਕਿਹੜੇ ਕਾਰਜ ਮੂਲ ਰੂਪ ਵਿੱਚ ਵੇਖਾਉਣੇ ਹਨ, 0 ਸਭ, 1 ਉਪਭੋਗੀ, ਅਤੇ 2 ਸਰਗਰਮ ਲਈ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:10
+msgid "Main Window height"
+msgstr "ਮੁੱਖ ਝਰੋਖਾ ਉਚਾਈ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:11
+msgid "Main Window width"
+msgstr "ਮੁੱਖ ਝਰੋਖਾ ਚੌੜਾਈ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:12
+msgid "Process view columns order"
+msgstr "ਕਾਰਜ ਦਿੱਖ ਕਰਮ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:13
+msgid "Process view sort column"
+msgstr "ਕਾਰਜ ਸੂਚੀ ਕਰਮਬੱਧ ਕਾਲਮ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:14
+msgid "Process view sort order"
+msgstr "ਕਾਰਜ ਝਲਕ ਕਰਮ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:15
+msgid "Saves the currently viewed tab"
+msgstr "ਮੌਜੂਦਾ ਵੇਖੀ ਟੈਬ ਸੰਭਾਲੋ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:16
+msgid "Show advanced info tab on startup"
+msgstr "ਸ਼ੁਰੂ ਸਮੇਂ ਤਕਨੀਕੀ ਜਾਣਕਾਰੀ ਵੇਖਾਓ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:17
+msgid "Show column zero on startup"
+msgstr "ਸ਼ੁਰੂ ਵੇਲੇ ਕਾਲਮ ਜ਼ੀਰੋ ਵੇਖਾਓ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:18
+msgid "Show process dependencies in tree form"
+msgstr "ਲੜੀ ਢੰਗ ਵਿੱਚ ਕਾਰਜ ਨਿਰਭਰਤਾ ਵੇਖਾਓ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:19
+msgid "Show process threads"
+msgstr "ਕਾਰਜ ਥਰਿੱਡ ਵੇਖਾਓ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:20
+msgid "Show warning dialog when hiding processes"
+msgstr "ਜਦੋਂ ਕਾਰਜ ਲੁਕਵੇਂ ਹੋਣ ਤਾਂ ਚੇਤਾਵਨੀ ਵਾਰਤਾਲਾਪ ਵਿਖਾਓ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:21
+msgid "Show warning dialog when killing processes"
+msgstr "ਜਦੋਂ ਕਾਰਜ ਖਤਮ ਕਰਨੇ ਹੋਣ ਤਾਂ ਚੇਤਾਵਨੀ ਵਾਰਤਾਲਾਪ ਵਿਖਾਓ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:22
+msgid "Time in milliseconds between updates of the devices list"
+msgstr "ਜੰਤਰ ਸੂਚੀ ਦੇ ਅੱਪਡੇਟ ਦਾ ਸਮਾਂ (ਮਿਲੀ ਸਕਿੰਟ ਵਿੱਚ)"
+
+#: ../src/gnome-system-monitor.schemas.in.h:23
+msgid "Time in milliseconds between updates of the graphs"
+msgstr "ਗਰਾਫ਼ ਦੇ ਅੱਪਡੇਟ ਦਾ ਸਮਾਂ (ਮਿਲੀ ਸਕਿੰਟ ਵਿੱਚ)"
+
+#: ../src/gnome-system-monitor.schemas.in.h:24
+msgid "Time in milliseconds between updates of the process view"
+msgstr "ਕਾਰਜ ਝਲਕ ਦੇ ਅੱਪਡੇਟ ਦਾ ਸਮਾਂ (ਮਿਲੀ ਸਕਿੰਟ ਵਿੱਚ)"
+
+#: ../src/gnome-system-monitor.schemas.in.h:25
+msgid "Whether information about all filesystems should be displayed"
+msgstr "ਕੀ ਸਭ ਫਾਇਲ-ਸਿਸਟਮਾਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਨੂੰ ਵਿਖਾਇਆ ਜਾਵੇ"
+
+#: ../src/gnome-system-monitor.schemas.in.h:26
+msgid ""
+"Whether information about all filesystems should be displayed: this will "
+"include filesystem types like 'autofs' and 'procfs'. It can be usefull to "
+"get a list of all currently mounted filesystems."
+msgstr ""
+"ਕੀ ਸਭ ਫਾਇਲ-ਸਿਸਟਮਾਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਨੂੰ ਵਿਖਾਇਆ ਜਾਵੇ: ਇਹ ਨਾਲ ਸਭ ਫਾਇਲ ਸਿਸਟਮਾਂ, ਜਿਵੇਂ ਕਿ "
+"'autofs' ਅਤੇ 'procfs' ਨੂੰ ਸ਼ਾਮਲ ਕੀਤਾ ਜਾਵੇਗਾ। ਇਹ ਇਸ ਸਮੇਂ ਸਭ ਮਾਊਟ ਫਾਇਲ-ਸਿਸਟਮਾਂ ਦੀ ਸੂਚੀ "
+"ਪਰਾਪਤ ਕਰਨ ਲਈ ਸਹਾਇਕ ਹੈ।"
+
+#: ../src/infoview.c:34
+msgid "Less _info"
+msgstr "ਘੱਟ ਜਾਣਕਾਰੀ(_i)"
+
+#: ../src/infoview.c:34
+msgid "More _info"
+msgstr "ਵੱਧ ਜਾਣਕਾਰੀ(_i)"
+
+#: ../src/infoview.c:99
 msgid "Process Info"
 msgstr "ਕਾਰਜ ਜਾਣਕਾਰੀ"
 
-#: src/infoview.c:91
+#: ../src/infoview.c:113
 msgid "Command:"
 msgstr "ਕਮਾਂਡ:"
 
-#: src/infoview.c:95
+#: ../src/infoview.c:117
 msgid "Status:"
-msgstr "ਦਰਜਾ:"
+msgstr "ਹਾਲਤ:"
 
-#: src/infoview.c:99
+#: ../src/infoview.c:121
 msgid "Priority:"
 msgstr "ਤਰਜੀਹ:"
 
-#: src/infoview.c:123
+#: ../src/infoview.c:145
 msgid "Memory Usage"
 msgstr "ਵਰਤੀ ਮੈਮੋਰੀ"
 
-#: src/infoview.c:137
+#: ../src/infoview.c:159 ../src/interface.c:543 ../src/interface.c:586
 msgid "Total:"
 msgstr "ਕੁੱਲ:"
 
-#: src/infoview.c:141
+#: ../src/infoview.c:163
 msgid "RSS:"
 msgstr "RSS:"
 
-#: src/infoview.c:145
+#: ../src/infoview.c:167
 msgid "Shared:"
 msgstr "ਸਾਂਝੀ:"
 
-#: src/infoview.c:189
+#: ../src/infoview.c:210
 #, c-format
 msgid "Very high - nice %d"
 msgstr "ਬਹੁਤ ਉੱਚਾ - ਨਾਇਸ %d"
 
-#: src/infoview.c:191
+#: ../src/infoview.c:212
 #, c-format
 msgid "High - nice %d"
 msgstr "ਉੱਚਾ- ਨਾਇਸ %d"
 
-#: src/infoview.c:193
+#: ../src/infoview.c:214
 #, c-format
 msgid "Normal - nice %d"
 msgstr "ਸਾਧਾਰਨ - ਨਾਇਸ %d"
 
-#: src/infoview.c:195
+#: ../src/infoview.c:216
 #, c-format
 msgid "Low - nice %d"
 msgstr "ਘੱਟ - ਨਾਇਸ %d"
 
-#: src/infoview.c:197
+#: ../src/infoview.c:218
 #, c-format
 msgid "Very low - nice %d"
 msgstr "ਬਹੁਤ ਘੱਟ - ਨਾਇਸ %d"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "_Change Priority..."
-msgstr "ਤਰਜੀਹ ਤਬਦੀਲ..."
+#: ../src/interface.c:48
+msgid "_File"
+msgstr "ਫਾਇਲ(_F)"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "Change the importance (nice value) of a process"
-msgstr "ਕਾਰਜ ਦੀ ਮਹੱਤਤਾ (ਵਧੀਆ ਗੁਣ) ਤਬਦੀਲ"
+#: ../src/interface.c:49
+msgid "_Edit"
+msgstr "ਸੋਧ(_E)"
 
-#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
-msgid "_Hide Process"
-msgstr "ਕਾਰਜ ਲੁਕਵਾਂ"
+#: ../src/interface.c:50
+msgid "_View"
+msgstr "ਵੇਖੋ(_V)"
 
-#: src/interface.c:60 src/interface.c:137
-msgid "Hide a process"
-msgstr "ਕਾਰਜ ਲੁਕਵਾਂ"
+#: ../src/interface.c:51
+msgid "_Help"
+msgstr "ਸਹਾਇਤਾ(_H)"
 
-#: src/interface.c:66 src/interface.c:231
+#: ../src/interface.c:53
+msgid "_Quit"
+msgstr "ਬਾਹਰ(_Q)"
+
+#: ../src/interface.c:54
+msgid "Quit the program"
+msgstr "ਕਾਰਜ ਨੂੰ ਬੰਦ ਕਰੋ"
+
+#: ../src/interface.c:57
+msgid "_Stop Process"
+msgstr "ਕਾਰਜ ਰੋਕੋ(_S)"
+
+#: ../src/interface.c:58
+msgid "Stop process"
+msgstr "ਕਾਰਜ ਰੋਕੋ"
+
+#: ../src/interface.c:59
+msgid "_Continue Process"
+msgstr "ਕਾਰਜ ਜਾਰੀ(_C)"
+
+#: ../src/interface.c:60
+msgid "Continue process if stopped"
+msgstr "ਜੇਕਰ ਰੁਕਿਆ ਹੈ ਤਾਂ ਕਾਰਜ ਜਾਰੀ ਰੱਖੋ"
+
+#: ../src/interface.c:62 ../src/interface.c:202
 msgid "End _Process"
-msgstr "ਕਾਰਜ ਸਮਾਪਤ"
+msgstr "ਕਾਰਜ ਖਤਮ(_P)"
 
-#: src/interface.c:66
-msgid "Force a process to finish."
-msgstr "ਕਾਰਜ ਨੂੰ ਖਤਮ ਹੋਣ ਲਈ ਮਜਬੂਰ ਕਰੋ|"
+#: ../src/interface.c:63
+msgid "Force process to finish normally"
+msgstr "ਕਾਰਜ ਨੂੰ ਸਧਾਰਨ ਢੰਗ ਨਾਲ ਖਤਮ ਹੋਣ ਲਈ ਮਜਬੂਰ ਕਰੋ"
 
-#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
-#: src/procdialogs.c:984
+#: ../src/interface.c:64 ../src/procdialogs.c:126
 msgid "_Kill Process"
-msgstr "ਕਾਰਜ ਖਤਮ ਕਰੋ"
+msgstr "ਕਾਰਜ ਖਤਮ(_K)"
 
-#: src/interface.c:71
-msgid "Force a process to finish now."
-msgstr "ਕਾਰਜ ਨੂੰ ਹੁਣ ਖਤਮ ਹੋਣ ਲਈ ਮਜਬੂਰ ਕਰੋ|"
+#: ../src/interface.c:65
+msgid "Force process to finish immediately"
+msgstr "ਕਾਰਜ ਨੂੰ ਹੁਣੇ ਸਮਾਪਤ ਹੋਣ ਲਈ ਮਜਬੂਰ ਕਰੋ"
 
-#: src/interface.c:77
+#: ../src/interface.c:66
+msgid "_Change Priority..."
+msgstr "ਤਰਜੀਹ ਤਬਦੀਲ(_C)..."
+
+#: ../src/interface.c:67
+msgid "Change the order of priority of process"
+msgstr "ਕਾਰਜ ਦਾ ਦਰਜਾ ਕਰਮ ਤਬਦੀਲ"
+
+#: ../src/interface.c:68
+msgid "Prefere_nces"
+msgstr "ਮੇਰੀ ਪਸੰਦ(_n)"
+
+#: ../src/interface.c:69
+msgid "Configure the application"
+msgstr "ਕਾਰਜ ਦੀ ਸੰਰਚਨਾ"
+
+#: ../src/interface.c:71 ../src/procdialogs.c:82
+msgid "_Hide Process"
+msgstr "ਕਾਰਜ ਓਹਲੇ(_H)"
+
+#: ../src/interface.c:72
+msgid "Hide process from list"
+msgstr "ਸੂਚੀ ਤੋਂ ਕਾਰਜ ਨੂੰ ਓਹਲੇ"
+
+#: ../src/interface.c:73
 msgid "_Hidden Processes"
-msgstr "ਲੁਕਵੇਂ ਕਾਰਜ"
+msgstr "ਲੁਕਵੇਂ ਕਾਰਜ(_H)"
 
-#: src/interface.c:78
-msgid "View and edit your list of hidden processes"
-msgstr "ਆਪਣੀ ਲੁਕਵੇਂ ਕਾਰਜਾ ਦੀ ਸੂਚੀ ਨੂੰ ਵੇਖੋ ਅਤੇ ਸੋਧੋ"
+#: ../src/interface.c:74
+msgid "Open the list of currently hidden processes"
+msgstr "ਇਸ ਸਮੇਂ ਲੁਕਵੇਂ ਕਾਰਜਾਂ ਦੀ ਸੂਚੀ ਖੋਲੋ"
 
-#: src/interface.c:89 src/interface.c:131
+#: ../src/interface.c:75
 msgid "_Memory Maps"
-msgstr "ਮੈਮੋਰੀ ਨਕਸ਼ਾ"
+msgstr "ਮੈਮੋਰੀ ਨਕਸ਼ਾ(_M)"
 
-#: src/interface.c:89 src/interface.c:131
-msgid "View the memory maps associated with a process"
-msgstr "ਕਾਰਜ ਨਾਲ ਸਬੰਧਿਤ ਮੈਮੋਰੀ ਨਕਸ਼ਾ ਵੇਖੋ"
+#: ../src/interface.c:76
+msgid "Open the memory maps associated with a process"
+msgstr "ਕਾਰਜ ਨਾਲ ਸਬੰਧਤ ਮੈਮੋਰੀ ਨਕਸ਼ਾ ਵੇਖਾਏਗਾ"
 
-#: src/interface.c:95
-msgid "Process _Dependencies"
-msgstr "ਕਾਰਜ ਨਿਰਭਰਤਾ"
+#: ../src/interface.c:77
+msgid "Open _Files"
+msgstr "ਫਾਇਲਾਂ ਖੋਲੋ(_F)"
 
-#: src/interface.c:95
-msgid "Display a tree showing process dependencies"
-msgstr "ਕਾਰਜ ਨਿਰਭਰਤਾ ਦਾ ਇਕ ਟਰੀ ਦਰਿਸ਼ ਵਿਖਾਓ"
+#: ../src/interface.c:78
+msgid "View the files opened by a process"
+msgstr "ਕਾਰਜ ਰਾਹੀਂ ਖੋਲੀਆਂ ਫਾਇਲਾਂ ਵੇਖੋ"
 
-#: src/interface.c:100
+#: ../src/interface.c:80
+msgid "_Contents"
+msgstr "ਭਾਗ(_C)"
+
+#: ../src/interface.c:81
+msgid "Open the manual"
+msgstr "ਦਸਤਾਵੇਜ਼ ਖੁੱਲੇਗਾ"
+
+#: ../src/interface.c:82
+msgid "_About"
+msgstr "ਇਸ ਬਾਰੇ(_A)"
+
+#: ../src/interface.c:83
+msgid "About this application"
+msgstr "ਇਸ ਕਾਰਜ ਬਾਰੇ"
+
+#: ../src/interface.c:88
+msgid "_Dependencies"
+msgstr "ਨਿਰਭਰਤਾ(_D)"
+
+#: ../src/interface.c:89
+msgid "Show parent/child relationship between processes"
+msgstr "ਕਾਰਜ ਵਿੱਚ ਮੁੱਖ/ਅਧੀਨ ਸਬੰਧ ਵੇਖਾਓ"
+
+#: ../src/interface.c:91
 msgid "_Threads"
-msgstr "ਥਰਿੱਡ"
+msgstr "ਥਰਿੱਡ(_T)"
 
-#: src/interface.c:100
-msgid "Display threads (subprocesses)"
-msgstr "ਥਰਿੱਡ ਵਿਖਾਓ (ਉਪ-ਕਾਰਜ)"
+#: ../src/interface.c:92
+msgid "Show each thread as a separate process"
+msgstr "ਹਰ ਥਰਿੱਡ ਨੂੰ ਵੱਖਰੇ ਕਾਰਜ ਦੇ ਤੌਰ ਤੇ ਵੇਖਾਓ"
 
-#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
-msgid "_End Process"
-msgstr "ਕਾਰਜ ਸਮਾਪਤ"
+#: ../src/interface.c:99
+msgid "_Active Processes"
+msgstr "ਸਰਗਰਮ ਕਾਰਜ(_A)"
 
-#: src/interface.c:143
-msgid "Force a process to finish"
-msgstr "ਕਾਰਜ ਨੂੰ ਖਤਮ ਹੋਣ ਲਈ ਮਜਬੂਰ ਕਰੋ"
+#: ../src/interface.c:100
+msgid "Show active processes"
+msgstr "ਸਰਗਰਮ ਕਾਰਜ ਵੇਖਾਏ ਜਾਦੇ ਹਨ"
 
-#: src/interface.c:148
-msgid "Force a process to finish now"
-msgstr "ਕਾਰਜ ਨੂੰ ਹੁਣੇ ਖਤਮ ਹੋਣ ਲਈ ਮਜਬੂਰ ਕਰੋ"
+#: ../src/interface.c:101
+msgid "A_ll Processes"
+msgstr "ਸਭ ਕਾਰਜ(_L)"
 
-#: src/interface.c:188
-msgid "Sea_rch:"
-msgstr "ਖੋਜ:"
+#: ../src/interface.c:102
+msgid "Show all processes"
+msgstr "ਸਭ ਕਾਰਜ ਵੇਖਾਓ"
 
-#: src/interface.c:200
-msgid "All Processes"
-msgstr "ਸਾਰੇ ਕਾਰਜ"
+#: ../src/interface.c:103
+msgid "M_y Processes"
+msgstr "ਮੇਰੇ ਕਾਰਜ(_Y)"
 
-#: src/interface.c:201
-msgid "My Processes"
-msgstr "ਮੇਰੇ ਕਾਰਜ"
+#: ../src/interface.c:104
+msgid "Show user own process"
+msgstr "ਉਪਭੋਗੀ ਦੇ ਕਾਰਜ ਵੇਖਾਓ"
 
-#: src/interface.c:202
-msgid "Active Processes"
-msgstr "ਸਰਗਰਮ ਕਾਰਜ"
-
-#: src/interface.c:209
-msgid "Vie_w:"
-msgstr "ਦਰਿਸ਼:"
-
-#: src/interface.c:236
-msgid "More _Info"
-msgstr "ਵਧੇਰੇ ਜਾਣਕਾਰੀ"
-
-#: src/interface.c:334
-msgid "Name"
-msgstr "ਨਾਂ"
-
-#: src/interface.c:335
-msgid "Directory"
-msgstr "ਡਾਇਰੈਕਟਰੀ"
-
-#: src/interface.c:336
-msgid "Type"
-msgstr "ਕਿਸਮ"
-
-#: src/interface.c:337
-msgid "Total"
-msgstr "ਕੁੱਲ"
-
-#: src/interface.c:338
-msgid "Used"
-msgstr "ਵਰਤਿਆ"
-
-#: src/interface.c:362
+#: ../src/interface.c:274
 msgid "CPU History"
-msgstr "ਪ੍ਰੋਸੈਸਰ ਅਤੀਤ"
+msgstr "CPU ਅਤੀਤ"
 
-#: src/interface.c:402
+#: ../src/interface.c:317
+msgid "CPU:"
+msgstr "CPU:"
+
+#: ../src/interface.c:320
 #, c-format
 msgid "CPU%d:"
-msgstr "ਪ੍ਰੋਸੈਸਰ%d:"
+msgstr "CPU%d:"
 
-#: src/interface.c:421
+#: ../src/interface.c:340
 msgid "Memory and Swap History"
 msgstr "ਮੈਮੋਰੀ ਅਤੇ ਸਵੈਪ ਅਤੀਤ"
 
-#: src/interface.c:454
-msgid "Used memory:"
-msgstr "ਵਰਤੀ ਮੈਮੂਰੀ:"
+#: ../src/interface.c:373
+msgid "User memory:"
+msgstr "ਉਪਭੋਗੀ ਮੈਮੂਰੀ:"
 
-#: src/interface.c:463 src/interface.c:495
+#: ../src/interface.c:391 ../src/interface.c:451
 msgid "of"
 msgstr "ਦਾ"
 
-#: src/interface.c:486
+#: ../src/interface.c:432
 msgid "Used swap:"
 msgstr "ਵਰਤੀ ਸਵੈਪ:"
 
-#: src/interface.c:521 src/procdialogs.c:904
+#: ../src/interface.c:491
+msgid "Network History"
+msgstr "ਨੈਟਵਰਕ ਅਤੀਤ"
+
+#: ../src/interface.c:523
+msgid "Receive:"
+msgstr "ਪਰਾਪਤ:"
+
+#: ../src/interface.c:567
+msgid "Send:"
+msgstr "ਭੇਜੇ:"
+
+#: ../src/interface.c:747 ../src/procdialogs.c:560
+msgid "Processes"
+msgstr "ਕਾਰਜ"
+
+#: ../src/interface.c:753 ../src/procdialogs.c:652
+msgid "Resources"
+msgstr "ਸਰੋਤ"
+
+#: ../src/interface.c:759 ../src/procdialogs.c:743 ../src/procdialogs.c:747
 msgid "Devices"
 msgstr "ਜੰਤਰ"
 
-#: src/interface.c:638 src/procdialogs.c:729
-msgid "Process Listing"
-msgstr "ਕਾਰਜ ਸੂਚੀ"
+#: ../src/load-graph.c:350 ../src/load-graph.c:360
+#, c-format
+msgid "%s/s"
+msgstr "%s/s"
 
-#: src/interface.c:644 src/procdialogs.c:816
-msgid "Resource Monitor"
-msgstr "ਸਰੋਤ ਜਾਂਚਕਾਰ"
-
-#: src/interface.c:702
-msgid "Application Manager"
-msgstr "ਕਾਰਜ ਪ੍ਰਬੰਧਕ"
-
-#: src/interface.c:708
-msgid "Running Applications"
-msgstr "ਚੱਲ ਰਹੇ ਕਾਰਜ"
-
-#: src/interface.c:727
-msgid "_Close Application"
-msgstr "ਕਾਰਜ ਬੰਦ ਕਰੋ"
-
-#: src/interface.c:770
-msgid "More _Info >>"
-msgstr "ਵਧੇਰੇ ਜਾਣਕਾਰੀ >>"
-
-#: src/interface.c:777
-msgid "<< Less _Info"
-msgstr "<< ਘੱਟ ਜਾਣਕਾਰੀ"
-
-#: src/memmaps.c:256
+#: ../src/memmaps.c:295
 msgid "Filename"
 msgstr "ਫਾਇਲ ਨਾਂ"
 
-#: src/memmaps.c:257
+#: ../src/memmaps.c:296
 msgid "VM Start"
 msgstr "VM ਸ਼ੁਰੂ"
 
-#: src/memmaps.c:258
+#: ../src/memmaps.c:297
 msgid "VM End"
 msgstr "VM ਅੰਤ"
 
-#: src/memmaps.c:259 src/proctable.c:122
+#: ../src/memmaps.c:298
 msgid "VM Size"
-msgstr "VM ਆਕਾਰ"
+msgstr "VM ਅਕਾਰ"
 
-#: src/memmaps.c:260
+#: ../src/memmaps.c:299
 msgid "Flags"
 msgstr "ਸੰਕੇਤ"
 
-#: src/memmaps.c:261
+#: ../src/memmaps.c:300
 msgid "VM Offset"
 msgstr "VM ਵਾਧਾ"
 
-#: src/memmaps.c:262
+#: ../src/memmaps.c:301
 msgid "Device"
 msgstr "ਜੰਤਰ"
 
-#: src/memmaps.c:263
+#: ../src/memmaps.c:302
 msgid "Inode"
-msgstr "ਆਈ-ਨੋਡ"
+msgstr "Inode"
 
-#: src/memmaps.c:344
+#: ../src/memmaps.c:402
 msgid "Memory Maps"
-msgstr "ਮੈਮੋਰੀ ਨਕਸ਼ਾ"
+msgstr "ਮੈਮੋਰੀ ਨਕਸ਼ਾ"
 
-#: src/memmaps.c:364
-msgid "Process name:"
-msgstr "ਕਾਰਜ ਨਾਂ:"
+#: ../src/memmaps.c:422
+#, c-format
+msgid "_Memory maps for process \"%s\" (PID %u):"
+msgstr "ਕਾਰਜ \"%s\" (PID %u) ਲਈ ਮੈਮੋਰੀ ਨਕਸ਼ਾ(_M):"
 
-#: src/procactions.c:53
-msgid "No such process."
-msgstr "ਅਜਿਹਾ ਕੋਈ ਕਾਰਜ ਨਹੀ|"
+#: ../src/openfiles.c:31
+msgid "file"
+msgstr "ਫਾਇਲ"
 
-#: src/procactions.c:66
-#, fuzzy, c-format
+#: ../src/openfiles.c:33
+msgid "pipe"
+msgstr "ਪਾਈਪ"
+
+#: ../src/openfiles.c:35
+msgid "network connection"
+msgstr "ਨੈਟਵਰਕ ਕੁਨੈਕਸ਼ਨ"
+
+#: ../src/openfiles.c:37
+msgid "local socket"
+msgstr "ਲੋਕਲ ਸਾਕਟ"
+
+#: ../src/openfiles.c:39
+msgid "unknown type"
+msgstr "ਅਣਜਾਣੀ ਕਿਸਮ"
+
+#. Translators: "FD" here means "File Descriptor". Please use
+#. a very short translation if possible, and at most
+#. 2-3 characters for it to be able to fit in the UI.
+#: ../src/openfiles.c:229
+msgid "FD"
+msgstr "FD"
+
+#: ../src/openfiles.c:230
+msgid "Type"
+msgstr "ਕਿਸਮ"
+
+#: ../src/openfiles.c:231
+msgid "Object"
+msgstr "ਇਕਾਈ"
+
+#: ../src/openfiles.c:308
+msgid "Open Files"
+msgstr "ਫਾਇਲਾਂ ਖੋਲੋ"
+
+#: ../src/openfiles.c:330
+#, c-format
+msgid "_Files opened by process \"%s\" (PID %u):"
+msgstr "ਕਾਰਜ \"%s\" (PID %u) ਲਈ ਖੁੱਲੀਆਂ ਫਾਇਲਾਂ(_F):"
+
+#: ../src/procactions.c:73
+#, c-format
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You do not have permission to change the priority of this process. You can "
-"enter the root password to gain the necessary permission."
+"Cannot change the priority of process with pid %d to %d.\n"
+"%s"
 msgstr ""
-"ਕਾਰਜ ਨਾਂ: %s\n"
-"\n"
-"ਤੁਹਾਨੂੰ ਇਸ ਕਾਰਜ ਦੀ ਤਰਜੀਹ ਬਦਲਣ ਲਈ ਅਧਿਕਾਰ ਨਹੀ| ਤੁਹਾਨੂੰ ਲੋੜੀਦੇ ਅਧਿਕਾਰ ਲੈਣ ਵਾਸਤੇ ਰੂਟ (root) "
-"ਦਾ ਗੁਪਤ ਕੋਡ ਦੇਣਾ ਕਰਨਾ ਪਵੇਗਾ|"
+"ਕਾਰਜ ਦਾ ਦਰਜਾ pid %d ਤੋਂ %d ਤਬਦੀਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।\n"
+"%s"
 
-#: src/procactions.c:73
-#, fuzzy, c-format
+#: ../src/procactions.c:140
+#, c-format
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You must be root to renice a process lower than 0. You can enter the root "
-"password to gain the necessary permission."
+"Cannot kill process with pid %d with signal %d.\n"
+"%s"
 msgstr ""
-"ਕਾਰਜ-ਨਾਂ : %s \n"
-"\n"
-"ਕਾਰਜ ਨੂੰ 0 ਤੋਂ ਘੱਟ ਕਰਨ ਲਈ ਤੁਹਾਡਾ root ਹੋਣਾ ਜਰੂਰੀ ਹੈ| ਤੁਹਾਨੂੰ ਲੋੜੀਦੇ ਅਧਿਕਾਰ ਲੈਣ ਵਾਸਤੇ ਰੂਟ "
-"(root) ਦਾ ਗੁਪਤ ਕੋਡ ਦੇਣਾ ਕਰਨਾ ਪਵੇਗਾ|"
+"pid %d ਅਤੇ ਸੰਕੇਤ %d ਨਾਲ ਸਬੰਧਤ ਕਾਰਜ ਨੂੰ ਸਮਾਪਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।\n"
+"%s"
 
-#: src/procactions.c:124
-#, fuzzy, c-format
+#. translators: primary alert message
+#: ../src/procdialogs.c:62
+msgid "Hide the selected process?"
+msgstr "ਕੀ ਚੁਣੇ ਕਾਰਜਾਂ ਨੂੰ ਲੁਕਵਾਂ ਕਰਨਾ ਹੈ?"
+
+#. FIXME: View menu -> Edit menu
+#. translators: secondary alert messagex
+#: ../src/procdialogs.c:72
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You do not have permission to end this process. You can enter the root "
-"password to gain the necessary permission."
+"Hidden processes are no longer visible in the process list. You can re-"
+"enable them by selecting the \"Hidden Processes\" entry in the View menu."
 msgstr ""
-"ਕਾਰਜ·ਨਾਂ : %s \n"
-"\n"
-"ਤੁਹਾਨੂੰ ਇਸ ਕਾਰਜ ਦਾ ਅੰਤ ਕਰਨ ਲਈ ਅਧਿਕਾਰ ਨਹੀ|ਤੁਹਾਨੂੰ ਲੋੜੀਦੇ ਅਧਿਕਾਰ ਲੈਣ ਵਾਸਤੇ ਰੂਟ (root) ਦਾ "
-"ਗੁਪਤ ਕੋਡ ਦੇਣਾ ਕਰਨਾ ਪਵੇਗਾ|"
+"ਜੇ ਤੁਸੀ ਕਾਰਜ ਲੁਕੋਇਆ ਹੈ, ਤਾਂ ਉਹ ਕਾਰਜ ਸੂਚੀ ਵਿੱਚ ਉਪਲੱਬਧ ਨਹੀਂ ਹੋਵੇਗਾ। ਤੁਸੀਂ ਵੇਖੋ ਮੇਨੂ ਵਿੱਚੋਂ \"ਲੁਕਵੇਂ "
+"ਕਾਰਜ\" ਚੁਣ ਕੇ ਇਸ ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ।"
 
-#: src/procactions.c:143
-msgid "An error occured while killing the process."
-msgstr "ਕਾਰਜ ਖਤਮ ਕਰਨ ਉਪਰੰਤ ਇਕ ਗਲਤੀ ਹੋਈ|"
+#. translators: primary alert message
+#: ../src/procdialogs.c:121
+msgid "Kill the selected process?"
+msgstr "ਕੀ ਚੁਣੇ ਕਾਰਜ ਖਤਮ ਕਰਨੇ ਹਨ?"
 
-#: src/procdialogs.c:81
-msgid "Are you sure you want to hide this process?"
-msgstr "ਕੀ ਤੁਸੀ ਇਸ ਕਾਰਜ ਨੂੰ ਯਕੀਨਨ ਲੁਕੋਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#: src/procdialogs.c:82
+#. translators: secondary alert message
+#: ../src/procdialogs.c:123
 msgid ""
-"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
-"the Edit menu."
-msgstr "ਜੇ ਤੁਸੀ ਕਾਰਜ ਲੁਕੋਇਆ ਹੈ, ਤਾਂ ਤੁਸੀ ਸੋਧ ਸੂਚੀ ਵਿਚ 'ਲੁਕਵੇਂ ਕਾਰਜ' ਚੁਣ ਕੇ ਇਸ ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ|"
+"Killing a process may destroy data, break the session or introduce a "
+"security risk. Only unresponding processes should be killed."
+msgstr ""
+"ਕਾਰਜ ਬੰਦ ਕਰਨਾ ਨਾਲ ਤੁਹਾਡਾ ਡਾਟਾ ਖਤਮ ਹੋ ਸਕਦਾ ਹੈ, ਅਜਲਾਸ ਕੰਮ ਖਤਮ ਹੋ ਸਕਦਾ ਹੈ ਜਾਂ ਸੁਰੱਖਿਆ "
+"ਸਮੱਸਿਆ ਆ ਸਕਦੀ ਹੈ। ਸਿਰਫ਼ ਵਿਗੜੇ ਕਾਰਜ ਹੀ ਬੰਦ ਕਰੋ।"
 
-#: src/procdialogs.c:141 src/procdialogs.c:282
-msgid "_Show this dialog next time"
-msgstr "ਅਗਲੀ ਵਾਰ ਇਹ ਤਖਤੀ ਵਿਖਾਓ"
+#. translators: primary alert message
+#: ../src/procdialogs.c:130
+msgid "End the selected process?"
+msgstr "ਕੀ ਚੁਣੇ ਕਾਰਜ ਸਮਾਪਤ ਕਰਨੇ ਹਨ?"
 
-#: src/procdialogs.c:218
-msgid "Are you sure you want to kill this process?"
-msgstr "ਕੀ ਤੁਸੀ ਇਸ ਕਾਰਜ ਨੂੰ ਯਕੀਨਨ ਖਤਮ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+#. translators: secondary alert message
+#: ../src/procdialogs.c:132
+msgid ""
+"Ending a process may destroy data, break the session or introduce a security "
+"risk. Only unresponding processes should be ended."
+msgstr ""
+"ਕਾਰਜ ਨੂੰ ਖਤਮ ਕਰਨਾ, ਤੁਹਾਡਾ ਡਾਟਾ ਖਤਮ ਹੋ ਸਕਦਾ ਹੈ, ਅਜਲਾਸ ਕੰਮ ਖਤਮ ਹੋ ਸਕਦਾ ਹੈ ਜਾਂ ਸੁਰੱਖਿਆ "
+"ਸਮੱਸਿਆ ਆ ਸਕਦੀ ਹੈ। ਸਿਰਫ਼ ਵਿਗੜੇ ਕਾਰਜ ਹੀ ਬੰਦ ਕਰੋ।"
 
-#: src/procdialogs.c:219
-msgid "If you kill a process, unsaved data will be lost."
-msgstr "ਜੇ ਤੁਸੀਂ ਕਾਰਜ ਖਤਮ ਕੀਤਾ,ਤਾ ਨਾ ਸੰਭਾਲਿਆ ਡੇਟਾ ਗੁੰਮ ਜਾਏਗਾ|"
+#: ../src/procdialogs.c:135
+msgid "_End Process"
+msgstr "ਕਾਰਜ ਸਮਾਪਤ(_E)"
 
-#: src/procdialogs.c:223
-msgid "Are you sure you want to end this process?"
-msgstr "ਕੀ ਤੁਸੀ ਇਸ ਕਾਰਜ ਦਾ ਯਕੀਨਨ ਅੰਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#: src/procdialogs.c:224
-msgid "If you end a process, unsaved data will be lost."
-msgstr "ਜੇ ਤੁਸੀਂ ਕਾਰਜ ਦਾ ਅੰਤ ਕੀਤਾ,ਤਾਂ ਨਾ ਸੰਭਾਲਿਆ ਡੇਟਾ ਗੁੰਮ ਜਾਏਗਾ|"
-
-#: src/procdialogs.c:321
+#: ../src/procdialogs.c:164
 msgid "(Very High Priority)"
 msgstr "(ਬਹੁਤ ਜਿਆਦਾ ਤਰਜੀਹ)"
 
-#: src/procdialogs.c:323
+#: ../src/procdialogs.c:166
 msgid "(High Priority)"
 msgstr "(ਜਿਆਦਾ ਤਰਜੀਹ)"
 
-#: src/procdialogs.c:325
+#: ../src/procdialogs.c:168
 msgid "(Normal Priority)"
 msgstr "(ਸਾਧਾਰਨ ਤਰਜੀਹ)"
 
-#: src/procdialogs.c:327
+#: ../src/procdialogs.c:170
 msgid "(Low Priority)"
 msgstr "(ਘੱਟ ਤਰਜੀਹ)"
 
-#: src/procdialogs.c:329
+#: ../src/procdialogs.c:172
 msgid "(Very Low Priority)"
 msgstr "(ਬਹੁਤ ਘੱਟ ਤਰਜੀਹ)"
 
-#: src/procdialogs.c:382 src/procdialogs.c:992
+#: ../src/procdialogs.c:224
 msgid "Change Priority"
 msgstr "ਤਰਜੀਹ ਤਬਦੀਲ"
 
-#: src/procdialogs.c:403 src/procdialogs.c:993
+#: ../src/procdialogs.c:245
 msgid "Change _Priority"
-msgstr "ਤਰਜੀਹ ਤਬਦੀਲ"
+msgstr "ਤਰਜੀਹ ਤਬਦੀਲ(_P)"
 
-#: src/procdialogs.c:424
+#: ../src/procdialogs.c:266
 msgid "_Nice value:"
-msgstr "ਨਾਇਸ ਗੁਣ:"
+msgstr "ਨਾਇਸ ਮੁੱਲ(_N):"
 
-#: src/procdialogs.c:441
+#: ../src/procdialogs.c:283
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
-msgstr "ਕਾਰਜ ਦੀ ਤਰਜੀਹ ਇਸ ਦੇ ਨਾਇਸ ਗੁਣ ਕਰਕੇ ਹੁੰਦੀ ਹੈ| ਘੱਟ ਨਾਇਸ ਗੁਣ ਦਾ ਮਤਲਬ ਜਿਆਦਾ ਤਰਜੀਹ|"
+msgstr "ਕਾਰਜ ਦੀ ਤਰਜੀਹ ਇਸ ਦੇ ਨਾਇਸ ਮੁੱਲ ਕਰਕੇ ਹੁੰਦੀ ਹੈ। ਘੱਟ ਨਾਇਸ ਮੁੱਲ ਦਾ ਮਤਲਬ ਜਿਆਦਾ ਤਰਜੀਹ।"
 
-#: src/procdialogs.c:671
+#: ../src/procdialogs.c:446
+msgid "Processes i_nfo showed in list:"
+msgstr "ਵੇਖਾਈ ਸੂਚੀ ਵਿੱਚ ਕਾਰਜ ਜਾਣਕਾਰੀ(_n):"
+
+#: ../src/procdialogs.c:498
 msgid "Icon"
 msgstr "ਆਈਕਾਨ"
 
-#: src/procdialogs.c:711
-msgid "Preferences"
-msgstr "ਮੇਰੀ ਪਸੰਦ"
+#: ../src/procdialogs.c:537
+msgid "System Monitor Preferences"
+msgstr "ਸਿਸਟਮ ਨਿਗਰਾਨ ਪਸੰਦ"
 
-#: src/procdialogs.c:736
+#: ../src/procdialogs.c:567
 msgid "Behavior"
 msgstr "ਵਰਤਾਓ"
 
-#: src/procdialogs.c:755 src/procdialogs.c:842
+#: ../src/procdialogs.c:586 ../src/procdialogs.c:678
 msgid "_Update interval:"
-msgstr "ਨਵੀਨੀਕਰਨ ਦਾ ਅੰਤਰਾਲ:"
+msgstr "ਅੱਪਡੇਟ ਅੰਤਰਾਲ(_U):"
 
-#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+#: ../src/procdialogs.c:607 ../src/procdialogs.c:695 ../src/procdialogs.c:782
 msgid "seconds"
 msgstr "ਸਕਿੰਟ"
 
-#: src/procdialogs.c:778
-msgid "Show warning dialog when ending or _killing processes"
-msgstr "ਜਦੋਂ ਕਾਰਜ ਦਾ ਅੰਤ ਜਾਂ ਖਾਤਮਾ ਕਰਦੇ ਹਾਂ ਚੇਤਾਵਨੀ ਡਾਇਲਾਗ ਵਿਖਾਓ"
+#: ../src/procdialogs.c:614
+msgid "Alert before ending or _killing processes"
+msgstr "ਜਦੋਂ ਕਾਰਜ ਅੰਤ ਜਾਂ ਖਾਤਮਾ ਕਰਦੇ ਹਾਂ ਸਾਵਧਾਨ ਕਰੋ(_k)"
 
-#: src/procdialogs.c:788
-msgid "Show warning dialog when _hiding processes"
-msgstr "ਜਦੋਂ ਕਾਰਜ ਲੁਕਵਾਂ ਹੋਵੇ ਤਾਂ ਚੇਤਾਵਨੀ ਤਖਤੀ ਵਿਖਾਓ"
+#: ../src/procdialogs.c:624
+msgid "Alert before _hiding processes"
+msgstr "ਜਦੋਂ ਕਾਰਜ ਲੁਕਵਾਂ ਹੋਵੇ ਤਾਂ ਸਾਵਧਾਨ ਕਰੋ(_h)"
 
-#: src/procdialogs.c:798
+#: ../src/procdialogs.c:634
 msgid "Process Fields"
 msgstr "ਕਾਰਜ ਖੇਤਰ"
 
-#: src/procdialogs.c:823
+#: ../src/procdialogs.c:659
 msgid "Graphs"
 msgstr "ਗਰਾਫ਼"
 
-#: src/procdialogs.c:866
+#: ../src/procdialogs.c:702
 msgid "_Background color:"
-msgstr "ਪਿੱਠਭੂਮੀ ਰੰਗ:"
+msgstr "ਪਿੱਠਭੂਮੀ ਰੰਗ(_B):"
 
-#: src/procdialogs.c:885
+#: ../src/procdialogs.c:721
 msgid "_Grid color:"
-msgstr "ਖਾਨਿਆਂ ਦਾ ਰੰਗ:"
+msgstr "ਗਰਿੱਡ ਰੰਗ(_G):"
 
-#: src/procdialogs.c:923
+#: ../src/procdialogs.c:766
 msgid "Update _interval:"
-msgstr "ਨਵੀਨੀਕਰਨ ਦਾ ਅੰਤਰਾਲ:"
+msgstr "ਅੱਪਡੇਟ ਅੰਤਰਾਲ(_i):"
 
-#: src/procdialogs.c:983
-msgid "Kill Process"
-msgstr "ਕਾਰਜ ਖਤਮ ਕਰੋ"
+#: ../src/procdialogs.c:789
+msgid "Show _all filesystems"
+msgstr "ਸਭ ਫਾਇਲ ਸਿਸਟਮ ਵੇਖਾਓ(_a)"
 
-#: src/procdialogs.c:987
-msgid "End Process"
-msgstr "ਕਾਰਜ ਸਮਾਪਤ"
-
-#: src/procdialogs.c:1012
-msgid "Root Password :"
-msgstr "ਪ੍ਰਬੰਧਕ(Root) ਗੁਪਤ-ਕੋਡ·:"
-
-#: src/procdialogs.c:1057
-msgid "Wrong Password."
-msgstr "ਗੁਪਤ-ਕੋਡ ਗਲਤ ਹੈ|"
-
-#: src/procman.c:46
-msgid "show simple dialog to end processes and logout"
-msgstr "ਕਾਰਜ ਦੇ ਅੰਤ ਅਤੇ ਬਾਹਰੀ ਦਰ ਲਈ ਸਾਧਾਰਨ ਤਖਤੀ ਵਿਖਾਓ"
-
-#: src/proctable.c:117
+#: ../src/proctable.c:242
 msgid "Process Name"
 msgstr "ਕਾਰਜ ਨਾਂ"
 
-#: src/proctable.c:118
-msgid "Arguments"
-msgstr "ਆਰਗੂਮੈਟ"
-
-#: src/proctable.c:119
+#: ../src/proctable.c:243
 msgid "User"
 msgstr "ਉਪਭੋਗੀ"
 
-#: src/proctable.c:120
+#: ../src/proctable.c:244
 msgid "Status"
-msgstr "ਸਥਿਤੀ"
+msgstr "ਹਾਲਤ"
 
-#: src/proctable.c:121
+#: ../src/proctable.c:245
 msgid "Memory"
 msgstr "ਮੈਮੋਰੀ"
 
-#: src/proctable.c:123
-msgid "Resident Memory"
-msgstr "ਸਥਾਨਕ ਮੈਮੋਰੀ"
+#: ../src/proctable.c:246
+msgid "Virtual Memory"
+msgstr "ਵੁਰਚੁਅਲ ਮੈਮੋਰੀ"
 
-#: src/proctable.c:124
+#: ../src/proctable.c:247
+msgid "Resident Memory"
+msgstr "ਰੈਜ਼ੀਡੇਂਟ ਮੈਮੋਰੀ"
+
+#: ../src/proctable.c:248
 msgid "Shared Memory"
 msgstr "ਸਾਂਝੀ ਮੈਮੋਰੀ"
 
-#: src/proctable.c:125
+#: ../src/proctable.c:249
 msgid "RSS Memory"
 msgstr "RSS ਮੈਮੋਰੀ"
 
-#: src/proctable.c:126
+#: ../src/proctable.c:250
 msgid "X Server Memory"
 msgstr "X ਸਰਵਰ ਮੈਮੋਰੀ"
 
-#: src/proctable.c:127
+#: ../src/proctable.c:251
 #, no-c-format
 msgid "% CPU"
-msgstr "% ਪ੍ਰੋਸੈਸਰ"
+msgstr "% CPU"
 
-#: src/proctable.c:128
+#: ../src/proctable.c:252
+msgid "CPU time"
+msgstr "CPU ਸਮਾਂ"
+
+#: ../src/proctable.c:253
 msgid "Nice"
 msgstr "ਨਾਇਸ"
 
-#: src/proctable.c:129
+#: ../src/proctable.c:254
 msgid "ID"
-msgstr "ਸ਼ਨਾ-ਨੰ(ਆਈ-ਡੀ)"
+msgstr "ID"
 
-#: src/proctable.c:277
+#: ../src/proctable.c:255
+msgid "Security Context"
+msgstr "ਸੁਰੱਖਿਆ ਜਾਣਕਾਰੀ"
+
+#: ../src/proctable.c:256
+msgid "Arguments"
+msgstr "ਮੁੱਲ"
+
+#: ../src/proctable.c:430
 msgid "Running"
-msgstr "ਜਾਰੀ"
+msgstr "ਚੱਲਦੇ"
 
-#: src/proctable.c:282
+#: ../src/proctable.c:435
 msgid "Stopped"
 msgstr "ਰੁਕੇ"
 
-#: src/proctable.c:287
+#: ../src/proctable.c:440
+msgid "Zombie"
+msgstr "ਜੋਮਬੀਏ"
+
+#: ../src/proctable.c:445
+msgid "Uninterruptible"
+msgstr "ਰੁਕਾਵਟ ਰਹਿਤ"
+
+#: ../src/proctable.c:450
 msgid "Sleeping"
 msgstr "ਵਿਰਾਮ"
 
-#: src/proctable.c:382
-#, fuzzy, c-format
-msgid "%s (thread)"
-msgstr "(ਥਰਿੱਡ)"
-
-#: src/proctable.c:959
+#: ../src/proctable.c:634
 #, c-format
-msgid "%s could not be found."
-msgstr "%s ਨਹੀ ਲੱਭਿਆ ਜਾ ਸਕਿਆ ਹੈ| "
+msgid "%s (thread)"
+msgstr "%s (ਥਰਿੱਡ)"
 
-#~ msgid "Simple process viewer using libgtop"
-#~ msgstr "ਲਿਬ-ਜੀ-ਟਾਪ(libgtop) ਵਰਤਣ ਵਾਲਾ ਸਾਧਾਰਨ ਕਾਰਜ"
+#: ../src/proctable.c:1022
+#, c-format
+msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
+msgstr "ਆਖਰੀ 1, 5, 15 ਮਿੰਟਾਂ 'ਚ ਲੋਡ ਔਸਤ: %0.2f, %0.2f, %0.2f"
 
-#~ msgid "X window system"
-#~ msgstr "X ਝਰੋਖਾ ਸਿਸਟਮ"
+#: ../src/util.c:87
+#, c-format
+msgid "%u byte"
+msgid_plural "%u bytes"
+msgstr[0] "%u ਬਾਇਟ"
+msgstr[1] "%u ਬਾਇਟ"
 
-#~ msgid "bourne again shell"
-#~ msgstr "ਬੋਰਨੇ ਮੁੜ ਸ਼ੈੱਲ"
+#: ../src/util.c:93
+#, c-format
+msgid "%.1f KiB"
+msgstr "%.1f KiB"
 
-#~ msgid "Gnome-Session"
-#~ msgstr "ਗਨੋਮ-ਅਜਲਾਸ"
+#: ../src/util.c:97
+#, c-format
+msgid "%.1f MiB"
+msgstr "%.1f MiB"
 
-#~ msgid "%d byte"
-#~ msgid_plural "%d bytes"
-#~ msgstr[0] "%d ਬਾਈਟ"
-#~ msgstr[1] "%d ਬਾਈਟ"
+#: ../src/util.c:101
+#, c-format
+msgid "%.1f GiB"
+msgstr "%.1f GiB"
 
-#~ msgid "%d K"
-#~ msgstr "%d ਕੇ"
-
-#~ msgid "%.1f MB"
-#~ msgstr "%.1f ਮੈਬਾ"
-
-#~ msgid "%.0f MB"
-#~ msgstr "%.0f ਮੈਬਾ"
-
-#~ msgid "%.1f GB"
-#~ msgstr "%.1f ਗੇਬਾ"

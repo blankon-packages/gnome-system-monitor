@@ -59,26 +59,42 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 host_alias = @host_alias@
 host_triplet = @host@
+AR = @AR@
+AS = @AS@
 CATALOGS = @CATALOGS@
 CATOBJEXT = @CATOBJEXT@
 CC = @CC@
+CXX = @CXX@
+CXXCPP = @CXXCPP@
 DATADIRNAME = @DATADIRNAME@
+DLLTOOL = @DLLTOOL@
+ECHO = @ECHO@
+EGREP = @EGREP@
+EXEEXT = @EXEEXT@
+F77 = @F77@
+GCJ = @GCJ@
+GCJFLAGS = @GCJFLAGS@
+GCONF_CFLAGS = @GCONF_CFLAGS@
+GCONF_CONFIG = @GCONF_CONFIG@
+GCONF_LIBS = @GCONF_LIBS@
 GCONF_SCHEMA_CONFIG_SOURCE = @GCONF_SCHEMA_CONFIG_SOURCE@
 GCONF_SCHEMA_FILE_DIR = @GCONF_SCHEMA_FILE_DIR@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 HAVE_LIB = @HAVE_LIB@
-ICONV = @ICONV@
 INSTOBJEXT = @INSTOBJEXT@
 INTLLIBS = @INTLLIBS@
 INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
 INTLTOOL_DESKTOP_RULE = @INTLTOOL_DESKTOP_RULE@
 INTLTOOL_DIRECTORY_RULE = @INTLTOOL_DIRECTORY_RULE@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
+INTLTOOL_ICONV = @INTLTOOL_ICONV@
 INTLTOOL_KBD_RULE = @INTLTOOL_KBD_RULE@
 INTLTOOL_KEYS_RULE = @INTLTOOL_KEYS_RULE@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
+INTLTOOL_MSGFMT = @INTLTOOL_MSGFMT@
+INTLTOOL_MSGMERGE = @INTLTOOL_MSGMERGE@
 INTLTOOL_OAF_RULE = @INTLTOOL_OAF_RULE@
 INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_PONG_RULE = @INTLTOOL_PONG_RULE@
@@ -91,14 +107,17 @@ INTLTOOL_THEME_RULE = @INTLTOOL_THEME_RULE@
 INTLTOOL_UI_RULE = @INTLTOOL_UI_RULE@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
+INTLTOOL_XGETTEXT = @INTLTOOL_XGETTEXT@
 INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
 INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
 LIB = @LIB@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
 LTLIB = @LTLIB@
 MAKEINFO = @MAKEINFO@
 MKINSTALLDIRS = @MKINSTALLDIRS@
-MSGFMT = @MSGFMT@
-MSGMERGE = @MSGMERGE@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PKG_CONFIG = @PKG_CONFIG@
 POFILES = @POFILES@
@@ -107,67 +126,84 @@ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
 PO_IN_DATADIR_TRUE = @PO_IN_DATADIR_TRUE@
 PROCMAN_CFLAGS = @PROCMAN_CFLAGS@
 PROCMAN_LIBS = @PROCMAN_LIBS@
+RANLIB = @RANLIB@
+RC = @RC@
+SELINUX_LIBS = @SELINUX_LIBS@
+STRIP = @STRIP@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
 WARN_CFLAGS = @WARN_CFLAGS@
 WARN_CXXFLAGS = @WARN_CXXFLAGS@
-XGETTEXT = @XGETTEXT@
-mkdir_p = @mkdir_p@
 
-INCLUDES =  	-DPROCMAN_DATADIR=\"$(datadir)/procman/\" 	-DDATADIR=\""$(datadir)"\" 	@PROCMAN_CFLAGS@ 
+INCLUDES =  	-DPROCMAN_DATADIR=\"$(datadir)/procman/\" 	-DDATADIR=\""$(datadir)"\" 	@PROCMAN_CFLAGS@
 
 
 bin_PROGRAMS = gnome-system-monitor
 
-gnome_system_monitor_SOURCES =  	cellrenderer.c cellrenderer.h 	procman.c  procman.h 	interface.c interface.h 	callbacks.c callbacks.h 	load-graph.c load-graph.h 	proctable.c proctable.h 	prettytable.c prettytable.h 	util.c util.h 	infoview.c infoview.h 	procactions.c procactions.h 	procdialogs.c procdialogs.h 	memmaps.c memmaps.h 	favorites.c favorites.h 	defaulttable.h
+gnome_system_monitor_SOURCES =  	procman.c  procman.h 	interface.c interface.h 	callbacks.c callbacks.h 	load-graph.c load-graph.h 	proctable.c proctable.h 	prettytable.c prettytable.h 	util.c util.h 	procactions.c procactions.h 	procdialogs.c procdialogs.h 	memmaps.c memmaps.h 	openfiles.c openfiles.h 	favorites.c favorites.h 	smooth_refresh.c smooth_refresh.h 	defaulttable.h 	disks.c disks.h 	selinux.h selinux.c
 
 
-gnome_system_monitor_LDADD = @PROCMAN_LIBS@
+gnome_system_monitor_LDADD = @PROCMAN_LIBS@ $(SELINUX_LIBS) libbacon.la 
+
+noinst_LTLIBRARIES = libbacon.la
+libbacon_la_SOURCES =  	bacon-message-connection.c 	bacon-message-connection.h
+
 
 specdir = $(datadir)/procman
 
 schemadir = @GCONF_SCHEMA_FILE_DIR@
-schema_DATA = gnome-system-monitor.schemas	
+schema_ins = gnome-system-monitor.schemas.in
+schema_DATA = $(schema_ins:.schemas.in=.schemas)
 
-pixmapdir = $(datadir)/pixmaps
-pixmap_DATA = procman.png
+EXTRA_DIST =  	README.hacking 	$(schema_ins)
 
-EXTRA_DIST =  	README.hacking 	$(schema_DATA)		$(pixmap_DATA)
+
+CLEANFILES =  	$(schema_DATA)
 
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = ../config.h
 CONFIG_CLEAN_FILES = 
-PROGRAMS =  $(bin_PROGRAMS)
+LTLIBRARIES =  $(noinst_LTLIBRARIES)
 
 
 DEFS = @DEFS@ -I. -I$(srcdir) -I..
 CPPFLAGS = @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
 LIBS = @LIBS@
-gnome_system_monitor_OBJECTS =  cellrenderer.o procman.o interface.o \
-callbacks.o load-graph.o proctable.o prettytable.o util.o infoview.o \
-procactions.o procdialogs.o memmaps.o favorites.o
-gnome_system_monitor_DEPENDENCIES = 
+libbacon_la_LDFLAGS = 
+libbacon_la_LIBADD = 
+libbacon_la_OBJECTS =  bacon-message-connection.lo
+bin_PROGRAMS =  gnome-system-monitor$(EXEEXT)
+PROGRAMS =  $(bin_PROGRAMS)
+
+gnome_system_monitor_OBJECTS =  procman.$(OBJEXT) interface.$(OBJEXT) \
+callbacks.$(OBJEXT) load-graph.$(OBJEXT) proctable.$(OBJEXT) \
+prettytable.$(OBJEXT) util.$(OBJEXT) procactions.$(OBJEXT) \
+procdialogs.$(OBJEXT) memmaps.$(OBJEXT) openfiles.$(OBJEXT) \
+favorites.$(OBJEXT) smooth_refresh.$(OBJEXT) disks.$(OBJEXT) \
+selinux.$(OBJEXT)
+gnome_system_monitor_DEPENDENCIES =  libbacon.la
 gnome_system_monitor_LDFLAGS = 
 CFLAGS = @CFLAGS@
 COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
-DATA =  $(pixmap_DATA) $(schema_DATA)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+DATA =  $(schema_DATA)
 
-DIST_COMMON =  ChangeLog Makefile.am Makefile.in
+DIST_COMMON =  Makefile.am Makefile.in
 
 
 DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 
 TAR = tar
 GZIP_ENV = --best
-SOURCES = $(gnome_system_monitor_SOURCES)
-OBJECTS = $(gnome_system_monitor_OBJECTS)
+SOURCES = $(libbacon_la_SOURCES) $(gnome_system_monitor_SOURCES)
+OBJECTS = $(libbacon_la_OBJECTS) $(gnome_system_monitor_OBJECTS)
 
 all: all-redirect
 .SUFFIXES:
-.SUFFIXES: .S .c .o .s
+.SUFFIXES: .S .c .lo .o .obj .s
 $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
 	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps src/Makefile
 
@@ -175,6 +211,62 @@ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
 	cd $(top_builddir) \
 	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
 
+
+mostlyclean-noinstLTLIBRARIES:
+
+clean-noinstLTLIBRARIES:
+	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
+
+distclean-noinstLTLIBRARIES:
+
+maintainer-clean-noinstLTLIBRARIES:
+
+.c.o:
+	$(COMPILE) -c $<
+
+# FIXME: We should only use cygpath when building on Windows,
+# and only if it is available.
+.c.obj:
+	$(COMPILE) -c `cygpath -w $<`
+
+.s.o:
+	$(COMPILE) -c $<
+
+.S.o:
+	$(COMPILE) -c $<
+
+mostlyclean-compile:
+	-rm -f *.o core *.core
+	-rm -f *.$(OBJEXT)
+
+clean-compile:
+
+distclean-compile:
+	-rm -f *.tab.c
+
+maintainer-clean-compile:
+
+.c.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+.s.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+.S.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+
+maintainer-clean-libtool:
+
+libbacon.la: $(libbacon_la_OBJECTS) $(libbacon_la_DEPENDENCIES)
+	$(LINK)  $(libbacon_la_LDFLAGS) $(libbacon_la_OBJECTS) $(libbacon_la_LIBADD) $(LIBS)
 
 mostlyclean-binPROGRAMS:
 
@@ -190,8 +282,8 @@ install-binPROGRAMS: $(bin_PROGRAMS)
 	$(mkinstalldirs) $(DESTDIR)$(bindir)
 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
 	  if test -f $$p; then \
-	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
-	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
 	  else :; fi; \
 	done
 
@@ -201,47 +293,9 @@ uninstall-binPROGRAMS:
 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
 	done
 
-.c.o:
-	$(COMPILE) -c $<
-
-.s.o:
-	$(COMPILE) -c $<
-
-.S.o:
-	$(COMPILE) -c $<
-
-mostlyclean-compile:
-	-rm -f *.o core *.core
-
-clean-compile:
-
-distclean-compile:
-	-rm -f *.tab.c
-
-maintainer-clean-compile:
-
-gnome-system-monitor: $(gnome_system_monitor_OBJECTS) $(gnome_system_monitor_DEPENDENCIES)
-	@rm -f gnome-system-monitor
+gnome-system-monitor$(EXEEXT): $(gnome_system_monitor_OBJECTS) $(gnome_system_monitor_DEPENDENCIES)
+	@rm -f gnome-system-monitor$(EXEEXT)
 	$(LINK) $(gnome_system_monitor_LDFLAGS) $(gnome_system_monitor_OBJECTS) $(gnome_system_monitor_LDADD) $(LIBS)
-
-install-pixmapDATA: $(pixmap_DATA)
-	@$(NORMAL_INSTALL)
-	$(mkinstalldirs) $(DESTDIR)$(pixmapdir)
-	@list='$(pixmap_DATA)'; for p in $$list; do \
-	  if test -f $(srcdir)/$$p; then \
-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pixmapdir)/$$p"; \
-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pixmapdir)/$$p; \
-	  else if test -f $$p; then \
-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pixmapdir)/$$p"; \
-	    $(INSTALL_DATA) $$p $(DESTDIR)$(pixmapdir)/$$p; \
-	  fi; fi; \
-	done
-
-uninstall-pixmapDATA:
-	@$(NORMAL_UNINSTALL)
-	list='$(pixmap_DATA)'; for p in $$list; do \
-	  rm -f $(DESTDIR)$(pixmapdir)/$$p; \
-	done
 
 install-schemaDATA: $(schema_DATA)
 	@$(NORMAL_INSTALL)
@@ -306,29 +360,45 @@ distdir: $(DISTFILES)
 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
 	  fi; \
 	done
-callbacks.o: callbacks.c ../config.h callbacks.h procman.h interface.h \
-	proctable.h util.h infoview.h procactions.h procdialogs.h \
-	memmaps.h favorites.h load-graph.h cellrenderer.h
-cellrenderer.o: cellrenderer.c ../config.h cellrenderer.h
-favorites.o: favorites.c ../config.h favorites.h procman.h proctable.h
-infoview.o: infoview.c ../config.h procman.h infoview.h interface.h \
-	util.h
-interface.o: interface.c ../config.h procman.h callbacks.h interface.h \
-	proctable.h infoview.h procactions.h load-graph.h \
-	cellrenderer.h util.h
-load-graph.o: load-graph.c ../config.h procman.h load-graph.h util.h
-memmaps.o: memmaps.c ../config.h procman.h memmaps.h proctable.h util.h
+bacon-message-connection.lo bacon-message-connection.o : \
+	bacon-message-connection.c bacon-message-connection.h
+callbacks.o: callbacks.c ../config.h callbacks.h procman.h \
+	smooth_refresh.h load-graph.h interface.h proctable.h util.h \
+	procactions.h procdialogs.h memmaps.h openfiles.h favorites.h \
+	disks.h
+disks.o: disks.c ../config.h procman.h smooth_refresh.h load-graph.h \
+	disks.h util.h interface.h
+favorites.o: favorites.c ../config.h favorites.h procman.h \
+	smooth_refresh.h load-graph.h proctable.h
+infoview.o: infoview.c ../config.h procman.h infoview.h smooth_refresh.h \
+	load-graph.h interface.h util.h
+interface.o: interface.c ../config.h procman.h smooth_refresh.h \
+	load-graph.h callbacks.h interface.h proctable.h procactions.h \
+	util.h disks.h
+load-graph.o: load-graph.c ../config.h procman.h smooth_refresh.h \
+	load-graph.h util.h
+memmaps.o: memmaps.c ../config.h procman.h smooth_refresh.h load-graph.h \
+	memmaps.h proctable.h util.h
+openfiles.o: openfiles.c ../config.h procman.h smooth_refresh.h \
+	load-graph.h openfiles.h proctable.h util.h
 prettytable.o: prettytable.c ../config.h prettytable.h procman.h \
-	defaulttable.h proctable.h
+	smooth_refresh.h load-graph.h defaulttable.h proctable.h
 procactions.o: procactions.c ../config.h procactions.h procman.h \
-	proctable.h procdialogs.h callbacks.h
+	smooth_refresh.h load-graph.h proctable.h procdialogs.h \
+	callbacks.h
 procdialogs.o: procdialogs.c ../config.h procdialogs.h procman.h \
-	favorites.h proctable.h callbacks.h prettytable.h procactions.h \
-	util.h load-graph.h
-procman.o: procman.c ../config.h load-graph.h procman.h interface.h \
-	proctable.h prettytable.h favorites.h callbacks.h
-proctable.o: proctable.c ../config.h procman.h proctable.h callbacks.h \
-	prettytable.h util.h infoview.h interface.h favorites.h
+	smooth_refresh.h load-graph.h favorites.h proctable.h \
+	callbacks.h prettytable.h procactions.h util.h
+procman.o: procman.c ../config.h bacon-message-connection.h load-graph.h \
+	procman.h smooth_refresh.h interface.h proctable.h \
+	prettytable.h favorites.h callbacks.h
+proctable.o: proctable.c ../config.h procman.h smooth_refresh.h \
+	load-graph.h proctable.h callbacks.h prettytable.h util.h \
+	interface.h favorites.h selinux.h
+selinux.o: selinux.c ../config.h selinux.h procman.h smooth_refresh.h \
+	load-graph.h
+smooth_refresh.o: smooth_refresh.c ../config.h smooth_refresh.h \
+	procman.h load-graph.h
 util.o: util.c ../config.h util.h
 
 info-am:
@@ -342,69 +412,76 @@ installcheck: installcheck-am
 install-exec-am: install-binPROGRAMS
 install-exec: install-exec-am
 
-install-data-am: install-pixmapDATA install-schemaDATA \
-		install-data-local
+install-data-am: install-schemaDATA install-data-local
 install-data: install-data-am
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 install: install-am
-uninstall-am: uninstall-binPROGRAMS uninstall-pixmapDATA \
-		uninstall-schemaDATA
+uninstall-am: uninstall-binPROGRAMS uninstall-schemaDATA
 uninstall: uninstall-am
-all-am: Makefile $(PROGRAMS) $(DATA)
+all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(DATA)
 all-redirect: all-am
 install-strip:
 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
 installdirs:
-	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(pixmapdir) \
-		$(DESTDIR)$(schemadir)
+	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(schemadir)
 
 
 mostlyclean-generic:
 
 clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
 distclean-generic:
 	-rm -f Makefile $(CONFIG_CLEAN_FILES)
 	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
 
 maintainer-clean-generic:
-mostlyclean-am:  mostlyclean-binPROGRAMS mostlyclean-compile \
+mostlyclean-am:  mostlyclean-noinstLTLIBRARIES mostlyclean-compile \
+		mostlyclean-libtool mostlyclean-binPROGRAMS \
 		mostlyclean-tags mostlyclean-generic
 
 mostlyclean: mostlyclean-am
 
-clean-am:  clean-binPROGRAMS clean-compile clean-tags clean-generic \
+clean-am:  clean-noinstLTLIBRARIES clean-compile clean-libtool \
+		clean-binPROGRAMS clean-tags clean-generic \
 		mostlyclean-am
 
 clean: clean-am
 
-distclean-am:  distclean-binPROGRAMS distclean-compile distclean-tags \
+distclean-am:  distclean-noinstLTLIBRARIES distclean-compile \
+		distclean-libtool distclean-binPROGRAMS distclean-tags \
 		distclean-generic clean-am
+	-rm -f libtool
 
 distclean: distclean-am
 
-maintainer-clean-am:  maintainer-clean-binPROGRAMS \
-		maintainer-clean-compile maintainer-clean-tags \
+maintainer-clean-am:  maintainer-clean-noinstLTLIBRARIES \
+		maintainer-clean-compile maintainer-clean-libtool \
+		maintainer-clean-binPROGRAMS maintainer-clean-tags \
 		maintainer-clean-generic distclean-am
 	@echo "This command is intended for maintainers to use;"
 	@echo "it deletes files that may require special tools to rebuild."
 
 maintainer-clean: maintainer-clean-am
 
-.PHONY: mostlyclean-binPROGRAMS distclean-binPROGRAMS clean-binPROGRAMS \
-maintainer-clean-binPROGRAMS uninstall-binPROGRAMS install-binPROGRAMS \
+.PHONY: mostlyclean-noinstLTLIBRARIES distclean-noinstLTLIBRARIES \
+clean-noinstLTLIBRARIES maintainer-clean-noinstLTLIBRARIES \
 mostlyclean-compile distclean-compile clean-compile \
-maintainer-clean-compile uninstall-pixmapDATA install-pixmapDATA \
-uninstall-schemaDATA install-schemaDATA tags mostlyclean-tags \
-distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
-dvi-am dvi check check-am installcheck-am installcheck install-exec-am \
-install-exec install-data-local install-data-am install-data install-am \
-install uninstall-am uninstall all-redirect all-am all installdirs \
+maintainer-clean-compile mostlyclean-libtool distclean-libtool \
+clean-libtool maintainer-clean-libtool mostlyclean-binPROGRAMS \
+distclean-binPROGRAMS clean-binPROGRAMS maintainer-clean-binPROGRAMS \
+uninstall-binPROGRAMS install-binPROGRAMS uninstall-schemaDATA \
+install-schemaDATA tags mostlyclean-tags distclean-tags clean-tags \
+maintainer-clean-tags distdir info-am info dvi-am dvi check check-am \
+installcheck-am installcheck install-exec-am install-exec \
+install-data-local install-data-am install-data install-am install \
+uninstall-am uninstall all-redirect all-am all installdirs \
 mostlyclean-generic distclean-generic clean-generic \
 maintainer-clean-generic clean mostlyclean distclean maintainer-clean
 
+@INTLTOOL_SCHEMAS_RULE@
 
 install-data-local:
 	-GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \

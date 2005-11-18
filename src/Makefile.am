@@ -3,12 +3,11 @@
 INCLUDES = \
 	-DPROCMAN_DATADIR=\"$(datadir)/procman/\" \
 	-DDATADIR=\""$(datadir)"\" \
-	@PROCMAN_CFLAGS@ 
+	@PROCMAN_CFLAGS@
 
 bin_PROGRAMS = gnome-system-monitor
 
 gnome_system_monitor_SOURCES = \
-	cellrenderer.c cellrenderer.h \
 	procman.c  procman.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
@@ -16,27 +15,39 @@ gnome_system_monitor_SOURCES = \
 	proctable.c proctable.h \
 	prettytable.c prettytable.h \
 	util.c util.h \
-	infoview.c infoview.h \
 	procactions.c procactions.h \
 	procdialogs.c procdialogs.h \
 	memmaps.c memmaps.h \
+	openfiles.c openfiles.h \
 	favorites.c favorites.h \
-	defaulttable.h
+	smooth_refresh.c smooth_refresh.h \
+	defaulttable.h \
+	disks.c disks.h \
+	selinux.h selinux.c
 
-gnome_system_monitor_LDADD = @PROCMAN_LIBS@
+
+gnome_system_monitor_LDADD = @PROCMAN_LIBS@ $(SELINUX_LIBS) libbacon.la 
+
+
+noinst_LTLIBRARIES = libbacon.la
+libbacon_la_SOURCES = \
+	bacon-message-connection.c \
+	bacon-message-connection.h
+
 
 specdir = $(datadir)/procman
 
 schemadir   = @GCONF_SCHEMA_FILE_DIR@
-schema_DATA = gnome-system-monitor.schemas	
-
-pixmapdir   = $(datadir)/pixmaps
-pixmap_DATA = procman.png
+schema_ins  = gnome-system-monitor.schemas.in
+schema_DATA = $(schema_ins:.schemas.in=.schemas)
+@INTLTOOL_SCHEMAS_RULE@
 
 EXTRA_DIST = \
 	README.hacking \
-	$(schema_DATA)	\
-	$(pixmap_DATA)
+	$(schema_ins)
+
+CLEANFILES = \
+	$(schema_DATA)
 
 install-data-local:
 	-GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \

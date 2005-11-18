@@ -20,13 +20,14 @@
 #ifndef _PROCMAN_INTERFACE_H_
 #define _PROCMAN_INTERFACE_H_
 
-#include <procman.h>
+#include <glib/gtypes.h>
+#include <gtk/gtk.h>
+#include "procman.h"
 
-gint		get_sys_pane_pos (void);
-GtkWidget* 	create_main_window (ProcData *data);
-GtkWidget*	create_simple_view_dialog (ProcData *procdata);
-void		toggle_infoview (ProcData *data);
-void		update_sensitivity (ProcData *data, gboolean sensitivity);
-void            do_popup_menu(ProcData *data, GdkEventButton *event);
+
+void		create_main_window (ProcData *data) G_GNUC_INTERNAL;
+void		update_sensitivity (ProcData *data, gboolean sensitivity) G_GNUC_INTERNAL;
+void            do_popup_menu(ProcData *data, GdkEventButton *event) G_GNUC_INTERNAL;
+GtkWidget *	make_title_label (const char *text) G_GNUC_INTERNAL;
 
 #endif /* _PROCMAN_INTERFACE_H_ */

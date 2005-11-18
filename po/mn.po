@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: procman.gnome-2-4.mn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-24 16:57+0100\n"
+"POT-Creation-Date: 2004-10-17 02:04+0200\n"
 "PO-Revision-Date: 2004-01-04 16:13+0800\n"
 "Last-Translator: Dulmandakh <sdulmandakh@yahoo.com>\n"
 "Language-Team: Mongolian <openmn-core@lists.sf.net>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:144 src/interface.c:614
 msgid "System Monitor"
 msgstr "Системийн монитор"
 
@@ -25,28 +25,39 @@ msgstr "Системийн монитор"
 msgid "View current processes and monitor system state"
 msgstr "Идэвхитэй процессуудыг харах ба системын төлвийг шалгах"
 
-#: src/callbacks.c:125
+#: src/callbacks.c:121
 msgid "Kevin Vandersloot"
 msgstr "Кевин Вандэрслүүт"
 
-#: src/callbacks.c:126
+#: src/callbacks.c:122
 msgid "Jorgen Scheibengruber - nicer devices treeview"
 msgstr "Йоргэн Шайбэнгрүбэр - төхөөрөмжүүдийг эрхийн модоор харах"
 
-#: src/callbacks.c:134
+#: src/callbacks.c:130
 msgid "translator_credits"
 msgstr ""
 "Санлигийн Бадрал <badral@chinggis.com>Сүхбаатарын Дөлмандах "
 "<sdulmandakh@yahoo.com>"
 
-#: src/callbacks.c:153
+#: src/callbacks.c:145
 msgid "(C) 2001 Kevin Vandersloot"
 msgstr "© 2001 Kevin Vandersloot"
 
-#: src/callbacks.c:154
-#, fuzzy
-msgid "System resources monitor"
-msgstr "Нөөц монитор"
+#: src/callbacks.c:146
+msgid "Simple process viewer using libgtop"
+msgstr "libgtop хэрэглэдэг энгийн процесс харагч"
+
+#: src/defaulttable.h:8
+msgid "X window system"
+msgstr "X-Window-систем"
+
+#: src/defaulttable.h:9
+msgid "bourne again shell"
+msgstr "bourne again shell"
+
+#: src/defaulttable.h:10
+msgid "Gnome-Session"
+msgstr "GNOME-суулт"
 
 #: src/favorites.c:344
 msgid "No processes are currently hidden."
@@ -64,7 +75,7 @@ msgstr "_Нууцлагдмал процессууд:"
 msgid "_Remove From List"
 msgstr "Жигсаалтаас _устгах"
 
-#: src/favorites.c:419 src/procdialogs.c:440
+#: src/favorites.c:419 src/procdialogs.c:439
 msgid "Note:"
 msgstr "Тэмдэглэл:"
 
@@ -76,162 +87,170 @@ msgstr ""
 "Эдгээр нь таны нууцлахыг хүссэж сонгосон процессууд. Та энэ жигсаалтаас "
 "процессыг устгасанаар дахин харж чадна."
 
-#: src/infoview.c:77
+#: src/infoview.c:81
 msgid "Process Info"
 msgstr "Процессын мэд"
 
-#: src/infoview.c:91
+#: src/infoview.c:95
 msgid "Command:"
 msgstr "Тушаал:"
 
-#: src/infoview.c:95
+#: src/infoview.c:99
 msgid "Status:"
 msgstr "Төлөв:"
 
-#: src/infoview.c:99
+#: src/infoview.c:103
 msgid "Priority:"
 msgstr "Давуу эрх:"
 
-#: src/infoview.c:123
+#: src/infoview.c:127
 msgid "Memory Usage"
 msgstr "Санах ойн хэрэглээ"
 
 # "Summe" ist kürzer.
-#: src/infoview.c:137
+#: src/infoview.c:141
 msgid "Total:"
 msgstr "Нийт:"
 
-#: src/infoview.c:141
+#: src/infoview.c:145
 msgid "RSS:"
 msgstr "RSS:"
 
-#: src/infoview.c:145
+#: src/infoview.c:149
 msgid "Shared:"
 msgstr "Хамтарсан:"
 
-#: src/infoview.c:189
+#: src/infoview.c:194
 #, c-format
 msgid "Very high - nice %d"
 msgstr "Маш өндөр - эрх %d"
 
-#: src/infoview.c:191
+#: src/infoview.c:196
 #, c-format
 msgid "High - nice %d"
 msgstr "Өндөр - эрх %d"
 
-#: src/infoview.c:193
+#: src/infoview.c:198
 #, c-format
 msgid "Normal - nice %d"
 msgstr "Энгийн - эрх %d"
 
-#: src/infoview.c:195
+#: src/infoview.c:200
 #, c-format
 msgid "Low - nice %d"
 msgstr "Бага - эрх %d"
 
-#: src/infoview.c:197
+#: src/infoview.c:202
 #, c-format
 msgid "Very low - nice %d"
 msgstr "Маш бага - эрх %d"
 
-#: src/interface.c:55 src/interface.c:126
+#: src/interface.c:53 src/interface.c:124
 msgid "_Change Priority..."
 msgstr "Давуу эрх өө_рчилөх..."
 
-#: src/interface.c:55 src/interface.c:126
+#: src/interface.c:53 src/interface.c:124
 msgid "Change the importance (nice value) of a process"
 msgstr "Процессын давуу эрх (эрх-утга) өөрчилөх"
 
-#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
+#: src/interface.c:58 src/interface.c:135 src/procdialogs.c:155
 msgid "_Hide Process"
 msgstr "Процесс _нууцлах"
 
-#: src/interface.c:60 src/interface.c:137
+#: src/interface.c:58 src/interface.c:135
 msgid "Hide a process"
 msgstr "Процесс нууцлах"
 
-#: src/interface.c:66 src/interface.c:231
+#: src/interface.c:64 src/interface.c:230
 msgid "End _Process"
 msgstr "Процесс _дуусгах"
 
-#: src/interface.c:66
+#: src/interface.c:64
 msgid "Force a process to finish."
 msgstr "Процессыг хүчээр дуусгах."
 
-#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
-#: src/procdialogs.c:984
+#: src/interface.c:69 src/interface.c:146 src/procdialogs.c:217
+#: src/procdialogs.c:1008
 msgid "_Kill Process"
 msgstr "Процессыг _алах"
 
-#: src/interface.c:71
+#: src/interface.c:69
 msgid "Force a process to finish now."
 msgstr "Процесс хүчээр одоо дуусгах"
 
-#: src/interface.c:77
+#: src/interface.c:75
 msgid "_Hidden Processes"
 msgstr "_Нууцлагдсан процессууд"
 
-#: src/interface.c:78
+#: src/interface.c:76
 msgid "View and edit your list of hidden processes"
 msgstr "Нууцлагдсан процессын жигсаалтыг харах болон боловсруулах"
 
-#: src/interface.c:89 src/interface.c:131
+#: src/interface.c:87 src/interface.c:129
 msgid "_Memory Maps"
 msgstr "_Санах ойн муж"
 
-#: src/interface.c:89 src/interface.c:131
+#: src/interface.c:87 src/interface.c:129
 msgid "View the memory maps associated with a process"
 msgstr "Процессуудад хамаатай санах ойн мужийг харах"
 
-#: src/interface.c:95
+#: src/interface.c:93
 msgid "Process _Dependencies"
 msgstr "Процесс _хамаарлууд"
 
-#: src/interface.c:95
+#: src/interface.c:93
 msgid "Display a tree showing process dependencies"
 msgstr "Процесс хамаарлуудыг модоор харуулах"
 
-#: src/interface.c:100
+#: src/interface.c:98
 msgid "_Threads"
 msgstr "_Дэд процессууд"
 
-#: src/interface.c:100
+#: src/interface.c:98
 msgid "Display threads (subprocesses)"
 msgstr "_Дэд процессуудыг харуулах"
 
-#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
+#: src/interface.c:141 src/procdialogs.c:222 src/procdialogs.c:1012
 msgid "_End Process"
 msgstr "Процесс _дуусгах"
 
-#: src/interface.c:143
+#: src/interface.c:141
 msgid "Force a process to finish"
 msgstr "Процесс хүчээр дуусгах"
 
-#: src/interface.c:148
+#: src/interface.c:146
 msgid "Force a process to finish now"
 msgstr "Процессыг одоо хүчээр төгсгөх"
 
-#: src/interface.c:188
+#: src/interface.c:153
+msgid "More _Info >>"
+msgstr "Илүү _Мэд >>"
+
+#: src/interface.c:154
+msgid "<< Less _Info"
+msgstr "<< Бага _Мэд"
+
+#: src/interface.c:187
 msgid "Sea_rch:"
 msgstr "_Хайх:"
 
-#: src/interface.c:200
+#: src/interface.c:199
 msgid "All Processes"
 msgstr "Бүх процесс"
 
-#: src/interface.c:201
+#: src/interface.c:200
 msgid "My Processes"
 msgstr "Миний процессууд"
 
-#: src/interface.c:202
+#: src/interface.c:201
 msgid "Active Processes"
 msgstr "Идэхитэй процессууд"
 
-#: src/interface.c:209
+#: src/interface.c:208
 msgid "Vie_w:"
 msgstr "_Харах:"
 
-#: src/interface.c:236
+#: src/interface.c:235
 msgid "More _Info"
 msgstr "Илүү _мэд"
 
@@ -256,111 +275,103 @@ msgstr "Нийт"
 msgid "Used"
 msgstr "Хэрэглэгдсэн"
 
-#: src/interface.c:362
+#: src/interface.c:359
 msgid "CPU History"
 msgstr "CPU-түүх"
 
-#: src/interface.c:402
+#: src/interface.c:400
 #, c-format
 msgid "CPU%d:"
 msgstr "CPU %d:"
 
-#: src/interface.c:421
+#: src/interface.c:419
 msgid "Memory and Swap History"
 msgstr "Санах ой ба зөөвөр (Swap) ойн түүх"
 
-#: src/interface.c:454
+#: src/interface.c:452
 msgid "Used memory:"
 msgstr "Ашиглагдсан ой:"
 
-#: src/interface.c:463 src/interface.c:495
+#: src/interface.c:461 src/interface.c:488
 msgid "of"
 msgstr "ийн"
 
-#: src/interface.c:486
+#: src/interface.c:479
 msgid "Used swap:"
 msgstr "Ашиглагдсан зөөврийн ой:"
 
-#: src/interface.c:521 src/procdialogs.c:904
+#: src/interface.c:509 src/procdialogs.c:928
 msgid "Devices"
 msgstr "Төхөөрөмжүүд"
 
-#: src/interface.c:638 src/procdialogs.c:729
+#: src/interface.c:626 src/procdialogs.c:753
 msgid "Process Listing"
 msgstr "Процессийн жагсаалт"
 
-#: src/interface.c:644 src/procdialogs.c:816
+#: src/interface.c:632 src/procdialogs.c:840
 msgid "Resource Monitor"
 msgstr "Нөөц монитор"
 
-#: src/interface.c:702
+#: src/interface.c:690
 msgid "Application Manager"
 msgstr "Х.программын менежер"
 
-#: src/interface.c:708
+#: src/interface.c:696
 msgid "Running Applications"
 msgstr "Ажиллаж байгаа программууд"
 
-#: src/interface.c:727
+#: src/interface.c:715
 msgid "_Close Application"
 msgstr "Программыг _хаах"
 
-#: src/interface.c:770
-msgid "More _Info >>"
-msgstr "Илүү _Мэд >>"
-
-#: src/interface.c:777
-msgid "<< Less _Info"
-msgstr "<< Бага _Мэд"
-
-#: src/memmaps.c:256
+#: src/memmaps.c:227
 msgid "Filename"
 msgstr "Файлын нэр"
 
-#: src/memmaps.c:257
+#: src/memmaps.c:227
 msgid "VM Start"
 msgstr "VM-эхлэл"
 
-#: src/memmaps.c:258
+#: src/memmaps.c:227
 msgid "VM End"
 msgstr "VM-төгсгөл"
 
-#: src/memmaps.c:259 src/proctable.c:122
+#: src/memmaps.c:228 src/proctable.c:133
 msgid "VM Size"
 msgstr "VM-хэмжээ"
 
-#: src/memmaps.c:260
+#: src/memmaps.c:228
 msgid "Flags"
 msgstr "Төлвүүд"
 
-#: src/memmaps.c:261
+#: src/memmaps.c:228
 msgid "VM Offset"
 msgstr "VM офсет"
 
-#: src/memmaps.c:262
+#: src/memmaps.c:229
 msgid "Device"
 msgstr "Төхөөрөмж"
 
-#: src/memmaps.c:263
+#: src/memmaps.c:229
 msgid "Inode"
 msgstr "Inode"
 
-#: src/memmaps.c:344
+#: src/memmaps.c:305
 msgid "Memory Maps"
 msgstr "Санах ойн муж"
 
-#: src/memmaps.c:364
+#: src/memmaps.c:325
 msgid "Process name:"
 msgstr "Процессын нэр:"
 
-#: src/procactions.c:53
+#: src/procactions.c:54
 msgid "No such process."
 msgstr "Тийм процесс алга."
 
-#: src/procactions.c:66
-#, fuzzy, c-format
+#: src/procactions.c:67
+#, c-format
 msgid ""
-"Process Name: %s \n"
+"Process Name : %s \n"
 "\n"
 "You do not have permission to change the priority of this process. You can "
 "enter the root password to gain the necessary permission."
@@ -370,10 +381,10 @@ msgstr ""
 "Таньд энэ процессийн давуу эрхийг өөрчилөх хангалттай эрх алга. Та "
 "шаардлагатай эрхтэй болохын тулд Root-нууц үг өгөх хэрэгтэй."
 
-#: src/procactions.c:73
-#, fuzzy, c-format
+#: src/procactions.c:74
+#, c-format
 msgid ""
-"Process Name: %s \n"
+"Process Name : %s \n"
 "\n"
 "You must be root to renice a process lower than 0. You can enter the root "
 "password to gain the necessary permission."
@@ -383,10 +394,10 @@ msgstr ""
 "Процессын эрхийг 0 -с бага болгохыг тулд та Root байх ёстой. Та шаардлагатай "
 "эрхтэй болохын тулд Root-нууц үг өгөх хэрэгтэй."
 
-#: src/procactions.c:124
-#, fuzzy, c-format
+#: src/procactions.c:126
+#, c-format
 msgid ""
-"Process Name: %s \n"
+"Process Name : %s \n"
 "\n"
 "You do not have permission to end this process. You can enter the root "
 "password to gain the necessary permission."
@@ -396,73 +407,73 @@ msgstr ""
 "Таньд энэ процессийг төгсгөх хангалттай эрх алга. Та шаардлагатай эрхтэй "
 "болохын тулд Root-нууц үг өгөх хэрэгтэй."
 
-#: src/procactions.c:143
+#: src/procactions.c:145
 msgid "An error occured while killing the process."
 msgstr "Процессыг алж байхад алдаа гарлаа."
 
-#: src/procdialogs.c:81
+#: src/procdialogs.c:80
 msgid "Are you sure you want to hide this process?"
 msgstr "Та энэ процессыг нууна гэдэгтээ итгэлтэй байна уу?"
 
-#: src/procdialogs.c:82
+#: src/procdialogs.c:81
 msgid ""
 "If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
 "the Edit menu."
 msgstr "="
 
-#: src/procdialogs.c:141 src/procdialogs.c:282
+#: src/procdialogs.c:138 src/procdialogs.c:279
 msgid "_Show this dialog next time"
 msgstr "Энэ харилцахыг дараагийн удаа _үзүүл"
 
-#: src/procdialogs.c:218
+#: src/procdialogs.c:215
 msgid "Are you sure you want to kill this process?"
 msgstr "Та энэ процессыг ална гэдэгтээ итгэлтэй байна уу?"
 
-#: src/procdialogs.c:219
+#: src/procdialogs.c:216
 msgid "If you kill a process, unsaved data will be lost."
 msgstr "Процессыг алах юм бол хадгалагдаагүй өгөгдлүүд алдагдана."
 
-#: src/procdialogs.c:223
+#: src/procdialogs.c:220
 msgid "Are you sure you want to end this process?"
 msgstr "Та энэ процессыг төгсгөнө гэдэгтээ итгэлтэй байна уу?"
 
-#: src/procdialogs.c:224
+#: src/procdialogs.c:221
 msgid "If you end a process, unsaved data will be lost."
 msgstr "Процессыг төгсгөх юм бол хадгалагдаагүй өгөгдлүүд алдагдана."
 
-#: src/procdialogs.c:321
+#: src/procdialogs.c:319
 msgid "(Very High Priority)"
 msgstr "(Маш өндөр эрх)"
 
-#: src/procdialogs.c:323
+#: src/procdialogs.c:321
 msgid "(High Priority)"
 msgstr "(Өндөр эрх)"
 
-#: src/procdialogs.c:325
+#: src/procdialogs.c:323
 msgid "(Normal Priority)"
 msgstr "(Маш доогуур эрх)"
 
-#: src/procdialogs.c:327
+#: src/procdialogs.c:325
 msgid "(Low Priority)"
 msgstr "(Бага эрх)"
 
-#: src/procdialogs.c:329
+#: src/procdialogs.c:327
 msgid "(Very Low Priority)"
 msgstr "(Маш бага эрх)"
 
-#: src/procdialogs.c:382 src/procdialogs.c:992
+#: src/procdialogs.c:381 src/procdialogs.c:1016
 msgid "Change Priority"
 msgstr "Давуу эрх өөрчилөх"
 
-#: src/procdialogs.c:403 src/procdialogs.c:993
+#: src/procdialogs.c:402 src/procdialogs.c:1017
 msgid "Change _Priority"
 msgstr "_Давуу эрх өөрчилөх"
 
-#: src/procdialogs.c:424
+#: src/procdialogs.c:423
 msgid "_Nice value:"
 msgstr "_Эрхийн утга:"
 
-#: src/procdialogs.c:441
+#: src/procdialogs.c:440
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
@@ -470,173 +481,170 @@ msgstr ""
 "Процессын эрх (»Nice«-) утгаар тодорхойлогдсон байна. Бага давуу эрхийн Nice "
 "утга өндөр давуу эрхэд хамаарна ."
 
-#: src/procdialogs.c:671
+#: src/procdialogs.c:695
 msgid "Icon"
 msgstr "Эмблем"
 
-#: src/procdialogs.c:711
+#: src/procdialogs.c:735
 msgid "Preferences"
 msgstr "Тохируулга"
 
-#: src/procdialogs.c:736
+#: src/procdialogs.c:760
 msgid "Behavior"
 msgstr "Байдал"
 
-#: src/procdialogs.c:755 src/procdialogs.c:842
+#: src/procdialogs.c:779 src/procdialogs.c:866
 msgid "_Update interval:"
 msgstr "Шинэчлэх _завсар:"
 
-#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
+#: src/procdialogs.c:795 src/procdialogs.c:883 src/procdialogs.c:964
 msgid "seconds"
 msgstr "секунд"
 
-#: src/procdialogs.c:778
+#: src/procdialogs.c:802
 msgid "Show warning dialog when ending or _killing processes"
 msgstr "Процессыг дуусгах эсвэл _алах бол сануулга диалог харуулах"
 
-#: src/procdialogs.c:788
+#: src/procdialogs.c:812
 msgid "Show warning dialog when _hiding processes"
 msgstr "Процесс _нууцлах үед сануулга диалоги харуулах"
 
-#: src/procdialogs.c:798
+#: src/procdialogs.c:822
 msgid "Process Fields"
 msgstr "Процесс талбар"
 
-#: src/procdialogs.c:823
+#: src/procdialogs.c:847
 msgid "Graphs"
 msgstr "Графууд"
 
-#: src/procdialogs.c:866
+#: src/procdialogs.c:890
 msgid "_Background color:"
 msgstr "_Дэвсгэр өнгө:"
 
-#: src/procdialogs.c:885
+#: src/procdialogs.c:909
 msgid "_Grid color:"
 msgstr "Хир_ээсийн өнгө:"
 
-#: src/procdialogs.c:923
+#: src/procdialogs.c:947
 msgid "Update _interval:"
 msgstr "Шинэчлэлтийн _завсар:"
 
-#: src/procdialogs.c:983
+#: src/procdialogs.c:1007
 msgid "Kill Process"
 msgstr "Процессийг алах"
 
-#: src/procdialogs.c:987
+#: src/procdialogs.c:1011
 msgid "End Process"
 msgstr "Процессыг дуусгах"
 
-#: src/procdialogs.c:1012
+#: src/procdialogs.c:1036
 msgid "Root Password :"
 msgstr "Root-нууц үг:"
 
-#: src/procdialogs.c:1057
+#: src/procdialogs.c:1081
 msgid "Wrong Password."
 msgstr "Буруу нууц үг."
 
-#: src/procman.c:46
+#: src/procman.c:47
 msgid "show simple dialog to end processes and logout"
 msgstr "Процессыг дуусгах болон унтраахад энгийн диалоги харуулах"
 
-#: src/proctable.c:117
+#: src/proctable.c:131
 msgid "Process Name"
 msgstr "Процессын нэр"
 
-#: src/proctable.c:118
+#: src/proctable.c:131
 msgid "Arguments"
 msgstr "Аргумент"
 
-#: src/proctable.c:119
+#: src/proctable.c:132
 msgid "User"
 msgstr "Хэрэглэгч"
 
-#: src/proctable.c:120
+#: src/proctable.c:132
 msgid "Status"
 msgstr "Төлөв"
 
-#: src/proctable.c:121
+#: src/proctable.c:133
 msgid "Memory"
 msgstr "Санах ой"
 
-#: src/proctable.c:123
+#: src/proctable.c:133
 msgid "Resident Memory"
 msgstr "Рездент санах ой"
 
-#: src/proctable.c:124
+#: src/proctable.c:134
 msgid "Shared Memory"
 msgstr "Хамтын санах ой"
 
-#: src/proctable.c:125
+#: src/proctable.c:134
 msgid "RSS Memory"
 msgstr "RSS-санах ой"
 
-#: src/proctable.c:126
+#: src/proctable.c:135
 msgid "X Server Memory"
 msgstr "Х серверийн санах ой"
 
-#: src/proctable.c:127
+#: src/proctable.c:137
 #, no-c-format
 msgid "% CPU"
 msgstr "% CPU"
 
-#: src/proctable.c:128
+#: src/proctable.c:138
 msgid "Nice"
 msgstr "Давуу эрх"
 
-#: src/proctable.c:129
+#: src/proctable.c:138
 msgid "ID"
 msgstr "Дугаар"
 
-#: src/proctable.c:277
+#: src/proctable.c:282
 msgid "Running"
 msgstr "Ажиллаж байна"
 
-#: src/proctable.c:282
+#: src/proctable.c:288
 msgid "Stopped"
 msgstr "Зогсоох"
 
-#: src/proctable.c:287
+#: src/proctable.c:293
 msgid "Sleeping"
 msgstr "Унтуулах"
 
-#: src/proctable.c:382
-#, fuzzy, c-format
-msgid "%s (thread)"
+#: src/proctable.c:412
+msgid " (thread)"
 msgstr " (Thread)"
 
-#: src/proctable.c:959
+#: src/proctable.c:982
 #, c-format
 msgid "%s could not be found."
 msgstr "%s олдсонгүй."
 
-#~ msgid "Simple process viewer using libgtop"
-#~ msgstr "libgtop хэрэглэдэг энгийн процесс харагч"
+#: src/util.c:294
+#, c-format
+msgid "%d byte"
+msgid_plural "%d bytes"
+msgstr[0] "%d байт"
+msgstr[1] "%d байт"
 
-#~ msgid "X window system"
-#~ msgstr "X-Window-систем"
+#: src/util.c:297
+#, c-format
+msgid "%d K"
+msgstr "%d К"
 
-#~ msgid "bourne again shell"
-#~ msgstr "bourne again shell"
+#: src/util.c:301
+#, c-format
+msgid "%.1f MB"
+msgstr "%.1f МБ"
 
-#~ msgid "Gnome-Session"
-#~ msgstr "GNOME-суулт"
+#: src/util.c:303
+#, c-format
+msgid "%.0f MB"
+msgstr "%.0f МБ"
 
-#~ msgid "%d byte"
-#~ msgid_plural "%d bytes"
-#~ msgstr[0] "%d байт"
-#~ msgstr[1] "%d байт"
-
-#~ msgid "%d K"
-#~ msgstr "%d К"
-
-#~ msgid "%.1f MB"
-#~ msgstr "%.1f МБ"
-
-#~ msgid "%.0f MB"
-#~ msgstr "%.0f МБ"
-
-#~ msgid "%.1f GB"
-#~ msgstr "%.1f ГБ"
+#: src/util.c:306
+#, c-format
+msgid "%.1f GB"
+msgstr "%.1f ГБ"
 
 #~ msgid "View processes being run by all users"
 #~ msgstr "Процессыг бүх хэрэглэгчид харуулах"

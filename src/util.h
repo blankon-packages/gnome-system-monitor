@@ -1,21 +1,32 @@
+#ifndef H_GNOME_SYSTEM_MONITOR_UTIL_1123178725
+#define H_GNOME_SYSTEM_MONITOR_UTIL_1123178725
 
-#ifndef _PROCMAN_UTIL_H_
-#define _PROCAMN_UTIL_H_
-
-#include <gnome.h>
+#include <glib.h>
+#include <libgnomevfs/gnome-vfs-utils.h>
 #include <stddef.h>
 
-/* -1 means wrong password, 0 means another error, 1 means great */
-gint 		su_run_with_password (gchar *exec_path, gchar *password);
-
+void _procman_array_gettext_init(const char * strings[], size_t n) G_GNUC_INTERNAL;
 
 #define PROCMAN_GETTEXT_ARRAY_INIT(A) G_STMT_START { \
 static gboolean is_init = FALSE; \
 if(!is_init) { \
-  size_t i; \
-  for(i = 0; i < G_N_ELEMENTS(A); ++i) if((A)[i]) ((A)[i]) = _(((A)[i])); \
+  _procman_array_gettext_init((A), G_N_ELEMENTS(A)); \
   is_init = TRUE; \
  } \
 } G_STMT_END
 
-#endif /* _PROCAMN_UTIL_H_ */
+#define PROCMAN_CMP(X, Y) (((X) == (Y)) ? 0 : (((X) < (Y)) ? -1 : 1))
+#define PROCMAN_RCMP(X, Y) PROCMAN_CMP((Y), (X))
+
+
+GtkWidget*
+procman_make_label_for_mmaps_or_ofiles(const char *format,
+					     const char *process_name,
+					     unsigned pid) G_GNUC_INTERNAL;
+
+
+gchar*
+SI_gnome_vfs_format_file_size_for_display (GnomeVFSFileSize size) G_GNUC_INTERNAL;
+
+
+#endif /* H_GNOME_SYSTEM_MONITOR_UTIL_1123178725 */

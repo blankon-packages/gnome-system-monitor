@@ -1,707 +1,1058 @@
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# pclouds <pclouds@gmx.net>, 2002.
-#
+# Vietnamese translation for procman.
+# Copyright © 2005 Gnome i18n Project for Vietnamese.
+# Nguyễn Thái Ngọc Duy <pclouds@gmx.net>, 2002.
+# Clytie Siddall <clytie@riverland.net.au>, 2005.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: procman VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-24 16:57+0100\n"
-"PO-Revision-Date: 2004-09-14 08:43+0700\n"
-"Last-Translator: pclouds <pclouds@gmx.net>\n"
-"Language-Team: GnomeVI <gnomevi-list@lists.sourceforge.net>\n"
+"Project-Id-Version: procman GNOME 2.12\n"
+"POT-Creation-Date: 2005-07-23 06:47+0000\n"
+"PO-Revision-Date: 2005-09-16 18:02+0930\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: LocFactoryEditor 1.2.2\n"
 
-#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+#: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:167
+#: ../src/interface.c:836
 msgid "System Monitor"
 msgstr "Bộ theo dõi hệ thống"
 
-#: gnome-system-monitor.desktop.in.h:2
+#: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:168
 msgid "View current processes and monitor system state"
 msgstr "Xem các tiến trình hiện thời và theo dõi tình trạng hệ thống"
 
-#: src/callbacks.c:125
-#, fuzzy
-msgid "Kevin Vandersloot"
-msgstr "giây) "
-
-#: src/callbacks.c:126
-#, fuzzy
+#: ../src/callbacks.c:152
 msgid "Jorgen Scheibengruber - nicer devices treeview"
-msgstr "Jorgen Scheibengruber <mfcn@gmx.de> - nicer devices treeview"
+msgstr "Jorgen Scheibengruber — khung xem cây thiết bị đẹp hơn"
 
-#: src/callbacks.c:134
-msgid "translator_credits"
+#: ../src/callbacks.c:153
+msgid "Benoît Dejean - maintainer"
+msgstr "Benoît Dejean — người bảo quản"
+
+#: ../src/callbacks.c:176
+msgid "translator-credits"
+msgstr "Nhóm Việt hóa GNOME (http://gnomevi.sourceforge.net)"
+
+#. translators: primary alert message
+#: ../src/favorites.c:348
+msgid "No hidden processes"
+msgstr "Không có tiến trình ẩn nào"
+
+#. translators: secondary alert message
+#: ../src/favorites.c:355
+msgid ""
+"There are no hidden processes in the list. To show all running processes, "
+"select the \"All processes\" option in the main window."
 msgstr ""
-"Nguyễn Thái Ngọc Duy\n"
-"Nhóm Việt hóa GNOME (http://gnomevi.sourceforge.net)"
+"Không có tiến trình ẩn nào trong danh sách này. Để hiển thị mọi tiến trình "
+"đang chạy, hãy chọn tùy chọn « Mọi tiến trình » trong cửa sổ chính."
 
-#: src/callbacks.c:153
-msgid "(C) 2001 Kevin Vandersloot"
-msgstr "(C) 2001 Kevin Vandersloot"
+#: ../src/favorites.c:375
+msgid "Hidden Processes"
+msgstr "Tiến trình ẩn"
 
-#: src/callbacks.c:154
-#, fuzzy
-msgid "System resources monitor"
-msgstr "Bộ theo dõi tài nguyên"
+#: ../src/favorites.c:399
+msgid "Currently _hidden processes:"
+msgstr "Tiến trình _hiện thời ẩn:"
 
-#: src/favorites.c:344
-msgid "No processes are currently hidden."
-msgstr "Không có tiến trình nào ẩn."
-
-#: src/favorites.c:364
-msgid "Manage Hidden Processes"
-msgstr "Quản lý các tiến trình ẩn"
-
-#: src/favorites.c:388
-msgid "_Hidden processes:"
-msgstr "_Tiến trình ẩn:"
-
-#: src/favorites.c:410
+#: ../src/favorites.c:421
 msgid "_Remove From List"
 msgstr "_Loại bỏ khỏi danh sách"
 
-#: src/favorites.c:419 src/procdialogs.c:440
+#: ../src/favorites.c:430 ../src/procdialogs.c:282
 msgid "Note:"
-msgstr ""
+msgstr "Ghi chú:"
 
-#: src/favorites.c:420
+#: ../src/favorites.c:431
 msgid ""
 "These are the processes you have chosen to hide. You can reshow a process by "
 "removing it from this list."
-msgstr ""
-"Những tiến trình này được chọn để giấu đi. Bạn có thể hiện chúng bằng cách "
-"loại bỏ chúng khỏi danh sách này."
+msgstr "Những tiến trình này được chọn để giấu đi. Bạn có thể hiện lại một tiến trình nào đó bằng cách loại bỏ nó khỏi danh sách này."
 
-#: src/infoview.c:77
+#: ../src/gnome-system-monitor.schemas.in.h:1
+msgid "Column zero saved width"
+msgstr "Độ rộng lưu cho số không cột"
+
+#: ../src/gnome-system-monitor.schemas.in.h:2
+msgid "Default graph background color"
+msgstr "Màu nền đồ thị mặc định"
+
+#: ../src/gnome-system-monitor.schemas.in.h:3
+msgid "Default graph cpu color"
+msgstr "Màu CPU đồ thị mặc định"
+
+#: ../src/gnome-system-monitor.schemas.in.h:4
+msgid "Default graph frame color"
+msgstr "Màu khung đồ thị mặc định"
+
+#: ../src/gnome-system-monitor.schemas.in.h:5
+msgid "Default graph mem color"
+msgstr "Màu bộ nhớ đồ thị mặc định"
+
+#: ../src/gnome-system-monitor.schemas.in.h:6
+msgid "Default graph net in color"
+msgstr "Màu dữ liệu vào mạng đồ thị mặc định"
+
+#: ../src/gnome-system-monitor.schemas.in.h:7
+msgid "Default graph net out color"
+msgstr "Màu dữ liệu ra mạng đồ thị mặc định"
+
+#: ../src/gnome-system-monitor.schemas.in.h:8
+msgid "Default graph swap color"
+msgstr "Màu trao đổi đồ thị mặc định"
+
+#: ../src/gnome-system-monitor.schemas.in.h:9
+msgid ""
+"Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
+"active"
+msgstr ""
+"Quyết định hiển thị tiến trình nào theo mặc định:\n"
+" • 0 — tất cả\n"
+" • 1 — người dùng\n"
+" • 2 — hoạt động"
+
+#: ../src/gnome-system-monitor.schemas.in.h:10
+msgid "Main Window height"
+msgstr "Độ cao cửa sổ chính"
+
+#: ../src/gnome-system-monitor.schemas.in.h:11
+msgid "Main Window width"
+msgstr "Độ rộng của sổ chính"
+
+#: ../src/gnome-system-monitor.schemas.in.h:12
+msgid "Process view columns order"
+msgstr "Thứ tự cột khung xem tiến trình"
+
+#: ../src/gnome-system-monitor.schemas.in.h:13
+msgid "Process view sort column"
+msgstr "Sắp xếp cột khung xem tiến trình"
+
+#: ../src/gnome-system-monitor.schemas.in.h:14
+msgid "Process view sort order"
+msgstr "Thứ tự sắp xếp khung xem tiến trình"
+
+#: ../src/gnome-system-monitor.schemas.in.h:15
+msgid "Saves the currently viewed tab"
+msgstr "Lưu thanh đang xem hiện thời"
+
+#: ../src/gnome-system-monitor.schemas.in.h:16
+msgid "Show advanced info tab on startup"
+msgstr "Hiển thị thanh thông tin cấp cao khi khởi động"
+
+#: ../src/gnome-system-monitor.schemas.in.h:17
+msgid "Show column zero on startup"
+msgstr "Hiển thị cột số không khi khởi động"
+
+#: ../src/gnome-system-monitor.schemas.in.h:18
+msgid "Show process dependencies in tree form"
+msgstr "Hiển thị cách phụ thuộc vào tiến trình, có dạng cây"
+
+#: ../src/gnome-system-monitor.schemas.in.h:19
+msgid "Show process threads"
+msgstr "Hiển thị các mạch tiến trình"
+
+#: ../src/gnome-system-monitor.schemas.in.h:20
+msgid "Show warning dialog when hiding processes"
+msgstr "Hiện hộp thoại cảnh báo khi ẩn tiến trình"
+
+#: ../src/gnome-system-monitor.schemas.in.h:21
+msgid "Show warning dialog when killing processes"
+msgstr "Hiện hộp thoại cảnh báo khi buộc kết thức của tiến trình"
+
+#: ../src/gnome-system-monitor.schemas.in.h:22
+msgid "Time in milliseconds between updates of the devices list"
+msgstr "Thời gian theo mili giây, giữa hai lần cập nhật danh sách thiết bị"
+
+#: ../src/gnome-system-monitor.schemas.in.h:23
+msgid "Time in milliseconds between updates of the graphs"
+msgstr "Thời gian theo mili giây, giữa hai lần cập nhật đồ thị"
+
+#: ../src/gnome-system-monitor.schemas.in.h:24
+msgid "Time in milliseconds between updates of the process view"
+msgstr "Thời gian theo mili giây, giữa hai lần cập nhật khung xem tiến trình"
+
+#: ../src/gnome-system-monitor.schemas.in.h:25
+msgid "Whether information about all filesystems should be displayed"
+msgstr "Có nên hiển thị thông tin về mọi hệ thống tập tin hay không."
+
+#: ../src/gnome-system-monitor.schemas.in.h:26
+msgid ""
+"Whether information about all filesystems should be displayed: this will "
+"include filesystem types like 'autofs' and 'procfs'. It can be usefull to "
+"get a list of all currently mounted filesystems."
+msgstr "Có nên hiển thị thông tin vê mọi hệ thống tập tin: sẽ gồm loại hệ thống tập tin như « autofs » và « procfs ». Có thể hữu ích khi có một danh sách các hệ thống được gắn kết hiện thời."
+
+#: ../src/infoview.c:34
+msgid "Less _info"
+msgstr "Ít _thông tin hơn"
+
+#: ../src/infoview.c:34
+msgid "More _info"
+msgstr "Nhiều thông t_in hơn"
+
+#: ../src/infoview.c:99
 msgid "Process Info"
 msgstr "Thông tin tiến trình"
 
-#: src/infoview.c:91
+#: ../src/infoview.c:113
 msgid "Command:"
 msgstr "Lệnh:"
 
-#: src/infoview.c:95
+#: ../src/infoview.c:117
 msgid "Status:"
 msgstr "Trạng thái:"
 
-#: src/infoview.c:99
+#: ../src/infoview.c:121
 msgid "Priority:"
-msgstr "Độ ưu tiên:"
+msgstr "Ưu tiên:"
 
-#: src/infoview.c:123
+#: ../src/infoview.c:145
 msgid "Memory Usage"
-msgstr "Sử dụng bộ nhớ"
+msgstr "Cách dùng bộ nhớ"
 
-#: src/infoview.c:137
+#: ../src/infoview.c:159 ../src/interface.c:699 ../src/interface.c:742
 msgid "Total:"
 msgstr "Tổng cộng:"
 
-#: src/infoview.c:141
+# Name: don't translate / Tên: đừng dịch
+#: ../src/infoview.c:163
 msgid "RSS:"
 msgstr "RSS:"
 
-#: src/infoview.c:145
+#: ../src/infoview.c:167
 msgid "Shared:"
 msgstr "Dùng chung: "
 
-#: src/infoview.c:189
+#: ../src/infoview.c:210
 #, c-format
 msgid "Very high - nice %d"
-msgstr "Rất cao - nice (%d)"
+msgstr "Rất cao — nice (%d)"
 
-#: src/infoview.c:191
+#: ../src/infoview.c:212
 #, c-format
 msgid "High - nice %d"
-msgstr "Cao - nice (%d)"
+msgstr "Cao — nice (%d)"
 
-#: src/infoview.c:193
+#: ../src/infoview.c:214
 #, c-format
 msgid "Normal - nice %d"
-msgstr "Bình thường - nice (%d)"
+msgstr "Bình thường — nice (%d)"
 
-#: src/infoview.c:195
+#: ../src/infoview.c:216
 #, c-format
 msgid "Low - nice %d"
-msgstr "Thấp - nice (%d)"
+msgstr "Thấp — nice (%d)"
 
-#: src/infoview.c:197
+#: ../src/infoview.c:218
 #, c-format
 msgid "Very low - nice %d"
-msgstr "Rất thấp - nice (%d)"
+msgstr "Rất thấp — nice (%d)"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "_Change Priority..."
-msgstr "_Thay đổi độ ưu tiên..."
+#: ../src/interface.c:47
+msgid "_File"
+msgstr "_Tập tin"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "Change the importance (nice value) of a process"
-msgstr "Thay đổi độ ưu tiên (\"nice\") của tiến trình"
+#: ../src/interface.c:48
+msgid "_Edit"
+msgstr "_Hiệu chỉnh"
 
-#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
-msgid "_Hide Process"
-msgstr "Ẩ_n tiến trình"
+#: ../src/interface.c:49
+msgid "_View"
+msgstr "_Xem:"
 
-#: src/interface.c:60 src/interface.c:137
-msgid "Hide a process"
-msgstr "Ẩn một tiến trình"
+#: ../src/interface.c:50
+msgid "_Help"
+msgstr "Trợ _giúp"
 
-#: src/interface.c:66 src/interface.c:231
+#: ../src/interface.c:52
+msgid "_Quit"
+msgstr "_Thoát"
+
+#: ../src/interface.c:53
+msgid "Quit the program"
+msgstr "Thoạt khỏi chương trình"
+
+#: ../src/interface.c:56
+msgid "_Stop Process"
+msgstr "_Kết thúc tiến trình"
+
+#: ../src/interface.c:57
+msgid "Stop process"
+msgstr "Kết thúc tiến trình"
+
+#: ../src/interface.c:58
+msgid "_Continue Process"
+msgstr "T_iếp tục tiến trình"
+
+#: ../src/interface.c:59
+msgid "Continue process if stopped"
+msgstr "Tiếp tục tiến trình nếu bị ngừng."
+
+#: ../src/interface.c:61 ../src/interface.c:201
 msgid "End _Process"
 msgstr "_Kết thúc tiến trình"
 
-#: src/interface.c:66
-msgid "Force a process to finish."
-msgstr "Ép kết thúc một tiến trình."
+#: ../src/interface.c:62
+msgid "Force process to finish normally"
+msgstr "Ép buộc tiến trình kết thúc một cách bình thường"
 
-#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
-#: src/procdialogs.c:984
+#: ../src/interface.c:63 ../src/procdialogs.c:126
 msgid "_Kill Process"
 msgstr "_Buộc kết thúc tiến trình"
 
-#: src/interface.c:71
-msgid "Force a process to finish now."
-msgstr "Ép tiến trình kết thúc ngay bây giờ."
+#: ../src/interface.c:64
+msgid "Force process to finish immediately"
+msgstr "Ép buộc tiến trình kết thúc ngay"
 
-#: src/interface.c:77
+#: ../src/interface.c:65
+msgid "_Change Priority..."
+msgstr "_Thay đổi độ ưu tiên..."
+
+#: ../src/interface.c:66
+msgid "Change the order of priority of process"
+msgstr "Thay đổi độ ưu tiên («nice») của tiến trình"
+
+#: ../src/interface.c:67
+msgid "Prefere_nces"
+msgstr "_Sơ thích"
+
+#: ../src/interface.c:68
+msgid "Configure the application"
+msgstr "Cấu hình ứng dụng"
+
+#: ../src/interface.c:70 ../src/procdialogs.c:82
+msgid "_Hide Process"
+msgstr "Ẩ_n tiến trình"
+
+#: ../src/interface.c:71
+msgid "Hide process from list"
+msgstr "Ẩn một tiến trình trong danh sách"
+
+#: ../src/interface.c:72
 msgid "_Hidden Processes"
 msgstr "_Tiến trình ẩn"
 
-#: src/interface.c:78
-msgid "View and edit your list of hidden processes"
-msgstr "Xem và sửa danh sách các tiến trình ẩn"
+#: ../src/interface.c:73
+msgid "Open the list of currently hidden processes"
+msgstr "Mở danh sách các tiến trình ẩn hiện thời"
 
-#: src/interface.c:89 src/interface.c:131
+#: ../src/interface.c:74
 msgid "_Memory Maps"
 msgstr "Bảng đồ _bộ nhớ"
 
-#: src/interface.c:89 src/interface.c:131
-msgid "View the memory maps associated with a process"
-msgstr "Xem bản đồ bộ nhớ liên kết với một tiến trình"
+#: ../src/interface.c:75
+msgid "Open the memory maps associated with a process"
+msgstr "Mở các bản đồ bộ nhớ tượng ứng với một tiến trình"
 
-#: src/interface.c:95
-msgid "Process _Dependencies"
-msgstr "_Mối liên hệ tiến trình"
+#: ../src/interface.c:76
+msgid "Open _Files"
+msgstr "Mở _tập tin"
 
-#: src/interface.c:95
-msgid "Display a tree showing process dependencies"
-msgstr "Hiện cây mối liên hệ tiến trình"
+#: ../src/interface.c:77
+msgid "View the files opened by a process"
+msgstr "Xem các tập tin được mở bởi một tiến trình nào đó"
 
-#: src/interface.c:100
+#: ../src/interface.c:79
+msgid "_Contents"
+msgstr "_Nội dung"
+
+#: ../src/interface.c:80
+msgid "Open the manual"
+msgstr "Mở tập tin hướng dẫn"
+
+#: ../src/interface.c:81
+msgid "_About"
+msgstr "_Giới thiệu"
+
+#: ../src/interface.c:82
+msgid "About this application"
+msgstr "Giới thiệu ứng dụng này"
+
+#: ../src/interface.c:87
+msgid "_Dependencies"
+msgstr "_Cách phụ thuộc"
+
+#: ../src/interface.c:88
+msgid "Show parent/child relationship between processes"
+msgstr "Hiển thị quan hệ mẹ/con giữa hai tiến trình"
+
+#: ../src/interface.c:90
 msgid "_Threads"
-msgstr "Thread"
+msgstr "_Mạch"
 
-#: src/interface.c:100
-msgid "Display threads (subprocesses)"
-msgstr "Hiện Thread (tiểu trình)"
+#: ../src/interface.c:91
+msgid "Show each thread as a separate process"
+msgstr "Hiển thị mỗi mạch là một tiến trình riêng"
 
-#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
-msgid "_End Process"
-msgstr "_Kết thúc tiến trình"
+#: ../src/interface.c:98
+msgid "_Active Processes"
+msgstr "Tiến trình _hoạt động"
 
-#: src/interface.c:143
-msgid "Force a process to finish"
-msgstr "Ép tiến trình kết thúc"
+#: ../src/interface.c:99
+msgid "Show active processes"
+msgstr "Hiện tiến trình hoạt động"
 
-#: src/interface.c:148
-msgid "Force a process to finish now"
-msgstr "Ép tiến trình kết thúc ngay"
+#: ../src/interface.c:100
+msgid "A_ll Processes"
+msgstr "_Mọi tiến trình"
 
-#: src/interface.c:188
-msgid "Sea_rch:"
-msgstr "_Tìm:"
+#: ../src/interface.c:101
+msgid "Show all processes"
+msgstr "Hiện mọi tiến trình"
 
-#: src/interface.c:200
-msgid "All Processes"
-msgstr "Mọi tiến trình"
+#: ../src/interface.c:102
+msgid "M_y Processes"
+msgstr "Tiến trình của _tôi"
 
-#: src/interface.c:201
-msgid "My Processes"
-msgstr "Tiến trình của tôi"
+#: ../src/interface.c:103
+msgid "Show user own process"
+msgstr "Hiện các tiến trình của người dùng"
 
-#: src/interface.c:202
-msgid "Active Processes"
-msgstr "Tiến trình hoạt động"
-
-#: src/interface.c:209
-msgid "Vie_w:"
-msgstr "_Xem:"
-
-#: src/interface.c:236
-msgid "More _Info"
-msgstr "Thêm thông t_in"
-
-#: src/interface.c:334
-msgid "Name"
-msgstr "Tên"
-
-#: src/interface.c:335
-msgid "Directory"
-msgstr "Thư mục"
-
-#: src/interface.c:336
-msgid "Type"
-msgstr "Kiểu"
-
-#: src/interface.c:337
-msgid "Total"
-msgstr "Tổng cộng"
-
-#: src/interface.c:338
-msgid "Used"
-msgstr "Dùng"
-
-#: src/interface.c:362
-msgid "CPU History"
-msgstr "Nhật ký CPU"
-
-#: src/interface.c:402
-#, fuzzy, c-format
-msgid "CPU%d:"
-msgstr "CPU được dùng :"
-
-#: src/interface.c:421
-msgid "Memory and Swap History"
-msgstr "Nhật ký Bộ nhớ và Swap"
-
-#: src/interface.c:454
-msgid "Used memory:"
-msgstr "Bộ nhớ đã dùng:"
-
-#: src/interface.c:463 src/interface.c:495
-msgid "of"
-msgstr "của"
-
-#: src/interface.c:486
-msgid "Used swap:"
-msgstr "Swap đã dùng:"
-
-#: src/interface.c:521 src/procdialogs.c:904
-msgid "Devices"
-msgstr "Thiết bị"
-
-#: src/interface.c:638 src/procdialogs.c:729
-msgid "Process Listing"
-msgstr "Danh sách tiến trình"
-
-#: src/interface.c:644 src/procdialogs.c:816
-msgid "Resource Monitor"
-msgstr "Bộ theo dõi tài nguyên"
-
-#: src/interface.c:702
-msgid "Application Manager"
-msgstr "Trình quản lý ứng dụng"
-
-#: src/interface.c:708
-msgid "Running Applications"
-msgstr "Ứng dụng đang chạy"
-
-#: src/interface.c:727
-msgid "_Close Application"
-msgstr "Đón_g ứng dụng"
-
-#: src/interface.c:770
-msgid "More _Info >>"
-msgstr "_Nhiều thông tin hơn >>"
-
-#: src/interface.c:777
-msgid "<< Less _Info"
-msgstr "Ít _thông tin hơn"
-
-#: src/memmaps.c:256
-msgid "Filename"
-msgstr "Tên tập tin"
-
-#: src/memmaps.c:257
-msgid "VM Start"
-msgstr "Đầu VM"
-
-#: src/memmaps.c:258
-msgid "VM End"
-msgstr "Cuối VM"
-
-#: src/memmaps.c:259 src/proctable.c:122
-msgid "VM Size"
-msgstr "Kích thước VM"
-
-#: src/memmaps.c:260
-msgid "Flags"
-msgstr "Cờ hiệu"
-
-#: src/memmaps.c:261
-msgid "VM Offset"
-msgstr "Vị trí VM"
-
-#: src/memmaps.c:262
+#: ../src/interface.c:287 ../src/memmaps.c:301
 msgid "Device"
 msgstr "Thiết bị"
 
-#: src/memmaps.c:263
-msgid "Inode"
-msgstr "Inode"
+#: ../src/interface.c:288
+msgid "Directory"
+msgstr "Thư mục"
 
-#: src/memmaps.c:344
+#: ../src/interface.c:289 ../src/openfiles.c:230
+msgid "Type"
+msgstr "Kiểu"
+
+#: ../src/interface.c:290
+msgid "Total"
+msgstr "Tổng cộng"
+
+#: ../src/interface.c:291
+msgid "Free"
+msgstr "Còn rảnh"
+
+#: ../src/interface.c:292
+msgid "Used"
+msgstr "Dùng"
+
+#: ../src/interface.c:301 ../src/interface.c:915 ../src/procdialogs.c:743
+#: ../src/procdialogs.c:747
+msgid "Devices"
+msgstr "Thiết bị"
+
+#: ../src/interface.c:430
+msgid "CPU History"
+msgstr "Nhật ký CPU"
+
+#: ../src/interface.c:473
+msgid "CPU:"
+msgstr "CPU:"
+
+#: ../src/interface.c:476
+#, c-format
+msgid "CPU%d:"
+msgstr "CPU%d:"
+
+#: ../src/interface.c:496
+msgid "Memory and Swap History"
+msgstr "Nhật ký Bộ nhớ và Trao đổi"
+
+#: ../src/interface.c:529
+msgid "User memory:"
+msgstr "Bộ nhớ của người dùng:"
+
+#: ../src/interface.c:547 ../src/interface.c:607
+msgid "of"
+msgstr "trên"
+
+#: ../src/interface.c:588
+msgid "Used swap:"
+msgstr "Trao đổi đã dùng:"
+
+#: ../src/interface.c:647
+msgid "Network History"
+msgstr "Nhật ký mạng"
+
+#: ../src/interface.c:679
+msgid "Receive:"
+msgstr "Nhận:"
+
+#: ../src/interface.c:723
+msgid "Send:"
+msgstr "Gởi:"
+
+#: ../src/interface.c:903 ../src/procdialogs.c:560
+msgid "Processes"
+msgstr "Tiến trình"
+
+#: ../src/interface.c:909 ../src/procdialogs.c:652
+msgid "Resources"
+msgstr "Tài nguyên"
+
+#: ../src/load-graph.c:350 ../src/load-graph.c:360
+#, c-format
+msgid "%s/s"
+msgstr "%s/g"
+
+#: ../src/memmaps.c:295
+msgid "Filename"
+msgstr "Tên tập tin"
+
+#: ../src/memmaps.c:296
+msgid "VM Start"
+msgstr "Đầu bộ nhớ ảo"
+
+#: ../src/memmaps.c:297
+msgid "VM End"
+msgstr "Cuối bộ nhớ ảo"
+
+#: ../src/memmaps.c:298
+msgid "VM Size"
+msgstr "Cỡ bộ nhớ ảo"
+
+#: ../src/memmaps.c:299
+msgid "Flags"
+msgstr "Cờ"
+
+#: ../src/memmaps.c:300
+msgid "VM Offset"
+msgstr "Hiệu số bộ nhớ ảo"
+
+#: ../src/memmaps.c:302
+msgid "Inode"
+msgstr "Nút thông tin"
+
+#: ../src/memmaps.c:402
 msgid "Memory Maps"
 msgstr "Bản đồ bộ nhớ"
 
-#: src/memmaps.c:364
+#: ../src/memmaps.c:422
+#, c-format
+msgid "_Memory maps for process \"%s\" (PID %u):"
+msgstr "_Bản đồ bộ nhớ cho tiến trình « %s » (PID %u):"
+
+#: ../src/openfiles.c:31
+msgid "file"
+msgstr "tập tin"
+
+#: ../src/openfiles.c:33
+msgid "pipe"
+msgstr "ống dẫn"
+
+#: ../src/openfiles.c:35
+msgid "network connection"
+msgstr "kết nối mạng"
+
+#: ../src/openfiles.c:37
+msgid "local socket"
+msgstr "ổ cắm địa phương"
+
+#: ../src/openfiles.c:39
+msgid "unknown type"
+msgstr "không biết kiểu"
+
+#. Translators: "FD" here means "File Descriptor". Please use
+#. a very short translation if possible, and at most
+#. 2-3 characters for it to be able to fit in the UI.
+#: ../src/openfiles.c:229
+msgid "FD"
+msgstr "Tả"
+
+#: ../src/openfiles.c:231
+msgid "Object"
+msgstr "Đối tượng"
+
+#: ../src/openfiles.c:308
+msgid "Open Files"
+msgstr "Mở tập tin"
+
+#: ../src/openfiles.c:330
+#, c-format
+msgid "_Files opened by process \"%s\" (PID %u):"
+msgstr "Các tập tin được mở bởi tiến trình « %s » (PID %u):"
+
+#: ../src/procactions.c:73
+#, c-format
+msgid ""
+"Cannot change the priority of process with pid %d to %d.\n"
+"%s"
+msgstr "Không thể thay đổi ưu tiên của tiến trình có PID %d thành %d.\n"
+"%s"
+
+#: ../src/procactions.c:140
+#, c-format
+msgid ""
+"Cannot kill process with pid %d with signal %d.\n"
+"%s"
+msgstr "Không thể buộc kết thức tiến trình có PID %d với tín hiệu «%d».\n"
+"%s"
+
+#. translators: primary alert message
+#: ../src/procdialogs.c:62
+msgid "Hide the selected process?"
+msgstr "Ẩn tiến trình đã chọn không?"
+
+#. FIXME: View menu -> Edit menu
+#. translators: secondary alert messagex
+#: ../src/procdialogs.c:72
+msgid ""
+"Hidden processes are no longer visible in the process list. You can re-"
+"enable them by selecting the \"Hidden Processes\" entry in the View menu."
+msgstr "Những tiến trình ẩn không còn thấy được lại trong danh sách tiến trình. Tuy nhiên, bạn có thể xem chúng lại bằng cách chọn mục « Tiến trình ẩn » trong trình đơn Xem."
+
+#. translators: primary alert message
+#: ../src/procdialogs.c:121
+msgid "Kill the selected process?"
+msgstr "Ép kết thức tiến trình đã chọn không?"
+
+#. translators: secondary alert message
+#: ../src/procdialogs.c:123
+msgid ""
+"Killing a process may destroy data, break the session or introduce a "
+"security risk. Only unresponding processes should be killed."
+msgstr ""
+"Khi ép buộc kết thức tiến trình thì có thể xóa bỏ dữ liệu, hỏng phiên làm "
+"việc hoặc rủi ro bảo mật. Chỉ nên buộc kết thức tiến trình không đáp ứng thôi."
+
+#. translators: primary alert message
+#: ../src/procdialogs.c:130
+msgid "End the selected process?"
+msgstr "Kết thức tiến trình đã chọn không?"
+
+#. translators: secondary alert message
+#: ../src/procdialogs.c:132
+msgid ""
+"Ending a process may destroy data, break the session or introduce a security "
+"risk. Only unresponding processes should be ended."
+msgstr ""
+"Kết thức tiến trình thì có thể xóa bỏ dữ liệu, hỏng phiên làm việc hoặc rủi "
+"ro bảo mật. Chỉ nên kết thức tiến trình không đáp ứng thôi."
+
+#: ../src/procdialogs.c:135
+msgid "_End Process"
+msgstr "_Kết thúc tiến trình"
+
+#: ../src/procdialogs.c:164
+msgid "(Very High Priority)"
+msgstr "(Độ ưu tiên rất cao)"
+
+#: ../src/procdialogs.c:166
+msgid "(High Priority)"
+msgstr "(Độ ưu tiên cao)"
+
+#: ../src/procdialogs.c:168
+msgid "(Normal Priority)"
+msgstr "(Độ ưu tiên bình thường)"
+
+#: ../src/procdialogs.c:170
+msgid "(Low Priority)"
+msgstr "(Độ ưu tiên thấp)"
+
+#: ../src/procdialogs.c:172
+msgid "(Very Low Priority)"
+msgstr "(Độ ưu tiên rất thấp)"
+
+#: ../src/procdialogs.c:224
+msgid "Change Priority"
+msgstr "Đổi độ ưu tiên"
+
+#: ../src/procdialogs.c:245
+msgid "Change _Priority"
+msgstr "Đổi độ ư_u tiên"
+
+#: ../src/procdialogs.c:266
+msgid "_Nice value:"
+msgstr "Giá trị _nice:"
+
+#: ../src/procdialogs.c:283
+msgid ""
+"The priority of a process is given by its nice value. A lower nice value "
+"corresponds to a higher priority."
+msgstr ""
+"Độ ưu tiên của tiến trình được thể hiện bởi giá trị «nice» (dễ thương). Giá "
+"trị thấp hơn tương ứng với độ ưu tiên cao hơn."
+
+#: ../src/procdialogs.c:446
+msgid "Processes i_nfo showed in list:"
+msgstr "Thông tin tiến trình được hiển thị trong danh sách:"
+
+#: ../src/procdialogs.c:498
+msgid "Icon"
+msgstr "Biểu tượng"
+
+#: ../src/procdialogs.c:537
+msgid "System Monitor Preferences"
+msgstr "Tùy thích bộ theo dõi hệ thống"
+
+#: ../src/procdialogs.c:567
+msgid "Behavior"
+msgstr "Hành vi"
+
+#: ../src/procdialogs.c:586 ../src/procdialogs.c:678
+msgid "_Update interval:"
+msgstr "_Khoảng cập nhật:"
+
+#: ../src/procdialogs.c:607 ../src/procdialogs.c:695 ../src/procdialogs.c:782
+msgid "seconds"
+msgstr "giây"
+
+#: ../src/procdialogs.c:614
+msgid "Alert before ending or _killing processes"
+msgstr "Hiện hộp thoại cảnh báo trước khi buộc /_kết thúc tiến trình"
+
+#: ../src/procdialogs.c:624
+msgid "Alert before _hiding processes"
+msgstr "Hiện hộp thoại cảnh báo trước khi ẩ_n tiến trình"
+
+#: ../src/procdialogs.c:634
+msgid "Process Fields"
+msgstr "Trường tiến trình"
+
+#: ../src/procdialogs.c:659
+msgid "Graphs"
+msgstr "Đồ thị"
+
+#: ../src/procdialogs.c:702
+msgid "_Background color:"
+msgstr "Màu _nền:"
+
+#: ../src/procdialogs.c:721
+msgid "_Grid color:"
+msgstr "Màu _lưới:"
+
+#: ../src/procdialogs.c:766
+msgid "Update _interval:"
+msgstr "Khoảng _cập nhật:"
+
+#: ../src/procdialogs.c:789
+msgid "Show _all filesystems"
+msgstr "Hiện _mọi hệ thống tập tin"
+
+#: ../src/proctable.c:242
+msgid "Process Name"
+msgstr "Tên tiến trình"
+
+#: ../src/proctable.c:243
+msgid "User"
+msgstr "Người dùng"
+
+#: ../src/proctable.c:244
+msgid "Status"
+msgstr "Trạng thái"
+
+#: ../src/proctable.c:245
+msgid "Memory"
+msgstr "Bộ nhớ"
+
+#: ../src/proctable.c:246
+msgid "Virtual Memory"
+msgstr "Bộ nhớ ảo"
+
+#: ../src/proctable.c:247
+msgid "Resident Memory"
+msgstr "Bộ nhớ nội trú"
+
+#: ../src/proctable.c:248
+msgid "Shared Memory"
+msgstr "Bộ nhớ dùng chung"
+
+#: ../src/proctable.c:249
+msgid "RSS Memory"
+msgstr "Bộ nhớ RSS"
+
+#: ../src/proctable.c:250
+msgid "X Server Memory"
+msgstr "Bộ nhớ trình phục vụ X"
+
+#: ../src/proctable.c:251
+#, no-c-format
+msgid "% CPU"
+msgstr "% CPU"
+
+#: ../src/proctable.c:252
+msgid "CPU time"
+msgstr "Thời gian đơn vị xử lý trung tâm"
+
+#: ../src/proctable.c:253
+msgid "Nice"
+msgstr "Độ ưu tiên"
+
+#: ../src/proctable.c:254
+msgid "ID"
+msgstr "ID"
+
+#: ../src/proctable.c:255
+msgid "Security Context"
+msgstr "Ngữ cảnh bảo mật"
+
+#: ../src/proctable.c:256
+msgid "Arguments"
+msgstr "Đối số"
+
+#: ../src/proctable.c:430
+msgid "Running"
+msgstr "Đang chạy"
+
+#: ../src/proctable.c:435
+msgid "Stopped"
+msgstr "Bị ngừng"
+
+#: ../src/proctable.c:440
+msgid "Zombie"
+msgstr "Dở sống dở chết"
+
+#: ../src/proctable.c:445
+msgid "Uninterruptible"
+msgstr "Không thể ngắt"
+
+#: ../src/proctable.c:450
+msgid "Sleeping"
+msgstr "Đang ngủ"
+
+#: ../src/proctable.c:634
+#, c-format
+msgid "%s (thread)"
+msgstr "%s (mạch)"
+
+#: ../src/proctable.c:1022
+#, c-format
+msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
+msgstr "Trọng tải trung bình trong vòng 1, 5, 15 phút trước: %0.2f, %0.2f, %0.2f"
+
+#: ../src/util.c:87
+#, c-format
+msgid "%u byte"
+msgid_plural "%u bytes"
+msgstr[0] "%u byte"
+
+#: ../src/util.c:93
+#, c-format
+msgid "%.1f KiB"
+msgstr "%.1f KiB"
+
+#: ../src/util.c:97
+#, c-format
+msgid "%.1f MiB"
+msgstr "%.1f MiB"
+
+#: ../src/util.c:101
+#, c-format
+msgid "%.1f GiB"
+msgstr "%.1f GiB"
+
+msgid "Kevin Vandersloot"
+msgstr "Kevin Vandersloot"
+
+msgid "(C) 2001 Kevin Vandersloot"
+msgstr "Bản quyền © năm 2001 Kevin Vandersloot"
+
+msgid "Simple process viewer using libgtop"
+msgstr "Bộ xem tiến trình đơn giản dùng thư viên libgtop"
+
+msgid "X window system"
+msgstr "Hệ thống cửa sổ X"
+
+msgid "bourne again shell"
+msgstr "bourne again shell (hệ vỏ: bash)"
+
+msgid "Gnome-Session"
+msgstr "Phiên làm việc Gnome"
+
+msgid "No processes are currently hidden."
+msgstr "Không có tiến trình nào ẩn."
+
+msgid "Manage Hidden Processes"
+msgstr "Quản lý tiến trình ẩn"
+
+msgid "Force a process to finish."
+msgstr "Ép tiến trình kết thúc."
+
+msgid "Force a process to finish now."
+msgstr "Ép tiến trình kết thúc ngay bây giờ."
+
+msgid "Display a tree showing process dependencies"
+msgstr "Hiện cây hiện cách phụ thuộc giữa tiến trình"
+
+msgid "Display threads (subprocesses)"
+msgstr "Hiện mạch (tiểu trình)"
+
+msgid "More _Info >>"
+msgstr "_Nhiều thông tin hơn →"
+
+msgid "Sea_rch:"
+msgstr "_Tìm kiếm:"
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "Application Manager"
+msgstr "Bộ quản lý ứng dụng"
+
+msgid "Running Applications"
+msgstr "Ứng dụng đang chạy"
+
 msgid "Process name:"
 msgstr "Tên tiến trình:"
 
-#: src/procactions.c:53
-msgid "No such process."
-msgstr "Không có tiến trình như vậy."
-
-#: src/procactions.c:66
-#, fuzzy, c-format
 msgid ""
-"Process Name: %s \n"
+"Process Name : %s \n"
 "\n"
 "You do not have permission to change the priority of this process. You can "
 "enter the root password to gain the necessary permission."
 msgstr ""
-"Tên tiến trình : %s \n"
+"Tên tiến trình: %s \n"
 "\n"
 "Bạn không có quyền để thay đổi độ ưu tiên của tiến trình này. Bạn có thể "
-"nhập mật khẩu root để có được quyền cần thiết."
+"nhập mật khẩu người chủ (root) để có được quyền cần thiết."
 
-#: src/procactions.c:73
-#, fuzzy, c-format
 msgid ""
-"Process Name: %s \n"
+"Process Name : %s \n"
 "\n"
 "You must be root to renice a process lower than 0. You can enter the root "
 "password to gain the necessary permission."
 msgstr ""
 "Tên tiến trình : %s \n"
 "\n"
-"Bạn phải là root mới có thể tăng độ ưu tiên của tiến trình (giảm giá trị "
-"\"nice\" xuống dưới 0). Bạn có thể nhập mật khẩu root đẩy có được quyền "
-"thích hợp."
+"Bạn phải là người chủ (root) mới có thể tăng độ ưu tiên của tiến trình (giảm "
+"giá trị « nice » xuống dưới 0). Bạn có thể nhập mật khẩu người chủ đẩy có được "
+"quyền thích hợp."
 
-#: src/procactions.c:124
-#, fuzzy, c-format
 msgid ""
-"Process Name: %s \n"
+"Process Name : %s \n"
 "\n"
 "You do not have permission to end this process. You can enter the root "
 "password to gain the necessary permission."
 msgstr ""
 "Tên tiến trình : %s \n"
 "\n"
-"Bạn không có quyền kết thúc tiến trình này. Bạn có thể nhập mật khẩu root để "
-"có được quyền cần thiết."
+"Bạn không có quyền kết thúc tiến trình này. Bạn có thể nhập mật khẩu người "
+"chủ (root) để có được quyền cần thiết."
 
-#: src/procactions.c:143
 msgid "An error occured while killing the process."
-msgstr "Xảy ra lỗi khi buộc kết thúc tiến trình"
+msgstr "Gặp llỗi khi ép buộc kết thúc tiến trình."
 
-#: src/procdialogs.c:81
-msgid "Are you sure you want to hide this process?"
-msgstr ""
-
-#: src/procdialogs.c:82
-msgid ""
-"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
-"the Edit menu."
-msgstr ""
-
-#: src/procdialogs.c:141 src/procdialogs.c:282
 msgid "_Show this dialog next time"
 msgstr "_Hiệp hộp thoại này lần kế"
 
-#: src/procdialogs.c:218
-msgid "Are you sure you want to kill this process?"
-msgstr ""
-
-#: src/procdialogs.c:219
 msgid "If you kill a process, unsaved data will be lost."
-msgstr "Nếu bạn Buộc kết thúc tiến trình, dữ liệu chưa lưu sẽ bị mất."
+msgstr "Nếu bạn buộc kết thúc tiến trình, các dữ liệu chưa lưu sẽ bị mất."
 
-#: src/procdialogs.c:223
-msgid "Are you sure you want to end this process?"
-msgstr ""
-
-#: src/procdialogs.c:224
 msgid "If you end a process, unsaved data will be lost."
-msgstr "Nếu bạn kết thúc tiến trình, dữ liệu chưa lưu sẽ bị mất."
+msgstr "Nếu bạn kết thúc tiến trình, các dữ liệu chưa lưu sẽ bị mất."
 
-#: src/procdialogs.c:321
-msgid "(Very High Priority)"
-msgstr "(Độ ưu tiên rất cao)"
-
-#: src/procdialogs.c:323
-msgid "(High Priority)"
-msgstr "(Độ ưu tiên cao)"
-
-#: src/procdialogs.c:325
-msgid "(Normal Priority)"
-msgstr "(Độ ưu tiên bình thường)"
-
-#: src/procdialogs.c:327
-msgid "(Low Priority)"
-msgstr "(Độ ưu tiên thấp)"
-
-#: src/procdialogs.c:329
-msgid "(Very Low Priority)"
-msgstr "(Độ ưu tiên rất thấp)"
-
-#: src/procdialogs.c:382 src/procdialogs.c:992
-msgid "Change Priority"
-msgstr "Đổi độ ưu tiên"
-
-#: src/procdialogs.c:403 src/procdialogs.c:993
-msgid "Change _Priority"
-msgstr "Đổi độ ư_u tiên"
-
-#: src/procdialogs.c:424
-msgid "_Nice value:"
-msgstr "Giá trị _nice:"
-
-#: src/procdialogs.c:441
-msgid ""
-"The priority of a process is given by its nice value. A lower nice value "
-"corresponds to a higher priority."
-msgstr ""
-"Độ ưu tiên của tiến trình được thể hiện bởi giá trị \"nice\" (dễ thương). "
-"Giá trị thấp hơn tương ứng với độ ưu tiên cao hơn."
-
-#: src/procdialogs.c:671
-msgid "Icon"
-msgstr "Biểu tượng"
-
-#: src/procdialogs.c:711
-msgid "Preferences"
-msgstr "Thông số"
-
-#: src/procdialogs.c:736
-msgid "Behavior"
-msgstr "Hành vi"
-
-#: src/procdialogs.c:755 src/procdialogs.c:842
-msgid "_Update interval:"
-msgstr "_Khoảng cập nhật:"
-
-#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
-msgid "seconds"
-msgstr "giây"
-
-#: src/procdialogs.c:778
-msgid "Show warning dialog when ending or _killing processes"
-msgstr "Hiện hộp thoại cảnh báo khi buộc _kết thúc tiến trình"
-
-#: src/procdialogs.c:788
-msgid "Show warning dialog when _hiding processes"
-msgstr "Hiện hộp thoại cảnh báo khi ẩ_n tiến trình"
-
-#: src/procdialogs.c:798
-msgid "Process Fields"
-msgstr "Trường tiến trình"
-
-#: src/procdialogs.c:823
-msgid "Graphs"
-msgstr "Biểu đồ"
-
-#: src/procdialogs.c:866
-msgid "_Background color:"
-msgstr "Màu _nền:"
-
-#: src/procdialogs.c:885
-msgid "_Grid color:"
-msgstr "Màu _lưới:"
-
-#: src/procdialogs.c:923
-msgid "Update _interval:"
-msgstr "Khoảng _cập nhật:"
-
-#: src/procdialogs.c:983
 msgid "Kill Process"
-msgstr "Buộc kết thúc ngay tiến trình"
+msgstr "_Buộc kết thúc tiến trình"
 
-#: src/procdialogs.c:987
 msgid "End Process"
-msgstr "Kết thúc tiến trình"
+msgstr "_Kết thúc tiến trình"
 
-#: src/procdialogs.c:1012
 msgid "Root Password :"
-msgstr "Mật khẩu root :"
+msgstr "Mật khẩu chủ :"
 
-#: src/procdialogs.c:1057
 msgid "Wrong Password."
 msgstr "Sai mật khẩu."
 
-#: src/procman.c:46
 msgid "show simple dialog to end processes and logout"
 msgstr "hiện hộp thoại đơn giản để kết thúc tiến trình và đăng xuất"
 
-#: src/proctable.c:117
-msgid "Process Name"
-msgstr "Tên tiến trình"
-
-#: src/proctable.c:118
-msgid "Arguments"
-msgstr "Đối số"
-
-#: src/proctable.c:119
-msgid "User"
-msgstr "Người dùng"
-
-#: src/proctable.c:120
-msgid "Status"
-msgstr "Trạng thái"
-
-#: src/proctable.c:121
-msgid "Memory"
-msgstr "Bộ nhớ"
-
-#: src/proctable.c:123
-msgid "Resident Memory"
-msgstr "Bộ nhớ thường trú"
-
-#: src/proctable.c:124
-msgid "Shared Memory"
-msgstr "Bộ nhớ dùng chung"
-
-#: src/proctable.c:125
-msgid "RSS Memory"
-msgstr "Bộ nhớ RSS"
-
-#: src/proctable.c:126
-#, fuzzy
-msgid "X Server Memory"
-msgstr "Bộ nhớ dùng chung"
-
-#: src/proctable.c:127
-#, no-c-format
-msgid "% CPU"
-msgstr "% CPU"
-
-#: src/proctable.c:128
-msgid "Nice"
-msgstr "Nice"
-
-#: src/proctable.c:129
-msgid "ID"
-msgstr "ID"
-
-#: src/proctable.c:277
-msgid "Running"
-msgstr "Đang chạy"
-
-#: src/proctable.c:282
-msgid "Stopped"
-msgstr "Đã ngừng"
-
-#: src/proctable.c:287
-msgid "Sleeping"
-msgstr "Đang ngủ"
-
-#: src/proctable.c:382
-#, fuzzy, c-format
-msgid "%s (thread)"
-msgstr " (thread)"
-
-#: src/proctable.c:959
-#, c-format
 msgid "%s could not be found."
-msgstr "Không thể tìm thấy %s."
+msgstr "Không tìm thấy « %s »."
 
-#~ msgid "Simple process viewer using libgtop"
-#~ msgstr "Bộ xem tiến trình đơn giản dùng libgtop"
+msgid "%d K"
+msgstr "%d K"
 
-#~ msgid "X window system"
-#~ msgstr "X Window System"
+msgid "%.0f MB"
+msgstr "%.0f MB"
 
-#~ msgid "bourne again shell"
-#~ msgstr "bourne again shell (bash)"
+msgid "Kevin Vandersloot (kfv101@psu.edu)"
+msgstr "Kevin Vandersloot (kfv101@psu.edu)"
 
-#~ msgid "Gnome-Session"
-#~ msgstr "Gnome-Session"
+msgid "View processes being run by all users"
+msgstr "Xem các tiến trình đang được chạy bởi mọi người dùng"
 
-#, fuzzy
-#~ msgid "%d byte"
-#~ msgid_plural "%d bytes"
-#~ msgstr[0] "%d byte"
-#~ msgstr[1] "%d byte"
+msgid "View processes being run by you"
+msgstr "Xem các tiến trình được bạn thực hiện"
 
-#~ msgid "%d K"
-#~ msgstr "%d K"
+msgid "Used CPU:"
+msgstr "CPU đã dùng:"
 
-#~ msgid "%.1f MB"
-#~ msgstr "%.1f MB"
+msgid "Change Priority ..."
+msgstr "Đổi độ ưu tiên..."
 
-#~ msgid "%.0f MB"
-#~ msgstr "%.0f MB"
+msgid "Hide Process"
+msgstr "Ẩn tiến trình"
 
-#~ msgid "%.1f GB"
-#~ msgstr "%.1f GB"
+msgid ""
+"Are you sure you want to hide this process?\n"
+"(Choose 'Hidden Processes' in the Settings menu to reshow)"
+msgstr ""
+"Bạn có muốn ẩn tiến trình này?\n"
+"(Chọn mục « Các tiến trình ẩn » trong hộp thoại Thông số sẽ hiện lại tiến "
+"trình)"
 
-#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
-#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
+msgid "Erik Johnsson (zaphod@linux.nu) - icon support"
+msgstr "Erik Johnsson (zaphod@linux.nu) — hỗ trợ biểu tượng"
 
-#~ msgid "View processes being run by all users"
-#~ msgstr "Xem các tiến trình đang được chạy bởi mọi người dùng trên hệ thống"
+msgid "Status : "
+msgstr "Trạng thái:"
 
-#~ msgid "View processes being run by you"
-#~ msgstr "Xem các tiến trình được bạn thực hiện"
+msgid "Total : "
+msgstr "Tổng cộng:"
 
-#~ msgid "View only active processes"
-#~ msgstr "Chỉ xem các tiến trình hoạt động"
+msgid "Used Space"
+msgstr "Chỗ đã dùng:"
 
-#~ msgid "Used CPU:"
-#~ msgstr "CPU đã dùng:"
+msgid "Total Space"
+msgstr "Tổng chỗ"
 
-#~ msgid "Change Priority ..."
-#~ msgstr "Đổi độ ưu tiên..."
+msgid "CPU Used :"
+msgstr "CPU đã dùng:"
 
-#~ msgid "Hide Process"
-#~ msgstr "Ẩn tiến trình"
+msgid "Swap"
+msgstr "Tráo đổi"
 
-#~ msgid ""
-#~ "Are you sure you want to hide this process?\n"
-#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
-#~ msgstr ""
-#~ "Bạn có muốn ẩn tiến trình này?\n"
-#~ "(Chọn mục \"Các tiến trình ẩn\" trong hộp thoại Thông số sẽ hiện lại tiến "
-#~ "trình)"
+msgid "System _Monitor"
+msgstr "Bộ theo _dõi hệ thống"
 
-#~ msgid "Erik Johnsson (zaphod@linux.nu) - icon support"
-#~ msgstr "Erik Johnsson (zaphod@linux.nu) - icon support"
+msgid "_Set"
+msgstr "Đặ_t"
 
-#~ msgid "Hidden Processes"
-#~ msgstr "Tiến trình ẩn"
+msgid "Update Speed ( seconds ) :"
+msgstr "Tốc độ cập nhật (giây):"
 
-#~ msgid "Status : "
-#~ msgstr "Trạng thái : "
+msgid "Se_t"
+msgstr "Đặ_t"
 
-#~ msgid "Total : "
-#~ msgstr "Tổng cộng : "
+msgid "Process Manager"
+msgstr "Bộ quản lý tiến trình"
 
-#~ msgid "Used Space"
-#~ msgstr "Không gian được dùng"
+msgid "Saves the pane position for the system monitor tab"
+msgstr "Lưu vị trí ô cửa sổ cho thanh theo dõi hệ thống"
 
-#~ msgid "Total Space"
-#~ msgstr "Tổng không gian"
+msgid "Force a process to finish immediately"
+msgstr "Ép tiến trình kết thúc ngay"
 
-#~ msgid "CPU Used :"
-#~ msgstr "CPU đã dùng:"
+msgid "Open the memory maps associated with the process"
+msgstr "Mở các bản đồ bộ nhớ tượng ứng với tiến trình đó"
 
-#~ msgid "Swap"
-#~ msgstr "Tráo đổi"
+msgid "View the files opened by the process"
+msgstr "Xem các tập tin được mở bởi tiến trình đó"
 
-#~ msgid "System _Monitor"
-#~ msgstr "_Bộ theo dõi hệ thống"
+msgid "Sho_w:"
+msgstr "_Hiển thị:"
 
-#~ msgid "_Set"
-#~ msgstr "_Chọn"
+msgid "No such process."
+msgstr "Không có tiến trình như vậy."
 
-#~ msgid "Update Speed ( seconds ) :"
-#~ msgstr "Tốc độ cập nhật (giây) :"
+msgid "Could not find \"%s\""
+msgstr "Không tìm thấy « %s »"
 
-#~ msgid "Se_t"
-#~ msgstr "_Chọn"
-
-#~ msgid "Process Manager"
-#~ msgstr "Bộ quản lý tiến trình"
+msgid ""
+"There are no processes containing the searched string. Please note that the "
+"search is performed only on processes shown in the process list."
+msgstr ""
+"Không có tiến trình nào chứa chuỗi đã tìm. Hãy ghi chú rằng việc tìm kiếm "
+"chỉ tìm trong những tiến trình hiện thời được hiển thị trong danh sách tiến "
+"trình."
