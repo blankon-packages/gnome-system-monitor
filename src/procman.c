@@ -202,10 +202,6 @@ color_changed_cb (GConfClient *client, guint id, GConfEntry *entry, gpointer dat
 	else {
 		g_assert_not_reached();
 	}
-
-	load_graph_reset_colors(procdata->cpu_graph);
-	load_graph_reset_colors(procdata->mem_graph);
-	load_graph_reset_colors(procdata->net_graph);
 }
 
 
@@ -231,8 +227,6 @@ procman_data_new (GConfClient *client)
 	gint swidth, sheight;
 	gint i;
 	glibtop_cpu cpu;
-	glibtop_loadavg loadavg;
-	gsize nprocs;
 
 	pd = g_new0 (ProcData, 1);
 	
@@ -246,10 +240,6 @@ procman_data_new (GConfClient *client)
 	pd->mem_graph = NULL;
 	pd->net_graph = NULL;
 	pd->disk_timeout = 0;
-
-	glibtop_get_loadavg(&loadavg);
-	nprocs = (loadavg.nr_tasks ? 1.2f * loadavg.nr_tasks : 100);
-	pd->procinfo_allocator = g_mem_chunk_create(ProcInfo, nprocs, G_ALLOC_AND_FREE);
 
 	/* username is usually 8 chars long
 	   for caching, we create chunks of 128 chars */
@@ -481,7 +471,7 @@ procman_get_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefi
 		}
 	}
 
-	if(g_str_has_suffix(prefix, "proctree"))
+	if(g_str_has_suffix(prefix, "proctree") || g_str_has_suffix(prefix, "disktreenew"))
 	{
 		GSList *order;
 		char *key;
@@ -548,7 +538,7 @@ procman_save_tree_state (GConfClient *client, GtkWidget *tree, const gchar *pref
 		g_free (key);
 	}
 
-	if(g_str_has_suffix(prefix, "proctree"))
+	if(g_str_has_suffix(prefix, "proctree") || g_str_has_suffix(prefix, "disktreenew"))
 	{
 		GSList *order;
 		char *key;

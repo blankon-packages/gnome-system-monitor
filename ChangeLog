@@ -1,3 +1,206 @@
+2006-01-02  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+
+	Released 2.13.4.
+
+2006-01-02  Benoît Dejean  <benoit@placenet.org>
+
+	* src/load-graph.c: (load_graph_draw), (get_load), (get_memory),
+	(net_scale), (get_net), (shift_right), (load_graph_update),
+	(load_graph_unalloc), (load_graph_alloc), (load_graph_new),
+	(load_graph_change_speed):
+	* src/load-graph.h:
+	* src/procman.c: (color_changed_cb):
+	* src/procman.h:
+
+	Reworked LoadGraph.
+	Fuzy description of changes (as i was offline all the weekend, i
+	have been enable to commit anything. CVS is so bad).
+
+	Fixed background color.
+	Many drawing improvements.
+	Dropped color allocation code.
+	Moved a macro from procman.h to load-graph.h
+	Reworked CPU load graph : simpler and faster.
+	Changed LoadGraph->data allocation scheme.
+
+2006-01-02  Benoît Dejean  <benoit@placenet.org>
+
+	* src/gnome-system-monitor.schemas.in:
+
+	Made Resources tab default.
+	Closes #324968.
+
+2006-01-02  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procdialogs.c: (procdialog_create_preferences_dialog):
+
+	Set smooth refresh checkbox status according to gconf.
+
+2006-01-02  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+
+	Requires libgtop 2.13.0.
+
+	* src/proctable.c: (proctable_free_info),
+	, (update_info_mutable_cols),
+	(remove_info_from_list), (procinfo_new), (proctable_free_table):
+
+	Removed first unused argument of proctable_free_info(procinfo).
+
+	(get_process_memory_writable): Use libgtop 2.13.0 feature.
+
+2005-12-28  Dennis Cranston  <dennis_cranston@yahoo.com>
+
+	* src/disks.c: (cb_disk_columns_changed), (create_disk_view):
+	* src/gnome-system-monitor.schemas.in:
+	* src/procman.c: (procman_get_tree_state),
+	(procman_save_tree_state):  Allow user to sort the device 
+	list.  Fixes bug #311920
+
+2005-12-27  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procdialogs.c: (smooth_refresh_toggled),
+	(procdialog_create_preferences_dialog):
+	* src/smooth_refresh.c: (smooth_refresh_get):
+	* src/smooth_refresh.h:
+
+	Added smooth_refresh option to please Linus.
+
+2005-12-27  Benoît Dejean  <benoit@placenet.org>
+
+	* src/Makefile.am:
+	* src/e_date.c: (e_strftime), (e_strftime_fix_am_pm),
+	(e_utf8_strftime_fix_am_pm), (filter_date),
+	(procman_format_date_for_display):
+	* src/e_date.h:
+	* src/procman.h:
+	* src/proctable.c: (sort_ints), (proctable_new),
+	(update_info_mutable_cols), (procinfo_new):
+	* src/proctable.h:
+
+	Added "Started" column to display start time of each process.
+
+2005-12-27  Benoît Dejean  <benoit@placenet.org>
+
+	* src/gnome-system-monitor.schemas.in:
+
+	Fixed typo.
+
+2005-12-24  Benoît Dejean  <benoit@placenet.org>
+
+	* src/load-graph.c: (load_graph_new):
+
+	Start the graphs on startup so that they can acquire data even
+	if not shown.
+
+	Closes #324719.
+
+2005-12-19  Benoît Dejean  <benoit@placenet.org>
+
+	* src/bacon-message-connection.c: (is_owned_by_user_and_socket),
+	(find_file_with_pattern), (socket_filename):
+	
+	Synced.
+
+2005-12-14  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	
+	Post-release version bump to 2.13.4.
+	
+	* src/load-graph.c: (get_load):
+	* src/procman.h:
+	
+	Don't counts IOWAIT time as busy in the CPU graphs.
+	Closes #324043.
+
+2005-12-13  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+
+	Released 2.13.3.
+
+2005-12-12  James Henstridge  <james@jamesh.id.au>
+
+	* src/Makefile.am: disable gconf schema install if $DESTDIR is
+	set.
+
+	* Makefile.am: ignore scrollkeeper database in the
+	distuninstallcheck.  Remove intltool programs on distclean.
+
+	* configure.in: modernise a bit, and add AC_DEFINE() descriptions
+	so that things work without acconfig.h.
+
+	* acconfig.h: remove obsolete file.
+
+	* autogen.sh: require Automake 1.9.
+
+2005-12-06  Benoît Dejean  <benoit@placenet.org>
+
+	* src/bacon-message-connection.c:
+
+	Synced with libbacon.
+
+2005-12-06  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/procman.c: (procman_data_new):
+	* src/procman.h:
+	* src/proctable.c: (proctable_free_info), (procinfo_new):
+
+	Let's have fun with g_slice_*.
+
+2005-12-01  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/Makefile.am:
+	* src/procactions.c: (renice_single_process),
+	(kill_single_process):
+	* src/procdialogs.c: (procman_action_to_command),
+	(procdialog_create_root_password_dialog):
+	* src/procdialogs.h:
+	* src/procman_gksu.c: (procman_gksu_create_root_password_dialog):
+	* src/procman_gksu.h:
+	* src/procman_gnomesu.c: (procman_gnomesu_get_exec),
+	(procman_gnomesu_create_root_password_dialog):
+	* src/procman_gnomesu.h:
+
+	Post release version bump to 2.13.3.
+
+	Added Gksu support.
+	Original patch by Sébastion Bacher <seb128@debian.org>
+	from Ubuntu packaged.
+
+	Splitted Gksu and Gnomesu implementations.
+
+	TODO: fix password prompt.
+
+2005-12-01  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procactions.c: (renice):
+	* src/procactions.h:
+	* src/procdialogs.c: (renice_dialog_button_pressed):
+
+	Droped unused pid argument for renice().
+
+2005-11-30  Benoît Dejean  <benoit@placenet.org>
+
+	* src/README.hacking:
+
+	Dropped old file.
+
+2005-11-29  Benoît Dejean  <benoit@placenet.org>
+
+	* src/Makefile.am: Removed non-existant file.
+
+2005-11-22  Matthias Clasen  <mclasen@redhat.com>
+
+	* gnome-system-monitor.desktop.in.in: Add Monitor
+	and X-Red-Hat-Base to Categories.  (#322130)
+
 2005-11-13  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS: Released 2.13.2.

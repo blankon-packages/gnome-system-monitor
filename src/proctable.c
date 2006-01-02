@@ -39,6 +39,7 @@
 #include <libwnck/libwnck.h>
 #include <sys/stat.h>
 #include <pwd.h>
+#include <time.h>
 
 #include <libgnomevfs/gnome-vfs-utils.h>
 
@@ -50,6 +51,7 @@
 #include "interface.h"
 #include "favorites.h"
 #include "selinux.h"
+#include "e_date.h"
 
 
 static guint64 total_time = 1;
@@ -86,6 +88,9 @@ sort_ints (GtkTreeModel *model, GtkTreeIter *itera, GtkTreeIter *iterb, gpointer
 
 	case COL_CPU_TIME:
 		return PROCMAN_RCMP(infoa->cpu_time_last, infob->cpu_time_last);
+
+	case COL_START_TIME:
+		return PROCMAN_CMP(infoa->start_time, infob->start_time);
 
 	case COL_CPU:
 		return PROCMAN_RCMP(infoa->pcpu, infob->pcpu);
@@ -247,6 +252,7 @@ proctable_new (ProcData * const procdata)
 		N_("X Server Memory"),
 		/* xgettext:no-c-format */ N_("% CPU"),
 		N_("CPU time"),
+		N_("Started"),
 		N_("Nice"),
 		N_("ID"),
 		N_("Security Context"),
@@ -275,6 +281,7 @@ proctable_new (ProcData * const procdata)
 				    G_TYPE_STRING,	/* X Server Memory */
 				    G_TYPE_UINT,	/* % CPU	*/
 				    G_TYPE_STRING,	/* CPU time	*/
+				    G_TYPE_STRING,	/* Started	*/
 				    G_TYPE_INT,		/* Nice		*/
 				    G_TYPE_UINT,	/* ID		*/
 				    G_TYPE_STRING,	/* Security Context */
@@ -359,6 +366,7 @@ proctable_new (ProcData * const procdata)
 		case COL_MEMSHARED:
 		case COL_MEMXSERVER:
 		case COL_CPU_TIME:
+		case COL_START_TIME:
 		case COL_CPU:
 			gtk_tree_sortable_set_sort_func (
 				GTK_TREE_SORTABLE (model),
@@ -398,7 +406,7 @@ proctable_new (ProcData * const procdata)
 
 
 static void
-proctable_free_info (ProcData *procdata, ProcInfo *info)
+proctable_free_info(ProcInfo *info)
 {
 	g_assert(info != NULL);
 
@@ -410,7 +418,7 @@ proctable_free_info (ProcData *procdata, ProcInfo *info)
 	g_free (info->arguments);
 	g_free (info->security_context);
 	g_slist_free (info->children);
-	g_mem_chunk_free (procdata->procinfo_allocator, info);
+	g_slice_free(ProcInfo, info);
 }
 
 
@@ -509,7 +517,7 @@ static void get_process_memory_writable(ProcInfo *info)
 
 	for (i = 0; i < buf.number; ++i) {
 		if (maps[i].perm & GLIBTOP_MAP_PERM_WRITE)
-			info->memwritable += (maps[i].end - maps[i].start);
+			info->memwritable += maps[i].size;
 	}
 
 	g_free(maps);
@@ -557,7 +565,6 @@ find_parent (ProcData *procdata, guint pid)
 }
 
 
-
 static char *
 format_duration_for_display (double d)
 {
@@ -586,7 +593,8 @@ format_duration_for_display (double d)
 static void
 update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info)
 {
-	gchar *vmsize, *memres, *memwritable, *memshared, *memxserver, *cpu_time;
+	gchar *vmsize, *memres, *memwritable, *memshared, *memxserver,
+		*cpu_time, *start_time;
 
 	vmsize	   = SI_gnome_vfs_format_file_size_for_display (info->vmsize);
 	memres	   = SI_gnome_vfs_format_file_size_for_display (info->memres);
@@ -595,6 +603,10 @@ update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info
 	memxserver = SI_gnome_vfs_format_file_size_for_display (info->memxserver);
 
 	cpu_time = format_duration_for_display (info->cpu_time_last / procdata->frequency);
+
+	/* FIXME: does it worths it to display relative to $now date ?
+	   absolute date wouldn't required to be updated on every refresh */
+	start_time = procman_format_date_for_display(info->start_time);
 
 	gtk_tree_store_set (store, &info->node,
 			    COL_STATUS, info->status,
@@ -606,16 +618,19 @@ update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info
 			    COL_MEMXSERVER, memxserver,
 			    COL_CPU, info->pcpu,
 			    COL_CPU_TIME, cpu_time,
+			    COL_START_TIME, start_time,
 			    COL_NICE, info->nice,
 			    -1);
 
-	/* We don't bother updating COL_SECURITYCONTEXT as it can never change */
+	/* FIXME: We don't bother updating COL_SECURITYCONTEXT as it can never change.
+	   even on fork ? */
 	g_free (vmsize);
 	g_free (memres);
 	g_free (memwritable);
 	g_free (memshared);
 	g_free (memxserver);
 	g_free (cpu_time);
+	g_free(start_time);
 }
 
 
@@ -755,7 +770,7 @@ remove_info_from_list (ProcInfo *info, ProcData *procdata)
 	/* Remove from list */
 	procdata->info = g_list_remove (procdata->info, info);
 	g_hash_table_remove(procdata->pids, GINT_TO_POINTER(info->pid));
-	proctable_free_info (procdata, info);
+	proctable_free_info(info);
 }
 
 
@@ -818,7 +833,7 @@ procinfo_new (ProcData *procdata, gint pid)
 	glibtop_proc_args procargs;
 	gchar** arguments;
 
-	info = g_chunk_new0(ProcInfo, procdata->procinfo_allocator);
+	info = g_slice_new0(ProcInfo);
 
 	info->pid = pid;
 	info->uid = -1;
@@ -828,6 +843,7 @@ procinfo_new (ProcData *procdata, gint pid)
 	glibtop_get_proc_time (&proctime, pid);
 	arguments = glibtop_get_proc_argv (&procargs, pid, 0);
 
+	/* FIXME : wrong. name and arguments may change with exec* */
 	get_process_name (info, procstate.cmd, arguments[0]);
 	get_process_user (procdata, info, procstate.uid);
 
@@ -836,6 +852,7 @@ procinfo_new (ProcData *procdata, gint pid)
 
 	info->pcpu = 0;
 	info->cpu_time_last = proctime.rtime;
+	info->start_time = proctime.start_time;
 	info->nice = procuid.nice;
 
 	get_process_memory_info(info);
@@ -1007,7 +1024,7 @@ proctable_free_table (ProcData * const procdata)
 	while (list)
 	{
 		ProcInfo *info = list->data;
-		proctable_free_info (procdata, info);
+		proctable_free_info(info);
 		list = g_list_next (list);
 	}
 

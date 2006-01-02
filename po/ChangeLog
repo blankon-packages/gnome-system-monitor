@@ -1,3 +1,108 @@
+2006-01-02  Benoît Dejean  <benoit@placenet.org>
+
+	* fr.po: Updated French translation.
+
+2006-01-02  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* nb.po: Updated Norwegian bokmål translation.
+	* no.po: Same.
+
+2005-12-30  Adam Weinberger  <adamw@gnome.org>
+
+	* en_CA.po: Updated Canadian English translation.
+
+2005-12-30  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	* es.po: Updated Spanish translation.
+
+2005-12-30  Ilkka Tuohela  <hile@iki.fi>
+
+	* fi.po: Updated Finnish translation
+
+2005-12-30  Clytie Siddall <clytie@riverland.net.au>
+
+	* vi.po: Updated Vietnamese translation.
+
+2005-12-30  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* th.po: Updated Thai translation.
+
+2005-12-30  Ankit Patel  <ankit644@yahoo.com>
+
+	* gu.po: Updated Gujarati Translation.
+
+2005-12-29  Žygimantas Beručka  <zygis@gnome.org>
+
+	* lt.po: Updated Lithuanian translation.
+
+2005-12-29  Ankit Patel  <ankit644@yahoo.com>
+
+	* gu.po: Updated Gujarati Translation.
+
+2005-12-29  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	* es.po: Updated Spanish translation.
+
+2005-12-28  Marcel Telka  <marcel@telka.sk>
+
+	* sk.po: Updated Slovak translation.
+
+2005-12-28  Adam Weinberger  <adamw@gnome.org>
+
+	* POTFILES.in: Added missing file.
+	* en_CA.po: Updated Canadian English translation.
+
+2005-12-28  Ankit Patel  <ankit644@yahoo.com>
+
+        * gu.po: Updated Gujarati Translation.
+
+2005-12-26  Ilkka Tuohela  <hile@iki.fi>
+
+	* fi.po: Updated Finnish translation.
+
+2005-12-12  Funda Wang  <fundawang@linux.net.cn>
+
+	* zh_CN.po: Updated Simplified Chinese translation.
+	
+2005-12-11  Ankit Patel  <ankit644@yahoo.com>
+
+        * gu.po: Updated Gujarati Translation.
+
+2005-12-07  Žygimantas Beručka  <zygis@gnome.org>
+
+	* lt.po: Updated Lithuanian translation.
+
+2005-12-02  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* nb.po: Updated Norwegian bokmål translation.
+	* no.po: Same
+
+2005-11-29  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
+
+	* gl.po: Updated Galician Translation.
+
+2005-11-22  Alexander Shopov  <ash@contact.bg>
+
+	* bg.po: Updated Bulgarian translation by
+	Alexander Shopov <ash@contact.bg>
+
+2005-11-19  Takeshi AIHANA <aihana@gnome.gr.jp>
+
+	* ja.po: Updated Japanese translation.
+
+2005-11-18  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* nb.po: Updated Norwegian bokmål translation.
+	* no.po: Same
+
+2005-11-17  Vincent van Adrighem  <adrighem@gnome.org>
+
+	* nl.po: Translation updated.
+
+2005-11-14  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
+
+	* gl.po: Updated Galician Translation.
+
 2005-11-13  Marcel Telka  <marcel@telka.sk>
 
 	* sk.po: Updated Slovak translation.

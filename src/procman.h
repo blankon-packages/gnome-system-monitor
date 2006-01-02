@@ -30,6 +30,8 @@ typedef struct _ProcData ProcData;
 #include <gconf/gconf-client.h>
 #include <glibtop/cpu.h>
 
+#include <time.h>
+
 #include "smooth_refresh.h"
 
 #include "load-graph.h"
@@ -40,8 +42,6 @@ enum
 	MY_PROCESSES,
 	ACTIVE_PROCESSES
 };
-
-#define NCPUSTATES 4
 
 enum
 {
@@ -90,6 +90,7 @@ struct _ProcInfo
 	gchar		*status; /* shared, don't free it ! */
 	gchar		*security_context;
 
+	time_t		start_time;
 	guint64		cpu_time_last;
 
 	guint64		vmsize;
@@ -169,9 +170,6 @@ struct _ProcData
 
 	/* cached username */
 	GStringChunk	*users;
-
-
-	GMemChunk	*procinfo_allocator;
 
 
 	/* libgtop uses guint64 but we use a float because
