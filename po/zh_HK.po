@@ -1,72 +1,73 @@
-# GNOME procman'i eesti keele tõlge.
-# Estonian translation of GNOME procman.
-#
-# Copyright (C) 2005, 2006 Free Software Foundation, Inc.
-# This file is distributed under the same license as the procman package.
-#
-# Ivar Smolin <okul@linux.ee>, 2005, 2006.
-# Priit Laes <amd store20 com>, 2005.
-#
+# traditional Chinese translation for procman(gnome-system-monitor).
+# Copyright (C) 2001-06 Free Software Foundation, Inc.
+# Woodman Tuen <woodman@culturecom.com.hk>, 2004
+# Abel Cheung <abel@oaka.org>, 2001-03, 05.
+# 
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: procman HEAD\n"
+"Project-Id-Version: procman 2.13.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-07 14:56+0100\n"
-"PO-Revision-Date: 2006-01-07 19:50+0200\n"
-"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
-"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"POT-Creation-Date: 2006-01-05 06:54+0100\n"
+"PO-Revision-Date: 2006-01-05 14:56+0800\n"
+"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
+"Language-Team: Chinese (traditional) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;"
 
 #: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:164
 #: ../src/interface.c:671
 msgid "System Monitor"
-msgstr "Süsteemijälgija"
+msgstr "系統監控"
 
 #: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:165
 msgid "View current processes and monitor system state"
-msgstr "Süsteemi oleku ja protsesside jälgimiseks"
+msgstr "顯示目前的程序並監控系統的狀態"
 
 #: ../src/callbacks.c:173
 msgid "translator-credits"
 msgstr ""
-"Ivar Smolin <okul@linux.ee>, 2005, 2006.\n"
-"Priit Laes <amd@store20.com>, 2005."
+"如對翻譯有任何意見，請送一封電子郵件給\n"
+"以下地址，GNOME 翻譯隊伍會盡快回覆你：\n"
+"community@linuxhall.org\n"
+"\n"
+"Abel Cheung <abel@oaka.org>, 2001-03, 05\n"
+"Woodman Tuen <woodman@culturecom.com.hk>, 2005-06"
 
 #: ../src/disks.c:204 ../src/memmaps.c:302
 msgid "Device"
-msgstr "Seade"
+msgstr "裝置"
 
 #: ../src/disks.c:205
 msgid "Directory"
-msgstr "Kataloog"
+msgstr "目錄"
 
 #: ../src/disks.c:206 ../src/openfiles.c:232
 msgid "Type"
-msgstr "Tüüp"
+msgstr "類型"
 
 #: ../src/disks.c:207
 msgid "Total"
-msgstr "Kokku"
+msgstr "總數"
 
 #: ../src/disks.c:208
 msgid "Free"
-msgstr "Vaba"
+msgstr "剩餘"
 
 #: ../src/disks.c:209
 msgid "Available"
-msgstr "Saadaval"
+msgstr "可用空間"
 
 #: ../src/disks.c:210
 msgid "Used"
-msgstr "Kasutuses"
+msgstr "已用"
 
 #: ../src/disks.c:217 ../src/interface.c:750 ../src/procdialogs.c:775
 #: ../src/procdialogs.c:779
 msgid "Devices"
-msgstr "Seadmed"
+msgstr "裝置"
 
 #: ../src/e_date.c:154
 msgid "?"
@@ -74,28 +75,28 @@ msgstr "?"
 
 #: ../src/e_date.c:161
 msgid "Today %l:%M %p"
-msgstr "Täna %k:%M"
+msgstr "今天 %l:%M %p"
 
 #: ../src/e_date.c:170
 msgid "Yesterday %l:%M %p"
-msgstr "Eile %k:%M"
+msgstr "昨天 %l:%M %p"
 
 #: ../src/e_date.c:182
 msgid "%a %l:%M %p"
-msgstr "%a, %k:%M"
+msgstr "%a %l:%M %p"
 
 #: ../src/e_date.c:190
 msgid "%b %d %l:%M %p"
-msgstr "%d. %b %k:%M"
+msgstr "%b %d %l:%M %p"
 
 #: ../src/e_date.c:192
 msgid "%b %d %Y"
-msgstr "%d. %b %Y"
+msgstr "%b %d %Y"
 
 #. translators: primary alert message
 #: ../src/favorites.c:350
 msgid "No hidden processes"
-msgstr "Peidetud protsesse ei ole"
+msgstr "沒有隱藏任何程序"
 
 #. translators: secondary alert message
 #: ../src/favorites.c:357
@@ -103,140 +104,138 @@ msgid ""
 "There are no hidden processes in the list. To show all running processes, "
 "select the \"All processes\" option in the main window."
 msgstr ""
-"Nimekirjas pole peidetud protsesse. Kõikide töötavate protsesside kuvamiseks "
-"vali peaaknast \"Näidata kõiki protsesse\"."
+"目前沒有隱藏任何程序。要顯示所有運行中的程序，請在主視窗中選取「所有程序」。"
 
 #: ../src/favorites.c:377
 msgid "Hidden Processes"
-msgstr "Peidetud protsessid"
+msgstr "已隱藏的程序"
 
 #: ../src/favorites.c:401
 msgid "Currently _hidden processes:"
-msgstr "Hetkel _peidetud protsessid:"
+msgstr "目前已隱藏的程序(_H):"
 
 #: ../src/favorites.c:423
 msgid "_Remove From List"
-msgstr "_Eemalda nimekirjast"
+msgstr "從清單中移除(_R)"
 
 #: ../src/favorites.c:432 ../src/procdialogs.c:285
 msgid "Note:"
-msgstr "Märkus:"
+msgstr "記錄:"
 
 #: ../src/favorites.c:433
 msgid ""
 "These are the processes you have chosen to hide. You can reshow a process by "
 "removing it from this list."
-msgstr ""
-"Siin on protsessid, mille sa oled peidetuks määranud. Sa saad neid protsesse "
-"jälle näha eemaldades need sellest nimekirjast."
+msgstr "這些是你指定要隱藏的程序。只要將程序從清單中移除後，就會重新顯示出來。"
 
 #: ../src/gnome-system-monitor.schemas.in.h:1
 msgid "Column zero saved width"
-msgstr "Nulltulba salvestatud laius"
+msgstr "第 0 欄的寬度"
 
 #: ../src/gnome-system-monitor.schemas.in.h:2
 msgid "Default graph background color"
-msgstr "Graafiku tausta vaikimisi värv"
+msgstr "圖表預設背景顏色"
 
 #: ../src/gnome-system-monitor.schemas.in.h:3
 msgid "Default graph cpu color"
-msgstr "Graafiku protsessorijoone vaikimisi värv"
+msgstr "圖表預設表示 CPU 的顏色"
 
 #: ../src/gnome-system-monitor.schemas.in.h:4
 msgid "Default graph frame color"
-msgstr "Graafiku raami vaikimisi värv"
+msgstr "圖表的預設框線顏色"
 
 #: ../src/gnome-system-monitor.schemas.in.h:5
 msgid "Default graph mem color"
-msgstr "Graafiku mälujoone vaikimisi värv"
+msgstr "圖表預設表示記憶體的顏色"
 
 #: ../src/gnome-system-monitor.schemas.in.h:6
 msgid "Default graph net in color"
-msgstr "Graafiku võrgu vastuvõtu vaikimisi värv"
+msgstr "預設網絡(in)圖表的顏色"
 
 #: ../src/gnome-system-monitor.schemas.in.h:7
 msgid "Default graph net out color"
-msgstr "Graafiku võrgu väljasaatmise vaikimisi värv"
+msgstr "預設網絡(out)圖表的顏色"
 
 #: ../src/gnome-system-monitor.schemas.in.h:8
 msgid "Default graph swap color"
-msgstr "Graafiku saalejoone vaikimisi värv"
+msgstr "圖表預設表示交換記憶的顏色"
 
 #: ../src/gnome-system-monitor.schemas.in.h:9
 msgid ""
 "Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
 "active"
 msgstr ""
-"Määrab milliseid protsesse vaikimisi kuvatakse. 0 - kõik, 1 - kasutaja omad "
-"ja 2 - kõik aktiivsed"
+"決定顯示哪一類程序。0 表示全部，1 只顯示用家自己的程序，2 只顯示目前仍然活躍"
+"的程序。"
 
 #: ../src/gnome-system-monitor.schemas.in.h:10
 msgid "Disk view columns order"
-msgstr "Kettavaate tulpade järjestus"
+msgstr "磁碟顯示欄位次序"
 
 #: ../src/gnome-system-monitor.schemas.in.h:11
 msgid "Enable/Disable smooth refresh"
-msgstr "Luba/Keela sujuv värskendus"
+msgstr "啟用/停用平滑更新"
 
 #: ../src/gnome-system-monitor.schemas.in.h:12
 msgid "Main Window height"
-msgstr "Peaakna kõrgus"
+msgstr "主視窗高度"
 
 #: ../src/gnome-system-monitor.schemas.in.h:13
 msgid "Main Window width"
-msgstr "Peaakna laius"
+msgstr "主視窗寬度"
 
 #: ../src/gnome-system-monitor.schemas.in.h:14
 msgid "Process view columns order"
-msgstr "Protsessivaate tulpade järjestus"
+msgstr "程序檢視欄的順序"
 
 #: ../src/gnome-system-monitor.schemas.in.h:15
 msgid "Process view sort column"
-msgstr "Protsessivaate sortimistulp"
+msgstr "程序根據哪一欄排序"
 
 #: ../src/gnome-system-monitor.schemas.in.h:16
 msgid "Process view sort order"
-msgstr "Protsessivaate sortimisjärjestus"
+msgstr "排列程序的次序"
 
 #: ../src/gnome-system-monitor.schemas.in.h:17
 msgid "Saves the currently viewed tab"
-msgstr "Salvestab hetkel kuvatava saki"
+msgstr "本數值表示程式下次啟動時顯示的分頁"
 
+# (Abel) 怎麼每一欄都是稱為第 0 欄的？
 #: ../src/gnome-system-monitor.schemas.in.h:18
 msgid "Show column zero on startup"
-msgstr "Kuva nulltulp peale käivitamist"
+msgstr "程式啟動時顯示第 0 欄"
 
 #: ../src/gnome-system-monitor.schemas.in.h:19
 msgid "Show process dependencies in tree form"
-msgstr "Protsessi sõltuvuste näitamine puuvaates"
+msgstr "以樹狀方式顯示程序間的相依性"
 
 #: ../src/gnome-system-monitor.schemas.in.h:20
 msgid "Show process threads"
-msgstr "Protsessi lõimede näitamine"
+msgstr "顯示程序中的所有線程 (thread)"
 
 #: ../src/gnome-system-monitor.schemas.in.h:21
 msgid "Show warning dialog when hiding processes"
-msgstr "Protsesside peitmisel kuvada hoiatusdialooge"
+msgstr "當隱藏程序時顯示警告訊息對話方塊"
 
 #: ../src/gnome-system-monitor.schemas.in.h:22
 msgid "Show warning dialog when killing processes"
-msgstr "Protsesside kõrvaldamisel kuvada hoiatusdialooge"
+msgstr "準備強行終止程序時顯示警告訊息對話方塊"
 
 #: ../src/gnome-system-monitor.schemas.in.h:23
 msgid "Time in milliseconds between updates of the devices list"
-msgstr "Seadmenimekirja värskendamise sagedus millisekundites"
+msgstr "儲存裝置清單每次更新的時間，以毫秒表示"
 
 #: ../src/gnome-system-monitor.schemas.in.h:24
 msgid "Time in milliseconds between updates of the graphs"
-msgstr "Graafikute värskendamise sagedus millisekundites"
+msgstr "資源圖表每次更新的時間，以毫秒表示"
 
 #: ../src/gnome-system-monitor.schemas.in.h:25
 msgid "Time in milliseconds between updates of the process view"
-msgstr "Protsessivaate värskendamise sagedus millisekundites"
+msgstr "程序清單每次更新的時間，以毫秒表示"
 
 #: ../src/gnome-system-monitor.schemas.in.h:26
 msgid "Whether information about all filesystems should be displayed"
-msgstr "Kas näidata teavet kõikide failisüsteemide kohta "
+msgstr "是否要顯示關於所有檔案系統的資訊"
 
 #: ../src/gnome-system-monitor.schemas.in.h:27
 msgid ""
@@ -244,221 +243,223 @@ msgid ""
 "'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
 "filesystems."
 msgstr ""
-"Kas näidata kõikide failisüsteemide (nende hulgas ka 'autofs' ja 'procfs') "
-"andmeid. See on kasulik kõigi ühendatud failisüsteemide nimekirja saamiseks."
+"是否要顯示關於所有檔案系統的資訊（這裏包括了像「autofs」和「procfs」這種檔案"
+"類型）。在取得目前所有掛載的檔案系統清單時會很有用。"
 
 #: ../src/interface.c:47
 msgid "_File"
-msgstr "_Fail"
+msgstr "檔案(_F)"
 
 #: ../src/interface.c:48
 msgid "_Edit"
-msgstr "_Redaktor"
+msgstr "編輯 (_E)"
 
 #: ../src/interface.c:49
 msgid "_View"
-msgstr "_Vaade"
+msgstr "檢視(_V)"
 
 #: ../src/interface.c:50
 msgid "_Help"
-msgstr "_Abiteave"
+msgstr "說明(_H)"
 
 #: ../src/interface.c:52
 msgid "_Quit"
-msgstr "_Välju"
+msgstr "離開(_Q)"
 
 #: ../src/interface.c:53
 msgid "Quit the program"
-msgstr "Välju programmist"
+msgstr "離開這個程式"
 
 #: ../src/interface.c:56
 msgid "_Stop Process"
-msgstr "_Peata protsess"
+msgstr "終止程序(_S)"
 
 #: ../src/interface.c:57
 msgid "Stop process"
-msgstr "Peata protsess"
+msgstr "停止程序"
 
 #: ../src/interface.c:58
 msgid "_Continue Process"
-msgstr "_Jätka protsessi"
+msgstr "繼續程序(_C)"
 
 #: ../src/interface.c:59
 msgid "Continue process if stopped"
-msgstr "Jätka protsessi juhul kui peatatud"
+msgstr "如果被停止則繼續該程序"
 
 #: ../src/interface.c:61 ../src/interface.c:193
 msgid "End _Process"
-msgstr "Protsessi _lõpetamine"
+msgstr "終止程序(_P)"
 
 #: ../src/interface.c:62
 msgid "Force process to finish normally"
-msgstr "Protsessi sundimine normaalseks lõpetamiseks"
+msgstr "立刻以正常方式終止程序"
 
 #: ../src/interface.c:63 ../src/procdialogs.c:129
 msgid "_Kill Process"
-msgstr "_Kõrvalda protsess"
+msgstr "強行終止程序(_K)"
 
 #: ../src/interface.c:64
 msgid "Force process to finish immediately"
-msgstr "Protsessi kõrvaldamine jõumeetodil"
+msgstr "立刻強行終止程序"
 
 #: ../src/interface.c:65
 msgid "_Change Priority..."
-msgstr "_Muuda tähtsust..."
+msgstr "更改優先度(_C)..."
 
 #: ../src/interface.c:66
 msgid "Change the order of priority of process"
-msgstr "Protsessi tähtsuse muutmine"
+msgstr "更改程序的優先度 (nice 值)"
 
 #: ../src/interface.c:67
 msgid "Prefere_nces"
-msgstr "_Eelistused"
+msgstr "偏好設定(_N)"
 
 #: ../src/interface.c:68
 msgid "Configure the application"
-msgstr "Rakenduse seadistamine"
+msgstr "設定此應用程式"
 
 #: ../src/interface.c:70 ../src/procdialogs.c:85
 msgid "_Hide Process"
-msgstr "_Peida protsess"
+msgstr "隱藏程序(_H)"
 
 #: ../src/interface.c:71
 msgid "Hide process from list"
-msgstr "Protsessi loendist peitmine"
+msgstr "在清單中隱藏某個程序"
 
 #: ../src/interface.c:72
 msgid "_Hidden Processes"
-msgstr "_Peidetud protsessid"
+msgstr "已隱藏的程序(_H)"
 
 #: ../src/interface.c:73
 msgid "Open the list of currently hidden processes"
-msgstr "Peidetud protsesside nimekirja avamine"
+msgstr "顯示目前已經隱藏的程序"
 
 #: ../src/interface.c:74
 msgid "_Memory Maps"
-msgstr "_Mäluplaan"
+msgstr "記憶配置(_M)"
 
 #: ../src/interface.c:75
 msgid "Open the memory maps associated with a process"
-msgstr "Protsessiga seotud mäluplaani avamine"
+msgstr "顯示有關某程序的記憶配置情況"
 
+# (Abel) 指一個 process 開啟了哪些檔案
 #: ../src/interface.c:76
 msgid "Open _Files"
-msgstr "Avatud _failid"
+msgstr "已開啟的檔案(_F)"
 
 #: ../src/interface.c:77
 msgid "View the files opened by a process"
-msgstr "Protsessi poolt avatud failide vaatamine"
+msgstr "顯示某程序開啟了哪些檔案"
 
 #: ../src/interface.c:79
 msgid "_Contents"
-msgstr "_Sisukord"
+msgstr "內容(_C)"
 
 #: ../src/interface.c:80
 msgid "Open the manual"
-msgstr "Käsiraamatu avamine"
+msgstr "開啟手冊"
 
 #: ../src/interface.c:81
 msgid "_About"
-msgstr "_Teave"
+msgstr "關於(_A)"
 
 #: ../src/interface.c:82
 msgid "About this application"
-msgstr "Teave programmi kohta"
+msgstr "關於這個應用程式"
 
 #: ../src/interface.c:87
 msgid "_Dependencies"
-msgstr "_Seoselistena"
+msgstr "相依性(_D)"
 
 #: ../src/interface.c:88
 msgid "Show parent/child relationship between processes"
-msgstr "Vanem- ja lapsprotsesside näitamine koos nendevaheliste seostega"
+msgstr "顯示各程序之間的主從關係"
 
 #: ../src/interface.c:90
 msgid "_Threads"
-msgstr "_Lõimedena"
+msgstr "線程(_Thread)"
 
 #: ../src/interface.c:91
 msgid "Show each thread as a separate process"
-msgstr "Iga lõime näitamine eraldi protsessina"
+msgstr "將每個線程 (thread) 都作為獨立的程序看待"
 
 #: ../src/interface.c:98
 msgid "_Active Processes"
-msgstr "_Aktiivseid protsesse"
+msgstr "運行中的程序(_A)"
 
 #: ../src/interface.c:99
 msgid "Show active processes"
-msgstr "Kuva aktiivseid protsesse"
+msgstr "顯示運行中的程序"
 
 #: ../src/interface.c:100
 msgid "A_ll Processes"
-msgstr "_Kõiki protsesse"
+msgstr "所有程序(_L)"
 
 #: ../src/interface.c:101
 msgid "Show all processes"
-msgstr "Kuva kõiki protsesse"
+msgstr "顯示所有程序"
 
 #: ../src/interface.c:102
 msgid "M_y Processes"
-msgstr "_Minu protsesse"
+msgstr "我的程序(_Y)"
 
 #: ../src/interface.c:103
 msgid "Show user own process"
-msgstr "Kuva kasutaja enda protsesse"
+msgstr "顯示使用者擁有的程序"
 
 #: ../src/interface.c:265
 msgid "CPU History"
-msgstr "Protsessori ajalugu"
+msgstr "CPU 使用量紀錄"
 
 #: ../src/interface.c:308
 msgid "CPU:"
-msgstr "Protsessor:"
+msgstr "CPU:"
 
 #: ../src/interface.c:311
 #, c-format
 msgid "CPU%d:"
-msgstr "Protsessor%d:"
+msgstr "CPU%d:"
 
 #: ../src/interface.c:331
 msgid "Memory and Swap History"
-msgstr "Mälu ja saaleala ajalugu"
+msgstr "記憶體/交換記憶使用量紀錄"
 
 #: ../src/interface.c:364
 msgid "User memory:"
-msgstr "Kasutaja mälu:"
+msgstr "已使用的記憶體:"
 
+# (Abel) e.g. 200MB of 256MB
 #: ../src/interface.c:382 ../src/interface.c:442
 msgid "of"
 msgstr "/"
 
 #: ../src/interface.c:423
 msgid "Used swap:"
-msgstr "Kasutatud saalemälu:"
+msgstr "已使用的交換記憶:"
 
 #: ../src/interface.c:482
 msgid "Network History"
-msgstr "Võrgu ajalugu"
+msgstr "網絡紀錄"
 
 #: ../src/interface.c:514
 msgid "Received:"
-msgstr "Vastu võetud:"
+msgstr "已接收:"
 
 #: ../src/interface.c:534 ../src/interface.c:577
 msgid "Total:"
-msgstr "Kokku:"
+msgstr "總數:"
 
 #: ../src/interface.c:558
 msgid "Sent:"
-msgstr "Saadetud:"
+msgstr "已傳送:"
 
 #: ../src/interface.c:738 ../src/procdialogs.c:579
 msgid "Processes"
-msgstr "Protsessid"
+msgstr "程序"
 
 #: ../src/interface.c:744 ../src/procdialogs.c:684
 msgid "Resources"
-msgstr "Vahendid"
+msgstr "資源"
 
 #: ../src/load-graph.c:368 ../src/load-graph.c:378
 #, c-format
@@ -467,27 +468,27 @@ msgstr "%s/s"
 
 #: ../src/memmaps.c:296
 msgid "Filename"
-msgstr "Failinimi"
+msgstr "檔名"
 
 #: ../src/memmaps.c:297
 msgid "VM Start"
-msgstr "VM algus"
+msgstr "VM 開始"
 
 #: ../src/memmaps.c:298
 msgid "VM End"
-msgstr "VM lõpp"
+msgstr "VM 終結"
 
 #: ../src/memmaps.c:299
 msgid "VM Size"
-msgstr "VM Suurus"
+msgstr "VM 大小"
 
 #: ../src/memmaps.c:300
 msgid "Flags"
-msgstr "Lipud"
+msgstr "旗標"
 
 #: ../src/memmaps.c:301
 msgid "VM Offset"
-msgstr "VM nihe"
+msgstr "VM Offset"
 
 #: ../src/memmaps.c:303
 msgid "Inode"
@@ -495,32 +496,32 @@ msgstr "Inode"
 
 #: ../src/memmaps.c:405
 msgid "Memory Maps"
-msgstr "Mälu jaotumine"
+msgstr "記憶配置"
 
 #: ../src/memmaps.c:425
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
-msgstr "Protsessi \"%s\" (PID %u) _mäluplaan:"
+msgstr "程序 「%s」(PID %u) 的記憶配置(_M):"
 
 #: ../src/openfiles.c:31
 msgid "file"
-msgstr "fail"
+msgstr "檔案"
 
 #: ../src/openfiles.c:33
 msgid "pipe"
-msgstr "toru"
+msgstr "管道"
 
 #: ../src/openfiles.c:35
 msgid "network connection"
-msgstr "võrguühendus"
+msgstr "網絡連線"
 
 #: ../src/openfiles.c:37
 msgid "local socket"
-msgstr "kohalik sokkel"
+msgstr "本機 socket"
 
 #: ../src/openfiles.c:39
 msgid "unknown type"
-msgstr "tundmatu tüüp"
+msgstr "類型不詳"
 
 #. Translators: "FD" here means "File Descriptor". Please use
 #. a very short translation if possible, and at most
@@ -531,16 +532,16 @@ msgstr "FD"
 
 #: ../src/openfiles.c:233
 msgid "Object"
-msgstr "Objekt"
+msgstr "物件"
 
 #: ../src/openfiles.c:312
 msgid "Open Files"
-msgstr "Avatud failid"
+msgstr "已開啟的檔案"
 
 #: ../src/openfiles.c:334
 #, c-format
 msgid "_Files opened by process \"%s\" (PID %u):"
-msgstr "_Protsessi \"%s\" (PID %u) poolt avatud failid:"
+msgstr "程序 「%s」(PID %u) 所開啟的檔案(_F):"
 
 #: ../src/procactions.c:75
 #, c-format
@@ -548,22 +549,23 @@ msgid ""
 "Cannot change the priority of process with pid %d to %d.\n"
 "%s"
 msgstr ""
-"Protsessi pid'ga %d tähtsust pole võimalik %d'ks muuta.\n"
+"無法將 pid 為 %d 的程序之優先權更改為 %d。\n"
 "%s"
 
+# (Abel) 這裡的 signal 能不能譯成「訊號」？好像不妥...
 #: ../src/procactions.c:144
 #, c-format
 msgid ""
 "Cannot kill process with pid %d with signal %d.\n"
 "%s"
 msgstr ""
-"Protsessi pid'ga %d pole signaaliga %d võimalik kõrvaldada.\n"
-"%s"
+"無法用 signal %2$d 來強行終止 pid 為 %1$d 的程序。\n"
+"%3$s"
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:65
 msgid "Hide the selected process?"
-msgstr "Kas peita valitud protsess?"
+msgstr "是否隱藏指定的程序？"
 
 #. FIXME: View menu -> Edit menu
 #. translators: secondary alert messagex
@@ -572,13 +574,13 @@ msgid ""
 "Hidden processes are no longer visible in the process list. You can re-"
 "enable them by selecting the \"Hidden Processes\" entry in the View menu."
 msgstr ""
-"Peidetud protsesse ei kuvata protsesside nimekirjas. Sul on võimalus "
-"nendekuvamist lubada valides menüüst \"Peidetud protsessid\" vaate menüüst."
+"當隱藏某個程序後，清單中就再看不到。這時你可以在「顯示」選單中選擇「已隱藏的"
+"程序」令它們重新顯示。"
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:124
 msgid "Kill the selected process?"
-msgstr "Kas kõrvaldada valitud protsess?"
+msgstr "是否強行終止指定的程序？"
 
 #. translators: secondary alert message
 #: ../src/procdialogs.c:126
@@ -586,14 +588,13 @@ msgid ""
 "Killing a process may destroy data, break the session or introduce a "
 "security risk. Only unresponding processes should be killed."
 msgstr ""
-"Protsessi kõrvaldamine võib hävitada sinu andmed, lõhkuda tööseansi või "
-"põhjustada turvariski. Kõrvaldama peaks ainult protsesse, mis ei käitu "
-"õigesti."
+"強行終止程序可能導致損失資料，中斷作業階段，甚至可以造成安全性漏洞。請只強行"
+"終止無回應的程序。"
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:133
 msgid "End the selected process?"
-msgstr "Kas lõpetada valitud protsessi töö?"
+msgstr "是否終止指定的程序？"
 
 #. translators: secondary alert message
 #: ../src/procdialogs.c:135
@@ -601,144 +602,143 @@ msgid ""
 "Ending a process may destroy data, break the session or introduce a security "
 "risk. Only unresponding processes should be ended."
 msgstr ""
-"Protsessi töö lõpetamine võib hävitada sinu andmed, lõhkuda tööseansi või "
-"põhjustada turvariski. Lõpetama peaks ainult protsesse, mis ei käitu õigesti."
+"結束程序可能導致損失資料，中斷作業階段，甚至可以造成安全性漏洞。請只結束無回"
+"應的程序。"
 
 #: ../src/procdialogs.c:138
 msgid "_End Process"
-msgstr "_Lõpeta protsess"
+msgstr "終止程序(_E)"
 
+# (Abel) FIXME: 這些我譯得不好，要再考慮
 #: ../src/procdialogs.c:167
 msgid "(Very High Priority)"
-msgstr "(Väga kõrge tähtsusega)"
+msgstr "(非常高的優先度)"
 
 #: ../src/procdialogs.c:169
 msgid "(High Priority)"
-msgstr "(Kõrge tähtsusega)"
+msgstr "(高優先度)"
 
 #: ../src/procdialogs.c:171
 msgid "(Normal Priority)"
-msgstr "(Tavalise tähtsusega)"
+msgstr "(正常優先度)"
 
 #: ../src/procdialogs.c:173
 msgid "(Low Priority)"
-msgstr "(Madala tähtsusega)"
+msgstr "(低優先度)"
 
 #: ../src/procdialogs.c:175
 msgid "(Very Low Priority)"
-msgstr "(Väga madala tähtsusega)"
+msgstr "(非常低的優先度)"
 
 #: ../src/procdialogs.c:227
 msgid "Change Priority"
-msgstr "Tähtsuse muutmine"
+msgstr "更改優先度"
 
 #: ../src/procdialogs.c:248
 msgid "Change _Priority"
-msgstr "Muuda _tähtsust"
+msgstr "更改優先度(_P)"
 
 #: ../src/procdialogs.c:269
 msgid "_Nice value:"
-msgstr "Tähtsuse _väärtus:"
+msgstr "Nice 值(_N):"
 
 #: ../src/procdialogs.c:286
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
-msgstr ""
-"Protsessi prioriteet on antud tema nice väärtusega. Madalam nice väärtus "
-"tähendab suuremat prioriteeti."
+msgstr "程序是否優先執行可由它的 nice 值得出。較低的 nice 值表示較優先執行。"
 
 #: ../src/procdialogs.c:464
 msgid "Processes i_nfo showed in list:"
-msgstr "Protsessi _teave, mida näidatakse nimekirjas:"
+msgstr "清單中顯示的程序資訊欄位(_N):"
 
 #: ../src/procdialogs.c:516
 msgid "Icon"
-msgstr "Ikoon"
+msgstr "圖示"
 
 #: ../src/procdialogs.c:556
 msgid "System Monitor Preferences"
-msgstr "Süsteemijälgija eelistused"
+msgstr "系統監控程式偏好設定"
 
 #: ../src/procdialogs.c:586
 msgid "Behavior"
-msgstr "Käitumine"
+msgstr "運作方式"
 
 #: ../src/procdialogs.c:605 ../src/procdialogs.c:710
 msgid "_Update interval:"
-msgstr "_Värskendamise vahemik:"
+msgstr "更新間隔(_U):"
 
 #: ../src/procdialogs.c:626 ../src/procdialogs.c:727 ../src/procdialogs.c:814
 msgid "seconds"
-msgstr "sekundit"
+msgstr "秒"
 
 #: ../src/procdialogs.c:632
 msgid "Enable _smooth refresh"
-msgstr "Luba _sujuv värskendus"
+msgstr "啟用平滑更新(_S)"
 
 #: ../src/procdialogs.c:646
 msgid "Alert before ending or _killing processes"
-msgstr "Hoiatamine enne protsessi _kõrvaldamist"
+msgstr "當程序結束或被強行終止之前顯示警告訊息對話方塊(_K)"
 
 #: ../src/procdialogs.c:656
 msgid "Alert before _hiding processes"
-msgstr "Hoiatamine enne protsessi _peitmist"
+msgstr "隱藏程序之前顯示警告訊息對話方塊(_H)"
 
 #: ../src/procdialogs.c:666
 msgid "Process Fields"
-msgstr "Protsessiväljad"
+msgstr "程序欄位"
 
 #: ../src/procdialogs.c:691
 msgid "Graphs"
-msgstr "Graafikud"
+msgstr "圖表"
 
 #: ../src/procdialogs.c:734
 msgid "_Background color:"
-msgstr "_Taustavärv:"
+msgstr "背景顏色(_B):"
 
 #: ../src/procdialogs.c:753
 msgid "_Grid color:"
-msgstr "Te_ljestiku värv:"
+msgstr "框線顏色(_G):"
 
 #: ../src/procdialogs.c:798
 msgid "Update _interval:"
-msgstr "Värskendamise _vahemik:"
+msgstr "更新間隔(_I):"
 
 #: ../src/procdialogs.c:821
 msgid "Show _all filesystems"
-msgstr "Näita _kõiki failisüsteeme"
+msgstr "顯示所有檔案系統(_A)"
 
 #: ../src/proctable.c:245
 msgid "Process Name"
-msgstr "Protsessi nimi"
+msgstr "程序名稱"
 
 #: ../src/proctable.c:246
 msgid "User"
-msgstr "Kasutaja"
+msgstr "用戶"
 
 #: ../src/proctable.c:247
 msgid "Status"
-msgstr "Olek"
+msgstr "狀態"
 
 #: ../src/proctable.c:248
 msgid "Virtual Memory"
-msgstr "Virtuaalmälu"
+msgstr "虛擬記憶體"
 
 #: ../src/proctable.c:249
 msgid "Resident Memory"
-msgstr "Residentne mälu"
+msgstr "常駐記憶"
 
 #: ../src/proctable.c:250
 msgid "Writable Memory"
-msgstr "Kirjutatav mälu"
+msgstr "可寫記憶體"
 
 #: ../src/proctable.c:251
 msgid "Shared Memory"
-msgstr "Jagatud mälu"
+msgstr "分享記憶"
 
 #: ../src/proctable.c:252
 msgid "X Server Memory"
-msgstr "X serveri mälu"
+msgstr "X伺服器記憶體"
 
 #: ../src/proctable.c:253
 #, no-c-format
@@ -747,11 +747,11 @@ msgstr "% CPU"
 
 #: ../src/proctable.c:254
 msgid "CPU time"
-msgstr "CPU aeg"
+msgstr "CPU 運行時間"
 
 #: ../src/proctable.c:255
 msgid "Started"
-msgstr "Käivitatud"
+msgstr "已開始"
 
 #: ../src/proctable.c:256
 msgid "Nice"
@@ -761,50 +761,51 @@ msgstr "Nice"
 msgid "ID"
 msgstr "ID"
 
+# (Abel) 和 selinux 有關?
 #: ../src/proctable.c:258
 msgid "Security Context"
-msgstr "Turvakontekst"
+msgstr "保安規則內容"
 
 #: ../src/proctable.c:259
 msgid "Arguments"
-msgstr "Argumendid"
+msgstr "參數"
 
 #: ../src/proctable.c:432
 msgid "Running"
-msgstr "Töötav"
+msgstr "執行中"
 
 #: ../src/proctable.c:437
 msgid "Stopped"
-msgstr "Seisatud"
+msgstr "已停止"
 
+# (Abel) 不譯會比較容易明白
 #: ../src/proctable.c:442
 msgid "Zombie"
-msgstr "Zombi"
+msgstr "Zombie"
 
 #: ../src/proctable.c:447
 msgid "Uninterruptible"
-msgstr "Katkestamatu"
+msgstr "無法中斷"
 
 #: ../src/proctable.c:452
 msgid "Sleeping"
-msgstr "Magav"
+msgstr "睡眠中"
 
 #: ../src/proctable.c:661
 #, c-format
 msgid "%s (thread)"
-msgstr "%s (lõim)"
+msgstr "%s (線程)"
 
 #: ../src/proctable.c:1048
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
-msgstr "Koormuse näit viimase 1, 5 ja 15 minuti jaoks: %0.2f, %0.2f, %0.2f"
+msgstr "最後 1、5、15 分鐘的平均負載：%0.2f, %0.2f, %0.2f"
 
 #: ../src/util.c:87
 #, c-format
 msgid "%u byte"
 msgid_plural "%u bytes"
-msgstr[0] "%u bait"
-msgstr[1] "%u baiti"
+msgstr[0] "%u 位元組"
 
 #: ../src/util.c:93
 #, c-format
@@ -821,56 +822,3 @@ msgstr "%.1f MiB"
 msgid "%.1f GiB"
 msgstr "%.1f GiB"
 
-#~ msgid "Jorgen Scheibengruber - nicer devices treeview"
-#~ msgstr "Jorgen Scheibengruber - parem seadmete puuvaade"
-
-#~ msgid "Benoît Dejean - maintainer"
-#~ msgstr "Benoît Dejean - hooldaja"
-
-#~ msgid "Show advanced info tab on startup"
-#~ msgstr "Kõrgema taseme teavet sisaldava saki kuvamine peale käivitamist"
-
-#~ msgid "Less _info"
-#~ msgstr "Vähem _teavet"
-
-#~ msgid "More _info"
-#~ msgstr "Rohkem _teavet"
-
-#~ msgid "Process Info"
-#~ msgstr "Protsessi teave"
-
-#~ msgid "Command:"
-#~ msgstr "Käsk:"
-
-#~ msgid "Status:"
-#~ msgstr "Olek:"
-
-#~ msgid "Priority:"
-#~ msgstr "Tähtsus:"
-
-#~ msgid "Memory Usage"
-#~ msgstr "Mälukasutus"
-
-#~ msgid "RSS:"
-#~ msgstr "RSS:"
-
-#~ msgid "Very high - nice %d"
-#~ msgstr "Väga kõrge - nice %d"
-
-#~ msgid "High - nice %d"
-#~ msgstr "Kõrge - nice %d"
-
-#~ msgid "Normal - nice %d"
-#~ msgstr "Tavaline - nice %d"
-
-#~ msgid "Low - nice %d"
-#~ msgstr "Madal - nice %d"
-
-#~ msgid "Very low - nice %d"
-#~ msgstr "Väga madal - nice %d"
-
-#~ msgid "Memory"
-#~ msgstr "Mälu"
-
-#~ msgid "RSS Memory"
-#~ msgstr "RSS mälu"
