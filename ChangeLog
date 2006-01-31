@@ -1,3 +1,44 @@
+2006-01-29  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+	* configure.in:
+	
+	Released 2.13.90.
+
+2006-01-25  Benoît Dejean  <benoit@placenet.org>
+
+	* gnome-system-monitor.desktop.in.in:
+	
+	Fixed.
+	Closes #328581.
+
+2006-01-21  Benoît Dejean  <benoit@placenet.org>
+
+	* gnome-system-monitor.desktop.in.in:
+	
+	Add GNOME and/or GTK categories of the .desktop file.
+	Closes #328020.
+
+2006-01-20  Benoît Dejean  <benoit@placenet.org>
+
+	* src/bacon-message-connection.c: (setup_connection),
+	(accept_new_connection), (server_cb), (try_server), (try_client),
+	(bacon_message_connection_free):
+	* src/bacon-message-connection.h:
+
+	Synced with libbacon.
+
+2006-01-16  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in: Bumped version number to 2.13.6.
+
+2006-01-16  Frank Arnold  <farnold@cvs.gnome.org>
+
+	* src/procdialogs.c: (procdialog_create_preferences_dialog):
+	Fixed I18N issue with "Update interval" labeling.
+	Changed packing of "Enable smooth refresh" checkbutton again.
+	Closes #327116
+
 2006-01-15  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS: Released 2.13.5.
