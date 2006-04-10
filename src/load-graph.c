@@ -25,6 +25,7 @@
 
 
 #define NUM_POINTS 100
+#define GRAPH_MIN_HEIGHT 30
 
 
 enum {
@@ -86,7 +87,7 @@ load_graph_draw (LoadGraph *g)
 	int dely;
 	double delx;
 	int real_draw_height;
-	gint i, j;
+	guint i, j;
 
 	cr = cairo_create (g->buffer);
 
@@ -455,7 +456,7 @@ load_graph_unalloc (LoadGraph *g)
 static void
 load_graph_alloc (LoadGraph *g)
 {
-	int i, j;
+	guint i, j;
 
 	/* Allocate data in a contiguous block */
 	g->data_block = g_new(float, g->n * NUM_POINTS);
@@ -486,7 +487,7 @@ LoadGraph *
 load_graph_new (gint type, ProcData *procdata)
 {
 	LoadGraph *g;
-	gint i = 0;
+	guint i = 0;
 
 	g = g_new0 (LoadGraph, 1);
 
@@ -548,6 +549,7 @@ load_graph_new (gint type, ProcData *procdata)
 	g->draw = FALSE;
 
 	g->main_widget = gtk_vbox_new (FALSE, FALSE);
+	gtk_widget_set_size_request(g->main_widget, -1, GRAPH_MIN_HEIGHT);
 	gtk_widget_show (g->main_widget);
 
 	g->disp = gtk_drawing_area_new ();

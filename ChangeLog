@@ -1,3 +1,54 @@
+2006-04-10  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+
+	Released 2.14.1.
+	Fixed ChangeLog.
+
+2006-04-10  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/Makefile.am:
+	* src/procdialogs.c: (procdialog_create_root_password_dialog):
+	* src/procman_gksu.c: (procman_gksu_create_root_password_dialog):
+
+	Updated gksu backend.
+
+2006-04-09  Benoît Dejean  <benoit@placenet.org>
+
+	* src/load-graph.c: (load_graph_new):
+	
+	Sets the minimum height of each graph to 30px.
+	Patch by Johannes H. Jensen  <joh@deworks.net>.
+	Bug #324257.
+
+2006-04-07  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/disks.c: (create_disk_view):
+	* src/load-graph.c: (load_graph_draw), (load_graph_alloc),
+	(load_graph_new):
+	* src/memmaps.c: (update_memmaps_dialog):
+	* src/openfiles.c: (update_openfiles_dialog):
+	* src/procman.h:
+	
+	Fixed a bunch of warnings and bumped version number.
+
+2006-03-26  Tommi Vainikainen  <thv@iki.fi>
+
+	* configure.in (ALL_LINGUAS): Added Dzongkha (dz).
+
+2006-03-22  Vladimer Sichinava  <vlsichinava@gmail.com>
+
+        * configure.in: Added "ka" (Georgian) to ALL_LINGUAS
+
+2006-03-13  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+	* configure.in:
+
+	Released 2.14.0.
+
 2006-03-04  Benoît Dejean  <benoit@placenet.org>
 
 	* configure.in:

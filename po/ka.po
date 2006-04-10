@@ -1,69 +1,66 @@
-# Turkish translation for procman messages
-# Copyright (C) 2001, 2004, 2005 Free Software Foundation, Inc.
-# Nilgün Belma Bugüner <nilgun@fide.org>, 2001.
-# Ömer Fadıl USTA <omer_fad@hotmai.com>,2002.
-# Davut Topcan <davut@aysis.com.tr>, 2004, 2005.
+# translation of gnome-system-monitor.po to Georgian
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vladimer Sichinava <alinux@siena.linux.it>, 2006.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: procman\n"
+"Project-Id-Version: gnome-system-monitor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-13 19:41+0200\n"
-"PO-Revision-Date: 2006-03-13 01:16+0200\n"
-"Last-Translator: Deniz Koçak <lenduha@gmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"POT-Creation-Date: 2006-03-21 23:18+0100\n"
+"PO-Revision-Date: 2006-03-22 03:15+0100\n"
+"Last-Translator: Vladimer Sichinava <alinux@siena.linux.it>\n"
+"Language-Team: Georgian <gnome@inet.ge>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: KBabel 1.10\n"
+"Plural-Forms: nplurals=1; plural=0"
 
 #: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:164
 #: ../src/interface.c:666
 msgid "System Monitor"
-msgstr "Sistem Gözlemcisi"
+msgstr "სისტემის მონიტორი"
 
 #: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:165
 msgid "View current processes and monitor system state"
-msgstr "Çalışan süreçleri ve sistem durumunu gösterir"
+msgstr "მიმდინარე პროცესებისა და თვალყურის სისტემის ნახვა"
 
 #: ../src/callbacks.c:173
 msgid "translator-credits"
-msgstr ""
-"Deniz Koçak <lenduha@gmail.com>\n"
-"Davut Topcan <davut@aysis.com.tr>"
+msgstr "Vladimer Sichinava ვლადიმერ სიჭინავა <vlsichinava@gmail.com>"
 
 #: ../src/disks.c:204 ../src/memmaps.c:302
 msgid "Device"
-msgstr "Aygıt"
+msgstr "მოწყობილობა"
 
 #: ../src/disks.c:205
 msgid "Directory"
-msgstr "Dizin"
+msgstr "დასტა"
 
 #: ../src/disks.c:206 ../src/openfiles.c:232
 msgid "Type"
-msgstr "Tür"
+msgstr "ტიპი"
 
 #: ../src/disks.c:207
 msgid "Total"
-msgstr "Toplam"
+msgstr "სულ"
 
 #: ../src/disks.c:208
 msgid "Free"
-msgstr "Boş"
+msgstr "თავისუფალი"
 
 #: ../src/disks.c:209
 msgid "Available"
-msgstr "Ulaşılabilir"
+msgstr "ხელმისაწვდომი"
 
 #: ../src/disks.c:210
 msgid "Used"
-msgstr "Kullanılan"
+msgstr "გამოყენებულია"
 
 #: ../src/disks.c:217 ../src/interface.c:745 ../src/procdialogs.c:770
 #: ../src/procdialogs.c:774
 msgid "Devices"
-msgstr "Aygıtlar"
+msgstr "მოწყობილობები"
 
 #: ../src/e_date.c:154
 msgid "?"
@@ -71,385 +68,409 @@ msgstr "?"
 
 #: ../src/e_date.c:161
 msgid "Today %l:%M %p"
-msgstr "Bugün %k:%M"
+msgstr "დღეს %l:%M %p"
 
 #: ../src/e_date.c:170
 msgid "Yesterday %l:%M %p"
-msgstr "Dün %k:%M"
+msgstr "გუშინ %l:%M %p"
 
 #: ../src/e_date.c:182
 msgid "%a %l:%M %p"
-msgstr "%a %k:%M"
+msgstr "%a %l:%M %p"
 
 #: ../src/e_date.c:190
 msgid "%b %d %l:%M %p"
-msgstr "%b %d %k:%M "
+msgstr "%b %d %l:%M %p"
 
 #: ../src/e_date.c:192
 msgid "%b %d %Y"
-msgstr "%b %d %Y"
+msgstr "%b·%d·%Y"
 
 #. translators: primary alert message
 #: ../src/favorites.c:350
 msgid "No hidden processes"
-msgstr "Hiçbir gizli süreç yok"
+msgstr "არავითარი უჩინარი პროცესი"
 
 #. translators: secondary alert message
 #: ../src/favorites.c:357
+#, fuzzy
 msgid ""
 "There are no hidden processes in the list. To show all running processes, "
 "select the \"All processes\" option in the main window."
-msgstr ""
-"Listede gizli süreç bulunmamaktadır.Tüm çalışan süreçleri göstermek için ana "
-"penceredeki \"Tüm süreçler\" seçeneğini seçiniz."
+msgstr "არა დამალული - სია ვის ყველა გაშვებული ყველა - ფანჯარა."
 
 #: ../src/favorites.c:377
 msgid "Hidden Processes"
-msgstr "Gi_zli Süreçler"
+msgstr "დამალული პროცესები"
 
 #: ../src/favorites.c:401
+#, fuzzy
 msgid "Currently _hidden processes:"
-msgstr "Şu an _gizli olan süreçler:"
+msgstr "დამალული:"
 
 #: ../src/favorites.c:423
 msgid "_Remove From List"
-msgstr "Listeden _Sil"
+msgstr "სიიდან _ამოშლა"
 
 #: ../src/favorites.c:432 ../src/procdialogs.c:285
 msgid "Note:"
-msgstr "Not:"
+msgstr "შენიშვნა:"
 
 #: ../src/favorites.c:433
+#, fuzzy
 msgid ""
 "These are the processes you have chosen to hide. You can reshow a process by "
 "removing it from this list."
-msgstr ""
-"Bunlar gizlemeyi tercih ettiğiniz süreçlerdir. Listeden kaldırarak bir "
-"süreci tekrar görünür duruma getirebilirsiniz."
+msgstr "-სკენ თქვენ a სია."
 
 #: ../src/gnome-system-monitor.schemas.in.h:1
+#, fuzzy
 msgid "Column zero saved width"
-msgstr "Sütun sıfır kaydedilme genişliği"
+msgstr "სვეტი სიგანე"
 
 #: ../src/gnome-system-monitor.schemas.in.h:2
+#, fuzzy
 msgid "Default graph background color"
-msgstr "Öntanımlı grafik artalan rengi"
+msgstr "ნაგულისხმევი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:3
+#, fuzzy
 msgid "Default graph cpu color"
-msgstr "Öntanımlı mib grafik rengi"
+msgstr "ნაგულისხმევი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:4
+#, fuzzy
 msgid "Default graph frame color"
-msgstr "Öntanımlı çerçeve grafik rengi"
+msgstr "ნაგულისხმევი ჩარჩო"
 
 #: ../src/gnome-system-monitor.schemas.in.h:5
+#, fuzzy
 msgid "Default graph mem color"
-msgstr "Öntanımlı bellek grafik rengi"
+msgstr "ნაგულისხმევი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:6
+#, fuzzy
 msgid "Default graph net in color"
-msgstr "Öntanımlı gelen ağ grafik rengi"
+msgstr "ნაგულისხმევი -"
 
 #: ../src/gnome-system-monitor.schemas.in.h:7
+#, fuzzy
 msgid "Default graph net out color"
-msgstr "Öntanımlı giden ağ grafik rengi"
+msgstr "ნაგულისხმევი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:8
+#, fuzzy
 msgid "Default graph swap color"
-msgstr "Öntanımlı takas grafik rengi"
+msgstr "ნაგულისხმევი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:9
+#, fuzzy
 msgid ""
 "Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
 "active"
-msgstr ""
-"Hangi süreçlerin öntanımlı olarak gösterileceğini belirle. 0 Hepsi, 1 "
-"Kullanıcı, 2 Aktif süreçleri için"
+msgstr "-სკენ ნაგულისხმები ყველა და აქტიური"
 
 #: ../src/gnome-system-monitor.schemas.in.h:10
+#, fuzzy
 msgid "Disk view columns order"
-msgstr "Disk görüntüleme sütun sırası"
+msgstr "დისკი სვეტი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:11
+#, fuzzy
 msgid "Enable/Disable smooth refresh"
-msgstr "Yumuşak tazelemeyi etkinleştir/kapat"
+msgstr "ჩართვა გამორთე განახლება"
 
 #: ../src/gnome-system-monitor.schemas.in.h:12
 msgid "Main Window height"
-msgstr "Ana Pencere yüksekliği"
+msgstr "მთავარი ფანჯრის სიმაღლე"
 
 #: ../src/gnome-system-monitor.schemas.in.h:13
+#, fuzzy
 msgid "Main Window width"
-msgstr "Ana Pencere genişliği"
+msgstr "მთავარი ფანჯარა სიგანე"
 
 #: ../src/gnome-system-monitor.schemas.in.h:14
 msgid "Process view columns order"
-msgstr "Süreç görüntüleme sütun sırası"
+msgstr "პროცესთა სვეტების თანმიმდევრობა"
 
 #: ../src/gnome-system-monitor.schemas.in.h:15
 msgid "Process view sort column"
-msgstr "Süreç gösterim sıra sütunu"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:16
 msgid "Process view sort order"
-msgstr "Süreç gösterim sıra düzeni"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:17
 msgid "Saves the currently viewed tab"
-msgstr "Şu an gösterilen sekmeleri kaydet"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:18
+#, fuzzy
 msgid "Show column zero on startup"
-msgstr "Başlangıçta sütun sıfırı göster"
+msgstr "ჩვენება ჩართულია"
 
 #: ../src/gnome-system-monitor.schemas.in.h:19
+#, fuzzy
 msgid "Show process dependencies in tree form"
-msgstr "Süreç bağımlılıklarını ağaç yapısında göster"
+msgstr "ჩვენება - ხე"
 
 #: ../src/gnome-system-monitor.schemas.in.h:20
+#, fuzzy
 msgid "Show process threads"
-msgstr "Süreç kollarını göster"
+msgstr "ჩვენება"
 
 #: ../src/gnome-system-monitor.schemas.in.h:21
+#, fuzzy
 msgid "Show warning dialog when hiding processes"
-msgstr "Süreçler gizlenirken uyarı mesajı göster"
+msgstr "ჩვენება გაფრთხილება დიალოგი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:22
+#, fuzzy
 msgid "Show warning dialog when killing processes"
-msgstr "Süreçler öldürülürken uyarı mesajı göster"
+msgstr "ჩვენება გაფრთხილება დიალოგი"
 
 #: ../src/gnome-system-monitor.schemas.in.h:23
+#, fuzzy
 msgid "Time in milliseconds between updates of the devices list"
-msgstr "Milisaniye olarak aygıt listesi güncellemeleri arasında geçen zaman"
+msgstr "დრო - მილიწამები - სია"
 
 #: ../src/gnome-system-monitor.schemas.in.h:24
+#, fuzzy
 msgid "Time in milliseconds between updates of the graphs"
-msgstr "Milisaniye olarak grafiklerin güncellenmesi arasında geçen zaman"
+msgstr "დრო - მილიწამები -"
 
 #: ../src/gnome-system-monitor.schemas.in.h:25
+#, fuzzy
 msgid "Time in milliseconds between updates of the process view"
-msgstr ""
-"Milisaniye olarak süreç görüntüleme güncellemeleri arasında geçen zaman"
+msgstr "დრო - მილიწამები -"
 
 #: ../src/gnome-system-monitor.schemas.in.h:26
+#, fuzzy
 msgid "Whether information about all filesystems should be displayed"
-msgstr "Tüm dosya sistemleri hakkındaki bilgilerin gösterilmesi"
+msgstr "შესახებ ყველა"
 
 #: ../src/gnome-system-monitor.schemas.in.h:27
+#, fuzzy
 msgid ""
 "Whether to display information about all filesystems (including types like "
 "'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
 "filesystems."
-msgstr ""
-"Tüm dosya sistemleri hakkındaki bilgilerin gösterilip gösterilmeyeceği "
-"('autofs' ve 'procfs' gibi dosya sistemi tiplerini de içeren). Şu an bağlı "
-"olan tüm dosya sistemlerinin listesini almak için faydalıdır."
+msgstr "-სკენ შესახებ ყველა და a სია - ყველა მონტირებულია."
 
 #: ../src/interface.c:46
 msgid "_File"
-msgstr "_Dosya"
+msgstr "_ფაილი"
 
 #: ../src/interface.c:47
 msgid "_Edit"
-msgstr "Düz_enle"
+msgstr "_დამუშავება"
 
 #: ../src/interface.c:48
 msgid "_View"
-msgstr "_Görüntüle"
+msgstr "_ხედი"
 
 #: ../src/interface.c:49
 msgid "_Help"
-msgstr "_Yardım"
+msgstr "_დახმარება"
 
 #: ../src/interface.c:51
 msgid "_Quit"
-msgstr "_Çık"
+msgstr "_გასვლა"
 
 #: ../src/interface.c:52
 msgid "Quit the program"
-msgstr "Programdan çık"
+msgstr "პროგრამიდან გასვლა"
 
 #: ../src/interface.c:55
 msgid "_Stop Process"
-msgstr "Süreci _Durdur"
+msgstr "_პროცესების შეჩერება"
 
 #: ../src/interface.c:56
 msgid "Stop process"
-msgstr "Süreci durdur"
+msgstr "პროცესის შეჩერება"
 
 #: ../src/interface.c:57
 msgid "_Continue Process"
-msgstr "Süreci _Devam Ettir"
+msgstr "_პროცესის გაგრძელება"
 
 #: ../src/interface.c:58
+#, fuzzy
 msgid "Continue process if stopped"
-msgstr "Süreç durmuşsa devam ettir"
+msgstr "გაგრძელება"
 
 #: ../src/interface.c:60 ../src/interface.c:188
 msgid "End _Process"
-msgstr "Süreci _Sonlandır"
+msgstr "_პროცესის დასრულება"
 
 #: ../src/interface.c:61
+#, fuzzy
 msgid "Force process to finish normally"
-msgstr "Süreci normal olarak sonlandırmaya zorla"
+msgstr "ძალდატანება -სკენ"
 
 #: ../src/interface.c:62 ../src/procdialogs.c:129
 msgid "_Kill Process"
-msgstr "Süreci Ö_ldür"
+msgstr "_ძალ დატანებით გამორთვა"
 
 #: ../src/interface.c:63
+#, fuzzy
 msgid "Force process to finish immediately"
-msgstr "Süreci derhal sonlandırmaya zorla"
+msgstr "ძალდატანება -სკენ დაუყოვნებლივ"
 
 #: ../src/interface.c:64
 msgid "_Change Priority..."
-msgstr "Önceliği _Değiştir..."
+msgstr "_პრიორიტეტის შეცვლა..."
 
 #: ../src/interface.c:65
+#, fuzzy
 msgid "Change the order of priority of process"
-msgstr "Sürecin öncelik sırasını değiştir"
+msgstr "შეცვლა - -"
 
 #: ../src/interface.c:66
 msgid "Prefere_nces"
-msgstr "Ter_cihler"
+msgstr "_პარამეტრები"
 
 #: ../src/interface.c:67
 msgid "Configure the application"
-msgstr "Uygulamayı yapılandır"
+msgstr "პროგრამის კონფიგურირება"
 
 #: ../src/interface.c:69 ../src/procdialogs.c:85
 msgid "_Hide Process"
-msgstr "Süreci _Gizle"
+msgstr "პროცესის _დამალვა"
 
 #: ../src/interface.c:70
+#, fuzzy
 msgid "Hide process from list"
-msgstr "Süreci listeden gizle"
+msgstr "დამალვა სია"
 
 #: ../src/interface.c:71
 msgid "_Hidden Processes"
-msgstr "Gi_zli Süreçler"
+msgstr "_დამალული პროცესები"
 
 #: ../src/interface.c:72
+#, fuzzy
 msgid "Open the list of currently hidden processes"
-msgstr "Şu an gizli olan süreçlerin listesini aç"
+msgstr "გახსნა სია - დამალული"
 
 #: ../src/interface.c:73
 msgid "_Memory Maps"
-msgstr "_Bellek Eşlemler"
+msgstr "_მეხსიერების რუქები"
 
 #: ../src/interface.c:74
+#, fuzzy
 msgid "Open the memory maps associated with a process"
-msgstr "Bir süreç ile ilişkilendirilmiş bellek eşlemleri aç"
+msgstr "გახსნა a"
 
 #: ../src/interface.c:75
 msgid "Open _Files"
-msgstr "_Dosyaları Aç"
+msgstr "გახსენი _ფაილი"
 
 #: ../src/interface.c:76
+#, fuzzy
 msgid "View the files opened by a process"
-msgstr "Bir süreç tarafından açılmış dosyaları göster"
+msgstr "ჩვენება ფაილი a"
 
 #: ../src/interface.c:78
 msgid "_Contents"
-msgstr "_İçindekiler"
+msgstr "_შინაარსი"
 
 #: ../src/interface.c:79
 msgid "Open the manual"
-msgstr "Kılavuzu aç"
+msgstr "გახსენი დოკუმენტაცია"
 
 #: ../src/interface.c:80
 msgid "_About"
-msgstr "_Hakkında"
+msgstr "_შესახებ"
 
 #: ../src/interface.c:81
 msgid "About this application"
-msgstr "Bu uygulama hakkında"
+msgstr "ამ პროგრამის შესახებ"
 
 #: ../src/interface.c:86
 msgid "_Dependencies"
-msgstr "_Bağımlılıklar"
+msgstr "_დამოკიდებულებანი"
 
 #: ../src/interface.c:87
+#, fuzzy
 msgid "Show parent/child relationship between processes"
-msgstr "Süreçler arasındaki ana/oğul ilişkisini göster"
+msgstr "ჩვენება"
 
 #: ../src/interface.c:94
 msgid "_Active Processes"
-msgstr "_Etkin Süreçler"
+msgstr "აქტიური პ_როცესები"
 
 #: ../src/interface.c:95
 msgid "Show active processes"
-msgstr "Etkin süreçleri göster"
+msgstr "აქტიური პროცესების ჩვენება"
 
 #: ../src/interface.c:96
 msgid "A_ll Processes"
-msgstr "_Tüm Süreçler"
+msgstr "ყ_ველა პროცესი"
 
 #: ../src/interface.c:97
 msgid "Show all processes"
-msgstr "Tüm süreçleri _göster"
+msgstr "ყველა პროცესის ჩვენება"
 
 #: ../src/interface.c:98
 msgid "M_y Processes"
-msgstr "Süreçleri_m"
+msgstr "ჩემ_ი პროცესები"
 
 #: ../src/interface.c:99
 msgid "Show user own process"
-msgstr "Kullanıcıya ait süreçleri göster"
+msgstr "მოხმარებლის პროცესების ჩვენება"
 
 #: ../src/interface.c:260
 msgid "CPU History"
-msgstr "MİB Kullanım Geçmişi"
+msgstr "CPU-ს ისტორია"
 
 #: ../src/interface.c:303
 msgid "CPU:"
-msgstr "MİB:"
+msgstr "CPU:"
 
 #: ../src/interface.c:306
 #, c-format
 msgid "CPU%d:"
-msgstr "MİB%d:"
+msgstr "CPU%d:"
 
 #: ../src/interface.c:326
 msgid "Memory and Swap History"
-msgstr "Bellek ve Takas Kullanım Geçmişi"
+msgstr "მეხსიერება და Swap ისტორია"
 
 #: ../src/interface.c:359
 msgid "User memory:"
-msgstr "Kullanıcı belleği:"
+msgstr "მომხმარებლის მეხსიერება:"
 
 #: ../src/interface.c:377 ../src/interface.c:437
 msgid "of"
-msgstr "/"
+msgstr "ის"
 
 #: ../src/interface.c:418
 msgid "Used swap:"
-msgstr "Kullanılan takas:"
+msgstr "გამოყენებული Swap:"
 
 #: ../src/interface.c:477
 msgid "Network History"
-msgstr "Ağ Geçmişi"
+msgstr "ქსელის ისტორია"
 
 #: ../src/interface.c:509
 msgid "Received:"
-msgstr "Alınan:"
+msgstr "მიღებული:"
 
 #: ../src/interface.c:529 ../src/interface.c:572
 msgid "Total:"
-msgstr "Toplam:"
+msgstr "სულ:"
 
 #: ../src/interface.c:553
 msgid "Sent:"
-msgstr "Gönderilen:"
+msgstr "გაგზავნილი:"
 
 #: ../src/interface.c:733 ../src/procdialogs.c:579
 msgid "Processes"
-msgstr "Süreçler"
+msgstr "პროცესები"
 
 #: ../src/interface.c:739 ../src/procdialogs.c:682
 msgid "Resources"
-msgstr "Kaynaklar"
+msgstr "რესურსები"
 
 #: ../src/load-graph.c:368 ../src/load-graph.c:378
 #, c-format
@@ -458,414 +479,342 @@ msgstr "%s/s"
 
 #: ../src/memmaps.c:296
 msgid "Filename"
-msgstr "Dosya adı"
+msgstr "ფაილის სახელი"
 
 #: ../src/memmaps.c:297
 msgid "VM Start"
-msgstr "SB Başlangıç"
+msgstr "VM გაშვება"
 
 #: ../src/memmaps.c:298
 msgid "VM End"
-msgstr "SB Bitiş"
+msgstr "VM დასრულება"
 
 #: ../src/memmaps.c:299
 msgid "VM Size"
-msgstr "SB Boyutu"
+msgstr "VM ზომა"
 
 #: ../src/memmaps.c:300
 msgid "Flags"
-msgstr "İmler"
+msgstr "ალმები"
 
 #: ../src/memmaps.c:301
 msgid "VM Offset"
-msgstr "SB Ofseti"
+msgstr "VM წანაცვლება"
 
 #: ../src/memmaps.c:303
 msgid "Inode"
-msgstr "Dosya indeksi"
+msgstr ""
 
 #: ../src/memmaps.c:405
 msgid "Memory Maps"
-msgstr "Bellek Eşlemler"
+msgstr "მეხსიერების რუქები"
 
 #: ../src/memmaps.c:425
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
-msgstr "Süreç \"%s\" için bellek _eşlemleri (PID %u):"
+msgstr "_მეხსიერების რუქა პროცესისთვის \"%s\" (PID %u):"
 
 #: ../src/openfiles.c:31
 msgid "file"
-msgstr "dosya"
+msgstr "ფაილი"
 
 #: ../src/openfiles.c:33
 msgid "pipe"
-msgstr "boru"
+msgstr "ნაკადი"
 
 #: ../src/openfiles.c:35
 msgid "network connection"
-msgstr "ağ bağlantısı"
+msgstr "ქსელური კავშირი"
 
 #: ../src/openfiles.c:37
 msgid "local socket"
-msgstr "yerel soket"
+msgstr ""
 
 #: ../src/openfiles.c:39
 msgid "unknown type"
-msgstr "bilinmeyen tür"
+msgstr "უცნობი ტიპის"
 
 #. Translators: "FD" here means "File Descriptor". Please use
 #. a very short translation if possible, and at most
 #. 2-3 characters for it to be able to fit in the UI.
 #: ../src/openfiles.c:231
 msgid "FD"
-msgstr "DT"
+msgstr ""
 
 #: ../src/openfiles.c:233
 msgid "Object"
-msgstr "Nesne"
+msgstr "ობიექტი"
 
 #: ../src/openfiles.c:312
 msgid "Open Files"
-msgstr "Dosyaları Aç"
+msgstr "ფაილების გახსნა"
 
 #: ../src/openfiles.c:334
 #, c-format
+#, fuzzy
 msgid "_Files opened by process \"%s\" (PID %u):"
-msgstr "Süreç \"%s\" tarafından açılan _dosyalar (PID %u):"
+msgstr "ფაილები წმ PID u:"
 
 #: ../src/procactions.c:75
 #, c-format
+#, fuzzy
 msgid ""
 "Cannot change the priority of process with pid %d to %d.\n"
 "%s"
-msgstr ""
-"PID %d sürecinin önceliği %d olarak değiştirilemiyor.\n"
-"%s"
+msgstr "- -სკენ არა წმ"
 
 #: ../src/procactions.c:144
 #, c-format
+#, fuzzy
 msgid ""
 "Cannot kill process with pid %d with signal %d.\n"
 "%s"
-msgstr ""
-"PID %d süreci %d sinyali ile öldürülemiyor.\n"
-"%s"
+msgstr "არა წმ"
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:65
 msgid "Hide the selected process?"
-msgstr "Seçilen süreçler gizlensin mi?"
+msgstr "დავმალო მონიშნული პროცესები?"
 
 #. FIXME: View menu -> Edit menu
 #. translators: secondary alert messagex
 #: ../src/procdialogs.c:75
+#, fuzzy
 msgid ""
 "Hidden processes are no longer visible in the process list. You can re-"
 "enable them by selecting the \"Hidden Processes\" entry in the View menu."
-msgstr ""
-"Gizli süreçler bundan sonra süreç listesinde görüntülenmeyecektir. Görünüm "
-"menüsündeki \"Gizli Süreçler\" girişini seçerek süreçlerin tekrar görünür "
-"olmasını sağlayabilirsiniz. "
+msgstr "დამალული არა ხოლული - სია თქვენ დამალული ელემენტი - ჩვენება მენიუ."
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:124
 msgid "Kill the selected process?"
-msgstr "Seçilen süreçler öldürülsün mü?"
+msgstr "ნაძალადევად გავთიშო მონიშნული პროცესები?"
 
 #. translators: secondary alert message
 #: ../src/procdialogs.c:126
+#, fuzzy
 msgid ""
 "Killing a process may destroy data, break the session or introduce a "
 "security risk. Only unresponding processes should be killed."
-msgstr ""
-"Bir süreci öldürmek veriye zarar verebilir, oturumu kesebilir ya da bir "
-"güvenlik riski oluşturabilir. Sadece yanıt vermeyen süreçler "
-"sonlandırılmalıdır."
+msgstr "a სესია ან a მხოლოდ."
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:133
+#, fuzzy
 msgid "End the selected process?"
-msgstr "Seçilen süreçler sonlandırılsın mı?"
+msgstr "ბოლოში?"
 
 #. translators: secondary alert message
 #: ../src/procdialogs.c:135
+#, fuzzy
 msgid ""
 "Ending a process may destroy data, break the session or introduce a security "
 "risk. Only unresponding processes should be ended."
-msgstr ""
-"Bir süreci sonlandırmak veriye zarar verebilir, oturumu kesebilir ya da bir "
-"güvenlik riski oluşturabilir. Sadece yanıt vermeyen süreçler "
-"sonlandırılmalıdır."
+msgstr "a სესია ან a მხოლოდ."
 
 #: ../src/procdialogs.c:138
 msgid "_End Process"
-msgstr "Sür_eci Sonlandır"
+msgstr "პროცესის _დასრულება"
 
 #: ../src/procdialogs.c:167
 msgid "(Very High Priority)"
-msgstr "(Çok Yüksek Öncelik)"
+msgstr "(ძალიან მაღალი პრიორიტეტი)"
 
 #: ../src/procdialogs.c:169
 msgid "(High Priority)"
-msgstr "(Yüksek Öncelik)"
+msgstr "(მაღალი პრიორიტეტი)"
 
 #: ../src/procdialogs.c:171
 msgid "(Normal Priority)"
-msgstr "(Normal Öncelik)"
+msgstr "(ჩვეულებრივი პრიორიტეტი)"
 
 #: ../src/procdialogs.c:173
 msgid "(Low Priority)"
-msgstr "(Düşük Öncelik)"
+msgstr "(დაბალი პრიორიტეტი)"
 
 #: ../src/procdialogs.c:175
 msgid "(Very Low Priority)"
-msgstr "(Çok Düşük Öncelik)"
+msgstr "(ძალიან დაბალი პრიორიტეტი)"
 
 #: ../src/procdialogs.c:227
 msgid "Change Priority"
-msgstr "Önceliği Değiştir"
+msgstr "პრიორიტეტის შეცვლა"
 
 #: ../src/procdialogs.c:248
 msgid "Change _Priority"
-msgstr "Ön_celiği Değiştir"
+msgstr "პრიორიტეტის _შეცვლა"
 
 #: ../src/procdialogs.c:269
 msgid "_Nice value:"
-msgstr "_Öncelik değeri:"
+msgstr "_Nice პარამეტრი:"
 
 #: ../src/procdialogs.c:286
+#, fuzzy
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
-msgstr ""
-"Öncelik değeri süreç öncelikleri ile ilgilidir. Düşük öncelik değeri daha "
-"yüksek bir önceliğe karşılık gelir."
+msgstr "- a A -სკენ a."
 
 #: ../src/procdialogs.c:464
+#, fuzzy
 msgid "Processes i_nfo showed in list:"
-msgstr "_Listede gösterilen süreçler bilgisi:"
+msgstr "i - სია:"
 
 #: ../src/procdialogs.c:516
 msgid "Icon"
-msgstr "Simge"
+msgstr "ხატულა"
 
 #: ../src/procdialogs.c:556
 msgid "System Monitor Preferences"
-msgstr "Sistem Gözlemcisi Tercihleri"
+msgstr "სისტემის მონიტორის პარამეტრები"
 
 #: ../src/procdialogs.c:586
 msgid "Behavior"
-msgstr "İşleyiş"
+msgstr "ქცევა"
 
 #: ../src/procdialogs.c:605 ../src/procdialogs.c:708 ../src/procdialogs.c:793
 msgid "_Update interval in seconds:"
-msgstr "Saniye olarak _güncelleme aralığı:"
+msgstr "_ინტერვალის _განახლება წამებში:"
 
 #: ../src/procdialogs.c:630
+#, fuzzy
 msgid "Enable _smooth refresh"
-msgstr "_Yumuşak tazelemeyi etkinleştir"
+msgstr "ჩართვა განახლება"
 
 #: ../src/procdialogs.c:644
+#, fuzzy
 msgid "Alert before ending or _killing processes"
-msgstr "Süreçler _sonlandırılmadan ya da öldürülmeden önce uyar"
+msgstr "გაფრთხილება ან"
 
 #: ../src/procdialogs.c:654
+#, fuzzy
 msgid "Alert before _hiding processes"
-msgstr "Süreçleri _gizlenemeden önce uyar"
+msgstr "გაფრთხილება"
 
 #: ../src/procdialogs.c:664
 msgid "Process Fields"
-msgstr "Süreç Alanları"
+msgstr ""
 
 #: ../src/procdialogs.c:689
 msgid "Graphs"
-msgstr "Grafikler"
+msgstr "გრაფიკი"
 
 #: ../src/procdialogs.c:729
 msgid "_Background color:"
-msgstr "Artalan _Rengi:"
+msgstr "_ფონის ფერი:"
 
 #: ../src/procdialogs.c:748
 msgid "_Grid color:"
-msgstr "_Izgara Rengi:"
+msgstr ""
 
 #: ../src/procdialogs.c:812
 msgid "Show _all filesystems"
-msgstr "_Tüm dosya sistemlerini göster"
+msgstr "ყველა ფაილ სიტემების ჩვენება"
 
 #: ../src/proctable.c:245
 msgid "Process Name"
-msgstr "Süreç İsmi"
+msgstr "პროცესის სახელი"
 
 #: ../src/proctable.c:246
 msgid "User"
-msgstr "Kullanıcı"
+msgstr "მომხმარებელი"
 
 #: ../src/proctable.c:247
 msgid "Status"
-msgstr "Durum"
+msgstr "სტატუსი"
 
 #: ../src/proctable.c:248
 msgid "Virtual Memory"
-msgstr "Sanal Bellek"
+msgstr "ვირტუალური მეხსიერება (VM)"
 
 #: ../src/proctable.c:249
 msgid "Resident Memory"
-msgstr "Yerleşik Bellek"
+msgstr "ძირითადი მეხსიერება"
 
 #: ../src/proctable.c:250
 msgid "Writable Memory"
-msgstr "Yazılabilir Bellek"
+msgstr "ჩაწერადი მეხსიერება"
 
 #: ../src/proctable.c:251
 msgid "Shared Memory"
-msgstr "Paylaşılmış Bellek"
+msgstr "გაზიარებული მეხსიერება"
 
 #: ../src/proctable.c:252
 msgid "X Server Memory"
-msgstr "X Sunucusu Belleği"
+msgstr "X სერვერის მეხსიერება"
 
 #: ../src/proctable.c:253
 #, no-c-format
 msgid "% CPU"
-msgstr "% MİB"
+msgstr "% CPU"
 
 #: ../src/proctable.c:254
 msgid "CPU Time"
-msgstr "MİB zamanı"
+msgstr "CPU-ს დრო"
 
 #: ../src/proctable.c:255
 msgid "Started"
-msgstr "Başlamış"
+msgstr "გაშვებული"
 
 #: ../src/proctable.c:256
 msgid "Nice"
-msgstr "Öncelik"
+msgstr "Nice"
 
 #: ../src/proctable.c:257
 msgid "ID"
-msgstr "No"
+msgstr "ID"
 
 #: ../src/proctable.c:258
 msgid "Security Context"
-msgstr "Güvenlik Bağlamı"
+msgstr "უსაფრთხოების კონტექსტი"
 
 #: ../src/proctable.c:259
 msgid "Arguments"
-msgstr "Argümanlar"
+msgstr ""
 
 #: ../src/proctable.c:432
 msgid "Running"
-msgstr "Çalışan"
+msgstr "გაშვებულია"
 
 #: ../src/proctable.c:437
 msgid "Stopped"
-msgstr "Durdurulmuş"
+msgstr "გაჩერებულია"
 
 #: ../src/proctable.c:442
 msgid "Zombie"
-msgstr "Zombi"
+msgstr "ზომბური"
 
 #: ../src/proctable.c:447
 msgid "Uninterruptible"
-msgstr "Kesilemez"
+msgstr ""
 
 #: ../src/proctable.c:452
 msgid "Sleeping"
-msgstr "Beklemede"
+msgstr "ძინავს"
 
 #: ../src/proctable.c:1034
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
-msgstr "Son 1, 5, 15 dakika için yük ortalamaları: %0.2f, %0.2f, %0.2f"
+msgstr "დატვირთულობა ბოლო 1, 5, 15 წუთის განმავლობაში: %0.2f,·%0.2f,·%0.2f"
 
 #: ../src/util.c:87
 #, c-format
 msgid "%u byte"
 msgid_plural "%u bytes"
-msgstr[0] "%u bayt"
-msgstr[1] "%u bayt"
+msgstr[0] "%u ბაიტი"
 
 #: ../src/util.c:93
 #, c-format
 msgid "%.1f KiB"
-msgstr "%.1f KiB"
+msgstr "%.1f·კბ"
 
 #: ../src/util.c:97
 #, c-format
 msgid "%.1f MiB"
-msgstr "%.1f MiB"
+msgstr "%.1f მბ"
 
 #: ../src/util.c:101
 #, c-format
 msgid "%.1f GiB"
-msgstr "%.1f GiB"
+msgstr "%.1f·გბ"
 
-#~ msgid "Jorgen Scheibengruber - nicer devices treeview"
-#~ msgstr "Jorgen Scheibengruber - aygıtların ağaç görünümünün iyileştirilmesi"
-
-#~ msgid "Benoît Dejean - maintainer"
-#~ msgstr "Benoît Dejean - yönetici"
-
-#~ msgid "Show advanced info tab on startup"
-#~ msgstr "Başlangıçta gelişmiş bilgi sekmesini göster"
-
-#~ msgid "Less _info"
-#~ msgstr "Daha _az bilgi"
-
-#~ msgid "More _info"
-#~ msgstr "Daha fazla _bilgi"
-
-#~ msgid "Process Info"
-#~ msgstr "Süreç Bilgisi"
-
-#~ msgid "Command:"
-#~ msgstr "Komut:"
-
-#~ msgid "Status:"
-#~ msgstr "Durum:"
-
-#~ msgid "Priority:"
-#~ msgstr "Öncelik:"
-
-#~ msgid "Memory Usage"
-#~ msgstr "Bellek Kullanımı"
-
-#~ msgid "RSS:"
-#~ msgstr "RSS:"
-
-#~ msgid "Very high - nice %d"
-#~ msgstr "Çok yüksek - öncelik %d"
-
-#~ msgid "High - nice %d"
-#~ msgstr "Yüksek - öncelik %d"
-
-#~ msgid "Normal - nice %d"
-#~ msgstr "Normal - öncelik %d"
-
-#~ msgid "Low - nice %d"
-#~ msgstr "Düşük - öncelik %d"
-
-#~ msgid "Very low - nice %d"
-#~ msgstr "Çok düşük - öncelik %d"
-
-#~ msgid "_Threads"
-#~ msgstr "İş _Parçacıkları"
-
-#~ msgid "Show each thread as a separate process"
-#~ msgstr "Her kolu ayrı bir süreç olarak göster"
-
-#~ msgid "seconds"
-#~ msgstr "saniye"
-
-#~ msgid "Update _interval:"
-#~ msgstr "Günce_lleme aralığı:"
-
-#~ msgid "Memory"
-#~ msgstr "Bellek"
-
-#~ msgid "RSS Memory"
-#~ msgstr "RSS Bellek"
-
-#~ msgid "%s (thread)"
-#~ msgstr " %s (süreç kolu)"
