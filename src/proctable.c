@@ -95,11 +95,56 @@ sort_ints (GtkTreeModel *model, GtkTreeIter *itera, GtkTreeIter *iterb, gpointer
 	case COL_CPU:
 		return PROCMAN_RCMP(infoa->pcpu, infob->pcpu);
 
+	case COL_MEM:
+		return PROCMAN_RCMP(infoa->mem, infob->mem);
+
 	default:
 		g_assert_not_reached();
 		return 0;
 	}
 }
+
+
+
+static GtkWidget *
+create_proctree(GtkTreeModel *model)
+{
+	GtkWidget *proctree = NULL;
+	GModule *sexy;
+
+	sexy = g_module_open("libsexy.so",
+			     G_MODULE_BIND_LAZY | G_MODULE_BIND_LOCAL);
+
+	if (sexy) {
+		GtkWidget* (*new)(void);
+		void (*set_column)(void*, guint);
+
+		if (g_module_symbol(sexy,
+				    "sexy_tree_view_new",
+				    &new) &&
+		    g_module_symbol(sexy,
+				    "sexy_tree_view_set_tooltip_label_column",
+				    &set_column)) {
+
+			g_module_make_resident(sexy);
+			g_print("Found libsexy\n");
+
+			proctree = new();
+			gtk_tree_view_set_model(GTK_TREE_VIEW(proctree), model);
+			set_column(proctree, COL_ARGS);
+		} else {
+			g_module_close(sexy);
+		}
+	}
+
+	if (!proctree) {
+		proctree = gtk_tree_view_new_with_model(model);
+	}
+
+	return proctree;
+}
+
+
 
 
 
@@ -241,7 +286,7 @@ proctable_new (ProcData * const procdata)
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *cell_renderer;
 
-	static const gchar *titles[] = {
+	const gchar *titles[] = {
 		N_("Process Name"),
 		N_("User"),
 		N_("Status"),
@@ -257,13 +302,14 @@ proctable_new (ProcData * const procdata)
 		N_("ID"),
 		N_("Security Context"),
 		N_("Arguments"),
+		N_("Memory"),
 		NULL,
 		"POINTER"
 	};
 
-	gint i;
+	g_assert(COL_MEM == 15);
 
-	PROCMAN_GETTEXT_ARRAY_INIT(titles);
+	gint i;
 
 	scrolled = gtk_scrolled_window_new (NULL, NULL);
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
@@ -286,11 +332,12 @@ proctable_new (ProcData * const procdata)
 				    G_TYPE_UINT,	/* ID		*/
 				    G_TYPE_STRING,	/* Security Context */
 				    G_TYPE_STRING,	/* Arguments	*/
+				    G_TYPE_STRING,	/* Memory       */
 				    GDK_TYPE_PIXBUF,	/* Icon		*/
 				    G_TYPE_POINTER	/* ProcInfo	*/
 		);
 
-	proctree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (model));
+	proctree = create_proctree(GTK_TREE_MODEL(model));
 	gtk_tree_view_set_search_equal_func (GTK_TREE_VIEW (proctree),
 					     search_equal_func,
 					     NULL,
@@ -314,15 +361,16 @@ proctable_new (ProcData * const procdata)
 	gtk_tree_view_column_set_attributes (column, cell_renderer,
 					     "text", COL_NAME,
 					     NULL);
-	gtk_tree_view_column_set_title (column, titles[0]);
+	gtk_tree_view_column_set_title (column, _(titles[0]));
 	gtk_tree_view_column_set_sort_column_id (column, COL_NAME);
 	gtk_tree_view_column_set_resizable (column, TRUE);
+	gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
 	gtk_tree_view_column_set_min_width (column, 1);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (proctree), column);
 	gtk_tree_view_set_expander_column (GTK_TREE_VIEW (proctree), column);
 
 
-	for (i = COL_USER; i <= COL_ARGS; i++) {
+	for (i = COL_USER; i <= COL_MEM; i++) {
 		cell_renderer = gtk_cell_renderer_text_new ();
 
 		switch(i)
@@ -336,6 +384,7 @@ proctable_new (ProcData * const procdata)
 		case COL_NICE:
 		case COL_PID:
 		case COL_CPU_TIME:
+		case COL_MEM:
 			g_object_set(G_OBJECT(cell_renderer),
 				     "xalign", 1.0f,
 				     NULL);
@@ -346,9 +395,16 @@ proctable_new (ProcData * const procdata)
 		gtk_tree_view_column_set_attributes (column, cell_renderer,
 						     "text", i,
 						     NULL);
-		gtk_tree_view_column_set_title (column, titles[i]);
+		gtk_tree_view_column_set_title (column, _(titles[i]));
 		gtk_tree_view_column_set_sort_column_id (column, i);
 		gtk_tree_view_column_set_resizable (column, TRUE);
+
+		switch (i) {
+		case COL_ARGS:
+			gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
+			break;
+		}
+
 		gtk_tree_view_column_set_min_width (column, 1);
 		gtk_tree_view_append_column (GTK_TREE_VIEW (proctree), column);
 	}
@@ -356,7 +412,7 @@ proctable_new (ProcData * const procdata)
 	gtk_container_add (GTK_CONTAINER (scrolled), proctree);
 
 
-	for(i = COL_NAME; i <= COL_ARGS; i++)
+	for(i = COL_NAME; i <= COL_MEM; i++)
 	{
 		switch(i)
 		{
@@ -368,6 +424,7 @@ proctable_new (ProcData * const procdata)
 		case COL_CPU_TIME:
 		case COL_START_TIME:
 		case COL_CPU:
+		case COL_MEM:
 			gtk_tree_sortable_set_sort_func (
 				GTK_TREE_SORTABLE (model),
 				i,
@@ -547,6 +604,8 @@ get_process_memory_info(ProcInfo *info)
 	info->memxserver = xresources.total_bytes_estimate;
 
 	get_process_memory_writable(info);
+
+	info->mem = info->memxserver + info->memwritable;
 }
 
 
@@ -598,13 +657,14 @@ static void
 update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info)
 {
 	gchar *vmsize, *memres, *memwritable, *memshared, *memxserver,
-		*cpu_time, *start_time;
+		*cpu_time, *start_time, *mem;
 
 	vmsize	   = SI_gnome_vfs_format_file_size_for_display (info->vmsize);
 	memres	   = SI_gnome_vfs_format_file_size_for_display (info->memres);
 	memwritable = SI_gnome_vfs_format_file_size_for_display (info->memwritable);
 	memshared  = SI_gnome_vfs_format_file_size_for_display (info->memshared);
 	memxserver = SI_gnome_vfs_format_file_size_for_display (info->memxserver);
+	mem = SI_gnome_vfs_format_file_size_for_display(info->mem);
 
 	cpu_time = format_duration_for_display (info->cpu_time_last / procdata->frequency);
 
@@ -624,6 +684,7 @@ update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info
 			    COL_CPU_TIME, cpu_time,
 			    COL_START_TIME, start_time,
 			    COL_NICE, info->nice,
+			    COL_MEM, mem,
 			    -1);
 
 	/* FIXME: We don't bother updating COL_SECURITYCONTEXT as it can never change.
@@ -635,6 +696,7 @@ update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info
 	g_free (memxserver);
 	g_free (cpu_time);
 	g_free(start_time);
+	g_free(mem);
 }
 
 

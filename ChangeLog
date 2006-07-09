@@ -1,3 +1,93 @@
+2006-06-29  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+	
+	Released 2.15.0.
+
+2006-06-29  Benoît Dejean  <benoit@placenet.org>
+
+	* src/callbacks.c: (cb_about):
+	* src/procman.c: (main):
+
+	Set application name.
+	Updated about dialog (http://live.gnome.org/GnomeGoals/AboutDialog).
+
+2006-06-28  Benoît Dejean  <benoit@placenet.org>
+
+	* src/proctable.c: (proctable_new):
+	
+	Use fixed width only for COL_NAME and COL_ARGS.
+
+2006-06-25  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/procdialogs.c: (procdialog_create_root_password_dialog):
+	* src/procman_gksu.c: (load_gksu),
+	(procman_gksu_create_root_password_dialog), (procman_has_gksu):
+	* src/procman_gksu.h:
+	
+	Now uses libgksu2 if available at runtime.
+
+2006-06-25  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procactions.c (renice): 
+	
+	Make sure the table is not updated during renice.
+
+2006-06-22  Benoît Dejean  <benoit@placenet.org>
+
+	* src/gnome-system-monitor.schemas.in:
+	* src/procman.h:
+	* src/proctable.c: (sort_ints), (proctable_new),
+	(get_process_memory_info), (update_info_mutable_cols):
+	* src/proctable.h:
+	
+	Added new memory column. Displays estimated memory usage.
+	See #341241.
+
+2006-06-21  Benoît Dejean  <benoit@placenet.org>
+
+	* src/proctable.c: (proctable_new):
+	
+	Don't auto-resize proctree columns.
+	Closes #328287.
+
+2006-06-21  Benoît Dejean  <benoit@placenet.org>
+
+	* src/disks.c: (get_icon_for_device), (find_disk_in_model),
+	(add_disk), (cb_update_disks):
+	
+	Try to be smart, don't clear the list on every refresh.
+	Closes #325090.
+
+2006-06-18  Benoît Dejean  <benoit@placenet.org>
+
+	* src/interface.c:
+
+	Change File menu name to Monitor.
+	Closes #342649.
+
+2006-06-18  Benoît Dejean  <benoit@placenet.org>
+
+	* src/proctable.c: (create_proctree), (proctable_new):
+
+	Displays process arguments as a tooltip if libsexy is found.
+
+2006-06-18  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/gnome-system-monitor.schemas.in:
+
+	Bumped version number to 2.15.0.
+	Updated schema.
+
+2006-06-03  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/load-graph.c:
+	
+	Dropped anonymous union to fix build with !gcc.
+
 2006-05-17  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS:
