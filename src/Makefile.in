@@ -64,8 +64,7 @@ am_gnome_system_monitor_OBJECTS = procman.$(OBJEXT) \
 	procman_gnomesu.$(OBJEXT) procman_gksu.$(OBJEXT) \
 	e_date.$(OBJEXT)
 gnome_system_monitor_OBJECTS = $(am_gnome_system_monitor_OBJECTS)
-am__DEPENDENCIES_1 =
-gnome_system_monitor_DEPENDENCIES = $(am__DEPENDENCIES_1) libbacon.la
+gnome_system_monitor_DEPENDENCIES = libbacon.la
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -132,8 +131,6 @@ GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 GREP = @GREP@
-HAVE_SELINUX_FALSE = @HAVE_SELINUX_FALSE@
-HAVE_SELINUX_TRUE = @HAVE_SELINUX_TRUE@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
@@ -191,7 +188,6 @@ PO_IN_DATADIR_TRUE = @PO_IN_DATADIR_TRUE@
 PROCMAN_CFLAGS = @PROCMAN_CFLAGS@
 PROCMAN_LIBS = @PROCMAN_LIBS@
 RANLIB = @RANLIB@
-SELINUX_LIBS = @SELINUX_LIBS@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
@@ -249,7 +245,7 @@ target_alias = @target_alias@
 INCLUDES = \
 	-DPROCMAN_DATADIR=\"$(datadir)/procman/\" \
 	-DDATADIR=\""$(datadir)"\" \
-	@PROCMAN_CFLAGS@ $(LIBGKSU_CFLAGS) $(LIBGKSUUI_CFLAGS)
+	@PROCMAN_CFLAGS@
 
 gnome_system_monitor_SOURCES = \
 	procman.c  procman.h \
@@ -272,7 +268,7 @@ gnome_system_monitor_SOURCES = \
 	procman_gksu.h procman_gksu.c \
 	e_date.c e_date.h
 
-gnome_system_monitor_LDADD = @PROCMAN_LIBS@ $(SELINUX_LIBS) $(LIBGKSU_LIBS) $(LIBGKSUUI_LIBS) libbacon.la 
+gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la 
 noinst_LTLIBRARIES = libbacon.la
 libbacon_la_SOURCES = \
 	bacon-message-connection.c \
