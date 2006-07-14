@@ -20,20 +20,36 @@
 #define _PROCDIALOGS_H_
 
 
-#include <gnome.h>
-#include <procman.h>
+#include <glib.h>
+#include "procman.h"
 
-extern int kill_signal;
+/* These are the actual range of settable values. Values outside this range
+   are scaled back to these limits. So show these limits in the slider
+*/
+#ifdef linux
+#define RENICE_VAL_MIN -20
+#define RENICE_VAL_MAX 19
+#else /* ! linux */
+#define RENICE_VAL_MIN -20
+#define RENICE_VAL_MAX 20
+#endif
 
-void			procdialog_create_hide_dialog (ProcData *data);
-void			procdialog_create_kill_dialog (ProcData *data, int signal);
-void 			procdialog_create_renice_dialog (ProcData *data);
-void			procdialog_create_root_password_dialog (gint type, 
+
+typedef enum
+{
+	PROCMAN_ACTION_RENICE,
+	PROCMAN_ACTION_KILL
+} ProcmanActionType;
+
+
+void			procdialog_create_hide_dialog (ProcData *data) G_GNUC_INTERNAL;
+void			procdialog_create_kill_dialog (ProcData *data, int signal) G_GNUC_INTERNAL;
+void 			procdialog_create_renice_dialog (ProcData *data) G_GNUC_INTERNAL;
+gboolean		procdialog_create_root_password_dialog (ProcmanActionType type,
 								ProcData *procdata,
-								gint pid, gint extra_value,
-								gchar *text);
-void 			procdialog_create_memmaps_dialog (ProcData *data);
-void			procdialog_create_preferences_dialog (ProcData *data);
+								gint pid, gint extra_value) G_GNUC_INTERNAL;
+void 			procdialog_create_memmaps_dialog (ProcData *data) G_GNUC_INTERNAL;
+void			procdialog_create_preferences_dialog (ProcData *data) G_GNUC_INTERNAL;
 
 #endif
 

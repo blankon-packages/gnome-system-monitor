@@ -21,67 +21,68 @@
 #ifndef _PROCMAN_CALLBACKS_H_
 #define _PROCMAN_CALLBACKS_H_
 
+#include <gtk/gtk.h>
 #include "procman.h"
+#include <libgnomevfs/gnome-vfs.h>
 
+void		cb_show_memory_maps (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_show_open_files (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_renice (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_end_process (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_kill_process (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_hide_process (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_show_hidden_processes (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_edit_preferences (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
 
-void		cb_properties_activate (GtkMenuItem *menuitem, gpointer user_data);
+void		cb_help_contents (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+void		cb_about (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
 
-void		cb_show_memory_maps (GtkMenuItem *menuitem, gpointer data);
-void		cb_renice (GtkMenuItem *menuitem, gpointer data);
-void		cb_add_to_favorites (GtkMenuItem *menuitem, gpointer data);
-void		cb_end_process (GtkMenuItem *menuitem, gpointer data);
-void		cb_kill_process (GtkMenuItem *menuitem, gpointer data);
-void		cb_hide_process (GtkMenuItem *menuitem, gpointer data);
-void		cb_show_hidden_processes (GtkMenuItem *menuitem, gpointer data);
-void		cb_preferences_activate (GtkMenuItem *menuitem, gpointer user_data);
+void		cb_app_exit (GtkAction *action, gpointer data) G_GNUC_INTERNAL;
+gboolean	cb_app_delete (GtkWidget *window, GdkEventAny *event, gpointer data) G_GNUC_INTERNAL;
 
-void		cb_about_activate (GtkMenuItem *menuitem, gpointer user_data);
+void		cb_end_process_button_pressed (GtkButton *button, gpointer data) G_GNUC_INTERNAL;
+void		cb_logout (GtkButton *button, gpointer data) G_GNUC_INTERNAL;
 
-void		cb_app_exit (GtkObject *object, gpointer user_data);
-gboolean	cb_app_delete (GtkWidget *window, GdkEventAny *event, gpointer data);
-#if 0
-gboolean	cb_close_simple_dialog (GnomeDialog *dialog, gpointer data);
-#endif
-void		cb_proc_combo_changed (GtkComboBox *combo, gpointer data);
+void		cb_info_button_pressed (GtkButton *button, gpointer user_data) G_GNUC_INTERNAL;
 
-void		cb_end_process_button_pressed (GtkButton *button, gpointer data);
-void		cb_logout (GtkButton *button, gpointer data);
+void		cb_cpu_color_changed (GtkColorButton *widget, gpointer user_data) G_GNUC_INTERNAL;
+void		cb_mem_color_changed (GtkColorButton *widget, gpointer user_data) G_GNUC_INTERNAL;
+void		cb_swap_color_changed (GtkColorButton *widget, gpointer user_data) G_GNUC_INTERNAL;
+void		cb_net_in_color_changed (GtkColorButton *widget, gpointer user_data) G_GNUC_INTERNAL;
+void		cb_net_out_color_changed (GtkColorButton *widget, gpointer user_data) G_GNUC_INTERNAL;
+void		cb_bg_color_changed (GtkColorButton *widget, gpointer user_data) G_GNUC_INTERNAL;
+void		cb_frame_color_changed (GtkColorButton *widget, gpointer user_data) G_GNUC_INTERNAL;
 
-void		popup_menu_renice (GtkMenuItem *menuitem, gpointer data);
-void		popup_menu_show_memory_maps (GtkMenuItem *menuitem, gpointer data);
-void		popup_menu_hide_process (GtkMenuItem *menuitem, gpointer data);
-void		popup_menu_end_process (GtkMenuItem *menuitem, gpointer data);
-void		popup_menu_kill_process (GtkMenuItem *menuitem, gpointer data);
-void		popup_menu_about_process (GtkMenuItem *menuitem, gpointer data);
+void		cb_row_selected (GtkTreeSelection *selection, gpointer data) G_GNUC_INTERNAL;
 
-void		cb_info_button_pressed (GtkButton *button, gpointer user_data);
-void		cb_search (GtkEditable *editable, gpointer data);
-
-
-void		cb_cpu_color_changed (GnomeColorPicker *cp, guint r, guint g, guint b,
-				      guint a, gpointer data);
-void		cb_mem_color_changed (GnomeColorPicker *cp, guint r, guint g, guint b,
-				      guint a, gpointer data);
-void		cb_swap_color_changed (GnomeColorPicker *cp, guint r, guint g, guint b,
-				      guint a, gpointer data);
-void		cb_bg_color_changed (GnomeColorPicker *cp, guint r, guint g, guint b,
-				      guint a, gpointer data);
-void		cb_frame_color_changed (GnomeColorPicker *cp, guint r, guint g, guint b,
-				      guint a, gpointer data);
-
-
-void		cb_row_selected (GtkTreeSelection *selection, gpointer data);
-void		cb_tree_row_activated (GtkTreeView *view, GtkTreePath *path,
-				       GtkTreeViewColumn *column, gpointer data);
-gboolean	cb_tree_popup_menu (GtkWidget *widget, gpointer data);
+gboolean	cb_tree_popup_menu (GtkWidget *widget, gpointer data) G_GNUC_INTERNAL;
 gboolean	cb_tree_button_pressed (GtkWidget *widget, GdkEventButton *event,
-					gpointer data);
+					gpointer data) G_GNUC_INTERNAL;
 
+
+void		cb_change_current_page (GtkNotebook *nb,
+					gint num, gpointer data) G_GNUC_INTERNAL;
 void		cb_switch_page (GtkNotebook *nb, GtkNotebookPage *page,
-				gint num, gpointer data);
+				gint num, gpointer data) G_GNUC_INTERNAL;
 
-gint		cb_update_disks (gpointer data);
-gint		cb_timeout (gpointer data);
+gint		cb_update_disks (gpointer data) G_GNUC_INTERNAL;
+gint		cb_timeout (gpointer data) G_GNUC_INTERNAL;
+
+void		cb_volume_mounted_or_unmounted(GnomeVFSVolumeMonitor *vfsvolumemonitor,
+					       GnomeVFSVolume *vol,
+					       gpointer procdata) G_GNUC_INTERNAL;
+
+void		cb_radio_processes(GtkAction *action,
+				   GtkRadioAction *current,
+				   gpointer data) G_GNUC_INTERNAL;
+
+
+
+void		cb_kill_sigstop(GtkAction *action,
+				gpointer data) G_GNUC_INTERNAL;
+
+void		cb_kill_sigcont(GtkAction *action,
+				gpointer data) G_GNUC_INTERNAL;
 
 
 #endif /* _PROCMAN_CALLBACKS_H_ */

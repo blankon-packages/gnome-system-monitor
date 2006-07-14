@@ -19,16 +19,22 @@
 #ifndef _PROCMAN_PROCMAN_H_
 #define _PROCMAN_PROCMAN_H_
 
+typedef struct _ProcConfig ProcConfig;
+typedef struct _PrettyTable PrettyTable;
+typedef struct _ProcInfo ProcInfo;
+typedef struct _ProcData ProcData;
+
 #include <gdk-pixbuf/gdk-pixbuf.h>
-#include <gnome.h>
+#include <glib.h>
+#include <gtk/gtk.h>
 #include <gconf/gconf-client.h>
 #include <glibtop/cpu.h>
 
-typedef struct _ProcConfig ProcConfig;
-typedef struct _PrettyTable PrettyTable;
-typedef struct _LoadGraph LoadGraph;
-typedef struct _ProcInfo ProcInfo;
-typedef struct _ProcData ProcData;
+#include <time.h>
+
+#include "smooth_refresh.h"
+
+#include "load-graph.h"
 
 enum
 {
@@ -37,18 +43,22 @@ enum
 	ACTIVE_PROCESSES
 };
 
-#define NCPUSTATES 4
+enum
+{
+	MIN_UPDATE_INTERVAL = 1 * 1000,
+	MAX_UPDATE_INTERVAL = 100 * 1000
+};
+
 
 struct _ProcConfig
 {
 	gint		width;
 	gint		height;
-        gboolean        show_more_info;
         gboolean	show_kill_warning;
         gboolean	show_hide_message;
         gboolean	show_tree;
-        gboolean	show_threads;
- 	gint		update_interval;
+	gboolean	show_all_fs;
+	guint		update_interval;
  	gint		graph_update_interval;
  	gint		disks_update_interval;
 	gint		whose_process;
@@ -56,113 +66,141 @@ struct _ProcConfig
 	GdkColor	cpu_color[GLIBTOP_NCPU];
 	GdkColor	mem_color;
 	GdkColor	swap_color;
+	GdkColor	net_in_color;
+	GdkColor	net_out_color;
 	GdkColor	bg_color;
 	GdkColor	frame_color;
-	gboolean	simple_view;
-	gint		pane_pos;
 	gint 		num_cpus;
 };
 
-struct _PrettyTable {
-	GHashTable *app_hash;		/* apps gotten from libwnck */      
-	GHashTable *default_hash; 	/* defined in defaulttable.h */
-};
-
-struct _LoadGraph {
-    
-    guint n;
-    gint type;
-    guint speed;
-    guint draw_width, draw_height;
-    guint num_points;
-    guint num_cpus;
-
-    guint allocated;
-
-    GdkColor *colors;
-    gfloat **data, **odata;
-    guint data_size;
-    guint *pos;
-
-    gint colors_allocated;
-    GtkWidget *main_widget;
-    GtkWidget *disp;
-    GtkWidget *cpu_labels[GLIBTOP_NCPU];
-    GtkWidget *memused_label;
-    GtkWidget *memtotal_label;
-    GtkWidget *mempercent_label;
-    GtkWidget *swapused_label;
-    GtkWidget *swaptotal_label;
-    GtkWidget *swappercent_label;
-    GdkPixmap *pixmap;
-    GdkGC *gc;
-    int timer_index;
-    
-    gboolean draw;
-
-    guint64 cpu_time [GLIBTOP_NCPU] [NCPUSTATES];
-    guint64 cpu_last [GLIBTOP_NCPU] [NCPUSTATES];
-    gboolean cpu_initialized;       
-};
-
-enum
-{
-	NEEDS_REMOVAL,
-	NEEDS_ADDITION,
-	NEEDS_NOTHING
-};
 
 struct _ProcInfo
 {
-	GtkTreeIter 	node;
-	GtkTreePath     *path;
-	ProcInfo    *parent;
-	GList *children;
-	gboolean	visible;
-	gint queue;
+	GtkTreeIter	node;
+	GtkTreePath	*path;
+	ProcInfo	*parent;
+	GSList		*children;
+
 	GdkPixbuf	*pixbuf;
 	gchar		*name;
-	gchar		*user;
+	gchar		*user; /* allocated with g_string_chunk, don't free it ! */
 	gchar		*arguments;
-	guint64		mem;
-	guint8		pcpu;
-	gint		pid;
-	gint		parent_pid;
+
+	gchar		*status; /* shared, don't free it ! */
+	gchar		*security_context;
+
+	time_t		start_time;
 	guint64		cpu_time_last;
-	gint		nice;
+
 	guint64		vmsize;
 	guint64		memres;
+	guint64		memwritable;
 	guint64		memshared;
-	guint64		memrss;
-        guint64            memxserver;
-	gchar		*status;
-	gboolean	running;
-	gboolean	is_thread;
-	gboolean	is_blacklisted;
+	unsigned long	memxserver;
+
+	guint		pcpu; /* 0% - 100% */
+	gint		nice;
+
+	guint		pid;
+	guint		uid;
+
+	guint		is_visible	: 1;
+	guint		is_running	: 1;
+	guint		is_blacklisted	: 1;
 };
 
 struct _ProcData
 {
+	GtkUIManager	*uimanager;
+	GtkActionGroup	*action_group;
+	GtkWidget	*statusbar;
+	gint		tip_message_cid;
 	GtkWidget	*tree;
-	GtkWidget	*infobox;
+	GtkWidget	*loadavg;
+	GtkWidget	*endprocessbutton;
+	GtkWidget	*popup_menu;
 	GtkWidget	*disk_list;
 	ProcConfig	config;
 	LoadGraph	*cpu_graph;
 	LoadGraph	*mem_graph;
+	LoadGraph	*net_graph;
 	gint		cpu_label_fixed_width;
+	gint		net_label_fixed_width;
 	ProcInfo	*selected_process;
 	GtkTreeSelection *selection;
-	gint		timeout;
-	gint		disk_timeout;
+	guint		timeout;
+	guint		disk_timeout;
+
+/*
+   'info' is GList, which has very slow lookup. On each update, glibtop
+   retrieves the full system pid list. To update the table,
+
+   foreach pid in glibtop pid list:
+	- if there's not ProcInfo with pid, add a new ProcInfo to 'info'
+	- else, update the current ProcInfo
+
+   which is very inefficient, because if a process is running at time t,
+   it's very likely to be running at t+1.
+   So if is length('info') = N, N lookups are performed on each update.
+   Average lookup iterates over N / 2 ProcInfo to find that a pid already
+   has a ProcInfo.
+   -> cost = (N x N) / 2
+
+   With 200 processes, an update costs about 20000 g_list_next(), which
+   is huge because we only want to know if we have this pid or not.
+
+   So 'pids' is a hastable to perform fast lookups.
+
+   TODO: 'info' and 'pids' could be merged
+*/
+
 	GList		*info;
+	GHashTable	*pids;
+
 	PrettyTable	*pretty_table;
 	GList		*blacklist;
 	gint		blacklist_num;
+
 	GConfClient	*client;
+	GtkWidget	*app;
+	GtkUIManager	*menu;
+
+
+	/* cached username */
+	GStringChunk	*users;
+
+
+	/* libgtop uses guint64 but we use a float because
+	   frequency is ~always == 100
+	   and because we display cpu_time as %.1f seconds
+	*/
+	float		frequency;
+
+	SmoothRefresh  *smooth_refresh;
 };
 
-void		procman_save_config (ProcData *data);
-void		procman_save_tree_state (GConfClient *client, GtkWidget *tree, gchar *prefix);
-gboolean	procman_get_tree_state (GConfClient *client, GtkWidget *tree, gchar *prefix);
+void		procman_save_config (ProcData *data) G_GNUC_INTERNAL;
+void		procman_save_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix) G_GNUC_INTERNAL;
+gboolean	procman_get_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix) G_GNUC_INTERNAL;
+
+
+
+
+
+struct ReniceArgs
+{
+	ProcData *procdata;
+	int nice_value;
+};
+
+
+struct KillArgs
+{
+	ProcData *procdata;
+	int signal;
+};
+
+
+
 
 #endif /* _PROCMAN_PROCMAN_H_ */

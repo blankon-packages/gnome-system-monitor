@@ -20,38 +20,46 @@
 #ifndef _PROCMAN_PROCTABLE_H_
 #define _PROCMAN_PROCTABLE_H_
 
+#include <glib.h>
+#include <gtk/gtk.h>
+#include "procman.h"
 
 enum
 {
 	COL_NAME = 0,
-	COL_ARGS,
 	COL_USER,
 	COL_STATUS,
-	COL_MEM,
 	COL_VMSIZE,
 	COL_MEMRES,
+	COL_MEMWRITABLE,
 	COL_MEMSHARED,
-	COL_MEMRSS,
-        COL_MEMXSERVER,
+	COL_MEMXSERVER,
 	COL_CPU,
+	COL_CPU_TIME,
+	COL_START_TIME,
 	COL_NICE,
 	COL_PID,
+	COL_SECURITYCONTEXT,
+	COL_ARGS,
 	COL_PIXBUF,
 	COL_POINTER,
 	NUM_COLUMNS
 };
 
 
-GtkWidget*	proctable_new (ProcData *data);
-void		proctable_update_table (ProcData *data);
-void		proctable_update_list (ProcData *data);
-void		insert_info_to_tree (ProcInfo *info, ProcData *procdata);
-void		remove_info_from_tree (ProcInfo *info, ProcData *procdata);
-ProcInfo *	proctable_find_process (gint pid, gchar *name, ProcData *procdata);
-void		proctable_update_all (ProcData *data);
-void		proctable_clear_tree (ProcData *data);
-void		proctable_free_table (ProcData *data);
-void		proctable_search_table (ProcData *procdata, gchar *string);
+GtkWidget*	proctable_new (ProcData *data) G_GNUC_INTERNAL;
+void		proctable_update_table (ProcData *data) G_GNUC_INTERNAL;
+void		proctable_update_list (ProcData *data) G_GNUC_INTERNAL;
+void		insert_info_to_tree (ProcInfo *info, ProcData *procdata) G_GNUC_INTERNAL;
+void		remove_info_from_tree (ProcInfo *info, ProcData *procdata) G_GNUC_INTERNAL;
+ProcInfo *	proctable_find_process (guint pid, ProcData *procdata) G_GNUC_INTERNAL;
+void		proctable_update_all (ProcData *data) G_GNUC_INTERNAL;
+void		proctable_clear_tree (ProcData *data) G_GNUC_INTERNAL;
+void		proctable_free_table (ProcData *data) G_GNUC_INTERNAL;
 
+GSList*		proctable_get_columns_order(GtkTreeView *treeview) G_GNUC_INTERNAL;
+void		proctable_set_columns_order(GtkTreeView *treeview, GSList *order) G_GNUC_INTERNAL;
+
+char*		make_loadavg_string(void) G_GNUC_INTERNAL;
 
 #endif /* _PROCMAN_PROCTABLE_H_ */

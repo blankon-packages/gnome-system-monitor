@@ -1,71 +1,129 @@
 # Lithuanian translation of procman
-# Copyright (C) 2003 Free Software Foundation, Inc.
+# Copyright (C) 2003-2006 Free Software Foundation, Inc.
 # Tomas Kuliavas <tokul@users.sourceforge.net>, 2003.
+# Žygimantas Beručka <zygis@gnome.org>, 2003-2006.
+# Justina Klingaitė <justina.klingaite@gmail.com>, 2005.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: procman\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-24 16:57+0100\n"
-"PO-Revision-Date: 2004-01-07 15:05+0200\n"
-"Last-Translator: Žygimantas Beručka <uid0@tuxfamily.org>\n"
+"POT-Creation-Date: 2006-02-23 01:43+0200\n"
+"PO-Revision-Date: 2006-02-23 01:46+0200\n"
+"Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
-"100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+#: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:164
+#: ../src/interface.c:666
 msgid "System Monitor"
 msgstr "Sistemos monitorius"
 
-#: gnome-system-monitor.desktop.in.h:2
+#: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:165
 msgid "View current processes and monitor system state"
 msgstr "Parodo paleistus procesus ir sistemos būklę"
 
-#: src/callbacks.c:125
-msgid "Kevin Vandersloot"
-msgstr "Kevin Vandersloot"
+#: ../src/callbacks.c:173
+msgid "translator-credits"
+msgstr ""
+"Paskutinieji vertėjai:\n"
+"Justina Klingaitė  <justina.klinagite@gmail.com>,\n"
+"Žygimantas Beručka <zygis@gnome.org>\n"
+"\n"
+"Ankstesnysis vertėjas:\n"
+"Tomas Kuliavas <tokul@users.sf.net>"
 
-#: src/callbacks.c:126
-msgid "Jorgen Scheibengruber - nicer devices treeview"
-msgstr "Jorgen Scheibengruber  - gražesnis įrenginių medžio išvedimas"
+#: ../src/disks.c:204 ../src/memmaps.c:302
+msgid "Device"
+msgstr "Įrenginys"
 
-#: src/callbacks.c:134
-msgid "translator_credits"
-msgstr "Tomas Kuliavas <tokul@users.sourceforge.net>"
+#: ../src/disks.c:205
+msgid "Directory"
+msgstr "Aplankas"
 
-#: src/callbacks.c:153
-msgid "(C) 2001 Kevin Vandersloot"
-msgstr "(C) 2001 Kevin Vandersloot"
+#: ../src/disks.c:206 ../src/openfiles.c:232
+msgid "Type"
+msgstr "Tipas"
 
-#: src/callbacks.c:154
-#, fuzzy
-msgid "System resources monitor"
-msgstr "Resursų monitorius"
+#: ../src/disks.c:207
+msgid "Total"
+msgstr "Viso"
 
-#: src/favorites.c:344
-msgid "No processes are currently hidden."
-msgstr "Šiuo metu nėra paslėptų procesų."
+#: ../src/disks.c:208
+msgid "Free"
+msgstr "Laisva"
 
-#: src/favorites.c:364
-msgid "Manage Hidden Processes"
-msgstr "Valdyti paslėptus procesus"
+#: ../src/disks.c:209
+msgid "Available"
+msgstr "Prieinama"
 
-#: src/favorites.c:388
-msgid "_Hidden processes:"
-msgstr "Pas_lėpti procesai:"
+#: ../src/disks.c:210
+msgid "Used"
+msgstr "Naudojama"
 
-#: src/favorites.c:410
+#: ../src/disks.c:217 ../src/interface.c:745 ../src/procdialogs.c:770
+#: ../src/procdialogs.c:774
+msgid "Devices"
+msgstr "Įrengimai"
+
+#: ../src/e_date.c:154
+msgid "?"
+msgstr "?"
+
+#: ../src/e_date.c:161
+msgid "Today %l:%M %p"
+msgstr "Šiandien %k:%M"
+
+#: ../src/e_date.c:170
+msgid "Yesterday %l:%M %p"
+msgstr "Vakar %k:%M"
+
+#: ../src/e_date.c:182
+msgid "%a %l:%M %p"
+msgstr "%a %k:%M"
+
+#: ../src/e_date.c:190
+msgid "%b %d %l:%M %p"
+msgstr "%b %d %k:%M"
+
+#: ../src/e_date.c:192
+msgid "%b %d %Y"
+msgstr "%Y %b %d"
+
+#. translators: primary alert message
+#: ../src/favorites.c:350
+msgid "No hidden processes"
+msgstr "Nėra paslėptų procesų"
+
+#. translators: secondary alert message
+#: ../src/favorites.c:357
+msgid ""
+"There are no hidden processes in the list. To show all running processes, "
+"select the \"All processes\" option in the main window."
+msgstr ""
+"Sąraše paslėptų procesų nėra. Norėdami pamatyti visus veikiančius procesus, "
+"pagrindiniame lange pasirinkite nustatymą „Visi procesai“."
+
+#: ../src/favorites.c:377
+msgid "Hidden Processes"
+msgstr "Paslėpti procesai"
+
+#: ../src/favorites.c:401
+msgid "Currently _hidden processes:"
+msgstr "Šiuo metu pas_lėpti procesai:"
+
+#: ../src/favorites.c:423
 msgid "_Remove From List"
 msgstr "_Pašalinti iš sąrašo"
 
-#: src/favorites.c:419 src/procdialogs.c:440
+#: ../src/favorites.c:432 ../src/procdialogs.c:285
 msgid "Note:"
 msgstr "Pastaba:"
 
-#: src/favorites.c:420
+#: ../src/favorites.c:433
 msgid ""
 "These are the processes you have chosen to hide. You can reshow a process by "
 "removing it from this list."
@@ -73,394 +131,510 @@ msgstr ""
 "Čia parodomi procesai, kuriuos Jūs panorote paslėpti. Jie gali būti vėl "
 "parodyti pašalinus procesą iš čia esančio sąrašo."
 
-#: src/infoview.c:77
-msgid "Process Info"
-msgstr "Proceso informacija"
+#: ../src/gnome-system-monitor.schemas.in.h:1
+msgid "Column zero saved width"
+msgstr "Išsaugotas nulinio stulpelio plotis"
 
-#: src/infoview.c:91
-msgid "Command:"
-msgstr "Komanda:"
+#: ../src/gnome-system-monitor.schemas.in.h:2
+msgid "Default graph background color"
+msgstr "Numatytoji grafiko fono spalva"
 
-#: src/infoview.c:95
-msgid "Status:"
-msgstr "Būklė:"
+#: ../src/gnome-system-monitor.schemas.in.h:3
+msgid "Default graph cpu color"
+msgstr "Numatytoji cpu grafiko spalva"
 
-#: src/infoview.c:99
-msgid "Priority:"
-msgstr "Prioritetas:"
+#: ../src/gnome-system-monitor.schemas.in.h:4
+msgid "Default graph frame color"
+msgstr "Numatytoji grafiko rėmelio spalva"
 
-#: src/infoview.c:123
-msgid "Memory Usage"
-msgstr "Atminties naudojimas"
+#: ../src/gnome-system-monitor.schemas.in.h:5
+msgid "Default graph mem color"
+msgstr "Numatytoji atminties grafiko spalva"
 
-#: src/infoview.c:137
-msgid "Total:"
-msgstr "Viso:"
+#: ../src/gnome-system-monitor.schemas.in.h:6
+msgid "Default graph net in color"
+msgstr "Numatytoji įeinančio tinklo grafiko spalva "
 
-#: src/infoview.c:141
-msgid "RSS:"
-msgstr "RSS:"
+#: ../src/gnome-system-monitor.schemas.in.h:7
+msgid "Default graph net out color"
+msgstr "Numatytoji išeinančio tinklo grafiko spalva"
 
-#: src/infoview.c:145
-msgid "Shared:"
-msgstr "Bendra:"
+#: ../src/gnome-system-monitor.schemas.in.h:8
+msgid "Default graph swap color"
+msgstr "Numatytoji swap grafiko spalva"
 
-#: src/infoview.c:189
-#, c-format
-msgid "Very high - nice %d"
-msgstr "Labai aukštas - nice %d"
+#: ../src/gnome-system-monitor.schemas.in.h:9
+msgid ""
+"Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
+"active"
+msgstr "Nurodo rodomus procesus. 0 reiškia visus, 1 - naudotojo, 2 aktyvius"
 
-#: src/infoview.c:191
-#, c-format
-msgid "High - nice %d"
-msgstr "Aukštas - nice %d"
+#: ../src/gnome-system-monitor.schemas.in.h:10
+msgid "Disk view columns order"
+msgstr "Diskų rodinio stulpelių tvarka"
 
-#: src/infoview.c:193
-#, c-format
-msgid "Normal - nice %d"
-msgstr "Normalus - nice %d"
+#: ../src/gnome-system-monitor.schemas.in.h:11
+msgid "Enable/Disable smooth refresh"
+msgstr "Įjungti/išjungti tolygų atnaujinimą"
 
-#: src/infoview.c:195
-#, c-format
-msgid "Low - nice %d"
-msgstr "Žemas - nice %d"
+#: ../src/gnome-system-monitor.schemas.in.h:12
+msgid "Main Window height"
+msgstr "Pagrindinio lango aukštis"
 
-#: src/infoview.c:197
-#, c-format
-msgid "Very low - nice %d"
-msgstr "Labai žemas - nice %d"
+#: ../src/gnome-system-monitor.schemas.in.h:13
+msgid "Main Window width"
+msgstr "Pagrindinio lango plotis"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "_Change Priority..."
-msgstr "_Keisti prioritetą..."
+#: ../src/gnome-system-monitor.schemas.in.h:14
+msgid "Process view columns order"
+msgstr "Procesų rodinio stulpelių tvarka"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "Change the importance (nice value) of a process"
-msgstr "Pakeisti proceso prioritetą (nice vertę)"
+#: ../src/gnome-system-monitor.schemas.in.h:15
+msgid "Process view sort column"
+msgstr "Procesų rodinio rikiavimo stulpelis"
 
-#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
-msgid "_Hide Process"
-msgstr "_Slėti procesą"
+#: ../src/gnome-system-monitor.schemas.in.h:16
+msgid "Process view sort order"
+msgstr "Procesų rodinio rikiavimo tvarka"
 
-#: src/interface.c:60 src/interface.c:137
-msgid "Hide a process"
-msgstr "Paslėpti procesą"
+#: ../src/gnome-system-monitor.schemas.in.h:17
+msgid "Saves the currently viewed tab"
+msgstr "Išsaugo dabar žiūrėtą kortelę"
 
-#: src/interface.c:66 src/interface.c:231
+#: ../src/gnome-system-monitor.schemas.in.h:18
+msgid "Show column zero on startup"
+msgstr "Paleidus programą rodyti nulinį stulpelį"
+
+#: ../src/gnome-system-monitor.schemas.in.h:19
+msgid "Show process dependencies in tree form"
+msgstr "Rodyti proceso priklausomybes medžio forma"
+
+#: ../src/gnome-system-monitor.schemas.in.h:20
+msgid "Show process threads"
+msgstr "Rodyti procesų gijas"
+
+#: ../src/gnome-system-monitor.schemas.in.h:21
+msgid "Show warning dialog when hiding processes"
+msgstr "Slepiant procesus rodyti perspėjimo dialogą"
+
+#: ../src/gnome-system-monitor.schemas.in.h:22
+msgid "Show warning dialog when killing processes"
+msgstr "„Žudant“ procesus rodyti perspėjimo dialogą"
+
+#: ../src/gnome-system-monitor.schemas.in.h:23
+msgid "Time in milliseconds between updates of the devices list"
+msgstr "Laikas milisekundėmis tarp įrenginių sąrašo atnaujinimų"
+
+#: ../src/gnome-system-monitor.schemas.in.h:24
+msgid "Time in milliseconds between updates of the graphs"
+msgstr "Laikas milisekundėmis tarp grafikų atnaujinimų"
+
+#: ../src/gnome-system-monitor.schemas.in.h:25
+msgid "Time in milliseconds between updates of the process view"
+msgstr "Laikas milisekundėmis tarp procesų vaizdo atnaujinimų"
+
+#: ../src/gnome-system-monitor.schemas.in.h:26
+msgid "Whether information about all filesystems should be displayed"
+msgstr "Ar informacija apie visas rinkmenų sistemas turėtų būti rodoma"
+
+#: ../src/gnome-system-monitor.schemas.in.h:27
+msgid ""
+"Whether to display information about all filesystems (including types like "
+"'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
+"filesystems."
+msgstr ""
+"Ar informacija apie visas rinkmenų sistemas turėtų būti rodoma (įskaitant tokių "
+"tipų kaip „autofs“ ir „procfs“). Tai naudinga norint gauti šiuo metu "
+"prijungtų rinkmenų sistemų sąrašą."
+
+#: ../src/interface.c:46
+msgid "_File"
+msgstr "_Rinkmena"
+
+#: ../src/interface.c:47
+msgid "_Edit"
+msgstr "_Keisti"
+
+#: ../src/interface.c:48
+msgid "_View"
+msgstr "R_odymas"
+
+#: ../src/interface.c:49
+msgid "_Help"
+msgstr "_Žinynas"
+
+#: ../src/interface.c:51
+msgid "_Quit"
+msgstr "Iš_eiti"
+
+#: ../src/interface.c:52
+msgid "Quit the program"
+msgstr "Palikti programą"
+
+#: ../src/interface.c:55
+msgid "_Stop Process"
+msgstr "_Sustabdyti procesą"
+
+#: ../src/interface.c:56
+msgid "Stop process"
+msgstr "Sustabdyti procesą"
+
+#: ../src/interface.c:57
+msgid "_Continue Process"
+msgstr "_Tęsti procesą"
+
+#: ../src/interface.c:58
+msgid "Continue process if stopped"
+msgstr "Tęsti procesą jei jis buvo sustabdytas"
+
+#: ../src/interface.c:60 ../src/interface.c:188
 msgid "End _Process"
 msgstr "Pa_baigti procesą"
 
-#: src/interface.c:66
-msgid "Force a process to finish."
-msgstr "Priverstinai sustabdyti procesą."
+#: ../src/interface.c:61
+msgid "Force process to finish normally"
+msgstr "Priversti procesą nutraukti darbą normaliai"
 
-#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
-#: src/procdialogs.c:984
+#: ../src/interface.c:62 ../src/procdialogs.c:129
 msgid "_Kill Process"
-msgstr "_Atjungti procesą"
+msgstr "_Nutraukti procesą"
 
-#: src/interface.c:71
-msgid "Force a process to finish now."
-msgstr "Tuojau pat sustabdyti procesą."
+#: ../src/interface.c:63
+msgid "Force process to finish immediately"
+msgstr "Priversti procesą tuojau pat nutraukti darbą"
 
-#: src/interface.c:77
+#: ../src/interface.c:64
+msgid "_Change Priority..."
+msgstr "_Keisti prioritetą..."
+
+#: ../src/interface.c:65
+msgid "Change the order of priority of process"
+msgstr "Pakeisti proceso prioriteto tvarką"
+
+#: ../src/interface.c:66
+msgid "Prefere_nces"
+msgstr "_Nustatymai"
+
+#: ../src/interface.c:67
+msgid "Configure the application"
+msgstr "Konfigūruoti programą"
+
+#: ../src/interface.c:69 ../src/procdialogs.c:85
+msgid "_Hide Process"
+msgstr "_Slėti procesą"
+
+#: ../src/interface.c:70
+msgid "Hide process from list"
+msgstr "Paslėpti procesą iš sąrašo"
+
+#: ../src/interface.c:71
 msgid "_Hidden Processes"
 msgstr "_Paslėpti procesai"
 
-#: src/interface.c:78
-msgid "View and edit your list of hidden processes"
-msgstr "Peržiūrėti ir taisyti paslėptų procesų sąrašą"
+#: ../src/interface.c:72
+msgid "Open the list of currently hidden processes"
+msgstr "Atverti šiuo metu paslėptų procesų sąrašą"
 
-#: src/interface.c:89 src/interface.c:131
+#: ../src/interface.c:73
 msgid "_Memory Maps"
-msgstr "_Atminties žemėlapiai"
+msgstr "_Atminties sritys"
 
-#: src/interface.c:89 src/interface.c:131
-msgid "View the memory maps associated with a process"
-msgstr "Peržiūrėti atminties sritis susijusias su procesu"
+#: ../src/interface.c:74
+msgid "Open the memory maps associated with a process"
+msgstr "Atverti atminties sritis susijusias su procesu"
 
-#: src/interface.c:95
-msgid "Process _Dependencies"
-msgstr "Proceso p_riklausomybės"
+#: ../src/interface.c:75
+msgid "Open _Files"
+msgstr "Atverti _rinkmenas"
 
-#: src/interface.c:95
-msgid "Display a tree showing process dependencies"
-msgstr "Parodyti medį su procesų priklausomybėmis"
+#: ../src/interface.c:76
+msgid "View the files opened by a process"
+msgstr "Rodyti šio proceso atidarytas rinkmenas"
 
-#: src/interface.c:100
-msgid "_Threads"
-msgstr "_Gijos"
+#: ../src/interface.c:78
+msgid "_Contents"
+msgstr "_Turinys"
 
-#: src/interface.c:100
-msgid "Display threads (subprocesses)"
-msgstr "Parodyti sekas (antrinius procesus)"
+#: ../src/interface.c:79
+msgid "Open the manual"
+msgstr "Atverti žinyną"
 
-#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
-msgid "_End Process"
-msgstr "Sustabdyti proc_esą"
+#: ../src/interface.c:80
+msgid "_About"
+msgstr "_Apie"
 
-#: src/interface.c:143
-msgid "Force a process to finish"
-msgstr "Priversti procesą baigti darbą"
+#: ../src/interface.c:81
+msgid "About this application"
+msgstr "Apie šią programą"
 
-#: src/interface.c:148
-msgid "Force a process to finish now"
-msgstr "Priversti procesą nutraukti darbą"
+#: ../src/interface.c:86
+msgid "_Dependencies"
+msgstr "P_riklausomybės"
 
-#: src/interface.c:188
-msgid "Sea_rch:"
-msgstr "P_aieška:"
+#: ../src/interface.c:87
+msgid "Show parent/child relationship between processes"
+msgstr "Rodyti tėvų/vaikų ryšius tarp procesų"
 
-#: src/interface.c:200
-msgid "All Processes"
-msgstr "Visi procesai"
+#: ../src/interface.c:94
+msgid "_Active Processes"
+msgstr "_Aktyvūs procesai"
 
-#: src/interface.c:201
-msgid "My Processes"
-msgstr "Mano procesai"
+#: ../src/interface.c:95
+msgid "Show active processes"
+msgstr "Rodyti aktyvius procesus"
 
-#: src/interface.c:202
-msgid "Active Processes"
-msgstr "Aktyvūs procesai"
+#: ../src/interface.c:96
+msgid "A_ll Processes"
+msgstr "V_isi procesai"
 
-#: src/interface.c:209
-msgid "Vie_w:"
-msgstr "P_eržiūra"
+#: ../src/interface.c:97
+msgid "Show all processes"
+msgstr "Rodyti visus procesus"
 
-#: src/interface.c:236
-msgid "More _Info"
-msgstr "Daugiau _Informacijos"
+#: ../src/interface.c:98
+msgid "M_y Processes"
+msgstr "M_ano procesai"
 
-#: src/interface.c:334
-msgid "Name"
-msgstr "Vardas"
+#: ../src/interface.c:99
+msgid "Show user own process"
+msgstr "Rodyti naudotojui priklausančius procesus"
 
-#: src/interface.c:335
-msgid "Directory"
-msgstr "Katalogas"
-
-#: src/interface.c:336
-msgid "Type"
-msgstr "Tipas"
-
-#: src/interface.c:337
-msgid "Total"
-msgstr "Viso"
-
-#: src/interface.c:338
-msgid "Used"
-msgstr "Naudojama"
-
-#: src/interface.c:362
+#: ../src/interface.c:260
 msgid "CPU History"
 msgstr "CPU istorija"
 
-#: src/interface.c:402
+#: ../src/interface.c:303
+msgid "CPU:"
+msgstr "CPU:"
+
+#: ../src/interface.c:306
 #, c-format
 msgid "CPU%d:"
 msgstr "CPU%d:"
 
-#: src/interface.c:421
+#: ../src/interface.c:326
 msgid "Memory and Swap History"
 msgstr "Realios ir virtualios atminties istorija"
 
-#: src/interface.c:454
-msgid "Used memory:"
-msgstr "Panaudota atmintis:"
+#: ../src/interface.c:359
+msgid "User memory:"
+msgstr "Naudotojo atmintis:"
 
-#: src/interface.c:463 src/interface.c:495
+#: ../src/interface.c:377 ../src/interface.c:437
 msgid "of"
 msgstr "iš"
 
-#: src/interface.c:486
+#: ../src/interface.c:418
 msgid "Used swap:"
 msgstr "Panaudota virtuali atmintis:"
 
-#: src/interface.c:521 src/procdialogs.c:904
-msgid "Devices"
-msgstr "Įrengimai"
+#: ../src/interface.c:477
+msgid "Network History"
+msgstr "Tinklo istorija"
 
-#: src/interface.c:638 src/procdialogs.c:729
-msgid "Process Listing"
-msgstr "Procesų sąrašas"
+#: ../src/interface.c:509
+msgid "Received:"
+msgstr "Gauta:"
 
-#: src/interface.c:644 src/procdialogs.c:816
-msgid "Resource Monitor"
-msgstr "Resursų monitorius"
+#: ../src/interface.c:529 ../src/interface.c:572
+msgid "Total:"
+msgstr "Viso:"
 
-#: src/interface.c:702
-msgid "Application Manager"
-msgstr "Programų tvarkyklė"
+#: ../src/interface.c:553
+msgid "Sent:"
+msgstr "Išsiųsta:"
 
-#: src/interface.c:708
-msgid "Running Applications"
-msgstr "Paleistos programos"
+#: ../src/interface.c:733 ../src/procdialogs.c:579
+msgid "Processes"
+msgstr "Procesai"
 
-#: src/interface.c:727
-msgid "_Close Application"
-msgstr "_Uždaryti programą"
+#: ../src/interface.c:739 ../src/procdialogs.c:682
+msgid "Resources"
+msgstr "Resursai"
 
-#: src/interface.c:770
-msgid "More _Info >>"
-msgstr "Daugiau _Informacijos >>"
+#: ../src/load-graph.c:368 ../src/load-graph.c:378
+#, c-format
+msgid "%s/s"
+msgstr "%s/s"
 
-#: src/interface.c:777
-msgid "<< Less _Info"
-msgstr "<< Mažiau _Informacijos"
-
-#: src/memmaps.c:256
+#: ../src/memmaps.c:296
 msgid "Filename"
-msgstr "Bylos vardas"
+msgstr "Rinkmenos vardas"
 
-#: src/memmaps.c:257
+#: ../src/memmaps.c:297
 msgid "VM Start"
 msgstr "VM pradžia"
 
-#: src/memmaps.c:258
+#: ../src/memmaps.c:298
 msgid "VM End"
 msgstr "VM pabaiga"
 
-#: src/memmaps.c:259 src/proctable.c:122
+#: ../src/memmaps.c:299
 msgid "VM Size"
 msgstr "VM dydis"
 
-#: src/memmaps.c:260
+#: ../src/memmaps.c:300
 msgid "Flags"
 msgstr "Parametrai"
 
-#: src/memmaps.c:261
+#: ../src/memmaps.c:301
 msgid "VM Offset"
 msgstr "VM ofsetas"
 
-#: src/memmaps.c:262
-msgid "Device"
-msgstr "Įrenginys"
-
-#: src/memmaps.c:263
+#: ../src/memmaps.c:303
 msgid "Inode"
 msgstr "Inodas"
 
-#: src/memmaps.c:344
+#: ../src/memmaps.c:405
 msgid "Memory Maps"
 msgstr "Atminties žemėlapiai"
 
-#: src/memmaps.c:364
-msgid "Process name:"
-msgstr "Proceso vardas:"
+#: ../src/memmaps.c:425
+#, c-format
+msgid "_Memory maps for process \"%s\" (PID %u):"
+msgstr "Proceso „%s“ (PID %u) _atminties sritys:"
 
-#: src/procactions.c:53
-msgid "No such process."
-msgstr "Nėra tokio proceso."
+#: ../src/openfiles.c:31
+msgid "file"
+msgstr "rinkmena"
 
-#: src/procactions.c:66
-#, fuzzy, c-format
+#: ../src/openfiles.c:33
+msgid "pipe"
+msgstr "konvejeris"
+
+#: ../src/openfiles.c:35
+msgid "network connection"
+msgstr "tinklo prisijungimas"
+
+#: ../src/openfiles.c:37
+msgid "local socket"
+msgstr "vietinė jungtis"
+
+#: ../src/openfiles.c:39
+msgid "unknown type"
+msgstr "nežinomas tipas"
+
+#. Translators: "FD" here means "File Descriptor". Please use
+#. a very short translation if possible, and at most
+#. 2-3 characters for it to be able to fit in the UI.
+#: ../src/openfiles.c:231
+msgid "FD"
+msgstr "BA"
+
+#: ../src/openfiles.c:233
+msgid "Object"
+msgstr "Objektas"
+
+#: ../src/openfiles.c:312
+msgid "Open Files"
+msgstr "Atverti rinkmenas"
+
+#: ../src/openfiles.c:334
+#, c-format
+msgid "_Files opened by process \"%s\" (PID %u):"
+msgstr "Proceso „%s“ (PID %u) atvertos _rinkmenos:"
+
+#: ../src/procactions.c:75
+#, c-format
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You do not have permission to change the priority of this process. You can "
-"enter the root password to gain the necessary permission."
+"Cannot change the priority of process with pid %d to %d.\n"
+"%s"
 msgstr ""
-"Proceso vardas : %s \n"
-"\n"
-"Jūs neturite teisės keisti šio proceso prioritetą. Norint gauti reikiamas "
-"privilegijas reikia įvesti administratoriaus slaptažodį."
+"Negalima pakeisti proceso (PID %d) prioriteto į %d.\n"
+"%s"
 
-#: src/procactions.c:73
-#, fuzzy, c-format
+#: ../src/procactions.c:144
+#, c-format
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You must be root to renice a process lower than 0. You can enter the root "
-"password to gain the necessary permission."
+"Cannot kill process with pid %d with signal %d.\n"
+"%s"
 msgstr ""
-"Proceso vardas : %s \n"
-"\n"
-"Jūs turite būti administratorius kad pakeisti proceso prioritetą žemiau 0. "
-"Norint gauti reikiamas privilegijas reikia įvesti administratoriaus "
-"slaptažodį."
+"Negalima nutraukti proceso (PID %d) su signalu %d.\n"
+"%s"
 
-#: src/procactions.c:124
-#, fuzzy, c-format
+#. translators: primary alert message
+#: ../src/procdialogs.c:65
+msgid "Hide the selected process?"
+msgstr "Paslėpti pažymėtą procesą?"
+
+#. FIXME: View menu -> Edit menu
+#. translators: secondary alert messagex
+#: ../src/procdialogs.c:75
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You do not have permission to end this process. You can enter the root "
-"password to gain the necessary permission."
+"Hidden processes are no longer visible in the process list. You can re-"
+"enable them by selecting the \"Hidden Processes\" entry in the View menu."
 msgstr ""
-"Proceso vardas : %s \n"
-"\n"
-"Jūs neturite teisės sustabdyti šio proceso. Norint gauti reikiamas "
-"privilegijas reikia įvesti administratoriaus slaptažodį."
+"Paslėpti procesai yra nebematomi procesų sąraše. Jūs galite iš naujo įjungti "
+"jų rodymą Rodyti meniu sąraše pasirinkdami įrašą „Paslėpti procesai“."
 
-#: src/procactions.c:143
-msgid "An error occured while killing the process."
-msgstr "Įvyko klaida bandant užmušti procesą."
+#. translators: primary alert message
+#: ../src/procdialogs.c:124
+msgid "Kill the selected process?"
+msgstr "Tuojau pat nutraukti pažymėto proceso darbą?"
 
-#: src/procdialogs.c:81
-msgid "Are you sure you want to hide this process?"
-msgstr "Ar tikrai nori paslėpti šį procesą?"
-
-#: src/procdialogs.c:82
+#. translators: secondary alert message
+#: ../src/procdialogs.c:126
 msgid ""
-"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
-"the Edit menu."
+"Killing a process may destroy data, break the session or introduce a "
+"security risk. Only unresponding processes should be killed."
 msgstr ""
-"Jeigu tu paslėpei procesą, tu gali jį vėl matyti pasirinkdamas 'Paslėpti "
-"procesai' Keisti meniu."
+"Priverstinai nutraukdami proceso darbą, Jūs galite prarasti Jūsų duomenis, "
+"sugadinti šiuo metu veikiančią sesiją arba sukelti pavojų Jūsų sistemos "
+"saugumui. Priverstinai nutraukiami turėtų būti tik procesai, kurių darbas "
+"sutriko."
 
-#: src/procdialogs.c:141 src/procdialogs.c:282
-msgid "_Show this dialog next time"
-msgstr "_Rodyti šį langą ir kitą kartą."
+#. translators: primary alert message
+#: ../src/procdialogs.c:133
+msgid "End the selected process?"
+msgstr "Užbaigti pažymėtą procesą?"
 
-#: src/procdialogs.c:218
-msgid "Are you sure you want to kill this process?"
-msgstr "Ar tikrai nori užmušti šį procesą?"
+#. translators: secondary alert message
+#: ../src/procdialogs.c:135
+msgid ""
+"Ending a process may destroy data, break the session or introduce a security "
+"risk. Only unresponding processes should be ended."
+msgstr ""
+"Užbaigdami proceso darbą, Jūs galite prarasti Jūsų duomenis, sugadinti šiuo "
+"metu veikiančią sesiją arba sukelti pavojų Jūsų sistemos saugumui. "
+"Užbaigiami turėtų būti tie procesai, kurių darbas sutriko."
 
-#: src/procdialogs.c:219
-msgid "If you kill a process, unsaved data will be lost."
-msgstr "Jeigu tu užmuši procesą, neišsaugoti duomenys bus prarasti."
+#: ../src/procdialogs.c:138
+msgid "_End Process"
+msgstr "Sustabdyti proc_esą"
 
-#: src/procdialogs.c:223
-msgid "Are you sure you want to end this process?"
-msgstr "Ar tikrai nori užbaigti šį procesą?"
-
-#: src/procdialogs.c:224
-msgid "If you end a process, unsaved data will be lost."
-msgstr "Jeigu tu užbaigsi procesą, neišsaugoti duomenys bus prarasti."
-
-#: src/procdialogs.c:321
+#: ../src/procdialogs.c:167
 msgid "(Very High Priority)"
-msgstr "( Labai aukštas prioritetas )"
+msgstr "(Labai aukštas prioritetas)"
 
-#: src/procdialogs.c:323
+#: ../src/procdialogs.c:169
 msgid "(High Priority)"
-msgstr "( Aukštas prioritetas )"
+msgstr "(Aukštas prioritetas)"
 
-#: src/procdialogs.c:325
+#: ../src/procdialogs.c:171
 msgid "(Normal Priority)"
-msgstr "( Normalus prioritetas )"
+msgstr "(Normalus prioritetas)"
 
-#: src/procdialogs.c:327
+#: ../src/procdialogs.c:173
 msgid "(Low Priority)"
-msgstr "(Žemas prioritetas )"
+msgstr "(Žemas prioritetas)"
 
-#: src/procdialogs.c:329
+#: ../src/procdialogs.c:175
 msgid "(Very Low Priority)"
-msgstr "( Labai žemas prioritetas )"
+msgstr "(Labai žemas prioritetas)"
 
-#: src/procdialogs.c:382 src/procdialogs.c:992
+#: ../src/procdialogs.c:227
 msgid "Change Priority"
 msgstr "Keisti prioritetą"
 
-#: src/procdialogs.c:403 src/procdialogs.c:993
+#: ../src/procdialogs.c:248
 msgid "Change _Priority"
 msgstr "Keisti _prioritetą"
 
-#: src/procdialogs.c:424
+#: ../src/procdialogs.c:269
 msgid "_Nice value:"
-msgstr "_Nice vertė:"
+msgstr "_Nice reikšmė:"
 
-#: src/procdialogs.c:441
+#: ../src/procdialogs.c:286
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
@@ -468,200 +642,164 @@ msgstr ""
 "Proceso prioritetas yra nustatomas pagal jam suteiktą nice vertę. Žemesnė "
 "nice vertė reiškia aukštesnį prioritetą."
 
-#: src/procdialogs.c:671
+#: ../src/procdialogs.c:464
+msgid "Processes i_nfo showed in list:"
+msgstr "Sąraše rodoma proceso i_nformacija:"
+
+#: ../src/procdialogs.c:516
 msgid "Icon"
 msgstr "Piktograma"
 
-#: src/procdialogs.c:711
-msgid "Preferences"
-msgstr "Nuostatos"
+#: ../src/procdialogs.c:556
+msgid "System Monitor Preferences"
+msgstr "Sistemos monitoriaus nustatymai"
 
-#: src/procdialogs.c:736
+#: ../src/procdialogs.c:586
 msgid "Behavior"
 msgstr "Elgsena"
 
-#: src/procdialogs.c:755 src/procdialogs.c:842
-msgid "_Update interval:"
-msgstr "_Atnaujinimo intervalas:"
+#: ../src/procdialogs.c:605 ../src/procdialogs.c:708 ../src/procdialogs.c:793
+msgid "_Update interval in seconds:"
+msgstr "_Atnaujinimo intervalas sekundėmis:"
 
-#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
-msgid "seconds"
-msgstr "sekundės"
+#: ../src/procdialogs.c:630
+msgid "Enable _smooth refresh"
+msgstr "Įjungti _tolygų atnaujinimą"
 
-#: src/procdialogs.c:778
-msgid "Show warning dialog when ending or _killing processes"
-msgstr "Rodyti perspėjimus, _kai bandoma sustabdyti ar nutraukti procesus"
+#: ../src/procdialogs.c:644
+msgid "Alert before ending or _killing processes"
+msgstr "Perspėti prieš užbaigiant arba nutrau_kiant procesus"
 
-#: src/procdialogs.c:788
-msgid "Show warning dialog when _hiding processes"
-msgstr "Rodyti perspėjimus, kai bandoma pa_slėti procesus"
+#: ../src/procdialogs.c:654
+msgid "Alert before _hiding processes"
+msgstr "Perspėti prieš pa_slėpiant procesus"
 
-#: src/procdialogs.c:798
+#: ../src/procdialogs.c:664
 msgid "Process Fields"
 msgstr "Procesų laukai"
 
-#: src/procdialogs.c:823
+#: ../src/procdialogs.c:689
 msgid "Graphs"
 msgstr "Diagramos"
 
-#: src/procdialogs.c:866
+#: ../src/procdialogs.c:729
 msgid "_Background color:"
 msgstr "_Fono spalva:"
 
-#: src/procdialogs.c:885
+#: ../src/procdialogs.c:748
 msgid "_Grid color:"
 msgstr "_Tinklelio spalva:"
 
-#: src/procdialogs.c:923
-msgid "Update _interval:"
-msgstr "Atnaujinimo _intervalas:"
+#: ../src/procdialogs.c:812
+msgid "Show _all filesystems"
+msgstr "Rodyti _visas rinkmenų sistemas"
 
-#: src/procdialogs.c:983
-msgid "Kill Process"
-msgstr "Užmušti procesą"
-
-#: src/procdialogs.c:987
-msgid "End Process"
-msgstr "Pabaigti procesą"
-
-#: src/procdialogs.c:1012
-msgid "Root Password :"
-msgstr "Root slaptažodis :"
-
-#: src/procdialogs.c:1057
-msgid "Wrong Password."
-msgstr "Neteisingas slaptažodis."
-
-#: src/procman.c:46
-msgid "show simple dialog to end processes and logout"
-msgstr "rodyti paprastą dialogo nutraukimo ir išsiregistravimo langą"
-
-#: src/proctable.c:117
+#: ../src/proctable.c:245
 msgid "Process Name"
-msgstr "Proceso Vardas"
+msgstr "Proceso pavadinimas"
 
-#: src/proctable.c:118
-msgid "Arguments"
-msgstr "Parametrai"
-
-#: src/proctable.c:119
+#: ../src/proctable.c:246
 msgid "User"
-msgstr "Vartotojas"
+msgstr "Naudotojas"
 
-#: src/proctable.c:120
+#: ../src/proctable.c:247
 msgid "Status"
 msgstr "Būsena"
 
-#: src/proctable.c:121
-msgid "Memory"
-msgstr "Atmintis"
+#: ../src/proctable.c:248
+msgid "Virtual Memory"
+msgstr "Virtuali atmintis"
 
-#: src/proctable.c:123
+#: ../src/proctable.c:249
 msgid "Resident Memory"
-msgstr "Užimta Atmintis"
+msgstr "Užimta atmintis"
 
-#: src/proctable.c:124
+#: ../src/proctable.c:250
+msgid "Writable Memory"
+msgstr "Rašoma atmintis"
+
+#: ../src/proctable.c:251
 msgid "Shared Memory"
-msgstr "Bendra Atmintis"
+msgstr "Bendra atmintis"
 
-#: src/proctable.c:125
-msgid "RSS Memory"
-msgstr "RSS Atmintis"
-
-#: src/proctable.c:126
+#: ../src/proctable.c:252
 msgid "X Server Memory"
-msgstr "X Serverio atmintis"
+msgstr "X serverio atmintis"
 
-#: src/proctable.c:127
+#: ../src/proctable.c:253
 #, no-c-format
 msgid "% CPU"
 msgstr "% CPU"
 
-#: src/proctable.c:128
+#: ../src/proctable.c:254
+msgid "CPU Time"
+msgstr "CPU laikas"
+
+#: ../src/proctable.c:255
+msgid "Started"
+msgstr "Paleista"
+
+#: ../src/proctable.c:256
 msgid "Nice"
 msgstr "Nice"
 
-#: src/proctable.c:129
+#: ../src/proctable.c:257
 msgid "ID"
 msgstr "ID"
 
-#: src/proctable.c:277
+#: ../src/proctable.c:258
+msgid "Security Context"
+msgstr "Saugumo kontekstas"
+
+#: ../src/proctable.c:259
+msgid "Arguments"
+msgstr "Parametrai"
+
+#: ../src/proctable.c:432
 msgid "Running"
 msgstr "Paleista"
 
-#: src/proctable.c:282
+#: ../src/proctable.c:437
 msgid "Stopped"
 msgstr "Sustabdyta"
 
-#: src/proctable.c:287
+#: ../src/proctable.c:442
+msgid "Zombie"
+msgstr "Zombis"
+
+#: ../src/proctable.c:447
+msgid "Uninterruptible"
+msgstr "Nepertraukiamas"
+
+#: ../src/proctable.c:452
 msgid "Sleeping"
 msgstr "Miega"
 
-#: src/proctable.c:382
-#, fuzzy, c-format
-msgid "%s (thread)"
-msgstr " (gija)"
-
-#: src/proctable.c:959
+#: ../src/proctable.c:1034
 #, c-format
-msgid "%s could not be found."
-msgstr "%s nerastas."
+msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
+msgstr ""
+"Apkrovos vidurkiai per paskutines 1, 5, 15 minučių: %0.2f, %0.2f, %0.2f"
 
-#~ msgid "Simple process viewer using libgtop"
-#~ msgstr "Paprasta procesų peržiūros programa naudojanti libgtop"
+#: ../src/util.c:87
+#, c-format
+msgid "%u byte"
+msgid_plural "%u bytes"
+msgstr[0] "%u baitas"
+msgstr[1] "%u baitai"
+msgstr[2] "%u baitų"
 
-#~ msgid "X window system"
-#~ msgstr "X window sistema"
+#: ../src/util.c:93
+#, c-format
+msgid "%.1f KiB"
+msgstr "%.1f KiB"
 
-#~ msgid "bourne again shell"
-#~ msgstr "bash terpė"
+#: ../src/util.c:97
+#, c-format
+msgid "%.1f MiB"
+msgstr "%.1f MiB"
 
-#~ msgid "Gnome-Session"
-#~ msgstr "Gnome sesija"
-
-#~ msgid "%d byte"
-#~ msgid_plural "%d bytes"
-#~ msgstr[0] "%d baitų"
-#~ msgstr[1] "%d baitai"
-#~ msgstr[2] "%d baitų"
-
-#~ msgid "%d K"
-#~ msgstr "%d K"
-
-#~ msgid "%.1f MB"
-#~ msgstr "%.1f MB"
-
-#~ msgid "%.0f MB"
-#~ msgstr "%.0f MB"
-
-#~ msgid "%.1f GB"
-#~ msgstr "%.1f GB"
-
-#~ msgid "View processes being run by all users"
-#~ msgstr "Rodyti visus paleistus procesus"
-
-#~ msgid "View processes being run by you"
-#~ msgstr "Rodyti Jūsų paleistus procesus"
-
-#~ msgid "View only active processes"
-#~ msgstr "Rodyti tik aktyvius procesus"
-
-#~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
-#~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
-
-#~ msgid "Change Priority ..."
-#~ msgstr "Pakeisti prioritetą ..."
-
-#~ msgid "Hide Process"
-#~ msgstr "Slėpti procesą"
-
-#~ msgid "Used CPU:"
-#~ msgstr "Padaugota CPU dalis:"
-
-#~ msgid ""
-#~ "Are you sure you want to hide this process?\n"
-#~ "(Choose 'Hidden Processes' in the Settings menu to reshow)"
-#~ msgstr ""
-#~ "Ar Jūs tikrai norite paslėpti šį procesą?\n"
-#~ "(Norėdami jį pamatyti turėsite Nustatymų meniu pasirinktį 'Paslėpti "
-#~ "procesai' punktą)"
+#: ../src/util.c:101
+#, c-format
+msgid "%.1f GiB"
+msgstr "%.1f GiB"

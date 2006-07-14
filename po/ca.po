@@ -1,15 +1,15 @@
 # Catalan translation of procman.
-# Copyright © 2000, 2002, 2003, 2004 Free Software Foundation, Inc.
+# Copyright © 2000, 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Softcatalà <info@softcatala.org>, 2000.
 # Jesús Moreno <jmmolas@wanadoo.es>, 2002.
-# Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004.
+# Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: procman 2.6.0\n"
+"Project-Id-Version: procman 2.11.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-24 16:57+0100\n"
-"PO-Revision-Date: 2004-03-29 15:09+0200\n"
+"POT-Creation-Date: 2006-02-05 17:43+0100\n"
+"PO-Revision-Date: 2006-02-05 17:53+0100\n"
 "Last-Translator: Jordi Mallach <jordi@sindominio.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,453 +17,623 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 
-#: gnome-system-monitor.desktop.in.h:1 src/callbacks.c:152 src/interface.c:626
+#: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:164
+#: ../src/interface.c:666
 msgid "System Monitor"
 msgstr "Monitor del sistema"
 
-#: gnome-system-monitor.desktop.in.h:2
+#: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:165
 msgid "View current processes and monitor system state"
-msgstr "Visualitza els processos actuals i l'estat del sistema del monitor"
+msgstr "Visualitza els processos actuals i monitoritza l'estat del sistema"
 
-#: src/callbacks.c:125
-msgid "Kevin Vandersloot"
-msgstr "Kevin Vandersloot"
-
-#: src/callbacks.c:126
-msgid "Jorgen Scheibengruber - nicer devices treeview"
-msgstr "Jorgen Scheibengruber - millor treeview per als dispositius"
-
-#: src/callbacks.c:134
-msgid "translator_credits"
+#: ../src/callbacks.c:173
+msgid "translator-credits"
 msgstr ""
 "Jesús Moreno <jmmolas@wanadoo.es>\n"
 "Jordi Mallach <jordi@sindominio.net>"
 
-#: src/callbacks.c:153
-msgid "(C) 2001 Kevin Vandersloot"
-msgstr "(C) 2001 Kevin Vandersloot"
+#: ../src/disks.c:204 ../src/memmaps.c:302
+msgid "Device"
+msgstr "Dispositiu"
 
-#: src/callbacks.c:154
-#, fuzzy
-msgid "System resources monitor"
-msgstr "Monitor de recursos"
+#: ../src/disks.c:205
+msgid "Directory"
+msgstr "Directori"
 
-#: src/favorites.c:344
-msgid "No processes are currently hidden."
-msgstr "No hi ha cap porcés ocult actualment"
+#: ../src/disks.c:206 ../src/openfiles.c:232
+msgid "Type"
+msgstr "Tipus"
 
-#: src/favorites.c:364
-msgid "Manage Hidden Processes"
-msgstr "Gestiona els processos ocults"
+#: ../src/disks.c:207
+msgid "Total"
+msgstr "Total"
 
-#: src/favorites.c:388
-msgid "_Hidden processes:"
-msgstr "Processos _ocults:"
+#: ../src/disks.c:208
+msgid "Free"
+msgstr "Lliure"
 
-#: src/favorites.c:410
+#: ../src/disks.c:209
+msgid "Available"
+msgstr "Disponible"
+
+#: ../src/disks.c:210
+msgid "Used"
+msgstr "Utilitzat"
+
+#: ../src/disks.c:217 ../src/interface.c:745 ../src/procdialogs.c:770
+#: ../src/procdialogs.c:774
+msgid "Devices"
+msgstr "Dispositius"
+
+#: ../src/e_date.c:154
+msgid "?"
+msgstr "?"
+
+#: ../src/e_date.c:161
+msgid "Today %l:%M %p"
+msgstr "Avui %l:%M %p"
+
+#: ../src/e_date.c:170
+msgid "Yesterday %l:%M %p"
+msgstr "Ahir: %l:%M %p"
+
+#: ../src/e_date.c:182
+msgid "%a %l:%M %p"
+msgstr "%a %l:%M %p"
+
+#: ../src/e_date.c:190
+msgid "%b %d %l:%M %p"
+msgstr "%b %d %l:%M %p"
+
+#: ../src/e_date.c:192
+msgid "%b %d %Y"
+msgstr "%b %d %Y"
+
+#. translators: primary alert message
+#: ../src/favorites.c:350
+msgid "No hidden processes"
+msgstr "No hi ha processos ocults"
+
+#. translators: secondary alert message
+#: ../src/favorites.c:357
+msgid ""
+"There are no hidden processes in the list. To show all running processes, "
+"select the \"All processes\" option in the main window."
+msgstr ""
+"No hi ha processos ocults a la llista. Per a mostrar tots els processos en "
+"execució, seleccioneu l'opció «Tots els processos» a la finestra principal."
+
+#: ../src/favorites.c:377
+msgid "Hidden Processes"
+msgstr "Processos ocults"
+
+#: ../src/favorites.c:401
+msgid "Currently _hidden processes:"
+msgstr "Processos _ocults actualment:"
+
+#: ../src/favorites.c:423
 msgid "_Remove From List"
 msgstr "_Suprimeix de la llista"
 
-#: src/favorites.c:419 src/procdialogs.c:440
+#: ../src/favorites.c:432 ../src/procdialogs.c:285
 msgid "Note:"
 msgstr "Nota:"
 
-#: src/favorites.c:420
+#: ../src/favorites.c:433
 msgid ""
 "These are the processes you have chosen to hide. You can reshow a process by "
 "removing it from this list."
 msgstr ""
-"Aquests són els processos que heu escollit per amagar. Podeu tornar a "
-"mostrar un procés si el suprimiu d'aquesta llista."
+"Aquests són els processos que heu escollit ocultar. Podeu tornar a mostrar "
+"un procés si el suprimiu d'aquesta llista."
 
-#: src/infoview.c:77
-msgid "Process Info"
-msgstr "Informació del procés"
+#: ../src/gnome-system-monitor.schemas.in.h:1
+msgid "Column zero saved width"
+msgstr "Amplada desada de la columna zero"
 
-#: src/infoview.c:91
-msgid "Command:"
-msgstr "Ordre:"
+#: ../src/gnome-system-monitor.schemas.in.h:2
+msgid "Default graph background color"
+msgstr "Color de fons per defecte de la gràfica"
 
-#: src/infoview.c:95
-msgid "Status:"
-msgstr "Estat:"
+#: ../src/gnome-system-monitor.schemas.in.h:3
+msgid "Default graph cpu color"
+msgstr "Color per defecte de la cpu a la gràfica"
 
-#: src/infoview.c:99
-msgid "Priority:"
-msgstr "Prioritat:"
+#: ../src/gnome-system-monitor.schemas.in.h:4
+msgid "Default graph frame color"
+msgstr "Color per defecte dels marcs de la gràfica"
 
-#: src/infoview.c:123
-msgid "Memory Usage"
-msgstr "Ús de la memòria"
+#: ../src/gnome-system-monitor.schemas.in.h:5
+msgid "Default graph mem color"
+msgstr "Color per defecte de la memòria a la gràfica"
 
-#: src/infoview.c:137
-msgid "Total:"
-msgstr "Total:"
+#: ../src/gnome-system-monitor.schemas.in.h:6
+msgid "Default graph net in color"
+msgstr "Color per defecte de la xarxa d'entrada a la gràfica"
 
-#: src/infoview.c:141
-msgid "RSS:"
-msgstr "RSS: "
+#: ../src/gnome-system-monitor.schemas.in.h:7
+msgid "Default graph net out color"
+msgstr "Color per defecte de la xarxa de sortida a la gràfica"
 
-#: src/infoview.c:145
-msgid "Shared:"
-msgstr "Compartida:"
+#: ../src/gnome-system-monitor.schemas.in.h:8
+msgid "Default graph swap color"
+msgstr "Color per defecte de l'espai d'intercanvi a la gràfica"
 
-#: src/infoview.c:189
-#, c-format
-msgid "Very high - nice %d"
-msgstr "Molt alt - prioritat %d"
+#: ../src/gnome-system-monitor.schemas.in.h:9
+msgid ""
+"Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
+"active"
+msgstr ""
+"Determina quins processos es mostren per defecte. 0 són tots, 1 són de "
+"l'usuari, i 2 són els actius"
 
-#: src/infoview.c:191
-#, c-format
-msgid "High - nice %d"
-msgstr "Alt - prioritat %d"
+#: ../src/gnome-system-monitor.schemas.in.h:10
+msgid "Disk view columns order"
+msgstr "Ordre de les columnes de la visualització de discs"
 
-#: src/infoview.c:193
-#, c-format
-msgid "Normal - nice %d"
-msgstr "Normal - prioritat %d"
+#: ../src/gnome-system-monitor.schemas.in.h:11
+msgid "Enable/Disable smooth refresh"
+msgstr "Habilita/Inhabilita l'actualització suau"
 
-#: src/infoview.c:195
-#, c-format
-msgid "Low - nice %d"
-msgstr "Baix - prioritat %d"
+#: ../src/gnome-system-monitor.schemas.in.h:12
+msgid "Main Window height"
+msgstr "Alçada de la finestra principal"
 
-#: src/infoview.c:197
-#, c-format
-msgid "Very low - nice %d"
-msgstr "Molt baix - prioritat %d"
+#: ../src/gnome-system-monitor.schemas.in.h:13
+msgid "Main Window width"
+msgstr "Amplada de la finestra principal"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "_Change Priority..."
-msgstr "_Canvia la prioritat..."
+#: ../src/gnome-system-monitor.schemas.in.h:14
+msgid "Process view columns order"
+msgstr "Ordre de les columnes de la visualització de processos"
 
-#: src/interface.c:55 src/interface.c:126
-msgid "Change the importance (nice value) of a process"
-msgstr "Canvia la importància (valor de la prioritat) d'un procés"
+#: ../src/gnome-system-monitor.schemas.in.h:15
+msgid "Process view sort column"
+msgstr "Columna ordenada a la llista de processos"
 
-#: src/interface.c:60 src/interface.c:137 src/procdialogs.c:158
-msgid "_Hide Process"
-msgstr "_Oculta el procés"
+#: ../src/gnome-system-monitor.schemas.in.h:16
+msgid "Process view sort order"
+msgstr "Ordre de la visualització de processos"
 
-#: src/interface.c:60 src/interface.c:137
-msgid "Hide a process"
-msgstr "Oculta un procés"
+#: ../src/gnome-system-monitor.schemas.in.h:17
+msgid "Saves the currently viewed tab"
+msgstr "Desa la pestanya visualitzada actualment"
 
-#: src/interface.c:66 src/interface.c:231
+#: ../src/gnome-system-monitor.schemas.in.h:18
+msgid "Show column zero on startup"
+msgstr "Mostra la columna zero en iniciar"
+
+#: ../src/gnome-system-monitor.schemas.in.h:19
+msgid "Show process dependencies in tree form"
+msgstr "Mostra les dependències dels processos en forma d'arbre"
+
+#: ../src/gnome-system-monitor.schemas.in.h:20
+msgid "Show process threads"
+msgstr "Mostra els fils dels processos"
+
+#: ../src/gnome-system-monitor.schemas.in.h:21
+msgid "Show warning dialog when hiding processes"
+msgstr "Mostra un diàleg d'advertència en ocultar els processos"
+
+#: ../src/gnome-system-monitor.schemas.in.h:22
+msgid "Show warning dialog when killing processes"
+msgstr "Mostra un diàleg d'advertència en finalitzar els processos"
+
+#: ../src/gnome-system-monitor.schemas.in.h:23
+msgid "Time in milliseconds between updates of the devices list"
+msgstr ""
+"Temps en mil·lisegons entre actualitzacions de la llista de dispositius"
+
+#: ../src/gnome-system-monitor.schemas.in.h:24
+msgid "Time in milliseconds between updates of the graphs"
+msgstr "Temps en mil·lisegons entre actualitzacions de les gràfiques"
+
+#: ../src/gnome-system-monitor.schemas.in.h:25
+msgid "Time in milliseconds between updates of the process view"
+msgstr "Temps en mil·lisegons entre actualitzacions de la vista de processos"
+
+#: ../src/gnome-system-monitor.schemas.in.h:26
+msgid "Whether information about all filesystems should be displayed"
+msgstr "Si s'hauria de mostrar informació sobre tots els sistemes de fitxers"
+
+#: ../src/gnome-system-monitor.schemas.in.h:27
+msgid ""
+"Whether to display information about all filesystems (including types like "
+"'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
+"filesystems."
+msgstr ""
+"Si s'hauria de mostrar informació sobre tots els sistemes de fitxers, "
+"incloent-hi els tipus com ara «autofs» i «procfs». Pot ser útil per a "
+"obtenir una llista de tots els sistemes de fitxers muntats actualment."
+
+#: ../src/interface.c:46
+msgid "_File"
+msgstr "_Fitxer"
+
+#: ../src/interface.c:47
+msgid "_Edit"
+msgstr "_Edita"
+
+#: ../src/interface.c:48
+msgid "_View"
+msgstr "_Visualitza"
+
+#: ../src/interface.c:49
+msgid "_Help"
+msgstr "A_juda"
+
+#: ../src/interface.c:51
+msgid "_Quit"
+msgstr "_Surt"
+
+#: ../src/interface.c:52
+msgid "Quit the program"
+msgstr "Surt del programa"
+
+#: ../src/interface.c:55
+msgid "_Stop Process"
+msgstr "Finalitza el procé_s"
+
+#: ../src/interface.c:56
+msgid "Stop process"
+msgstr "Finalitza el procés"
+
+#: ../src/interface.c:57
+msgid "_Continue Process"
+msgstr "_Continua el procés"
+
+#: ../src/interface.c:58
+msgid "Continue process if stopped"
+msgstr "Continua el procés si està aturat"
+
+#: ../src/interface.c:60 ../src/interface.c:188
 msgid "End _Process"
-msgstr "Finalitza el _Procés"
+msgstr "Finalitza el _procés"
 
-#: src/interface.c:66
-msgid "Force a process to finish."
-msgstr "Imposa la finalització d'un procés."
+#: ../src/interface.c:61
+msgid "Force process to finish normally"
+msgstr "Imposa la finalització normal del procés"
 
-#: src/interface.c:71 src/interface.c:148 src/procdialogs.c:220
-#: src/procdialogs.c:984
+#: ../src/interface.c:62 ../src/procdialogs.c:129
 msgid "_Kill Process"
 msgstr "_Termina el procés"
 
-#: src/interface.c:71
-msgid "Force a process to finish now."
-msgstr "Imposa la finalització d'un procés ara."
+#: ../src/interface.c:63
+msgid "Force process to finish immediately"
+msgstr "Imposa la finalització immediata del procés"
 
-#: src/interface.c:77
+#: ../src/interface.c:64
+msgid "_Change Priority..."
+msgstr "_Canvia la prioritat..."
+
+#: ../src/interface.c:65
+msgid "Change the order of priority of process"
+msgstr "Canvia la prioritat del procés"
+
+#: ../src/interface.c:66
+msgid "Prefere_nces"
+msgstr "Preferè_ncies"
+
+#: ../src/interface.c:67
+msgid "Configure the application"
+msgstr "Configura l'aplicació"
+
+#: ../src/interface.c:69 ../src/procdialogs.c:85
+msgid "_Hide Process"
+msgstr "_Oculta el procés"
+
+#: ../src/interface.c:70
+msgid "Hide process from list"
+msgstr "Oculta el procés de la llista"
+
+#: ../src/interface.c:71
 msgid "_Hidden Processes"
-msgstr "_Oculta els processos"
+msgstr "P_rocessos ocults"
 
-#: src/interface.c:78
-msgid "View and edit your list of hidden processes"
-msgstr "Visualitza i edita la vostra llista de processos ocults"
+#: ../src/interface.c:72
+msgid "Open the list of currently hidden processes"
+msgstr "Obre la llista actual de processos ocults"
 
-#: src/interface.c:89 src/interface.c:131
+#: ../src/interface.c:73
 msgid "_Memory Maps"
 msgstr "Mapes de _memòria"
 
-#: src/interface.c:89 src/interface.c:131
-msgid "View the memory maps associated with a process"
-msgstr "Visualitza els mapes de memòria associats a un procés"
+#: ../src/interface.c:74
+msgid "Open the memory maps associated with a process"
+msgstr "Obre els mapes de memòria associats a un procés"
 
-#: src/interface.c:95
-msgid "Process _Dependencies"
-msgstr "_Dependències del procés"
+#: ../src/interface.c:75
+msgid "Open _Files"
+msgstr "Obre els _fitxers"
 
-#: src/interface.c:95
-msgid "Display a tree showing process dependencies"
-msgstr "Mostra un arbre amb les dependències del procés"
+#: ../src/interface.c:76
+msgid "View the files opened by a process"
+msgstr "Visualitza els fitxers oberts per un procés"
 
-#: src/interface.c:100
-msgid "_Threads"
-msgstr "_Fils"
+#: ../src/interface.c:78
+msgid "_Contents"
+msgstr "_Continguts"
 
-#: src/interface.c:100
-msgid "Display threads (subprocesses)"
-msgstr "Mostra els fils (subprocessos)"
+#: ../src/interface.c:79
+msgid "Open the manual"
+msgstr "Obre el manual"
 
-#: src/interface.c:143 src/procdialogs.c:225 src/procdialogs.c:988
-msgid "_End Process"
-msgstr "_Finalitza el procés"
+#: ../src/interface.c:80
+msgid "_About"
+msgstr "_Quant a"
 
-#: src/interface.c:143
-msgid "Force a process to finish"
-msgstr "Imposa la finalització d'un procés"
+#: ../src/interface.c:81
+msgid "About this application"
+msgstr "Quant a aquesta aplicació"
 
-#: src/interface.c:148
-msgid "Force a process to finish now"
-msgstr "Imposa la finalització d'un procés ara"
+#: ../src/interface.c:86
+msgid "_Dependencies"
+msgstr "_Dependències"
 
-#: src/interface.c:188
-msgid "Sea_rch:"
-msgstr "Ce_rca:"
+#: ../src/interface.c:87
+msgid "Show parent/child relationship between processes"
+msgstr "Mostra les relacions pare/fill entre processos"
 
-#: src/interface.c:200
-msgid "All Processes"
-msgstr "Tots els processos"
+#: ../src/interface.c:94
+msgid "_Active Processes"
+msgstr "Processos _actius"
 
-#: src/interface.c:201
-msgid "My Processes"
-msgstr "Els meus processos"
+#: ../src/interface.c:95
+msgid "Show active processes"
+msgstr "Mostra els processos actius"
 
-#: src/interface.c:202
-msgid "Active Processes"
-msgstr "Activa els processos"
+#: ../src/interface.c:96
+msgid "A_ll Processes"
+msgstr "Tots e_ls processos"
 
-#: src/interface.c:209
-msgid "Vie_w:"
-msgstr "Vis_ualitza:"
+#: ../src/interface.c:97
+msgid "Show all processes"
+msgstr "Mostra tots els processos"
 
-#: src/interface.c:236
-msgid "More _Info"
-msgstr "Més _Informació"
+#: ../src/interface.c:98
+msgid "M_y Processes"
+msgstr "Els me_us processos"
 
-#: src/interface.c:334
-msgid "Name"
-msgstr "Nom"
+#: ../src/interface.c:99
+msgid "Show user own process"
+msgstr "Mostra els processos propis de l'usuari"
 
-#: src/interface.c:335
-msgid "Directory"
-msgstr "Directori"
-
-#: src/interface.c:336
-msgid "Type"
-msgstr "Tipus"
-
-#: src/interface.c:337
-msgid "Total"
-msgstr "Total"
-
-#: src/interface.c:338
-msgid "Used"
-msgstr "Utilitzat"
-
-#: src/interface.c:362
+#: ../src/interface.c:260
 msgid "CPU History"
 msgstr "Historial de la CPU"
 
-#: src/interface.c:402
+#: ../src/interface.c:303
+msgid "CPU:"
+msgstr "CPU:"
+
+#: ../src/interface.c:306
 #, c-format
 msgid "CPU%d:"
 msgstr "CPU%d:"
 
-#: src/interface.c:421
+#: ../src/interface.c:326
 msgid "Memory and Swap History"
 msgstr "Historial de la memòria i espai d'intercanvi"
 
-#: src/interface.c:454
-msgid "Used memory:"
-msgstr "Memòria utilitzada:"
+#: ../src/interface.c:359
+msgid "User memory:"
+msgstr "Memòria de l'usuari:"
 
-#: src/interface.c:463 src/interface.c:495
+#: ../src/interface.c:377 ../src/interface.c:437
 msgid "of"
 msgstr "de"
 
-#: src/interface.c:486
+#: ../src/interface.c:418
 msgid "Used swap:"
 msgstr "Espai d'intercanvi utilitzat:"
 
-#: src/interface.c:521 src/procdialogs.c:904
-msgid "Devices"
-msgstr "Dispositius"
+#: ../src/interface.c:477
+msgid "Network History"
+msgstr "Historial de la xarxa"
 
-#: src/interface.c:638 src/procdialogs.c:729
-msgid "Process Listing"
-msgstr "Llistat de processos"
+#: ../src/interface.c:509
+msgid "Received:"
+msgstr "Rebuts:"
 
-#: src/interface.c:644 src/procdialogs.c:816
-msgid "Resource Monitor"
-msgstr "Monitor de recursos"
+#: ../src/interface.c:529 ../src/interface.c:572
+msgid "Total:"
+msgstr "Total:"
 
-#: src/interface.c:702
-msgid "Application Manager"
-msgstr "Gestor d'aplicacions"
+#: ../src/interface.c:553
+msgid "Sent:"
+msgstr "Enviats:"
 
-#: src/interface.c:708
-msgid "Running Applications"
-msgstr "Aplicacions que s'estan executant"
+#: ../src/interface.c:733 ../src/procdialogs.c:579
+msgid "Processes"
+msgstr "Processos"
 
-#: src/interface.c:727
-msgid "_Close Application"
-msgstr "_Tanca l'aplicació"
+#: ../src/interface.c:739 ../src/procdialogs.c:682
+msgid "Resources"
+msgstr "Recursos"
 
-#: src/interface.c:770
-msgid "More _Info >>"
-msgstr "Més _Informació >>"
+#: ../src/load-graph.c:368 ../src/load-graph.c:378
+#, c-format
+msgid "%s/s"
+msgstr "%s/s"
 
-#: src/interface.c:777
-msgid "<< Less _Info"
-msgstr "<< Menys _Informació"
-
-#: src/memmaps.c:256
+#: ../src/memmaps.c:296
 msgid "Filename"
 msgstr "Nom del fitxer"
 
-#: src/memmaps.c:257
+#: ../src/memmaps.c:297
 msgid "VM Start"
 msgstr "Inici de VM"
 
-#: src/memmaps.c:258
+#: ../src/memmaps.c:298
 msgid "VM End"
 msgstr "Fi de VM"
 
-#: src/memmaps.c:259 src/proctable.c:122
+#: ../src/memmaps.c:299
 msgid "VM Size"
 msgstr "Mida de VM"
 
-#: src/memmaps.c:260
+#: ../src/memmaps.c:300
 msgid "Flags"
 msgstr "Senyaladors"
 
-#: src/memmaps.c:261
+#: ../src/memmaps.c:301
 msgid "VM Offset"
 msgstr "Desplaçament de VM"
 
-#: src/memmaps.c:262
-msgid "Device"
-msgstr "Dispositiu"
-
-#: src/memmaps.c:263
+#: ../src/memmaps.c:303
 msgid "Inode"
 msgstr "Node-i"
 
-#: src/memmaps.c:344
+#: ../src/memmaps.c:405
 msgid "Memory Maps"
 msgstr "Mapes de memòria"
 
-#: src/memmaps.c:364
-msgid "Process name:"
-msgstr "Nom del procés:"
+#: ../src/memmaps.c:425
+#, c-format
+msgid "_Memory maps for process \"%s\" (PID %u):"
+msgstr "_Mapes de memòria per al procés «%s» (PID %u):"
 
-#: src/procactions.c:53
-msgid "No such process."
-msgstr "No hi ha tal procés."
+#: ../src/openfiles.c:31
+msgid "file"
+msgstr "fitxer"
 
-#: src/procactions.c:66
-#, fuzzy, c-format
+#: ../src/openfiles.c:33
+msgid "pipe"
+msgstr "conducte"
+
+#: ../src/openfiles.c:35
+msgid "network connection"
+msgstr "connexió de xarxa"
+
+#: ../src/openfiles.c:37
+msgid "local socket"
+msgstr "sòcol local"
+
+#: ../src/openfiles.c:39
+msgid "unknown type"
+msgstr "tipus desconegut"
+
+#. Translators: "FD" here means "File Descriptor". Please use
+#. a very short translation if possible, and at most
+#. 2-3 characters for it to be able to fit in the UI.
+#: ../src/openfiles.c:231
+msgid "FD"
+msgstr "DF"
+
+#: ../src/openfiles.c:233
+msgid "Object"
+msgstr "Objecte"
+
+#: ../src/openfiles.c:312
+msgid "Open Files"
+msgstr "Fitxers oberts"
+
+#: ../src/openfiles.c:334
+#, c-format
+msgid "_Files opened by process \"%s\" (PID %u):"
+msgstr "_Fitxers oberts pel procés «%s» (PID %u):"
+
+#: ../src/procactions.c:75
+#, c-format
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You do not have permission to change the priority of this process. You can "
-"enter the root password to gain the necessary permission."
+"Cannot change the priority of process with pid %d to %d.\n"
+"%s"
 msgstr ""
-"Nom del procés: %s \n"
-"\n"
-"No teniu permís per canviar la prioritat d'aquest procés. Podeu introduir la "
-"contrasenya arrel per aconseguir el permís necessari."
+"No es pot canviar la prioritat del procés amb pid %d a %d.\n"
+"%s"
 
-#: src/procactions.c:73
-#, fuzzy, c-format
+#: ../src/procactions.c:144
+#, c-format
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You must be root to renice a process lower than 0. You can enter the root "
-"password to gain the necessary permission."
+"Cannot kill process with pid %d with signal %d.\n"
+"%s"
 msgstr ""
-"Nom del procés: %s \n"
-"\n"
-"Heu de ser un usuari primari per canviar la prioritat d'un procés més baix "
-"que 0. Podeu introduir la contrasenya arrel per aconseguir el permís "
-"necessari."
+"No es pot terminar el procés amb pid %d amb el senyal %d.\n"
+"%s"
 
-#: src/procactions.c:124
-#, fuzzy, c-format
+#. translators: primary alert message
+#: ../src/procdialogs.c:65
+msgid "Hide the selected process?"
+msgstr "Voleu ocultar els processos seleccionats?"
+
+#. FIXME: View menu -> Edit menu
+#. translators: secondary alert messagex
+#: ../src/procdialogs.c:75
 msgid ""
-"Process Name: %s \n"
-"\n"
-"You do not have permission to end this process. You can enter the root "
-"password to gain the necessary permission."
+"Hidden processes are no longer visible in the process list. You can re-"
+"enable them by selecting the \"Hidden Processes\" entry in the View menu."
 msgstr ""
-"Nom del procés: %s \n"
-"\n"
-"No teniu permís per finalitzar aquest procés. Podeu introduir la contrasenya "
-"arrel per aconseguir el permís necessari."
+"Els processos ocults no són visibles a la llista de processos. Els podeu "
+"tornar a habilitar seleccionant l'entrada «Processos ocults» al menú "
+"Visualitza."
 
-#: src/procactions.c:143
-msgid "An error occured while killing the process."
-msgstr "S'ha produït un error en terminar el procés."
+#. translators: primary alert message
+#: ../src/procdialogs.c:124
+msgid "Kill the selected process?"
+msgstr "Voleu matar el procés seleccionat?"
 
-#: src/procdialogs.c:81
-msgid "Are you sure you want to hide this process?"
-msgstr "Esteu segur que voleu amagar aquest procés?"
-
-#: src/procdialogs.c:82
+#. translators: secondary alert message
+#: ../src/procdialogs.c:126
 msgid ""
-"If you hide a process, you can unhide it by selecting 'Hidden Processes' in "
-"the Edit menu."
+"Killing a process may destroy data, break the session or introduce a "
+"security risk. Only unresponding processes should be killed."
 msgstr ""
-"Si amagueu un procés, el podeu fer visible de nou seleccionant «Processos "
-"amagats» en el menú Edita."
+"Si finalitzeu un procés, podeu destruir-ne les dades, trencar la sessió, o "
+"crear un problema de seguretat. Només s'haurien de finalitzar els processos "
+"que no responguin."
 
-#: src/procdialogs.c:141 src/procdialogs.c:282
-msgid "_Show this dialog next time"
-msgstr "_Mostra aquest diàleg la propera vegada"
+#. translators: primary alert message
+#: ../src/procdialogs.c:133
+msgid "End the selected process?"
+msgstr "Voleu finalitzar el procés seleccionat?"
 
-#: src/procdialogs.c:218
-msgid "Are you sure you want to kill this process?"
-msgstr "Esteu segur que voleu terminar aquest procés?"
+#. translators: secondary alert message
+#: ../src/procdialogs.c:135
+msgid ""
+"Ending a process may destroy data, break the session or introduce a security "
+"risk. Only unresponding processes should be ended."
+msgstr ""
+"Si finalitzeu un procés, podeu destruir les vostres dades, trencar la sessió "
+"o crear un problema de seguretat. Només s'haurien de finalitzar els "
+"processos que no responguin."
 
-#: src/procdialogs.c:219
-msgid "If you kill a process, unsaved data will be lost."
-msgstr "Si termineu un procés, es perdran les dades no desades."
+#: ../src/procdialogs.c:138
+msgid "_End Process"
+msgstr "_Finalitza el procés"
 
-#: src/procdialogs.c:223
-msgid "Are you sure you want to end this process?"
-msgstr "Esteu segur que voleu finalitzar aquest procés?"
-
-#: src/procdialogs.c:224
-msgid "If you end a process, unsaved data will be lost."
-msgstr "Si finalitzeu un procés, es perdran les dades no desades."
-
-#: src/procdialogs.c:321
+#: ../src/procdialogs.c:167
 msgid "(Very High Priority)"
 msgstr "(Prioritat molt alta)"
 
-#: src/procdialogs.c:323
+#: ../src/procdialogs.c:169
 msgid "(High Priority)"
 msgstr "(Prioritat alta)"
 
-#: src/procdialogs.c:325
+#: ../src/procdialogs.c:171
 msgid "(Normal Priority)"
 msgstr "(Prioritat normal)"
 
-#: src/procdialogs.c:327
+#: ../src/procdialogs.c:173
 msgid "(Low Priority)"
 msgstr "(Prioritat baixa)"
 
-#: src/procdialogs.c:329
+#: ../src/procdialogs.c:175
 msgid "(Very Low Priority)"
 msgstr "(Prioritat molt baixa)"
 
-#: src/procdialogs.c:382 src/procdialogs.c:992
+#: ../src/procdialogs.c:227
 msgid "Change Priority"
 msgstr "Canvia la prioritat"
 
-#: src/procdialogs.c:403 src/procdialogs.c:993
+#: ../src/procdialogs.c:248
 msgid "Change _Priority"
 msgstr "Canvia la _Prioritat"
 
-#: src/procdialogs.c:424
+#: ../src/procdialogs.c:269
 msgid "_Nice value:"
 msgstr "Valor de la _prioritat:"
 
-#: src/procdialogs.c:441
+#: ../src/procdialogs.c:286
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
@@ -471,144 +641,385 @@ msgstr ""
 "La prioritat d'un procés ve donada pel seu valor de prioritat. Un valor de "
 "prioritat més baix es correspon amb una prioritat més alta."
 
-#: src/procdialogs.c:671
+#: ../src/procdialogs.c:464
+msgid "Processes i_nfo showed in list:"
+msgstr "I_nformació dels processos que es mostra a la llista:"
+
+#: ../src/procdialogs.c:516
 msgid "Icon"
 msgstr "Icona"
 
-#: src/procdialogs.c:711
-msgid "Preferences"
-msgstr "Preferències"
+#: ../src/procdialogs.c:556
+msgid "System Monitor Preferences"
+msgstr "Preferències del monitor del sistema"
 
-#: src/procdialogs.c:736
+#: ../src/procdialogs.c:586
 msgid "Behavior"
 msgstr "Comportament"
 
-#: src/procdialogs.c:755 src/procdialogs.c:842
-msgid "_Update interval:"
-msgstr "Interval entre act_ualitzacions:"
+# FIXME: He posat "Segons" per fer-ho curt (josep)
+#: ../src/procdialogs.c:605 ../src/procdialogs.c:708 ../src/procdialogs.c:793
+msgid "_Update interval in seconds:"
+msgstr "Segons entre act_ualitzacions:"
 
-#: src/procdialogs.c:771 src/procdialogs.c:859 src/procdialogs.c:940
-msgid "seconds"
-msgstr "segons"
+#: ../src/procdialogs.c:630
+msgid "Enable _smooth refresh"
+msgstr "Habilita l'actualització _suau"
 
-#: src/procdialogs.c:778
-msgid "Show warning dialog when ending or _killing processes"
-msgstr "Mostra un diàleg d'advertència en finalitzar o _terminar els processos"
+#: ../src/procdialogs.c:644
+msgid "Alert before ending or _killing processes"
+msgstr "Alerta abans de finalitzar o _terminar els processos"
 
-#: src/procdialogs.c:788
-msgid "Show warning dialog when _hiding processes"
-msgstr "Mostra un diàleg d'advertència en _ocultar els processos"
+#: ../src/procdialogs.c:654
+msgid "Alert before _hiding processes"
+msgstr "Alerta abans d'_ocultar els processos"
 
-#: src/procdialogs.c:798
+#: ../src/procdialogs.c:664
 msgid "Process Fields"
 msgstr "Camps dels processos"
 
-#: src/procdialogs.c:823
+#: ../src/procdialogs.c:689
 msgid "Graphs"
 msgstr "Gràfics"
 
-#: src/procdialogs.c:866
+#: ../src/procdialogs.c:729
 msgid "_Background color:"
 msgstr "Color de _fons:"
 
-#: src/procdialogs.c:885
+#: ../src/procdialogs.c:748
 msgid "_Grid color:"
 msgstr "Color de la _graella:"
 
-#: src/procdialogs.c:923
-msgid "Update _interval:"
-msgstr "_Interval entre actualitzacions:"
+#: ../src/procdialogs.c:812
+msgid "Show _all filesystems"
+msgstr "Mostr_a tots els sistemes de fitxers"
 
-#: src/procdialogs.c:983
-msgid "Kill Process"
-msgstr "Termina el procés"
-
-#: src/procdialogs.c:987
-msgid "End Process"
-msgstr "Finalitza el procés"
-
-#: src/procdialogs.c:1012
-msgid "Root Password :"
-msgstr "Contrasenya del superusuari:"
-
-#: src/procdialogs.c:1057
-msgid "Wrong Password."
-msgstr "Contrasenya errònia."
-
-#: src/procman.c:46
-msgid "show simple dialog to end processes and logout"
-msgstr "mostra el diàleg senzill per finalitzar els processos i sortir"
-
-#: src/proctable.c:117
+#: ../src/proctable.c:245
 msgid "Process Name"
 msgstr "Nom del procés"
 
-#: src/proctable.c:118
-msgid "Arguments"
-msgstr "Arguments"
-
-#: src/proctable.c:119
+#: ../src/proctable.c:246
 msgid "User"
 msgstr "Usuari"
 
-#: src/proctable.c:120
+#: ../src/proctable.c:247
 msgid "Status"
 msgstr "Estat"
 
-#: src/proctable.c:121
-msgid "Memory"
-msgstr "Memòria"
+#: ../src/proctable.c:248
+msgid "Virtual Memory"
+msgstr "Memòria virtual"
 
-#: src/proctable.c:123
+#: ../src/proctable.c:249
 msgid "Resident Memory"
 msgstr "Memòria resident"
 
-#: src/proctable.c:124
+#: ../src/proctable.c:250
+msgid "Writable Memory"
+msgstr "Memòria per escriure-hi"
+
+#: ../src/proctable.c:251
 msgid "Shared Memory"
 msgstr "Memòria compartida"
 
-#: src/proctable.c:125
-msgid "RSS Memory"
-msgstr "Memòria RSS"
-
-#: src/proctable.c:126
+#: ../src/proctable.c:252
 msgid "X Server Memory"
 msgstr "Memòria del servidor d'X"
 
-#: src/proctable.c:127
+#: ../src/proctable.c:253
 #, no-c-format
 msgid "% CPU"
 msgstr "% CPU"
 
-#: src/proctable.c:128
+#: ../src/proctable.c:254
+msgid "CPU Time"
+msgstr "Temps de CPU"
+
+#: ../src/proctable.c:255
+msgid "Started"
+msgstr "Iniciat"
+
+#: ../src/proctable.c:256
 msgid "Nice"
 msgstr "Prioritat"
 
-#: src/proctable.c:129
+#: ../src/proctable.c:257
 msgid "ID"
 msgstr "Identificador"
 
-#: src/proctable.c:277
-msgid "Running"
-msgstr "S'està executant"
+#: ../src/proctable.c:258
+msgid "Security Context"
+msgstr "Context de seguretat"
 
-#: src/proctable.c:282
+#: ../src/proctable.c:259
+msgid "Arguments"
+msgstr "Arguments"
+
+#: ../src/proctable.c:432
+msgid "Running"
+msgstr "Executant-se"
+
+#: ../src/proctable.c:437
 msgid "Stopped"
 msgstr "Aturat"
 
-#: src/proctable.c:287
+#: ../src/proctable.c:442
+msgid "Zombie"
+msgstr "Zombi"
+
+#: ../src/proctable.c:447
+msgid "Uninterruptible"
+msgstr "No interruptible"
+
+#: ../src/proctable.c:452
 msgid "Sleeping"
 msgstr "Adormit"
 
-#: src/proctable.c:382
-#, fuzzy, c-format
-msgid "%s (thread)"
-msgstr " (cadena)"
-
-#: src/proctable.c:959
+#: ../src/proctable.c:1034
 #, c-format
-msgid "%s could not be found."
-msgstr "No es pot trobar %s."
+msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
+msgstr "Mitjanes de càrrega dels últims 1, 5 i 15 minuts: %0.2f, %0.2f, %0.2f"
+
+#: ../src/util.c:87
+#, c-format
+msgid "%u byte"
+msgid_plural "%u bytes"
+msgstr[0] "%u octet"
+msgstr[1] "%u octets"
+
+#: ../src/util.c:93
+#, c-format
+msgid "%.1f KiB"
+msgstr "%.1f KiB"
+
+#: ../src/util.c:97
+#, c-format
+msgid "%.1f MiB"
+msgstr "%.1f MiB"
+
+#: ../src/util.c:101
+#, c-format
+msgid "%.1f GiB"
+msgstr "%.1f GiB"
+
+#~ msgid "_Threads"
+#~ msgstr "_Fils"
+
+#~ msgid "Show each thread as a separate process"
+#~ msgstr "Mostra cada fil com un procés separat"
+
+#~ msgid "seconds"
+#~ msgstr "segons"
+
+#~ msgid "Update _interval:"
+#~ msgstr "_Interval entre actualitzacions:"
+
+#~ msgid "%s (thread)"
+#~ msgstr "%s (fil)"
+
+#~ msgid "Jorgen Scheibengruber - nicer devices treeview"
+#~ msgstr "Jorgen Scheibengruber - millor treeview per als dispositius"
+
+#~ msgid "Benoît Dejean - maintainer"
+#~ msgstr "Benoit Dejean - mantenidor"
+
+#~ msgid "Show advanced info tab on startup"
+#~ msgstr "Mostra la pestanya d'informació avançada en iniciar"
+
+#~ msgid "Less _info"
+#~ msgstr "Menys _informació"
+
+#~ msgid "More _info"
+#~ msgstr "Més _informació"
+
+#~ msgid "Process Info"
+#~ msgstr "Informació del procés"
+
+#~ msgid "Command:"
+#~ msgstr "Ordre:"
+
+#~ msgid "Status:"
+#~ msgstr "Estat:"
+
+#~ msgid "Priority:"
+#~ msgstr "Prioritat:"
+
+#~ msgid "Memory Usage"
+#~ msgstr "Ús de la memòria"
+
+#~ msgid "RSS:"
+#~ msgstr "RSS: "
+
+#~ msgid "Very high - nice %d"
+#~ msgstr "Molt alt - prioritat %d"
+
+#~ msgid "High - nice %d"
+#~ msgstr "Alt - prioritat %d"
+
+#~ msgid "Normal - nice %d"
+#~ msgstr "Normal - prioritat %d"
+
+#~ msgid "Low - nice %d"
+#~ msgstr "Baix - prioritat %d"
+
+#~ msgid "Very low - nice %d"
+#~ msgstr "Molt baix - prioritat %d"
+
+#~ msgid "Memory"
+#~ msgstr "Memòria"
+
+#~ msgid "RSS Memory"
+#~ msgstr "Memòria RSS"
+
+#~ msgid "Saves the pane position for the system monitor tab"
+#~ msgstr ""
+#~ "Desa la posició de la subfinestra per a la pestanya del monitor del "
+#~ "sistema"
+
+#~ msgid "Force a process to finish normally"
+#~ msgstr "Imposa la finalització normal d'un procés"
+
+#~ msgid "Force a process to finish immediately"
+#~ msgstr "Imposa la finalització immediata d'un procés"
+
+#~ msgid "Open the memory maps associated with the process"
+#~ msgstr "Obre els mapes de memòria associats al procés"
+
+#~ msgid "View the files opened by the process"
+#~ msgstr "Visualitza els fitxers oberts pel procés"
+
+#~ msgid "Sea_rch:"
+#~ msgstr "Ce_rca:"
+
+#~ msgid "Sho_w:"
+#~ msgstr "_Mostra:"
+
+#~ msgid "More _Info >>"
+#~ msgstr "Més _informació >>"
+
+#~ msgid "No such process."
+#~ msgstr "No hi ha tal procés."
+
+#~ msgid ""
+#~ "Process Name: %s \n"
+#~ "\n"
+#~ "You do not have permission to change the priority of this process. You "
+#~ "can enter the root password to gain the necessary permission."
+#~ msgstr ""
+#~ "Nom del procés: %s \n"
+#~ "\n"
+#~ "No teniu permís per canviar la prioritat d'aquest procés. Podeu introduir "
+#~ "la contrasenya de root per aconseguir el permís necessari."
+
+#~ msgid ""
+#~ "Process Name: %s\n"
+#~ "\n"
+#~ "You must be root to decrease a nice value of this process or set a nice "
+#~ "value less than 0. You can enter the root password to gain the necessary "
+#~ "permission."
+#~ msgstr ""
+#~ "Nom del procés: %s \n"
+#~ "\n"
+#~ "Heu de ser el superusuari per a decrementar la prioritat d'aquest procés "
+#~ "o establir-la a un valor més baix que 0. Podeu introduir la contrasenya "
+#~ "de root per aconseguir el permís necessari."
+
+#~ msgid ""
+#~ "Process Name: %s \n"
+#~ "\n"
+#~ "You do not have permission to end this process. You can enter the root "
+#~ "password to gain the necessary permission."
+#~ msgstr ""
+#~ "Nom del procés: %s \n"
+#~ "\n"
+#~ "No teniu permís per finalitzar aquest procés. Podeu introduir la "
+#~ "contrasenya de root per aconseguir el permís necessari."
+
+#~ msgid "An error occured while killing the process."
+#~ msgstr "S'ha produït un error en terminar el procés."
+
+#~ msgid "Could not find \"%s\""
+#~ msgstr "No s'ha trobat «%s»"
+
+#~ msgid ""
+#~ "There are no processes containing the searched string. Please note that "
+#~ "the search is performed only on processes shown in the process list."
+#~ msgstr ""
+#~ "No hi ha processos que continguen la cadena cercada. Teniu en compte que "
+#~ "la cerca es realitza només amb els processos mostrat a la llista de "
+#~ "processos."
+
+#~ msgid "System resources monitor"
+#~ msgstr "Monitor de recursos del sistema"
+
+#~ msgid "No processes are currently hidden."
+#~ msgstr "No hi ha cap porcés ocult actualment"
+
+#~ msgid "Manage Hidden Processes"
+#~ msgstr "Gestiona els processos ocults"
+
+#~ msgid "Force a process to finish."
+#~ msgstr "Imposa la finalització d'un procés."
+
+#~ msgid "Force a process to finish now."
+#~ msgstr "Imposa la finalització d'un procés ara."
+
+#~ msgid "Display a tree showing process dependencies"
+#~ msgstr "Mostra un arbre amb les dependències del procés"
+
+#~ msgid "Display threads (subprocesses)"
+#~ msgstr "Mostra els fils (subprocessos)"
+
+#~ msgid "Process name:"
+#~ msgstr "Nom del procés:"
+
+#~ msgid "_Show this dialog next time"
+#~ msgstr "_Mostra aquest diàleg la propera vegada"
+
+#~ msgid "Are you sure you want to kill this process?"
+#~ msgstr "Esteu segur que voleu terminar aquest procés?"
+
+#~ msgid "If you kill a process, unsaved data will be lost."
+#~ msgstr "Si termineu un procés, es perdran les dades no desades."
+
+#~ msgid "Are you sure you want to end this process?"
+#~ msgstr "Esteu segur que voleu finalitzar aquest procés?"
+
+#~ msgid "If you end a process, unsaved data will be lost."
+#~ msgstr "Si finalitzeu un procés, es perdran les dades no desades."
+
+#~ msgid "Kill Process"
+#~ msgstr "Termina el procés"
+
+#~ msgid "End Process"
+#~ msgstr "Finalitza el procés"
+
+#~ msgid "Root Password :"
+#~ msgstr "Contrasenya del superusuari:"
+
+#~ msgid "Wrong Password."
+#~ msgstr "Contrasenya errònia."
+
+#~ msgid "%s could not be found."
+#~ msgstr "No es pot trobar %s."
+
+#~ msgid "Kevin Vandersloot"
+#~ msgstr "Kevin Vandersloot"
+
+#~ msgid "(C) 2001 Kevin Vandersloot"
+#~ msgstr "(C) 2001 Kevin Vandersloot"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "Application Manager"
+#~ msgstr "Gestor d'aplicacions"
+
+#~ msgid "Running Applications"
+#~ msgstr "Aplicacions que s'estan executant"
+
+#~ msgid "show simple dialog to end processes and logout"
+#~ msgstr "mostra el diàleg senzill per finalitzar els processos i sortir"
 
 #~ msgid "Simple process viewer using libgtop"
 #~ msgstr "Visualitzador de procés senzill utilitzant libgtop"
@@ -622,22 +1033,11 @@ msgstr "No es pot trobar %s."
 #~ msgid "Gnome-Session"
 #~ msgstr "Sessió-Gnome"
 
-#~ msgid "%d byte"
-#~ msgid_plural "%d bytes"
-#~ msgstr[0] "%d octet"
-#~ msgstr[1] "%d octets"
-
 #~ msgid "%d K"
 #~ msgstr "%d K"
 
-#~ msgid "%.1f MB"
-#~ msgstr "%.1f MB"
-
 #~ msgid "%.0f MB"
 #~ msgstr "%.0f MB"
-
-#~ msgid "%.1f GB"
-#~ msgstr "%.1f GB"
 
 #~ msgid "Kevin Vandersloot (kfv101@psu.edu)"
 #~ msgstr "Kevin Vandersloot (kfv101@psu.edu)"
@@ -669,9 +1069,6 @@ msgstr "No es pot trobar %s."
 
 #~ msgid "Erik Johnsson (zaphod@linux.nu) - icon support"
 #~ msgstr "Erik Johnsson (zaphod@linux.nu) - suport d'icones"
-
-#~ msgid "Hidden Processes"
-#~ msgstr "Processos ocults"
 
 #~ msgid "Status : "
 #~ msgstr "Estat: "

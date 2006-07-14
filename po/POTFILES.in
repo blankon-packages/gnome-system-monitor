@@ -1,14 +1,17 @@
 [encoding: UTF-8]
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-gnome-system-monitor.desktop.in
+gnome-system-monitor.desktop.in.in
 src/callbacks.c
 src/defaulttable.h
+src/disks.c
+src/e_date.c
 src/favorites.c
-src/infoview.c
+src/gnome-system-monitor.schemas.in
 src/interface.c
 src/load-graph.c
 src/memmaps.c
+src/openfiles.c
 src/procactions.c
 src/procdialogs.c
 src/procman.c

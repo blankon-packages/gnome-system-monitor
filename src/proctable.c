@@ -17,15 +17,19 @@
  *
  */
 
-#ifdef HAVE_CONFIG_H
-#  include <config.h>
-#endif
+
+#include <config.h>
+
 
 #include <string.h>
+#include <math.h>
+#include <glib/gi18n.h>
 #include <glibtop.h>
+#include <glibtop/loadavg.h>
 #include <glibtop/proclist.h>
 #include <glibtop/procstate.h>
 #include <glibtop/procmem.h>
+#include <glibtop/procmap.h>
 #include <glibtop/proctime.h>
 #include <glibtop/procuid.h>
 #include <glibtop/procargs.h>
@@ -35,6 +39,7 @@
 #include <libwnck/libwnck.h>
 #include <sys/stat.h>
 #include <pwd.h>
+#include <time.h>
 
 #include <libgnomevfs/gnome-vfs-utils.h>
 
@@ -43,17 +48,14 @@
 #include "callbacks.h"
 #include "prettytable.h"
 #include "util.h"
-#include "infoview.h"
 #include "interface.h"
 #include "favorites.h"
+#include "selinux.h"
+#include "e_date.h"
 
 
-
-static gint total_time = 0;
-static gint total_time_last = 0;
-
-
-#define PROCMAN_CMP(X, Y) (((X) == (Y)) ? 0 : (((X) < (Y)) ? -1 : 1))
+static guint64 total_time = 1;
+static guint64 total_time_last = 1;
 
 
 static gint
@@ -64,42 +66,168 @@ sort_ints (GtkTreeModel *model, GtkTreeIter *itera, GtkTreeIter *iterb, gpointer
 
 	gtk_tree_model_get (model, itera, COL_POINTER, &infoa, -1);
 	gtk_tree_model_get (model, iterb, COL_POINTER, &infob, -1);
-	g_return_val_if_fail (infoa, 0);
-	g_return_val_if_fail (infob, 0);
+
+	g_assert(infoa);
+	g_assert(infob);
 
 	switch (col) {
-	case COL_MEM:
-		return PROCMAN_CMP(infoa->mem, infob->mem);
-
-	case COL_CPU:
-		return PROCMAN_CMP(infoa->pcpu, infob->pcpu);
-
-	case COL_PID:
-		return PROCMAN_CMP(infoa->pid, infob->pid);
-
-	case COL_NICE:
-		return PROCMAN_CMP(infoa->nice, infob->nice);
-
 	case COL_VMSIZE:
-		return PROCMAN_CMP(infoa->vmsize, infob->vmsize);
+		return PROCMAN_RCMP(infoa->vmsize, infob->vmsize);
 
 	case COL_MEMRES:
-		return PROCMAN_CMP(infoa->memres, infob->memres);
+		return PROCMAN_RCMP(infoa->memres, infob->memres);
+
+	case COL_MEMWRITABLE:
+		return PROCMAN_RCMP(infoa->memwritable, infob->memwritable);
 
 	case COL_MEMSHARED:
-		return PROCMAN_CMP(infoa->memshared, infob->memshared);
-
-	case COL_MEMRSS:
-		return PROCMAN_CMP(infoa->memrss, infob->memrss);
+		return PROCMAN_RCMP(infoa->memshared, infob->memshared);
 
 	case COL_MEMXSERVER:
-		return PROCMAN_CMP(infoa->memxserver, infob->memxserver);
+		return PROCMAN_RCMP(infoa->memxserver, infob->memxserver);
+
+	case COL_CPU_TIME:
+		return PROCMAN_RCMP(infoa->cpu_time_last, infob->cpu_time_last);
+
+	case COL_START_TIME:
+		return PROCMAN_CMP(infoa->start_time, infob->start_time);
+
+	case COL_CPU:
+		return PROCMAN_RCMP(infoa->pcpu, infob->pcpu);
 
 	default:
+		g_assert_not_reached();
 		return 0;
 	}
 }
 
+
+
+static void
+set_proctree_reorderable(ProcData *procdata)
+{
+	GList *columns, *col;
+	GtkTreeView *proctree;
+
+	proctree = GTK_TREE_VIEW(procdata->tree);
+
+	columns = gtk_tree_view_get_columns (proctree);
+
+	for(col = columns; col; col = col->next)
+		gtk_tree_view_column_set_reorderable(col->data, TRUE);
+
+	g_list_free(columns);
+}
+
+
+static void
+cb_columns_changed(GtkTreeView *treeview, gpointer user_data)
+{
+	ProcData * const procdata = user_data;
+
+	procman_save_tree_state(procdata->client,
+				GTK_WIDGET(treeview),
+				"/apps/procman/proctree");
+}
+
+
+static GtkTreeViewColumn*
+my_gtk_tree_view_get_column_with_sort_column_id(GtkTreeView *treeview, int id)
+{
+	GList *columns, *it;
+	GtkTreeViewColumn *col = NULL;
+
+	columns = gtk_tree_view_get_columns(treeview);
+
+	for(it = columns; it; it = it->next)
+	{
+		if(gtk_tree_view_column_get_sort_column_id(it->data) == id)
+		{
+			col = it->data;
+			break;
+		}
+	}
+
+	g_list_free(columns);
+
+	return col;
+}
+
+
+void
+proctable_set_columns_order(GtkTreeView *treeview, GSList *order)
+{
+	GtkTreeViewColumn* last = NULL;
+	GSList *it;
+
+	for(it = order; it; it = it->next)
+	{
+		int id;
+		GtkTreeViewColumn *cur;
+
+		id = GPOINTER_TO_INT(it->data);
+
+		g_assert(id >= 0 && id < NUM_COLUMNS);
+
+		cur = my_gtk_tree_view_get_column_with_sort_column_id(treeview, id);
+
+		if(cur && cur != last)
+		{
+			gtk_tree_view_move_column_after(treeview, cur, last);
+			last = cur;
+		}
+	}
+}
+
+
+
+GSList*
+proctable_get_columns_order(GtkTreeView *treeview)
+{
+	GList *columns, *col;
+	GSList *order = NULL;
+
+	columns = gtk_tree_view_get_columns(treeview);
+
+	for(col = columns; col; col = col->next)
+	{
+		int id;
+
+		id = gtk_tree_view_column_get_sort_column_id(col->data);
+		order = g_slist_prepend(order, GINT_TO_POINTER(id));
+	}
+
+	g_list_free(columns);
+
+	order = g_slist_reverse(order);
+
+	return order;
+}
+
+
+static gboolean
+search_equal_func(GtkTreeModel *model,
+		  gint column,
+		  const gchar *key,
+		  GtkTreeIter *iter,
+		  gpointer search_data)
+{
+	char* name;
+	char* user;
+
+	gtk_tree_model_get(model, iter,
+			   COL_NAME, &name,
+			   COL_USER, &user,
+			   -1);
+
+	if(name && strstr(name, key))
+		return FALSE;
+
+	if(user && strstr(user, key))
+		return FALSE;
+
+	return TRUE;
+}
 
 
 
@@ -115,18 +243,20 @@ proctable_new (ProcData * const procdata)
 
 	static const gchar *titles[] = {
 		N_("Process Name"),
-		N_("Arguments"),
 		N_("User"),
 		N_("Status"),
-		N_("Memory"),
-		N_("VM Size"),
+		N_("Virtual Memory"),
 		N_("Resident Memory"),
+		N_("Writable Memory"),
 		N_("Shared Memory"),
-		N_("RSS Memory"),
 		N_("X Server Memory"),
 		/* xgettext:no-c-format */ N_("% CPU"),
+		N_("CPU Time"),
+		N_("Started"),
 		N_("Nice"),
 		N_("ID"),
+		N_("Security Context"),
+		N_("Arguments"),
 		NULL,
 		"POINTER"
 	};
@@ -140,14 +270,31 @@ proctable_new (ProcData * const procdata)
 					GTK_POLICY_AUTOMATIC,
 					GTK_POLICY_AUTOMATIC);
 
-	model = gtk_tree_store_new (NUM_COLUMNS,  G_TYPE_STRING,
-				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
-				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
-				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
-				    G_TYPE_INT, G_TYPE_INT, G_TYPE_INT,
-				    GDK_TYPE_PIXBUF, G_TYPE_POINTER);
+	model = gtk_tree_store_new (NUM_COLUMNS,
+				    G_TYPE_STRING,	/* Process Name */
+				    G_TYPE_STRING,	/* User		*/
+				    G_TYPE_STRING,	/* Status	*/
+				    G_TYPE_STRING,	/* VM Size	*/
+				    G_TYPE_STRING,	/* Resident Memory */
+				    G_TYPE_STRING,	/* Writable Memory */
+				    G_TYPE_STRING,	/* Shared Memory */
+				    G_TYPE_STRING,	/* X Server Memory */
+				    G_TYPE_UINT,	/* % CPU	*/
+				    G_TYPE_STRING,	/* CPU time	*/
+				    G_TYPE_STRING,	/* Started	*/
+				    G_TYPE_INT,		/* Nice		*/
+				    G_TYPE_UINT,	/* ID		*/
+				    G_TYPE_STRING,	/* Security Context */
+				    G_TYPE_STRING,	/* Arguments	*/
+				    GDK_TYPE_PIXBUF,	/* Icon		*/
+				    G_TYPE_POINTER	/* ProcInfo	*/
+		);
 
 	proctree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (model));
+	gtk_tree_view_set_search_equal_func (GTK_TREE_VIEW (proctree),
+					     search_equal_func,
+					     NULL,
+					     NULL);
 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (proctree), TRUE);
 	g_object_unref (G_OBJECT (model));
 
@@ -174,8 +321,26 @@ proctable_new (ProcData * const procdata)
 	gtk_tree_view_append_column (GTK_TREE_VIEW (proctree), column);
 	gtk_tree_view_set_expander_column (GTK_TREE_VIEW (proctree), column);
 
-	for (i = 1; i < NUM_COLUMNS - 2; i++) {
+
+	for (i = COL_USER; i <= COL_ARGS; i++) {
 		cell_renderer = gtk_cell_renderer_text_new ();
+
+		switch(i)
+		{
+		case COL_VMSIZE:
+		case COL_MEMRES:
+		case COL_MEMWRITABLE:
+		case COL_MEMSHARED:
+		case COL_MEMXSERVER:
+		case COL_CPU:
+		case COL_NICE:
+		case COL_PID:
+		case COL_CPU_TIME:
+			g_object_set(G_OBJECT(cell_renderer),
+				     "xalign", 1.0f,
+				     NULL);
+		}
+
 		column = gtk_tree_view_column_new ();
 		gtk_tree_view_column_pack_start (column, cell_renderer, FALSE);
 		gtk_tree_view_column_set_attributes (column, cell_renderer,
@@ -190,181 +355,298 @@ proctable_new (ProcData * const procdata)
 
 	gtk_container_add (GTK_CONTAINER (scrolled), proctree);
 
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_MEM,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_MEM),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_CPU,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_CPU),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_PID,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_PID),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_NICE,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_NICE),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_VMSIZE,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_VMSIZE),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_MEMRES,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_MEMRES),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_MEMSHARED,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_MEMSHARED),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_MEMRSS,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_MEMRSS),
-					 NULL);
-	gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
-					 COL_MEMXSERVER,
-					 sort_ints,
-					 GINT_TO_POINTER (COL_MEMXSERVER),
-					 NULL);
+
+	for(i = COL_NAME; i <= COL_ARGS; i++)
+	{
+		switch(i)
+		{
+		case COL_VMSIZE:
+		case COL_MEMRES:
+		case COL_MEMWRITABLE:
+		case COL_MEMSHARED:
+		case COL_MEMXSERVER:
+		case COL_CPU_TIME:
+		case COL_START_TIME:
+		case COL_CPU:
+			gtk_tree_sortable_set_sort_func (
+				GTK_TREE_SORTABLE (model),
+				i,
+				sort_ints,
+				GINT_TO_POINTER(i),
+				NULL);
+		}
+	}
+
 	procdata->tree = proctree;
 
+	set_proctree_reorderable(procdata);
+
 	procman_get_tree_state (procdata->client, proctree, "/apps/procman/proctree");
+
+	/* Override column settings by hiding this column if it's meaningless: */
+	if (!can_show_security_context_column ()) {
+		GtkTreeViewColumn *column;
+		column = gtk_tree_view_get_column (GTK_TREE_VIEW (proctree), COL_SECURITYCONTEXT);
+		gtk_tree_view_column_set_visible (column, FALSE);
+	}
 
 	g_signal_connect (G_OBJECT (gtk_tree_view_get_selection (GTK_TREE_VIEW (proctree))),
 			  "changed",
 			  G_CALLBACK (cb_row_selected), procdata);
-	g_signal_connect (G_OBJECT (proctree), "row_activated",
-			  G_CALLBACK (cb_tree_row_activated), procdata);
 	g_signal_connect (G_OBJECT (proctree), "popup_menu",
 			  G_CALLBACK (cb_tree_popup_menu), procdata);
 	g_signal_connect (G_OBJECT (proctree), "button_press_event",
 			  G_CALLBACK (cb_tree_button_pressed), procdata);
+
+	g_signal_connect (G_OBJECT(proctree), "columns-changed",
+			 G_CALLBACK(cb_columns_changed), procdata);
 
 	return scrolled;
 }
 
 
 static void
-proctable_free_info (ProcInfo *info)
+proctable_free_info(ProcInfo *info)
 {
-	if (!info) return;
+	g_assert(info != NULL);
+
+	if(info->pixbuf) {
+		g_object_unref (info->pixbuf);
+	}
+
 	g_free (info->name);
 	g_free (info->arguments);
-	g_free (info->user);
-	g_free (info->status);
-	g_list_free (info->children);
-	g_free (info);
+	g_free (info->security_context);
+	g_slist_free (info->children);
+	g_slice_free(ProcInfo, info);
 }
 
 
 static void
 get_process_status (ProcInfo *info, const glibtop_proc_state *buf)
 {
-	g_free (info->status);
 
 	switch(buf->state)
 	{
 	case GLIBTOP_PROCESS_RUNNING:
-		info->status = g_strdup (_("Running"));
-		info->running = TRUE;
+		info->status = _("Running");
+		info->is_running = TRUE;
 		break;
 
 	case GLIBTOP_PROCESS_STOPPED:
-		info->status = g_strdup (_("Stopped"));
-		info->running = FALSE;
+		info->status = _("Stopped");
+		info->is_running = FALSE;
+		break;
+
+	case GLIBTOP_PROCESS_ZOMBIE:
+		info->status = _("Zombie");
+		info->is_running = FALSE;
+		break;
+
+	case GLIBTOP_PROCESS_UNINTERRUPTIBLE:
+		info->status = _("Uninterruptible");
+		info->is_running = FALSE;
 		break;
 
 	default:
-		info->status = g_strdup (_("Sleeping"));
-		info->running = FALSE;
+		info->status = _("Sleeping");
+		info->is_running = FALSE;
 		break;
 	}
 }
 
 
 static void
-get_process_name (ProcData *procdata, ProcInfo *info,
+get_process_name (ProcInfo *info,
 		  const gchar *cmd, const gchar *args)
 {
-
-	/* strip the absolute path from the arguments
-	 * if args is not null nor ""
-	 */
 	if (args && *args)
-		info->name = g_path_get_basename (args);
-	else
-		info->name = g_strdup (cmd);
+	{
+		char* basename;
+		basename = g_path_get_basename (args);
+
+		if(g_str_has_prefix (basename, cmd))
+		{
+			info->name = basename;
+			return;
+		}
+
+		g_free (basename);
+	}
+
+	info->name = g_strdup (cmd);
 }
 
 
-ProcInfo *
-proctable_find_process (gint pid, gchar *name, ProcData *procdata)
+
+static void
+get_process_user(ProcData* procdata, ProcInfo* info, uid_t uid)
 {
+	struct passwd* pwd;
+	char* username;
 
-	GList *list = procdata->info;
+	if(G_LIKELY(info->uid == uid))
+		return;
 
-	while (list) {
-		ProcInfo *info = list->data;
+	info->uid = uid;
 
-		if (pid == info->pid)
-			return info;
+	pwd = getpwuid(uid);
 
-		if (name) {
-			if (g_strcasecmp (name, info->name) == 0)
-				return info;
-		}
+	if(pwd && pwd->pw_name)
+		username = g_strdup(pwd->pw_name);
+	else
+		username = g_strdup_printf("%u", (unsigned)uid);
 
-		list = g_list_next (list);
+	/* don't free, because info->user belongs to procdata->users */
+	info->user = g_string_chunk_insert_const(procdata->users, username);
+
+	g_free(username);
+}
+
+
+
+static void get_process_memory_writable(ProcInfo *info)
+{
+	glibtop_proc_map buf;
+	glibtop_map_entry *maps;
+	unsigned i;
+
+	info->memwritable = 0;
+
+	maps = glibtop_get_proc_map(&buf, info->pid);
+
+	for (i = 0; i < buf.number; ++i) {
+#ifdef __linux__
+		info->memwritable += maps[i].private_dirty;
+#else
+		if (maps[i].perm & GLIBTOP_MAP_PERM_WRITE)
+			info->memwritable += maps[i].size;
+#endif
 	}
 
-	return NULL;
+	g_free(maps);
+}
+
+
+static void
+get_process_memory_info(ProcInfo *info)
+{
+	glibtop_proc_mem procmem;
+	WnckResourceUsage xresources;
+
+	wnck_pid_read_resource_usage (gdk_screen_get_display (gdk_screen_get_default ()),
+				      info->pid,
+				      &xresources);
+
+	glibtop_get_proc_mem(&procmem, info->pid);
+
+	info->vmsize	= procmem.vsize;
+	info->memres	= procmem.resident;
+	info->memshared	= procmem.share;
+
+	info->memxserver = xresources.total_bytes_estimate;
+
+	get_process_memory_writable(info);
+}
+
+
+
+ProcInfo *
+proctable_find_process (guint pid, ProcData *procdata)
+{
+	return g_hash_table_lookup(procdata->pids, GINT_TO_POINTER(pid));
 }
 
 
 static ProcInfo *
-find_parent (ProcData *data, gint pid)
+find_parent (ProcData *procdata, guint pid)
 {
-	GList *list = data->info;
-
-
 	/* ignore init as a parent process */
 	if (pid <= 1)
 		return NULL;
 
-	while (list)
+	return proctable_find_process(pid, procdata);
+}
+
+
+static char *
+format_duration_for_display (double d)
+{
+	double minutes, seconds, centiseconds;
+
+	centiseconds = 100.0 * modf(d, &seconds);
+
+	if(seconds < 60.0)
 	{
-		ProcInfo *info = list->data;
-
-		if (pid == info->pid)
-			return info;
-
-		list = g_list_next (list);
+		minutes = 0.0;
+	}
+	else
+	{
+		minutes = seconds / 60.0;
+		seconds = fmod(seconds, 60.0);
 	}
 
-	return NULL;
+	return g_strdup_printf(
+		"%02u:%02u.%02u",
+		(unsigned) minutes,
+		(unsigned) seconds,
+		(unsigned) centiseconds);
 }
+
+
+static void
+update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info)
+{
+	gchar *vmsize, *memres, *memwritable, *memshared, *memxserver,
+		*cpu_time, *start_time;
+
+	vmsize	   = SI_gnome_vfs_format_file_size_for_display (info->vmsize);
+	memres	   = SI_gnome_vfs_format_file_size_for_display (info->memres);
+	memwritable = SI_gnome_vfs_format_file_size_for_display (info->memwritable);
+	memshared  = SI_gnome_vfs_format_file_size_for_display (info->memshared);
+	memxserver = SI_gnome_vfs_format_file_size_for_display (info->memxserver);
+
+	cpu_time = format_duration_for_display (info->cpu_time_last / procdata->frequency);
+
+	/* FIXME: does it worths it to display relative to $now date ?
+	   absolute date wouldn't required to be updated on every refresh */
+	start_time = procman_format_date_for_display(info->start_time);
+
+	gtk_tree_store_set (store, &info->node,
+			    COL_STATUS, info->status,
+			    COL_USER, info->user,
+			    COL_VMSIZE, vmsize,
+			    COL_MEMRES, memres,
+			    COL_MEMWRITABLE, memwritable,
+			    COL_MEMSHARED, memshared,
+			    COL_MEMXSERVER, memxserver,
+			    COL_CPU, info->pcpu,
+			    COL_CPU_TIME, cpu_time,
+			    COL_START_TIME, start_time,
+			    COL_NICE, info->nice,
+			    -1);
+
+	/* FIXME: We don't bother updating COL_SECURITYCONTEXT as it can never change.
+	   even on fork ? */
+	g_free (vmsize);
+	g_free (memres);
+	g_free (memwritable);
+	g_free (memshared);
+	g_free (memxserver);
+	g_free (cpu_time);
+	g_free(start_time);
+}
+
 
 
 void
 insert_info_to_tree (ProcInfo *info, ProcData *procdata)
 {
 	GtkTreeModel *model;
-	GtkTreeIter row;
-	gchar *name;
-	gchar *mem, *vmsize, *memres, *memshared, *memrss, *memxserver;
 
 	/* Don't show process if it is not running */
 	if ((procdata->config.whose_process == ACTIVE_PROCESSES) &&
-	    (!info->running))
+	    (!info->is_running))
 		return;
 
 	/* Don't show processes that user has blacklisted */
@@ -375,19 +657,11 @@ insert_info_to_tree (ProcInfo *info, ProcData *procdata)
 	}
 	info->is_blacklisted = FALSE;
 
-	/* Don't show threads */
-	if (!procdata->config.show_threads && info->is_thread)
-		return;
-	else if (info->is_thread)
-		name = g_strdup_printf(_("%s (thread)"), info->name);
-	else
-		name = g_strdup (info->name);
-
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
-	if (info->parent && procdata->config.show_tree && info->parent->visible) {
+	if (info->parent && procdata->config.show_tree && info->parent->is_visible) {
 		GtkTreePath *parent_node = gtk_tree_model_get_path (model, &info->parent->node);
 
-		gtk_tree_store_insert (GTK_TREE_STORE (model), &row, &info->parent->node, 0);
+		gtk_tree_store_insert (GTK_TREE_STORE (model), &info->node, &info->parent->node, 0);
 		if (!gtk_tree_view_row_expanded (GTK_TREE_VIEW (procdata->tree), parent_node))
 			gtk_tree_view_expand_row (GTK_TREE_VIEW (procdata->tree),
 						  parent_node,
@@ -396,47 +670,25 @@ insert_info_to_tree (ProcInfo *info, ProcData *procdata)
 		gtk_tree_path_free (parent_node);
 	}
 	else
-		gtk_tree_store_insert (GTK_TREE_STORE (model), &row, NULL, 0);
-
-	mem = gnome_vfs_format_file_size_for_display (info->mem);
-	vmsize = gnome_vfs_format_file_size_for_display (info->vmsize);
-	memres = gnome_vfs_format_file_size_for_display (info->memres);
-	memshared = gnome_vfs_format_file_size_for_display (info->memshared);
-	memrss = gnome_vfs_format_file_size_for_display (info->memrss);
-	memxserver = gnome_vfs_format_file_size_for_display (info->memxserver);
+		gtk_tree_store_insert (GTK_TREE_STORE (model), &info->node, NULL, 0);
 
 	/* COL_POINTER must be set first, because GtkTreeStore
 	 * will call sort_ints as soon as we set the column
 	 * that we're sorting on.
 	 */
 
-	gtk_tree_store_set (GTK_TREE_STORE (model), &row,
+	gtk_tree_store_set (GTK_TREE_STORE (model), &info->node,
 			    COL_POINTER, info,
 			    COL_PIXBUF, info->pixbuf,
-			    COL_NAME, name,
+			    COL_NAME, info->name,
 			    COL_ARGS, info->arguments,
-			    COL_USER, info->user,
-			    COL_STATUS, info->status,
-			    COL_MEM, mem,
-			    COL_VMSIZE, vmsize,
-			    COL_MEMRES, memres,
-			    COL_MEMSHARED, memshared,
-			    COL_MEMRSS, memrss,
-			    COL_MEMXSERVER, memxserver,
-			    COL_CPU, info->pcpu,
 			    COL_PID, info->pid,
-			    COL_NICE, info->nice,
+			    COL_SECURITYCONTEXT, info->security_context,
 			    -1);
-	g_free (mem);
-	g_free (vmsize);
-	g_free (memres);
-	g_free (memshared);
-	g_free (memrss);
-	g_free (memxserver);
-	g_free (name);
 
-	info->node = row;
-	info->visible = TRUE;
+	update_info_mutable_cols(GTK_TREE_STORE (model), procdata, info);
+
+	info->is_visible = TRUE;
 }
 
 
@@ -445,21 +697,21 @@ insert_info_to_tree (ProcInfo *info, ProcData *procdata)
 */
 static void
 remove_children_from_tree (ProcData *procdata, GtkTreeModel *model,
-			   GtkTreeIter *parent)
+			   GtkTreeIter *parent, GPtrArray *addition_list)
 {
 	do {
 		ProcInfo *child_info;
 		GtkTreeIter child;
 
 		if (gtk_tree_model_iter_children (model, &child, parent))
-			remove_children_from_tree (procdata, model, &child);
+			remove_children_from_tree (procdata, model, &child, addition_list);
 
 		gtk_tree_model_get (model, parent, COL_POINTER, &child_info, -1);
 		if (child_info) {
 			if (procdata->selected_process == child_info)
 				procdata->selected_process = NULL;
-			child_info ->queue = NEEDS_ADDITION;
-			child_info->visible = FALSE;
+			g_ptr_array_add(addition_list, child_info);
+			child_info->is_visible = FALSE;
 		}
 	} while (gtk_tree_model_iter_next (model, parent));
 }
@@ -469,287 +721,163 @@ void
 remove_info_from_tree (ProcInfo *info, ProcData *procdata)
 {
 	GtkTreeModel *model;
-	GtkTreeIter iter;
 
-	g_return_if_fail (info);
+	g_assert(info);
 
-	if (!info->visible)
+	if (!info->is_visible)
 		return;
 
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
-	iter = info->node;
 
 	if (procdata->selected_process == info)
 		procdata->selected_process = NULL;
 
-	gtk_tree_store_remove (GTK_TREE_STORE (model), &iter);
+	gtk_tree_store_remove (GTK_TREE_STORE (model), &info->node);
 
-	info->visible = FALSE;
+	info->is_visible = FALSE;
 }
 
 
 static void
 remove_info_from_list (ProcInfo *info, ProcData *procdata)
 {
-	GList *child;
+	GSList *child;
 	ProcInfo * const parent = info->parent;
 
 	/* Remove info from parent list */
 	if (parent)
-		parent->children = g_list_remove (parent->children, info);
+		parent->children = g_slist_remove (parent->children, info);
 
 	/* Add any children to parent list */
-	for(child = info->children; child; child = g_list_next (child)) {
+	for(child = info->children; child; child = g_slist_next (child)) {
 		ProcInfo *child_info = child->data;
 		child_info->parent = parent;
 	}
 
 	if(parent) {
-		parent->children = g_list_concat(parent->children,
+		parent->children = g_slist_concat(parent->children,
 						 info->children);
 		info->children = NULL;
 	}
 
 	/* Remove from list */
 	procdata->info = g_list_remove (procdata->info, info);
-	proctable_free_info (info);
+	g_hash_table_remove(procdata->pids, GINT_TO_POINTER(info->pid));
+	proctable_free_info(info);
 }
 
 
 static void
-update_info (ProcData *procdata, ProcInfo *info, gint pid)
+update_info (ProcData *procdata, ProcInfo *info)
 {
-	GtkTreeModel *model;
-	GtkTreePath *path;
 	glibtop_proc_state procstate;
-	glibtop_proc_mem procmem;
-	glibtop_proc_uid procuid;
-	glibtop_proc_time proctime;
-	gchar *mem, *vmsize, *memres, *memshared, *memrss, *memxserver;
-	guint64 newcputime;
-	guint8 pcpu;
-	WnckResourceUsage xresources;
 
-	glibtop_get_proc_state (&procstate, pid);
-	glibtop_get_proc_mem (&procmem, pid);
-	glibtop_get_proc_uid (&procuid, pid);
-	glibtop_get_proc_time (&proctime, pid);
-	newcputime = proctime.utime + proctime.stime;
-	model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
-
-	wnck_pid_read_resource_usage (gdk_screen_get_display (gdk_screen_get_default ()),
-				      pid,
-				      &xresources);
-
-	info->mem = procmem.size;
-	info->vmsize = procmem.vsize;
-	info->memres = procmem.resident;
-	info->memshared = procmem.share;
-	info->memrss = procmem.rss;
-	info->memxserver = xresources.total_bytes_estimate;
-
-	/* Possible enhancement - also SUBTRACT this value
-	 * from the memory of the X server itself.
-	 */
-	info->mem += info->memxserver;
-
-	if (total_time != 0)
-		pcpu = ( newcputime - info->cpu_time_last ) * 100 / total_time;
-	else
-		pcpu = 0;
-
-	pcpu = MIN(pcpu, 100);
-
-	info->cpu_time_last = newcputime;
-	info->pcpu = pcpu;
-	info->nice = procuid.nice;
-
+	glibtop_get_proc_state (&procstate, info->pid);
 	get_process_status (info, &procstate);
 
 	if (procdata->config.whose_process == ACTIVE_PROCESSES)	{
 
 		/* process started running */
-		if (info->running && (!info->visible)) {
+		if (info->is_running && (!info->is_visible)) {
 			insert_info_to_tree (info, procdata);
 			return;
 		}
 		/* process was running but not anymore */
-		else if ((!info->running) && info->visible) {
+		else if ((!info->is_running) && info->is_visible) {
 			remove_info_from_tree (info, procdata);
 			return;
 		}
-		else if (!info->running)
+		else if (!info->is_running)
 			return;
 	}
 
-	if (info->visible) {
-		GdkRectangle rect, vis_rect;
-		path = gtk_tree_model_get_path (model, &info->node);
-		gtk_tree_view_get_cell_area (GTK_TREE_VIEW (procdata->tree),
-					     path, 	NULL, &rect);
-		gtk_tree_view_get_visible_rect (GTK_TREE_VIEW (procdata->tree),
-						&vis_rect);
-		gtk_tree_path_free (path);
+	if (info->is_visible) {
+		GtkTreeModel *model;
+		glibtop_proc_uid procuid;
+		glibtop_proc_time proctime;
 
-		/* Don't update if row is not visible.
-		   Small performance improvement */
-		if ((rect.y < 0) || (rect.y > vis_rect.height))
-			return;
+		glibtop_get_proc_uid (&procuid, info->pid);
+		glibtop_get_proc_time (&proctime, info->pid);
 
-		mem = gnome_vfs_format_file_size_for_display (info->mem);
-		vmsize = gnome_vfs_format_file_size_for_display (info->vmsize);
-		memres = gnome_vfs_format_file_size_for_display (info->memres);
-		memshared = gnome_vfs_format_file_size_for_display (info->memshared);
-		memrss = gnome_vfs_format_file_size_for_display (info->memrss);
-		memxserver = gnome_vfs_format_file_size_for_display (info->memxserver);
+		get_process_memory_info(info);
+		get_process_user(procdata, info, procstate.uid);
 
-		gtk_tree_store_set (GTK_TREE_STORE (model), &info->node,
-				    COL_STATUS, info->status,
-				    COL_MEM, mem,
-				    COL_VMSIZE, vmsize,
-				    COL_MEMRES, memres,
-				    COL_MEMSHARED, memshared,
-				    COL_MEMRSS, memrss,
-				    COL_MEMXSERVER, memxserver,
-				    COL_CPU, info->pcpu,
-				    COL_NICE, info->nice,
-				    -1);
-		g_free (mem);
-		g_free (vmsize);
-		g_free (memres);
-		g_free (memshared);
-		g_free (memrss);
-		g_free (memxserver);
+		info->pcpu = (proctime.rtime - info->cpu_time_last) * 100 / total_time;
+		info->pcpu = MIN(info->pcpu, 100);
+
+		info->cpu_time_last = proctime.rtime;
+		info->nice = procuid.nice;
+
+
+		model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
+
+		update_info_mutable_cols(GTK_TREE_STORE (model), procdata, info);
 	}
 }
 
 
 static ProcInfo *
-get_info (ProcData *procdata, gint pid)
+procinfo_new (ProcData *procdata, gint pid)
 {
-	ProcInfo *info = g_new0 (ProcInfo, 1);
+	ProcInfo *info;
 	glibtop_proc_state procstate;
 	glibtop_proc_time proctime;
-	glibtop_proc_mem procmem;
 	glibtop_proc_uid procuid;
 	glibtop_proc_args procargs;
-	struct passwd *pwd;
-	gchar *arguments;
-	guint64 newcputime, i;
-	WnckResourceUsage xresources;
+	gchar** arguments;
+
+	info = g_slice_new0(ProcInfo);
+
+	info->pid = pid;
+	info->uid = -1;
 
 	glibtop_get_proc_state (&procstate, pid);
-	pwd = getpwuid (procstate.uid);
-	glibtop_get_proc_time (&proctime, pid);
-	glibtop_get_proc_mem (&procmem, pid);
 	glibtop_get_proc_uid (&procuid, pid);
 	glibtop_get_proc_time (&proctime, pid);
-	newcputime = proctime.utime + proctime.stime;
+	arguments = glibtop_get_proc_argv (&procargs, pid, 0);
 
-	wnck_pid_read_resource_usage (gdk_screen_get_display (gdk_screen_get_default ()),
-				      pid,
-				      &xresources);
+	/* FIXME : wrong. name and arguments may change with exec* */
+	get_process_name (info, procstate.cmd, arguments[0]);
+	get_process_user (procdata, info, procstate.uid);
 
-	arguments = glibtop_get_proc_args (&procargs, pid, 0);
-	get_process_name (procdata, info, procstate.cmd, arguments);
-
-	if (arguments)
-	{
-		for (i = 0; i < procargs.size; i++)
-		{
-			if (!arguments[i])
-				arguments[i] = ' ';
-		}
-		info->arguments = arguments;
-	}
-	else
-		info->arguments = g_strdup ("");
-
-	if (pwd && pwd->pw_name)
-		info->user = g_strdup(pwd->pw_name);
-	else
-		info->user = NULL;
-
-	info->mem = procmem.size;
-	info->vmsize = procmem.vsize;
-	info->memres = procmem.resident;
-	info->memshared = procmem.share;
-	info->memrss = procmem.rss;
-	info->memxserver = xresources.total_bytes_estimate;
-
-	/* Possible enhancement - also SUBTRACT this value
-	 * from the memory of the X server itself.
-	 */
-	info->mem += info->memxserver;
+	info->arguments = g_strjoinv(" ", arguments);
+	g_strfreev(arguments);
 
 	info->pcpu = 0;
-	info->pid = pid;
-	info->parent_pid = procuid.ppid;
-	info->cpu_time_last = newcputime;
+	info->cpu_time_last = proctime.rtime;
+	info->start_time = proctime.start_time;
 	info->nice = procuid.nice;
+
+	get_process_memory_info(info);
 	get_process_status (info, &procstate);
+	get_process_selinux_context (info);
 
 	info->pixbuf = pretty_table_get_icon (procdata->pretty_table, info->name, pid);
 
-	info->parent = find_parent (procdata, info->parent_pid);
+	info->parent = find_parent (procdata, procuid.ppid);
 	if (info->parent) {
-		info->parent->children = g_list_prepend (info->parent->children, info);
-		if(g_strcasecmp (info->name, info->parent->name) == 0
-		   && info->parent->mem == info->mem)
-			info->is_thread = TRUE;
+		info->parent->children = g_slist_prepend (info->parent->children, info);
 	}
 
-#if 0
-	if (parentinfo) {
-	/* Ha Ha - don't expand different threads - check to see if parent has
-	** same name and same mem usage - I don't know if this is too smart though.
-	*/
-
-		if (!g_strcasecmp (info->name, parentinfo->name) &&
-		    ( parentinfo->mem == info->mem))
-		{
-			info->is_thread = TRUE;
-		}
-		else
-			info->is_thread = FALSE;
-
-		if (parentinfo->visible) {
-			info->parent_node = parentinfo->node;
-			info->has_parent = TRUE;
-		}
-		else
-			info->has_parent = FALSE;
-	}
-	else {
-		info->has_parent = FALSE;
-		info->is_thread = FALSE;
-	}
-#endif
-
-	info->visible = FALSE;
+	info->is_visible = FALSE;
 
 	return info;
 }
 
 
-static gboolean
-find_match_in_new_list (gint pid, const unsigned *pid_list, guint n)
+
+static void cb_exclude(ProcInfo* info, GPtrArray *addition)
 {
-	guint i;
-
-	for (i=0; i<n; i++){
-		if (pid_list[i] == pid) return TRUE;
-	}
-
-	return FALSE;
+	g_ptr_array_remove_fast (addition, info);
 }
 
 
 static void
-refresh_list (ProcData *data, const unsigned *pid_list, guint n)
+refresh_list (ProcData *procdata, const unsigned *pid_list, const guint n)
 {
-	ProcData *procdata = data;
+	GHashTable *pid_hash;
 	GList *list;
+	GPtrArray *addition_list = g_ptr_array_new ();
 	GPtrArray *removal_list = g_ptr_array_new ();
 	GtkTreeModel *model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
 	guint i;
@@ -758,55 +886,58 @@ refresh_list (ProcData *data, const unsigned *pid_list, guint n)
 	for(i = 0; i < n; ++i) {
 		ProcInfo *info;
 
-		info = proctable_find_process (pid_list[i], NULL, procdata);
+		info = proctable_find_process (pid_list[i], procdata);
 		if (!info) {
-			info = get_info (procdata, pid_list[i]);
-			info->queue = NEEDS_ADDITION;
+			info = procinfo_new (procdata, pid_list[i]);
+			g_ptr_array_add(addition_list, info);
 			procdata->info = g_list_append (procdata->info, info);
+			g_hash_table_insert(procdata->pids, GINT_TO_POINTER(info->pid), info);
 		}
 		else {
-			update_info (procdata, info, info->pid);
+			update_info (procdata, info);
 		}
 	}
+
 
 	/* Remove processes */
-	list = procdata->info;
-	while (list) {
+
+	/* use a hash for fast lookup
+	   !NULL as data for every key */
+
+	pid_hash = g_hash_table_new(NULL, NULL);
+	for(i = 0; i < n; ++i)
+		g_hash_table_insert(pid_hash,
+				    GINT_TO_POINTER(pid_list[i]),
+				    GINT_TO_POINTER(!NULL));
+
+
+	for(list = procdata->info; list; list = g_list_next (list)) {
 		ProcInfo * const info = list->data;
 
-		if (!find_match_in_new_list (info->pid, pid_list, n))  {
+		if(!g_hash_table_lookup(pid_hash, GINT_TO_POINTER(info->pid)))
+		{
 			g_ptr_array_add (removal_list, info);
-			info->queue = NEEDS_REMOVAL;
 			/* remove all children from tree */
-			if (info->visible) {
+			if (info->is_visible) {
 				GtkTreeIter child;
 				if (gtk_tree_model_iter_children (model, &child, &info->node))
-					remove_children_from_tree (procdata, model, &child);
+					remove_children_from_tree (procdata, model, &child, addition_list);
 			}
 		}
-		list = g_list_next (list);
 	}
+
+	g_hash_table_destroy(pid_hash);
+
+	g_ptr_array_foreach(removal_list, (GFunc) cb_exclude, addition_list);
 
 	/* Add or remove processes from the tree */
-	list = procdata->info;
-	while (list) {
-		ProcInfo * const info = list->data;
-
-		if (info->queue == NEEDS_REMOVAL) {
-			remove_info_from_tree (info, procdata);
-			info->queue = NEEDS_NOTHING;
-		} else if (info->queue == NEEDS_ADDITION) {
-			insert_info_to_tree (info, procdata);
-			info->queue = NEEDS_NOTHING;
-		}
-
-		list = g_list_next (list);
-	}
+	g_ptr_array_foreach(removal_list,  (GFunc) remove_info_from_tree, procdata);
+	g_ptr_array_foreach(addition_list, (GFunc) insert_info_to_tree  , procdata);
 
 	/* Remove processes from the internal GList */
-	for(i = 0; i < removal_list->len; ++i)
-		remove_info_from_list (removal_list->pdata[i], procdata);
+	g_ptr_array_foreach(removal_list,  (GFunc) remove_info_from_list, procdata);
 
+	g_ptr_array_free (addition_list, TRUE);
 	g_ptr_array_free (removal_list, TRUE);
 }
 
@@ -836,22 +967,27 @@ proctable_update_list (ProcData * const procdata)
 	/* FIXME: total cpu time elapsed should be calculated on an individual basis here
 	** should probably have a total_time_last gint in the ProcInfo structure */
 	glibtop_get_cpu (&cpu);
-	total_time = cpu.total - total_time_last;
+	total_time = MAX(cpu.total - total_time_last, 1);
 	total_time_last = cpu.total;
 
 	refresh_list (procdata, pid_list, proclist.number);
 
 	g_free (pid_list);
+
+	/* proclist.number == g_list_length(procdata->info) == g_hash_table_size(procdata->pids) */
 }
 
 
 void
 proctable_update_all (ProcData * const procdata)
 {
-	proctable_update_list (procdata);
+	char* string;
 
-	if (procdata->config.show_more_info)
-		infoview_update (procdata);
+	string = make_loadavg_string();
+	gtk_label_set_text (GTK_LABEL(procdata->loadavg), string);
+	g_free (string);
+
+	proctable_update_list (procdata);
 }
 
 
@@ -878,99 +1014,30 @@ proctable_free_table (ProcData * const procdata)
 	while (list)
 	{
 		ProcInfo *info = list->data;
-		proctable_free_info (info);
+		proctable_free_info(info);
 		list = g_list_next (list);
 	}
 
 	g_list_free (procdata->info);
 	procdata->info = NULL;
+
+	g_hash_table_destroy(procdata->pids);
+	procdata->pids = g_hash_table_new(NULL, NULL);
 }
 
 
-void
-proctable_search_table (ProcData *procdata, gchar *string)
+
+char*
+make_loadavg_string(void)
 {
-	GList *list = procdata->info;
-	GtkWidget *dialog;
-	GtkTreeModel *model;
-	gchar *error;
-	static gint increment = 0;
-	gint index;
-	static gchar *last = NULL;
+	glibtop_loadavg buf;
 
-	if (!g_strcasecmp (string, ""))
-		return;
+	glibtop_get_loadavg(&buf);
 
-	model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
-
-	if (!last)
-		last = g_strdup (string);
-	else if (g_strcasecmp (string, last)) {
-		increment = 0;
-		g_free (last);
-		last = g_strdup (string);
-	}
-	else
-		increment ++;
-
-	index = increment;
-
-	while (list)
-	{
-		ProcInfo *info = list->data;
-		if (strstr (info->name, string) && info->visible)
-		{
-			GtkTreePath *node = gtk_tree_model_get_path (model, &info->node);
-
-			if (index == 0) {
-				gtk_tree_view_set_cursor (GTK_TREE_VIEW (procdata->tree),
-							  node,
-							  NULL,
-							  FALSE);
-				return;
-			}
-			else
-				index --;
-
-			gtk_tree_path_free (node);
-		}
-
-		if (info->user && strstr (info->user, string) && info->visible)
-		{
-			GtkTreePath *node = gtk_tree_model_get_path (model, &info->node);
-
-			if (index == 0) {
-				gtk_tree_view_set_cursor (GTK_TREE_VIEW (procdata->tree),
-							  node,
-							  NULL,
-							  FALSE);
-				return;
-			}
-			else
-				index --;
-
-			gtk_tree_path_free (node);
-		}
-
-		list = g_list_next (list);
-	}
-
-	if (index == increment) {
-		error = g_strdup_printf (_("%s could not be found."), string);
-		dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-						 GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
-						 "%s", error, NULL);
-		gtk_dialog_run (GTK_DIALOG (dialog));
-		gtk_widget_destroy (dialog);
-		g_free (error);
-	}
-	else {
-		/* no more cases found. Start the search anew */
-		increment = -1;
-		proctable_search_table (procdata, string);
-		return;
-	}
-
-	increment --;
+	return g_strdup_printf(
+		_("Load averages for the last 1, 5, 15 minutes: "
+		  "%0.2f, %0.2f, %0.2f"),
+		buf.loadavg[0],
+		buf.loadavg[1],
+		buf.loadavg[2]);
 }
-
