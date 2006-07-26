@@ -1,3 +1,36 @@
+2006-07-22  Changwoo Ryu  <cwryu@debian.org>
+
+	* ko.po: Updated Korean translation.
+
+2006-07-22  Funda Wang  <fundawang@linux.net.cn>
+
+	* zh_CN.po: Updated Simplified Chinese translation.
+
+2006-07-21  Kostas Papadimas  <pkst@gnome.org>
+
+         * el.po: Updated Greek translation
+
+2006-07-20  Vincent van Adrighem  <adrighem@gnome.org>
+
+	* nl.po: Translation updated by Tino Meinen.
+
+2006-07-18  Guntupalli Karunakar  <karunakar@freedomink.org>
+
+        * dz.po: Updated Dzongkha translation by
+        Dzongkhalinux team, DIT
+
+2006-07-16  Daniel Nylander  <po@danielnylander.se>
+
+        * sv.po: Updated Swedish translation.
+	
+2006-07-11  Francisco Javier F. Serrador  <serrador@openshine.com>
+
+	* es.po: Updated Spanish translation.
+
+2006-07-11  Jovan Naumovski  <jovan@lugola.net>
+
+	* mk.po: Updated Macedonian translation.
+
 2006-07-08  Inaki Larranaga  <dooteo@euskalgnu.org>
 
 	* eu.po: Updated Basque translation.

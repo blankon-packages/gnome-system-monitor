@@ -135,6 +135,43 @@ find_disk_in_model(GtkTreeModel *model, const char *mountpoint,
 }
 
 
+
+static void
+remove_old_disks(GtkTreeModel *model, const glibtop_mountentry *entries, guint n)
+{
+	GtkTreeIter iter;
+
+	if (!gtk_tree_model_get_iter_first(model, &iter))
+		return;
+
+	do {
+		char *dir;
+		guint i;
+		gboolean found = FALSE;
+
+		gtk_tree_model_get(model, &iter,
+				   DISK_DIR, &dir,
+				   -1);
+
+		for (i = 0; i != n; ++i) {
+			if (!strcmp(dir, entries[i].mountdir)) {
+				found = TRUE;
+				break;
+			}
+		}
+
+		if (!found) {
+			if (!gtk_list_store_remove(GTK_LIST_STORE(model), &iter))
+				break;
+		}
+
+		g_free(dir);
+
+	} while (gtk_tree_model_iter_next(model, &iter));
+}
+
+
+
 static void
 add_disk(GtkListStore *list, const glibtop_mountentry *entry)
 {
@@ -203,6 +240,8 @@ cb_update_disks(gpointer data)
 
 	entries = glibtop_get_mountlist(&mountlist, procdata->config.show_all_fs);
 
+	remove_old_disks(GTK_TREE_MODEL(list), entries, mountlist.number);
+
 	for (i = 0; i < mountlist.number; i++)
 		add_disk(list, &entries[i]);
 
@@ -220,6 +259,37 @@ cb_disk_columns_changed(GtkTreeView *treeview, gpointer user_data)
 	procman_save_tree_state(procdata->client,
 				GTK_WIDGET(treeview),
 				"/apps/procman/disktreenew");
+}
+
+
+static void open_dir(GtkTreeView       *tree_view,
+		     GtkTreePath       *path,
+		     GtkTreeViewColumn *column,
+		     gpointer	       user_data)
+{
+	GtkTreeIter iter;
+	GtkTreeModel *model;
+	char *dir, *url;
+
+	model = gtk_tree_view_get_model(tree_view);
+
+	if (!gtk_tree_model_get_iter(model, &iter, path)) {
+		char *p;
+		p = gtk_tree_path_to_string(path);
+		g_warning("Cannot get iter for path '%s'\n", p);
+		g_free(p);
+		return;
+	}
+
+	gtk_tree_model_get(model, &iter, DISK_DIR, &dir, -1);
+
+	url = g_strdup_printf("file://%s", dir);
+
+	if (gnome_vfs_url_show(url) != GNOME_VFS_OK)
+		g_warning("Cannot open '%s'\n", url);
+
+	g_free(url);
+	g_free(dir);
 }
 
 GtkWidget *
@@ -283,6 +353,7 @@ create_disk_view(ProcData *procdata)
 		);
 
 	disk_tree = gtk_tree_view_new_with_model(GTK_TREE_MODEL(model));
+	g_signal_connect(G_OBJECT(disk_tree), "row-activated", G_CALLBACK(open_dir), NULL);
 	procdata->disk_list = disk_tree;
 	gtk_container_add(GTK_CONTAINER(scrolled), disk_tree);
 	gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(disk_tree), TRUE);

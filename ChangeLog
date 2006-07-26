@@ -1,3 +1,68 @@
+2006-07-26  Benoît Dejean  <benoit@placenet.org>
+
+	* Makefile.am:
+
+	Fixed dist.
+
+2006-07-26  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS: Released 2.15.90.
+
+2006-07-23  Benoît Dejean  <benoit@placenet.org>
+
+	* AUTHORS:
+	* HACKING:
+	* TODO:
+	* configure.in:
+	
+	Dropped dead files.
+	Updated my email.
+	Fixed configure.in and bumped version number.
+
+2006-07-22  Benoît Dejean  <benoit@placenet.org>
+
+	* src/selinux.c: (get_process_selinux_context),
+	(can_show_security_context_column):
+	
+	Fixed segfault if selinux was not found.
+	Closes #348311.
+
+2006-07-19  Benoît Dejean  <benoit@placenet.org>
+
+	* src/disks.c: (remove_old_disks), (cb_update_disks):
+
+	Oops, i forgot to remove old disks from the list.
+
+2006-07-13  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procdialogs.c:
+	* src/smooth_refresh.c:
+	* src/util.c:
+	* src/util.h:
+	
+	New function : procman_debug(fmt, ...).
+	Displays debug messages if GNOME_SYSTEM_MONITOR_DEBUG is defined.
+
+2006-07-10  Rodney Dawes  <dobey@novell.com>
+
+	* configure.in: Require pkg-config 0.19 and gnome-icon-theme 2.15.3
+	for the new icon naming spec icon names
+
+	* gnome-system-monitor.desktop.in.in:
+	* src/callbacks.c (cb_about):
+	* src/procmain.c (main):
+	Use utilities-system-monitor as the icon name, instead of gnome-monitor
+	to comply with the icon naming spec icon names
+
+	Fixes #346681
+
+2006-07-10  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/disks.c: (open_dir), (create_disk_view):
+	
+	Double-click on a mountpoint opens it.
+
 2006-07-09  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS:
