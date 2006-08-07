@@ -1,66 +1,71 @@
-# Norwegian translation of procman.
-# Copyright (C) 2001-2004, 2005 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 2001-2006.
-# Terance Edward Sola <terance@lyse.net>, 2005.
-#
+# MALAGASY TRANSLATION OF GNOME-SYSTEM-MONITOR.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Thierry Randrianiriana <randrianiriana@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-system-monitor 2.15.x\n"
+"Project-Id-Version: GNOME-SYSTEM-MONITOR 2.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-03 14:04+0200\n"
-"PO-Revision-Date: 2006-08-03 14:05+0200\n"
-"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
-"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"POT-Creation-Date: 2006-06-28 16:28+0200\n"
+"PO-Revision-Date: 2006-08-04 22:26+0300\n"
+"Last-Translator: Fanomezana Rajaonarisoa <rajfanhar@yahoo.fr>\n"
+"Language-Team: MALAGASY <i18n-malagasy-gnoma@gna.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8-bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:164
-#: ../src/interface.c:666 ../src/procman.c:696
+#: ../gnome-system-monitor.desktop.in.in.h:1
+#: ../src/callbacks.c:164
+#: ../src/interface.c:666
 msgid "System Monitor"
-msgstr "Systemmonitor"
+msgstr "Mpanara-maso ny rafitra"
 
-#: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:165
+#: ../gnome-system-monitor.desktop.in.in.h:2
+#: ../src/callbacks.c:165
 msgid "View current processes and monitor system state"
-msgstr "Vis aktive prosesser og overvåk systemets tilstand"
+msgstr "Hijery ireo asa mandeha sy ny toetry ny rafitr'ilay mpanara-maso amin'izao fotoana izao"
 
 #: ../src/callbacks.c:173
 msgid "translator-credits"
-msgstr "Kjartan Maraas <kmaraas@gnome.org>"
+msgstr "Fankasitrahana ny mpandika teny"
 
-#: ../src/disks.c:308 ../src/memmaps.c:302
+#: ../src/disks.c:238
+#: ../src/memmaps.c:302
 msgid "Device"
-msgstr "Enhet"
+msgstr "Periferika"
 
-#: ../src/disks.c:309
+#: ../src/disks.c:239
 msgid "Directory"
-msgstr "Katalog"
+msgstr "Lahatahiry"
 
-#: ../src/disks.c:310 ../src/openfiles.c:232
+#: ../src/disks.c:240
+#: ../src/openfiles.c:232
 msgid "Type"
-msgstr "Type"
+msgstr "Karazana"
 
-#: ../src/disks.c:311
+#: ../src/disks.c:241
 msgid "Total"
-msgstr "Totalt"
+msgstr "Tontaliny"
 
-#: ../src/disks.c:312
+#: ../src/disks.c:242
 msgid "Free"
-msgstr "Ledig"
+msgstr "Malalaka"
 
-#: ../src/disks.c:313
+#: ../src/disks.c:243
 msgid "Available"
-msgstr "Tilgjengelig"
+msgstr "Azo ampiasaina"
 
-#: ../src/disks.c:314
+#: ../src/disks.c:244
 msgid "Used"
-msgstr "Brukt"
+msgstr "Ampiasaina"
 
-#: ../src/disks.c:321 ../src/interface.c:745 ../src/procdialogs.c:770
+#: ../src/disks.c:251
+#: ../src/interface.c:745
+#: ../src/procdialogs.c:770
 #: ../src/procdialogs.c:774
-msgid "File Systems"
-msgstr "Filsystemer"
+msgid "Devices"
+msgstr "Periferika"
 
 #: ../src/e_date.c:154
 msgid "?"
@@ -68,490 +73,451 @@ msgstr "?"
 
 #: ../src/e_date.c:161
 msgid "Today %l:%M %p"
-msgstr "I dag %H:%M"
+msgstr "Androany %l:%M %p"
 
 #: ../src/e_date.c:170
 msgid "Yesterday %l:%M %p"
-msgstr "I går %H:%M"
+msgstr "Omaly %l:%M %p"
 
 #: ../src/e_date.c:182
 msgid "%a %l:%M %p"
-msgstr "%a %H:%M"
+msgstr "%a %l:%M %p"
 
 #: ../src/e_date.c:190
 msgid "%b %d %l:%M %p"
-msgstr "%d %b %H:%M"
+msgstr "%b %d %l:%M %p"
 
 #: ../src/e_date.c:192
 msgid "%b %d %Y"
-msgstr "%d %b %Y"
+msgstr "%b %d %Y"
 
 #. translators: primary alert message
 #: ../src/favorites.c:350
 msgid "No hidden processes"
-msgstr "Ingen skjulte prosesser"
+msgstr "Tsy misy asa nafenina"
 
 #. translators: secondary alert message
 #: ../src/favorites.c:357
-msgid ""
-"There are no hidden processes in the list. To show all running processes, "
-"select the \"All processes\" option in the main window."
-msgstr ""
-"Det finnes ingen skjulte prosesser i listen. For å vise alle kjørende "
-"prosesser velger du «Alle prosesser» i hovedvinduet."
+msgid "There are no hidden processes in the list. To show all running processes, select the \"All processes\" option in the main window."
+msgstr "Tsy misy asa nafenina ao anatin'io lisitra io. Tsindrio ny \"Asa rehetra\" anatin'ny tolotry ny fikandrana raha hampiseho ireo asa mandeha."
 
 #: ../src/favorites.c:377
 msgid "Hidden Processes"
-msgstr "Skjulte prosesser"
+msgstr "Asa nafenina"
 
 #: ../src/favorites.c:401
 msgid "Currently _hidden processes:"
-msgstr "Prosesser som er skjult:"
+msgstr "Ireo asa _nafenina:"
 
 #: ../src/favorites.c:423
 msgid "_Remove From List"
-msgstr "Fje_rn fra listen"
+msgstr "_Esory tanatin'io lisitra io"
 
-#: ../src/favorites.c:432 ../src/procdialogs.c:285
+#: ../src/favorites.c:432
+#: ../src/procdialogs.c:285
 msgid "Note:"
-msgstr "Merk:"
+msgstr "Fanamarihana:"
 
 #: ../src/favorites.c:433
-msgid ""
-"These are the processes you have chosen to hide. You can reshow a process by "
-"removing it from this list."
-msgstr ""
-"Dette er prosesser du har valgt å skjule. Du kan vise en prosess igjen ved å "
-"fjerne den fra denne listen."
+msgid "These are the processes you have chosen to hide. You can reshow a process by removing it from this list."
+msgstr "Ireo ireo asa nosafidianao hafenina. Azonao averina aseho amin'ny alalan'ny fanesorana azy tao anatin'io lisitra io ny asa iray."
 
 #: ../src/gnome-system-monitor.schemas.in.h:1
 msgid "Column zero saved width"
-msgstr "Lagret bredde for kolonne null"
+msgstr "Indran'ny fariana aotra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:2
 msgid "Default graph background color"
-msgstr "Forvalgt bakgrunnsfarge for graf"
+msgstr "Loko afara tsotran'ny soritra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:3
 msgid "Default graph cpu color"
-msgstr "Forvalgt farge for cpu-graf"
+msgstr "Loko tsotran'ny soritry ny cpu"
 
 #: ../src/gnome-system-monitor.schemas.in.h:4
 msgid "Default graph frame color"
-msgstr "Forvalgt farge for grafens ramme"
+msgstr "Loko tsotran'ny frame an'ny soritra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:5
 msgid "Default graph mem color"
-msgstr "Forvalgt farge for minne-graf"
+msgstr "Loko tsotran'ny soritry ny mem "
 
 #: ../src/gnome-system-monitor.schemas.in.h:6
 msgid "Default graph net in color"
-msgstr "Forvalgt farge for nett inn-graf"
+msgstr "Loko tsotran'ny soritry ny net in"
 
 #: ../src/gnome-system-monitor.schemas.in.h:7
 msgid "Default graph net out color"
-msgstr "Forvalgt farge for nett ut-graf"
+msgstr "Loko tsotran'ny soritry ny net out"
 
 #: ../src/gnome-system-monitor.schemas.in.h:8
 msgid "Default graph swap color"
-msgstr "Forvalgt farge for swap-graf"
+msgstr "Loko tsotran'ny soritry ny swap"
 
 #: ../src/gnome-system-monitor.schemas.in.h:9
-msgid ""
-"Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
-"active"
-msgstr ""
-"Bestemmer hvilke prosesser som skal vises som forvalg. 0 er ALLE, 1 er "
-"brukers prosesser og 2 er aktive prosesser"
+msgid "Determines which processes to show by default. 0 is All, 1 is user, and 2 is active"
+msgstr "Mamaritra ny hoe asa inona no aseho ara-pitsipika. 0 raha izy rehetra, 1 raha ny mpampiasa, ary 2 raha ireo mandeha"
 
 #: ../src/gnome-system-monitor.schemas.in.h:10
 msgid "Disk view columns order"
-msgstr "Rekkefølge på kolonnene for diskvisning"
+msgstr "Filaharan'ny farian'ny sehon'ny kapila"
 
 #: ../src/gnome-system-monitor.schemas.in.h:11
 msgid "Enable/Disable smooth refresh"
-msgstr "Aktiver/deaktiver myk oppfrisking"
+msgstr "Alefaso/Atsaharo refreshing malefaka"
 
 #: ../src/gnome-system-monitor.schemas.in.h:12
 msgid "Main Window height"
-msgstr "Høyde på hovedvinduet"
+msgstr "Haavon'ny fikandrana voalohany indrindra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:13
 msgid "Main Window width"
-msgstr "Bredde på hovedvinduet"
+msgstr "Indran'ny fikadrana voalohany indrindra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:15
 #, no-c-format
 msgid "Process CPU % column saved width"
-msgstr "Lagret bredde for kolonne med CPU % for prosess"
+msgstr "Indran'ny farian'ny CPU % an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:16
-#, fuzzy
 msgid "Process CPU time column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny fotoan'ny CPU an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:17
-#, fuzzy
 msgid "Process PID column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny PIDn'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:18
 msgid "Process SELinux security context column saved width"
-msgstr ""
+msgstr "Indran'ny farian'ny seha-kevitra SELinux an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:19
-#, fuzzy
 msgid "Process X server memory column saved width"
-msgstr "Sorteringskolonne for prosessvisning"
+msgstr "Indran'ny farian'ny ariky ny mpizara X an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:20
-#, fuzzy
 msgid "Process arguments column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny tondrik'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:21
 msgid "Process estimated memory usage column saved width"
-msgstr ""
+msgstr "Indran'ny farian'ny tomban'ny arika ampiasain'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:22
-#, fuzzy
 msgid "Process name column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny anaran'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:23
-#, fuzzy
 msgid "Process nice column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny nice an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:24
-#, fuzzy
 msgid "Process owner column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny tompon'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:25
-#, fuzzy
 msgid "Process resident memory column saved width"
-msgstr "Sorteringskolonne for prosessvisning"
+msgstr "Indran'ny farian'ny arika mitoetra an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:26
 msgid "Process shared memory column saved width"
-msgstr ""
+msgstr "Indran'ny farian'ny arika zaraina amin'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:27
-#, fuzzy
 msgid "Process start time column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny fotoana fanombohan'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:28
-#, fuzzy
 msgid "Process status column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny fivoaran'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:29
 msgid "Process view columns order"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Filaharan'ny farian'ny sehon'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:30
 msgid "Process view sort column"
-msgstr "Sorteringskolonne for prosessvisning"
+msgstr "Farian'ny fanavahana amin'ny sehon'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:31
 msgid "Process view sort order"
-msgstr "Sorteringsrekkefølge for prosessvisning"
+msgstr "Filaharana amin'ny sehon'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:32
-#, fuzzy
 msgid "Process virtual memory column saved width"
-msgstr "Rekkefølge på kolonnene for prosessvisning"
+msgstr "Indran'ny farian'ny arika virtoalin'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:33
 msgid "Saves the currently viewed tab"
-msgstr "Lagrer fane som vises nå"
+msgstr "Mandraikitra ny vakizoro jerena izao"
 
 #: ../src/gnome-system-monitor.schemas.in.h:34
 msgid "Show column zero on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny am-panombohana ny fariana aotra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:35
-#, fuzzy
 msgid "Show estimated memory usage column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny tomban'ny fampiasana arika"
 
 #: ../src/gnome-system-monitor.schemas.in.h:37
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Show process CPU % column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny CPU % an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:38
-#, fuzzy
 msgid "Show process CPU time column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny fotoanan'ny CPU an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:39
-#, fuzzy
 msgid "Show process PID column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny PIDn'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:40
 msgid "Show process SELinux security context column on startup"
-msgstr ""
+msgstr "Asehoy eny ampanombohana ny farian'ny seha-kevitry ny fiarovana SELinux an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:41
-#, fuzzy
 msgid "Show process X server memory column zero startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny ariky ny mpizara X an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:42
-#, fuzzy
 msgid "Show process arguments column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny tondrik'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:43
 msgid "Show process dependencies in tree form"
-msgstr "Vis prosessavhengigheter som et tre"
+msgstr "Asehoy amin'ny endri-kazo ny mpampiakin'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:44
-#, fuzzy
 msgid "Show process name column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny anaran'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:45
-#, fuzzy
 msgid "Show process nice column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny nice an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:46
-#, fuzzy
 msgid "Show process owner column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny tompon'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:47
-#, fuzzy
 msgid "Show process resident memory column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny arika mitoetra an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:48
-#, fuzzy
 msgid "Show process shared memory column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny arika zaraina amin'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:49
-#, fuzzy
 msgid "Show process start time column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny farian'ny fotoana fanombohan'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:50
-#, fuzzy
 msgid "Show process status column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny ampanombohana ny fivoaran'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:51
 msgid "Show process threads"
-msgstr "Vis tråder for prosesser"
+msgstr "Asehoy ny thread an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:52
-#, fuzzy
 msgid "Show process virtual memory column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny am-panombohana ny farian'ny arika virtoalin'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:53
-#, fuzzy
 msgid "Show process writable memory column on startup"
-msgstr "Vis kolonne null ved oppstart"
+msgstr "Asehoy eny am-panombohana ny farian'ny arika azo anoratana an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:54
 msgid "Show process writable memory column saved width"
-msgstr ""
+msgstr "Asehoy ny indran'ny farian'ny arika azo anoratana an'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:55
 msgid "Show warning dialog when hiding processes"
-msgstr "Vis advarsel når prosesser skjules"
+msgstr "Asehoy ny takila fampilazana rehefa manafina asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:56
 msgid "Show warning dialog when killing processes"
-msgstr "Vis advarsel når prosesser termineres"
+msgstr "Asehoy ny takila fampilazana rehefa mamono asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:57
 msgid "Time in milliseconds between updates of the devices list"
-msgstr "Tid mellom oppdatering av enhetslisten i millisekunder"
+msgstr "Fotoana (milisegaondra) manelanelana ny fanavaozana ny lisitry ny periferika"
 
 #: ../src/gnome-system-monitor.schemas.in.h:58
 msgid "Time in milliseconds between updates of the graphs"
-msgstr "Tid mellom oppdatering av grafene i millisekunder"
+msgstr "Fotoana (milisegaondra) manelanelana ny fanavaozana ny soritra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:59
 msgid "Time in milliseconds between updates of the process view"
-msgstr "Tid mellom oppdatering av prosessvisning i millisekunder"
+msgstr "Fotoana (milisegaondra) manelanelana ny fanavaozana ny sehon'ilay asa"
 
 #: ../src/gnome-system-monitor.schemas.in.h:60
 msgid "Whether information about all filesystems should be displayed"
-msgstr "Vise informasjon om alle filsystemene"
+msgstr "Mamaritra ny hoe tokony na tsy tokony aseho ny laza mikasika ny rafi-drakitra rehetra"
 
 #: ../src/gnome-system-monitor.schemas.in.h:61
-msgid ""
-"Whether to display information about all filesystems (including types like "
-"'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
-"filesystems."
-msgstr ""
-"Om programmet skal vise informasjon om alle filsystemene: dette inkluderer "
-"filsystemer som «autofs» og «procfs». Det kan være hendig å få en liste over "
-"alle monterte filsystemer."
+msgid "Whether to display information about all filesystems (including types like 'autofs' and 'procfs'). Useful for getting a list of all currently mounted filesystems."
+msgstr "Mamaritra ny fanehoana ny laza mikasika ny rafi-drakitra rehetra (anatin'izany ireo karazana toy ny 'autofs' sy 'procfs'). Ilaina amin'ny fahazoana ny lisitr'ireo rafi-drakitra vao nakarina rehetra."
 
 #: ../src/interface.c:46
 msgid "_Monitor"
-msgstr "_Overvåk"
+msgstr "_Mpanara-maso"
 
 #: ../src/interface.c:47
 msgid "_Edit"
-msgstr "R_ediger"
+msgstr "_Fanovana"
 
 #: ../src/interface.c:48
 msgid "_View"
-msgstr "_Vis"
+msgstr "_Seho"
 
 #: ../src/interface.c:49
 msgid "_Help"
-msgstr "_Hjelp"
+msgstr "_Toro-làlana"
 
 #: ../src/interface.c:51
 msgid "_Quit"
-msgstr "A_vslutt"
+msgstr "_Ajanony"
 
 #: ../src/interface.c:52
 msgid "Quit the program"
-msgstr "Avslutt programmet"
+msgstr "Manajanona ilay rindranasa"
 
 #: ../src/interface.c:55
 msgid "_Stop Process"
-msgstr "_Stopp prosess"
+msgstr "_Ajanony ilay asa"
 
 #: ../src/interface.c:56
 msgid "Stop process"
-msgstr "Stopp prosess"
+msgstr "Manajanona ilay asa"
 
 #: ../src/interface.c:57
 msgid "_Continue Process"
-msgstr "_Sett i gang prosess"
+msgstr "_Tohizo ilay asa"
 
 #: ../src/interface.c:58
 msgid "Continue process if stopped"
-msgstr "Sett i gang prosess hvis stoppet"
+msgstr "Manohy ilay asa raha toa ka najanona"
 
-#: ../src/interface.c:60 ../src/interface.c:188
+#: ../src/interface.c:60
+#: ../src/interface.c:188
 msgid "End _Process"
-msgstr "Avslutt _prosess"
+msgstr "Farano ilay _asa"
 
 #: ../src/interface.c:61
 msgid "Force process to finish normally"
-msgstr "Tving en prosess til å avslutte normalt"
+msgstr "Manery ilay asa hijanona araka ny tokony ho izy"
 
-#: ../src/interface.c:62 ../src/procdialogs.c:129
+#: ../src/interface.c:62
+#: ../src/procdialogs.c:129
 msgid "_Kill Process"
-msgstr "_Drep prosess"
+msgstr "_Vonoy ilay asa"
 
 #: ../src/interface.c:63
 msgid "Force process to finish immediately"
-msgstr "Tving en prosess til å avslutte med en gang"
+msgstr "Manery ilay asa hijanona avy hatrany"
 
 #: ../src/interface.c:64
 msgid "_Change Priority..."
-msgstr "_Endre prioritet..."
+msgstr "_Hanova ny hamehana..."
 
 #: ../src/interface.c:65
 msgid "Change the order of priority of process"
-msgstr "Endre prioritet for en prosess"
+msgstr "Manova ny laharam-pahamehan'ilay asa"
 
 #: ../src/interface.c:66
 msgid "Prefere_nces"
-msgstr "_Brukervalg"
+msgstr "Safidy _manokana"
 
 #: ../src/interface.c:67
 msgid "Configure the application"
-msgstr "Konfigurer programmet"
+msgstr "Mikirakira ilay rindranasa"
 
-#: ../src/interface.c:69 ../src/procdialogs.c:85
+#: ../src/interface.c:69
+#: ../src/procdialogs.c:85
 msgid "_Hide Process"
-msgstr "_Skjul prosess"
+msgstr "_Afeno ilay asa"
 
 #: ../src/interface.c:70
 msgid "Hide process from list"
-msgstr "Skjul prosess fra listen"
+msgstr "Manafina ilay asa"
 
 #: ../src/interface.c:71
 msgid "_Hidden Processes"
-msgstr "_Skjulte prosesser"
+msgstr "_Asa nafenina"
 
 #: ../src/interface.c:72
 msgid "Open the list of currently hidden processes"
-msgstr "Åpne liste over prosesser som er skjult nå"
+msgstr "Manokatra ny lisitr'ireo asa nafenina"
 
 #: ../src/interface.c:73
 msgid "_Memory Maps"
-msgstr "_Minnekart"
+msgstr "Mapn'ny _arika"
 
 #: ../src/interface.c:74
 msgid "Open the memory maps associated with a process"
-msgstr "Åpne minnekart assosiert med prosessen"
+msgstr "Manokatra ny mapn'ny arika mifandraika amina asa iray"
 
 #: ../src/interface.c:75
 msgid "Open _Files"
-msgstr "Åpne _filer"
+msgstr "Hanokatra _rakitra"
 
 #: ../src/interface.c:76
 msgid "View the files opened by a process"
-msgstr "Vis filer som er åpnet av en prosess"
+msgstr "Maneho ireo rakitra sokafan'asa iray"
 
 #: ../src/interface.c:78
 msgid "_Contents"
-msgstr "_Innhold"
+msgstr "_Mpiaty"
 
 #: ../src/interface.c:79
 msgid "Open the manual"
-msgstr "Åpne brukermanualen"
+msgstr "Mampiseho ny toro-làlana"
 
 #: ../src/interface.c:80
 msgid "_About"
-msgstr "_Om"
+msgstr "_Mombamomba"
 
 #: ../src/interface.c:81
 msgid "About this application"
-msgstr "Om dette programmet"
+msgstr "Mombamomba ilay rindranasa"
 
 #: ../src/interface.c:86
 msgid "_Dependencies"
-msgstr "Av_hengigheter"
+msgstr "_Mpampiankina"
 
 #: ../src/interface.c:87
 msgid "Show parent/child relationship between processes"
-msgstr "Vis forhold for opphav/barn mellom prosesser"
+msgstr "Mampiseho ny fifandraisana reny/zanaka amin'ny samy asa"
 
 #: ../src/interface.c:94
 msgid "_Active Processes"
-msgstr "_Aktive prosesser"
+msgstr "_Asa mandeha"
 
 #: ../src/interface.c:95
 msgid "Show active processes"
-msgstr "Vis aktive prosesser"
+msgstr "Mampiseho ireo asa mandeha"
 
 #: ../src/interface.c:96
 msgid "A_ll Processes"
-msgstr "A_lle prosesser"
+msgstr "Asa _rehetra"
 
 #: ../src/interface.c:97
 msgid "Show all processes"
-msgstr "Vis alle prosesser"
+msgstr "Mampiseho ireo asa rehetra"
 
 #: ../src/interface.c:98
 msgid "M_y Processes"
-msgstr "M_ine prosesser"
+msgstr "Ireo asa_ko"
 
 #: ../src/interface.c:99
 msgid "Show user own process"
-msgstr "Vis prosesser som tilhører brukere"
+msgstr "Mampiseho ny asan'ny mpampiasa"
 
 #: ../src/interface.c:260
 msgid "CPU History"
-msgstr "Historikk for CPU-bruk"
+msgstr "Diarin'ny CPU"
 
 #: ../src/interface.c:303
 msgid "CPU:"
@@ -564,72 +530,78 @@ msgstr "CPU%d:"
 
 #: ../src/interface.c:326
 msgid "Memory and Swap History"
-msgstr "Historikk for minne- og swap-bruk"
+msgstr "Diarin'ny arika sy ny swap"
 
 #: ../src/interface.c:359
 msgid "User memory:"
-msgstr "Brukerminne:"
+msgstr "Ariky ny mpampiasa:"
 
-#: ../src/interface.c:377 ../src/interface.c:437
+#: ../src/interface.c:377
+#: ../src/interface.c:437
+#, fuzzy
 msgid "of"
-msgstr "av"
+msgstr "amin'ny"
 
 #: ../src/interface.c:418
 msgid "Used swap:"
-msgstr "Swap brukt:"
+msgstr "Swapn'ny mpampiasa:"
 
 #: ../src/interface.c:477
 msgid "Network History"
-msgstr "Nettverkshistorikk"
+msgstr "Diarin'ny rezo"
 
 #: ../src/interface.c:509
 msgid "Received:"
-msgstr "Mottat:"
+msgstr "Voaray:"
 
-#: ../src/interface.c:529 ../src/interface.c:572
+#: ../src/interface.c:529
+#: ../src/interface.c:572
 msgid "Total:"
-msgstr "Totalt:"
+msgstr "Tontaliny:"
 
 #: ../src/interface.c:553
 msgid "Sent:"
-msgstr "Sendt:"
+msgstr "Nalefa:"
 
-#: ../src/interface.c:733 ../src/procdialogs.c:579
+#: ../src/interface.c:733
+#: ../src/procdialogs.c:579
 msgid "Processes"
-msgstr "Prosesser"
+msgstr "Asa"
 
-#: ../src/interface.c:739 ../src/procdialogs.c:682
+#: ../src/interface.c:739
+#: ../src/procdialogs.c:682
 msgid "Resources"
-msgstr "Ressurser"
+msgstr "Ressources"
 
-#: ../src/load-graph.c:396 ../src/load-graph.c:406
+#: ../src/load-graph.c:369
+#: ../src/load-graph.c:379
 #, c-format
 msgid "%s/s"
 msgstr "%s/s"
 
 #: ../src/memmaps.c:296
 msgid "Filename"
-msgstr "Filnavn"
+msgstr "Anaran-drakitra"
 
 #: ../src/memmaps.c:297
 msgid "VM Start"
-msgstr "VM start"
+msgstr "Fiantombohan'ny VM"
 
 #: ../src/memmaps.c:298
 msgid "VM End"
-msgstr "VM slutt"
+msgstr "Fiafaran'ny VM"
 
 #: ../src/memmaps.c:299
 msgid "VM Size"
-msgstr "VM-størrelse"
+msgstr "Haben'ny VM"
 
 #: ../src/memmaps.c:300
 msgid "Flags"
-msgstr "Flagg"
+msgstr "Saina"
 
 #: ../src/memmaps.c:301
 msgid "VM Offset"
-msgstr "VM avstand"
+msgstr "Offsetn'ny VM"
 
 #: ../src/memmaps.c:303
 msgid "Inode"
@@ -637,32 +609,32 @@ msgstr "Inode"
 
 #: ../src/memmaps.c:405
 msgid "Memory Maps"
-msgstr "Minnekart"
+msgstr "Mapn'ny arika"
 
 #: ../src/memmaps.c:425
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
-msgstr "_Minnekart for prosess «%s» (PID %u):"
+msgstr "Mapn'ny arika ho an'ny asa \"%s\" (PID %u):"
 
 #: ../src/openfiles.c:31
 msgid "file"
-msgstr "fil"
+msgstr "rakitra"
 
 #: ../src/openfiles.c:33
 msgid "pipe"
-msgstr "rør"
+msgstr "fantsona"
 
 #: ../src/openfiles.c:35
 msgid "network connection"
-msgstr "nettverksforbindelse"
+msgstr "fifandraisana rezo"
 
 #: ../src/openfiles.c:37
 msgid "local socket"
-msgstr "lokal plugg"
+msgstr "socket an-toerana"
 
 #: ../src/openfiles.c:39
 msgid "unknown type"
-msgstr "ukjent type"
+msgstr "karazana tsy fantatra"
 
 #. Translators: "FD" here means "File Descriptor". Please use
 #. a very short translation if possible, and at most
@@ -673,16 +645,16 @@ msgstr "FD"
 
 #: ../src/openfiles.c:233
 msgid "Object"
-msgstr "Objekt"
+msgstr "Zavatra"
 
 #: ../src/openfiles.c:312
 msgid "Open Files"
-msgstr "Åpne filer"
+msgstr "Rakitra misokatra"
 
 #: ../src/openfiles.c:334
 #, c-format
 msgid "_Files opened by process \"%s\" (PID %u):"
-msgstr "_Filer som er åpnet av prosess «%s» (PID %u):"
+msgstr "_Rakitra nosokafan'ny asa \"%s\" (PID %u):"
 
 #: ../src/procactions.c:75
 #, c-format
@@ -690,7 +662,7 @@ msgid ""
 "Cannot change the priority of process with pid %d to %d.\n"
 "%s"
 msgstr ""
-"Kan ikke endre prioritet for prosess med pid %d til %d.\n"
+"Tsy afaka manova ny hamehan'ilay asa amin'ny alalan'ny pid %d ho %d.\n"
 "%s"
 
 #: ../src/procactions.c:155
@@ -699,264 +671,242 @@ msgid ""
 "Cannot kill process with pid %d with signal %d.\n"
 "%s"
 msgstr ""
-"Kan ikke terminere prosess med pid %d med signal %d.\n"
+"Tsy afaka mamono ilay asa amin'ny alalan'ny pid %d sy fambara %d.\n"
 "%s"
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:65
 msgid "Hide the selected process?"
-msgstr "Skjul valgt prosess?"
+msgstr "Afenina ireo asa voafaritra?"
 
 #. FIXME: View menu -> Edit menu
 #. translators: secondary alert messagex
 #: ../src/procdialogs.c:75
-msgid ""
-"Hidden processes are no longer visible in the process list. You can re-"
-"enable them by selecting the \"Hidden Processes\" entry in the View menu."
-msgstr ""
-"Skjulte prosesser er ikke synlige i prosesslisten lengre. Du kan ta dem frem "
-"igjen ved å velge «Skjulte prosesser» i Vis-menyen."
+msgid "Hidden processes are no longer visible in the process list. You can re-enable them by selecting the \"Hidden Processes\" entry in the View menu."
+msgstr "Tsy hita anatin'ny lisitry ny asa intsony ireo asa nafenina. Azonao averina aseho amin'ny alalan'ny safidy \"Asa nafenina\" ao anatin'ny tolotry ny seho izy ireo."
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:124
 msgid "Kill the selected process?"
-msgstr "Terminer valgt prosess?"
+msgstr "Vonoina ilay asa voafaritra?"
 
 #. translators: secondary alert message
 #: ../src/procdialogs.c:126
-msgid ""
-"Killing a process may destroy data, break the session or introduce a "
-"security risk. Only unresponding processes should be killed."
-msgstr ""
-"Ved terminering av en prosess kan du ødelegge data, kjørende sesjon kan "
-"slutte å fungere eller du kan skape en sikkerhetsrisiko. Kun prosesser som "
-"ikke responderer bør termineres."
+msgid "Killing a process may destroy data, break the session or introduce a security risk. Only unresponding processes should be killed."
+msgstr "Mety hanimba data, hanapaka session na hampisy olana ara-piarovana ny famonoana asa iray. Ireo asa tsy mety mamaly ihany no tokony hovonoina."
 
 #. translators: primary alert message
 #: ../src/procdialogs.c:133
 msgid "End the selected process?"
-msgstr "Avslutt valgt prosess?"
+msgstr "Faranana ilay asa voafaritra?"
 
 #. translators: secondary alert message
 #: ../src/procdialogs.c:135
-msgid ""
-"Ending a process may destroy data, break the session or introduce a security "
-"risk. Only unresponding processes should be ended."
-msgstr ""
-"Ved avslutting av en prosess kan du ødelegge data, kjørende sesjon kan "
-"slutte å fungere eller du kan skape en sikkerhetsrisiko. Kun prosesser som "
-"ikke svarer bør avsluttes"
+msgid "Ending a process may destroy data, break the session or introduce a security risk. Only unresponding processes should be ended."
+msgstr "Mety hanimba data, hanapaka session na hampisy olana ara-piarovana ny famaranana asa iray. Ireo asa tsy mety mamaly ihany no tokony hovonoina."
 
 #: ../src/procdialogs.c:138
 msgid "_End Process"
-msgstr "_Avslutt prosess"
+msgstr "_Farano ilay asa"
 
 #: ../src/procdialogs.c:167
 msgid "(Very High Priority)"
-msgstr "(Meget høy prioritet)"
+msgstr "(Hamehana ambony be)"
 
 #: ../src/procdialogs.c:169
 msgid "(High Priority)"
-msgstr "(Høy prioritet)"
+msgstr "(Hamehana ambony)"
 
 #: ../src/procdialogs.c:171
 msgid "(Normal Priority)"
-msgstr "(Normal prioritet)"
+msgstr "(Hamehana antonony)"
 
 #: ../src/procdialogs.c:173
 msgid "(Low Priority)"
-msgstr "(Lav prioritet)"
+msgstr "(Hamehana ambany)"
 
 #: ../src/procdialogs.c:175
 msgid "(Very Low Priority)"
-msgstr "(Meget lav prioritet)"
+msgstr "(Hamehana ambany be)"
 
 #: ../src/procdialogs.c:227
 msgid "Change Priority"
-msgstr "Endre prioritet"
+msgstr "Hanova hamehana"
 
 #: ../src/procdialogs.c:248
 msgid "Change _Priority"
-msgstr "Endre _prioritet"
+msgstr "Hanova _hamehana"
 
 #: ../src/procdialogs.c:269
 msgid "_Nice value:"
-msgstr "_Nice-verdi:"
+msgstr "Sandan'ny nice:"
 
 #: ../src/procdialogs.c:286
-msgid ""
-"The priority of a process is given by its nice value. A lower nice value "
-"corresponds to a higher priority."
-msgstr ""
-"Prioriteten for en prosess gis av dens «nice»-verdi. En lavere verdi betyr "
-"høyere prioritet."
+msgid "The priority of a process is given by its nice value. A lower nice value corresponds to a higher priority."
+msgstr "Ny hamehan'ny asa iray dia voambaran'ny sandan'ny niceny. Ny sandan'ny nice ambany dia mifanaraka amina hamehana ambonimbony."
 
 #: ../src/procdialogs.c:464
 msgid "Processes i_nfo showed in list:"
-msgstr "I_nformasjon for prosesser som vises i listen:"
+msgstr "_Lazan'asa miseho anatin'ilay lisitra:"
 
 #: ../src/procdialogs.c:516
 msgid "Icon"
-msgstr "Ikon"
+msgstr "Kisary"
 
 #: ../src/procdialogs.c:556
 msgid "System Monitor Preferences"
-msgstr "Brukervalg for systemmonitor"
+msgstr "Safidy manokan'ny mpanara-maso ny rafitra"
 
 #: ../src/procdialogs.c:586
 msgid "Behavior"
-msgstr "Oppførsel"
+msgstr "Fiasa"
 
-#: ../src/procdialogs.c:605 ../src/procdialogs.c:708 ../src/procdialogs.c:793
+#: ../src/procdialogs.c:605
+#: ../src/procdialogs.c:708
+#: ../src/procdialogs.c:793
 msgid "_Update interval in seconds:"
-msgstr "_Oppdateringsintervall i sekunder:"
+msgstr "Elanelam-potoan'ny _fanavaozana (segaondra):"
 
 #: ../src/procdialogs.c:630
 msgid "Enable _smooth refresh"
-msgstr "Aktiver _myk oppfrisking"
+msgstr "Alefaso ny refreshing _malefaka"
 
 #: ../src/procdialogs.c:644
 msgid "Alert before ending or _killing processes"
-msgstr "Vis advarsel ved avslutting eller _terminering av prosesser"
+msgstr "Fampilazana alohan'ny hamaranana na _hamonoana asa"
 
 #: ../src/procdialogs.c:654
 msgid "Alert before _hiding processes"
-msgstr "Vis advarsel før prosesser _skjules"
+msgstr "Fampilazana alohan'ny _hanafenana asa"
 
 #: ../src/procdialogs.c:664
 msgid "Process Fields"
-msgstr "Prosessfelt"
+msgstr "Faritry ny asa"
 
 #: ../src/procdialogs.c:689
 msgid "Graphs"
-msgstr "Grafer"
+msgstr "Soritra"
 
 #: ../src/procdialogs.c:729
 msgid "_Background color:"
-msgstr "_Bakgrunnsfarge:"
+msgstr "Loko _afara:s"
 
 #: ../src/procdialogs.c:748
 msgid "_Grid color:"
-msgstr "_Farge på rutenett:"
+msgstr "Lokon'ny _makarakara:"
 
 #: ../src/procdialogs.c:812
 msgid "Show _all filesystems"
-msgstr "Vis _alle filsystemer"
+msgstr "Asehoy ireo rafi-drakitra _rehetra"
 
-#: ../src/proctable.c:274
+#: ../src/proctable.c:290
 msgid "Process Name"
-msgstr "Prosessnavn"
+msgstr "Anaran'ilay asa"
 
-#: ../src/proctable.c:275
+#: ../src/proctable.c:291
 msgid "User"
-msgstr "Bruker"
+msgstr "Mpampiasa"
 
-#: ../src/proctable.c:276
+#: ../src/proctable.c:292
 msgid "Status"
-msgstr "Status"
+msgstr "Fivoarana"
 
-#: ../src/proctable.c:277
+#: ../src/proctable.c:293
 msgid "Virtual Memory"
-msgstr "Virtuelt minne"
+msgstr "Arika virtoaly"
 
-#: ../src/proctable.c:278
+#: ../src/proctable.c:294
 msgid "Resident Memory"
-msgstr "Resident minne"
+msgstr "Arika mitoetra"
 
-#: ../src/proctable.c:279
+#: ../src/proctable.c:295
 msgid "Writable Memory"
-msgstr "Skrivbart minne"
+msgstr "Arika azo anoratana"
 
-#: ../src/proctable.c:280
+#: ../src/proctable.c:296
 msgid "Shared Memory"
-msgstr "Delt minne"
+msgstr "Arika zaraina"
 
-#: ../src/proctable.c:281
+#: ../src/proctable.c:297
 msgid "X Server Memory"
-msgstr "Minne for X-tjener"
+msgstr "Ariky ny mpizra X"
 
-#: ../src/proctable.c:282
+#: ../src/proctable.c:298
 #, no-c-format
 msgid "% CPU"
 msgstr "% CPU"
 
-#: ../src/proctable.c:283
+#: ../src/proctable.c:299
 msgid "CPU Time"
-msgstr "CPU-tid"
+msgstr "Fotoanan'ny CPU"
 
-#: ../src/proctable.c:284
+#: ../src/proctable.c:300
 msgid "Started"
-msgstr "Startet"
+msgstr "Natomboka"
 
-#: ../src/proctable.c:285
+#: ../src/proctable.c:301
 msgid "Nice"
 msgstr "Nice"
 
-#: ../src/proctable.c:286
+#: ../src/proctable.c:302
 msgid "ID"
 msgstr "ID"
 
-#: ../src/proctable.c:287
+#: ../src/proctable.c:303
 msgid "Security Context"
-msgstr "Sikkerhetskontekst"
+msgstr "Seha-kevitry ny fiarovana"
 
-#: ../src/proctable.c:288
+#: ../src/proctable.c:304
 msgid "Arguments"
-msgstr "Argumenter"
+msgstr "Tondriky"
 
-#: ../src/proctable.c:289
+#: ../src/proctable.c:305
 msgid "Memory"
-msgstr "Minne"
+msgstr "Arika"
 
-#: ../src/proctable.c:475
+#: ../src/proctable.c:489
 msgid "Running"
-msgstr "Kjører"
+msgstr "Mandeha"
 
-#: ../src/proctable.c:480
+#: ../src/proctable.c:494
 msgid "Stopped"
-msgstr "Stoppet"
+msgstr "Najanona"
 
-#: ../src/proctable.c:485
+#: ../src/proctable.c:499
 msgid "Zombie"
-msgstr "Levende død"
+msgstr "Zombie"
 
-#: ../src/proctable.c:490
+#: ../src/proctable.c:504
 msgid "Uninterruptible"
-msgstr "Kan ikke avbrytes"
+msgstr "Tsy mety tapahina"
 
-#: ../src/proctable.c:495
+#: ../src/proctable.c:509
 msgid "Sleeping"
-msgstr "Sover"
+msgstr "Tsy miasa"
 
-#: ../src/proctable.c:1088
+#: ../src/proctable.c:1100
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
-msgstr "Snittbelastning for de siste 1, 5, 15 minutter: %0.2f, %0.2f, %0.2f"
+msgstr "Salasalam-potoana fakana tanatin'ny 1, 5, 15 minitra lasa teo: %0.2f, %0.2f, %0.2f"
 
 #: ../src/util.c:87
 #, c-format
 msgid "%u byte"
 msgid_plural "%u bytes"
-msgstr[0] "%u byte"
-msgstr[1] "%u bytes"
+msgstr[0] "%u octet"
+msgstr[1] "%u octet"
 
 #: ../src/util.c:93
 #, c-format
 msgid "%.1f KiB"
-msgstr "%1.f KiB"
+msgstr "%.1f Kio"
 
 #: ../src/util.c:97
 #, c-format
 msgid "%.1f MiB"
-msgstr "%.1f MiB"
+msgstr "%.1f Mio"
 
 #: ../src/util.c:101
 #, c-format
 msgid "%.1f GiB"
-msgstr "%.1f GiB"
-
-#~ msgid "Devices"
-#~ msgstr "Enheter"
-
-#~ msgid "_File"
-#~ msgstr "_Fil"
+msgstr "%.1f Gio"
