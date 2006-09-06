@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: procman 2.9.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-28 16:59+0700\n"
-"PO-Revision-Date: 2006-07-28 17:01+0700\n"
+"POT-Creation-Date: 2006-09-04 10:23+0700\n"
+"PO-Revision-Date: 2006-09-04 11:07+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: gnome-system-monitor.desktop.in.in.h:1 src/callbacks.c:164
 #: src/interface.c:666 src/procman.c:696
 msgid "System Monitor"
-msgstr "โปรแกรมติดตามทรัพยากรระบบ"
+msgstr "เครื่องมือติดตามทรัพยากรระบบ"
 
 #: gnome-system-monitor.desktop.in.in.h:2 src/callbacks.c:165
 msgid "View current processes and monitor system state"
@@ -610,11 +610,11 @@ msgstr "ออฟเซต VM"
 msgid "Inode"
 msgstr "Inode"
 
-#: src/memmaps.c:405
+#: src/memmaps.c:423
 msgid "Memory Maps"
 msgstr "ผังหน่วยความจำ"
 
-#: src/memmaps.c:425
+#: src/memmaps.c:443
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
 msgstr "_ผังหน่วยความจำของโพรเซส \"%s\" (PID %u):"
@@ -650,11 +650,11 @@ msgstr "FD"
 msgid "Object"
 msgstr "อ็อบเจกต์"
 
-#: src/openfiles.c:312
+#: src/openfiles.c:319
 msgid "Open Files"
 msgstr "แฟ้มที่เปิด"
 
-#: src/openfiles.c:334
+#: src/openfiles.c:341
 #, c-format
 msgid "_Files opened by process \"%s\" (PID %u):"
 msgstr "แ_ฟ้มที่โพรเซส \"%s\" (PID %u) เปิด:"
@@ -814,92 +814,92 @@ msgstr "สี_ตาราง:"
 msgid "Show _all filesystems"
 msgstr "แสดงทุก_ระบบไฟล์"
 
-#: src/proctable.c:274
+#: src/proctable.c:275
 msgid "Process Name"
 msgstr "ชื่อโพรเซส"
 
-#: src/proctable.c:275
+#: src/proctable.c:276
 msgid "User"
 msgstr "ผู้ใช้"
 
-#: src/proctable.c:276
+#: src/proctable.c:277
 msgid "Status"
 msgstr "สถานะ"
 
-#: src/proctable.c:277
+#: src/proctable.c:278
 msgid "Virtual Memory"
 msgstr "หน่วยความจำเสมือน"
 
-#: src/proctable.c:278
+#: src/proctable.c:279
 msgid "Resident Memory"
 msgstr "หน่วยความจำ resident"
 
-#: src/proctable.c:279
+#: src/proctable.c:280
 msgid "Writable Memory"
 msgstr "หน่วยความจำที่เขียนได้"
 
-#: src/proctable.c:280
+#: src/proctable.c:281
 msgid "Shared Memory"
 msgstr "หน่วยความจำใช้ร่วม"
 
-#: src/proctable.c:281
+#: src/proctable.c:282
 msgid "X Server Memory"
 msgstr "หน่วยความจำ X server"
 
-#: src/proctable.c:282
+#: src/proctable.c:283
 #, no-c-format
 msgid "% CPU"
 msgstr "% ซีพียู"
 
-#: src/proctable.c:283
+#: src/proctable.c:284
 msgid "CPU Time"
 msgstr "เวลาซีพียู"
 
-#: src/proctable.c:284
+#: src/proctable.c:285
 msgid "Started"
 msgstr "เริ่ม"
 
-#: src/proctable.c:285
+#: src/proctable.c:286
 msgid "Nice"
 msgstr "ไนซ์"
 
-#: src/proctable.c:286
+#: src/proctable.c:287
 msgid "ID"
 msgstr "ID"
 
-#: src/proctable.c:287
+#: src/proctable.c:288
 msgid "Security Context"
 msgstr "Security Context"
 
-#: src/proctable.c:288
+#: src/proctable.c:289
 msgid "Arguments"
 msgstr "อาร์กิวเมนต์"
 
-#: src/proctable.c:289
+#: src/proctable.c:290
 msgid "Memory"
 msgstr "หน่วยความจำ"
 
-#: src/proctable.c:475
+#: src/proctable.c:476
 msgid "Running"
 msgstr "กำลังทำงาน"
 
-#: src/proctable.c:480
+#: src/proctable.c:481
 msgid "Stopped"
 msgstr "หยุดชั่วคราว"
 
-#: src/proctable.c:485
+#: src/proctable.c:486
 msgid "Zombie"
 msgstr "ผีดิบ"
 
-#: src/proctable.c:490
+#: src/proctable.c:491
 msgid "Uninterruptible"
 msgstr "ห้ามขัดจังหวะ"
 
-#: src/proctable.c:495
+#: src/proctable.c:496
 msgid "Sleeping"
 msgstr "หลับ"
 
-#: src/proctable.c:1088
+#: src/proctable.c:1089
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
 msgstr "โหลดเฉลี่ยใน 1, 5, 15 นาทีที่ผ่านมา: %0.2f, %0.2f, %0.2f"
@@ -909,7 +909,6 @@ msgstr "โหลดเฉลี่ยใน 1, 5, 15 นาทีที่ผ�
 msgid "%u byte"
 msgid_plural "%u bytes"
 msgstr[0] "%u ไบต์"
-msgstr[1] "%u ไบต์"
 
 #: src/util.c:93
 #, c-format

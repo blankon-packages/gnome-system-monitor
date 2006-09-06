@@ -1,3 +1,56 @@
+2006-09-05  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+	* configure.in:
+
+	Released 2.16.0.
+
+2006-08-31  Benoît Dejean  <benoit@placenet.org>
+
+	* src/gnome-system-monitor.schemas.in:
+
+	Fixed schema regression.
+	Re-closes #341026.
+
+2006-08-30  Benoît Dejean  <benoit@placenet.org>
+
+	* src/proctable.c: (search_equal_func):
+
+	Fixed a small memory leak.
+
+2006-08-21  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+
+	Release 2.15.92.
+
+2006-08-20  Benoît Dejean  <benoit@placenet.org>
+
+	* src/disks.c: (create_disk_view):
+
+	Right aligned size columns.
+
+2006-08-19  Benoît Dejean  <benoit@placenet.org>
+
+	* src/memmaps.c: (create_memmapsdata):
+	* src/openfiles.c: (create_openfiles_tree):
+
+	Better column alignment and font family.
+
+2006-08-19  Benoît Dejean  <benoit@placenet.org>
+
+	* src/util.c: (procman_debug):
+	
+	Fixed leak.
+
+2006-08-10  Benoît Dejean  <benoit@placenet.org>
+
+	* src/load-graph.c: (load_graph_draw):
+	
+	Fixed LoadGraph overlay.
+	Patch by Yang Hong <yanghong@ccoss.com.cn>.
+	Closes #350692.
+
 2006-08-07  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS:
