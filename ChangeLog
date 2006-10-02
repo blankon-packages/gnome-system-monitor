@@ -1,3 +1,33 @@
+2006-09-17  Benoît Dejean  <benoit@placenet.org>
+
+	* src/Makefile.am:
+	* src/procman.c: (main):
+	
+	Fixed locales dir initialization.
+
+2006-09-16  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	
+	Requires libgtop 2.14.4 to get memory maps right.
+	See #355290.
+
+2006-09-16  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procman.c: (procman_save_tree_state):
+	* src/procman_gksu.c: (procman_gksu_create_root_password_dialog):
+	
+	s/g_error/g_critical/.
+	Closes #356111.
+
+2006-09-11  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/memmaps.c: (get_memory_format), (vmoff_tostring):
+	
+	Fixed VM addresses display on 64bit kernel.
+	Closes #354979.
+
 2006-09-05  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS:

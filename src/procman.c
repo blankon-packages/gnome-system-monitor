@@ -538,9 +538,9 @@ procman_save_tree_state (GConfClient *client, GtkWidget *tree, const gchar *pref
 
 		if(!gconf_client_set_list(client, key, GCONF_VALUE_INT, order, &error))
 		{
-			g_error("Could not save GConf key '%s' : %s",
-				key,
-				error->message);
+			g_critical("Could not save GConf key '%s' : %s",
+				   key,
+				   error->message);
 			g_error_free(error);
 		}
 
@@ -659,7 +659,7 @@ main (int argc, char *argv[])
 	ProcData *procdata;
 	BaconMessageConnection *conn;
 
-	bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 

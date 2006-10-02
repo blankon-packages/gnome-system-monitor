@@ -243,7 +243,8 @@ sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 INCLUDES = \
-	-DPROCMAN_DATADIR=\"$(datadir)/procman/\" \
+	-DPROCMAN_DATADIR=\""$(datadir)/procman/"\" \
+	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\" \
 	@PROCMAN_CFLAGS@
 

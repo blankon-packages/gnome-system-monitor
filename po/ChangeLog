@@ -1,3 +1,37 @@
+2006-09-29  Changwoo Ryu  <cwryu@debian.org>
+
+	* ko.po: Updated Korean translation.
+
+2006-09-28  Alessio Frusciante  <algol@firenze.linux.it>
+
+	* it.po: Updated Italian translation.
+
+2006-09-27  Priit Laes  <plaes@cvs.gnome.org>
+
+	* et.po: Translation updated.
+
+2006-09-27  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
+
+	* gl.po: Updated Galician Translation.
+
+2006-09-14  Satoru SATOH <ss@gnome.gr.jp>
+
+	* ja.po: Fixed up mismatch between nplurals and number of
+	plural forms some messages have.
+
+2006-09-10  David Lodge <dave@cirt.net>
+
+	* en_GB.po: Updated English (British) translation.
+
+2006-09-07  Jovan Namovski  <jovan@lugola.net>
+
+	* mk.po: Updated Macedonian translation.
+
+2006-09-05  Lucas Rocha  <lucasr@gnome.org>
+
+	* pt_BR.po: Updated Brazilian Portuguese translation
+	by Vinicius Pinheiro <vinnie.gp@gmail.com>
+
 2006-09-04  Abel Cheung  <abel@oaka.org>
 
 	* zh_HK.po: Updated Chinese (Hong Kong) translation from
@@ -24,7 +58,7 @@
 
 2006-09-01  Maxim Dziumanenko <dziumanenko@gmail.com>
 
-        * uk.po: Update Ukrainian translation.
+	* uk.po: Update Ukrainian translation.
 
 2006-09-01  Jovan Naumovski  <jovan@lugola.net>
 
@@ -36,7 +70,7 @@
 
 2006-08-31  Rajesh Ranjan <rajeshkajha@yahoo.com>
 
-        * hi.po: Updated Hindi Translation.
+	* hi.po: Updated Hindi Translation.
 
 2006-08-30  Gabor Kelemen  <kelemeng@gnome.hu>
 
