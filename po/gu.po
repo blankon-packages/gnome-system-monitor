@@ -1,14 +1,15 @@
 # translation of gnome-system-monitor.HEAD.gu.po to Gujarati
 # translation of procman.HEAD.gu.po to Gujarati
 # Ankit Patel <ankit644@yahoo.com>, 2005, 2006.
+# Ankit Patel <ankit@redhat.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-system-monitor.HEAD.gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-28 03:24+0200\n"
-"PO-Revision-Date: 2006-07-28 09:55+0530\n"
-"Last-Translator: Ankit Patel <ankit644@yahoo.com>\n"
-"Language-Team: Gujarati <indianoss-gujarati@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2006-10-26 08:15+0200\n"
+"PO-Revision-Date: 2006-10-26 19:50+0530\n"
+"Last-Translator: Ankit Patel <ankit@redhat.com>\n"
+"Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,21 +23,24 @@ msgstr ""
 "\n"
 "\n"
 "\n"
+"\n"
+"\n"
+"\n"
 
-#: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:164
-#: ../src/interface.c:666 ../src/procman.c:696
+#: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.c:172
+#: ../src/interface.c:669 ../src/procman.c:696
 msgid "System Monitor"
 msgstr "સિસ્ટમ મોનીટર"
 
-#: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:165
+#: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.c:173
 msgid "View current processes and monitor system state"
 msgstr "વર્તમાન પ્રક્રિયાને જુઓ અને સિસ્ટમની સ્થિતિનું ધ્યાન રાખો"
 
-#: ../src/callbacks.c:173
+#: ../src/callbacks.c:181
 msgid "translator-credits"
 msgstr "અંકિત પટેલ <ankit644@yahoo.com>"
 
-#: ../src/disks.c:308 ../src/memmaps.c:302
+#: ../src/disks.c:308 ../src/memmaps.c:328
 msgid "Device"
 msgstr "ઉપકરણ"
 
@@ -64,7 +68,7 @@ msgstr "ઉપલબ્ધ"
 msgid "Used"
 msgstr "ઉપયોગમાં લેવાયેલ"
 
-#: ../src/disks.c:321 ../src/interface.c:745 ../src/procdialogs.c:770
+#: ../src/disks.c:321 ../src/interface.c:748 ../src/procdialogs.c:770
 #: ../src/procdialogs.c:774
 msgid "File Systems"
 msgstr "ફાઈલ સિસ્ટમો"
@@ -396,191 +400,199 @@ msgid "_Help"
 msgstr "મદદ (_H)"
 
 #: ../src/interface.c:51
+msgid "_Lsof"
+msgstr "_Lsof"
+
+#: ../src/interface.c:52
+msgid "Lsof"
+msgstr "Lsof"
+
+#: ../src/interface.c:53
 msgid "_Quit"
 msgstr "બહાર નીકળો (_Q)"
 
-#: ../src/interface.c:52
+#: ../src/interface.c:54
 msgid "Quit the program"
 msgstr "કાર્યક્રમ બંધ કરો"
 
-#: ../src/interface.c:55
+#: ../src/interface.c:57
 msgid "_Stop Process"
 msgstr "પ્રક્રિયા અટકાવો (_S)"
 
-#: ../src/interface.c:56
+#: ../src/interface.c:58
 msgid "Stop process"
 msgstr "પ્રક્રિયા અટકાવો"
 
-#: ../src/interface.c:57
+#: ../src/interface.c:59
 msgid "_Continue Process"
 msgstr "પ્રક્રિયા ચાલુ રાખો (_C)"
 
-#: ../src/interface.c:58
+#: ../src/interface.c:60
 msgid "Continue process if stopped"
 msgstr "જો અટકાવાયેલ હોય તો પ્રક્રિયા ચાલુ રાખો"
 
-#: ../src/interface.c:60 ../src/interface.c:188
+#: ../src/interface.c:62 ../src/interface.c:191
 msgid "End _Process"
 msgstr "પ્રક્રિયાનો અંત કરો (_P)"
 
-#: ../src/interface.c:61
+#: ../src/interface.c:63
 msgid "Force process to finish normally"
 msgstr "પ્રક્રિયાને સામાન્ય રીતે સમાપ્ત કરવા માટે દબાણ કરો"
 
-#: ../src/interface.c:62 ../src/procdialogs.c:129
+#: ../src/interface.c:64 ../src/procdialogs.c:129
 msgid "_Kill Process"
 msgstr "પ્રક્રિયાને મૃત કરો (_K)"
 
-#: ../src/interface.c:63
+#: ../src/interface.c:65
 msgid "Force process to finish immediately"
 msgstr "પ્રક્રિયાને તુરંત જ સમાપ્ત કરવા માટે દબાણ કરો"
 
-#: ../src/interface.c:64
+#: ../src/interface.c:66
 msgid "_Change Priority..."
 msgstr "પ્રાધાન્ય બદલો (_C)..."
 
-#: ../src/interface.c:65
+#: ../src/interface.c:67
 msgid "Change the order of priority of process"
 msgstr "પ્રક્રિયાઓના પ્રાધાન્યનો ક્રમ બદલો"
 
-#: ../src/interface.c:66
+#: ../src/interface.c:68
 msgid "Prefere_nces"
 msgstr "પસંદગીઓ (_n)"
 
-#: ../src/interface.c:67
+#: ../src/interface.c:69
 msgid "Configure the application"
 msgstr "કાર્યક્રમ રૂપરેખાંકિત કરો"
 
-#: ../src/interface.c:69 ../src/procdialogs.c:85
+#: ../src/interface.c:71 ../src/procdialogs.c:85
 msgid "_Hide Process"
 msgstr "પ્રક્રિયા સંતાડો (_H)"
 
-#: ../src/interface.c:70
+#: ../src/interface.c:72
 msgid "Hide process from list"
 msgstr "યાદીમાંથી પ્રક્રિયા છુપાવો"
 
-#: ../src/interface.c:71
+#: ../src/interface.c:73
 msgid "_Hidden Processes"
 msgstr "સંતાડેલી પ્રક્રિયાઓ (_H)"
 
-#: ../src/interface.c:72
+#: ../src/interface.c:74
 msgid "Open the list of currently hidden processes"
 msgstr "વર્તમાનમાં છુપી પ્રક્રિયાઓની યાદી ખોલો"
 
-#: ../src/interface.c:73
+#: ../src/interface.c:75
 msgid "_Memory Maps"
 msgstr "મેમરીના નક્શા (_M)"
 
-#: ../src/interface.c:74
+#: ../src/interface.c:76
 msgid "Open the memory maps associated with a process"
 msgstr "પ્રક્રિયા સાથે સંકળાયેલ મેમરી નકશાઓ ખોલો"
 
-#: ../src/interface.c:75
+#: ../src/interface.c:77
 msgid "Open _Files"
 msgstr "ફાઈલો ખોલો (_F)"
 
-#: ../src/interface.c:76
+#: ../src/interface.c:78
 msgid "View the files opened by a process"
 msgstr "પ્રક્રિયા દ્વારા ખોલાયેલ ફાઈલો જુઓ"
 
-#: ../src/interface.c:78
+#: ../src/interface.c:80
 msgid "_Contents"
 msgstr "સમાવિષ્ટો (_C)"
 
-#: ../src/interface.c:79
+#: ../src/interface.c:81
 msgid "Open the manual"
 msgstr "માર્ગદર્શિકા ખોલો"
 
-#: ../src/interface.c:80
+#: ../src/interface.c:82
 msgid "_About"
 msgstr "વિશે (_A)"
 
-#: ../src/interface.c:81
+#: ../src/interface.c:83
 msgid "About this application"
 msgstr "કાર્યક્રમ વિશે"
 
-#: ../src/interface.c:86
+#: ../src/interface.c:88
 msgid "_Dependencies"
 msgstr "આધારભૂતો (_D)"
 
-#: ../src/interface.c:87
+#: ../src/interface.c:89
 msgid "Show parent/child relationship between processes"
 msgstr "પ્રક્રિયાઓ વચ્ચે પિતૃ/બાળ સંબંધ બતાવો"
 
-#: ../src/interface.c:94
+#: ../src/interface.c:96
 msgid "_Active Processes"
 msgstr "સક્રિય પ્રક્રિયાઓ (_A)"
 
-#: ../src/interface.c:95
+#: ../src/interface.c:97
 msgid "Show active processes"
 msgstr "સક્રિય પ્રક્રિયાઓ બતાવો"
 
-#: ../src/interface.c:96
+#: ../src/interface.c:98
 msgid "A_ll Processes"
 msgstr "બધી પ્રક્રિયાઓ (_l)"
 
-#: ../src/interface.c:97
+#: ../src/interface.c:99
 msgid "Show all processes"
 msgstr "બધી પ્રક્રિયાઓ બતાવો"
 
-#: ../src/interface.c:98
+#: ../src/interface.c:100
 msgid "M_y Processes"
 msgstr "મારી પ્રક્રિયાઓ (_y)"
 
-#: ../src/interface.c:99
+#: ../src/interface.c:101
 msgid "Show user own process"
 msgstr "વપરાશકર્તાની પોતાની પ્રક્રિયા બતાવો"
 
-#: ../src/interface.c:260
+#: ../src/interface.c:263
 msgid "CPU History"
 msgstr "CPU નો ઈતિહાસ"
 
-#: ../src/interface.c:303
+#: ../src/interface.c:306
 msgid "CPU:"
 msgstr "CPU:"
 
-#: ../src/interface.c:306
+#: ../src/interface.c:309
 #, c-format
 msgid "CPU%d:"
 msgstr "CPU%d:"
 
-#: ../src/interface.c:326
+#: ../src/interface.c:329
 msgid "Memory and Swap History"
 msgstr "મેમરી અને સ્વેપનો ઈતિહાસ"
 
-#: ../src/interface.c:359
+#: ../src/interface.c:362
 msgid "User memory:"
 msgstr "વપરાશકર્તા મેમરી:"
 
-#: ../src/interface.c:377 ../src/interface.c:437
+#: ../src/interface.c:380 ../src/interface.c:440
 msgid "of"
 msgstr "નું"
 
-#: ../src/interface.c:418
+#: ../src/interface.c:421
 msgid "Used swap:"
 msgstr "ઉપયોગમાં લેવાયેલ સ્વેપ:"
 
-#: ../src/interface.c:477
+#: ../src/interface.c:480
 msgid "Network History"
 msgstr "નેટવર્ક ઈતિહાસ"
 
-#: ../src/interface.c:509
+#: ../src/interface.c:512
 msgid "Received:"
 msgstr "મળેલ:"
 
-#: ../src/interface.c:529 ../src/interface.c:572
+#: ../src/interface.c:532 ../src/interface.c:575
 msgid "Total:"
 msgstr "કુલ:"
 
-#: ../src/interface.c:553
+#: ../src/interface.c:556
 msgid "Sent:"
 msgstr "મોકલાયેલ:"
 
-#: ../src/interface.c:733 ../src/procdialogs.c:579
+#: ../src/interface.c:736 ../src/procdialogs.c:579
 msgid "Processes"
 msgstr "પ્રક્રિયાઓ"
 
-#: ../src/interface.c:739 ../src/procdialogs.c:682
+#: ../src/interface.c:742 ../src/procdialogs.c:682
 msgid "Resources"
 msgstr "સ્રોતો"
 
@@ -589,39 +601,39 @@ msgstr "સ્રોતો"
 msgid "%s/s"
 msgstr "%s/s"
 
-#: ../src/memmaps.c:296
+#: ../src/memmaps.c:322
 msgid "Filename"
 msgstr "ફાઇલનું નામ"
 
-#: ../src/memmaps.c:297
+#: ../src/memmaps.c:323
 msgid "VM Start"
 msgstr "VMની શરૂઆત"
 
-#: ../src/memmaps.c:298
+#: ../src/memmaps.c:324
 msgid "VM End"
 msgstr "VMનો અંત"
 
-#: ../src/memmaps.c:299
+#: ../src/memmaps.c:325
 msgid "VM Size"
 msgstr "VMનુ માપ"
 
-#: ../src/memmaps.c:300
+#: ../src/memmaps.c:326
 msgid "Flags"
 msgstr "નિશાનીઓ"
 
-#: ../src/memmaps.c:301
+#: ../src/memmaps.c:327
 msgid "VM Offset"
 msgstr "VM ઓફસેટ"
 
-#: ../src/memmaps.c:303
+#: ../src/memmaps.c:329
 msgid "Inode"
 msgstr "આઈનોડ"
 
-#: ../src/memmaps.c:405
+#: ../src/memmaps.c:449
 msgid "Memory Maps"
 msgstr "મેમરી નક્શાઓ"
 
-#: ../src/memmaps.c:425
+#: ../src/memmaps.c:469
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
 msgstr "પ્રક્રિયા \"%s\" માટે મેમરી નકશા (PID %u) (_M):"
@@ -657,11 +669,11 @@ msgstr "FD"
 msgid "Object"
 msgstr "ઓબ્જેક્ટ"
 
-#: ../src/openfiles.c:312
+#: ../src/openfiles.c:319
 msgid "Open Files"
 msgstr "ફાઈલો ખોલો"
 
-#: ../src/openfiles.c:334
+#: ../src/openfiles.c:341
 #, c-format
 msgid "_Files opened by process \"%s\" (PID %u):"
 msgstr "પ્રક્રિયા \"%s\" દ્વારા ખૂલેલી ફાઈલો (PID %u) (_F):"
@@ -821,94 +833,94 @@ msgstr "જાળીનો રંગ (_G):"
 msgid "Show _all filesystems"
 msgstr "બધી ફાઈલસિસ્ટમો બતાવો (_a)"
 
-#: ../src/proctable.c:274
+#: ../src/proctable.c:275
 msgid "Process Name"
 msgstr "પ્રક્રિયાનું નામ"
 
-#: ../src/proctable.c:275
+#: ../src/proctable.c:276
 msgid "User"
 msgstr "વપરાશકર્તા"
 
-#: ../src/proctable.c:276
+#: ../src/proctable.c:277
 msgid "Status"
 msgstr "સ્થિતિ"
 
-#: ../src/proctable.c:277
+#: ../src/proctable.c:278
 msgid "Virtual Memory"
 msgstr "વર્ચ્યુઅલ મેમરી"
 
-#: ../src/proctable.c:278
+#: ../src/proctable.c:279
 msgid "Resident Memory"
 msgstr "રહેવાસી મેમરી"
 
-#: ../src/proctable.c:279
+#: ../src/proctable.c:280
 msgid "Writable Memory"
 msgstr "લખી શકાય તેવી મેમરી"
 
-#: ../src/proctable.c:280
+#: ../src/proctable.c:281
 msgid "Shared Memory"
 msgstr "સહભાગી મેમરી"
 
-#: ../src/proctable.c:281
+#: ../src/proctable.c:282
 msgid "X Server Memory"
 msgstr "X સર્વર મેમરી"
 
-#: ../src/proctable.c:282
+#: ../src/proctable.c:283
 #, no-c-format
 msgid "% CPU"
 msgstr "% CPU"
 
-#: ../src/proctable.c:283
+#: ../src/proctable.c:284
 msgid "CPU Time"
 msgstr "CPU સમય"
 
-#: ../src/proctable.c:284
+#: ../src/proctable.c:285
 msgid "Started"
 msgstr "શરૂ થયેલ"
 
-#: ../src/proctable.c:285
+#: ../src/proctable.c:286
 msgid "Nice"
 msgstr "Nice"
 
 # libgnomeui/gnome-client.c:833
-#: ../src/proctable.c:286
+#: ../src/proctable.c:287
 msgid "ID"
 msgstr "ઓળખ"
 
-#: ../src/proctable.c:287
+#: ../src/proctable.c:288
 msgid "Security Context"
 msgstr "સુરક્ષા સંદર્ભ"
 
-#: ../src/proctable.c:288
+#: ../src/proctable.c:289
 msgid "Arguments"
 msgstr "દલીલો"
 
-#: ../src/proctable.c:289
+#: ../src/proctable.c:290
 msgid "Memory"
 msgstr "મેમરી"
 
 # gnome-session/gsm-client-row.c:37
-#: ../src/proctable.c:475
+#: ../src/proctable.c:476
 msgid "Running"
 msgstr "ચાલતું"
 
-#: ../src/proctable.c:480
+#: ../src/proctable.c:481
 msgid "Stopped"
 msgstr "અટકેલું"
 
-#: ../src/proctable.c:485
+#: ../src/proctable.c:486
 msgid "Zombie"
 msgstr "ઝોમ્બી"
 
-#: ../src/proctable.c:490
+#: ../src/proctable.c:491
 msgid "Uninterruptible"
 msgstr "ઈન્ટ્રપ્ટ થાય નહિં એવું"
 
-#: ../src/proctable.c:495
+#: ../src/proctable.c:496
 msgid "Sleeping"
 msgstr "નિષ્ક્રિય"
 
-#: ../src/proctable.c:1088
+#: ../src/proctable.c:1089
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
 msgstr "છેલ્લી ૧, ૫, ૧૫ મિનિટો માટેનો સરેરાશ ભાર: %0.2f, %0.2f, %0.2f"
