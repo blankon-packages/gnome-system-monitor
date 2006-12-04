@@ -1,3 +1,31 @@
+2006-11-28  Daniel Nylander <po@danielnylander.se>
+
+	* sv.po: Updated Swedish translation.
+	
+2006-11-27  Jakub Friedl <jfriedl@suse.cz>
+
+	* cs.po: Updated Czech translation.
+
+2006-11-27  Jakub Friedl <jfriedl@suse.cz>
+
+	* cs.po: Updated Czech translation.
+
+2006-11-19  Daniel Nylander <po@danielnylander.se>
+
+	* sv.po: Updated Swedish translation.
+
+2006-11-18  Benoît Dejean  <benoit@placenet.org>
+
+	* POTFILES.in: Fixed.
+
+2006-11-14  Yair Hershkovitz  <yairhr@gmail.com>
+
+	* he.po: Updated Hebrew translation.
+
+2006-11-10  Benoît Dejean  <benoit@placenet.org>
+
+	* POTFILES.in: Added missing file.
+
 2006-11-03  Francisco Javier F. Serrador  <serrador@openshine.com>
 
 	* es.po: Updated Spanish translation.
