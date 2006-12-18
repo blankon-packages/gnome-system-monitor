@@ -19,10 +19,7 @@
 #ifndef _PROCMAN_PROCMAN_H_
 #define _PROCMAN_PROCMAN_H_
 
-typedef struct _ProcConfig ProcConfig;
-typedef struct _PrettyTable PrettyTable;
-typedef struct _ProcInfo ProcInfo;
-typedef struct _ProcData ProcData;
+
 
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <glib.h>
@@ -31,6 +28,11 @@ typedef struct _ProcData ProcData;
 #include <glibtop/cpu.h>
 
 #include <time.h>
+
+typedef struct _ProcConfig ProcConfig;
+typedef struct _PrettyTable PrettyTable;
+typedef struct _ProcInfo ProcInfo;
+typedef struct _ProcData ProcData;
 
 #include "smooth_refresh.h"
 
@@ -109,11 +111,11 @@ struct _ProcInfo
 	guint64		mem; /* estimated memory usage */
 	unsigned long	memxserver;
 
-	guint		pcpu; /* 0% - 100% */
-	gint		nice;
-
 	guint		pid;
 	guint		uid;
+
+	guint8		pcpu; /* 0% - 100% */
+	gint8		nice;
 
 	guint		is_visible	: 1;
 	guint		is_running	: 1;
@@ -210,8 +212,6 @@ struct KillArgs
 	ProcData *procdata;
 	int signal;
 };
-
-
 
 
 #endif /* _PROCMAN_PROCMAN_H_ */

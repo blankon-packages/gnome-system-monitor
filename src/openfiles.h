@@ -7,5 +7,4 @@
 
 void 		create_openfiles_dialog (ProcData *procdata) G_GNUC_INTERNAL;
 
-
 #endif

@@ -11,16 +11,15 @@
 #include <unistd.h>
 #include <netdb.h>
 #include <sys/socket.h>
+#include <sys/wait.h>
 
 #include <string>
 #include <vector>
 #include <fstream>
 #include <sstream>
 
-extern "C" {
 #include "sysinfo.h"
 #include "util.h"
-}
 
 
 using std::string;

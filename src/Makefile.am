@@ -9,30 +9,31 @@ INCLUDES = \
 bin_PROGRAMS = gnome-system-monitor
 
 gnome_system_monitor_SOURCES = \
-	procman.c  procman.h \
-	interface.c interface.h \
-	callbacks.c callbacks.h \
-	load-graph.c load-graph.h \
-	proctable.c proctable.h \
-	prettytable.c prettytable.h \
-	util.c util.h \
-	procactions.c procactions.h \
-	procdialogs.c procdialogs.h \
+	procman.cpp  procman.h \
+	interface.cpp interface.h \
+	callbacks.cpp callbacks.h \
+	load-graph.cpp load-graph.h \
+	proctable.cpp proctable.h \
+	prettytable.cpp prettytable.h \
+	util.cpp util.h \
+	procactions.cpp procactions.h \
+	procdialogs.cpp procdialogs.h \
 	memmaps.cpp memmaps.h \
-	openfiles.c openfiles.h \
-	favorites.c favorites.h \
-	smooth_refresh.c smooth_refresh.h \
+	openfiles.cpp openfiles.h \
+	favorites.cpp favorites.h \
+	smooth_refresh.cpp smooth_refresh.h \
 	defaulttable.h \
-	disks.c disks.h \
-	selinux.h selinux.c \
-	procman_gnomesu.h procman_gnomesu.c \
-	procman_gksu.h procman_gksu.c \
+	disks.cpp disks.h \
+	selinux.h selinux.cpp \
+	procman_gnomesu.h procman_gnomesu.cpp \
+	procman_gksu.h procman_gksu.cpp \
 	sysinfo.cpp sysinfo.h \
 	lsof.cpp lsof.h \
 	e_date.c e_date.h
 
 
-gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la -lpcrecpp
+gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la
+## gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la -lpcrecpp
 
 
 noinst_LTLIBRARIES = libbacon.la
