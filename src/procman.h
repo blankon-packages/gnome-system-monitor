@@ -30,13 +30,14 @@
 #include <time.h>
 
 typedef struct _ProcConfig ProcConfig;
-typedef struct _PrettyTable PrettyTable;
 typedef struct _ProcInfo ProcInfo;
-typedef struct _ProcData ProcData;
+struct ProcData;
 
 #include "smooth_refresh.h"
 
 #include "load-graph.h"
+
+#include "prettytable.h"
 
 enum
 {
@@ -45,11 +46,9 @@ enum
 	ACTIVE_PROCESSES
 };
 
-enum
-{
-	MIN_UPDATE_INTERVAL = 1 * 1000,
-	MAX_UPDATE_INTERVAL = 100 * 1000
-};
+
+static const unsigned MIN_UPDATE_INTERVAL =   1 * 1000;
+static const unsigned MAX_UPDATE_INTERVAL = 100 * 1000;
 
 
 enum ProcmanTab
@@ -69,9 +68,9 @@ struct _ProcConfig
         gboolean	show_hide_message;
         gboolean	show_tree;
 	gboolean	show_all_fs;
-	guint		update_interval;
- 	gint		graph_update_interval;
- 	gint		disks_update_interval;
+	int		update_interval;
+ 	int		graph_update_interval;
+ 	int		disks_update_interval;
 	gint		whose_process;
 	gint		current_tab;
 	GdkColor	cpu_color[GLIBTOP_NCPU];
@@ -87,6 +86,9 @@ struct _ProcConfig
 
 struct _ProcInfo
 {
+	// adds one more ref to icon
+	void set_icon(GdkPixbuf *icon);
+
 	GtkTreeIter	node;
 	GtkTreePath	*path;
 	ProcInfo	*parent;
@@ -104,11 +106,17 @@ struct _ProcInfo
 	time_t		start_time;
 	guint64		cpu_time_last;
 
-	guint64		vmsize;
-	guint64		memres;
-	guint64		memwritable;
-	guint64		memshared;
-	guint64		mem; /* estimated memory usage */
+	// all these members are filled with libgtop which uses
+	// guint64 (to have fixed size data) but we don't need more
+	// than an unsigned long (even for 32bit apps on a 64bit
+	// kernel) as these data are amounts, not offsets.
+	unsigned long	vmsize;
+	unsigned long	memres;
+	unsigned long	memwritable;
+	unsigned long	memshared;
+	unsigned long	mem; /* estimated memory usage */
+
+	// wnck gives an unsigned long
 	unsigned long	memxserver;
 
 	guint		pid;
@@ -122,8 +130,11 @@ struct _ProcInfo
 	guint		is_blacklisted	: 1;
 };
 
-struct _ProcData
+struct ProcData
 {
+	// lazy initialization
+	static ProcData* get_instance();
+
 	GtkUIManager	*uimanager;
 	GtkActionGroup	*action_group;
 	GtkWidget	*statusbar;
@@ -170,7 +181,7 @@ struct _ProcData
 	GList		*info;
 	GHashTable	*pids;
 
-	PrettyTable	*pretty_table;
+	PrettyTable	pretty_table;
 	GList		*blacklist;
 	gint		blacklist_num;
 
@@ -212,6 +223,5 @@ struct KillArgs
 	ProcData *procdata;
 	int signal;
 };
-
 
 #endif /* _PROCMAN_PROCMAN_H_ */

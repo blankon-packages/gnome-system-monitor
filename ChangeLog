@@ -1,3 +1,94 @@
+2007-01-08  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+	
+	Released 2.17.5.
+
+2007-01-07  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procman.h:
+	* src/proctable.cpp:
+	* src/util.cpp:
+
+	Various micro-optimizations based on profiling.
+	Changed the type of many ProcInfo members to 'unsigned long' to
+	avoid 64bit arithmetic on 32bit system.
+	Replaced on g_list_append with g_list_prepend.
+	Avoided double comparison in format_file_size_for_display.
+
+2007-01-07  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procman.cpp:
+	* src/smooth_refresh.cpp:
+	* src/smooth_refresh.h:
+
+	Fixed signedness issue with SmoothRefresh.
+	Simplified logic.
+
+2007-01-06  Benoît Dejean  <benoit@placenet.org>
+
+	* src/prettytable.cpp:
+	
+	Fixed icon lookup order : first wnck, then theme and default table.
+
+2007-01-06  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procdialogs.cpp:
+	* src/procman.h:
+
+	Merged some code about spin buttons in the preference dialog.
+	Fixed a bunch of warnings.
+	
+2007-01-06  Benoît Dejean  <benoit@placenet.org>
+
+	* src/interface.cpp:
+	
+	Fixed 2 little signedness issues.
+
+2007-01-05  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/callbacks.cpp:
+	* src/procdialogs.cpp:
+	* src/procman.cpp:
+	* src/procman.h:
+	* src/smooth_refresh.cpp:
+	* src/smooth_refresh.h:
+
+	Rewrote and cleaned a bunch of stuff.
+	Changed the smooth refresh behaviour :
+		- try to keep CPU ~20%
+		- adjust update_interval up to twice its initial value.
+
+2007-01-04  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/prettytable.cpp:
+	* src/prettytable.h:
+	* src/procman.cpp:
+	* src/procman.h:
+	* src/proctable.cpp:
+	* src/util.h:
+	
+	More C++ rewrite.
+	Easier and clearer.
+	Fixed many potential use-before-init bugs.
+
+2007-01-04  Benoît Dejean  <benoit@placenet.org>
+
+	* .cvsignore:
+	* debian/.cvsignore:
+	* help/.cvsignore:
+	* help/C/.cvsignore:
+	* help/bg/.cvsignore:
+	* omf-install/.cvsignore:
+	* pixmaps/.cvsignore:
+	* src/.cvsignore:
+	* po/.cvsignore:
+	
+	Dropped CVS admin files.
+	Updated svn:ignore properties.
+
 2006-12-19  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS:
