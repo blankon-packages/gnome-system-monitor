@@ -47,7 +47,6 @@
 #include "prettytable.h"
 #include "util.h"
 #include "interface.h"
-#include "favorites.h"
 #include "selinux.h"
 extern "C" {
 #include "e_date.h"
@@ -447,21 +446,16 @@ proctable_new (ProcData * const procdata)
 }
 
 
-static void
-proctable_free_info(ProcInfo *info)
+ProcInfo::~ProcInfo()
 {
-	g_assert(info != NULL);
+  if (this->pixbuf)
+    g_object_unref(this->pixbuf);
 
-	if(info->pixbuf) {
-		g_object_unref (info->pixbuf);
-	}
-
-	g_free (info->name);
-	g_free(info->tooltip);
-	g_free (info->arguments);
-	g_free (info->security_context);
-	g_slist_free (info->children);
-	g_slice_free(ProcInfo, info);
+  g_free(this->name);
+  g_free(this->tooltip);
+  g_free(this->arguments);
+  g_free(this->security_context);
+  g_slist_free(this->children);
 }
 
 
@@ -666,6 +660,7 @@ update_info_mutable_cols(GtkTreeStore *store, ProcData *procdata, ProcInfo *info
 	memxserver = SI_gnome_vfs_format_file_size_for_display (info->memxserver);
 	mem = SI_gnome_vfs_format_file_size_for_display(info->mem);
 
+	// expects centiseconds
 	cpu_time = format_duration_for_display(100 * info->cpu_time_last / procdata->frequency);
 
 	/* FIXME: does it worths it to display relative to $now date ?
@@ -710,14 +705,6 @@ insert_info_to_tree (ProcInfo *info, ProcData *procdata)
 	if ((procdata->config.whose_process == ACTIVE_PROCESSES) &&
 	    (!info->is_running))
 		return;
-
-	/* Don't show processes that user has blacklisted */
-	if (is_process_blacklisted (procdata, info->name))
-	{
-		info->is_blacklisted = TRUE;
-		return;
-	}
-	info->is_blacklisted = FALSE;
 
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
 	if (info->parent && procdata->config.show_tree && info->parent->is_visible) {
@@ -826,7 +813,7 @@ remove_info_from_list (ProcInfo *info, ProcData *procdata)
 	/* Remove from list */
 	procdata->info = g_list_remove (procdata->info, info);
 	g_hash_table_remove(procdata->pids, GINT_TO_POINTER(info->pid));
-	proctable_free_info(info);
+	delete info;
 }
 
 
@@ -879,17 +866,24 @@ update_info (ProcData *procdata, ProcInfo *info)
 }
 
 
-static ProcInfo *
-procinfo_new (ProcData *procdata, gint pid)
+ProcInfo::ProcInfo(pid_t pid)
+  : path(NULL),
+    parent(NULL),
+    children(NULL),
+    pixbuf(NULL),
+    tooltip(NULL),
+    name(NULL),
+    user(NULL),
+    arguments(NULL),
+    status(NULL),
+    security_context(NULL)
 {
-	ProcInfo *info;
+	ProcInfo * const info = this;
 	glibtop_proc_state procstate;
 	glibtop_proc_time proctime;
 	glibtop_proc_uid procuid;
 	glibtop_proc_args procargs;
 	gchar** arguments;
-
-	info = g_slice_new0(ProcInfo);
 
 	info->pid = pid;
 	info->uid = -1;
@@ -901,7 +895,7 @@ procinfo_new (ProcData *procdata, gint pid)
 
 	/* FIXME : wrong. name and arguments may change with exec* */
 	get_process_name (info, procstate.cmd, arguments[0]);
-	get_process_user (procdata, info, procstate.uid);
+	get_process_user(ProcData::get_instance(), info, procstate.uid);
 
 	info->tooltip = g_strjoinv(" ", arguments);
 	info->arguments = g_strescape(info->tooltip, "\\\"");
@@ -916,16 +910,14 @@ procinfo_new (ProcData *procdata, gint pid)
 	get_process_status (info, &procstate);
 	get_process_selinux_context (info);
 
-	info->pixbuf = procdata->pretty_table.get_icon(info->name, pid);
+	info->pixbuf = ProcData::get_instance()->pretty_table.get_icon(info->name, pid);
 
-	info->parent = find_parent (procdata, procuid.ppid);
+	info->parent = find_parent(ProcData::get_instance(), procuid.ppid);
 	if (info->parent) {
 		info->parent->children = g_slist_prepend (info->parent->children, info);
 	}
 
 	info->is_visible = FALSE;
-
-	return info;
 }
 
 
@@ -952,7 +944,7 @@ refresh_list (ProcData *procdata, const unsigned *pid_list, const guint n)
 
 		info = proctable_find_process (pid_list[i], procdata);
 		if (!info) {
-			info = procinfo_new (procdata, pid_list[i]);
+			info = new ProcInfo(pid_list[i]);
 			g_ptr_array_add(addition_list, info);
 			procdata->info = g_list_prepend (procdata->info, info);
 			g_hash_table_insert(procdata->pids, GINT_TO_POINTER(info->pid), info);
@@ -1078,7 +1070,7 @@ proctable_free_table (ProcData * const procdata)
 	while (list)
 	{
 		ProcInfo *info = static_cast<ProcInfo*>(list->data);
-		proctable_free_info(info);
+		delete info;
 		list = g_list_next (list);
 	}
 
@@ -1109,7 +1101,7 @@ make_loadavg_string(void)
 
 
 void
-_ProcInfo::set_icon(GdkPixbuf* icon)
+ProcInfo::set_icon(GdkPixbuf* icon)
 {
   if (this->pixbuf)
     g_object_unref(this->pixbuf);

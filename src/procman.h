@@ -30,7 +30,7 @@
 #include <time.h>
 
 typedef struct _ProcConfig ProcConfig;
-typedef struct _ProcInfo ProcInfo;
+struct ProcInfo;
 struct ProcData;
 
 #include "smooth_refresh.h"
@@ -65,7 +65,6 @@ struct _ProcConfig
 	gint		width;
 	gint		height;
         gboolean	show_kill_warning;
-        gboolean	show_hide_message;
         gboolean	show_tree;
 	gboolean	show_all_fs;
 	int		update_interval;
@@ -84,8 +83,13 @@ struct _ProcConfig
 };
 
 
-struct _ProcInfo
+class ProcInfo
 {
+	ProcInfo& operator=(const ProcInfo&);
+	ProcInfo(const ProcInfo&);
+ public:
+	ProcInfo(pid_t pid);
+	~ProcInfo();
 	// adds one more ref to icon
 	void set_icon(GdkPixbuf *icon);
 
@@ -127,7 +131,6 @@ struct _ProcInfo
 
 	guint		is_visible	: 1;
 	guint		is_running	: 1;
-	guint		is_blacklisted	: 1;
 };
 
 struct ProcData
@@ -182,8 +185,6 @@ struct ProcData
 	GHashTable	*pids;
 
 	PrettyTable	pretty_table;
-	GList		*blacklist;
-	gint		blacklist_num;
 
 	GConfClient	*client;
 	GtkWidget	*app;
@@ -193,12 +194,7 @@ struct ProcData
 	/* cached username */
 	GStringChunk	*users;
 
-
-	/* libgtop uses guint64 but we use a float because
-	   frequency is ~always == 100
-	   and because we display cpu_time as %.1f seconds
-	*/
-	float		frequency;
+	unsigned	frequency;
 
 	SmoothRefresh  *smooth_refresh;
 };

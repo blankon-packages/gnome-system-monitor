@@ -59,10 +59,10 @@ am_gnome_system_monitor_OBJECTS = procman.$(OBJEXT) \
 	interface.$(OBJEXT) callbacks.$(OBJEXT) load-graph.$(OBJEXT) \
 	proctable.$(OBJEXT) prettytable.$(OBJEXT) util.$(OBJEXT) \
 	procactions.$(OBJEXT) procdialogs.$(OBJEXT) memmaps.$(OBJEXT) \
-	openfiles.$(OBJEXT) favorites.$(OBJEXT) \
-	smooth_refresh.$(OBJEXT) disks.$(OBJEXT) selinux.$(OBJEXT) \
-	procman_gnomesu.$(OBJEXT) procman_gksu.$(OBJEXT) \
-	sysinfo.$(OBJEXT) lsof.$(OBJEXT) e_date.$(OBJEXT)
+	openfiles.$(OBJEXT) smooth_refresh.$(OBJEXT) disks.$(OBJEXT) \
+	selinux.$(OBJEXT) procman_gnomesu.$(OBJEXT) \
+	procman_gksu.$(OBJEXT) sysinfo.$(OBJEXT) lsof.$(OBJEXT) \
+	e_date.$(OBJEXT)
 gnome_system_monitor_OBJECTS = $(am_gnome_system_monitor_OBJECTS)
 gnome_system_monitor_DEPENDENCIES = libbacon.la
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
@@ -268,7 +268,6 @@ gnome_system_monitor_SOURCES = \
 	procdialogs.cpp procdialogs.h \
 	memmaps.cpp memmaps.h \
 	openfiles.cpp openfiles.h \
-	favorites.cpp favorites.h \
 	smooth_refresh.cpp smooth_refresh.h \
 	defaulttable.h \
 	disks.cpp disks.h \
@@ -381,7 +380,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/disks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_date.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/favorites.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/load-graph.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lsof.Po@am__quote@
