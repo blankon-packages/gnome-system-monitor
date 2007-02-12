@@ -108,11 +108,14 @@ CYGPATH_W = @CYGPATH_W@
 DATADIRNAME = @DATADIRNAME@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
+DOC_USER_FORMATS = @DOC_USER_FORMATS@
 ECHO = @ECHO@
 ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
 EGREP = @EGREP@
+ENABLE_SK_FALSE = @ENABLE_SK_FALSE@
+ENABLE_SK_TRUE = @ENABLE_SK_TRUE@
 EXEEXT = @EXEEXT@
 F77 = @F77@
 FFLAGS = @FFLAGS@
@@ -120,10 +123,13 @@ GCONF_SCHEMAS_INSTALL_FALSE = @GCONF_SCHEMAS_INSTALL_FALSE@
 GCONF_SCHEMAS_INSTALL_TRUE = @GCONF_SCHEMAS_INSTALL_TRUE@
 GCONF_SCHEMA_CONFIG_SOURCE = @GCONF_SCHEMA_CONFIG_SOURCE@
 GCONF_SCHEMA_FILE_DIR = @GCONF_SCHEMA_FILE_DIR@
+GDU_MODULE_VERSION_CHECK_CFLAGS = @GDU_MODULE_VERSION_CHECK_CFLAGS@
+GDU_MODULE_VERSION_CHECK_LIBS = @GDU_MODULE_VERSION_CHECK_LIBS@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 GREP = @GREP@
+HELP_DIR = @HELP_DIR@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
@@ -166,6 +172,7 @@ MAKEINFO = @MAKEINFO@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 OBJEXT = @OBJEXT@
+OMF_DIR = @OMF_DIR@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
@@ -237,6 +244,7 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 SUBDIRS = pixmaps po src help
 EXTRA_DIST = \
+	gnome-doc-utils.make \
 	gnome-system-monitor.desktop.in \
 	intltool-extract.in \
 	intltool-merge.in \
@@ -249,11 +257,13 @@ Applications_in_files = gnome-system-monitor.desktop.in
 Applications_DATA = $(Applications_in_files:.desktop.in=.desktop)
 distuninstallcheck_listfiles = find . -type f -print | grep -v 'scrollkeeper'
 DISTCLEANFILES = \
+  gnome-doc-utils.make \
   intltool-extract \
   intltool-merge \
   intltool-update \
   gnome-system-monitor.desktop
 
+DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
