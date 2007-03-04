@@ -126,7 +126,9 @@
 <!-- Translators may also add here feedback address for translations -->
 
     </legalnotice> 
-
+    <abstract role="description">
+      <para>User manual for System Monitor</para>
+    </abstract>
   </articleinfo> 
 
   <indexterm zone="index"> 
