@@ -60,7 +60,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
-	$(top_srcdir)/gnome-doc-utils.make
+	$(top_srcdir)/gnome-doc-utils.make ChangeLog
 subdir = help
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -407,7 +407,7 @@ DOC_FIGURES = figures/addColumn.png \
 	      figures/systemMonitor.png \
 	      figures/viewMenu.png
 
-DOC_LINGUAS = bg sv
+DOC_LINGUAS = bg fr pa sv
 all: all-am
 
 .SUFFIXES:
