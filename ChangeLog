@@ -1,3 +1,53 @@
+2007-04-09  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+	
+	Released 2.18.1.
+
+2007-04-05  Benoît Dejean  <benoit@placenet.org>
+
+	* src/prettytable.cpp:
+	* src/prettytable.h:
+	
+	Load icons only when needed.
+	This speeds up startup.
+
+2007-04-01  Benoît Dejean  <benoit@placenet.org>
+
+	* src/disks.cpp:
+
+	Simplified the treeview construction by reordering columns.
+
+2007-04-01  Benoît Dejean  <benoit@placenet.org>
+
+	* src/disks.cpp:
+	
+	More debug prints.
+
+2007-03-30  Benoît Dejean  <benoit@placenet.org>
+
+	* src/disks.cpp:
+
+	No need for FP code.
+
+2007-03-28  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/util.cpp:
+	* src/util.h:
+	
+	Changes needed by incoming cleanup/fixes.
+	
+	procman::size_cell_data_func: new function.
+	UnrefMapValues::operator(): added a check.
+
+2007-03-27  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/interface.cpp:
+
+	Little cleanup. Removed dozens of unnecessary gtk_widget_show.
+
 2007-03-12  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS:

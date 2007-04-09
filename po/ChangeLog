@@ -1,3 +1,73 @@
+2007-04-06  Jakub Friedl <jfriedl@suse.cz>
+
+	* cs.po: Updated Czech Translation.
+
+2007-04-05  Jakub Friedl <jfriedl@suse.cz>
+
+	* cs.po: Updated Czech Translation.
+
+2007-04-05  Raivis Dejus <orvils@gmail.com>
+
+	* lv.po: Updated Latvian Translation.
+
+2007-04-02  Raivis Dejus <orvils@gmail.com>
+
+	* lv.po: Updated Latvian Translation.
+
+2007-03-30  Claudio Saavedra  <csaavedra@alumnos.utalca.cl>
+
+	* es.po: Updated Spanish translation by Jorge González.
+
+2007-03-30  Peter Bach  <bach.peter@gmail.com>
+
+	* da.po: Updated Danish translation.
+
+2007-03-29  Ilkka Tuohela  <hile@iki.fi>
+
+	* fi.po: Updated Finnish translation.
+
+2007-03-26  Leonardo Ferreira Fontenelle  <leonardof@svn.gnome.org>
+
+	* pt_BR.po: Fixed Brazilian Portuguese translation; closes bug
+	#423031.
+
+2007-03-26  Stéphane Raimbault  <stephane.raimbault@gmail.com>
+
+	* fr.po: Fixed French translation by Claude Paroz (bug #422588).
+
+2007-03-25  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
+
+	* gl.po: Updated Galician Translation.
+
+2007-03-21  Pema Geyleg  <pema.geyleg@gmail.com>
+
+	* dz.po: Updated Dzongkha Translation.
+
+2007-03-20  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Khaled Hosny.
+
+2007-03-19  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* nb.po: Updated Norwegian bokmål translation from Espen
+	Stefansen.
+
+2007-03-18  Matic Zgur  <mr.zgur@gmail.com>
+
+	* sl.po: Updated Slovenian translation.
+
+2007-03-16  Luca Ferretti  <elle.uca@libero.it>
+
+	* it.po: Fixed.
+
+2007-03-15  Luca Ferretti  <elle.uca@libero.it>
+
+	* it.po: Updated Italian translation
+
+2007-03-12  Baris Cicek <baris@teamforce.name.tr>
+
+	* tr.po: Updated Turkish translation
+
 2007-03-10  Pema Geyleg  <pema.geyleg@gmail.com>
 
 	* dz.po: Updated Dzongkha Translation.
