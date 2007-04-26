@@ -259,6 +259,20 @@ glib_DEFUN([GLIB_WITH_NLS],
           glib_save_LIBS="$LIBS"
           LIBS="$LIBS $INTLLIBS"
 	  AC_CHECK_FUNCS(dcgettext)
+	  MSGFMT_OPTS=
+	  AC_MSG_CHECKING([if msgfmt accepts -c])
+	  GLIB_RUN_PROG([msgfmt -c -o /dev/null],[
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: test 1.0\n"
+"PO-Revision-Date: 2007-02-15 12:01+0100\n"
+"Last-Translator: test <foo@bar.xx>\n"
+"Language-Team: C <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+], [MSGFMT_OPTS=-c; AC_MSG_RESULT([yes])], [AC_MSG_RESULT([no])])
+	  AC_SUBST(MSGFMT_OPTS)
 	  AC_PATH_PROG(GMSGFMT, gmsgfmt, $MSGFMT)
 	  GLIB_PATH_PROG_WITH_TEST(XGETTEXT, xgettext,
 	    [test -z "`$ac_dir/$ac_word -h 2>&1 | grep '(HELP)'`"], :)
@@ -454,6 +468,23 @@ AC_DEFUN([AM_GLIB_GNU_GETTEXT],[GLIB_GNU_GETTEXT($@)])
 AC_DEFUN([AM_GLIB_DEFINE_LOCALEDIR],[GLIB_DEFINE_LOCALEDIR($@)])
 ])dnl
 
+# GLIB_RUN_PROG(PROGRAM, TEST-FILE, [ACTION-IF-PASS], [ACTION-IF-FAIL])
+# 
+# Create a temporary file with TEST-FILE as its contents and pass the
+# file name to PROGRAM.  Perform ACTION-IF-PASS if PROGRAM exits with
+# 0 and perform ACTION-IF-FAIL for any other exit status.
+AC_DEFUN([GLIB_RUN_PROG],
+[cat >conftest.foo <<_ACEOF
+$2
+_ACEOF
+if AC_RUN_LOG([$1 conftest.foo]); then
+  m4_ifval([$3], [$3], [:])
+m4_ifvaln([$4], [else $4])dnl
+echo "$as_me: failed input was:" >&AS_MESSAGE_LOG_FD
+sed 's/^/| /' conftest.foo >&AS_MESSAGE_LOG_FD
+fi])
+
+
 dnl GNOME_COMPILE_WARNINGS
 dnl Turn on many useful compiler warnings
 dnl For now, only works on GCC
@@ -551,11 +582,11 @@ AC_DEFUN([GNOME_CXX_WARNINGS],[
 
   AC_MSG_CHECKING(what warning flags to pass to the C++ compiler)
   warnCXXFLAGS=
-  if test "x$GCC" != xyes; then
-    enable_compile_warnings=no
+  if test "x$GXX" != xyes; then
+    enable_cxx_warnings=no
   fi
   if test "x$enable_cxx_warnings" != "xno"; then
-    if test "x$GCC" = "xyes"; then
+    if test "x$GXX" = "xyes"; then
       case " $CXXFLAGS " in
       *[\ \	]-Wall[\ \	]*) ;;
       *) warnCXXFLAGS="-Wall -Wno-unused" ;;
@@ -578,7 +609,7 @@ AC_DEFUN([GNOME_CXX_WARNINGS],[
    AC_MSG_CHECKING(what language compliance flags to pass to the C++ compiler)
    complCXXFLAGS=
    if test "x$enable_iso_cxx" != "xno"; then
-     if test "x$GCC" = "xyes"; then
+     if test "x$GXX" = "xyes"; then
       case " $CXXFLAGS " in
       *[\ \	]-ansi[\ \	]*) ;;
       *) complCXXFLAGS="$complCXXFLAGS -ansi" ;;
@@ -596,20 +627,10 @@ AC_DEFUN([GNOME_CXX_WARNINGS],[
   AC_SUBST(WARN_CXXFLAGS)
 ])
 
-dnl GNOME_DOC_INIT([MINIMUM-VERSION])
-
-AC_DEFUN([GNOME_DOC_INIT],
+dnl Do not call GNOME_DOC_DEFINES directly.  It is split out from
+dnl GNOME_DOC_INIT to allow gnome-doc-utils to bootstrap off itself.
+AC_DEFUN([GNOME_DOC_DEFINES],
 [
-dnl Only apply the version check if we're not configuring ourselves!
-if test "x$PACKAGE" != "xgnome-doc-utils"; then
-  GDU_REQUIRED_VERSION=0.3.2
-  if test -n "$1"; then
-    GDU_REQUIRED_VERSION=$1
-  fi
-
-  PKG_CHECK_MODULES([GDU_MODULE_VERSION_CHECK],[gnome-doc-utils >= $GDU_REQUIRED_VERSION])
-fi
-
 AC_ARG_WITH([help-dir],
   AC_HELP_STRING([--with-help-dir=DIR], [path to help docs]),,
   [with_help_dir='${datadir}/gnome/help'])
@@ -632,8 +653,27 @@ AC_ARG_ENABLE([scrollkeeper],
 	[AC_HELP_STRING([--disable-scrollkeeper],
 			[do not make updates to the scrollkeeper database])],,
 	enable_scrollkeeper=yes)
-AM_CONDITIONAL(ENABLE_SK, test "x$enable_scrollkeeper" = "xyes")
+AM_CONDITIONAL([ENABLE_SK],[test "$gdu_cv_have_gdu" = "yes" -a "$enable_scrollkeeper" = "yes"])
 
+AM_CONDITIONAL([HAVE_GNOME_DOC_UTILS],[test "$gdu_cv_have_gdu" = "yes"])
+])
+
+# GNOME_DOC_INIT ([MINIMUM-VERSION],[ACTION-IF-FOUND],[ACTION-IF-NOT-FOUND])
+#
+AC_DEFUN([GNOME_DOC_INIT],
+[
+ifelse([$1],,[gdu_cv_version_required=0.3.2],[gdu_cv_version_required=$1])
+
+PKG_CHECK_EXISTS([gnome-doc-utils >= $gdu_cv_version_required],
+	[gdu_cv_have_gdu=yes],[gdu_cv_have_gdu=no])
+
+if test "$gdu_cv_have_gdu" = "yes"; then
+	ifelse([$2],,[:],[$2])
+else
+	ifelse([$3],,[AC_MSG_ERROR([gnome-doc-utils >= $gdu_cv_version_required not found])],[$3])
+fi
+
+GNOME_DOC_DEFINES
 ])
 
 
@@ -651,7 +691,7 @@ case "$am__api_version" in
 esac
 
 if test -n "$1"; then
-    AC_MSG_CHECKING(for intltool >= $1)
+    AC_MSG_CHECKING([for intltool >= $1])
 
     INTLTOOL_REQUIRED_VERSION_AS_INT=`echo $1 | awk -F. '{ print $ 1 * 1000 + $ 2 * 100 + $ 3; }'`
     INTLTOOL_APPLIED_VERSION=`awk -F\" '/\\$VERSION / { print $ 2; }' ${ac_aux_dir}/intltool-update.in`
@@ -732,8 +772,10 @@ AC_SUBST(ALL_LINGUAS)
 # Set DATADIRNAME correctly if it is not set yet
 # (copied from glib-gettext.m4)
 if test -z "$DATADIRNAME"; then
-  AC_TRY_LINK(, [extern int _nl_msg_cat_cntr;
-                 return _nl_msg_cat_cntr],
+  AC_LINK_IFELSE(
+    [AC_LANG_PROGRAM([[]],
+                     [[extern int _nl_msg_cat_cntr;
+                       return _nl_msg_cat_cntr]])],
     [DATADIRNAME=share],
     [case $host in
     *-*-solaris*)

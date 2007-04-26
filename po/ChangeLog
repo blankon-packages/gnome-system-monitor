@@ -1,6 +1,16 @@
-2007-04-09  Peter Bach  <bach.peter@gmail.com>
+2007-04-23  Leonardo Ferreira Fontenelle  <leonardof@svn.gnome.org>
 
-	* da.po: Updated Danish translation.
+	* pt_BR.po: Fixes in Brazilian Portuguese translation by Washington
+	Lins <washington-lins@uol.com.br>. See bug #427446. Originally
+	committed to branch gnome-2-18.
+
+2007-04-12  Inaki Larranaga Murgoitio  <dooteo@euskalgnu.org>
+
+	* eu.po: Updated Basque translation.
+
+2007-04-10  Jakub Friedl <jfriedl@suse.cz>
+
+	* cs.po: Updated Czech Translation.
 
 2007-04-06  Jakub Friedl <jfriedl@suse.cz>
 

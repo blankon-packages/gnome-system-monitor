@@ -1,10 +1,7 @@
-New in 2.18.1.1 - 10 April 2007
-* Sysinfo displays `uname -n` instead of FQDN.
-
-New in 2.18.1 - 9 April 2007
-* Little code cleanups.
-* Improved startup time.
-* Updated translations.
+New in 2.19.1 - 23 april 2007
+* Fixed hostname in the sysinfo tab.
+* Big cleanup of the process list code.
+* Reworded and fixed the process dependency tree.
 
 New in 2.18.0 - 12 Mars 2007
 * Fixed .desktop.
