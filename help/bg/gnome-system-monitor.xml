@@ -29,7 +29,7 @@
       <year>2002</year> 
       <year>2004</year> 
       <holder>Bill Day</holder> 
-    </copyright> 
+    </copyright><copyright><year>2005</year><holder>Rostislav Raykov (zbrox@i-space.org)</holder></copyright> 
 
 <!-- translators: uncomment this:
   <copyright>
@@ -127,7 +127,7 @@
 
     </legalnotice> 
     <abstract role="description">
-      <para>User manual for System Monitor</para>
+      <para>Потребитеско ръководство за „Наблюдение на системата“</para>
     </abstract>
   </articleinfo> 
 
@@ -234,7 +234,7 @@
                 <para>
                   <guilabel>Процеси</guilabel>
                 </para>
-                <para>Съдържа поле за <guilabel>Търсене</guilabel>, падащ списък за <guilabel>Изглед</guilabel>, табличен списък на процесите, бутон за <guilabel>Повече информация</guilabel> и бутон за <guilabel>Завършване на процес</guilabel>.</para>
+                <para>Съдържа поле за <guilabel>Търсене</guilabel>, падащ списък за <guilabel>Изглед</guilabel>, табличен списък на процесите, бутон за <guilabel>Повече информация</guilabel> и бутон за <guilabel>Прекратяване на процес</guilabel>.</para>
                 <note>
                   <para>Не бъркайте падащия списък <guilabel>Изглед</guilabel> при раздела <guilabel>Процеси</guilabel> с менюто от лентата с менюта.</para>
                 </note>
@@ -434,7 +434,7 @@
             <para>Изберете процеса, който искате да скриете.</para>
           </listitem>
             <listitem>
-              <para>Изберете menuchoice&gt;<guimenu>Редактиране</guimenu><guimenuitem>Скриване на процес</guimenuitem></para>
+              <para>Изберете <menuchoice><guimenu>Редактиране</guimenu><guimenuitem>Скриване на процес</guimenuitem></menuchoice></para>
               <para>По подразбиране се появява прозорец за подтвърждение. За информация относно как да показвате и скривате това уведомяване, вижте <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
             </listitem>
             <listitem>
@@ -682,21 +682,21 @@
 
 
     <sect2 id="gnome-system-monitor-end-process">
-      <title>Завършване на процес</title>
-      <para>За да завършите процес, следвайте следните стъпки:</para>
+      <title>Прекратяване на процес</title>
+      <para>За да прекратите процес, следвайте следните стъпки:</para>
       <orderedlist>
         <listitem>
           <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
         </listitem>
         <listitem>
-          <para>Изберете процеса, който искате да завършите.</para>
+          <para>Изберете процеса, който искате да прекратите.</para>
         </listitem>
         <listitem>
-          <para>Изберете <menuchoice><guimenu>Редактиране</guimenu><guimenuitem>Завършване на процес</guimenuitem></menuchoice> или натиснете на бутона <guibutton>Завършване на процес</guibutton>.</para>
+          <para>Изберете <menuchoice><guimenu>Редактиране</guimenu><guimenuitem>Прекратяване на процес</guimenuitem></menuchoice> или натиснете на бутона <guibutton>Прекратяване на процес</guibutton>.</para>
           <para>По подразбиране се появява прозорец за подтвърждение. За информация относно как да показвате и скривате това уведомяване, вижте <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
         </listitem>
         <listitem>
-          <para>Натиснете бутона <guibutton>Завършване на процес</guibutton> за да подтвърдите, че искате да завършите процеса. <application>Наблюдение на системата</application> принуждава процеса да приключи нормално.</para>
+          <para>Натиснете бутона <guibutton>Прекратяване на процес</guibutton> за да подтвърдите, че искате да прекратите процеса. <application>Наблюдение на системата</application> принуждава процеса да приключи нормално.</para>
         </listitem>
       </orderedlist>
       <para>Това е предпочитания начин да се спират процеси.</para>
@@ -720,7 +720,7 @@
           <para>Натиснете бутона <guibutton>Убиване на процес</guibutton> за да подтвърдите, че искате да прекратите процеса. <application>Наблюдение на системата</application> принуждава програмата да спре незабавно.</para>
         </listitem>
       </orderedlist>
-      <para>Обикновено убивате процес, само ако не може да се завърши по нормалния начин, описан в <xref linkend="gnome-system-monitor-end-process"/>.</para>
+      <para>Обикновено убивате процес, само ако не може да се прекрати по нормалния начин, описан в <xref linkend="gnome-system-monitor-end-process"/>.</para>
     </sect2>
 
     <sect2 id="gnome-system-monitor-cpu">
@@ -947,7 +947,7 @@
           </varlistentry>
           <varlistentry>
             <term>
-              <guilabel>Information Fields</guilabel>
+              <guilabel>Информативни полета</guilabel>
             </term>
             <listitem>
               <para>Използвайте следните опции, за да изберете кои полета да се показват в списъка с процесите.</para>

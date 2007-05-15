@@ -28,11 +28,11 @@ gnome_system_monitor_SOURCES = \
 	procman_gksu.h procman_gksu.cpp \
 	sysinfo.cpp sysinfo.h \
 	lsof.cpp lsof.h \
+	gconf-keys.cpp gconf-keys.h \
 	e_date.c e_date.h
 
 
-gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la
-## gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la -lpcrecpp
+gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la -lpcrecpp
 
 
 noinst_LTLIBRARIES = libbacon.la

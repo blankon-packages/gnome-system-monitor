@@ -1,3 +1,75 @@
+2007-05-13  Benoît Dejean  <benoit@placenet.org>
+
+	* NEWS:
+	
+	Released 2.19.2.
+
+2007-04-28  Benoît Dejean  <benoit@placenet.org>
+
+	* src/proctable.cpp:
+	* src/util.cpp:
+	
+	Simpler code to display size columns.
+
+2007-04-27  Benoît Dejean  <benoit@placenet.org>
+
+	* src/gnome-system-monitor.schemas.in:
+	
+	Better documentation about 'Solaris mode'.
+
+2007-04-27  Benoît Dejean  <benoit@placenet.org>
+
+	* src/procdialogs.cpp:
+
+	Fixed case in "Solaris mode".
+
+2007-04-26  Benoît Dejean  <benoit@placenet.org>
+
+	* src/proctable.cpp:
+	
+	Try to fix dependencies when using active/my view.
+	I am not sure it's correct, at least it doesn't g_assert
+	on startup.
+
+2007-04-26  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/Makefile.am:
+	* src/lsof.cpp:
+	
+	pcrecpp is back !
+
+2007-04-26  Benoît Dejean  <benoit@placenet.org>
+
+	* src/memmaps.cpp:
+	
+	Display device name instead of major/minor.
+	Reverted one string "MemoryMaps" to "Memory Maps".
+
+2007-04-25  Benoît Dejean  <benoit@placenet.org>
+
+	* src/memmaps.cpp:
+	
+	Implemented smaps.
+	Simplified implementation.
+	Uses a GtkWindow instead of a dialog because the treeview is now
+	much bigger.
+
+2007-04-24  Benoît Dejean  <benoit@placenet.org>
+
+	* configure.in:
+	* src/Makefile.am:
+	* src/gconf-keys.cpp:
+	* src/gconf-keys.h:
+	* src/gnome-system-monitor.schemas.in:
+	* src/procdialogs.cpp:
+	* src/procman.cpp:
+	* src/procman.h:
+	* src/proctable.cpp:
+
+	Added a configure switch for Irix/Solaris mode.
+	Closes #410795.
+
 2007-04-23  Benoît Dejean  <benoit@placenet.org>
 
 	* NEWS:
