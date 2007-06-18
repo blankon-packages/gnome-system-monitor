@@ -736,7 +736,7 @@
       <para>El <application>Monitor del sistema</application> muestra el uso histórico de memoria e intercambio de forma gráfica. Debajo de la gráfica, el <application>Monitor del sistema</application> también muestra los siguientes valores numéricos:</para>
       <itemizedlist>
         <listitem>
-          <para>Memoria usado</para>
+          <para>Memoria usada</para>
         </listitem>
         <listitem>
           <para>Memoria total</para>
@@ -888,7 +888,7 @@
             <para>Seleccione la solapa <guilabel>Recursos</guilabel> en la ventana del <guilabel>Monitor del sistema</guilabel>, para mostrar las gráficas y la tabla que proporciona información acerca del uso de los recursos del sistema.</para>
           </listitem>
           <listitem>
-            <para>Pulse el botón <guibutton>Memoria usada</guibutton> o <guibutton>Intercambio usado</guibutton>. Se mostrará el diálogo <guilabel>Escoja un color</guilabel>.</para>
+            <para>Pulse el botón <guibutton>Memoria de usuario</guibutton> o <guibutton>Intercambio usado</guibutton>. Se mostrará el diálogo <guilabel>Escoja un color</guilabel>.</para>
           </listitem>
           <listitem>
             <para>Elija un color de la <guilabel>Paleta</guilabel> o use la rueda de colores o los marcadores incrementables para personalizar el color.</para>

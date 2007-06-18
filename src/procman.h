@@ -20,6 +20,7 @@
 #define _PROCMAN_PROCMAN_H_
 
 
+#include <gtkmm.h>
 
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <glib.h>
@@ -109,10 +110,10 @@ class ProcInfo
 	ProcInfo(pid_t pid);
 	~ProcInfo();
 	// adds one more ref to icon
-	void set_icon(GdkPixbuf *icon);
+	void set_icon(Glib::RefPtr<Gdk::Pixbuf> icon);
 
 	GtkTreeIter	node;
-	GdkPixbuf	*pixbuf;
+	Glib::RefPtr<Gdk::Pixbuf> pixbuf;
 	gchar		*tooltip;
 	gchar		*name;
 	gchar		*user; /* allocated with g_string_chunk, don't free it ! */
@@ -185,9 +186,9 @@ struct ProcData
 	SmoothRefresh  *smooth_refresh;
 };
 
-void		procman_save_config (ProcData *data) G_GNUC_INTERNAL;
-void		procman_save_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix) G_GNUC_INTERNAL;
-gboolean	procman_get_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix) G_GNUC_INTERNAL;
+void		procman_save_config (ProcData *data);
+void		procman_save_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix);
+gboolean	procman_get_tree_state (GConfClient *client, GtkWidget *tree, const gchar *prefix);
 
 
 

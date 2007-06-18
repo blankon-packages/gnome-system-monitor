@@ -736,7 +736,7 @@
       <para><application>Systemövervakare</application> visar historik för minnesanvändning och växlingsutrymme i ett grafiskt format. Under diagrammet visar även <application>Systemövervakare</application> följande numeriska värden:</para>
       <itemizedlist>
         <listitem>
-          <para>Använt minne</para>
+          <para>Användarminne</para>
         </listitem>
         <listitem>
           <para>Totalt minne</para>
@@ -888,7 +888,7 @@
             <para>Välj fliken <guilabel>Resursövervakare</guilabel> i fönstret <guilabel>Systemövervakare</guilabel> för att visa diagrammen och tabellen som tillhandahåller information om användningen av systemresurser.</para>
           </listitem>
           <listitem>
-            <para>Klicka på knapparna <guibutton>Använt minne</guibutton> eller <guibutton>Använt växlingsutrymme</guibutton>. Dialogrutan <guilabel>Välj en färg</guilabel> kommer att visas.</para>
+            <para>Klicka på knapparna <guibutton>Användarminne</guibutton> eller <guibutton>Använt växlingsutrymme</guibutton>. Dialogrutan <guilabel>Välj en färg</guilabel> kommer att visas.</para>
           </listitem>
           <listitem>
             <para>Välj en färg från <guilabel>Palett</guilabel> eller använd färghjulet eller snurrväljarna för att anpassa färgen.</para>

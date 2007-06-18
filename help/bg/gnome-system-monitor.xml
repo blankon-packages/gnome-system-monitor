@@ -736,7 +736,9 @@
       <para><application>Наблюдение на системата</application> показва истроията на заетостта на паметта и страницирането в графичен формат. Под графиката, <application>Наблюдение на системата</application> показва също така и следните числови стойности:</para>
       <itemizedlist>
         <listitem>
-          <para>Използвана памет</para>
+          <para>
+            User memory
+          </para>
         </listitem>
         <listitem>
           <para>Общо памет</para>
@@ -888,7 +890,9 @@
             <para>Изберете раздела <guilabel>Ресурси</guilabel> в прозореца на <guilabel>Наблюдение на системата</guilabel>, за да покажете графиките и таблицата, които предоставят информация за използването на системните ресурси.</para>
           </listitem>
           <listitem>
-            <para>Натиснете бутона <guibutton>Използвана памет</guibutton> или <guibutton>Използвано място за странициране</guibutton>. Появява се прозорецът <guilabel>Избор на цвят</guilabel>.</para>
+            <para>
+              Click on the <guibutton>User memory</guibutton> or <guibutton>Used swap</guibutton> button. The <guilabel>Pick a color</guilabel> dialog is displayed. 
+            </para>
           </listitem>
           <listitem>
             <para>Изберете цвят от <guilabel>Палитрата</guilabel> или използвайте полетата, за да персонализирате цвета.</para>

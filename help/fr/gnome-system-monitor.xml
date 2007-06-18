@@ -736,7 +736,9 @@
       <para>Le <application>Moniteur système</application> affiche l'historique de l'utilisation de la mémoire et du fichier d'échange sous forme de graphique. En-dessous du graphique, le <application>Moniteur système</application> affiche également les valeurs numériques suivantes :</para>
       <itemizedlist>
         <listitem>
-          <para>Mémoire utilisée</para>
+          <para>
+            User memory
+          </para>
         </listitem>
         <listitem>
           <para>Mémoire totale</para>
@@ -888,7 +890,9 @@
             <para>Sélectionnez l'onglet <guilabel>Ressources</guilabel> dans la fenêtre du <application>Moniteur système</application> afin d'afficher les graphiques qui fournissent des informations sur l'utilisation des ressources du système.</para>
           </listitem>
           <listitem>
-            <para>Cliquez sur les boutons <guibutton>Mémoire utilisée</guibutton> ou <guibutton>Fichier d'échange utilisé</guibutton>. La boîte de dialogue <guilabel>Choisissez une couleur</guilabel> apparaît.</para>
+            <para>
+              Click on the <guibutton>User memory</guibutton> or <guibutton>Used swap</guibutton> button. The <guilabel>Pick a color</guilabel> dialog is displayed. 
+            </para>
           </listitem>
           <listitem>
             <para>Choisissez une couleur dans la <guilabel>Palette</guilabel> ou utilisez la roue chromatique ou les zones de sélection numérique pour personnaliser la couleur.</para>

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
-
+#include <gtkmm.h>
 
 #include "prettytable.h"
 #include "defaulttable.h"
@@ -17,43 +17,29 @@
 namespace
 {
   const unsigned APP_ICON_SIZE = 16;
-
-  GdkPixbuf*
-  create_scaled_icon(const char *iconpath)
-  {
-    GError* error = NULL;
-    GdkPixbuf* scaled;
-
-    scaled = gdk_pixbuf_new_from_file_at_scale(iconpath,
-					       APP_ICON_SIZE, APP_ICON_SIZE,
-					       TRUE,
-					       &error);
-
-    if (error) {
-      if(!(error->domain == G_FILE_ERROR
-	   && error->code == G_FILE_ERROR_NOENT))
-	g_warning(error->message);
-
-      g_error_free(error);
-      return NULL;
-    }
-
-    return scaled;
-  }
 }
 
 
-
-
-
-
+Glib::RefPtr<Gdk::Pixbuf>
+IconThemeWrapper::load_icon(const Glib::ustring& icon_name,
+			    int size, Gtk::IconLookupFlags flags) const
+{
+  try
+    {
+      return this->theme->load_icon(icon_name, size, flags);
+    }
+  catch (Gtk::IconThemeError &error)
+    {
+      if (error.code() != Gtk::IconThemeError::ICON_THEME_NOT_FOUND)
+	throw;
+      return Glib::RefPtr<Gdk::Pixbuf>();
+    }
+}
 
 
 
 PrettyTable::PrettyTable()
 {
-  this->theme = gtk_icon_theme_get_default();
-
   WnckScreen* screen = wnck_screen_get_default();
   g_signal_connect(G_OBJECT(screen), "application_opened",
 		   G_CALLBACK(PrettyTable::on_application_opened), this);
@@ -64,8 +50,6 @@ PrettyTable::PrettyTable()
 
 PrettyTable::~PrettyTable()
 {
-  unref_map_values(this->apps);
-  unref_map_values(this->defaults);
 }
 
 
@@ -77,26 +61,32 @@ PrettyTable::on_application_opened(WnckScreen* screen, WnckApplication* app, gpo
   if (pid == 0)
     return;
 
-  /* don't free list, we don't own it */
-  if (GList* list = wnck_application_get_windows(app))
-    {
-      WnckWindow* win = static_cast<WnckWindow*>(list->data);
+  // we don't own it
+  GList* list = wnck_application_get_windows(app);
 
-      if (GdkPixbuf* icon = wnck_window_get_icon(win))
-	{
-	  if (GdkPixbuf* scaled = gdk_pixbuf_scale_simple(icon,
-							  APP_ICON_SIZE,
-							  APP_ICON_SIZE,
-							  GDK_INTERP_HYPER))
-	    static_cast<PrettyTable*>(data)->register_application(pid, scaled);
-	}
-    }
+  if (not list)
+    return;
+
+  WnckWindow* win = static_cast<WnckWindow*>(list->data);
+
+  Glib::RefPtr<Gdk::Pixbuf> icon(Glib::wrap(wnck_window_get_icon(win),
+					    /* take_copy */ true));
+
+  if (not icon)
+    return;
+
+  icon = icon->scale_simple(APP_ICON_SIZE, APP_ICON_SIZE, Gdk::INTERP_HYPER);
+
+  if (not icon)
+    return;
+
+  static_cast<PrettyTable*>(data)->register_application(pid, icon);
 }
 
 
 
 void
-PrettyTable::register_application(pid_t pid, GdkPixbuf* icon)
+PrettyTable::register_application(pid_t pid, Glib::RefPtr<Gdk::Pixbuf> icon)
 {
   /* If process already exists then set the icon. Otherwise put into hash
   ** table to be added later */
@@ -128,29 +118,23 @@ PrettyTable::unregister_application(pid_t pid)
 {
   IconsForPID::iterator it(this->apps.find(pid));
 
-  if (it != this->apps.end()) {
-    g_object_unref(it->second);
+  if (it != this->apps.end())
     this->apps.erase(it);
-  }
 }
 
 
 
-GdkPixbuf*
+Glib::RefPtr<Gdk::Pixbuf>
 PrettyTable::get_icon_from_theme(pid_t, const gchar* command)
 {
-  return gtk_icon_theme_load_icon(this->theme,
-				  command,
-				  APP_ICON_SIZE,
-				  GTK_ICON_LOOKUP_USE_BUILTIN,
-				  NULL);
+  return this->theme->load_icon(command, APP_ICON_SIZE, Gtk::ICON_LOOKUP_USE_BUILTIN);
 }
 
 
 bool PrettyTable::get_default_icon_name(const string &cmd, string &name)
 {
   for (size_t i = 0; i != G_N_ELEMENTS(default_table); ++i) {
-    if (cmd == default_table[i].command) {
+    if (default_table[i].command->FullMatch(cmd)) {
       name = default_table[i].icon;
       return true;
     }
@@ -166,69 +150,76 @@ bool PrettyTable::get_default_icon_name(const string &cmd, string &name)
   so we don't have to lookup again.
 */
 
-GdkPixbuf*
+Glib::RefPtr<Gdk::Pixbuf>
 PrettyTable::get_icon_from_default(pid_t, const gchar* command)
 {
-  GdkPixbuf* pix = NULL;
+  Glib::RefPtr<Gdk::Pixbuf> pix;
   string name;
 
   if (this->get_default_icon_name(command, name)) {
     IconCache::iterator it(this->defaults.find(name));
 
     if (it == this->defaults.end()) {
-      pix = gtk_icon_theme_load_icon(this->theme,
-				     name.c_str(),
-				     APP_ICON_SIZE,
-				     GTK_ICON_LOOKUP_USE_BUILTIN,
-				     NULL);
+      pix = this->theme->load_icon(name, APP_ICON_SIZE, Gtk::ICON_LOOKUP_USE_BUILTIN);
       if (pix)
 	this->defaults[name] = pix;
-
     } else
       pix = it->second;
   }
-
-  if (pix)
-    g_object_ref(pix);
 
   return pix;
 }
 
 
 
-GdkPixbuf*
+Glib::RefPtr<Gdk::Pixbuf>
 PrettyTable::get_icon_from_wnck(pid_t pid, const gchar*)
 {
+  Glib::RefPtr<Gdk::Pixbuf> icon;
+
   IconsForPID::iterator it(this->apps.find(pid));
 
-  if (it != this->apps.end()) {
-    GdkPixbuf* icon = it->second;
-    g_object_ref(icon);
-    return icon;
-  }
+  if (it != this->apps.end())
+    icon = it->second;
 
-  return NULL;
+  return icon;
 }
 
 
 
-GdkPixbuf*
+Glib::RefPtr<Gdk::Pixbuf>
+PrettyTable::get_icon_from_name(pid_t, const gchar* command)
+{
+  return this->theme->load_icon(command, APP_ICON_SIZE, Gtk::ICON_LOOKUP_USE_BUILTIN);
+}
+
+
+Glib::RefPtr<Gdk::Pixbuf>
+PrettyTable::get_icon_dummy(pid_t, const gchar*)
+{
+  return this->theme->load_icon("applications-other", APP_ICON_SIZE, Gtk::ICON_LOOKUP_USE_BUILTIN);
+}
+
+
+Glib::RefPtr<Gdk::Pixbuf>
 PrettyTable::get_icon(const gchar* command, pid_t pid)
 {
-  typedef GdkPixbuf* (PrettyTable::*Getter)(pid_t pid,
-					    const gchar* command);
+  typedef Glib::RefPtr<Gdk::Pixbuf>
+    (PrettyTable::*Getter)(pid_t pid, const gchar* command);
 
   const Getter getters[] = {
     &PrettyTable::get_icon_from_wnck,
     &PrettyTable::get_icon_from_theme,
-    &PrettyTable::get_icon_from_default
+    &PrettyTable::get_icon_from_default,
+    &PrettyTable::get_icon_from_name,
+    &PrettyTable::get_icon_dummy,
   };
 
-  for (size_t i = 0; i < G_N_ELEMENTS(getters); ++i) {
-    if (GdkPixbuf* icon = (this->*getters[i])(pid, command))
-      return icon;
-  }
+  Glib::RefPtr<Gdk::Pixbuf> icon;
 
-  return NULL;
+  for (size_t i = 0; not icon and i < G_N_ELEMENTS(getters); ++i)
+    icon = (this->*getters[i])(pid, command);
+
+  return icon;
 }
 

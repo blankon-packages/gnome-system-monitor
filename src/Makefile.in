@@ -196,6 +196,8 @@ PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
+PCRECPP_CFLAGS = @PCRECPP_CFLAGS@
+PCRECPP_LIBS = @PCRECPP_LIBS@
 PKG_CONFIG = @PKG_CONFIG@
 POFILES = @POFILES@
 POSUB = @POSUB@
@@ -262,9 +264,11 @@ INCLUDES = \
 	-DPROCMAN_DATADIR=\""$(datadir)/procman/"\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\" \
-	@PROCMAN_CFLAGS@
+	@PROCMAN_CFLAGS@ \
+	@PCRECPP_CFLAGS@
 
 gnome_system_monitor_SOURCES = \
+	regex.h \
 	procman.cpp  procman.h \
 	interface.cpp interface.h \
 	callbacks.cpp callbacks.h \
@@ -287,7 +291,7 @@ gnome_system_monitor_SOURCES = \
 	gconf-keys.cpp gconf-keys.h \
 	e_date.c e_date.h
 
-gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la -lpcrecpp
+gnome_system_monitor_LDADD = @PROCMAN_LIBS@ @PCRECPP_LIBS@ libbacon.la
 noinst_LTLIBRARIES = libbacon.la
 libbacon_la_SOURCES = \
 	bacon-message-connection.c \

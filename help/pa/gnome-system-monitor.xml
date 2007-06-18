@@ -958,7 +958,9 @@
       </para>
       <itemizedlist>
         <listitem>
-          <para>ਵਰਤੀ ਮੈਮੋਰੀ</para>
+          <para>
+            User memory
+          </para>
         </listitem>
         <listitem>
           <para>ਕੁੱਲ ਮੈਮੋਰੀ</para>
@@ -1153,7 +1155,7 @@
           </listitem>
           <listitem>
             <para>
-              Click on the <guibutton>Used memory</guibutton> or <guibutton>Used swap</guibutton> button. The <guilabel>Pick a color</guilabel> dialog is displayed. 
+              Click on the <guibutton>User memory</guibutton> or <guibutton>Used swap</guibutton> button. The <guilabel>Pick a color</guilabel> dialog is displayed. 
             </para>
           </listitem>
           <listitem>
