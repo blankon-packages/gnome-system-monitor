@@ -45,6 +45,7 @@
 #include <libgnomevfs/gnome-vfs-utils.h>
 
 #include "procman.h"
+#include "selection.h"
 #include "proctable.h"
 #include "callbacks.h"
 #include "prettytable.h"
@@ -953,6 +954,7 @@ proctable_update_list (ProcData * const procdata)
 	glibtop_proclist proclist;
 	glibtop_cpu cpu;
 	gint which, arg;
+	procman::SelectionMemento selection;
 
 	switch (procdata->config.whose_process) {
 	case ALL_PROCESSES:
@@ -963,13 +965,21 @@ proctable_update_list (ProcData * const procdata)
 	case ACTIVE_PROCESSES:
 		which = GLIBTOP_KERN_PROC_ALL | GLIBTOP_EXCLUDE_IDLE;
 		arg = 0;
-		proctable_clear_tree(procdata);
+		if (procdata->config.show_tree)
+		  {
+		    selection.save(procdata->tree);
+		    proctable_clear_tree(procdata);
+		  }
 		break;
 
 	default:
 		which = GLIBTOP_KERN_PROC_UID;
 		arg = getuid ();
-		proctable_clear_tree(procdata);
+		if (procdata->config.show_tree)
+		  {
+		    selection.save(procdata->tree);
+		    proctable_clear_tree(procdata);
+		  }
 		break;
 	}
 
@@ -982,6 +992,8 @@ proctable_update_list (ProcData * const procdata)
 	total_time_last = cpu.total;
 
 	refresh_list (procdata, pid_list, proclist.number);
+
+	selection.restore(procdata->tree);
 
 	g_free (pid_list);
 

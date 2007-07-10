@@ -62,7 +62,7 @@ am_gnome_system_monitor_OBJECTS = procman.$(OBJEXT) \
 	openfiles.$(OBJEXT) smooth_refresh.$(OBJEXT) disks.$(OBJEXT) \
 	selinux.$(OBJEXT) procman_gnomesu.$(OBJEXT) \
 	procman_gksu.$(OBJEXT) sysinfo.$(OBJEXT) lsof.$(OBJEXT) \
-	gconf-keys.$(OBJEXT) e_date.$(OBJEXT)
+	selection.$(OBJEXT) gconf-keys.$(OBJEXT) e_date.$(OBJEXT)
 gnome_system_monitor_OBJECTS = $(am_gnome_system_monitor_OBJECTS)
 gnome_system_monitor_DEPENDENCIES = libbacon.la
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
@@ -288,6 +288,7 @@ gnome_system_monitor_SOURCES = \
 	procman_gksu.h procman_gksu.cpp \
 	sysinfo.cpp sysinfo.h \
 	lsof.cpp lsof.h \
+	selection.cpp selection.h \
 	gconf-keys.cpp gconf-keys.h \
 	e_date.c e_date.h
 
@@ -406,6 +407,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procman_gksu.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procman_gnomesu.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/proctable.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/selection.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/selinux.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smooth_refresh.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sysinfo.Po@am__quote@
