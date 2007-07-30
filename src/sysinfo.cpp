@@ -397,6 +397,7 @@ procman_create_sysinfo_view(void)
 
   if (data->distro_release != "")
     {
+      // translators: Release 2.6.19
       markup = g_strdup_printf(_("Release %s"), data->distro_release.c_str());
       distro_release_label = gtk_label_new(markup);
       gtk_misc_set_alignment(GTK_MISC(distro_release_label), 0.0, 0.5);
@@ -412,7 +413,7 @@ procman_create_sysinfo_view(void)
 
   if (data->gnome_version != "")
     {
-      markup = g_strdup_printf(_("Gnome %s"), data->gnome_version.c_str());
+      markup = g_strdup_printf(_("GNOME %s"), data->gnome_version.c_str());
       GtkWidget* gnome_label = gtk_label_new(markup);
       gtk_misc_set_alignment(GTK_MISC(gnome_label), 0.0, 0.5);
       g_free(markup);

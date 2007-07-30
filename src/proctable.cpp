@@ -56,12 +56,9 @@ extern "C" {
 #include "e_date.h"
 }
 
-static guint64 total_time = 1;
-static guint64 total_time_last = 1;
-
-
 
 ProcInfo::List ProcInfo::all;
+std::map<pid_t, guint64> ProcInfo::cpu_times;
 
 
 ProcInfo* ProcInfo::find(pid_t pid)
@@ -99,32 +96,6 @@ sort_ints (GtkTreeModel *model, GtkTreeIter *itera, GtkTreeIter *iterb, gpointer
 		return 0;
 	}
 }
-
-
-
-static GtkWidget *
-create_proctree(GtkTreeModel *model)
-{
-	GtkWidget *proctree;
-	GtkWidget* (*sexy_new)(void);
-	void (*sexy_set_column)(void*, guint);
-
-
-	if (FALSE && load_symbols("libsexy.so",
-			 "sexy_tree_view_new", &sexy_new,
-			 "sexy_tree_view_set_tooltip_label_column", &sexy_set_column,
-			 NULL)) {
-		proctree = sexy_new();
-		gtk_tree_view_set_model(GTK_TREE_VIEW(proctree), model);
-		sexy_set_column(proctree, COL_TOOLTIP);
-	} else {
-		proctree = gtk_tree_view_new_with_model(model);
-	}
-
-	return proctree;
-}
-
-
 
 
 
@@ -276,7 +247,7 @@ proctable_new (ProcData * const procdata)
 		N_("Writable Memory"),
 		N_("Shared Memory"),
 		N_("X Server Memory"),
-		/* xgettext:no-c-format */ N_("% CPU"),
+		/* translators:no-c-format */ N_("% CPU"),
 		N_("CPU Time"),
 		N_("Started"),
 		N_("Nice"),
@@ -319,7 +290,10 @@ proctable_new (ProcData * const procdata)
 				    G_TYPE_STRING	/* Sexy tooltip */
 		);
 
-	proctree = create_proctree(GTK_TREE_MODEL(model));
+	proctree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (model));
+#if GTK_CHECK_VERSION(2, 11, 6)
+	gtk_tree_view_set_tooltip_column (GTK_TREE_VIEW (proctree), COL_TOOLTIP);
+#endif
 	gtk_tree_view_set_search_equal_func (GTK_TREE_VIEW (proctree),
 					     search_equal_func,
 					     NULL,
@@ -619,18 +593,18 @@ format_duration_for_display(unsigned centiseconds)
 	       && divide(&weeks, &days, 7));
 
 	if (weeks)
-		/* xgettext: weeks, days */
+		/* translators: weeks, days */
 		return g_strdup_printf(_("%uw%ud"), weeks, days);
 
 	if (days)
-		/* xgettext: days, hours (0 -> 23) */
+		/* translators: days, hours (0 -> 23) */
 		return g_strdup_printf(_("%ud%02uh"), days, hours);
 
 	if (hours)
-		/* xgettext: hours (0 -> 23), minutes, seconds */
+		/* translators: hours (0 -> 23), minutes, seconds */
 		return g_strdup_printf(_("%u:%02u:%02u"), hours, minutes, seconds);
 
-	/* xgettext: minutes, seconds, centiseconds */
+	/* translators: minutes, seconds, centiseconds */
 	return g_strdup_printf(_("%u:%02u.%02u"), minutes, seconds, centiseconds);
 }
 
@@ -708,13 +682,14 @@ insert_info_to_tree (ProcInfo *info, ProcData *procdata, bool forced = false)
 
 	gtk_tree_store_set (GTK_TREE_STORE (model), &info->node,
 			    COL_POINTER, info,
-			    COL_PIXBUF, info->pixbuf->gobj(),
 			    COL_NAME, info->name,
 			    COL_ARGS, info->arguments,
 			    COL_TOOLTIP, info->tooltip,
 			    COL_PID, info->pid,
 			    COL_SECURITYCONTEXT, info->security_context,
 			    -1);
+
+	procdata->pretty_table.set_icon(*info);
 
 	procman_debug("inserted %d%s", info->pid, (forced ? " (forced)" : ""));
 }
@@ -777,13 +752,13 @@ update_info (ProcData *procdata, ProcInfo *info)
 
 	get_process_user(procdata, info, procstate.uid);
 
-	info->pcpu = (proctime.rtime - info->cpu_time_last) * 100 / total_time;
+	info->pcpu = (proctime.rtime - info->cpu_time_last) * 100 / procdata->cpu_total_time;
 	info->pcpu = MIN(info->pcpu, 100);
 
 	if (procdata->config.solaris_mode)
 	  info->pcpu /= procdata->config.num_cpus;
 
-	info->cpu_time_last = proctime.rtime;
+	ProcInfo::cpu_times[info->pid] = info->cpu_time_last = proctime.rtime;
 	info->nice = procuid.nice;
 	info->ppid = procuid.ppid;
 }
@@ -812,16 +787,24 @@ ProcInfo::ProcInfo(pid_t pid)
 	/* FIXME : wrong. name and arguments may change with exec* */
 	get_process_name (info, procstate.cmd, arguments[0]);
 
-	info->tooltip = g_strjoinv(" ", arguments);
+	char* tooltip = g_strjoinv(" ", arguments);
+	info->tooltip = g_markup_escape_text(tooltip, -1);
+	g_free(tooltip);
+
 	info->arguments = g_strescape(info->tooltip, "\\\"");
 	g_strfreev(arguments);
 
-	info->cpu_time_last = proctime.rtime;
+	guint64 cpu_time = proctime.rtime;
+	std::map<pid_t, guint64>::iterator it(ProcInfo::cpu_times.find(pid));
+	if (it != ProcInfo::cpu_times.end())
+	  {
+	    if (proctime.rtime >= it->second)
+	      cpu_time = it->second;
+	  }
+	info->cpu_time_last = cpu_time;
 	info->start_time = proctime.start_time;
 
 	get_process_selinux_context (info);
-
-	info->pixbuf = ProcData::get_instance()->pretty_table.get_icon(info->name, pid);
 }
 
 
@@ -988,8 +971,8 @@ proctable_update_list (ProcData * const procdata)
 	/* FIXME: total cpu time elapsed should be calculated on an individual basis here
 	** should probably have a total_time_last gint in the ProcInfo structure */
 	glibtop_get_cpu (&cpu);
-	total_time = MAX(cpu.total - total_time_last, 1);
-	total_time_last = cpu.total;
+	procdata->cpu_total_time = MAX(cpu.total - procdata->cpu_total_time_last, 1);
+	procdata->cpu_total_time_last = cpu.total;
 
 	refresh_list (procdata, pid_list, proclist.number);
 

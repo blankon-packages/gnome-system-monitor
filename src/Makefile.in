@@ -62,7 +62,8 @@ am_gnome_system_monitor_OBJECTS = procman.$(OBJEXT) \
 	openfiles.$(OBJEXT) smooth_refresh.$(OBJEXT) disks.$(OBJEXT) \
 	selinux.$(OBJEXT) procman_gnomesu.$(OBJEXT) \
 	procman_gksu.$(OBJEXT) sysinfo.$(OBJEXT) lsof.$(OBJEXT) \
-	selection.$(OBJEXT) gconf-keys.$(OBJEXT) e_date.$(OBJEXT)
+	selection.$(OBJEXT) gconf-keys.$(OBJEXT) \
+	iconthemewrapper.$(OBJEXT) e_date.$(OBJEXT)
 gnome_system_monitor_OBJECTS = $(am_gnome_system_monitor_OBJECTS)
 gnome_system_monitor_DEPENDENCIES = libbacon.la
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
@@ -206,6 +207,7 @@ PO_IN_DATADIR_TRUE = @PO_IN_DATADIR_TRUE@
 PROCMAN_CFLAGS = @PROCMAN_CFLAGS@
 PROCMAN_LIBS = @PROCMAN_LIBS@
 RANLIB = @RANLIB@
+SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
@@ -290,6 +292,7 @@ gnome_system_monitor_SOURCES = \
 	lsof.cpp lsof.h \
 	selection.cpp selection.h \
 	gconf-keys.cpp gconf-keys.h \
+	iconthemewrapper.cpp iconthemewrapper.h \
 	e_date.c e_date.h
 
 gnome_system_monitor_LDADD = @PROCMAN_LIBS@ @PCRECPP_LIBS@ libbacon.la
@@ -395,6 +398,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/disks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_date.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gconf-keys.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iconthemewrapper.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/load-graph.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lsof.Po@am__quote@

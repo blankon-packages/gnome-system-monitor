@@ -16,26 +16,12 @@ extern "C" {
 #include <libwnck/libwnck.h>
 }
 
+#include "iconthemewrapper.h"
+
+class ProcInfo;
 
 using std::string;
 
-
-class IconThemeWrapper
-{
- public:
-  IconThemeWrapper(Glib::RefPtr<Gtk::IconTheme> a_theme = Gtk::IconTheme::get_default())
-    : theme(a_theme)
-  { }
-
-  Glib::RefPtr<Gdk::Pixbuf>
-  load_icon(const Glib::ustring& icon_name, int size, Gtk::IconLookupFlags flags) const;
-
-  const IconThemeWrapper* operator->() const
-  { return this; }
-
- private:
-  Glib::RefPtr<Gtk::IconTheme> theme;
-};
 
 
 class PrettyTable
@@ -44,7 +30,7 @@ class PrettyTable
   PrettyTable();
   ~PrettyTable();
 
-  Glib::RefPtr<Gdk::Pixbuf> get_icon(const gchar* command, pid_t pid);
+  void set_icon(ProcInfo &);
 
 private:
 
@@ -55,11 +41,12 @@ private:
   void unregister_application(pid_t pid);
 
 
-  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_theme(pid_t pid, const gchar* command);
-  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_default(pid_t pid, const gchar* command);
-  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_wnck(pid_t pid, const gchar* command);
-  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_name(pid_t pid, const gchar* command);
-  Glib::RefPtr<Gdk::Pixbuf> get_icon_dummy(pid_t pid, const gchar* command);
+  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_theme(const ProcInfo &);
+  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_default(const ProcInfo &);
+  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_wnck(const ProcInfo &);
+  Glib::RefPtr<Gdk::Pixbuf> get_icon_from_name(const ProcInfo &);
+  Glib::RefPtr<Gdk::Pixbuf> get_icon_for_kernel(const ProcInfo &);
+  Glib::RefPtr<Gdk::Pixbuf> get_icon_dummy(const ProcInfo &);
 
   bool get_default_icon_name(const string &cmd, string &name);
 
@@ -68,7 +55,7 @@ private:
 
   IconsForPID apps;
   IconCache defaults;
-  IconThemeWrapper theme;
+  procman::IconThemeWrapper theme;
 };
 
 
