@@ -1,77 +1,66 @@
-# French translation of procman.
-# Copyright (C) 2002-2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the procman package.
-#
-# Mathieu Gauthier-Pilote <mathieu.g.p@videotron.ca>, 2002.
-# Christophe Merlet <redfox@redfoxcenter.org>, 2002-2006.
-# Benoît Dejean <benoit@placenet.org>, 2006-2007.
-# Robert-André Mauchin <zebob.m@gmail.com>, 2006-2007.
-# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007
-# Claude Paroz <claude@2xlibre.net>, 2007.
+# Telugu translation of gnome-system-monitor.
+# Copyright (C) 2007 Swecha Telugu Localisation Team <localisation@swecha.org>.
+# This file is distributed under the same license as the gnome-system-monitor package.
+# Pramod <pramod@swecha.net>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: procman 2.19\n"
+"Project-Id-Version: gnome-system-monitor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-16 09:35+0200\n"
-"PO-Revision-Date: 2007-08-16 09:38+0200\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"POT-Creation-Date: 2007-08-09 21:40+0530\n"
+"PO-Revision-Date: 2007-08-09 21:43+0530\n"
+"Last-Translator: Pramod <pramod@swecha.net>\n"
+"Language-Team: Swecha Telugu Localisation Team <localisation@swecha.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.cpp:155
 #: ../src/interface.cpp:660 ../src/procman.cpp:712
 msgid "System Monitor"
-msgstr "Moniteur système"
+msgstr "వ్యవస్థ దర్శిని"
 
 #: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.cpp:156
 msgid "View current processes and monitor system state"
-msgstr "Affiche les processus en cours et surveille l'état du système"
+msgstr "ప్రస్తుత క్రమణములు మరియు దర్శిని వ్యవస్థ స్థితిని చూపుము"
 
 #: ../src/callbacks.cpp:165
 msgid "translator-credits"
-msgstr ""
-"Mathieu Gauthier-Pilote <mathieu.g.p@videotron.ca>\n"
-"Christophe Merlet <redfox@redfoxcenter.org>\n"
-"Benoît Dejean <benoit@placenet.org>\n"
-"Robert-André Mauchin <zebob.m@gmail.com>\n"
-"Stéphane Raimbault <stephane.raimbault@gmail.com>"
+msgstr "Pramod <pramod@swecha.net>"
 
 #: ../src/disks.cpp:275 ../src/memmaps.cpp:500
 msgid "Device"
-msgstr "Périphérique"
+msgstr "పరికరం"
 
 #: ../src/disks.cpp:276
 msgid "Directory"
-msgstr "Répertoire"
+msgstr "వివరము"
 
 #: ../src/disks.cpp:277 ../src/openfiles.cpp:235
 msgid "Type"
-msgstr "Type"
+msgstr "రకము"
 
 #: ../src/disks.cpp:278
 msgid "Total"
-msgstr "Total"
+msgstr "మొత్తము"
 
 #: ../src/disks.cpp:279
 msgid "Free"
-msgstr "Libre"
+msgstr "స్వతంత్ర"
 
 #: ../src/disks.cpp:280
 msgid "Available"
-msgstr "Disponible"
+msgstr "కలిగివున్నది"
 
 #: ../src/disks.cpp:281
 msgid "Used"
-msgstr "Utilisé"
+msgstr "వాడబడిన"
 
 #: ../src/disks.cpp:288 ../src/interface.cpp:736 ../src/procdialogs.cpp:718
 #: ../src/procdialogs.cpp:722
 msgid "File Systems"
-msgstr "Systèmes de fichiers"
+msgstr "దస్త్ర వ్యవస్థలు"
 
 #. xgettext: ? stands for unknown
 #: ../src/e_date.c:155
@@ -80,212 +69,194 @@ msgstr "?"
 
 #: ../src/e_date.c:162
 msgid "Today %l:%M %p"
-msgstr "aujourd'hui %H:%M"
+msgstr "ఈ రోజు %l:%M %p"
 
 #: ../src/e_date.c:171
 msgid "Yesterday %l:%M %p"
-msgstr "hier %H:%M"
+msgstr "నిన్న %l:%M %p"
 
 #: ../src/e_date.c:183
 msgid "%a %l:%M %p"
-msgstr "%a %H:%M"
+msgstr "%a %l:%M %p"
 
 #: ../src/e_date.c:191
 msgid "%b %d %l:%M %p"
-msgstr "%d %b %H:%M"
+msgstr "%b %d %l:%M %p"
 
 #: ../src/e_date.c:193
 msgid "%b %d %Y"
-msgstr "%d %b %Y"
+msgstr "%b %d %Y"
 
 #: ../src/gnome-system-monitor.schemas.in.h:1
 msgid ""
 "0 for the System Info, 1 for the processes list, 2 for the resources and 3 "
 "for the disks list"
 msgstr ""
-"0 pour les informations système, 1 pour la liste de processus, 2 pour les "
-"ressources et 3 pour la liste des disques"
 
 #: ../src/gnome-system-monitor.schemas.in.h:2
 msgid "Default graph background color"
-msgstr "Couleur par défaut d'arrière-plan du graphique"
+msgstr "అప్రమేయ రేఖాపటం పూర్వరంగం వర్ణము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:3
 msgid "Default graph cpu color"
-msgstr "Couleur par défaut du graphique CPU"
+msgstr "అప్రమేయ రేఖాపటం సిపియు వర్ణము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:4
 msgid "Default graph frame color"
-msgstr "Couleur par défaut du cadre du graphique"
+msgstr "అప్రమేయ రేఖాపటం చట్ర వర్ణము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:5
 msgid "Default graph incoming network traffic color"
-msgstr "Couleur par défaut du graphique pour le trafic réseau entrant"
+msgstr "అప్రమేయ రేఖాపటం వస్తున్న అల్లిక రద్దీ వర్ణము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:6
 msgid "Default graph mem color"
-msgstr "Couleur par défaut du graphique de la mémoire"
+msgstr "అప్రమేయ రేఖాపటం మెమ్ వర్ణము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:7
 msgid "Default graph outgoing network traffic color"
-msgstr "Couleur par défaut du graphique pour le trafic réseau sortant"
+msgstr "అప్రమేయ రేఖాపటం వెల్తున్న అల్లిక రద్దీ వర్ణము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:8
 msgid "Default graph swap color"
-msgstr "Couleur par défaut du graphique du fichier d'échange"
+msgstr "అప్రమేయ రేఖాపటం బదలాయింపు వర్ణము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:9
 msgid ""
 "Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
 "active"
 msgstr ""
-"Détermine les processus à afficher par défaut. 0 pour tous, 1 pour les "
-"processus de l'utilisateur, et 2 pour les processus actifs"
 
 #: ../src/gnome-system-monitor.schemas.in.h:10
 msgid "Disk view columns order"
-msgstr "Colonne de tri des disques"
+msgstr "ఖని దర్శనం నిలువుపట్టీల క్రమం"
 
 #: ../src/gnome-system-monitor.schemas.in.h:11
 msgid "Enable/Disable smooth refresh"
-msgstr "Active/Désactive le rafraîchissement doux"
+msgstr "ఉపయోగించు/నిరుపయోగించు మృదువు పునర్వికాసం"
 
 #: ../src/gnome-system-monitor.schemas.in.h:12
 msgid ""
 "If TRUE, system-monitor operates in 'Solaris mode' where a task's cpu usage "
 "is divided by the total number of CPUs. Else it operates in 'Irix mode'."
 msgstr ""
-"Si vrai, system-monitor fonctionne en mode Solaris, où l'utilisation CPU "
-"d'une tâche est divisée par le nombre total de CPU. Sinon, il fonctionne en "
-"mode Irix."
 
 #: ../src/gnome-system-monitor.schemas.in.h:13
 msgid "Main Window height"
-msgstr "Hauteur de la fenêtre principale"
+msgstr "మూల గవాక్షం ఎత్తు"
 
 #: ../src/gnome-system-monitor.schemas.in.h:14
 msgid "Main Window width"
-msgstr "Largeur de la fenêtre principale"
+msgstr "మూల గవాక్షం పొడవు"
 
 #: ../src/gnome-system-monitor.schemas.in.h:15
 msgid "Process view columns order"
-msgstr "Ordre des colonnes de la vue du processus"
+msgstr "నిలువుపట్టీల క్రమము దర్శన క్రమణం"
 
 #: ../src/gnome-system-monitor.schemas.in.h:16
 msgid "Process view sort column"
-msgstr "Colonne de tri du processus"
+msgstr "నిలువుపట్టీ దర్శన  క్రమణం చక్కదిద్దు"
 
 #: ../src/gnome-system-monitor.schemas.in.h:17
 msgid "Process view sort order"
-msgstr "Ordre de tri de vue du processus"
+msgstr "నిలువుపట్టీ దర్శన  క్రమణం చక్కదిద్దు"
 
 #: ../src/gnome-system-monitor.schemas.in.h:18
 msgid "Saves the currently viewed tab"
-msgstr "Enregistre l'onglet actuellement visible"
+msgstr "ప్రస్తుతము దర్శించిన నెట్టును దాస్తుంది"
 
 #: ../src/gnome-system-monitor.schemas.in.h:20
 #, no-c-format
 msgid "Show process 'CPU %' column on startup"
-msgstr "Afficher la colonne du % de CPU utilisé par les processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ 'సిపియు %' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:21
 msgid "Show process 'CPU time' column on startup"
-msgstr "Afficher la colonne de temps CPU des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ 'సిపియు సమయం %' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:22
 msgid "Show process 'PID' column on startup"
-msgstr "Afficher la colonne du PID des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ 'పిఐడి' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:23
 msgid "Show process 'SELinux security context' column on startup"
-msgstr ""
-"Afficher la colonne de contexte de sécurité SELinux des processus au "
-"démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ 'SEలైనక్స్ రక్షణ సంధర్భం' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:24
 msgid "Show process 'X server memory' column on startup"
-msgstr ""
-"Afficher la colonne de la mémoire du serveur X des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ 'X సేవిక జ్ఞాపకశక్తి' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:25
 msgid "Show process 'arguments' column on startup"
-msgstr "Afficher la colonne des arguments des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ 'క్రమానుగత సంకేతం' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:26
 msgid "Show process 'estimated memory usage' column on startup"
-msgstr ""
-"Afficher la colonne d'estimation de l'utilisation de la mémoire des "
-"processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ 'అంచనావేయబడిన జ్ఞాపకశక్తి వాడుకను' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:27
 msgid "Show process 'name' column on startup"
-msgstr "Afficher la colonne du nom des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'నామము' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:28
 msgid "Show process 'nice' column on startup"
-msgstr "Afficher la colonne de la priorité des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'చక్కని' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:29
 msgid "Show process 'owner' column on startup"
-msgstr "Afficher la colonne du propriétaire des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'యజమాని' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:30
 msgid "Show process 'resident memory' column on startup"
-msgstr "Afficher la colonne de la mémoire résidente des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'నివాసి జ్ఞాపకశక్తి' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:31
 msgid "Show process 'shared memory' column on startup"
-msgstr "Afficher la colonne de la mémoire partagée des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'పంచుకొను జ్ఞాపకశక్తి' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:32
 msgid "Show process 'start time' column on startup"
-msgstr "Afficher la colonne de l'heure de démarrage des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'మొదలుపెట్టు సమయం' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:33
 msgid "Show process 'status' column on startup"
-msgstr "Afficher la colonne de l'état des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'స్థితి' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:34
 msgid "Show process 'virtual memory' column on startup"
-msgstr "Afficher la colonne de la mémoire virtuelle des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'వాస్తవప్రతిరూప జ్ఞాపకశక్తి' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:35
 msgid "Show process 'writable memory' column on startup"
-msgstr ""
-"Afficher la colonne de la mémoire inscriptible des processus au démarrage"
+msgstr "ప్రారంభించునపుడు నిలువుపట్టీ  'రాయగల జ్ఞాపకశక్తి' క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:36
 msgid "Show process dependencies in tree form"
-msgstr "Afficher les dépendances du processus sous forme arborescente"
+msgstr "చెట్టు ఆకారము లో ఆధారపడియున్న క్రమణం చూపుము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:37
 msgid "Show warning dialog when killing processes"
-msgstr "Afficher un avertissement avant de tuer un processus"
+msgstr "ఎప్పుడు క్రమణములను చంపుతావో వివరణ హెచ్చరించు"
 
 #: ../src/gnome-system-monitor.schemas.in.h:38
 msgid "Solaris mode for CPU percentage"
-msgstr "Mode Solaris pour le pourcentage de CPU"
+msgstr "సిపియు శాతం కొరకు సొలారిస్ విధము"
 
 #: ../src/gnome-system-monitor.schemas.in.h:39
 msgid "Time in milliseconds between updates of the devices list"
-msgstr ""
-"Durée en millisecondes entre les rafraîchissements de la liste des "
-"périphériques"
+msgstr "పరికరాల జాబితా యొక్క మధ్య తాజాపరచు సూక్ష్మక్షణాలలో సమయం"
 
 #: ../src/gnome-system-monitor.schemas.in.h:40
 msgid "Time in milliseconds between updates of the graphs"
-msgstr "Durée en millisecondes entre les rafraîchissements des graphiques"
+msgstr "రేఖాపటాల యొక్క మధ్య తాజాపరచు సూక్ష్మక్షణాలలో సమయం"
 
 #: ../src/gnome-system-monitor.schemas.in.h:41
 msgid "Time in milliseconds between updates of the process view"
-msgstr ""
-"Durée en millisecondes entre les rafraîchissements de la liste des processus"
+msgstr "క్రమణ దర్శిని యొక్క మధ్య తాజాపరచు సూక్ష్మక్షణాలలో సమయం"
 
 #: ../src/gnome-system-monitor.schemas.in.h:42
 msgid "Whether information about all filesystems should be displayed"
-msgstr ""
-"Indique s'il faut afficher les informations pour tous les systèmes de "
-"fichiers"
+msgstr "అన్ని దస్త్ర వ్యవస్థల యొక్క సమాచారము ప్రదర్శింపబడుతుందా లేదా"
 
 #: ../src/gnome-system-monitor.schemas.in.h:43
 msgid ""
@@ -293,283 +264,276 @@ msgid ""
 "'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
 "filesystems."
 msgstr ""
-"Indique s'il faut afficher les informations relatives à tous les systèmes de "
-"fichiers : ceci inclut les systèmes de fichiers tels qu'« autofs » et "
-"« procfs ». Cette option permet d'obtenir la liste de tous les systèmes de "
-"fichiers actuellement montés."
 
 #: ../src/gnome-system-monitor.schemas.in.h:45
 #, no-c-format
 msgid "Width of process 'CPU %' column"
-msgstr "Largeur de la colonne du % CPU des processus"
+msgstr "క్రమణం యొక్క పొడవు 'సిపియు %' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:46
 msgid "Width of process 'CPU time' column"
-msgstr "Largeur de la colonne du temps CPU des processus"
+msgstr "క్రమణం యొక్క పొడవు 'సిపియు సమయ %' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:47
 msgid "Width of process 'PID' column"
-msgstr "Largeur de la colonne du PID des processus"
+msgstr "క్రమణం యొక్క పొడవు 'పీఐడి' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:48
 msgid "Width of process 'SELinux security context' column"
-msgstr "Largeur de la colonne du contexte de sécurité SELinux des processus"
+msgstr "క్రమణం యొక్క పొడవు 'లైనక్స్ రక్షిత సందర్భ' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:49
 msgid "Width of process 'X server memory' column"
-msgstr "Largeur de la colonne de la mémoire du serveur X des processus"
+msgstr "క్రమణం యొక్క పొడవు 'X సేవిక జ్ఞాపకశక్తి' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:50
 msgid "Width of process 'arguments' column"
-msgstr "Largeur de la colonne des arguments des processus"
+msgstr "క్రమణం యొక్క పొడవు 'క్రమానుగత సంకేతం' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:51
 msgid "Width of process 'estimated memory usage' column"
-msgstr ""
-"Largeur de la colonne de l'estimation de l'utilisation de la mémoire des "
-"processus"
+msgstr "క్రమణం యొక్క పొడవు 'అంచనావేయబడిన జ్ఞాపకశక్తి వాడుక' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:52
 msgid "Width of process 'name' column"
-msgstr "Largeur de la colonne du nom des processus"
+msgstr "క్రమణం యొక్క పొడవు 'నామము' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:53
 msgid "Width of process 'nice' column"
-msgstr "Largeur de la colonne de la priorité des processus"
+msgstr "క్రమణం యొక్క పొడవు 'చక్కని' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:54
 msgid "Width of process 'owner' column"
-msgstr "Largeur de la colonne du propriétaire des processus"
+msgstr "క్రమణం యొక్క పొడవు 'యజమాని' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:55
 msgid "Width of process 'resident memory' column"
-msgstr "Largeur de la colonne de la mémoire résidente des processus"
+msgstr "క్రమణం యొక్క పొడవు 'నివాసి జ్ఞాపకశక్తి' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:56
 msgid "Width of process 'shared memory' column"
-msgstr "Largeur de la colonne de mémoire partagée des processus"
+msgstr "క్రమణం యొక్క పొడవు 'పంచుకొను జ్ఞాపకశక్తి' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:57
 msgid "Width of process 'start time' column"
-msgstr "Largeur de la colonne de l'heure de démarrage des processus"
+msgstr "క్రమణం యొక్క పొడవు 'మొదలుపెట్టిన సమయం' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:58
 msgid "Width of process 'status' column"
-msgstr "Largeur de la colonne de l'état des processus"
+msgstr "క్రమణం యొక్క పొడవు 'స్థితి' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:59
 msgid "Width of process 'virtual memory' column"
-msgstr "Largeur de la colonne de la mémoire virtuelle des processus"
+msgstr "క్రమణం యొక్క పొడవు 'వాస్తవ ప్రతిరూప జ్ఞాపకశక్తి' అడ్డపట్టీ"
 
 #: ../src/gnome-system-monitor.schemas.in.h:60
 msgid "Width of process 'writable memory' column"
-msgstr "Largeur de la colonne de la mémoire inscriptible des processus"
+msgstr "క్రమణం యొక్క పొడవు 'వ్రాయదగు జ్ఞాపకశక్తి' అడ్డపట్టీ"
 
 #. xgettext: noun, top level menu.
 #. "File" did not make sense for system-monitor
 #: ../src/interface.cpp:49
 msgid "_Monitor"
-msgstr "_Moniteur"
+msgstr "_దర్శిని"
 
 #: ../src/interface.cpp:50
 msgid "_Edit"
-msgstr "É_dition"
+msgstr "_సరిచేయు"
 
 #: ../src/interface.cpp:51
 msgid "_View"
-msgstr "_Affichage"
+msgstr "_దర్శించు"
 
 #: ../src/interface.cpp:52
 msgid "_Help"
-msgstr "Aid_e"
+msgstr "_సహాయము"
 
 #: ../src/interface.cpp:54
 msgid "Search for _Open Files"
-msgstr "Rechercher des fichiers _ouverts"
+msgstr "_తెరచిన దస్త్రముల కొరకు వెతుకు"
 
 #: ../src/interface.cpp:55
 msgid "Search for open files"
-msgstr "Rechercher des fichiers ouverts"
+msgstr "తెరచిన దస్త్రముల కొరకు వెతుకు"
 
 #: ../src/interface.cpp:56
 msgid "_Quit"
-msgstr "_Quitter"
+msgstr "_త్యజించు"
 
 #: ../src/interface.cpp:57
 msgid "Quit the program"
-msgstr "Quitte le programme"
+msgstr "కార్యక్రమమును త్యజించు"
 
 #: ../src/interface.cpp:60
 msgid "_Stop Process"
-msgstr "_Stopper le processus"
+msgstr "_క్రమణం ఆపుము"
 
 #: ../src/interface.cpp:61
 msgid "Stop process"
-msgstr "Stoppe le processus"
+msgstr "క్రమణం ఆపుము"
 
 #: ../src/interface.cpp:62
 msgid "_Continue Process"
-msgstr "_Continuer le processus"
+msgstr "_క్రమణం కొనసాగించు"
 
 #: ../src/interface.cpp:63
 msgid "Continue process if stopped"
-msgstr "Continue le processus s'il a été stoppé"
+msgstr "ఒకవేళ క్రమణం ఆపబడినట్టయితే కొనసాగించు"
 
 #: ../src/interface.cpp:65 ../src/interface.cpp:183
 msgid "End _Process"
-msgstr "_Terminer le processus"
+msgstr "‌‌-_క్రమణం ముగించు"
 
 #: ../src/interface.cpp:66
 msgid "Force process to finish normally"
-msgstr "Force un processus à terminer"
+msgstr "సాధారణముగా ముగించుటకు బలవంతపు క్రమణం"
 
 #: ../src/interface.cpp:67 ../src/procdialogs.cpp:75
 msgid "_Kill Process"
-msgstr "T_uer le processus"
+msgstr "‌_క్రమణం నిర్మూలించు"
 
 #: ../src/interface.cpp:68
 msgid "Force process to finish immediately"
-msgstr "Force un processus à terminer immédiatement"
+msgstr "తొందరగా ముగించుటకు బలవంతపు క్రమణం"
 
 #: ../src/interface.cpp:69
 msgid "_Change Priority..."
-msgstr "_Modifier la priorité..."
+msgstr "_ప్రాధామ్యం మార్చుము..."
 
 #: ../src/interface.cpp:70
 msgid "Change the order of priority of process"
-msgstr "Modifie la priorité d'un processus"
+msgstr "క్రమణం యొక్క ప్రాధామ్యం యొక్క క్రమంను మార్చుము"
 
 #: ../src/interface.cpp:71
 msgid "Prefere_nces"
-msgstr "_Préférences"
+msgstr "_అభీష్టాలు"
 
 #: ../src/interface.cpp:72
 msgid "Configure the application"
-msgstr "Configure l'application"
+msgstr "కార్యక్షేత్రాలను రూపకరణచేయు"
 
 #: ../src/interface.cpp:74
 msgid "_Memory Maps"
-msgstr "Car_tes de la mémoire"
+msgstr "_జ్ఞాపకశక్తి పటాలు"
 
 #: ../src/interface.cpp:75
 msgid "Open the memory maps associated with a process"
-msgstr "Affiche les cartes de la mémoire associées à un processus"
+msgstr "క్రమణము తో సహవాసము చేసిన పటాల జ్ఞాపకశక్తిని తెరువుము"
 
 #: ../src/interface.cpp:76
 msgid "Open _Files"
-msgstr "Fichiers _ouverts"
+msgstr "_దస్త్రాలు తెరువుము"
 
 #: ../src/interface.cpp:77
 msgid "View the files opened by a process"
-msgstr "Affiche les fichiers ouverts par un processus"
+msgstr "క్రమణం ద్వారా తెరవబడిన దస్త్రాల దర్శనం"
 
 #: ../src/interface.cpp:79
 msgid "_Contents"
-msgstr "_Sommaire"
+msgstr "_సారాలు"
 
 #: ../src/interface.cpp:80
 msgid "Open the manual"
-msgstr "Ouvre le manuel"
+msgstr "నిర్థేశికను తెరువుము"
 
 #: ../src/interface.cpp:81
 msgid "_About"
-msgstr "À _propos"
+msgstr "_గురించి"
 
 #: ../src/interface.cpp:82
 msgid "About this application"
-msgstr "À propos de cette application"
+msgstr "ఈ కార్యక్షేత్రం గురించి"
 
 #: ../src/interface.cpp:87
 msgid "_Dependencies"
-msgstr "_Dépendances"
+msgstr "_ఆధారపడునది"
 
 #: ../src/interface.cpp:88
 msgid "Show parent/child relationship between processes"
-msgstr "Affiche les relations père/fils entre les processus"
+msgstr "క్రమణముల మధ్యలో మూల/శిశు సంబంధము చూపుము"
 
 #: ../src/interface.cpp:95
 msgid "_Active Processes"
-msgstr "Processus _actifs"
+msgstr "_క్రియాశీల క్రమణము"
 
 #: ../src/interface.cpp:96
 msgid "Show active processes"
-msgstr "Affiche les processus actifs"
+msgstr "క్రియాశీల క్రమణము చూపుము"
 
 #: ../src/interface.cpp:97
 msgid "A_ll Processes"
-msgstr "_Tous les processus"
+msgstr "అన్ని క్రమణములు"
 
 #: ../src/interface.cpp:98
 msgid "Show all processes"
-msgstr "Affiche tous les processus"
+msgstr "అన్ని క్రమణములు చూపుము"
 
 #: ../src/interface.cpp:99
 msgid "M_y Processes"
-msgstr "_Mes processus"
+msgstr "_నా క్రమణములు"
 
 #: ../src/interface.cpp:100
 msgid "Show user own process"
-msgstr "Affiche les processus de l'utilisateur"
+msgstr "వినియోగదారు స్వంత క్రమణం చూపుము"
 
 #: ../src/interface.cpp:250
 msgid "CPU History"
-msgstr "Historique d'utilisation du CPU"
+msgstr "సిపియు చరిత్ర"
 
 #: ../src/interface.cpp:300
 msgid "CPU:"
-msgstr "CPU :"
+msgstr "సిపియు:"
 
 #: ../src/interface.cpp:303
 #, c-format
 msgid "CPU%d:"
-msgstr "CPU%d :"
+msgstr "సిపియు%d:"
 
 #: ../src/interface.cpp:323
 msgid "Memory and Swap History"
-msgstr ""
-"Historique d'utilisation de la mémoire physique et du fichier d'échange"
+msgstr "జ్ఞాపకశక్తి మరియు బదలాయింపు చరిత్ర"
 
 #: ../src/interface.cpp:355
 msgid "User memory:"
-msgstr "Mémoire utilisateur :"
+msgstr "వినియోగదారు జ్ఞాపకశక్తి:"
 
 #. xgettext: user memory: 123 MiB of 512MiB
 #. xgettext: swap: 10MiB of 1GiB
 #: ../src/interface.cpp:373 ../src/interface.cpp:433
 msgid "of"
-msgstr "sur"
+msgstr "యొక్క్"
 
 #: ../src/interface.cpp:414
 msgid "Used swap:"
-msgstr "Fichier d'échange utilisé :"
+msgstr "బదలాయింపు వాడుము:"
 
 #: ../src/interface.cpp:473
 msgid "Network History"
-msgstr "Historique du trafic réseau"
+msgstr "అల్లిక చరిత్ర"
 
 #: ../src/interface.cpp:504
 msgid "Received:"
-msgstr "Reçu :"
+msgstr "స్వీకరించబడినది:"
 
 #: ../src/interface.cpp:524 ../src/interface.cpp:567
 msgid "Total:"
-msgstr "Total :"
+msgstr "మొత్తము:"
 
 #: ../src/interface.cpp:548
 msgid "Sent:"
-msgstr "Envoyé :"
+msgstr "పంపబడిన:"
 
 #: ../src/interface.cpp:724
 msgid "System"
-msgstr "Système"
+msgstr "వ్యవస్థ"
 
 #: ../src/interface.cpp:728 ../src/procdialogs.cpp:514
 msgid "Processes"
-msgstr "Processus"
+msgstr "క్రమణములు"
 
 #: ../src/interface.cpp:732 ../src/procdialogs.cpp:629
 msgid "Resources"
-msgstr "Ressources"
+msgstr "వనరులు"
 
 #. xgettext: rate, 10MiB/s
 #: ../src/load-graph.cpp:441 ../src/load-graph.cpp:452
@@ -579,134 +543,134 @@ msgstr "%s/s"
 
 #: ../src/lsof.cpp:355
 msgid "Process"
-msgstr "Processus"
+msgstr "క్రమణం"
 
 #: ../src/lsof.cpp:367
 msgid "PID"
-msgstr "PID"
+msgstr "పిఐడి"
 
 #: ../src/lsof.cpp:377 ../src/memmaps.cpp:478
 msgid "Filename"
-msgstr "Nom de fichier"
+msgstr "దస్త్రనామము"
 
 #. gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 #: ../src/lsof.cpp:394
 msgid "Search for Open Files"
-msgstr "Rechercher des fichiers ouverts"
+msgstr "తెరచిన దస్త్రముల కొరకు వెతుకు"
 
 #: ../src/lsof.cpp:422
 msgid "_Name contains:"
-msgstr "Le _nom contient :"
+msgstr "_నామము కలిగివున్న:"
 
 #: ../src/lsof.cpp:438
 msgid "Case insensitive matching"
-msgstr "Ne pas respecter la casse"
+msgstr "సందర్భ స్పందనరహిత ఉపమించు"
 
 #: ../src/lsof.cpp:446
 msgid "S_earch results:"
-msgstr "Résultats de la recherche :"
+msgstr "_ఫలితాలు వెతుకు:"
 
 #. xgettext: virtual memory start
 #: ../src/memmaps.cpp:480
 msgid "VM Start"
-msgstr "Début VM"
+msgstr "వియం మొదలు"
 
 #. xgettext: virtual memory end
 #: ../src/memmaps.cpp:482
 msgid "VM End"
-msgstr "Fin VM"
+msgstr "వియం అంతం"
 
 #. xgettext: virtual memory syze
 #: ../src/memmaps.cpp:484
 msgid "VM Size"
-msgstr "Taille VM"
+msgstr "వియం పరిమాణం"
 
 #: ../src/memmaps.cpp:485
 msgid "Flags"
-msgstr "Attributs"
+msgstr "జెండాలు"
 
 #. xgettext: virtual memory offset
 #: ../src/memmaps.cpp:487
 msgid "VM Offset"
-msgstr "Décalage VM"
+msgstr ""
 
 #. xgettext: memory that has not been modified since
 #. it has been allocated
 #: ../src/memmaps.cpp:490
 msgid "Private clean"
-msgstr "Mém. privée propre"
+msgstr "స్వంత శుభ్రంచేయు"
 
 #. xgettext: memory that has been modified since it
 #. has been allocated
 #: ../src/memmaps.cpp:493
 msgid "Private dirty"
-msgstr "Mém. privée modifiée"
+msgstr "స్వంత మురికి"
 
 #. xgettext: shared memory that has not been modified
 #. since it has been allocated
 #: ../src/memmaps.cpp:496
 msgid "Shared clean"
-msgstr "Mém. partagée propre"
+msgstr "పంచుకొను శుభ్రంచేయు"
 
 #. xgettext: shared memory that has been modified
 #. since it has been allocated
 #: ../src/memmaps.cpp:499
 msgid "Shared dirty"
-msgstr "Mém. partagée modifiée"
+msgstr "పంచుకొను మురికి"
 
 #: ../src/memmaps.cpp:501
 msgid "Inode"
-msgstr "Inœud"
+msgstr "ఐనోడ్"
 
 #. gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 #: ../src/memmaps.cpp:610
 msgid "Memory Maps"
-msgstr "Cartes de la mémoire"
+msgstr "జ్ఞాపకశక్తి పటాలు"
 
 #: ../src/memmaps.cpp:629
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
-msgstr "Cartes de la _mémoire du processus « %s » (PID %u) :"
+msgstr "_\"%s\" క్రమణం కొరకు జ్ఞాపకశక్తి పటాలు (పిఐడి %u):"
 
 #: ../src/openfiles.cpp:33
 msgid "file"
-msgstr "fichier"
+msgstr "దస్త్రం"
 
 #: ../src/openfiles.cpp:35
 msgid "pipe"
-msgstr "tube"
+msgstr "పైప్"
 
 #: ../src/openfiles.cpp:37
 msgid "network connection"
-msgstr "connexion réseau"
+msgstr "అల్లిక అనుసంధానము"
 
 #: ../src/openfiles.cpp:39
 msgid "local socket"
-msgstr "socket local"
+msgstr "స్థానిక తొర్ర"
 
 #: ../src/openfiles.cpp:41
 msgid "unknown type"
-msgstr "type inconnu"
+msgstr "తెలియని రకము"
 
 #. Translators: "FD" here means "File Descriptor". Please use
 #. a very short translation if possible, and at most
 #. 2-3 characters for it to be able to fit in the UI.
 #: ../src/openfiles.cpp:234
 msgid "FD"
-msgstr "FD"
+msgstr "ఎఫ్ డి"
 
 #: ../src/openfiles.cpp:236
 msgid "Object"
-msgstr "Objet"
+msgstr "తాత్పర్యం"
 
 #: ../src/openfiles.cpp:320
 msgid "Open Files"
-msgstr "Fichiers ouverts"
+msgstr "దస్త్రములు తెరువు"
 
 #: ../src/openfiles.cpp:342
 #, c-format
 msgid "_Files opened by process \"%s\" (PID %u):"
-msgstr "_Fichiers ouverts par le processus « %s » (PID %u) :"
+msgstr "_\"%s\" క్రమణం ద్వారా దస్త్రములు తెరువబడినవి (పిఐడి %u):"
 
 #: ../src/procactions.cpp:75
 #, c-format
@@ -714,7 +678,7 @@ msgid ""
 "Cannot change the priority of process with pid %d to %d.\n"
 "%s"
 msgstr ""
-"Impossible de changer la priorité du processus du pid %d vers %d.\n"
+"%d కు  %d పిఐడి ద్వారా క్రమణం యొక్క ప్రాధామ్యంను మార్చుటకు వీలుకాదు.\n"
 "%s"
 
 #: ../src/procactions.cpp:155
@@ -723,13 +687,13 @@ msgid ""
 "Cannot kill process with pid %d with signal %d.\n"
 "%s"
 msgstr ""
-"Impossible de tuer le processus au pid %d avec le signal %d.\n"
+"%d సైగల తో %d పిఐడి తో క్రమణంను నిర్మూలించుట వీలుకాదు.\n"
 "%s"
 
 #. xgettext: primary alert message
 #: ../src/procdialogs.cpp:70
 msgid "Kill the selected process?"
-msgstr "Tuer le processus sélectionné ?"
+msgstr "ఎంచుకొనబడిన క్రమణంను నిర్మూలించు"
 
 #. xgettext: secondary alert message
 #: ../src/procdialogs.cpp:72
@@ -737,14 +701,11 @@ msgid ""
 "Killing a process may destroy data, break the session or introduce a "
 "security risk. Only unresponding processes should be killed."
 msgstr ""
-"En tuant un processus, vous pouvez détruire vos données, endommager votre "
-"session de travail ou bien introduire une faille de sécurité. Seuls les "
-"processus ne répondant plus devraient être tués."
 
 #. xgettext: primary alert message
 #: ../src/procdialogs.cpp:79
 msgid "End the selected process?"
-msgstr "Terminer le processus sélectionné ?"
+msgstr "ఎంచుకొనబడిన క్రమణం అంతం"
 
 #. xgettext: secondary alert message
 #: ../src/procdialogs.cpp:81
@@ -752,207 +713,202 @@ msgid ""
 "Ending a process may destroy data, break the session or introduce a security "
 "risk. Only unresponding processes should be ended."
 msgstr ""
-"En terminant un processus, vous pouvez détruire vos données, endommager "
-"votre session de travail ou bien introduire une faille de sécurité. Seuls "
-"les processus ne répondant plus devraient être terminés."
 
 #: ../src/procdialogs.cpp:84
 msgid "_End Process"
-msgstr "_Terminer le processus"
+msgstr "_క్రమణం అంతం"
 
 #: ../src/procdialogs.cpp:113
 msgid "(Very High Priority)"
-msgstr "(priorité très élevée)"
+msgstr "(చాలా ఉన్నతమైన ప్రాధామ్యం)"
 
 #: ../src/procdialogs.cpp:115
 msgid "(High Priority)"
-msgstr "(priorité élevée)"
+msgstr "(ఉన్నతమైన ప్రాధామ్యం)"
 
 #: ../src/procdialogs.cpp:117
 msgid "(Normal Priority)"
-msgstr "(priorité normale)"
+msgstr "(సాధారణ ప్రాధామ్యం)"
 
 #: ../src/procdialogs.cpp:119
 msgid "(Low Priority)"
-msgstr "(priorité faible)"
+msgstr "(తక్కువైన ప్రాధామ్యం)"
 
 #: ../src/procdialogs.cpp:121
 msgid "(Very Low Priority)"
-msgstr "(priorité très faible)"
+msgstr "(చాలా తక్కువైన ప్రాధామ్యం)"
 
 #: ../src/procdialogs.cpp:173
 msgid "Change Priority"
-msgstr "Modifier la priorité"
+msgstr "ప్రాధామ్యం మార్చుము"
 
 #: ../src/procdialogs.cpp:194
 msgid "Change _Priority"
-msgstr "_Modifier la priorité"
+msgstr "_ప్రాధామ్యం మార్చుము"
 
 #: ../src/procdialogs.cpp:215
 msgid "_Nice value:"
-msgstr "Valeur « _nice » :"
+msgstr "_మంచి విలువలు:"
 
 #: ../src/procdialogs.cpp:231
 msgid "Note:"
-msgstr "Note :"
+msgstr "గమనిక:"
 
 #: ../src/procdialogs.cpp:232
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
 msgstr ""
-"La priorité d'un processus est attribuée au moyen de sa valeur « nice ». Une "
-"valeur nice plus basse correspond à une plus haute priorité."
 
 #: ../src/procdialogs.cpp:392
 msgid "Process i_nformation shown in list:"
-msgstr "I_nformations sur les processus affichés dans la liste :"
+msgstr "_క్రమణ సమాచారము జాబితాలో చూపబడింది:"
 
 #: ../src/procdialogs.cpp:444
 msgid "Icon"
-msgstr "Icône"
+msgstr "ప్రతిమ"
 
 #: ../src/procdialogs.cpp:491
 msgid "System Monitor Preferences"
-msgstr "Préférences du moniteur système"
+msgstr "వ్యవస్థ దర్శిని అభీష్టాలు"
 
 #: ../src/procdialogs.cpp:521
 msgid "Behavior"
-msgstr "Comportement"
+msgstr "ప్రవర్తన"
 
 #: ../src/procdialogs.cpp:540 ../src/procdialogs.cpp:655
 #: ../src/procdialogs.cpp:741
 msgid "_Update interval in seconds:"
-msgstr "_Fréquence de mise à jour en secondes :"
+msgstr "_క్షణాలలో విరామం తాజాపరచు:"
 
 #: ../src/procdialogs.cpp:565
 msgid "Enable _smooth refresh"
-msgstr "Activer le rafraîchissement _lissé"
+msgstr "_మృదువు పునర్వికాసం క్రియాశీలించు"
 
 #: ../src/procdialogs.cpp:579
 msgid "Alert before ending or _killing processes"
-msgstr "Afficher un avertissement avant de _terminer ou de tuer des processus"
+msgstr "_ముగించుటకు ముందు జాగురూకతగానుండు లేదా క్రమణములు నిర్మూలించు"
 
 #: ../src/procdialogs.cpp:593
 msgid "Solaris mode"
-msgstr "Mode Solaris"
+msgstr "సొలారిస్ విధము"
 
 #: ../src/procdialogs.cpp:611
 msgid "Information Fields"
-msgstr "Champs d'informations"
+msgstr "సమాచార క్షేత్రాలు"
 
 #: ../src/procdialogs.cpp:636
 msgid "Graphs"
-msgstr "Graphiques"
+msgstr "రేఖాపటాలు"
 
 #: ../src/procdialogs.cpp:677
 msgid "_Background color:"
-msgstr "Couleur d'_arrière-plan :"
+msgstr "_పూర్వరంగం వర్ణము:"
 
 #: ../src/procdialogs.cpp:696
 msgid "_Grid color:"
-msgstr "Couleur de la _grille :"
+msgstr "_గ్రిడ్ వర్ణము:"
 
 #: ../src/procdialogs.cpp:761
 msgid "Show _all filesystems"
-msgstr "Afficher _tous les systèmes de fichiers"
+msgstr "అన్ని దస్త్ర వ్యవస్థలను చూపుము"
 
 #: ../src/proctable.cpp:242
 msgid "Process Name"
-msgstr "Nom du processus"
+msgstr "క్రమణ నామము"
 
 #: ../src/proctable.cpp:243
 msgid "User"
-msgstr "Utilisateur"
+msgstr "వినియోగదారుడు"
 
 #: ../src/proctable.cpp:244
 msgid "Status"
-msgstr "État"
+msgstr "స్థితి"
 
 #: ../src/proctable.cpp:245
 msgid "Virtual Memory"
-msgstr "Mém. virtuelle"
+msgstr "వాస్తవప్రతిరూప జ్ఞాపకశక్తి"
 
 #: ../src/proctable.cpp:246
 msgid "Resident Memory"
-msgstr "Mém. résidente"
+msgstr "జ్ఞాపకశక్తి"
 
 #: ../src/proctable.cpp:247
 msgid "Writable Memory"
-msgstr "Mém. en écriture"
+msgstr "వ్రాయదగు జ్ఞాపకశక్తి"
 
 #: ../src/proctable.cpp:248
 msgid "Shared Memory"
-msgstr "Mém. partagée"
+msgstr "పంచుకొను జ్ఞాపకశక్తి"
 
 #: ../src/proctable.cpp:249
 msgid "X Server Memory"
-msgstr "Mém. du serveur X"
+msgstr "X సేవిక జ్ఞాపకశక్తి"
 
 #: ../src/proctable.cpp:250
 #, no-c-format
 msgid "% CPU"
-msgstr "% CPU"
+msgstr "% సిపియు"
 
 #: ../src/proctable.cpp:251
 msgid "CPU Time"
-msgstr "Temps CPU"
+msgstr "సిపియు సమయం"
 
 #: ../src/proctable.cpp:252
 msgid "Started"
-msgstr "Démarré"
+msgstr "మొదలుపెట్టబడినది"
 
 #: ../src/proctable.cpp:253
 msgid "Nice"
-msgstr "Priorité"
+msgstr "మంచి"
 
 #: ../src/proctable.cpp:254
 msgid "ID"
-msgstr "ID"
+msgstr "ఐడి"
 
 #: ../src/proctable.cpp:255
 msgid "Security Context"
-msgstr "Contexte de sécurité"
+msgstr "రక్షిత సందర్భం"
 
 #: ../src/proctable.cpp:256
 msgid "Command Line"
-msgstr "Ligne de commande"
+msgstr "ఆదేశవాక్యం"
 
 #: ../src/proctable.cpp:257
 msgid "Memory"
-msgstr "Mémoire"
+msgstr "జ్ఞాపకశక్తి"
 
 #: ../src/proctable.cpp:454
 msgid "Running"
-msgstr "En cours"
+msgstr "నడుపుచున్నది"
 
 #: ../src/proctable.cpp:458
 msgid "Stopped"
-msgstr "Stoppé"
+msgstr "ఆపబడినది"
 
 #: ../src/proctable.cpp:462
 msgid "Zombie"
-msgstr "Zombie"
+msgstr "జోంబీ"
 
 #: ../src/proctable.cpp:466
 msgid "Uninterruptible"
-msgstr "Ininterruptible"
+msgstr "అంతరాయంచెందనిది"
 
 #: ../src/proctable.cpp:470
 msgid "Sleeping"
-msgstr "Au repos"
+msgstr "నిద్రించుచున్నది"
 
 #. xgettext: weeks, days
 #: ../src/proctable.cpp:597
 #, c-format
 msgid "%uw%ud"
-msgstr "%usem.%uj"
+msgstr "%uw%ud"
 
 #. xgettext: days, hours (0 -> 23)
 #: ../src/proctable.cpp:601
 #, c-format
 msgid "%ud%02uh"
-msgstr "%uj%02uh"
+msgstr "%ud%02uh"
 
 #. xgettext: hours (0 -> 23), minutes, seconds
 #: ../src/proctable.cpp:605
@@ -969,74 +925,75 @@ msgstr "%u:%02u.%02u"
 #: ../src/proctable.cpp:1034
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
-msgstr ""
-"Charge système pour les 1, 5, 15 dernières minutes : %0.2f; %0.2f; %0.2f"
+msgstr "చివరి 1, 5, 15 నిమిషముల కొరకు సగటులు నింపుము: %0.2f, %0.2f, %0.2f"
 
 #: ../src/sysinfo.cpp:92
 msgid "Unknown CPU model"
-msgstr "Type de processeur inconnu"
+msgstr "తెలియని సిపియు నమూనా"
 
 #. xgettext: Release 2.6.19
 #: ../src/sysinfo.cpp:401
 #, c-format
 msgid "Release %s"
-msgstr "Version %s"
+msgstr "%s విడుదల"
 
 #: ../src/sysinfo.cpp:408
 #, c-format
 msgid "Kernel %s"
-msgstr "Noyau %s"
+msgstr "%s కెర్నెల్"
 
 #: ../src/sysinfo.cpp:416
 #, c-format
 msgid "GNOME %s"
-msgstr "GNOME %s"
+msgstr "%s గ్నోమ్"
 
 #. hardware section
 #: ../src/sysinfo.cpp:425
+#, c-format
 msgid "<b>Hardware</b>"
-msgstr "<b>Matériel</b>"
+msgstr "<b>Hardware</b>"
 
 #: ../src/sysinfo.cpp:446
 msgid "Memory:"
-msgstr "Mémoire :"
+msgstr "జ్ఞాపకశక్తి:"
 
 #: ../src/sysinfo.cpp:466
 #, c-format
 msgid "Processor %d:"
-msgstr "Processeur %d :"
+msgstr "క్రమణిక %d:"
 
 #: ../src/sysinfo.cpp:471
 msgid "Processor:"
-msgstr "Processeur :"
+msgstr "క్రమణిక:"
 
 #. disk space section
 #: ../src/sysinfo.cpp:491
+#, c-format
 msgid "<b>System Status</b>"
-msgstr "<b>État du système</b>"
+msgstr "<b>వ్యవస్థ స్థితి</b>"
 
 #: ../src/sysinfo.cpp:512
 msgid "Available disk space:"
-msgstr "Espace disque disponible :"
+msgstr "ఖని ఖాళీ లభ్యత:"
 
 #: ../src/util.cpp:77
 #, c-format
 msgid "%u byte"
 msgid_plural "%u bytes"
-msgstr[0] "%u octet"
-msgstr[1] "%u octets"
+msgstr[0] "%u బైట్"
+msgstr[1] "%u బైట్స్"
 
 #: ../src/util.cpp:84
 #, c-format
 msgid "%.1f KiB"
-msgstr "%.1f Kio"
+msgstr "%.1f KiB"
 
 #: ../src/util.cpp:87
 #, c-format
 msgid "%.1f MiB"
-msgstr "%.1f Mio"
+msgstr "%.1f MiB"
 
 #: ../src/util.cpp:90
 #, c-format
 msgid "%.1f GiB"
-msgstr "%.1f Gio"
+msgstr "%.1f GiB"

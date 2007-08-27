@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "2.5.2">
+<!ENTITY manrevision "2.1">
+<!ENTITY date "February 2004">
+<!ENTITY app "System Monitor">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="ca">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual del monitor del sistema v2.1</title>       
+
+    <copyright>
+      <year>2004</year>
+      <holder>Sun Microsystems</holder>
+    </copyright>
+    <copyright> 
+      <year>2001</year>
+      <year>2002</year> 
+      <year>2004</year> 
+      <holder>Bill Day</holder> 
+    </copyright><copyright><year>2007</year><holder>Joan Duran (jodufi@gmail.com)</holder></copyright> 
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2002</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+      <publishername>Projecte de documentació del GNOME</publishername> 
+    </publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Teniu permís per a copiar, distribuir i/o modificar aquest document, sota els termes de la Llicència de documentació lliure GNU (GFDL), versió 1.1 o qualsevol versió publicada posteriorment per la Free Software Foundation, sense seccions invariants, sense texts de portada i sense texts de contraportada. Podeu trobar una còpia de la GFDL en aquest <ulink type="help" url="ghelp:fdl">enllaç</ulink> o en el fitxer COPYING-DOCS distribuït amb aquest manual.</para>
+         <para>Aquest manual forma part d'una col·lecció de manuals del GNOME distribuïts sota la GFDL. Si voleu distribuir aquest manual independentment de la col·lecció, podeu fer-ho afegint una còpia de la llicència al manual, tal com es descriu a la secció 6 de la llicència.</para>
+
+	<para>Molts dels noms que les empreses utilitzen per a distingir els seus productes i serveis es consideren marques comercials. Quan aquests noms apareguin en qualsevol documentació del GNOME, si els membres del Projecte de documentació del GNOME han estat avisats pel que fa a les marques, els noms apareixeran en majúscules o amb les inicials en majúscules.</para>
+
+	<para>EL DOCUMENT I LES VERSIONS MODIFICADES DEL DOCUMENT S'OFEREIXEN SOTA ELS TERMES DE LA LLICÈNCIA DE DOCUMENTACIÓ LLIURE DE GNU, TENINT EN COMPTE QUE: <orderedlist>
+		<listitem>
+		  <para>EL DOCUMENT S'OFEREIX «TAL COM ÉS», SENSE CAP TIPUS DE GARANTIA, NI EXPLÍCITA NI IMPLÍCITA; AIXÒ INCLOU, SENSE LIMITAR-S'HI, LES GARANTIES QUE EL DOCUMENT O LA VERSIÓ MODIFICADA DEL DOCUMENT NO TINGUI DEFECTES, SIGUI COMERCIALITZABLE, SIGUI ADEQUAT PER A UN ÚS CONCRET O NO INFRINGEIXI CAP LLEI. TOT EL RISC PEL QUE FA A LA QUALITAT, EXACTITUD I RENDIMENT DEL DOCUMENT O LA VERSIÓ MODIFICADA DEL DOCUMENT ÉS VOSTRE. EN CAS QUE EL DOCUMENT RESULTÉS DEFECTUÓS EN QUALSEVOL ASPECTE, VÓS (NO PAS L'ESCRIPTOR INICIAL, L'AUTOR O CAP ALTRE COL·LABORADOR) ASSUMIU TOT EL COST DE MANTENIMENT, REPARACIÓ O CORRECCIÓ. AQUESTA RENÚNCIA DE GARANTIA CONSTITUEIX UNA PART ESSENCIAL D'AQUESTA LLICÈNCIA. NO S'AUTORITZA L'ÚS DE CAP DOCUMENT O VERSIÓ MODIFICADA DEL DOCUMENT EXCEPTE SOTA AQUESTA RENÚNCIA DE GARANTIA; I </para>
+		</listitem>
+		<listitem>
+		  <para>EN CAP CAS I SOTA CAP INTERPRETACIÓ LEGAL, JA SIGUI PER AGREUJAMENT (INCLOENT-HI LA NEGLIGÈNCIA), CONTRACTE O ALTRE CAS, L'AUTOR, L'ESCRIPTOR ORIGINAL, QUALSEVOL DELS COL·LABORADORS O DISTRIBUÏDORS DEL DOCUMENT O UNA VERSIÓ MODIFICADA DEL DOCUMENT NI CAP PROVEÏDOR D'AQUESTES PARTS NO SERAN RESPONSABLES DAVANT DE NINGÚ PER CAP DANY DIRECTE, INDIRECTE, ESPECIAL, ACCIDENTAL O CONSECUTIU DE QUALSEVOL TIPUS; AIXÒ INCLOU, SENSE LIMITAR-S'HI, ELS DANYS PER PÈRDUA DE CLIENTS, INTERRUPCIONS DE LA FEINA, FALLADA O MALFUNCIONAMENT DE L'ORDINADOR, O QUALSEVOL ALTRA PÈRDUA O DANY RELACIONAT AMB L'ÚS DEL DOCUMENT I LES VERSIONS MODIFICADES DEL DOCUMENT, FINS I TOT SI S'HA INFORMAT AQUESTA PART DE LA POSSIBILITAT D'AQUESTS DANYS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+  <authorgroup> 
+    <author>
+      <firstname>Sun</firstname>
+      <surname>Equip de documentació del GNOME</surname>
+      <affiliation><orgname>Sun Microsystems</orgname></affiliation>
+    </author>
+    <author> 
+      <firstname>Bill</firstname> 
+      <surname>Day</surname> 
+      <affiliation><address><email>billday@bellatlantic.net</email></address></affiliation> 
+    </author> 
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+    <othercredit role="translator">
+      <firstname>Latin</firstname> 
+      <surname>Translator 1</surname> 
+      <affiliation> 
+	<orgname>Latin Translation Team</orgname> 
+	<address> <email>translator@gnome.org</email> </address> 
+      </affiliation>
+      <contrib>Latin translation</contrib>
+    </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+      <revision> 
+	<revnumber>Manual del monitor del sistema v2.1</revnumber> 
+	<date>Febrer del 2004</date> 
+	<revdescription> 
+	  <para role="author">Equip de documentació del GNOME Sun</para>
+	  <para role="publisher">Projecte de documentació del GNOME</para>
+	</revdescription> 
+      </revision> 
+      <revision> 
+	<revnumber>Manual del monitor del sistema v2.0</revnumber> 
+	<date>Novembre del 2002</date> 
+	<revdescription> 
+	  <para role="author">Bill Day <email>billday@bellatlantic.net</email></para>
+	  <para role="publisher">Projecte de documentació del GNOME</para>
+	</revdescription> 
+      </revision> 
+      <revision> 
+	<revnumber>Manual del Procman v0.11</revnumber> 
+	<date>Gener del 2002</date> 
+	<revdescription> 
+	  <para role="author">Bill Day <email>billday@bellatlantic.net</email></para>
+	  <para role="publisher">Projecte de documentació del GNOME</para>
+	</revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>Aquest manual descriu la versió 2.5.2 del monitor del sistema</releaseinfo> 
+
+    <legalnotice> 
+      <title>Comentaris</title> 
+      <para>Per a informar d'un error o fer algun suggeriment quant al <application>monitor del sistema</application> o d'aquest manual, seguiu les indicacions a la <ulink url="ghelp:gnome-feedback" type="help">Pàgina de comentaris del GNOME</ulink>.</para>
+
+<!-- Translators may also add here feedback address for translations -->
+
+    </legalnotice> 
+    <abstract role="description">
+      <para>Manual d'usuari del monitor del sistema</para>
+    </abstract>
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Monitor del sistema</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>gnome-system-monitor</primary> 
+  </indexterm>
+  <indexterm zone="index"> 
+    <primary>procman</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+ <!-- ============= Introduction ============================== -->
+  <sect1 id="gnome-system-monitor-intro">
+    <title>Introducció</title>
+    <para>L'aplicació <application>monitor del sistema</application> us permet monitoritzar els processos del sistema i l'ús dels recursos del sistema. També podeu utilitzar el <application>monitor del sistema</application> per a modificar el comportament del sistema.</para>
+    <para>La finestra del <application>monitor del sistema</application> conté dues pestanyes:</para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <guilabel>Llistat de processos</guilabel>
+        </term>
+        <listitem>
+          <para>Mostra els processos actius, i com els processos estan relacionats entre ells. Proporciona informació detallada dels processos individuals, i us permet controlar els processos actius.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guilabel>Monitor de recursos</guilabel>
+        </term>
+        <listitem>
+          <para>Visualitza l'ús actual dels següents recursos del sistema:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Temps de CPU (unitat central de procés)</para>
+            </listitem>
+            <listitem>
+              <para>Memòria i espai d'intercanvi</para>
+            </listitem>
+            <listitem>
+              <para>Espai de disc en cada dispositiu</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
+
+<!-- ============= Getting Started =========================== -->
+  <sect1 id="gnome-system-monitor-getting-started">
+    <title>Inici</title>
+                                                                                
+<!-- ============= To Start System Monitor ============================ -->
+    <sect2 id="gnome-system-monitor-to-start">
+      <title>Per a iniciar el monitor del sistema</title>
+      <para>Podeu iniciar el <application>monitor del sistema</application> de les següents maneres:</para>
+      <variablelist>
+        <varlistentry>
+          <term>Menú <guimenu>Aplicacions</guimenu></term>
+          <listitem>
+            <para>Trieu l'element del menú <menuchoice><guimenu>Eines del sistema</guimenu><guimenuitem>Monitor del sistema</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Línia d'ordres</term>
+          <listitem>
+            <para>Executeu la següent ordre: <command>gnome-system-monitor</command></para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+	
+    <sect2 id="gnome-system-monitor-when-you-start">
+      <title>En iniciar el <application>monitor del sistema</application></title>	
+      <para>En iniciar el <application>monitor del sistema</application> es mostrarà la finestra següent:</para>
+      <figure id="gnome-system-monitor-window"> 
+        <title>Finestra del monitor del sistema</title>
+        <screenshot> 
+          <mediaobject> 
+            <imageobject> 
+              <imagedata fileref="figures/gnome-system-monitor_window.png" format="PNG"/>
+            </imageobject>
+            <textobject> <phrase>Mostra la finestra principal del monitor del sistema.</phrase>
+            </textobject> 
+          </mediaobject>
+        </screenshot>
+      </figure>
+      <para>La finestra del <application>monitor del sistema</application> conté els elements següents:</para>
+      <variablelist> 
+        <varlistentry> 
+          <term>Barra de menú</term> 
+          <listitem> 
+            <para>Els menús a la barra de menú contenen totes les ordres que necessàries per a treballar amb el <application>monitor del sistema</application>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry> 
+          <term>Àrea de visualització</term> 
+          <listitem> 
+            <para>L'àrea de visualització conté la informació del monitor del sistema. L'àrea de visualització conté les pestanyes següents:</para>
+            <itemizedlist>
+              <listitem>
+                <para>
+                  <guilabel>Llistat de processos</guilabel>
+                </para>
+                <para>Conté un quadre de text <guilabel>Cerca</guilabel>, una llista desplegable <guilabel>Visualitza</guilabel>, una llista de processos organitzada com una taula, un botó <guilabel>Més informació</guilabel> i un botó <guilabel>Finalitza el procés</guilabel>.</para>
+                <note>
+                  <para>No confoneu la llista desplegable <guilabel>Visualitza</guilabel> en la pestanya <guilabel>Llistat de processos</guilabel> amb el menú <guilabel>Visualitza</guilabel> en la barra de menú.</para>
+                </note>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Monitor de recursos</guilabel>
+                </para>
+                <para>Conté una gràfica <guilabel>Historial de la CPU</guilabel>, una gràfica <guilabel>Historial de la memòria i espai d'intercanvi</guilabel> i una llista de <guilabel>Dispositius</guilabel> organitzada com a taula.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+        <varlistentry> 
+          <term>Barra d'estat</term> 
+          <listitem> 
+            <para>La barra d'estat mostra informació de l'activitat actual del <application>monitor del sistema</application> i informació contextual dels elements del menú.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+
+
+ <!-- ================ Usage ================================ -->
+ <!-- This section should describe basic usage of the application. -->
+
+  <sect1 id="gnome-system-monitor-usage">
+    <title>Utilització</title>
+                                                                                
+    <sect2 id="gnome-system-monitor-display-processlist">
+      <title>Per a visualitzar la llista de processos</title>
+      <para>Per a visualitzar la llista de processos seleccioneu la pestanya <guilabel>Llistat de processos</guilabel>. Per defecte es mostrarà la pestanya <guilabel>Llistat de processos</guilabel> quan inicieu el <application>monitor del sistema</application>.</para>
+      <para>En la pestanya <guilabel>Llistat de processos</guilabel>, els processos estan organitzats en una taula. Les files de la taula mostren informació dels processos. Les columnes representen els camps d'informació dels processos, com el nom de l'usuari propietari del procés, la quantitat de memòria utilitzada actualment pel procés i molts més. De l'esquerra a la dreta, per defecte la pestanya del <guilabel>Llistat de processos</guilabel> mostra les següents columnes:</para>
+      <itemizedlist>
+          <listitem>
+            <para>Nom del procés</para>
+          </listitem>
+          <listitem>
+            <para>Usuari</para>
+          </listitem>
+          <listitem>
+            <para>Memòria</para>
+          </listitem>
+          <listitem>
+            <para>Memòria del servidor d'X</para>
+          </listitem>
+          <listitem>
+            <para>Prioritat</para>
+          </listitem>
+          <listitem>
+            <para>Identificador</para>
+          </listitem>
+      </itemizedlist>
+        <para>Per a més informació de com canviar les columnes mostrades en la llista de processos, vegeu <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
+
+      <sect3 id="gnome-system-monitor-display-processlist-child">
+        <title>Processos pare, processos fill i fils</title>
+        <para>Un procés pare és un procés que crea un altre procés. El procés creat és un procés fill del procés pare original. Per defecte, el <application>monitor del sistema</application> mostra les dependències dels processos. Per a més informació quant a com canviar l'entorn mostrat, vegeu <xref linkend="gnome-system-monitor-modify-processlist-viewdeps"/>.</para>
+        <para>Un fil es una part d'un procés que s'executa independentment de i concurrentment amb altres parts del procés. Per defecte, el <application>monitor del sistema</application> no mostra els fils. Per a més informació quant a com canviar l'entorn mostrat, vegeu <xref linkend="gnome-system-monitor-modify-processlist-viewthreads"/>.</para>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-display-processlist-priority">
+        <title>Prioritat dels processos i valor de la prioritat</title>
+      <para>Els processos s'executen en un ordre de prioritat: els processos d'alta prioritat s'executen abans que els processos de baixa prioritat. Els processos fill generalment hereten la prioritat del procés pare.</para>
+      <para>La prioritat d'un procés s'estableix a partir del valor de prioritat del procés, de la manera següent:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Un valor de prioritat de 0 significa que el procés té una prioritat normal.</para>
+        </listitem>
+        <listitem>
+          <para>Com més gran sigui el valor de prioritat, menor serà la prioritat.</para>
+        </listitem>
+        <listitem>
+          <para>Com més petit sigui el valor de prioritat, major serà la prioritat.</para>
+        </listitem>
+      </itemizedlist>
+      <para>Per a més informació de com canviar la prioritat d'un procés, vegeu <xref linkend="gnome-system-monitor-change-priority"/>.</para>
+      </sect3>
+
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-sort-processlist">
+      <title>Per a ordenar la llista de processos</title>
+      <para>Per a ordenar la llista de processos, realitzeu els passos següents:</para>
+      <orderedlist>
+        <listitem>
+          <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Per defecte, els processos estan llistats pel nom, en ordre alfabètic. Per a llistar els processos en ordre invers a l'alfabètic, cliqueu a la capçalera de la columna <guilabel>Nom del procés</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Cliqueu a qualsevol capçalera de la columna per a ordenar els processos per la informació en aquella columna, en ordre alfabètic o numèric.</para>
+        </listitem>
+        <listitem>
+          <para>Cliqueu un altre cop en la capçalera de la columna per a ordenar la informació en ordre alfabètic o numèric invers.</para>
+        </listitem>
+      </orderedlist>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-modify-processlist">
+      <title>Per a modificar el contingut de la llista de processos</title>
+      <para>Podeu modificar el contingut de la llista de processos de diferents maneres.</para>
+
+      <sect3 id="gnome-system-monitor-modify-processlist-all">
+        <title>Per a mostrar tots els processos</title>
+        <para>Per a mostrar tots els processos en la llista de processos, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu a la llista desplegable <guilabel>Visualitza</guilabel> i seleccioneu <guilabel>Tots els processos</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-modify-processlist-my">
+        <title>Per a mostrar els processos que només pertanyen a l'usuari actual</title>
+        <para>Per a mostrar els processos que només pertanyen a l'usuari actual, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu a la llista desplegable <guilabel>Visualitza</guilabel> i seleccioneu <guilabel>Els meus processos</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-modify-processlist-active">
+        <title>Per a mostrar només els processos actius</title>
+        <para>Per a mostrar només els processos actius en la llista de processos, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu a la llista desplegable <guilabel>Visualitza</guilabel> i seleccioneu <guilabel>Processos actius</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-modify-processlist-viewdeps">
+        <title>Per a mostrar les dependències dels processos</title>
+        <para>Per a mostrar les dependències dels processos en la llista de processos, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu <menuchoice><guimenu>Visualitza</guimenu><guimenuitem>Dependències</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </orderedlist>
+        <para>Si l'element del menú <guimenuitem>Dependències</guimenuitem> està seleccionat, els processos es llistaran d'aquesta manera:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Els processos pares s'indiquen amb un símbol de triangle a l'esquerra del nom del procés. Cliqueu en el símbol de triangle per a mostrar o ocultar els processos fill associats.</para>
+          </listitem>
+          <listitem>
+            <para>Els processos fill estan sagnats i llistats amb el seu procés pare.</para>
+          </listitem>
+        </itemizedlist>
+        <para>Si l'element del menú <guimenuitem>Dependències</guimenuitem> no està seleccionat:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Els processos pare i fill no són distingibles.</para>
+          </listitem>
+          <listitem>
+            <para>Tots els processos estan llistats en ordre alfabètic.</para>
+          </listitem>
+        </itemizedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-modify-processlist-viewthreads">
+        <title>Per a mostrar fils</title>
+        <para>Per a mostrar fils en la llista de processos, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu <menuchoice><guimenu>Visualitza</guimenu><guimenuitem>Fils</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-modify-hide-process">
+        <title>Per a ocultar un procés</title>
+        <para>Per a ocultar un procés, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu el procés que voleu ocultar.</para>
+          </listitem>
+            <listitem>
+              <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Oculta el procés</guimenuitem></menuchoice>.</para>
+              <para>Per defecte, es mostrarà un avís de confirmació. Per a més informació de com mostrar o ocultar l'avís de confirmació, vegeu <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Cliqueu en el botó <guibutton>Oculta el procés</guibutton> per a confirmar que voleu ocultar el procés.</para>
+            </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-modify-processlist-hidden">
+        <title>Per a tornar a mostrar els processos ocults</title>
+        <para>Per a tornar a mostrar els processos ocults en la llista de processos, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Processos ocults</guimenuitem></menuchoice>. Si no hi ha processos ocults actualment, es mostrarà un avís d'informació. Si algun procés està actualment ocult, es mostrarà el diàleg <guilabel>Gestiona els processos ocults</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu els processos que voleu tornar a mostrar en la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu en el botó <guibutton>Suprimeix de la llista</guibutton>. Els processos deixaran d'estar ocults i es mostraran en la llista de processos.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu <guibutton>Tanca</guibutton> per a tancar el diàleg <guilabel>Gestiona els processos ocults</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-find-process">
+      <title>Per a cercar un procés</title>
+      <para>Per a cercar un procés de la llista de processos, realitzeu els passos següents:</para>
+      <orderedlist>
+        <listitem>
+          <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Introduïu el nom del procés en el quadre de text <guilabel>Cerca</guilabel>. No s'admeten comodins.</para>
+        </listitem>
+        <listitem>
+          <para>Premeu <keycap>Retorn</keycap>.</para>
+          <para>Si el procés existeix, el <application>monitor del sistema</application> ressaltarà el nom del procés en la llista de processos. Premeu <keycap>Retorn</keycap> repetidament per a ressaltar altres coincidències del nom del procés en la llista de processos.</para>
+          <para>Si el procés no existeix, el <application>monitor del sistema</application> mostrarà un diàleg d'error.</para>
+        </listitem>
+      </orderedlist>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-show-info">
+      <title>Per a mostrar o ocultar informació addicional del procés</title>
+      <para>Per a mostrar informació addicional d'un procés, realitzeu els passos següents:</para>
+      <orderedlist>
+        <listitem>
+          <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu el procés en la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Cliqueu el botó <guibutton>Més informació</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+      <para>El <application>monitor del sistema</application> mostrarà la següent informació addicional del procés:</para>
+      <variablelist>
+        <varlistentry>
+          <term><guilabel>Informació del procés</guilabel></term>
+          <listitem>
+            <itemizedlist>
+              <listitem>
+                <para>
+                  <guilabel>Ordre</guilabel>
+                </para>
+                <para>El nom de l'ordre que ha iniciat el procés.</para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Estat</guilabel>
+                </para>
+                <para>L'estat actual del procés: adormit o en execució.</para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Prioritat</guilabel>
+                </para>
+                <para>La prioritat del procés i el valor de prioritat associat.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Ús de la memòria</guilabel></term>
+          <listitem>
+            <itemizedlist>
+              <listitem>
+                <para>
+                  <guilabel>Total</guilabel>
+                </para>
+                <para>La quantitat total de memòria utilitzada pel procés.</para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>RSS</guilabel>
+                </para>
+                <para>La quantitat de memòria física (RSS) utilitzada pel procés.</para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Compartida</guilabel>
+                </para>
+                <para>La quantitat de memòria compartida utilitzada pel procés.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <para>Per a ocultar informació addicional d'un procés, cliqueu el botó <guibutton>Menys informació</guibutton>.</para>
+      <tip>
+        <para>També podeu fer un doble clic en el procés en la llista de processos per a mostrar o ocultar la informació addicional d'un procés.</para>
+      </tip>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-memory-map">
+      <title>Per a mostrar el mapa de memòria d'un procés</title>
+      <para>Per a mostrar el mapa de memòria d'un procés, realitzeu els passos següents:</para>
+      <orderedlist>
+        <listitem>
+          <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu el procés en la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu <menuchoice><guimenu>Visualitza</guimenu><guimenuitem>Mapes de memòria</guimenuitem></menuchoice>.</para>
+        </listitem>
+      </orderedlist>
+      <para>El diàleg <guimenuitem>Mapes de memòria</guimenuitem> mostra la informació de forma tabulada. El nom del procés es mostra sobre la taula del mapa de memòria. D'esquerra a dreta, el diàleg <guimenuitem>Mapes de memòria</guimenuitem> mostra les següents columnes:</para>
+      <variablelist>
+        <varlistentry>
+          <term><guilabel>Nom del fitxer</guilabel></term>
+          <listitem>
+            <para>La ubicació d'una biblioteca compartida utilitzada actualment pel procés. Si aquest camp està buit, la informació de la memòria en aquesta fila descriu la memòria de la que és propietari el procés el nom del qual es mostra sobre la taula del mapa de memòria.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Inici de la memòria virtual (VM)</guilabel></term>
+          <listitem>
+            <para>La direcció on comença el segment de memòria.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Fi de la memòria virtual (VM)</guilabel></term>
+          <listitem>
+            <para>La direcció on acaba el segment de memòria.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Mida de la memòria virtual (VM)</guilabel></term>
+          <listitem>
+            <para>La mida del segment de memòria.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Senyaladors</guilabel></term>
+          <listitem>
+            <para>Els següents senyaladors descriuen els diferents tipus d'accés als segment de memòria que el procés pot tenir:</para>
+            <variablelist>
+              <varlistentry>
+                <term>p</term>
+                <listitem>
+                  <para>El segment de memòria és privat al procés, i no és accessible per altres processos.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>r</term>
+                <listitem>
+                  <para>El procés té permís per a llegir al segment de memòria.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>s</term>
+                <listitem>
+                  <para>El segment de memòria és compartit amb altres processos.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>w</term>
+                <listitem>
+                  <para>El procés té permís per a escriure al segment de memòria.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>x</term>
+                <listitem>
+                  <para>El procés té permís per a executar instruccions contingudes en el segment de memòria.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Desplaçament de la memòria virtual (VM)</guilabel></term>
+          <listitem>
+            <para>El desplaçament a la memòria virtual dels segment de memòria.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Dispositiu</guilabel></term>
+          <listitem>
+            <para>Els números de dispositiu major i menor del dispositiu on es troba el nom de fitxer de la biblioteca compartida.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Node-i</guilabel></term>
+          <listitem>
+            <para>El node-i en el dispositiu des d'on es carrega la biblioteca a la memòria.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <para>Cliqueu en qualsevol capçalera de columna per a ordenar la informació de la columna, en ordre alfabètic o numèric. Cliqueu un altre cop en la capçalera de la columna per a ordenar la informació en ordre alfabètic o numèric invers.</para>
+      <para>Cliqueu <guibutton>Tanca</guibutton> per a tancar el diàleg <guilabel>Mapes de memòria</guilabel>.</para>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-change-priority">
+      <title>Per a canviar la prioritat d'un procés</title>
+      <para>Per a canviar la prioritat d'un procés, realitzeu els passos següents:</para>
+      <orderedlist>
+        <listitem>
+          <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu el procés del qual voleu canviar la prioritat.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Canvia la prioritat</guimenuitem></menuchoice>. Es mostrarà el diàleg <guilabel>Canvia la prioritat</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Utilitzeu el lliscador per a establir el valor de prioritat del procés.</para>
+          <para>El valor de prioritat estableix la prioritat del procés: a menor valor de prioritat, major serà la prioritat.</para>
+          <para>Per a especificar un valor de prioritat menor que zero, els usuaris que no siguin el superusuari han d'introduir la contrasenya de superusuari.</para>
+        </listitem>
+        <listitem>
+          <para>Cliqueu el botó <guibutton>Canvia la prioritat</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+    </sect2>
+
+
+    <sect2 id="gnome-system-monitor-end-process">
+      <title>Per a finalitzar un procés</title>
+      <para>Per a finalitzar un procés, realitzeu els passos següents:</para>
+      <orderedlist>
+        <listitem>
+          <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu el procés que voleu finalitzar.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Finalitza el procés</guimenuitem></menuchoice>, o cliqueu el botó <guibutton>Finalitza el procés</guibutton>.</para>
+          <para>Per defecte, es mostrarà un avís de confirmació. Per a més informació de com mostrar o ocultar l'avís de confirmació, vegeu <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Cliqueu en el botó <guibutton>Finalitza el procés</guibutton> per a confirmar que voleu finalitzar el procés. El <application>monitor del sistema</application> forçarà que el procés finalitzi normalment.</para>
+        </listitem>
+      </orderedlist>
+      <para>Aquesta és la manera recomanada per a aturar un procés.</para>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-terminate-process">
+      <title>Per a terminar un procés</title>
+      <para>Per a terminar un procés, realitzeu els passos següents:</para>
+      <orderedlist>
+        <listitem>
+          <para>Seleccioneu la pestanya <guilabel>Llistat de processos</guilabel> per a mostrar la llista de processos.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu el procés que voleu terminar.</para>
+        </listitem>
+        <listitem>
+          <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Termina el procés</guimenuitem></menuchoice>.</para>
+          <para>Per defecte, es mostrarà un avís de confirmació. Per a més informació de com mostrar o ocultar l'avís de confirmació, vegeu <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Cliqueu en el botó <guibutton>Termina el procés</guibutton> per a confirmar que voleu terminar el procés. El <application>monitor del sistema</application> forçarà que el procés finalitzi immediatament.</para>
+        </listitem>
+      </orderedlist>
+      <para>Generalment terminareu un procés només si no podeu finalitzar el procés normalment com s'explica a <xref linkend="gnome-system-monitor-end-process"/>.</para>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-cpu">
+      <title>Per a monitoritzar l'ús de la CPU</title>
+      <para>Per a monitoritzar l'ús de la CPU, seleccioneu la pestanya <guilabel>Monitor de recursos</guilabel>.</para>
+      <para>El <application>monitor del sistema</application> mostra l'historial d'ús de la CPU en forma de gràfica. Sota la gràfica, el <application>monitor del sistema</application> també mostra l'ús actual de CPU en percentatge.</para>
+    </sect2>
+
+
+    <sect2 id="gnome-system-monitor-memory">
+      <title>Per a monitoritzar l'ús de memòria i espai d'intercanvi</title>
+      <para>Per a monitoritzar l'ús de memòria i espai d'intercanvi, seleccioneu la pestanya <guilabel>Monitor de recursos</guilabel>.</para>
+      <para>El <application>monitor del sistema</application> mostra l'historial d'ús de la memòria i espai d'intercanvi en forma de gràfica. Sota la gràfica, el <application>monitor del sistema</application> també mostra els següents valors numèrics:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Memòria de l'usuari</para>
+        </listitem>
+        <listitem>
+          <para>Memòria total</para>
+        </listitem>
+        <listitem>
+          <para>Espai d'intercanvi utilitzat</para>
+        </listitem>
+        <listitem>
+          <para>Espai d'intercanvi total</para>
+        </listitem>
+      </itemizedlist>
+
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-disk">
+      <title>Per a monitoritzar l'ús d'espai del disc</title>
+      <para>Per a monitoritzar l'ús d'espai del disc, seleccioneu la pestanya <guilabel>Monitor de recursos</guilabel>.</para>
+      <para>El <application>monitor del sistema</application> mostra l'ús d'espai del disc en forma de taula. De l'esquerra a la dreta, la taula de <guilabel>Dispositius</guilabel> mostra les següents columnes:</para>
+      <variablelist>
+        <varlistentry>
+          <term><guilabel>Nom</guilabel></term>
+          <listitem>
+            <para>El nom del dispositiu.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Directori</guilabel></term>
+          <listitem>
+            <para>La ubicació del dispositiu.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Tipus</guilabel></term>
+          <listitem>
+            <para>El tipus de dispositiu.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Total</guilabel></term>
+          <listitem>
+            <para>L'espai de disc disponible en el dispositiu.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><guilabel>Utilitzat</guilabel></term>
+          <listitem>
+            <para>L'espai de disc actualment utilitzat en el dispositiu, expressat en octets i com a percentatge.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-customize">
+      <title>Per a personalitzar la pestanya Monitor de recursos</title>
+      <para>Podeu personalitzar la pestanya <guilabel>Monitor de recursos</guilabel> de les maneres següents:</para>
+      <itemizedlist>
+        <listitem>
+          <para><xref linkend="gnome-system-monitor-customize-background"/>
+          </para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="gnome-system-monitor-customize-grid"/>
+          </para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="gnome-system-monitor-customize-cpu"/>
+          </para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="gnome-system-monitor-customize-mem"/>
+          </para>
+        </listitem>
+      </itemizedlist>
+
+      <sect3 id="gnome-system-monitor-customize-background">
+        <title>Per a canviar el color de fons de les gràfiques</title>
+        <para>Per a canviar el color de fons de les gràfiques del <application>monitor del sistema</application>, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Preferències</guimenuitem></menuchoice>. Es mostrarà el diàleg <guilabel>Preferències</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Monitor de recursos</guilabel> en el diàleg <guilabel>Preferències</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu en el botó <guilabel>Color de fons</guilabel>. Es mostrarà el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu un color de la <guilabel>Paleta</guilabel> o utilitzeu la roda de colors o els quadres incrementals per a personalitzar el color.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu <guibutton>D'acord</guibutton> per a tancar el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu <guibutton>Tanca</guibutton> per a tancar el diàleg <guilabel>Preferències</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-customize-grid">
+        <title>Per a canviar el color de la graella de les gràfiques</title>
+        <para>Per a canviar el color de la graella de les gràfiques del <application>monitor del sistema</application>, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Preferències</guimenuitem></menuchoice>. Es mostrarà el diàleg <guilabel>Preferències</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Monitor de recursos</guilabel> en el diàleg <guilabel>Preferències</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu en el botó <guilabel>Color de la graella</guilabel>. Es mostrarà el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu un color de la <guilabel>Paleta</guilabel> o utilitzeu la roda de colors o els quadres incrementals per a personalitzar el color.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu <guibutton>D'acord</guibutton> per a tancar el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu <guibutton>Tanca</guibutton> per a tancar el diàleg <guilabel>Preferències</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-customize-cpu">
+        <title>Per a canviar el color de la línia de la gràfica de CPU</title>
+        <para>Per a canviar el color de la línia que representa l'ús de CPU en la gràfica <guilabel>Historial de la CPU</guilabel>, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Monitor de recursos</guilabel> en la finestra del <guilabel>monitor del sistema</guilabel> per a mostrar les gràfiques i la taula que proporcionen informació de l'ús dels recursos del sistema.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu en el botó de color <guibutton>CPU</guibutton>. Es mostrarà el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu un color de la <guilabel>Paleta</guilabel> o utilitzeu la roda de colors o els quadres incrementals per a personalitzar el color.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu <guibutton>D'acord</guibutton> per a tancar el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+      <sect3 id="gnome-system-monitor-customize-mem">
+        <title>Per a canviar el color de les línies de la gràfica de memòria i espai d'intercanvi</title>
+        <para>Per a canviar el color de les línies que representen l'ús de memòria i espai d'intercanvi en la gràfica, realitzeu els passos següents:</para>
+        <orderedlist>
+          <listitem>
+            <para>Seleccioneu la pestanya <guilabel>Monitor de recursos</guilabel> en la finestra del <guilabel>monitor del sistema</guilabel> per a mostrar les gràfiques i la taula que proporcionen informació de l'ús dels recursos del sistema.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu en el botó <guibutton>Memòria de l'usuari</guibutton> o <guibutton>Espai d'intercanvi utilitzat</guibutton>. Es mostrarà el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+          <listitem>
+            <para>Seleccioneu un color de la <guilabel>Paleta</guilabel> o utilitzeu la roda de colors o els quadres incrementals per a personalitzar el color.</para>
+          </listitem>
+          <listitem>
+            <para>Cliqueu <guibutton>D'acord</guibutton> per a tancar el diàleg <guilabel>Trieu un color</guilabel>.</para>
+          </listitem>
+        </orderedlist>
+      </sect3>
+
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="gnome-system-monitor-prefs">
+    <title>Preferències</title>
+    <para>Per a configurar el <application>monitor del sistema</application>, seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Preferències</guimenuitem></menuchoice>. El diàleg <guilabel>Preferències</guilabel> conté les següents pestanyes:</para>
+    <itemizedlist>
+      <listitem>
+        <para><xref linkend="gnome-system-monitor-prefs-proclist"/></para>
+      </listitem>
+      <listitem>
+        <para><xref linkend="gnome-system-monitor-prefs-resmon"/></para>
+      </listitem>
+    </itemizedlist>
+
+    <sect2 id="gnome-system-monitor-prefs-proclist">
+      <title>Llistat de processos</title>
+        <variablelist>
+          <varlistentry>
+            <term>
+              <guilabel>Comportament</guilabel>
+            </term>
+            <listitem>
+              <itemizedlist>
+                <listitem>
+                  <para>
+                    <guilabel>Segons entre actualitzacions</guilabel>
+                  </para>
+                  <para>Utilitzeu aquest quadre incremental per a especificar cada quant temps voleu actualitzar la llista de processos.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Mostra un diàleg d'advertiment quan finalitzeu o termineu processos</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar un avís de confirmació quan finalitzeu o termineu un procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Mostra un diàleg d'advertència quan oculteu processos</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar un avís de confirmació quan oculteu un procés.</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <guilabel>Camps d'informació</guilabel>
+            </term>
+            <listitem>
+              <para>Utilitzeu les opcions següents per a seleccionar quins camps es mostraran en la llista de processos:</para>
+              <itemizedlist>
+                <listitem>
+                  <para>
+                    <guilabel>Nom del procés</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar el nom d'un procés. Aquesta columna també pot contenir un icona per a indicar l'aplicació que està associada amb el procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Arguments</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar el nom de l'ordre, incloent-hi els arguments, que ha iniciat el procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Usuari</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar el nom de l'usuari propietari del procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Estat</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar l'estat actual del procés: adormit o en execució.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Memòria</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar la quantitat de memòria del sistema que està utilitzant actualment el procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Mida de la memòria virtual (VM)</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar la quantitat de memòria virtual que està assignada al procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Memòria resident</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar la quantitat de memòria física que està assignada al procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Memòria compartida</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar la quantitat de memòria compartida que està assignada al procés. La memòria compartida és memòria que pot ser accedida per un altre procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Memòria RSS</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar la quantitat de memòria física, excloent les pàgines d'intercanvi, que és utilitzada pel procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Memòria del servidor d'X</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar la quantitat de memòria del servidor X que és utilitzada pel procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>% CPU</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar el percentatge de temps de CPU que és actualment utilitzat pel procés.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Prioritat</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar el valor de prioritat del procés. El valor de prioritat estableix la prioritat del procés: a menor valor de prioritat, major serà la prioritat.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                <guilabel>Identificador</guilabel>
+                  </para>
+                  <para>Seleccioneu aquesta opció per a mostrar l'identificador del procés, també conegut com a pid. El pid és un número que identifica de forma unívoca un procés. Podeu utilitzar el pid per a manipular un procés en la línia d'ordres.</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-prefs-resmon">
+      <title>Monitor de recursos</title>
+        <variablelist>
+          <varlistentry>
+            <term><guilabel>Gràfiques</guilabel></term>
+            <listitem>
+              <itemizedlist>
+                <listitem>
+                  <para>
+                    <guilabel>Segons entre actualitzacions</guilabel>
+                  </para>
+                  <para>Utilitzeu aquest quadre incremental per a especificar amb quina freqüència voleu actualitzar les gràfiques del <application>monitor del sistema</application>.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Color de fons</guilabel>
+                  </para>
+                  <para>Utilitzeu aquest botó per a personalitzar el color de fons de les gràfiques del <application>monitor del sistema</application>, com es descriu en <xref linkend="gnome-system-monitor-customize-background"/>.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Color de la graella</guilabel>
+                  </para>
+                  <para>Utilitzeu aquest botó per a personalitzar el color de la graella de les gràfiques del <application>monitor del sistema</application>, com es descriu en <xref linkend="gnome-system-monitor-customize-grid"/>.</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><guilabel>Dispositius</guilabel></term>
+            <listitem>
+              <itemizedlist>
+                <listitem>
+                  <para>
+                    <guilabel>Segons entre actualitzacions</guilabel>
+                  </para>
+                  <para>Utilitzeu aquest quadre incremental per a especificar amb quina freqüència voleu actualitzar la taula de <guilabel>Dispositius</guilabel>.</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+    </sect2>
+
+  </sect1>
+
+</article>

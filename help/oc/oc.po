@@ -1,20 +1,22 @@
-# French translation of gnome-syste-monitor documentation.
+# Occitan translation of gnome-syste-monitor documentation.
 # Copyright (C) 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-system-monitor
 # documentation package.
 #
-# Claude Paroz <claude@2xlibre.net>, 2007.
+# Yannig MARCHEGAY (yannig@marchegay.org) - 2006-2007
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-system-monitor doc fr\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-01 22:20+0200\n"
-"PO-Revision-Date: 2007-08-01 22:18+0200\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"PO-Revision-Date: 2007-08-25 21:00+0200\n"
+"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -29,7 +31,7 @@ msgstr ""
 #: ../C/gnome-system-monitor.xml:23(title)
 #: ../C/gnome-system-monitor.xml:81(revnumber)
 msgid "System Monitor Manual V2.1"
-msgstr "Manuel du Moniteur système V2.1"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:26(year)
 #: ../C/gnome-system-monitor.xml:32(year)
@@ -59,7 +61,7 @@ msgstr "Bill Day"
 #: ../C/gnome-system-monitor.xml:95(para)
 #: ../C/gnome-system-monitor.xml:105(para)
 msgid "GNOME Documentation Project"
-msgstr "Projet de documentation GNOME"
+msgstr ""
 
 # Mentions légales
 #: ../C/gnome-system-monitor.xml:2(para)
@@ -71,13 +73,6 @@ msgid ""
 "of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
 "in the file COPYING-DOCS distributed with this manual."
 msgstr ""
-"Permission vous est donnée de copier, distribuer et/ou modifier ce document "
-"selon les termes de la Licence GNU Free Documentation License, Version 1.1 "
-"ou ultérieure publiée par la Free Software Foundation sans section "
-"inaltérable, sans texte de première page de couverture ni texte de dernière "
-"page de couverture. Vous trouverez un exemplaire de cette licence en suivant "
-"ce <ulink type=\"help\" url=\"ghelp:fdl\">lien</ulink> ou dans le fichier "
-"COPYING-DOCS fourni avec le présent manuel."
 
 #: ../C/gnome-system-monitor.xml:12(para)
 msgid ""
@@ -86,11 +81,6 @@ msgid ""
 "you can do so by adding a copy of the license to the manual, as described in "
 "section 6 of the license."
 msgstr ""
-"Ce manuel fait partie de la collection de manuels GNOME distribués selon les "
-"termes de la licence de documentation libre GNU. Si vous souhaitez "
-"distribuer ce manuel indépendamment de la collection, vous devez joindre un "
-"exemplaire de la licence au document, comme indiqué dans la section 6 de "
-"celle-ci."
 
 #: ../C/gnome-system-monitor.xml:19(para)
 msgid ""
@@ -100,11 +90,6 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"La plupart des noms utilisés par les entreprises pour distinguer leurs "
-"produits et services sont des marques déposées. Lorsque ces noms "
-"apparaissent dans la documentation GNOME et que les membres du projet de "
-"Documentation GNOME sont informés de l'existence de ces marques déposées, "
-"soit ces noms entiers, soit leur première lettre est en majuscule."
 
 #: ../C/gnome-system-monitor.xml:35(para)
 msgid ""
@@ -120,18 +105,6 @@ msgid ""
 "ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
 "OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
-"LE PRÉSENT DOCUMENT EST FOURNI « TEL QUEL », SANS AUCUNE GARANTIE, EXPRESSE "
-"OU IMPLICITE, Y COMPRIS, ET SANS LIMITATION, LES GARANTIES DE "
-"MARCHANDABILITÉ, D'ADÉQUATION À UN OBJECTIF PARTICULIER OU DE NON INFRACTION "
-"DU DOCUMENT OU DE SA VERSION MODIFIÉE. L'UTILISATEUR ASSUME TOUT RISQUE "
-"RELATIF À LA QUALITÉ, À LA PERTINENCE ET À LA PERFORMANCE DU DOCUMENT OU DE "
-"SA VERSION DE MISE À JOUR. SI LE DOCUMENT OU SA VERSION MODIFIÉE S'AVÉRAIT "
-"DÉFECTUEUSE, L'UTILISATEUR (ET NON LE RÉDACTEUR INITIAL, L'AUTEUR, NI TOUT "
-"AUTRE PARTICIPANT) ENDOSSERA LES COÛTS DE TOUTE INTERVENTION, RÉPARATION OU "
-"CORRECTION NÉCESSAIRE. CETTE DÉNÉGATION DE RESPONSABILITÉ CONSTITUE UNE "
-"PARTIE ESSENTIELLE DE CETTE LICENCE. AUCUNE UTILISATION DE CE DOCUMENT OU DE "
-"SA VERSION MODIFIÉE N'EST AUTORISÉE AUX TERMES DU PRÉSENT ACCORD, EXCEPTÉ "
-"SOUS CETTE DÉNÉGATION DE RESPONSABILITÉ ; "
 
 #: ../C/gnome-system-monitor.xml:55(para)
 msgid ""
@@ -146,17 +119,6 @@ msgid ""
 "VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
 "POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
-"EN AUCUNE CIRCONSTANCE ET SOUS AUCUNE INTERPRÉTATION DE LA LOI, QU'IL "
-"S'AGISSE D'UN DÉLIT CIVIL (Y COMPRIS LA NÉGLIGENCE), CONTRACTUEL OU AUTRE, "
-"L'AUTEUR, LE RÉDACTEUR INITIAL, TOUT PARTICIPANT OU TOUT DISTRIBUTEUR DE CE "
-"DOCUMENT OU DE SA VERSION MODIFIÉE, OU TOUT FOURNISSEUR DE L'UNE DE CES "
-"PARTIES NE POURRA ÊTRE TENU RESPONSABLE À L'ÉGARD DE QUICONQUE POUR TOUT "
-"DOMMAGE DIRECT, INDIRECT, PARTICULIER, OU ACCIDENTEL DE TOUT TYPE Y COMPRIS, "
-"SANS LIMITATION, LES DOMMAGES LIÉS À LA PERTE DE CLIENTÈLE, À UN ARRÊT DE "
-"TRAVAIL, À UNE DÉFAILLANCE OU UN MAUVAIS FONCTIONNEMENT INFORMATIQUE, OU À "
-"TOUT AUTRE DOMMAGE OU PERTE LIÉE À L'UTILISATION DU DOCUMENT ET DE SES "
-"VERSIONS MODIFIÉES, MÊME SI LADITE PARTIE A ÉTÉ INFORMÉE DE L'ÉVENTUALITÉ DE "
-"TELS DOMMAGES."
 
 #: ../C/gnome-system-monitor.xml:28(para)
 msgid ""
@@ -164,8 +126,6 @@ msgid ""
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
 "<placeholder-1/>"
 msgstr ""
-"LE PRÉSENT DOCUMENT ET SES VERSIONS MODIFIÉES SONT FOURNIS SELON LES TERMES "
-"DE LA LICENCE DE DOCUMENTATION LIBRE GNU SACHANT QUE : <placeholder-1/>"
 
 #: ../C/gnome-system-monitor.xml:54(firstname)
 msgid "Sun"
@@ -173,7 +133,7 @@ msgstr "Sun"
 
 #: ../C/gnome-system-monitor.xml:55(surname)
 msgid "GNOME Documentation Team"
-msgstr "Équipe de documentation GNOME"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:59(firstname)
 msgid "Bill"
@@ -181,7 +141,7 @@ msgstr "Bill"
 
 #: ../C/gnome-system-monitor.xml:60(surname)
 msgid "Day"
-msgstr "Day"
+msgstr "Jorn"
 
 #: ../C/gnome-system-monitor.xml:61(email)
 msgid "billday@bellatlantic.net"
@@ -189,19 +149,19 @@ msgstr "billday@bellatlantic.net"
 
 #: ../C/gnome-system-monitor.xml:82(date)
 msgid "February 2004"
-msgstr "Février 2004"
+msgstr "Febrièr de 2004"
 
 #: ../C/gnome-system-monitor.xml:84(para)
 msgid "Sun GNOME Documentation Team"
-msgstr "Équipe de documentation GNOME Sun"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:89(revnumber)
 msgid "System Monitor Manual V2.0"
-msgstr "Manuel du Moniteur système V2.0"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:90(date)
 msgid "November 2002"
-msgstr "Novembre 2002"
+msgstr "Novembre de 2002"
 
 #: ../C/gnome-system-monitor.xml:92(para)
 #: ../C/gnome-system-monitor.xml:102(para)
@@ -210,20 +170,20 @@ msgstr "Bill Day <email>billday@bellatlantic.net</email>"
 
 #: ../C/gnome-system-monitor.xml:99(revnumber)
 msgid "Procman Manual V0.11"
-msgstr "Manuel de Procman V0.11"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:100(date)
 msgid "January 2002"
-msgstr "Janvier 2002"
+msgstr "Genièr de 2002"
 
 #: ../C/gnome-system-monitor.xml:110(releaseinfo)
 msgid "This manual describes version 2.5.2 of System Monitor."
-msgstr "Ce manuel documente la version 2.5.2 du Moniteur système."
+msgstr ""
 
 # Autres chaînes
 #: ../C/gnome-system-monitor.xml:114(title)
 msgid "Feedback"
-msgstr "Votre avis"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:115(para)
 msgid ""
@@ -231,29 +191,26 @@ msgid ""
 "application or this manual, follow the directions in the <ulink url=\"ghelp:"
 "gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
-"Pour rapporter une anomalie ou émettre une suggestion concernant le Moniteur "
-"système ou ce manuel, procédez comme indiqué sur la <ulink url=\"ghelp:gnome-"
-"feedback\" type=\"help\">page de réactions sur GNOME</ulink>."
 
 #: ../C/gnome-system-monitor.xml:123(para)
 msgid "User manual for System Monitor"
-msgstr "Manuel d'utilisation du Moniteur système"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:128(primary)
 msgid "System Monitor"
-msgstr "Moniteur système"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:131(primary)
 msgid "gnome-system-monitor"
-msgstr "gnome-system-monitor"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:134(primary)
 msgid "procman"
-msgstr "procman"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:140(title)
 msgid "Introduction"
-msgstr "Introduction"
+msgstr "Introduccion"
 
 #: ../C/gnome-system-monitor.xml:141(para)
 msgid ""
@@ -262,24 +219,18 @@ msgid ""
 "<application>System Monitor</application> to modify the behavior of your "
 "system."
 msgstr ""
-"L'application <application>Moniteur système</application> permet de "
-"surveiller les processus du système et l'usage des ressources du système. "
-"<application>Moniteur système</application> permet aussi de modifier le "
-"comportement du système."
 
 #: ../C/gnome-system-monitor.xml:144(para)
 msgid ""
 "The <application>System Monitor</application> window contains two tabbed "
 "sections:"
 msgstr ""
-"La fenêtre du <application>Moniteur système</application> contient deux "
-"onglets :"
 
 #: ../C/gnome-system-monitor.xml:150(guilabel)
 #: ../C/gnome-system-monitor.xml:253(guilabel)
 #: ../C/gnome-system-monitor.xml:1246(title)
 msgid "Process Listing"
-msgstr "Processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:153(para)
 msgid ""
@@ -287,120 +238,104 @@ msgid ""
 "Provides detailed information about individual processes, and enables you to "
 "control active processes."
 msgstr ""
-"Montre les processus actifs et leurs relations. Présente des informations "
-"détaillées sur les processus individuels et permet de contrôler les "
-"processus actifs."
 
 #: ../C/gnome-system-monitor.xml:160(guilabel)
 #: ../C/gnome-system-monitor.xml:266(guilabel)
 #: ../C/gnome-system-monitor.xml:1401(title)
 msgid "Resource Monitor"
-msgstr "Ressources"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:163(para)
 msgid "Displays the current usage of the following system resources:"
-msgstr "Affiche l'usage actuel des ressources système suivantes :"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:168(para)
 msgid "CPU (central processing unit) time"
-msgstr "Utilisation du processeur (CPU - central processing unit)"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:173(para)
 msgid "Memory and swap space"
-msgstr "Mémoire physique et fichier d'échange"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:178(para)
 msgid "Disk space on each device"
-msgstr "Espace disque sur chaque périphérique"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:190(title)
 msgid "Getting Started"
-msgstr "Premiers pas"
+msgstr "Per començar"
 
 #: ../C/gnome-system-monitor.xml:194(title)
 msgid "To Start System Monitor"
-msgstr "Démarrage du Moniteur système"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:195(para)
 msgid ""
 "You can start <application>System Monitor</application> in the following "
 "ways:"
 msgstr ""
-"Vous pouvez lancer le <application>Moniteur système</application> par les "
-"procédures suivantes :"
 
 #: ../C/gnome-system-monitor.xml:198(term)
 msgid "<guimenu>Applications</guimenu> menu"
-msgstr "Menu <guimenu>Applications</guimenu>"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:200(para)
 msgid ""
 "Choose <menuchoice><guimenu>System Tools</guimenu><guimenuitem>System "
 "Monitor</guimenuitem></menuchoice>."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Outils système</"
-"guimenu><guimenuitem>Moniteur système</guimenuitem></menuchoice>."
 
 #: ../C/gnome-system-monitor.xml:206(term)
 msgid "Command line"
-msgstr "Ligne de commande"
+msgstr "Linha de comanda"
 
 #: ../C/gnome-system-monitor.xml:208(para)
 msgid "Execute the following command: <command>gnome-system-monitor</command>"
 msgstr ""
-"Exécutez la commande suivante : <command>gnome-system-monitor</command>"
 
 #: ../C/gnome-system-monitor.xml:216(title)
 msgid "When You Start System Monitor"
-msgstr "Au démarrage du Moniteur système"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:217(para)
 msgid ""
 "When you start <application>System Monitor</application>, the following "
 "window is displayed:"
 msgstr ""
-"Lorsque vous lancez le <application>Moniteur système</application>, la "
-"fenêtre suivante apparaît :"
 
 #: ../C/gnome-system-monitor.xml:221(title)
 msgid "System Monitor Window"
-msgstr "Fenêtre du Moniteur système"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:227(phrase)
 msgid "Shows System Monitor main window."
-msgstr "Montre la fenêtre principale du Moniteur système."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:232(para)
 msgid ""
 "The <application>System Monitor</application> window contains the following "
 "elements:"
 msgstr ""
-"La fenêtre du <application>Moniteur système</application> contient les "
-"éléments suivants :"
 
 #: ../C/gnome-system-monitor.xml:237(term)
 msgid "Menubar"
-msgstr "Barre de menus"
+msgstr "Barra de menuts"
 
 #: ../C/gnome-system-monitor.xml:239(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
 "with <application>System Monitor</application>."
 msgstr ""
-"Les menus de la barre de menus contiennent toutes les commandes nécessaires "
-"pour interagir avec le <application>Moniteur système</application>."
 
 #: ../C/gnome-system-monitor.xml:245(term)
 msgid "Display area"
-msgstr "Zone d'affichage"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:247(para)
 msgid ""
 "The display area contains the system monitor information. The display area "
 "contains the following tabbed sections:"
 msgstr ""
-"La zone d'affichage contient les informations de surveillance du système. "
-"Elle contient les onglets suivants :"
 
 #: ../C/gnome-system-monitor.xml:255(para)
 msgid ""
@@ -408,10 +343,6 @@ msgid ""
 "drop-down list, a list of processes organized as a table, a <guilabel>More "
 "Info</guilabel> button, and an <guilabel>End Process</guilabel> button."
 msgstr ""
-"Contient une zone de texte <guilabel>Rechercher</guilabel>, une liste "
-"déroulante <guilabel>Affichage</guilabel>, une liste de processus organisés "
-"dans un tableau, un bouton <guilabel>Plus d'informations</guilabel> et un "
-"bouton <guilabel>Terminer le processus</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:259(para)
 msgid ""
@@ -419,9 +350,6 @@ msgid ""
 "<guilabel>Process Listing</guilabel> tabbed section with the <guilabel>View</"
 "guilabel> menu in the menubar."
 msgstr ""
-"Ne confondez pas la liste déroulante <guilabel>Affichage</guilabel> de "
-"l'onglet <guilabel>Processus</guilabel> avec le menu <guilabel>Affichage</"
-"guilabel> dans la barre de menus."
 
 #: ../C/gnome-system-monitor.xml:268(para)
 msgid ""
@@ -429,14 +357,10 @@ msgid ""
 "Swap History</guilabel> graph, and a list of <guilabel>Devices</guilabel> "
 "organized as a table."
 msgstr ""
-"Contient un graphique <guilabel>Historique d'utilisation du CPU</guilabel>, "
-"un graphique <guilabel>Historique d'utilisation de la mémoire physique et du "
-"fichier d'échange</guilabel> et une liste de <guilabel>Périphériques</"
-"guilabel> organisés sous forme de tableau."
 
 #: ../C/gnome-system-monitor.xml:276(term)
 msgid "Statusbar"
-msgstr "Barre d'état"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:278(para)
 msgid ""
@@ -444,17 +368,14 @@ msgid ""
 "Monitor</application> activity and contextual information about the menu "
 "items."
 msgstr ""
-"La barre d'état affiche des informations sur l'activité actuelle du "
-"<application>Moniteur système</application> et des informations "
-"contextuelles sur les éléments de menu."
 
 #: ../C/gnome-system-monitor.xml:292(title)
 msgid "Usage"
-msgstr "Utilisation"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:295(title)
 msgid "To Display the Process List"
-msgstr "Affichage de la liste des processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:296(para)
 msgid ""
@@ -462,9 +383,6 @@ msgid ""
 "tab. The <guilabel>Process Listing</guilabel> tab is displayed by default "
 "when you start <application>System Monitor</application>."
 msgstr ""
-"Pour afficher la liste des processus, sélectionnez l'onglet "
-"<guilabel>Processus</guilabel>. C'est cet onglet qui s'affiche par défaut au "
-"lancement du <application>Moniteur système</application>."
 
 #: ../C/gnome-system-monitor.xml:299(para)
 msgid ""
@@ -475,38 +393,31 @@ msgid ""
 "by the process, and so on. From left to right, the <guilabel>Process "
 "Listing</guilabel> tab displays the following columns by default:"
 msgstr ""
-"Dans l'onglet <guilabel>Processus</guilabel>, les processus sont organisés "
-"sous forme de tableau. Les lignes du tableau présentent des informations sur "
-"les processus. Les colonnes représentent les champs d'information sur les "
-"processus, tels que le nom de l'utilisateur propriétaire du processus, la "
-"quantité de mémoire actuellement utilisée par le processus, etc. De gauche à "
-"droite, l'onglet <guilabel>Processus</guilabel> affiche par défaut les "
-"colonnes suivantes :"
 
 #: ../C/gnome-system-monitor.xml:304(para)
 #: ../C/gnome-system-monitor.xml:1292(guilabel)
 msgid "Process Name"
-msgstr "Nom du processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:307(para)
 #: ../C/gnome-system-monitor.xml:1308(guilabel)
 msgid "User"
-msgstr "Utilisateur"
+msgstr "Utilizaire"
 
 #: ../C/gnome-system-monitor.xml:310(para)
 #: ../C/gnome-system-monitor.xml:1324(guilabel)
 msgid "Memory"
-msgstr "Mémoire"
+msgstr "Memòria"
 
 #: ../C/gnome-system-monitor.xml:313(para)
 #: ../C/gnome-system-monitor.xml:1364(guilabel)
 msgid "X Server Memory"
-msgstr "Mémoire serveur X"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:316(para)
 #: ../C/gnome-system-monitor.xml:1380(guilabel)
 msgid "Nice"
-msgstr "Priorité"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:319(para)
 #: ../C/gnome-system-monitor.xml:1388(guilabel)
@@ -518,13 +429,10 @@ msgid ""
 "For information about how to change the columns displayed in the process "
 "list, see <xref linkend=\"gnome-system-monitor-prefs-proclist\"/>."
 msgstr ""
-"Pour obtenir des informations sur la manière de changer les colonnes "
-"affichées dans la liste des processus, consultez <xref linkend=\"gnome-"
-"system-monitor-prefs-proclist\"/>."
 
 #: ../C/gnome-system-monitor.xml:327(title)
 msgid "Parent Processes, Child Processes, and Threads"
-msgstr "Processus parents, processus enfants et threads"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:328(para)
 msgid ""
@@ -534,12 +442,6 @@ msgid ""
 "information about how to change the default display behavior, see <xref "
 "linkend=\"gnome-system-monitor-modify-processlist-viewdeps\"/>."
 msgstr ""
-"Un processus parent est un processus qui génère un autre processus. Le "
-"processus généré est le processus enfant du processus parent originel. Par "
-"défaut, le <application>Moniteur système</application> affiche les "
-"dépendances des processus. Pour des informations sur la manière de modifier "
-"l'affichage par défaut, consultez <xref linkend=\"gnome-system-monitor-"
-"modify-processlist-viewdeps\"/>."
 
 #: ../C/gnome-system-monitor.xml:331(para)
 msgid ""
@@ -549,16 +451,10 @@ msgid ""
 "information about how to change the default display behavior, see <xref "
 "linkend=\"gnome-system-monitor-modify-processlist-viewthreads\"/>."
 msgstr ""
-"Un thread est une partie de processus qui peut fonctionner indépendamment et "
-"en parallèle avec d'autres parties du processus. Par défaut, le "
-"<application>Moniteur système</application> n'affiche pas les threads. Pour "
-"des informations sur la manière de modifier l'affichage par défaut, "
-"consultez <xref linkend=\"gnome-system-monitor-modify-processlist-viewthreads"
-"\"/>."
 
 #: ../C/gnome-system-monitor.xml:337(title)
 msgid "Process Priority and Nice Values"
-msgstr "Priorité des processus et valeurs « nice »"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:338(para)
 msgid ""
@@ -566,47 +462,38 @@ msgid ""
 "priority processes. Child processes generally inherit their priority from "
 "their parent process."
 msgstr ""
-"Les processus fonctionnent avec des priorités : les processus avec une haute "
-"priorité s'exécutent avant les processus à basse priorité. Les processus "
-"enfants héritent généralement la priorité du processus parent."
 
 #: ../C/gnome-system-monitor.xml:341(para)
 msgid ""
 "The priority of a process is set by the nice value of the process, as "
 "follows:"
 msgstr ""
-"La priorité d'un processus est définie par la valeur « nice » du processus, "
-"de la manière suivante :"
 
 #: ../C/gnome-system-monitor.xml:346(para)
 msgid "A nice value of 0 means that the process has normal priority."
 msgstr ""
-"Une valeur « nice » de 0 signifie que le processus a une priorité normale."
 
 #: ../C/gnome-system-monitor.xml:351(para)
 msgid "The higher the nice value, the lower the priority."
-msgstr "Plus la valeur « nice » est élevée, plus la priorité est basse."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:356(para)
 msgid "The lower the nice value, the higher the priority."
-msgstr "Plus la valeur « nice » est basse, plus la priorité est haute."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:361(para)
 msgid ""
 "For information about how to change the priority of a process, see <xref "
 "linkend=\"gnome-system-monitor-change-priority\"/>."
 msgstr ""
-"Pour des informations sur la manière de modifier la priorité d'un processus, "
-"consultez  <xref linkend=\"gnome-system-monitor-change-priority\"/>."
 
 #: ../C/gnome-system-monitor.xml:369(title)
 msgid "To Sort the Process List"
-msgstr "Tri de la liste des processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:370(para)
 msgid "To sort the process list, perform the following steps:"
 msgstr ""
-"Pour trier la liste des processus, effectuez les opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:375(para)
 #: ../C/gnome-system-monitor.xml:410(para)
@@ -625,8 +512,6 @@ msgid ""
 "Select the <guilabel>Process Listing</guilabel> tab to display the process "
 "list."
 msgstr ""
-"Sélectionnez l'onglet <guilabel>Processus</guilabel> afin d'afficher la "
-"liste des processus."
 
 #: ../C/gnome-system-monitor.xml:380(para)
 msgid ""
@@ -634,122 +519,94 @@ msgid ""
 "the processes in reverse alphabetical order, click on the <guilabel>Process "
 "Name</guilabel> column header."
 msgstr ""
-"Par défaut, les processus sont triés par nom, dans l'ordre alphabétique. "
-"Pour inverser l'ordre alphabétique, cliquez sur l'en-tête de la colonne "
-"<guilabel>Nom du processus</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:385(para)
 msgid ""
 "Click on any column header to sort the processes by the information in that "
 "column, in alphabetical or numerical order."
 msgstr ""
-"Cliquez sur n'importe quel en-tête de colonne pour trier les processus selon "
-"les informations de la colonne concernée, dans l'ordre alphabétique ou "
-"numérique."
 
 #: ../C/gnome-system-monitor.xml:390(para)
 msgid ""
 "Click again on the column header to sort the data in reverse alphabetical or "
 "reverse numerical order."
 msgstr ""
-"Cliquez une nouvelle fois sur l'en-tête de colonne pour inverser l'ordre "
-"alphabétique ou numérique."
 
 #: ../C/gnome-system-monitor.xml:398(title)
 msgid "To Modify the Contents of the Process List"
-msgstr "Modification du contenu de la liste des processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:399(para)
 msgid "You can modify the contents of the process list in several ways."
 msgstr ""
-"Il est possible de modifier le contenu de la liste des processus de "
-"plusieurs manières."
 
 #: ../C/gnome-system-monitor.xml:404(title)
 msgid "To Show All Processes"
-msgstr "Affichage de tous les processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:405(para)
 msgid "To show all processes in the process list, perform the following steps:"
 msgstr ""
-"Pour afficher tous les processus dans la liste des processus, effectuez les "
-"opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:415(para)
 msgid ""
 "Click on the <guilabel>View</guilabel> drop-down list, then select "
 "<guilabel>All Processes</guilabel>."
 msgstr ""
-"Cliquez sur la liste déroulante <guilabel>Affichage</guilabel>, puis "
-"sélectionnez <guilabel>Tous les processus</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:423(title)
 msgid "To Show Only Processes Owned by the Current User"
-msgstr "Affichage des processus de l'utilisateur actuel"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:424(para)
 msgid ""
 "To show only the processes that are owned by the current user, perform the "
 "following steps:"
 msgstr ""
-"Pour afficher uniquement  les processus qui appartiennent à l'utilisateur "
-"actuel, effectuez les opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:434(para)
 msgid ""
 "Click on the <guilabel>View</guilabel> drop-down list, then select "
 "<guilabel>My Processes</guilabel>."
 msgstr ""
-"Cliquez sur la liste déroulante <guilabel>Affichage</guilabel>, puis "
-"sélectionnez <guilabel>Mes processus</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:442(title)
 msgid "To Show Only Active Processes"
-msgstr "Affichage des processus actifs uniquement"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:443(para)
 msgid ""
 "To show only the active processes in the process list, perform the following "
 "steps:"
 msgstr ""
-"Pour n'afficher que les processus actifs dans la liste des processus, "
-"effectuez les opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:453(para)
 msgid ""
 "Click on the <guilabel>View</guilabel> drop-down list, then select "
 "<guilabel>Active Processes</guilabel>."
 msgstr ""
-"Cliquez sur la liste déroulante <guilabel>Affichage</guilabel>, puis "
-"sélectionnez <guilabel>Processus actifs</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:461(title)
 msgid "To Show Process Dependencies"
-msgstr "Affichage des dépendances des processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:462(para)
 msgid ""
 "To show process dependencies in the process list, perform the following "
 "steps:"
 msgstr ""
-"Pour afficher les dépendances des processus dans la liste des processus, "
-"effectuez les opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:472(para)
 msgid ""
 "Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Process Dependencies</"
 "guimenuitem></menuchoice>."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Affichage</guimenu><guimenuitem>Dépendances "
-"des processus</guimenuitem></menuchoice>."
 
 #: ../C/gnome-system-monitor.xml:477(para)
 msgid ""
 "If the <guimenuitem>Process Dependencies</guimenuitem> menu item is "
 "selected, the processes are listed as follows:"
 msgstr ""
-"Si l'élément de menu <guimenuitem>Dépendances des processus</guimenuitem> "
-"est sélectionné, les processus sont énumérés comme suit :"
 
 #: ../C/gnome-system-monitor.xml:482(para)
 msgid ""
@@ -757,68 +614,56 @@ msgid ""
 "process name. Click on the triangle symbol to show or hide the associated "
 "child processes."
 msgstr ""
-"Les processus parents sont signalés par un symbole triangulaire à gauche du "
-"nom du processus. Cliquez sur le symbole pour afficher ou masquer les "
-"processus enfants associés."
 
 #: ../C/gnome-system-monitor.xml:487(para)
 msgid "Child processes are indented, and listed with their parent process."
 msgstr ""
-"Les processus enfants sont indentés et listés avec leur processus parent."
 
 #: ../C/gnome-system-monitor.xml:492(para)
 msgid ""
 "If the <guimenuitem>Process Dependencies</guimenuitem> menu item is not "
 "selected:"
 msgstr ""
-"Si l'élément de menu <guimenuitem>Dépendances des processus</guimenuitem> "
-"n'est pas sélectionné :"
 
 #: ../C/gnome-system-monitor.xml:497(para)
 msgid "Parent processes and child processes are not distinguishable."
-msgstr "Les processus parents et enfants ne sont pas distinguables."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:502(para)
 msgid "All processes are listed in alphabetical order."
-msgstr "Tous les processus sont énumérés dans l'ordre alphabétique."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:510(title)
 msgid "To Show Threads"
-msgstr "Affichage des threads"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:511(para)
 msgid "To show threads in the process list, perform the following steps:"
 msgstr ""
-"Pour afficher les threads dans la liste des processus, effectuez les "
-"opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:521(para)
 msgid ""
 "Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Threads</"
 "guimenuitem></menuchoice>."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Affichage</guimenu><guimenuitem>Threads</"
-"guimenuitem></menuchoice>."
 
 #: ../C/gnome-system-monitor.xml:529(title)
 msgid "To Hide a Process"
-msgstr "Masquage d'un processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:530(para)
 msgid "To hide a process, perform the following steps:"
-msgstr "Pour masquer un processus, effectuez les opérations suivantes :"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:540(para)
 msgid "Select the process that you want to hide."
-msgstr "Sélectionnez le processus que vous voulez masquer."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:545(para)
 msgid ""
 "Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Hide Process</"
 "guimenuitem></menuchoice>."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Cacher le "
-"processus</guimenuitem></menuchoice>."
 
 #: ../C/gnome-system-monitor.xml:548(para)
 #: ../C/gnome-system-monitor.xml:922(para)
@@ -828,29 +673,22 @@ msgid ""
 "display or hide the confirmation alert, see <xref linkend=\"gnome-system-"
 "monitor-prefs-proclist\"/>."
 msgstr ""
-"Par défaut, une fenêtre d'alerte demande confirmation. Pour des informations "
-"sur la manière de ne pas afficher cette fenêtre d'alerte, consultez <xref "
-"linkend=\"gnome-system-monitor-prefs-proclist\"/>."
 
 #: ../C/gnome-system-monitor.xml:553(para)
 msgid ""
 "Click on the <guibutton>Hide Process</guibutton> button to confirm that you "
 "want to hide the process."
 msgstr ""
-"Cliquez sur le bouton <guibutton>Cacher le processus</guibutton> pour "
-"confirmer que vous voulez réellement masquer le processus."
 
 #: ../C/gnome-system-monitor.xml:561(title)
 msgid "To Re-Display Hidden Processes"
-msgstr "Réaffichage des processus masqués"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:562(para)
 msgid ""
 "To re-display hidden processes in the process list, perform the following "
 "steps:"
 msgstr ""
-"Pour afficher à nouveau les processus masqués dans la liste, effectuez les "
-"opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:567(para)
 msgid ""
@@ -859,55 +697,40 @@ msgid ""
 "information alert is displayed. If any processes are currently hidden, the "
 "<guilabel>Manage Hidden Processes</guilabel> dialog is displayed."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Processus "
-"cachés</guimenuitem></menuchoice>. Si aucun processus n'est masqué, une "
-"fenêtre d'avertissement s'affiche. S'il existe des processus masqués, la "
-"boîte de dialogue <guilabel>Gestion des processus cachés</guilabel> "
-"s'affiche."
 
 #: ../C/gnome-system-monitor.xml:572(para)
 msgid "Select the processes that you want to re-display in the process list."
 msgstr ""
-"Sélectionnez les processus que vous souhaitez voir à nouveau affichés dans "
-"la liste des processus."
 
 #: ../C/gnome-system-monitor.xml:577(para)
 msgid ""
 "Click on the <guibutton>Remove From List</guibutton> button. The processes "
 "are no longer hidden, and are displayed in the process list."
 msgstr ""
-"Cliquez sur le bouton <guibutton>Enlever de la liste</guibutton>. Les "
-"processus ne sont plus masqués et sont visibles dans la liste des processus."
 
 #: ../C/gnome-system-monitor.xml:582(para)
 msgid ""
 "Click <guibutton>Close</guibutton> to close the <guilabel>Manage Hidden "
 "Processes</guilabel> dialog."
 msgstr ""
-"Cliquez <guibutton>Fermer</guibutton> pour fermer la boîte de dialogue "
-"<guilabel>Gestion des processus cachés</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:592(title)
 msgid "To Find a Process"
-msgstr "Recherche d'un processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:593(para)
 msgid "To find a process in the process list, perform the following steps:"
 msgstr ""
-"Pour trouver un processus dans la liste des processus, effectuez les "
-"opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:603(para)
 msgid ""
 "Type the name of the process in the <guilabel>Search</guilabel> text box. "
 "Wildcards are not supported."
 msgstr ""
-"Saisissez le nom du processus dans la zone de texte <guilabel>Recherche</"
-"guilabel>. Les caractères génériques ne sont pas pris en charge."
 
 #: ../C/gnome-system-monitor.xml:608(para)
 msgid "Press <keycap>Return</keycap>."
-msgstr "Appuyez sur <keycap>Entrée</keycap>."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:611(para)
 msgid ""
@@ -916,79 +739,69 @@ msgid ""
 "repeatedly to highlight other occurrences of the process name in the process "
 "list."
 msgstr ""
-"Si le processus existe, le <application>Moniteur système</application> met "
-"en surbrillance le nom du processus dans la liste. Appuyez plusieurs fois "
-"sur <keycap>Entrée</keycap> pour mettre en surbrillance les autres "
-"occurrences du nom du processus dans la liste."
 
 #: ../C/gnome-system-monitor.xml:614(para)
 msgid ""
 "If the process does not exist, <application>System Monitor</application> "
 "displays an error dialog."
 msgstr ""
-"Si le processus n'existe pas, le <application>Moniteur système</application> "
-"affiche un message d'erreur."
 
 #: ../C/gnome-system-monitor.xml:622(title)
 msgid "To Show or Hide Additional Process Information"
-msgstr "Affichage ou masquage d'informations supplémentaires sur les processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:623(para)
 msgid ""
 "To show additional information about a process, perform the following steps:"
 msgstr ""
-"Pour afficher des informations supplémentaires sur un processus, effectuez "
-"les opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:633(para)
 #: ../C/gnome-system-monitor.xml:732(para)
 msgid "Select the process in the process list."
-msgstr "Sélectionnez le processus dans la liste."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:638(para)
 msgid "Click on the <guibutton>More Info</guibutton> button."
-msgstr "Cliquez sur le bouton <guibutton>Plus d'informations</guibutton>."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:643(para)
 msgid ""
 "<application>System Monitor</application> displays the following additional "
 "process information:"
 msgstr ""
-"Le <application>Moniteur système</application> affiche les informations "
-"supplémentaires suivantes sur le processus :"
 
 #: ../C/gnome-system-monitor.xml:648(guilabel)
 msgid "Process Info"
-msgstr "Informations du processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:653(guilabel)
 msgid "Command"
-msgstr "Commande"
+msgstr "Comanda"
 
 #: ../C/gnome-system-monitor.xml:655(para)
 msgid "The name of the command that started the process."
-msgstr "Le nom de la commande qui a lancé le processus."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:661(guilabel)
 #: ../C/gnome-system-monitor.xml:1316(guilabel)
 msgid "Status"
-msgstr "État"
+msgstr "Estatut"
 
 #: ../C/gnome-system-monitor.xml:663(para)
 msgid "The current status of the process: sleeping or running."
-msgstr "L'état actuel du processus : au repos ou en cours."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:669(guilabel)
 msgid "Priority"
-msgstr "Priorité"
+msgstr "Prioritat"
 
 #: ../C/gnome-system-monitor.xml:671(para)
 msgid "The priority of the process, and the associated nice value."
-msgstr "La priorité du processus ainsi que sa valeur « nice » associée."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:679(guilabel)
 msgid "Memory Usage"
-msgstr "Utilisation de la mémoire"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:684(guilabel)
 #: ../C/gnome-system-monitor.xml:1050(guilabel)
@@ -997,7 +810,7 @@ msgstr "Total"
 
 #: ../C/gnome-system-monitor.xml:686(para)
 msgid "The total amount of memory used by the process."
-msgstr "La quantité de mémoire totale utilisée par le processus."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:692(guilabel)
 msgid "RSS"
@@ -1005,49 +818,41 @@ msgstr "RSS"
 
 #: ../C/gnome-system-monitor.xml:694(para)
 msgid "The amount of RSS or physical memory used by the process."
-msgstr "La quantité de mémoire RSS ou physique utilisée par le processus."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:700(guilabel)
 msgid "Shared"
-msgstr "Partagée"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:702(para)
 msgid "The amount of shared memory used by the process."
-msgstr "La quantité de mémoire partagée utilisée par le processus."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:710(para)
 msgid ""
 "To hide the additional process information, click on the <guibutton>Less "
 "Info</guibutton> button."
 msgstr ""
-"Pour masquer les informations supplémentaires sur les processus, cliquez sur "
-"le bouton <guibutton>Moins d'informations</guibutton>."
 
 #: ../C/gnome-system-monitor.xml:714(para)
 msgid ""
 "You can also double-click on the process in the process list, to show or "
 "hide the additional process information."
 msgstr ""
-"Vous pouvez aussi double-cliquer sur un processus dans la liste pour "
-"afficher ou masquer les informations supplémentaires sur le processus."
 
 #: ../C/gnome-system-monitor.xml:721(title)
 msgid "To Display Memory Maps for a Process"
-msgstr "Affichage des cartes de la mémoire d'un processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:722(para)
 msgid "To display memory maps for a process, perform the following steps:"
 msgstr ""
-"Pour afficher les cartes de la mémoire pour un processus, effectuez les "
-"opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:737(para)
 msgid ""
 "Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Memory Maps</"
 "guimenuitem></menuchoice>."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Affichage</guimenu><guimenuitem>Cartes de la "
-"mémoire</guimenuitem></menuchoice>."
 
 #: ../C/gnome-system-monitor.xml:742(para)
 msgid ""
@@ -1056,14 +861,10 @@ msgid ""
 "table. From left to right, the <guilabel>Memory Maps</guilabel> dialog "
 "displays the following columns:"
 msgstr ""
-"La fenêtre des <guilabel>Cartes de la mémoire</guilabel> affiche des "
-"informations sous forme de tableau. Le nom du processus apparaît au-dessus "
-"du tableau des cartes de la mémoire. De gauche à droite, la fenêtre des "
-"<guilabel>Cartes de la mémoire</guilabel> affiche les colonnes suivantes :"
 
 #: ../C/gnome-system-monitor.xml:747(guilabel)
 msgid "Filename"
-msgstr "Nom de fichier"
+msgstr "Nom del fichièr"
 
 #: ../C/gnome-system-monitor.xml:749(para)
 msgid ""
@@ -1072,47 +873,41 @@ msgid ""
 "that is owned by the process whose name is displayed above the memory-map "
 "table."
 msgstr ""
-"L'emplacement de la bibliothèque partagée actuellement utilisée par le "
-"processus. Si ce champ est vide, l'information de mémoire de cette ligne "
-"décrit la mémoire appartenant au processus dont le nom apparaît au-dessus du "
-"tableau des cartes de la mémoire."
 
 #: ../C/gnome-system-monitor.xml:755(guilabel)
 msgid "VM Start"
-msgstr "Début VM"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:757(para)
 msgid "The address at which the memory segment begins."
-msgstr "L'adresse de départ du segment de mémoire."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:763(guilabel)
 msgid "VM End"
-msgstr "Fin VM"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:765(para)
 msgid "The address at which the memory segment ends."
-msgstr "L'adresse de fin du segment de mémoire."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:771(guilabel)
 #: ../C/gnome-system-monitor.xml:1332(guilabel)
 msgid "VM Size"
-msgstr "Taille VM"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:773(para)
 msgid "The size of the memory segment."
-msgstr "La taille du segment de mémoire."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:779(guilabel)
 msgid "Flags"
-msgstr "Attributs"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:781(para)
 msgid ""
 "The following flags describe the different types of memory-segment access "
 "that the process can have:"
 msgstr ""
-"Les attributs suivants décrivent les différents types d'accès aux segments "
-"de mémoire qu'un processus peut avoir :"
 
 #: ../C/gnome-system-monitor.xml:786(term)
 msgid "p"
@@ -1123,8 +918,6 @@ msgid ""
 "The memory segment is private to the process, and is not accessible to other "
 "processes."
 msgstr ""
-"Le segment de mémoire est privé au processus et n'est pas accessible à "
-"d'autres processus."
 
 #: ../C/gnome-system-monitor.xml:794(term)
 msgid "r"
@@ -1132,7 +925,7 @@ msgstr "r"
 
 #: ../C/gnome-system-monitor.xml:796(para)
 msgid "The process has permission to read from the memory segment."
-msgstr "Le processus est autorisé à lire (read) dans le segment de mémoire."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:802(term)
 msgid "s"
@@ -1140,15 +933,15 @@ msgstr "s"
 
 #: ../C/gnome-system-monitor.xml:804(para)
 msgid "The memory segment is shared with other processes."
-msgstr "Le segment de mémoire est partagé (shared) avec d'autres processus."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:810(term)
 msgid "w"
-msgstr "w"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:812(para)
 msgid "The process has permission to write into the memory segment."
-msgstr "Le processus est autorisé à écrire (write) dans le segment de mémoire."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:818(term)
 msgid "x"
@@ -1159,40 +952,34 @@ msgid ""
 "The process has permission to execute instructions that are contained within "
 "the memory segment."
 msgstr ""
-"Le processus est autorisé à exécuter des instructions contenues dans le "
-"segment de mémoire."
 
 #: ../C/gnome-system-monitor.xml:829(guilabel)
 msgid "VM offset"
-msgstr "Décalage VM"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:831(para)
 msgid "The virtual memory offset of the memory segment."
-msgstr "Le décalage de mémoire virtuelle du segment de mémoire."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:837(guilabel)
 msgid "Device"
-msgstr "Périphérique"
+msgstr "Periferic"
 
 #: ../C/gnome-system-monitor.xml:839(para)
 msgid ""
 "The major and minor device numbers of the device on which the shared library "
 "filename is located."
 msgstr ""
-"Les numéros de périphériques majeur et mineur du périphérique sur lequel se "
-"trouve le fichier de la bibliothèque partagée."
 
 #: ../C/gnome-system-monitor.xml:845(guilabel)
 msgid "Inode"
-msgstr "Inoeud"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:847(para)
 msgid ""
 "The inode on the device from which the shared library location is loaded "
 "into memory."
 msgstr ""
-"Le noeud d'index (inode) sur le périphérique à partir duquel la bibliothèque "
-"partagée est chargée en mémoire."
 
 #: ../C/gnome-system-monitor.xml:853(para)
 msgid ""
@@ -1200,33 +987,24 @@ msgid ""
 "column, in alphabetical or numerical order. Click again on the column header "
 "to sort the data in reverse alphabetical or reverse numerical order."
 msgstr ""
-"Cliquez sur n'importe quel en-tête de colonne pour trier les données selon "
-"les informations de cette colonne, par ordre alphabétique ou numérique. "
-"Cliquez une nouvelle fois sur l'en-tête de colonne pour trier les données "
-"dans l'ordre alphabétique ou numérique inverse."
 
 #: ../C/gnome-system-monitor.xml:856(para)
 msgid ""
 "Click <guibutton>Close</guibutton> to close the <guilabel>Memory Maps</"
 "guilabel> dialog."
 msgstr ""
-"Cliquez sur <guibutton>Fermer</guibutton> pour fermer la fenêtre des "
-"<guilabel>Cartes de la mémoire</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:862(title)
 msgid "To Change the Priority of a Process"
-msgstr "Modification de priorité d'un processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:863(para)
 msgid "To change the priority of a process, perform the following steps:"
 msgstr ""
-"Pour modifier la priorité d'un processus, effectuez les opérations "
-"suivantes :"
 
 #: ../C/gnome-system-monitor.xml:873(para)
 msgid "Select the process for which you want to change the priority."
 msgstr ""
-"Sélectionnez le processus pour lequel vous souhaitez changer la priorité."
 
 #: ../C/gnome-system-monitor.xml:878(para)
 msgid ""
@@ -1234,45 +1012,38 @@ msgid ""
 "guimenuitem></menuchoice>. The <guilabel>Change Priority</guilabel> dialog "
 "is displayed."
 msgstr ""
-"Choisissez  <menuchoice><guimenu>Édition</guimenu><guimenuitem>Modifier la "
-"priorité</guimenuitem></menuchoice>. La boîte de dialogue <guilabel>Modifier "
-"la priorité</guilabel> apparaît."
 
 #: ../C/gnome-system-monitor.xml:883(para)
 msgid "Use the slider to set the nice value of the process."
-msgstr "Utiliser le curseur pour définir la valeur « nice » du processus."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:886(para)
 msgid ""
 "The nice value sets the priority of the process: the lower the nice value, "
 "the higher the priority."
 msgstr ""
-"La valeur « nice » définit la priorité du processus : plus la valeur est "
-"faible, plus la priorité est élevée."
 
 #: ../C/gnome-system-monitor.xml:889(para)
 msgid ""
 "To specify a nice value lower than zero, non-root users must enter the root "
 "password."
 msgstr ""
-"Pour définir une valeur « nice » en dessous de zéro, les utilisateurs non "
-"administrateurs doivent saisir le mot de passe d'administration."
 
 #: ../C/gnome-system-monitor.xml:894(para)
 msgid "Click on the <guibutton>Change Priority</guibutton> button."
-msgstr "Cliquez sur le bouton <guibutton>Modifier la priorité</guibutton>."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:903(title)
 msgid "To End a Process"
-msgstr "Arrêt d'un processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:904(para)
 msgid "To end a process, perform the following steps:"
-msgstr "Pour arrêter un processus, effectuez les opérations suivantes :"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:914(para)
 msgid "Select the process that you want to end."
-msgstr "Sélectionnez le processus à arrêter."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:919(para)
 msgid ""
@@ -1280,9 +1051,6 @@ msgid ""
 "guimenuitem></menuchoice>, or click on the <guibutton>End Process</"
 "guibutton> button."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Terminer le "
-"processus</guimenuitem></menuchoice> ou cliquez sur le bouton "
-"<guibutton>Terminer le processus</guibutton>."
 
 #: ../C/gnome-system-monitor.xml:927(para)
 msgid ""
@@ -1290,35 +1058,28 @@ msgid ""
 "want to end the process. <application>System Monitor</application> forces "
 "the process to finish normally."
 msgstr ""
-"Cliquez sur le bouton <guibutton>Terminer le processus</guibutton> pour "
-"confirmer que vous voulez bien arrêter le processus. Le "
-"<application>Moniteur système</application> force le processus à se terminer "
-"normalement."
 
 #: ../C/gnome-system-monitor.xml:932(para)
 msgid "This is the preferred way to stop a process."
-msgstr "C'est la méthode privilégiée pour arrêter un processus."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:938(title)
 msgid "To Terminate a Process"
-msgstr "Interruption d'un processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:939(para)
 msgid "To terminate a process, perform the following steps:"
 msgstr ""
-"Pour stopper immédiatement un processus, effectuez les opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:949(para)
 msgid "Select the process that you want to terminate."
-msgstr "Sélectionnez le processus que vous voulez interrompre."
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:954(para)
 msgid ""
 "Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Kill Process</"
 "guimenuitem></menuchoice>."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Tuer le "
-"processus</guimenuitem></menuchoice>."
 
 #: ../C/gnome-system-monitor.xml:962(para)
 msgid ""
@@ -1326,30 +1087,21 @@ msgid ""
 "want to terminate the process. <application>System Monitor</application> "
 "forces the process to finish immediately."
 msgstr ""
-"Cliquez sur le bouton <guibutton>Tuer le processus</guibutton> pour "
-"confirmer que vous voulez bien stopper le processus. Le "
-"<application>Moniteur système</application> force le processus à s'arrêter "
-"immédiatement."
 
 #: ../C/gnome-system-monitor.xml:967(para)
 msgid ""
 "You usually terminate a process only if you cannot end the process normally "
 "as described in <xref linkend=\"gnome-system-monitor-end-process\"/>."
 msgstr ""
-"En principe, vous ne stoppez un processus que lorsque vous ne pouvez pas "
-"l'arrêter de manière normale tel que décrit dans <xref linkend=\"gnome-"
-"system-monitor-end-process\"/>."
 
 #: ../C/gnome-system-monitor.xml:973(title)
 msgid "To Monitor CPU Usage"
-msgstr "Surveillance de l'utilisation du processeur"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:974(para)
 msgid ""
 "To monitor CPU usage, select the <guilabel>Resource Monitor</guilabel> tab."
 msgstr ""
-"Pour surveiller l'utilisation du processeur, sélectionnez l'onglet "
-"<guilabel>Ressources</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:977(para)
 msgid ""
@@ -1357,22 +1109,16 @@ msgid ""
 "graphical format. Underneath the graph, <application>System Monitor</"
 "application> also displays the current CPU usage, as a percentage."
 msgstr ""
-"Le <application>Moniteur système</application> affiche l'historique "
-"d'utilisation du processeur (CPU) sous forme de graphique. En-dessous du "
-"graphique, le <application>Moniteur système</application> affiche également "
-"l'utilisation actuelle du processeur avec un pourcentage."
 
 #: ../C/gnome-system-monitor.xml:984(title)
 msgid "To Monitor Memory and Swap Usage"
-msgstr "Surveillance de l'utilisation de la mémoire et du fichier d'échange"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:985(para)
 msgid ""
 "To monitor memory and swap usage, select the <guilabel>Resource Monitor</"
 "guilabel> tab."
 msgstr ""
-"Pour surveiller l'utilisation de la mémoire et du fichier d'échange, "
-"sélectionnez l'onglet <guilabel>Ressources</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:988(para)
 msgid ""
@@ -1381,38 +1127,32 @@ msgid ""
 "<application>System Monitor</application> also displays the following "
 "numerical values:"
 msgstr ""
-"Le <application>Moniteur système</application> affiche l'historique de "
-"l'utilisation de la mémoire et du fichier d'échange sous forme de graphique. "
-"En-dessous du graphique, le <application>Moniteur système</application> "
-"affiche également les valeurs numériques suivantes :"
 
 #: ../C/gnome-system-monitor.xml:993(para)
 msgid "User memory"
-msgstr "Mémoire utilisateur"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:998(para)
 msgid "Total memory"
-msgstr "Mémoire totale"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1003(para)
 msgid "Used swap"
-msgstr "Fichier d'échange utilisé"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1008(para)
 msgid "Total swap"
-msgstr "Fichier d'échange total"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1017(title)
 msgid "To Monitor Disk Space Usage"
-msgstr "Surveillance de l'utilisation de l'espace disque"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1018(para)
 msgid ""
 "To monitor disk space usage, select the <guilabel>Resource Monitor</"
 "guilabel> tab."
 msgstr ""
-"Pour surveiller l'utilisation de l'espace disque, sélectionnez l'onglet "
-"<guilabel>Systèmes de fichiers</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:1021(para)
 msgid ""
@@ -1420,75 +1160,64 @@ msgid ""
 "information in tabular format. From left to right, the <guilabel>Devices</"
 "guilabel> table displays the following columns:"
 msgstr ""
-"Le <application>Moniteur système</application> affiche les informations "
-"d'utilisation de l'espace disque sous forme de tableau. De gauche à droite, "
-"le tableau <guilabel>Systèmes de fichiers</guilabel> affiche les colonnes "
-"suivantes :"
 
 #: ../C/gnome-system-monitor.xml:1026(guilabel)
 msgid "Name"
-msgstr "Périphérique"
+msgstr "Nom"
 
 #: ../C/gnome-system-monitor.xml:1028(para)
 msgid "The name of the device."
-msgstr "Le nom du périphérique"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1034(guilabel)
 msgid "Directory"
-msgstr "Dossier"
+msgstr "Repertòri"
 
 #: ../C/gnome-system-monitor.xml:1036(para)
 msgid "The location of the device."
-msgstr "L'emplacement du périphérique"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1042(guilabel)
 msgid "Type"
-msgstr "Type"
+msgstr "Tipe"
 
 #: ../C/gnome-system-monitor.xml:1044(para)
 msgid "The type of the device."
-msgstr "Le type du périphérique"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1052(para)
 msgid "The total amount of disk space available on the device."
-msgstr "La quantité totale d'espace disque disponible sur le périphérique"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1058(guilabel)
 msgid "Used"
-msgstr "Utilisé"
+msgstr "Utilisat"
 
 #: ../C/gnome-system-monitor.xml:1060(para)
 msgid ""
 "The amount of disk space currently used on the device, expressed in bytes "
 "and as a percentage."
 msgstr ""
-"La quantité d'espace disque actuellement utilisée sur le périphérique, "
-"exprimée en octets et sous forme de pourcentage."
 
 #: ../C/gnome-system-monitor.xml:1069(title)
 msgid "To Customize the Resource Monitor Tabbed Section"
-msgstr "Personnalisation de l'onglet des ressources"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1070(para)
 msgid ""
 "You can customize the <guilabel>Resource Monitor</guilabel> tabbed section "
 "in the following ways:"
 msgstr ""
-"Il est possible de personnaliser l'onglet <guilabel>Ressources</guilabel> "
-"selon les procédures suivantes :"
 
 #: ../C/gnome-system-monitor.xml:1093(title)
 msgid "To Change the Background Color of Graphs"
-msgstr "Modification de la couleur d'arrière-plan des graphiques"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1094(para)
 msgid ""
 "To change the background color of the <application>System Monitor</"
 "application> graphs, perform the following steps:"
 msgstr ""
-"Pour modifier la couleur d'arrière-plan des graphiques du "
-"<application>Moniteur système</application>, effectuez les opérations "
-"suivantes :"
 
 #: ../C/gnome-system-monitor.xml:1099(para)
 #: ../C/gnome-system-monitor.xml:1138(para)
@@ -1497,9 +1226,6 @@ msgid ""
 "guimenuitem></menuchoice>. The <guilabel>Preferences</guilabel> dialog is "
 "displayed."
 msgstr ""
-"Choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Préférences</"
-"guimenuitem></menuchoice>. La boîte de dialogue des <guilabel>Préférences</"
-"guilabel> apparaît."
 
 #: ../C/gnome-system-monitor.xml:1104(para)
 #: ../C/gnome-system-monitor.xml:1143(para)
@@ -1507,16 +1233,12 @@ msgid ""
 "Select the <guilabel>Resource Monitor</guilabel> tab in the "
 "<guilabel>Preferences</guilabel> dialog."
 msgstr ""
-"Sélectionnez l'onglet <guilabel>Ressources</guilabel> dans la boîte de "
-"dialogue des p<guilabelPréférences</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:1109(para)
 msgid ""
 "Click on the <guilabel>Background color</guilabel> button. The "
 "<guilabel>Pick a color</guilabel> dialog is displayed."
 msgstr ""
-"Cliquez sur le bouton <guilabel>Couleur d'arrière-plan</guilabel>. La boîte "
-"de dialogue <guilabel>Choisissez une couleur</guilabel> apparaît."
 
 #: ../C/gnome-system-monitor.xml:1114(para)
 #: ../C/gnome-system-monitor.xml:1153(para)
@@ -1526,9 +1248,6 @@ msgid ""
 "Choose a color from the <guilabel>Palette</guilabel>, or use the color wheel "
 "or the spin boxes to customize the color."
 msgstr ""
-"Choisissez une couleur dans la <guilabel>Palette</guilabel> ou utilisez la "
-"roue chromatique ou les zones de sélection numérique pour personnaliser la "
-"couleur."
 
 #: ../C/gnome-system-monitor.xml:1119(para)
 #: ../C/gnome-system-monitor.xml:1158(para)
@@ -1538,8 +1257,6 @@ msgid ""
 "Click <guibutton>OK</guibutton> to close the <guilabel>Pick a color</"
 "guilabel> dialog."
 msgstr ""
-"Cliquez sur <guibutton>Valider</guibutton> pour fermer la boîte de dialogue "
-"<guilabel>Choisissez une couleur</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:1124(para)
 #: ../C/gnome-system-monitor.xml:1163(para)
@@ -1547,42 +1264,32 @@ msgid ""
 "Click <guibutton>Close</guibutton> to close the <guilabel>Preferences</"
 "guilabel> dialog."
 msgstr ""
-"Cliquez sur <guibutton>Fermer</guibutton> pour fermer la boîte de dialogue "
-"des <guilabel>Préférences</guilabel>."
 
 #: ../C/gnome-system-monitor.xml:1132(title)
 msgid "To Change the Grid Color of Graphs"
-msgstr "Modification de la couleur de la grille des graphiques"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1133(para)
 msgid ""
 "To change the grid color of the <application>System Monitor</application> "
 "graphs, perform the following steps:"
 msgstr ""
-"Pour modifier la couleur de la grille des graphiques du "
-"<application>Moniteur système</application>, effectuez les opérations "
-"suivantes :"
 
 #: ../C/gnome-system-monitor.xml:1148(para)
 msgid ""
 "Click on the <guilabel>Grid color</guilabel> button. The <guilabel>Pick a "
 "color</guilabel> dialog is displayed."
 msgstr ""
-"Cliquez sur le bouton <guilabel>Couleur de la grille</guilabel>. La boîte de "
-"dialogue <guilabel>Choisissez une couleur</guilabel> apparaît."
 
 #: ../C/gnome-system-monitor.xml:1171(title)
 msgid "To Change the Line Color of the CPU Graph"
-msgstr "Modification de la couleur de la ligne du graphique du CPU"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1172(para)
 msgid ""
 "To change the color of the line that represents CPU usage in the "
 "<guilabel>CPU History</guilabel> graph, perform the following steps:"
 msgstr ""
-"Pour modifier la couleur de la ligne représentant l'utilisation du "
-"processeur (CPU) dans le graphique <guilabel>Historique d'utilisation du "
-"CPU</guilabel>, effectuez les opérations suivantes :"
 
 #: ../C/gnome-system-monitor.xml:1177(para)
 #: ../C/gnome-system-monitor.xml:1206(para)
@@ -1591,44 +1298,32 @@ msgid ""
 "Monitor</guilabel> window, to display the graphs and table that provide "
 "information about the usage of system resources."
 msgstr ""
-"Sélectionnez l'onglet <guilabel>Ressources</guilabel> dans la fenêtre du "
-"<application>Moniteur système</application> afin d'afficher les graphiques "
-"qui fournissent des informations sur l'utilisation des ressources du système."
 
 #: ../C/gnome-system-monitor.xml:1182(para)
 msgid ""
 "Click on the <guibutton>CPU</guibutton> color button. The <guilabel>Pick a "
 "color</guilabel> dialog is displayed."
 msgstr ""
-"Cliquez sur le bouton de couleur <guibutton>CPU</guibutton>. La boîte de "
-"dialogue <guilabel>Choisissez une couleur</guilabel> apparaît."
 
 #: ../C/gnome-system-monitor.xml:1200(title)
 msgid "To Change the Line Colors of the Memory and Swap Graph"
 msgstr ""
-"Modification des couleurs de lignes du graphique mémoire et fichier d'échange"
 
 #: ../C/gnome-system-monitor.xml:1201(para)
 msgid ""
 "To change the color of the lines that represent memory and swap usage in the "
 "graph, perform the following steps:"
 msgstr ""
-"Pour modifier la couleur des lignes représentant l'utilisation de la mémoire "
-"et du fichier d'échange dans le graphique, effectuez les opérations "
-"suivantes :"
 
 #: ../C/gnome-system-monitor.xml:1211(para)
 msgid ""
 "Click on the <guibutton>User memory</guibutton> or <guibutton>Used swap</"
 "guibutton> button. The <guilabel>Pick a color</guilabel> dialog is displayed."
 msgstr ""
-"Cliquez sur les boutons <guibutton>Mémoire utilisateur</guibutton> ou "
-"<guibutton>Fichier d'échange utilisé</guibutton>. La boîte de dialogue "
-"<guilabel>Choisissez une couleur</guilabel> apparaît."
 
 #: ../C/gnome-system-monitor.xml:1233(title)
 msgid "Preferences"
-msgstr "Préférences"
+msgstr "Preferéncias"
 
 #: ../C/gnome-system-monitor.xml:1234(para)
 msgid ""
@@ -1637,63 +1332,51 @@ msgid ""
 "menuchoice>. The <guilabel>Preferences</guilabel> dialog contains the "
 "following tabbed sections:"
 msgstr ""
-"Pour configurer le <application>Moniteur système</application>, choisissez "
-"<menuchoice><guimenu>Édition</guimenu><guimenuitem>Préférences</"
-"guimenuitem></menuchoice>. La boîte de dialogue des <guilabel>Préférences</"
-"guilabel> contient les onglets suivants :"
 
 #: ../C/gnome-system-monitor.xml:1250(guilabel)
 msgid "Behavior"
-msgstr "Comportement"
+msgstr "Compòrtament"
 
 #: ../C/gnome-system-monitor.xml:1256(guilabel)
 #: ../C/gnome-system-monitor.xml:1409(guilabel)
 #: ../C/gnome-system-monitor.xml:1440(guilabel)
 msgid "Update interval ... seconds"
-msgstr "Fréquence de mise à jour en secondes"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1258(para)
 msgid ""
 "Use this spin box to specify the interval at which you want to update the "
 "process list."
 msgstr ""
-"Utilisez cette zone de sélection numérique pour définir l'intervalle de "
-"réactualisation de la liste des processus."
 
 #: ../C/gnome-system-monitor.xml:1264(guilabel)
 msgid "Show warning dialog when ending or killing processes"
-msgstr "Affiche un avertissement avant de terminer ou de tuer des processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1266(para)
 msgid ""
 "Select this option to display a confirmation alert when you end a process or "
 "terminate a process."
 msgstr ""
-"Cochez cette option pour demander confirmation avant de terminer ou "
-"d'arrêter un processus."
 
 #: ../C/gnome-system-monitor.xml:1272(guilabel)
 msgid "Show warning dialog when hiding processes"
-msgstr "Affiche un avertissement avant de cacher des processus"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1274(para)
 msgid ""
 "Select this option to display a confirmation alert when you hide a process."
 msgstr ""
-"Cochez cette option pour demander confirmation au moment de masquer un "
-"processus."
 
 #: ../C/gnome-system-monitor.xml:1283(guilabel)
 msgid "Information Fields"
-msgstr "Champs d'informations"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1286(para)
 msgid ""
 "Use the following options to select which fields are displayed in the "
 "process list:"
 msgstr ""
-"Utilisez les options suivantes pour sélectionner les champs qui s'affichent "
-"dans la liste des processus :"
 
 #: ../C/gnome-system-monitor.xml:1294(para)
 msgid ""
@@ -1701,68 +1384,53 @@ msgid ""
 "contain an icon to indicate the application that is associated with the "
 "process."
 msgstr ""
-"Cochez cette option pour afficher le nom du processus. Cette colonne peut "
-"aussi contenir une icône pour représenter l'application associée au "
-"processus."
 
 #: ../C/gnome-system-monitor.xml:1300(guilabel)
 msgid "Arguments"
-msgstr "Arguments"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1302(para)
 msgid ""
 "Select this option to display the name of the command, including arguments, "
 "that started the process."
 msgstr ""
-"Cochez cette option pour afficher le nom de la commande qui a lancé le "
-"processus, arguments y compris."
 
 #: ../C/gnome-system-monitor.xml:1310(para)
 msgid ""
 "Select this option to display the name of the user who owns the process."
 msgstr ""
-"Cochez cette option pour afficher le nom de l'utilisateur propriétaire du "
-"processus."
 
 #: ../C/gnome-system-monitor.xml:1318(para)
 msgid ""
 "Select this option to display the current status of the process: sleeping or "
 "running."
 msgstr ""
-"Cochez cette option pour afficher l'état actuel du processus : au repos ou "
-"en cours."
 
 #: ../C/gnome-system-monitor.xml:1326(para)
 msgid ""
 "Select this option to display the amount of system memory that is currently "
 "being used by the process."
 msgstr ""
-"Cochez cette option pour afficher la quantité de mémoire système "
-"actuellement utilisée par le processus."
 
 #: ../C/gnome-system-monitor.xml:1334(para)
 msgid ""
 "Select this option to display the amount of virtual memory that is allocated "
 "to the process."
 msgstr ""
-"Cochez cette option pour afficher la quantité de mémoire virtuelle allouée "
-"au processus."
 
 #: ../C/gnome-system-monitor.xml:1340(guilabel)
 msgid "Resident Memory"
-msgstr "Mémoire résidante"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1342(para)
 msgid ""
 "Select this option to display the amount of physical memory that is "
 "allocated to the process."
 msgstr ""
-"Cochez cette option pour afficher la quantité de mémoire physique allouée au "
-"processus."
 
 #: ../C/gnome-system-monitor.xml:1348(guilabel)
 msgid "Shared Memory"
-msgstr "Mémoire partagée"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1350(para)
 msgid ""
@@ -1770,41 +1438,32 @@ msgid ""
 "to the process. Shared memory is memory that can be accessed by another "
 "process."
 msgstr ""
-"Cochez cette option pour afficher la quantité de mémoire partagée allouée au "
-"processus. La mémoire partagée est la mémoire qui est accessible à d'autres "
-"processus."
 
 #: ../C/gnome-system-monitor.xml:1356(guilabel)
 msgid "RSS Memory"
-msgstr "Mémoire RSS"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1358(para)
 msgid ""
 "Select this option to display the amount of physical memory, excluding "
 "swapped-out pages, that is used by the process."
 msgstr ""
-"Cochez cette option pour afficher la quantité de mémoire physique utilisée "
-"par le processus, sans compter les pages placées dans le fichier d'échange."
 
 #: ../C/gnome-system-monitor.xml:1366(para)
 msgid ""
 "Select this option to display the amount of X server memory that is used by "
 "the process."
 msgstr ""
-"Cochez cette option pour afficher la quantité de mémoire du serveur X "
-"utilisée par le processus."
 
 #: ../C/gnome-system-monitor.xml:1372(guilabel)
 msgid "% CPU"
-msgstr "% CPU"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1374(para)
 msgid ""
 "Select this option to display the percentage of CPU time currently being "
 "used by the process."
 msgstr ""
-"Cochez cette option pour afficher le pourcentage du temps processeur "
-"actuellement utilisé par le processus."
 
 #: ../C/gnome-system-monitor.xml:1382(para)
 msgid ""
@@ -1812,9 +1471,6 @@ msgid ""
 "sets the priority of the process: the lower the nice value, the higher the "
 "priority."
 msgstr ""
-"Cochez cette option pour afficher la valeur « nice » du processus. Cette "
-"valeur définit la priorité du processus : plus la valeur « nice » est "
-"faible, plus la priorité est élevée."
 
 #: ../C/gnome-system-monitor.xml:1390(para)
 msgid ""
@@ -1822,27 +1478,20 @@ msgid ""
 "The pid is a number that uniquely identifies the process. You can use the "
 "pid to manipulate the process on the command line."
 msgstr ""
-"Cochez cette option pour afficher l'identifiant du processus, aussi connu "
-"sous le nom de « pid ». C'est un nombre qui identifie le processus de "
-"manière unique. Vous pouvez utiliser cet identifiant pour manipuler le "
-"processus en ligne de commande."
 
 #: ../C/gnome-system-monitor.xml:1404(guilabel)
 msgid "Graphs"
-msgstr "Graphiques"
+msgstr ""
 
 #: ../C/gnome-system-monitor.xml:1411(para)
 msgid ""
 "Use this spin box to specify how often you want to update the "
 "<application>System Monitor</application> graphs."
 msgstr ""
-"Utilisez cette zone de sélection numérique pour définir la fréquence "
-"d'actualisation des graphiques du <application>Moniteur système</"
-"application>."
 
 #: ../C/gnome-system-monitor.xml:1417(guilabel)
 msgid "Background color"
-msgstr "Couleur d'arrière-plan"
+msgstr "Color de fons"
 
 #: ../C/gnome-system-monitor.xml:1419(para)
 msgid ""
@@ -1850,13 +1499,10 @@ msgid ""
 "Monitor</application> graphs, as described in <xref linkend=\"gnome-system-"
 "monitor-customize-background\"/>."
 msgstr ""
-"Utilisez ce bouton pour personnaliser la couleur d'arrière-plan des "
-"graphiques du <application>Moniteur système</application>, comme décrit dans "
-"<xref linkend=\"gnome-system-monitor-customize-background\"/>."
 
 #: ../C/gnome-system-monitor.xml:1425(guilabel)
 msgid "Grid color"
-msgstr "Couleur de grille"
+msgstr "Color de la grasilha"
 
 #: ../C/gnome-system-monitor.xml:1427(para)
 msgid ""
@@ -1864,23 +1510,19 @@ msgid ""
 "Monitor</application> graphs, as described in <xref linkend=\"gnome-system-"
 "monitor-customize-grid\"/>."
 msgstr ""
-"Utilisez ce bouton pour personnaliser la couleur de grille des graphiques du "
-"<application>Moniteur système</application>, comme décrit dans <xref linkend="
-"\"gnome-system-monitor-customize-grid\"/>."
 
 #: ../C/gnome-system-monitor.xml:1435(guilabel)
 msgid "Devices"
-msgstr "Systèmes de fichiers"
+msgstr "Periferiques"
 
 #: ../C/gnome-system-monitor.xml:1442(para)
 msgid ""
 "Use this spin box to specify how often you want to update the "
 "<guilabel>Devices</guilabel> table."
 msgstr ""
-"Utilisez cette zone de sélection numérique pour définir la fréquence "
-"d'actualisation du tableau des <guilabel>Systèmes de fichiers</guilabel>."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: ../C/gnome-system-monitor.xml:0(None)
 msgid "translator-credits"
-msgstr "Claude Paroz <claude@2xlibre.net>, 2007."
+msgstr "La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu.com"
+
