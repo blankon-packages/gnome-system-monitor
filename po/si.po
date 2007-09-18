@@ -1,78 +1,67 @@
-# translation of gnome-system-monitor.HEAD.po to Russian
-# Copyright (C) 2001-2002, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+# translation of si.po to Sinhala
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
-# Sergey Volozhanin <svo@asplinux.ru>, 2001.
-# Valek Filippov  <frob@df.ru>, 2002.
-# Dmitry G. Mastrukov <dmitry@taurussoft.org>, 2002-2004.
-# Andrew W. Nosenko <awn@bcs.zp.ua>, 2003.
-# Leonid Kanter <leon@asplinux.ru>, 2004, 2005, 2006.
-# Alexander Sigachov <ajvol2@gmail.com>, 2007.
+# Danishka Navin <snavin@redhat.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-system-monitor trunk\n"
+"Project-Id-Version: si\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-16 20:32+0400\n"
-"PO-Revision-Date: 2007-09-16 20:23+0400\n"
-"Last-Translator: Vasiliy Faronov <qvvx@yandex.ru>\n"
-"Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"POT-Creation-Date: 2007-08-03 03:16+0100\n"
+"PO-Revision-Date: 2007-09-03 16:10+0530\n"
+"Last-Translator: Danishka Navin <snavin@redhat.com>\n"
+"Language-Team: Sinhala <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.cpp:155
 #: ../src/interface.cpp:660 ../src/procman.cpp:712
 msgid "System Monitor"
-msgstr "Системный монитор"
+msgstr "පද්ධති නිරීක්‍ෂකය"
 
 #: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.cpp:156
 msgid "View current processes and monitor system state"
-msgstr ""
-"Программа для просмотра текущих процессов и мониторинга состояния системы"
+msgstr "දැනට ඇති සැකසුම් දර්ශනය සහ පද්ධති තත්වය නිරීක්‍ෂණය"
 
 #: ../src/callbacks.cpp:165
 msgid "translator-credits"
-msgstr ""
-"Сергей Воложанин\n"
-"Валёк Филиппов <frob@df.ru>\n"
-"Дмитрий Мастрюков <dmitry@taurussoft.org>\n"
-"Андрей Носенко <awn@bcs.zp.ua>\n"
-"Леонид Кантер <leon@asplinux.ru>\n"
-"Александр Сигачёв <ajvol2@gmail.com>"
+msgstr "Danishka Navin <danishka@gmail.com>"
 
 #: ../src/disks.cpp:275 ../src/memmaps.cpp:500
 msgid "Device"
-msgstr "Устройство"
+msgstr "මෙවලම්"
 
 #: ../src/disks.cpp:276
 msgid "Directory"
-msgstr "Каталог"
+msgstr "බහලුම"
 
 #: ../src/disks.cpp:277 ../src/openfiles.cpp:235
 msgid "Type"
-msgstr "Тип"
+msgstr "වර්‍ගය"
 
 #: ../src/disks.cpp:278
 msgid "Total"
-msgstr "Всего"
+msgstr "සියල්ල"
 
 #: ../src/disks.cpp:279
 msgid "Free"
-msgstr "Свободно"
+msgstr "නිදහස්"
 
 #: ../src/disks.cpp:280
 msgid "Available"
-msgstr "Доступно"
+msgstr "භාවිතයට ඇති"
 
 #: ../src/disks.cpp:281
 msgid "Used"
-msgstr "Использовано"
+msgstr "භාවිතා කළ"
 
 #: ../src/disks.cpp:288 ../src/interface.cpp:736 ../src/procdialogs.cpp:718
 #: ../src/procdialogs.cpp:722
 msgid "File Systems"
-msgstr "Файловые системы"
+msgstr "ගොනු පද්ධතිය"
 
 #. xgettext: ? stands for unknown
 #: ../src/e_date.c:155
@@ -81,200 +70,194 @@ msgstr "?"
 
 #: ../src/e_date.c:162
 msgid "Today %l:%M %p"
-msgstr "Сегодня %H:%M"
+msgstr "අද %l:%M %p"
 
 #: ../src/e_date.c:171
 msgid "Yesterday %l:%M %p"
-msgstr "Вчера %H:%M"
+msgstr "ඊයේ %l:%M %p"
 
 #: ../src/e_date.c:183
 msgid "%a %l:%M %p"
-msgstr "%a %H:%M"
+msgstr "%a %l:%M %p"
 
 #: ../src/e_date.c:191
 msgid "%b %d %l:%M %p"
-msgstr "%d %b %H:%M"
+msgstr "%b %d %l:%M %p"
 
 #: ../src/e_date.c:193
 msgid "%b %d %Y"
-msgstr "%d %b %Y"
+msgstr "%b %d %Y"
 
 #: ../src/gnome-system-monitor.schemas.in.h:1
 msgid ""
 "0 for the System Info, 1 for the processes list, 2 for the resources and 3 "
 "for the disks list"
 msgstr ""
-"0 — информация о системе, 1 — список процессов, 2 — ресурсов, 3 — дисков"
 
 #: ../src/gnome-system-monitor.schemas.in.h:2
 msgid "Default graph background color"
-msgstr "Фон графика по умолчанию"
+msgstr "ප්‍රස්තාරයේ පෙරනිමි පසුබිම් වර්‍ණය"
 
 #: ../src/gnome-system-monitor.schemas.in.h:3
 msgid "Default graph cpu color"
-msgstr "Цвет графика ЦП по умолчанию"
+msgstr "ප්‍රස්තාරයේ CPU සඳහා පෙරනිමි වර්‍ණය"
 
 #: ../src/gnome-system-monitor.schemas.in.h:4
 msgid "Default graph frame color"
-msgstr "Цвет рамки графика по умолчанию"
+msgstr "ප්‍රස්තාරයේ රාමුව සඳහා පෙරනිමි වර්‍ණය"
 
 #: ../src/gnome-system-monitor.schemas.in.h:5
 msgid "Default graph incoming network traffic color"
-msgstr "Цвет графика приёма по сети"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:6
 msgid "Default graph mem color"
-msgstr "Цвет графика памяти по умолчанию"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:7
 msgid "Default graph outgoing network traffic color"
-msgstr "Цвет графика отправки по сети"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:8
 msgid "Default graph swap color"
-msgstr "Цвет графика подкачки по умолчанию"
+msgstr "ප්‍රස්තාරයේ හුවමාරු(swap) සඳහා පෙරනිමි වර්‍ණය"
 
 #: ../src/gnome-system-monitor.schemas.in.h:9
 msgid ""
 "Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
 "active"
 msgstr ""
-"Определяет, какие процессы показывать по умолчанию. 0 — все, 1 — "
-"пользователя, 2 — активные"
 
 #: ../src/gnome-system-monitor.schemas.in.h:10
 msgid "Disk view columns order"
-msgstr "Порядок столбцов просмотра диска"
+msgstr "තැටි දසුන් තීරු පිළිවෙල"
 
 #: ../src/gnome-system-monitor.schemas.in.h:11
 msgid "Enable/Disable smooth refresh"
-msgstr "Включить/выключить плавное обновление"
+msgstr "මෘදු නැවුම් කරනයන් සක්‍රීය/අක්‍රීය කරන්න"
 
 #: ../src/gnome-system-monitor.schemas.in.h:12
 msgid ""
 "If TRUE, system-monitor operates in 'Solaris mode' where a task's cpu usage "
 "is divided by the total number of CPUs. Else it operates in 'Irix mode'."
 msgstr ""
-"Если установлено, системный монитор работает в «режиме Solaris», при котором "
-"загрузка ЦПУ для задачи делится на общее число ЦПУ. Иначе используется "
-"«режим Irix»."
 
 #: ../src/gnome-system-monitor.schemas.in.h:13
 msgid "Main Window height"
-msgstr "Высота основного окна"
+msgstr "ප්‍රධාන කවුළුවේ උස"
 
 #: ../src/gnome-system-monitor.schemas.in.h:14
 msgid "Main Window width"
-msgstr "Ширина основного окна"
+msgstr "ප්‍රධාන කවුළුවේ පළල"
 
 #: ../src/gnome-system-monitor.schemas.in.h:15
 msgid "Process view columns order"
-msgstr "Порядок столбцов просмотра процессов"
+msgstr "සැකසුම් දසුනේ තීරු පිළිවෙල"
 
 #: ../src/gnome-system-monitor.schemas.in.h:16
 msgid "Process view sort column"
-msgstr "Столбец сортировки списка процессов"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:17
 msgid "Process view sort order"
-msgstr "Порядок сортировки списка процессов"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:18
 msgid "Saves the currently viewed tab"
-msgstr "Сохраняет текущую активную вкладку"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:20
 #, no-c-format
 msgid "Show process 'CPU %' column on startup"
-msgstr "Показывать столбец загрузки ЦПУ процессом в процентах при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:21
 msgid "Show process 'CPU time' column on startup"
-msgstr "Показывать столбец времени занятости ЦПУ процессом при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:22
 msgid "Show process 'PID' column on startup"
-msgstr "Показывать столбец PID процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:23
 msgid "Show process 'SELinux security context' column on startup"
-msgstr "Показывать столбец контекста SELinux процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:24
 msgid "Show process 'X server memory' column on startup"
-msgstr "Показывать столбец памяти X-сервера для процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:25
 msgid "Show process 'arguments' column on startup"
-msgstr "Показывать столбец аргументов процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:26
 msgid "Show process 'estimated memory usage' column on startup"
-msgstr "Показывать столбец оценки использования памяти процессом при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:27
 msgid "Show process 'name' column on startup"
-msgstr "Показывать столбец имени процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:28
 msgid "Show process 'nice' column on startup"
-msgstr "Показывать столбец приоритета процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:29
 msgid "Show process 'owner' column on startup"
-msgstr "Показывать столбец владельца процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:30
 msgid "Show process 'resident memory' column on startup"
-msgstr "Показывать столбец резидентной памяти процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:31
 msgid "Show process 'shared memory' column on startup"
-msgstr "Показывать столбец разделяемой памяти процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:32
 msgid "Show process 'start time' column on startup"
-msgstr "Показывать столбец времени запуска процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:33
 msgid "Show process 'status' column on startup"
-msgstr "Показывать столбец состояния процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:34
 msgid "Show process 'virtual memory' column on startup"
-msgstr "Показывать столбец виртуальной памяти процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:35
 msgid "Show process 'writable memory' column on startup"
-msgstr "Показывать столбец доступной для записи памяти процесса при запуске"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:36
 msgid "Show process dependencies in tree form"
-msgstr "Показывать зависимости процессов в виде дерева"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:37
 msgid "Show warning dialog when killing processes"
-msgstr "Выводить диалог предупреждения при снятии процессов"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:38
 msgid "Solaris mode for CPU percentage"
-msgstr "Режим Solaris для загрузки ЦПУ в процентах"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:39
 msgid "Time in milliseconds between updates of the devices list"
-msgstr "Время в миллисекундах между обновлениями списка устройств"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:40
 msgid "Time in milliseconds between updates of the graphs"
-msgstr "Время в миллисекундах между обновлением графиков"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:41
 msgid "Time in milliseconds between updates of the process view"
-msgstr "Время в миллисекундах между обновлением обзора процессов"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:42
 msgid "Whether information about all filesystems should be displayed"
-msgstr "Должны ли отображаться сведения о файловой системе"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:43
 msgid ""
@@ -282,289 +265,286 @@ msgid ""
 "'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
 "filesystems."
 msgstr ""
-"Должны ли отображаться сведения обо всех файловых системах (включая такие, "
-"как autofs и procfs). Может быть полезным получить полный список всех "
-"смонтированных файловых систем."
 
 #: ../src/gnome-system-monitor.schemas.in.h:45
 #, no-c-format
 msgid "Width of process 'CPU %' column"
-msgstr "Ширина столбца процентной загрузки ЦПУ"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:46
 msgid "Width of process 'CPU time' column"
-msgstr "Ширина столбца времени занятости ЦПУ процессом"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:47
 msgid "Width of process 'PID' column"
-msgstr "Ширина столбца PID процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:48
 msgid "Width of process 'SELinux security context' column"
-msgstr "Ширина столбца контекста SELinux процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:49
 msgid "Width of process 'X server memory' column"
-msgstr "Ширина столбца памяти X-сервера для процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:50
 msgid "Width of process 'arguments' column"
-msgstr "Ширина столбца аргументов процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:51
 msgid "Width of process 'estimated memory usage' column"
-msgstr "Ширина столбца оценки использования памяти процессом"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:52
 msgid "Width of process 'name' column"
-msgstr "Ширина столбца имени процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:53
 msgid "Width of process 'nice' column"
-msgstr "Ширина столбца приоритета процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:54
 msgid "Width of process 'owner' column"
-msgstr "Ширина столбца владельца процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:55
 msgid "Width of process 'resident memory' column"
-msgstr "Ширина столбца резидентной памяти процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:56
 msgid "Width of process 'shared memory' column"
-msgstr "Ширина столбца разделяемой памяти процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:57
 msgid "Width of process 'start time' column"
-msgstr "Ширина столбца времени запуска процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:58
 msgid "Width of process 'status' column"
-msgstr "Ширина столбца состояния процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:59
 msgid "Width of process 'virtual memory' column"
-msgstr "Ширина столбца виртуальной памяти процесса"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:60
 msgid "Width of process 'writable memory' column"
-msgstr "Ширина столбца доступной для записи памяти процесса"
+msgstr ""
 
 #. xgettext: noun, top level menu.
 #. "File" did not make sense for system-monitor
 #: ../src/interface.cpp:49
 msgid "_Monitor"
-msgstr "_Монитор"
+msgstr "නිරීක්‍ෂකය (_M)"
 
 #: ../src/interface.cpp:50
 msgid "_Edit"
-msgstr "_Правка"
+msgstr "සැකසුම් (_E)"
 
 #: ../src/interface.cpp:51
 msgid "_View"
-msgstr "_Вид"
+msgstr "දසුන (_V)"
 
 #: ../src/interface.cpp:52
 msgid "_Help"
-msgstr "_Справка"
+msgstr "උදව් (_H)"
 
 #: ../src/interface.cpp:54
 msgid "Search for _Open Files"
-msgstr "Найти _открытые файлы"
+msgstr "විවෘත කළ ගොනු සඳහා සොයන්න (_O)"
 
 #: ../src/interface.cpp:55
 msgid "Search for open files"
-msgstr "Поиск открытых файлов"
+msgstr "විවෘත කළ ගොනු සඳහා සොයන්න"
 
 #: ../src/interface.cpp:56
 msgid "_Quit"
-msgstr "В_ыход"
+msgstr "ඉවත් වන්න (_Q)"
 
 #: ../src/interface.cpp:57
 msgid "Quit the program"
-msgstr "Выйти из программы"
+msgstr "වැඩසටහනින් ඉවත්විම"
 
 #: ../src/interface.cpp:60
 msgid "_Stop Process"
-msgstr "О_становить процесс"
+msgstr "සැකසුම් නවතන්න (_S)"
 
 #: ../src/interface.cpp:61
 msgid "Stop process"
-msgstr "Остановить процесс"
+msgstr "සැකසුම් නවතන්න"
 
 #: ../src/interface.cpp:62
 msgid "_Continue Process"
-msgstr "Продол_жить процесс"
+msgstr "සැකසුම ඉදිරියට කරගෙන යන්න (_C)"
 
 #: ../src/interface.cpp:63
 msgid "Continue process if stopped"
-msgstr "Продолжить процесс, если остановлен"
+msgstr ""
 
 #: ../src/interface.cpp:65 ../src/interface.cpp:183
 msgid "End _Process"
-msgstr "Завер_шить процесс"
+msgstr ""
 
 #: ../src/interface.cpp:66
 msgid "Force process to finish normally"
-msgstr "Корректно завершить процесс"
+msgstr ""
 
 #: ../src/interface.cpp:67 ../src/procdialogs.cpp:75
 msgid "_Kill Process"
-msgstr "Сн_ять процесс"
+msgstr "සැකසුම් නසන්න (_K)"
 
 #: ../src/interface.cpp:68
 msgid "Force process to finish immediately"
-msgstr "Завершить процесс немедленно"
+msgstr ""
 
 #: ../src/interface.cpp:69
 msgid "_Change Priority..."
-msgstr "Измененить приори_тет..."
+msgstr "ප්‍රමඛත්වය වෙනස් කරන්න... (_C)"
 
 #: ../src/interface.cpp:70
 msgid "Change the order of priority of process"
-msgstr "Изменить приоритет процесса"
+msgstr ""
 
 #: ../src/interface.cpp:71
 msgid "Prefere_nces"
-msgstr "_Параметры"
+msgstr "අභිප්‍රේත (_n)"
 
 #: ../src/interface.cpp:72
 msgid "Configure the application"
-msgstr "Настроить приложение"
+msgstr "යෙදුම මානකරණය කරන්න"
 
 #: ../src/interface.cpp:74
 msgid "_Memory Maps"
-msgstr "_Карты памяти"
+msgstr "මතක සිතියම් (_M)"
 
 #: ../src/interface.cpp:75
 msgid "Open the memory maps associated with a process"
-msgstr "Открыть карты памяти, связанные с процессом"
+msgstr ""
 
 #: ../src/interface.cpp:76
 msgid "Open _Files"
-msgstr "Открытые _файлы"
+msgstr "ගොනු විවෘත කරන්න (_F)"
 
 #: ../src/interface.cpp:77
 msgid "View the files opened by a process"
-msgstr "Просмотреть файлы, открытые процессом"
+msgstr ""
 
 #: ../src/interface.cpp:79
 msgid "_Contents"
-msgstr "_Содержание"
+msgstr "අන්තර්ගත (_C)"
 
 #: ../src/interface.cpp:80
 msgid "Open the manual"
-msgstr "Открыть справку"
+msgstr "අත්පොත විවෘත කරන්න"
 
 #: ../src/interface.cpp:81
 msgid "_About"
-msgstr "_О программе"
+msgstr "සම්බන්ධව (_A)"
 
 #: ../src/interface.cpp:82
 msgid "About this application"
-msgstr "Информация о приложении"
+msgstr "මෙම යෙදුම සම්බන්ධව"
 
 #: ../src/interface.cpp:87
 msgid "_Dependencies"
-msgstr "_Зависимости"
+msgstr "යැපීම් (_D)"
 
 #: ../src/interface.cpp:88
 msgid "Show parent/child relationship between processes"
-msgstr "Показывать иерархические зависимости процессов"
+msgstr ""
 
 #: ../src/interface.cpp:95
 msgid "_Active Processes"
-msgstr "_Активные процессы"
+msgstr "සක්‍රීය සැකසුම් (_A)"
 
 #: ../src/interface.cpp:96
 msgid "Show active processes"
-msgstr "Отображать активные процессы"
+msgstr "සක්‍රීය සැකසුම් පෙවන්වන්න"
 
 #: ../src/interface.cpp:97
 msgid "A_ll Processes"
-msgstr "В_се процессы"
+msgstr "සියළු සැකසුම් (_l)"
 
 #: ../src/interface.cpp:98
 msgid "Show all processes"
-msgstr "Отображать все процессы"
+msgstr "සියළු සැකසුම් පෙන්වන්න"
 
 #: ../src/interface.cpp:99
 msgid "M_y Processes"
-msgstr "_Мои процессы"
+msgstr "මාගේ සැකසුම් (_y)"
 
 #: ../src/interface.cpp:100
 msgid "Show user own process"
-msgstr "Отображать процессы текущего пользователя"
+msgstr "පරිශීලකගේ ස්කීය සැකසුම් පෙන්වන්න"
 
 #: ../src/interface.cpp:250
 msgid "CPU History"
-msgstr "Использование процессора"
+msgstr "CPU අතීතය"
 
 #: ../src/interface.cpp:300
 msgid "CPU:"
-msgstr "Процессор:"
+msgstr "CPU:"
 
 #: ../src/interface.cpp:303
 #, c-format
 msgid "CPU%d:"
-msgstr "Процессор %d:"
+msgstr "CPU%d:"
 
 #: ../src/interface.cpp:323
 msgid "Memory and Swap History"
-msgstr "Использование памяти/подкачки"
+msgstr "මතක සහ හුවමාරු(swap) අතීතය"
 
 #: ../src/interface.cpp:355
 msgid "User memory:"
-msgstr "Память пользователя:"
+msgstr "පරිශීලක මතකය:"
 
 #. xgettext: user memory: 123 MiB of 512MiB
 #. xgettext: swap: 10MiB of 1GiB
 #: ../src/interface.cpp:373 ../src/interface.cpp:433
 msgid "of"
-msgstr "из"
+msgstr "න්"
 
 #: ../src/interface.cpp:414
 msgid "Used swap:"
-msgstr "Использовано подкачки:"
+msgstr "භාවිත හුවමාරු(swap):"
 
 #: ../src/interface.cpp:473
 msgid "Network History"
-msgstr "Использование сети"
+msgstr "ජාල අතීතය"
 
 #: ../src/interface.cpp:504
 msgid "Received:"
-msgstr "Получено:"
+msgstr "ලිබුණි:"
 
 #: ../src/interface.cpp:524 ../src/interface.cpp:567
 msgid "Total:"
-msgstr "Всего:"
+msgstr "එකතුව:"
 
 #: ../src/interface.cpp:548
 msgid "Sent:"
-msgstr "Передано:"
+msgstr "යැව්වා:"
 
 #: ../src/interface.cpp:724
 msgid "System"
-msgstr "Система"
+msgstr "පද්දතිය"
 
 #: ../src/interface.cpp:728 ../src/procdialogs.cpp:514
 msgid "Processes"
-msgstr "Процессы"
+msgstr "සැකසුම්"
 
 #: ../src/interface.cpp:732 ../src/procdialogs.cpp:629
 msgid "Resources"
-msgstr "Ресурсы"
+msgstr "සම්පත්"
 
 #. xgettext: rate, 10MiB/s
 #: ../src/load-graph.cpp:441 ../src/load-graph.cpp:452
 #, c-format
 msgid "%s/s"
-msgstr "%s/с"
+msgstr "%s/s"
 
 #: ../src/lsof.cpp:355
 msgid "Process"
-msgstr "Процесс"
+msgstr "සැකසුම"
 
 #: ../src/lsof.cpp:367
 msgid "PID"
@@ -572,106 +552,106 @@ msgstr "PID"
 
 #: ../src/lsof.cpp:377 ../src/memmaps.cpp:478
 msgid "Filename"
-msgstr "Имя файла"
+msgstr "ගොනු නම"
 
 #. gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 #: ../src/lsof.cpp:394
 msgid "Search for Open Files"
-msgstr "Поиск открытых файлов"
+msgstr "විවෘත කළ ගොනු සඳහා සොයන්න"
 
 #: ../src/lsof.cpp:422
 msgid "_Name contains:"
-msgstr "_Имя содержит:"
+msgstr "නම අඩංගු (_N):"
 
 #: ../src/lsof.cpp:438
 msgid "Case insensitive matching"
-msgstr "Учитывать регистр"
+msgstr ""
 
 #: ../src/lsof.cpp:446
 msgid "S_earch results:"
-msgstr "_Результаты поиска:"
+msgstr "සෙවීම් ප්‍රතිඵළ (_e):"
 
 #. xgettext: virtual memory start
 #: ../src/memmaps.cpp:480
 msgid "VM Start"
-msgstr "Начало ВП"
+msgstr "VM ආරම්භය"
 
 #. xgettext: virtual memory end
 #: ../src/memmaps.cpp:482
 msgid "VM End"
-msgstr "Окончание ВП"
+msgstr "VM අවසානය"
 
 #. xgettext: virtual memory syze
 #: ../src/memmaps.cpp:484
 msgid "VM Size"
-msgstr "Размер ВП"
+msgstr "VM ප්‍රමාණය"
 
 #: ../src/memmaps.cpp:485
 msgid "Flags"
-msgstr "Флаги"
+msgstr "සංකේත"
 
 #. xgettext: virtual memory offset
 #: ../src/memmaps.cpp:487
 msgid "VM Offset"
-msgstr "Смещение ВП"
+msgstr ""
 
 #. xgettext: memory that has not been modified since
 #. it has been allocated
 #: ../src/memmaps.cpp:490
 msgid "Private clean"
-msgstr "Неразделяемая, чистая"
+msgstr ""
 
 #. xgettext: memory that has been modified since it
 #. has been allocated
 #: ../src/memmaps.cpp:493
 msgid "Private dirty"
-msgstr "Неразделяемая, использованная"
+msgstr ""
 
 #. xgettext: shared memory that has not been modified
 #. since it has been allocated
 #: ../src/memmaps.cpp:496
 msgid "Shared clean"
-msgstr "Разделяемая, чистая"
+msgstr ""
 
 #. xgettext: shared memory that has been modified
 #. since it has been allocated
 #: ../src/memmaps.cpp:499
 msgid "Shared dirty"
-msgstr "Разделяемая, использованная"
+msgstr ""
 
 #: ../src/memmaps.cpp:501
 msgid "Inode"
-msgstr "Inode"
+msgstr ""
 
 #. gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 #: ../src/memmaps.cpp:610
 msgid "Memory Maps"
-msgstr "Карты памяти"
+msgstr ""
 
 #: ../src/memmaps.cpp:629
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
-msgstr "_Карты памяти для процесса «%s» (PID %u):"
+msgstr ""
 
 #: ../src/openfiles.cpp:33
 msgid "file"
-msgstr "файл"
+msgstr "ගොනුව"
 
 #: ../src/openfiles.cpp:35
 msgid "pipe"
-msgstr "канал"
+msgstr "| ලකුණ"
 
 #: ../src/openfiles.cpp:37
 msgid "network connection"
-msgstr "сетевое соединение"
+msgstr ""
 
 #: ../src/openfiles.cpp:39
 msgid "local socket"
-msgstr "локальный сокет"
+msgstr ""
 
 #: ../src/openfiles.cpp:41
 msgid "unknown type"
-msgstr "неизвестный тип"
+msgstr "නොදන්නා වර්‍ගය"
 
 #. Translators: "FD" here means "File Descriptor". Please use
 #. a very short translation if possible, and at most
@@ -682,16 +662,16 @@ msgstr "FD"
 
 #: ../src/openfiles.cpp:236
 msgid "Object"
-msgstr "Объект"
+msgstr "වස්තුව"
 
 #: ../src/openfiles.cpp:320
 msgid "Open Files"
-msgstr "Открытые файлы"
+msgstr "ගොනු විවෘත කරන්න"
 
 #: ../src/openfiles.cpp:342
 #, c-format
 msgid "_Files opened by process \"%s\" (PID %u):"
-msgstr "Файлы, открытые процессом «%s» (PID %u):"
+msgstr ""
 
 #: ../src/procactions.cpp:75
 #, c-format
@@ -699,8 +679,6 @@ msgid ""
 "Cannot change the priority of process with pid %d to %d.\n"
 "%s"
 msgstr ""
-"Не удаётся изменить приоритет процесса с PID %d на %d.\n"
-"%s"
 
 #: ../src/procactions.cpp:155
 #, c-format
@@ -708,13 +686,11 @@ msgid ""
 "Cannot kill process with pid %d with signal %d.\n"
 "%s"
 msgstr ""
-"Не удаётся завершить процесс с PID %d при помощи сигнала %d.\n"
-"%s"
 
 #. xgettext: primary alert message
 #: ../src/procdialogs.cpp:70
 msgid "Kill the selected process?"
-msgstr "Завершить выбранный процесс?"
+msgstr ""
 
 #. xgettext: secondary alert message
 #: ../src/procdialogs.cpp:72
@@ -722,13 +698,11 @@ msgid ""
 "Killing a process may destroy data, break the session or introduce a "
 "security risk. Only unresponding processes should be killed."
 msgstr ""
-"Снимая процесс, можно уничтожить данные, прервать рабочий сеанс или создать "
-"угрозу безопасности. Снимать нужно только те процессы, которые не отвечают."
 
 #. xgettext: primary alert message
 #: ../src/procdialogs.cpp:79
 msgid "End the selected process?"
-msgstr "Завершить выбранный процесс?"
+msgstr ""
 
 #. xgettext: secondary alert message
 #: ../src/procdialogs.cpp:81
@@ -736,159 +710,154 @@ msgid ""
 "Ending a process may destroy data, break the session or introduce a security "
 "risk. Only unresponding processes should be ended."
 msgstr ""
-"Завершая процесс, можно уничтожить данные, прервать рабочий сеанс или "
-"создать угрозу безопасности. Завершать нужно только те процессы, которые не "
-"отвечают."
 
 #: ../src/procdialogs.cpp:84
 msgid "_End Process"
-msgstr "Завер_шить процесс"
+msgstr ""
 
 #: ../src/procdialogs.cpp:113
 msgid "(Very High Priority)"
-msgstr "(Очень высокий приоритет)"
+msgstr "(ඉතා ඉහළ ප්‍රමුඛත්වය)"
 
 #: ../src/procdialogs.cpp:115
 msgid "(High Priority)"
-msgstr "(Высокий приоритет)"
+msgstr "(ඉහළ ප්‍රමුඛත්වය)"
 
 #: ../src/procdialogs.cpp:117
 msgid "(Normal Priority)"
-msgstr "(Нормальный приоритет)"
+msgstr "(සාමාන්‍ය ප්‍රමුඛත්වය)"
 
 #: ../src/procdialogs.cpp:119
 msgid "(Low Priority)"
-msgstr "(Низкий приоритет)"
+msgstr "(අඩු ප්‍රමුඛත්වය)"
 
 #: ../src/procdialogs.cpp:121
 msgid "(Very Low Priority)"
-msgstr "(Очень низкий приоритет)"
+msgstr "(ඉතා අඩු ප්‍රමුඛත්වය)"
 
 #: ../src/procdialogs.cpp:173
 msgid "Change Priority"
-msgstr "Изменить приоритет"
+msgstr "ප්‍රමුඛත්වය වෙනස් කරන්න"
 
 #: ../src/procdialogs.cpp:194
 msgid "Change _Priority"
-msgstr "_Изменить приоритет"
+msgstr "ප්‍රමුඛත්වය වෙනස් කරන්න (_P)"
 
 #: ../src/procdialogs.cpp:215
 msgid "_Nice value:"
-msgstr "_Уровень приоритета:"
+msgstr ""
 
 #: ../src/procdialogs.cpp:231
 msgid "Note:"
-msgstr "Примечание:"
+msgstr "සටහන:"
 
 #: ../src/procdialogs.cpp:232
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
 msgstr ""
-"Приоритет процесса задаётся уровнем nice. Меньшее значение nice "
-"соответствует более высокому приоритету."
 
 #: ../src/procdialogs.cpp:392
 msgid "Process i_nformation shown in list:"
-msgstr "Информация о процессах, отображаемая в списке:"
+msgstr ""
 
 #: ../src/procdialogs.cpp:444
 msgid "Icon"
-msgstr "Значок"
+msgstr "අයිකනය"
 
 #: ../src/procdialogs.cpp:491
 msgid "System Monitor Preferences"
-msgstr "Параметры системного монитора"
+msgstr "පද්ධති නිරීක්‍ෂකයේ අභිප්‍රේත"
 
 #: ../src/procdialogs.cpp:521
 msgid "Behavior"
-msgstr "Поведение"
+msgstr "හැසිරිම"
 
 #: ../src/procdialogs.cpp:540 ../src/procdialogs.cpp:655
 #: ../src/procdialogs.cpp:741
 msgid "_Update interval in seconds:"
-msgstr "_Интервал обновления в секундах:"
+msgstr ""
 
 #: ../src/procdialogs.cpp:565
 msgid "Enable _smooth refresh"
-msgstr "Включить _плавное обновление"
+msgstr ""
 
 #: ../src/procdialogs.cpp:579
 msgid "Alert before ending or _killing processes"
-msgstr "Предупреждать перед _завершением или снятием процессов"
+msgstr ""
 
 #: ../src/procdialogs.cpp:593
 msgid "Solaris mode"
-msgstr "Режим Solaris"
+msgstr ""
 
 #: ../src/procdialogs.cpp:611
 msgid "Information Fields"
-msgstr "Информационные поля"
+msgstr ""
 
 #: ../src/procdialogs.cpp:636
 msgid "Graphs"
-msgstr "Графики"
+msgstr "ප්‍රස්තාරය"
 
 #: ../src/procdialogs.cpp:677
 msgid "_Background color:"
-msgstr "_Цвет фона:"
+msgstr "පසුතල  වර්‍ණය: (_B)"
 
 #: ../src/procdialogs.cpp:696
 msgid "_Grid color:"
-msgstr "Ц_вет разметки:"
+msgstr ""
 
 #: ../src/procdialogs.cpp:761
 msgid "Show _all filesystems"
-msgstr "Отображать _все файловые системы"
+msgstr "සියළු ගොනු පද්ධති පෙන්වන්න (_a)"
 
 #: ../src/proctable.cpp:242
 msgid "Process Name"
-msgstr "Имя процесса"
+msgstr "සැකසුම් නම"
 
 #: ../src/proctable.cpp:243
 msgid "User"
-msgstr "Пользователь"
+msgstr "පරිශිලක"
 
 #: ../src/proctable.cpp:244
 msgid "Status"
-msgstr "Состояние"
+msgstr "තත්වය"
 
 #: ../src/proctable.cpp:245
 msgid "Virtual Memory"
-msgstr "Виртуальная память"
+msgstr "අථ්‍ය මතකය"
 
 #: ../src/proctable.cpp:246
 msgid "Resident Memory"
-msgstr "Резидентная память"
+msgstr "නේවාසික මතකය"
 
 #: ../src/proctable.cpp:247
 msgid "Writable Memory"
-msgstr "Записываемая память"
+msgstr "ලිවිය හැකි මතකය"
 
 #: ../src/proctable.cpp:248
 msgid "Shared Memory"
-msgstr "Разделяемая память"
+msgstr "හවුල්  මතකය"
 
 #: ../src/proctable.cpp:249
 msgid "X Server Memory"
-msgstr "Память X-сервера"
+msgstr "X සේවාදායක මතකය"
 
 #: ../src/proctable.cpp:250
 #, no-c-format
 msgid "% CPU"
-msgstr "% ЦП"
+msgstr "% CPU"
 
 #: ../src/proctable.cpp:251
 msgid "CPU Time"
-msgstr "Время ЦП"
+msgstr "CPU කාලය"
 
 #: ../src/proctable.cpp:252
 msgid "Started"
-msgstr "Запущено"
+msgstr ""
 
 #: ../src/proctable.cpp:253
 msgid "Nice"
-msgstr "Приоритет"
+msgstr ""
 
 #: ../src/proctable.cpp:254
 msgid "ID"
@@ -896,35 +865,35 @@ msgstr "ID"
 
 #: ../src/proctable.cpp:255
 msgid "Security Context"
-msgstr "Контекст безопасности"
+msgstr ""
 
 #: ../src/proctable.cpp:256
 msgid "Command Line"
-msgstr "Командная строка"
+msgstr "රේඛිය විධාන"
 
 #: ../src/proctable.cpp:257
 msgid "Memory"
-msgstr "Память"
+msgstr "මතකය"
 
 #: ../src/proctable.cpp:454
 msgid "Running"
-msgstr "Работает"
+msgstr "ක්‍රියාත්මක වෙමින්"
 
 #: ../src/proctable.cpp:458
 msgid "Stopped"
-msgstr "Остановлен"
+msgstr "නවත්වන ලදි"
 
 #: ../src/proctable.cpp:462
 msgid "Zombie"
-msgstr "Зомби"
+msgstr ""
 
 #: ../src/proctable.cpp:466
 msgid "Uninterruptible"
-msgstr "Непрерываемый"
+msgstr ""
 
 #: ../src/proctable.cpp:470
 msgid "Sleeping"
-msgstr "Ожидает"
+msgstr ""
 
 #. xgettext: weeks, days
 #: ../src/proctable.cpp:597
@@ -953,95 +922,74 @@ msgstr "%u:%02u.%02u"
 #: ../src/proctable.cpp:1034
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
-msgstr "Средняя загрузка за последние 1, 5, 15 минут: %0.2f, %0.2f, %0.2f"
+msgstr ""
 
 #: ../src/sysinfo.cpp:92
 msgid "Unknown CPU model"
-msgstr "Неизвестная модель ЦП"
+msgstr ""
 
 #. xgettext: Release 2.6.19
 #: ../src/sysinfo.cpp:401
 #, c-format
 msgid "Release %s"
-msgstr "Выпуск %s"
+msgstr "%s නිකුතුව"
 
 #: ../src/sysinfo.cpp:408
 #, c-format
 msgid "Kernel %s"
-msgstr "Ядро %s"
+msgstr "%s න්‍යෂ්ඨිය"
 
 #: ../src/sysinfo.cpp:416
 #, c-format
 msgid "GNOME %s"
-msgstr "GNOME %s"
+msgstr "ග්නෝම් %s"
 
 #. hardware section
 #: ../src/sysinfo.cpp:425
 msgid "<b>Hardware</b>"
-msgstr "<b>Оборудование</b>"
+msgstr "<b>දෘඩාංග</b>"
 
 #: ../src/sysinfo.cpp:446
 msgid "Memory:"
-msgstr "Память:"
+msgstr "මතක:"
 
 #: ../src/sysinfo.cpp:466
 #, c-format
 msgid "Processor %d:"
-msgstr "Процессор %d:"
+msgstr "%d සැකසුම:"
 
 #: ../src/sysinfo.cpp:471
 msgid "Processor:"
-msgstr "Процесссор:"
+msgstr "සැකසුම:"
 
 #. disk space section
 #: ../src/sysinfo.cpp:491
 msgid "<b>System Status</b>"
-msgstr "<b>Состояние системы</b>"
+msgstr "<b>පද්ධති තත්වය</b>"
 
 #: ../src/sysinfo.cpp:512
 msgid "Available disk space:"
-msgstr "Доступное дисковое пространство:"
+msgstr "භාවිතයට ඇති තැටි ඉඩ:"
 
 #: ../src/util.cpp:77
 #, c-format
 msgid "%u byte"
 msgid_plural "%u bytes"
-msgstr[0] "%u байт"
-msgstr[1] "%u байта"
-msgstr[2] "%u байт"
+msgstr[0] "බයිට් %u"
+msgstr[1] "බයිට් %u"
 
 #: ../src/util.cpp:84
 #, c-format
 msgid "%.1f KiB"
-msgstr "%.1f КиБ"
+msgstr "%.1f KiB"
 
 #: ../src/util.cpp:87
 #, c-format
 msgid "%.1f MiB"
-msgstr "%.1f МиБ"
+msgstr "%.1f MiB"
 
 #: ../src/util.cpp:90
 #, c-format
 msgid "%.1f GiB"
-msgstr "%.1f ГиБ"
+msgstr "%.1f GiB"
 
-#~ msgid "Column zero saved width"
-#~ msgstr "Сохранённая ширина нулевого столбца"
-
-#~ msgid "Default graph net out color"
-#~ msgstr "Цвет графика передачи по сети"
-
-#~ msgid "Show column zero on startup"
-#~ msgstr "Показывать нулевой столбец при запуске"
-
-#~ msgid "Unknown distribution"
-#~ msgstr "Неизвестный дистрибутив"
-
-#~ msgid "Unknown release"
-#~ msgstr "Неизвестный выпуск"
-
-#~ msgid "Unknown version"
-#~ msgstr "Неизвестная версия"
-
-#~ msgid "Release %s (%s)"
-#~ msgstr "Выпуск %s (%s)"
