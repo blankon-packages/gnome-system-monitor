@@ -119,11 +119,12 @@ class ProcInfo
 	gchar		*user; /* allocated with g_string_chunk, don't free it ! */
 	gchar		*arguments;
 
-	gchar		*status; /* shared, don't free it ! */
+	guint		status;
 	gchar		*security_context;
 
 	time_t		start_time;
-	guint64		cpu_time_last;
+	// raw proctime.rtime value
+	guint64		cpu_time;
 
 	// all these members are filled with libgtop which uses
 	// guint64 (to have fixed size data) but we don't need more

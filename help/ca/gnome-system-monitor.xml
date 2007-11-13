@@ -713,11 +713,11 @@
           <para>Seleccioneu el procés que voleu terminar.</para>
         </listitem>
         <listitem>
-          <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Termina el procés</guimenuitem></menuchoice>.</para>
+          <para>Seleccioneu <menuchoice><guimenu>Edita</guimenu><guimenuitem>Mata el procés</guimenuitem></menuchoice>.</para>
           <para>Per defecte, es mostrarà un avís de confirmació. Per a més informació de com mostrar o ocultar l'avís de confirmació, vegeu <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
         </listitem>
         <listitem>
-          <para>Cliqueu en el botó <guibutton>Termina el procés</guibutton> per a confirmar que voleu terminar el procés. El <application>monitor del sistema</application> forçarà que el procés finalitzi immediatament.</para>
+          <para>Cliqueu en el botó <guibutton>Mata el procés</guibutton> per a confirmar que voleu terminar el procés. El <application>monitor del sistema</application> forçarà que el procés finalitzi immediatament.</para>
         </listitem>
       </orderedlist>
       <para>Generalment terminareu un procés només si no podeu finalitzar el procés normalment com s'explica a <xref linkend="gnome-system-monitor-end-process"/>.</para>
@@ -932,7 +932,7 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Mostra un diàleg d'advertiment quan finalitzeu o termineu processos</guilabel>
+                    <guilabel>Mostra un diàleg d'advertiment quan finalitzeu o mateu processos</guilabel>
                   </para>
                   <para>Seleccioneu aquesta opció per a mostrar un avís de confirmació quan finalitzeu o termineu un procés.</para>
                 </listitem>

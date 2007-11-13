@@ -29,7 +29,7 @@
       <year>2002</year> 
       <year>2004</year> 
       <holder>Bill Day</holder> 
-    </copyright><copyright><year>2007 - ubuntu-l10n-oci@lists.ubuntu.com</year><holder>La còla occitana de revirada d'Ubuntu</holder></copyright> 
+    </copyright> 
 
 <!-- translators: uncomment this:
   <copyright>
@@ -1501,7 +1501,7 @@
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term><guilabel>Periferiques</guilabel></term>
+            <term><guilabel>Periferics</guilabel></term>
             <listitem>
               <itemizedlist>
                 <listitem>
