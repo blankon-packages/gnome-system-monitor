@@ -145,12 +145,61 @@
  <!-- ============= Introduction ============================== -->
   <sect1 id="gnome-system-monitor-intro">
     <title>Introducción</title>
-    <para>La aplicación <application>Monitor del sistema</application> le permite monitorizar los procesos del sistema y el uso de los recursos del sistema. También puede usar el <application>Monitor del sistema</application> para modificar el comportamiento de su sistema.</para>
-    <para>La ventana del <application>Monitor del sistema</application> contiene tres secciones en solapas:</para>
+    <para>La aplicación <application>Monitor del sistema</application> le permite mostrar información básica del sistema y monitorizar los procesos del sistema, el uso de los recursos del sistema y de los sistemas de archivos. También puede usar el <application>Monitor del sistema</application> para modificar el comportamiento de su sistema.</para>
+    <para>La ventana del <application>Monitor del sistema</application> contiene cuatro secciones en solapas:</para>
     <variablelist>
       <varlistentry>
         <term>
-          <guilabel>Lista de procesos</guilabel>
+          <guilabel>Sistema</guilabel>
+        </term>
+        <listitem>
+          <para>Muestra variada información básica acerca del hardware y software del equipo.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Distribución</term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Versión de la distribución</para>
+                  </listitem>
+                  <listitem>
+                    <para>Versión del núcleo Linux</para>
+                  </listitem>
+                  <listitem>
+                    <para>Versión de GNOME</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Hardware</term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Memoria instalada</para>
+                  </listitem>
+                  <listitem>
+                    <para>Procesadores y velocidades</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Estado del sistema</term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Espacio actualmente disponible en disco</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guilabel>Procesos</guilabel>
         </term>
         <listitem>
           <para>Muestra los procesos activos y cómo están relacionados los procesos entre ellos. Proporciona información detallada acerca de procesos individuales y le permite controlar los procesos activos.</para>
@@ -158,7 +207,7 @@
       </varlistentry>
       <varlistentry>
         <term>
-          <guilabel>Monitor de recursos</guilabel>
+          <guilabel>Recursos</guilabel>
         </term>
         <listitem>
           <para>Muestra el uso actual de los siguientes recursos del sistema:</para>
@@ -170,9 +219,17 @@
               <para>Memoria y espacio de intercambio</para>
             </listitem>
             <listitem>
-              <para>Espacio de disco en cada dispositivo</para>
+              <para>Uso de la red</para>
             </listitem>
           </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guilabel>Sistemas de archivos</guilabel>
+        </term>
+        <listitem>
+          <para>Lista todos los sistemas de archivos montados junto con información básica acerca de cada uno.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -188,9 +245,9 @@
       <para>Puede iniciar el <application>Monitor del sistema</application> de las siguientes formas:</para>
       <variablelist>
         <varlistentry>
-          <term>Menú <guimenu>Aplicaciones</guimenu></term>
+          <term>Menú <guimenu>Sistema</guimenu></term>
           <listitem>
-            <para>Elija <menuchoice><guimenu>Herramientas del sistema</guimenu><guimenuitem>Monitor del sistema</guimenuitem></menuchoice>.</para>
+            <para>Elija <menuchoice><guimenu>Administración</guimenu><guimenuitem>Monitor del sistema</guimenuitem></menuchoice>.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -232,18 +289,27 @@
             <itemizedlist>
               <listitem>
                 <para>
-                  <guilabel>Lista de procesos</guilabel>
+                  <guilabel>Sistema</guilabel>
                 </para>
-                <para>Contiene una caja de texto <guilabel>Buscar</guilabel>, una lista desplegable <guilabel>Ver</guilabel>, una lista de procesos organizada como una tabla, un botón <guilabel>Más información</guilabel> y un botón <guilabel>Finalizar proceso</guilabel>.</para>
-                <note>
-                  <para>No confunda la lista desplegable <guilabel>Ver</guilabel> en la sección <guilabel>Lista de procesos</guilabel> con el menú <guilabel>Ver</guilabel> en la barra de menú.</para>
-                </note>
+                <para>Contiene una lista de propiedades básicas del sistema, tales como las versiones del software del sistema y las especificaciones del hardware y su estado.</para>
               </listitem>
               <listitem>
                 <para>
-                  <guilabel>Monitor de recursos</guilabel>
+                  <guilabel>Procesos</guilabel>
                 </para>
-                <para>Contiene una gráfica con el <guilabel>Histórico de la CPU</guilabel>, una gráfica con <guilabel>Histórico de memoria e intercambio</guilabel> y una lista de los <guilabel>Dispositivos</guilabel> organizada como una tabla.</para>
+                <para>Contiene una lista de procesos organizada como una tabla, una lista de la carga media de los últimos minutos y un botón «Finalizar proceso».</para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Recursos</guilabel>
+                </para>
+                <para>Contiene una gráfica con el <guilabel>Histórico de la CPU</guilabel>, una gráfica con el <guilabel>Histórico de memoria e intercambio</guilabel> y una gráfica del <guilabel>Histórico de la red</guilabel>.</para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Sistemas de archivos</guilabel>
+                </para>
+                <para>Contiene una tabla de los sistemas de archivos actualmente montados.</para>
               </listitem>
             </itemizedlist>
           </listitem>
@@ -264,23 +330,26 @@
 
   <sect1 id="gnome-system-monitor-usage">
     <title>Uso</title>
-                                                                                
+
+    <sect2 id="gnome-system-monitor-display-basic-info">
+      <title>Mostrar la información básica del sistema</title>
+      <para>Para mostrar la información básica del sistema, seleccione la solapa <guilabel>Sistema</guilabel>.</para>
+      <para>En la solapa <guilabel>Sistema</guilabel>, la información se organiza en tres grupos,</para>
+    </sect2>
+
     <sect2 id="gnome-system-monitor-display-processlist">
-      <title>Para mostrar la lista de procesos</title>
-      <para>Para mostrar la lista de procesos, seleccione la solapa <guilabel>Procesos</guilabel>. Cuando inicia el <application>Monitor del sistema</application> se muestra la solapa <guilabel>Procesos</guilabel> de forma predeterminada.</para>
-      <para>En la solapa <guilabel>Procesos</guilabel>, los procesos están organizados en una tabla. Las filas de la tabla muestran información acerca de los procesos. Las columnas representan campos de información para los procesos, tales como el nombre y el usuario propietario del proceso, la cantidad de memoria que usa actualmente el proceso y demás. De izquierda a derecha y de forma predeterminada, la solapa de <guilabel>Procesos</guilabel> muestra las siguientes columnas:</para>
+      <title>Mostrar la lista de procesos</title>
+      <para>Para mostrar la lista de procesos, seleccione la solapa <guilabel>Procesos</guilabel>.</para>
+      <para>En la solapa <guilabel>Procesos</guilabel> los procesos están organizados en una tabla. Las filas de la tabla muestran información acerca de los procesos. Las columnas representan campos de información para los procesos, tales como el nombre del usuario propietario del proceso, la cantidad de memoria que usa actualmente el proceso y demás. De izquierda a derecha y de forma predeterminada, la solapa de <guilabel>Procesos</guilabel> muestra las siguientes columnas:</para>
       <itemizedlist>
           <listitem>
             <para>Nombre del proceso</para>
           </listitem>
           <listitem>
-            <para>Usuario</para>
+            <para>Estado</para>
           </listitem>
           <listitem>
-            <para>Memoria</para>
-          </listitem>
-          <listitem>
-            <para>Memoria del servidor X</para>
+            <para>%CPU</para>
           </listitem>
           <listitem>
             <para>Prioridad</para>
@@ -288,13 +357,15 @@
           <listitem>
             <para>ID</para>
           </listitem>
+          <listitem>
+            <para>Memoria</para>
+          </listitem>
       </itemizedlist>
         <para>Para obtener más información acerca de cómo cambiar las columnas mostradas en la lista de procesos, vea la <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
 
       <sect3 id="gnome-system-monitor-display-processlist-child">
-        <title>Procesos padre, procesos hijo e hilos</title>
-        <para>Un proceso padre es aquél que crea otro proceso. El proceso creado es un proceso hijo del proceso padre original. De forma predeterminada el <application>Monitor del sistema</application> muestra las dependencias de los procesos. Para obtener más información acerca de cómo cambiar el comportamiento predeterminado, vea la <xref linkend="gnome-system-monitor-modify-processlist-viewdeps"/>.</para>
-        <para>Un hilo es una parte de un proceso que puede ejecutarse independientemente de y de forma concurrente con otras partes del proceso. De forma predeterminada el <application>Monitor del sistema</application> no muestra los hilos. Para obtener más información acerca de cómo cambiar el comportamiento predeterminado, vea la <xref linkend="gnome-system-monitor-modify-processlist-viewthreads"/>.</para>
+        <title>Procesos padre y procesos hijo</title>
+        <para>Un proceso padre es aquél que crea otro proceso. El proceso creado es un proceso hijo del proceso padre original. De forma predeterminada el <application>Monitor del sistema</application> no muestra las dependencias de los procesos. Para obtener más información acerca de cómo cambiar el comportamiento predeterminado, vea la <xref linkend="gnome-system-monitor-modify-processlist-viewdeps"/>.</para>
       </sect3>
 
       <sect3 id="gnome-system-monitor-display-processlist-priority">
@@ -318,7 +389,7 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-sort-processlist">
-      <title>Para ordenar la lista de procesos</title>
+      <title>Ordenar la lista de procesos</title>
       <para>Para ordenar la lista de procesos, realice los siguientes pasos:</para>
       <orderedlist>
         <listitem>
@@ -337,57 +408,57 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-modify-processlist">
-      <title>Para modificar el contenido de la lista de procesos</title>
+      <title>Modificar el contenido de la lista de procesos</title>
       <para>Puede modificar el contenido de la lista de procesos de varias formas.</para>
 
       <sect3 id="gnome-system-monitor-modify-processlist-all">
-        <title>Para mostrar todos los procesos</title>
+        <title>Mostrar todos los procesos</title>
         <para>Para mostrar todos los procesos en la lista de procesos, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
             <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
           </listitem>
           <listitem>
-            <para>Pulse en la lista desplegable <guilabel>Ver</guilabel> y después seleccione <guilabel>Todos los procesos</guilabel>.</para>
+            <para>Elija <guimenu>Ver</guimenu><guimenuitem>Todos los procesos</guimenuitem>.</para>
           </listitem>
         </orderedlist>
       </sect3>
 
       <sect3 id="gnome-system-monitor-modify-processlist-my">
-        <title>Para mostrar sólo los procesos del usuario actual</title>
+        <title>Mostrar sólo los procesos del usuario actual</title>
         <para>Para mostrar sólo los procesos del usuario actual, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
             <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
           </listitem>
           <listitem>
-            <para>Pulse en la lista desplegable <guilabel>Ver</guilabel> y después seleccione <guilabel>Mis procesos</guilabel>.</para>
+            <para>Elija <guimenu>Ver</guimenu><guimenuitem>Mis procesos</guimenuitem>.</para>
           </listitem>
         </orderedlist>
       </sect3>
 
       <sect3 id="gnome-system-monitor-modify-processlist-active">
-        <title>Para mostrar sólo los procesos activos</title>
+        <title>Mostrar sólo los procesos activos</title>
         <para>Para mostrar sólo los procesos activos en la lista de procesos, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
             <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
           </listitem>
           <listitem>
-            <para>Pulse en la lista desplegable <guilabel>Ver</guilabel> y después seleccione <guilabel>Procesos activos</guilabel>.</para>
+            <para>Elija <guimenu>Ver</guimenu><guimenuitem>Procesos activos</guimenuitem>.</para>
           </listitem>
         </orderedlist>
       </sect3>
 
       <sect3 id="gnome-system-monitor-modify-processlist-viewdeps">
-        <title>Para mostrar las dependencias de un proceso</title>
+        <title>Mostrar las dependencias de un proceso</title>
         <para>Para mostrar las dependencias de un proceso en la lista de procesos, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
             <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
           </listitem>
           <listitem>
-            <para>Ver <menuchoice><guimenu>Ver</guimenu><guimenuitem>Dependencias</guimenuitem></menuchoice>.</para>
+            <para>Elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Dependencias</guimenuitem></menuchoice>.</para>
           </listitem>
         </orderedlist>
         <para>Si el elemento del menú <guimenuitem>Dependencias</guimenuitem> está seleccionado, los procesos se listan como sigue:</para>
@@ -410,153 +481,10 @@
         </itemizedlist>
       </sect3>
 
-      <sect3 id="gnome-system-monitor-modify-processlist-viewthreads">
-        <title>Para mostrar hilos</title>
-        <para>Para mostrar hilos en la lista de procesos, realice los siguientes pasos:</para>
-        <orderedlist>
-          <listitem>
-            <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
-          </listitem>
-          <listitem>
-            <para>Elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Dependencias</guimenuitem></menuchoice>.</para>
-          </listitem>
-        </orderedlist>
-      </sect3>
-
-      <sect3 id="gnome-system-monitor-modify-hide-process">
-        <title>Para ocultar un proceso</title>
-        <para>Para ocultar un proceso, realice los siguientes pasos:</para>
-        <orderedlist>
-          <listitem>
-            <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
-          </listitem>
-          <listitem>
-            <para>Seleccione el proceso que quiere ocultar.</para>
-          </listitem>
-            <listitem>
-              <para>Elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Ocultar proceso</guimenuitem></menuchoice>.</para>
-              <para>De forma predeterminada se mostrará una alerta de confirmación. Para obtener más información acerca de cómo mostrar u ocultar la alerta de confirmación, vea la <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
-            </listitem>
-            <listitem>
-              <para>Pulse el botón <guibutton>Ocultar proceso</guibutton> para confirmar que quiere ocultar el proceso.</para>
-            </listitem>
-        </orderedlist>
-      </sect3>
-
-      <sect3 id="gnome-system-monitor-modify-processlist-hidden">
-        <title>Para volver a mostrar procesos ocultos</title>
-        <para>Para volver a mostrar procesos ocultos en la lista de procesos, realice los siguientes pasos:</para>
-        <orderedlist>
-          <listitem>
-            <para>Elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Procesos ocultos</guimenuitem></menuchoice>. Si actualmente no hay ningún proceso oculto, se mostrará una alerta informando. Si algún proceso está actualmente oculto, se mostrará el diálogo <guilabel>Procesos ocultos</guilabel>.</para>
-          </listitem>
-          <listitem>
-            <para>Seleccione el proceso que quiere volver a mostrar en la lista de procesos.</para>
-          </listitem>
-          <listitem>
-            <para>Pulse el botón <guibutton>Eliminar de la lista</guibutton>. Los procesos dejarán de estar ocultos y se mostrarán en la lista de procesos.</para>
-          </listitem>
-          <listitem>
-            <para>Pulse <guibutton>Cerrar</guibutton> para cerrar el diálogo <guilabel>Procesos ocultos</guilabel>.</para>
-          </listitem>
-        </orderedlist>
-      </sect3>
-
-    </sect2>
-
-    <sect2 id="gnome-system-monitor-find-process">
-      <title>Para buscar un proceso</title>
-      <para>Para buscar un proceso en la lista de procesos, realice los siguientes pasos:</para>
-      <orderedlist>
-        <listitem>
-          <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
-        </listitem>
-        <listitem>
-          <para>Escriba el nombre del proceso en la caja de texto <guilabel>Buscar</guilabel>. No se soportan comodines.</para>
-        </listitem>
-        <listitem>
-          <para>Pulse <keycap>Retorno</keycap>.</para>
-          <para>Si el proceso existe, el <application>Monitor del sistema</application> resalta el nombre del proceso en la lista de procesos. Pulse <keycap>Retorno</keycap> repetidamente para resaltar otras coincidencias del nombre del proceso en la lista de procesos.</para>
-          <para>Si el proceso no existe, el <application>Monitor del sistema</application> mostrará un diálogo de error.</para>
-        </listitem>
-      </orderedlist>
-    </sect2>
-
-    <sect2 id="gnome-system-monitor-show-info">
-      <title>Para mostrar u ocultar información adicional de los procesos</title>
-      <para>Para mostrar u ocultar información adicional de los procesos, realice los siguientes pasos:</para>
-      <orderedlist>
-        <listitem>
-          <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
-        </listitem>
-        <listitem>
-          <para>Seleccione el proceso en la lista de procesos:</para>
-        </listitem>
-        <listitem>
-          <para>Pulse el botón <guibutton>Más información</guibutton>.</para>
-        </listitem>
-      </orderedlist>
-      <para>El <application>Monitor del sistema</application> muestra la siguiente información adicional sobre el proceso:</para>
-      <variablelist>
-        <varlistentry>
-          <term><guilabel>Información del proceso</guilabel></term>
-          <listitem>
-            <itemizedlist>
-              <listitem>
-                <para>
-                  <guilabel>Comando</guilabel>
-                </para>
-                <para>El nombre del comando que inició el proceso.</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>Estado</guilabel>
-                </para>
-                <para>El estado actual del proceso: durmiendo o ejecutándose.</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>Prioridad</guilabel>
-                </para>
-                <para>La prioridad del proceso, y el valor de prioridad asociado.</para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </varlistentry>
-        <varlistentry>
-          <term><guilabel>Uso de memoria</guilabel></term>
-          <listitem>
-            <itemizedlist>
-              <listitem>
-                <para>
-                  <guilabel>Total</guilabel>
-                </para>
-                <para>La cantidad total de memoria que usa el proceso.</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>Memoria física</guilabel>
-                </para>
-                <para>La cantidad de memoria física que usa el proceso.</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>Compartida</guilabel>
-                </para>
-                <para>La cantidad de memoria compartida que usa el proceso.</para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </varlistentry>
-      </variablelist>
-      <para>Para ocultar la información adicional del proceso, pulse el botón <guibutton>Menos información</guibutton>.</para>
-      <tip>
-        <para>También puede pulsar dos veces con el ratón sobre el proceso de la lista de procesos, para mostrar u ocultar la información adicional del proceso.</para>
-      </tip>
     </sect2>
 
     <sect2 id="gnome-system-monitor-memory-map">
-      <title>Para mostrar el mapa de memoria para un proceso</title>
+      <title>Mostrar el mapa de memoria para un proceso</title>
       <para>Para mostrar mapas de memoria para procesos, realice los siguientes pasos:</para>
       <orderedlist>
         <listitem>
@@ -657,7 +585,7 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-change-priority">
-      <title>Para cambiar la prioridad de un proceso</title>
+      <title>Cambiar la prioridad de un proceso</title>
       <para>Para cambiar la prioridad de un proceso, realice los siguientes pasos:</para>
       <orderedlist>
         <listitem>
@@ -682,7 +610,7 @@
 
 
     <sect2 id="gnome-system-monitor-end-process">
-      <title>Para finalizar un proceso</title>
+      <title>Finalizar un proceso</title>
       <para>Para finalizar un proceso, realice los siguientes pasos:</para>
       <orderedlist>
         <listitem>
@@ -703,7 +631,7 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-terminate-process">
-      <title>Para terminar un proceso</title>
+      <title>Terminar un proceso</title>
       <para>Para terminar un proceso, realice los siguientes pasos:</para>
       <orderedlist>
         <listitem>
@@ -724,73 +652,93 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-cpu">
-      <title>Para monitorizar el uso de la CPU</title>
+      <title>Monitorizar el uso de la CPU</title>
       <para>Para monitorizar el uso de la CPU, seleccione la solapa <guilabel>Recursos</guilabel>.</para>
       <para>El <application>Monitor del sistema</application> muestra el uso histórico de la CPU de forma gráfica. Debajo de la gráfica, el <application>Monitor del sistema</application> también muestra el uso actual de la CPU en porcentaje.</para>
     </sect2>
 
 
     <sect2 id="gnome-system-monitor-memory">
-      <title>Para monitorizar el uso de la memoria e intercambio</title>
+      <title>Monitorizar el uso de la memoria e intercambio</title>
       <para>Para monitorizar el uso de memoria e intercambio, seleccione la solapa <guilabel>Recursos</guilabel>.</para>
       <para>El <application>Monitor del sistema</application> muestra el uso histórico de memoria e intercambio de forma gráfica. Debajo de la gráfica, el <application>Monitor del sistema</application> también muestra los siguientes valores numéricos:</para>
       <itemizedlist>
         <listitem>
-          <para>Memoria usada</para>
+          <para>Memoria de usuario del total de la memoria</para>
         </listitem>
         <listitem>
-          <para>Memoria total</para>
-        </listitem>
-        <listitem>
-          <para>Intercambio usado</para>
-        </listitem>
-        <listitem>
-          <para>Intercambio total</para>
+          <para>Memoria de intercambio usada del total de la memoria de intercambio</para>
         </listitem>
       </itemizedlist>
 
     </sect2>
+    
+    <sect2 id="gnome-system-monitor-network">
+      <title>Monitorizar la actividad de la red</title>
+      <para>Para monitorizar la actividad de red, seleccione la solapa <guilabel>Recursos</guilabel>.</para>
+      <para>El <application>Monitor del sistema</application> muestra el uso histórico de la redde forma gráfica. Debajo de la gráfica, el <application>Monitor del sistema</application> también muestra los siguientes valores numéricos:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Recibo de datos por segundo y total</para>
+        </listitem>
+        <listitem>
+          <para>Envío de datos por segundo y total</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
 
     <sect2 id="gnome-system-monitor-disk">
-      <title>Para monitorizar el uso del espacio del disco</title>
-      <para>Para monitorizar el uso del espacio del disco, seleccione la solapa <guilabel>Dispositivos</guilabel>.</para>
-      <para>El <application>Monitor del sistema</application> muestra el uso del espacio del disco en forma de tabla. De izquierda a derecha, la tabla <guilabel>Dispositivos</guilabel> muestra las siguientes columnas:</para>
+      <title>Monitorizar sistemas de archivos</title>
+      <para>Para monitorizar sistemas de archivos, seleccione la solapa <guilabel>Sistemas de archivos</guilabel>.</para>
+      <para>El <application>Monitor del sistema</application> muestra los sistemas de archivos montados en forma de tabla. De izquierda a derecha, la tabla muestra las siguientes columnas:</para>
       <variablelist>
         <varlistentry>
-          <term><guilabel>Nombre</guilabel></term>
+          <term>Dispositivo</term>
           <listitem>
-            <para>El nombre del dispositivo.</para>
+            <para>Ubicación del archivo de bloques</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Directorio</guilabel></term>
+          <term>Directorio</term>
           <listitem>
-            <para>La ubicación del dispositivo.</para>
+            <para>Punto de montaje (directorio al que acceder) del dispositivo</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Tipo</guilabel></term>
+          <term>Tipo</term>
           <listitem>
-            <para>El tipo de dispositivo.</para>
+            <para>Tipo de sistema de archivos</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Total</guilabel></term>
+          <term>Total</term>
           <listitem>
-            <para>El espacio total de disco disponible en el dispositivo.</para>
+            <para>Capacidad total</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Usada</guilabel></term>
+          <term>Libre</term>
           <listitem>
-            <para>El espacio total de disco actualmente usado en el dispositivo, expresado en bytes y como porcentaje.</para>
+            <para>Cantidad de espacio sin uso</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Disponible</term>
+          <listitem>
+            <para>Cantidad de espacio que se puede usar</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Usado</term>
+          <listitem>
+            <para>Cantidad de espacio usado (y porcentaje del total)</para>
           </listitem>
         </varlistentry>
       </variablelist>
     </sect2>
 
     <sect2 id="gnome-system-monitor-customize">
-      <title>Para personalizar la solapa de la sección Monitor de recursos</title>
+      <title>Personalizar la solapa de Recursos</title>
       <para>Puede personalizar las secciones de la solapa <guilabel>Recursos</guilabel> de las siguientes formas:</para>
       <itemizedlist>
         <listitem>
@@ -812,7 +760,7 @@
       </itemizedlist>
 
       <sect3 id="gnome-system-monitor-customize-background">
-        <title>Para cambiar el color del fondo de las gráficas</title>
+        <title>Cambiar el color del fondo de las gráficas</title>
         <para>Para cambiar el color del fondo de las gráficas del <application>Monitor del sistema</application>, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
@@ -837,7 +785,7 @@
       </sect3>
 
       <sect3 id="gnome-system-monitor-customize-grid">
-        <title>Para cambiar el color de la rejilla de las gráficas</title>
+        <title>Cambiar el color de la rejilla de las gráficas</title>
         <para>Para cambiar el color de la rejilla de las gráficas del <application>Monitor del sistema</application>, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
@@ -862,7 +810,7 @@
       </sect3>
 
       <sect3 id="gnome-system-monitor-customize-cpu">
-        <title>Para cambiar el color de la línea de la gráfica de CPU</title>
+        <title>Cambiar el color de la línea de la gráfica de CPU</title>
         <para>Para cambiar el color de la línea que representa el uso de la CPU en la gráfica <guilabel>Histórico de la CPU</guilabel>, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
@@ -881,7 +829,7 @@
       </sect3>
 
       <sect3 id="gnome-system-monitor-customize-mem">
-        <title>Para cambiar los colores de la línea de la gráfica de memoria e intercambio</title>
+        <title>Cambiar los colores de la línea de la gráfica de memoria e intercambio</title>
         <para>Para cambiar el color de las líneas que representan el uso de la memoria e intercambio en la gráfica, realice los siguientes pasos:</para>
         <orderedlist>
           <listitem>
@@ -916,7 +864,7 @@
     </itemizedlist>
 
     <sect2 id="gnome-system-monitor-prefs-proclist">
-      <title>Lista de procesos</title>
+      <title>Procesos</title>
         <variablelist>
           <varlistentry>
             <term>
@@ -932,15 +880,21 @@
                 </listitem>
                 <listitem>
                   <para>
+                    <guilabel>Activar refresco suave</guilabel>
+                  </para>
+                  <para>Seleccione esta opción para obtener un refresco suave.</para>
+                </listitem>
+                <listitem>
+                  <para>
                     <guilabel>Mostrar un diálogo de advertencia al finalizar o matar procesos</guilabel>
                   </para>
                   <para>Seleccione esta opción para mostrar una alerta de confirmación cuando finalice o termine un proceso.</para>
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Mostrar un diálogo de advertencia al ocultar procesos</guilabel>
+                    <guilabel>Modo Solaris</guilabel>
                   </para>
-                  <para>Seleccione esta opción para mostrar una confirmación de alerta cuando oculte un proceso.</para>
+                  <para>Seleccione esta opción para dividir el porcentaje de CPU de cada proceso  en la tabla de procesos por el número de CPUs.</para>
                 </listitem>
               </itemizedlist>
             </listitem>
@@ -960,12 +914,6 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Argumentos</guilabel>
-                  </para>
-                  <para>Seleccione esta opción para mostrar el nombre del comando, incluyendo los argumentos, que inició el proceso.</para>
-                </listitem>
-                <listitem>
-                  <para>
                     <guilabel>Usuario</guilabel>
                   </para>
                   <para>Seleccione esta opción para mostrar el nombre del usuario al que pertenece el proceso.</para>
@@ -978,13 +926,7 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Memoria</guilabel>
-                  </para>
-                  <para>Seleccione esta opción para mostrar la cantidad de memoria del sistema que actualmente está usando el proceso.</para>
-                </listitem>
-                <listitem>
-                  <para>
-                    <guilabel>Tamaño MV</guilabel>
+                    <guilabel>Memoria virtual</guilabel>
                   </para>
                   <para>Seleccione esta opción para mostrar la cantidad de memoria virtual que está asignada al proceso.</para>
                 </listitem>
@@ -996,15 +938,15 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Memoria compartida</guilabel>
+                    <guilabel>Memoria escribible</guilabel>
                   </para>
-                  <para>Seleccione esta opción para mostrar la cantidad de memoria compartida que está asignada al proceso. Otros procesos pueden acceder a la memoria compartida.</para>
+                  <para>Seleccione esta opción para mostrar la cantidad de memoria que el proceso puede escribir.</para>
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Memoria física</guilabel>
+                    <guilabel>Memoria compartida</guilabel>
                   </para>
-                  <para>Seleccione esta opción para mostrar la cantidad de memoria física, excluyendo las páginas de intercambio, que está usando el proceso.</para>
+                  <para>Seleccione esta opción para mostrar la cantidad de memoria compartida que está asignada al proceso. Otros procesos pueden acceder a la memoria compartida.</para>
                 </listitem>
                 <listitem>
                   <para>
@@ -1020,6 +962,18 @@
                 </listitem>
                 <listitem>
                   <para>
+                    <guilabel>Tiempo de CPU</guilabel>
+                  </para>
+                  <para>Seleccione esta opción para mostrar la cantidad de tiempo de CPU que ha usado el proceso.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Iniciado</guilabel>
+                  </para>
+                  <para>Seleccione esta opción para mostrar cuando comenzó a ejecutarse el proceso.</para>
+                </listitem>
+                <listitem>
+                  <para>
                     <guilabel>Prioridad</guilabel>
                   </para>
                   <para>Seleccione esta opción para mostrar el valor de prioridad del proceso. El valor de prioridad establece la prioridad del proceso: a menor valor de prioridad, mayor prioridad</para>
@@ -1030,6 +984,24 @@
                   </para>
                   <para>Seleccione esta opción para mostrar el identificador del proceso, también conocido como pid. El pid es un número que identifica de forma unívoca el proceso. Puede usar el pid para manipular el proceso desde la línea de comandos.</para>
                 </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Memoria</guilabel>
+                  </para>
+                  <para>Seleccione esta opción para mostrar la cantidad de memoria del sistema que actualmente está usando el proceso.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Contexto de seguridad</guilabel>
+                  </para>
+                  <para>Seleccione esta opción para mostrar el contexto de seguridad en el que se está ejecutando el proceso.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Línea de comandos</guilabel>
+                  </para>
+                  <para>Seleccione esta opción para mostrar la línea de comandos que se usó para iniciar el proceso, incluyendo los argumentos.</para>
+                </listitem>
               </itemizedlist>
             </listitem>
           </varlistentry>
@@ -1037,7 +1009,7 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-prefs-resmon">
-      <title>Monitor de recursos</title>
+      <title>Recursos</title>
         <variablelist>
           <varlistentry>
             <term><guilabel>Gráficas</guilabel></term>
@@ -1065,14 +1037,20 @@
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term><guilabel>Dispositivos</guilabel></term>
+            <term><guilabel>Sistemas de archivos</guilabel></term>
             <listitem>
               <itemizedlist>
                 <listitem>
                   <para>
                     <guilabel>Intervalo de actualización en segundos</guilabel>
                   </para>
-                  <para>Use este marcador incrementable para especificar con qué frecuencia quiere actualizar la tabla de <guilabel>Dispositivos</guilabel>.</para>
+                  <para>Use este marcador incrementable para especificar con qué frecuencia quiere actualizar la tabla de <guilabel>Sistemas de archivos</guilabel>.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Mostrar todos los sistemas de archivos</guilabel>
+                  </para>
+                  <para>Seleccione esta opción para mostrar todos los sistemas de archivos, incluyendo los temporales y del sistema.</para>
                 </listitem>
               </itemizedlist>
             </listitem>

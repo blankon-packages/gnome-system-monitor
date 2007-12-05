@@ -146,13 +146,70 @@
   <sect1 id="gnome-system-monitor-intro">
     <title>ਜਾਣ ਪਛਾਣ</title>
     <para>
-      The <application>System Monitor</application> application enables you to monitor system processes and usage of system resources. You can also use <application>System Monitor</application> to modify the behavior of your system.
+      The <application>System Monitor</application> application enables you to display basic system information and monitor system processes, usage of system resources, and file systems. You can also use <application>System Monitor</application> to modify the behavior of your system.
     </para>
-    <para><application>ਸਿਸਟਮ ਨਿਗਰਾਨ</application> ਝਰੋਖੇ ਵਿੱਚ ਦੋ ਟੈਬ ਭਾਗ ਹਨ:</para>
+    <para>
+      The <application>System Monitor</application> window contains four tabbed sections:
+    </para>
     <variablelist>
       <varlistentry>
         <term>
-          <guilabel>ਕਾਰਜ (ਪ੍ਰੋਸੈੱਸ) ਲਿਸਟ</guilabel>
+          <guilabel>System</guilabel>
+        </term>
+        <listitem>
+          <para>Displays various basic information about the computer's hardware and software.</para>
+          <variablelist>
+            <varlistentry>
+              <term>
+                Distribution
+              </term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Distribution version</para>
+                  </listitem>
+                  <listitem>
+                    <para>Linux Kernel version</para>
+                  </listitem>
+                  <listitem>
+                    <para>GNOME version</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                Hardware
+              </term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Installed memory</para>
+                  </listitem>
+                  <listitem>
+                    <para>Processors and speeds</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                System Status
+              </term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Currently available disk space</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guilabel>Processes</guilabel>
         </term>
         <listitem>
           <para>
@@ -162,7 +219,7 @@
       </varlistentry>
       <varlistentry>
         <term>
-          <guilabel>ਸਰੋਤ (ਰੀਸੋਰਸ) ਨਿਗਰਾਨ</guilabel>
+          <guilabel>Resources</guilabel>
         </term>
         <listitem>
           <para>ਅੱਗੇ ਦਿੱਤੇ ਸਿਸਟਮ ਸਰੋਤਾਂ ਦੀ ਮੌਕੇ ਦੀ ਵਰਤੋਂ ਵੇਖਾਉਦਾ ਹੈ:</para>
@@ -174,9 +231,21 @@
               <para>ਮੈਮੋਰੀ ਅਤੇ ਸਵੈਪ ਥਾਂ</para>
             </listitem>
             <listitem>
-              <para>ਹਰੇਕ ਜੰਤਰ ਉੱਤੇ ਡਿਸਕ ਥਾਂ</para>
+              <para>
+                Network usage
+              </para>
             </listitem>
           </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guilabel>File Systems</guilabel>
+        </term>
+        <listitem>
+          <para>
+            Lists all mounted filesystems along with basic information about each.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -192,9 +261,11 @@
       <para>ਹੇਠ ਦਿੱਤੇ ਢੰਗਾਂ ਨਾਲ <application>ਸਿਸਟਮ ਨਿਗਰਾਨ</application> ਸ਼ੁਰੂ ਕਰੋ:</para>
       <variablelist>
         <varlistentry>
-          <term><guimenu>ਕਾਰਜ</guimenu> ਮੇਨੂ</term>
+          <term><guimenu>System</guimenu> menu</term>
           <listitem>
-            <para><menuchoice><guimenu>ਸਿਸਟਮ ਸੰਦ</guimenu><guimenuitem>ਸਿਸਟਮ ਨਿਗਰਾਨ</guimenuitem></menuchoice> ਚੁਣੋ।</para>
+            <para>
+              Choose <menuchoice><guimenu>Administration</guimenu> <guimenuitem>System Monitor</guimenuitem></menuchoice>.
+            </para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -242,23 +313,34 @@
             <itemizedlist>
               <listitem>
                 <para>
-                  <guilabel>ਕਾਰਜ (ਪ੍ਰੋਸੈੱਸ) ਲਿਸਟ</guilabel>
+                  <guilabel>System</guilabel>
                 </para>
                 <para>
-                  Contains a <guilabel>Search</guilabel> text box, a <guilabel>View</guilabel> drop-down list, a list of processes organized as a table, a <guilabel>More Info</guilabel> button, and an <guilabel>End Process</guilabel> button.
+                  Contains a list of basic system properties, such as system software versions and hardware specifications and status.
                 </para>
-                <note>
-                  <para>
-                    Do not confuse the <guilabel>View</guilabel> drop-down list on the <guilabel>Process Listing</guilabel> tabbed section with the <guilabel>View</guilabel> menu in the menubar.
-                  </para>
-                </note>
               </listitem>
               <listitem>
                 <para>
-                  <guilabel>ਸਰੋਤ (ਰੀਸੋਰਸ) ਨਿਗਰਾਨ</guilabel>
+                  <guilabel>Processes</guilabel>
                 </para>
                 <para>
-                  Contains a <guilabel>CPU History</guilabel> graph, a <guilabel>Memory and Swap History</guilabel> graph, and a list of <guilabel>Devices</guilabel> organized as a table.
+                  Contains a list of processes organized as a table, a list of load averages over the past few minutes, and an "End Process" button.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Resources</guilabel>
+                </para>
+                <para>
+                  Contains a <guilabel>CPU History</guilabel> graph, a <guilabel>Memory and Swap History</guilabel> graph, and a <guilabel>Network History</guilabel> graph.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>File Systems</guilabel>
+                </para>
+                <para>
+                  Contains a table of currently mounted file systems.
                 </para>
               </listitem>
             </itemizedlist>
@@ -282,27 +364,34 @@
 
   <sect1 id="gnome-system-monitor-usage">
     <title>ਵਰਤੋਂ</title>
-                                                                                
+
+    <sect2 id="gnome-system-monitor-display-basic-info">
+      <title>To Display Basic System Information</title>
+      <para>
+        To display basic system information, select the <guilabel>System</guilabel> tab.
+      </para>
+      <para>
+        In the <guilabel>System</guilabel> tab, information is organized into three groups, 
+      </para>
+    </sect2>
+
     <sect2 id="gnome-system-monitor-display-processlist">
       <title>ਪ੍ਰੋਸੈੱਸ ਲਿਸਟ ਵੇਖਣ ਲਈ</title>
       <para>
-        To display the process list, select the <guilabel>Process Listing</guilabel> tab. The <guilabel>Process Listing</guilabel> tab is displayed by default when you start <application>System Monitor</application>.
+        To display the process list, select the <guilabel>Processes</guilabel> tab.
       </para>
       <para>
-        In the <guilabel>Process Listing</guilabel> tab, the processes are organized as a table. The rows of the table display information about the processes. The columns represent information fields for the processes, such as the name of the user who owns the process, the amount of memory currently being used by the process, and so on. From left to right, the <guilabel>Process Listing</guilabel> tab displays the following columns by default:
+        In the <guilabel>Processes</guilabel> tab, the processes are organized as a table. The rows of the table display information about the processes. The columns represent information fields for the processes, such as the name of the user who owns the process, the amount of memory currently being used by the process, and so on. From left to right, the <guilabel>Processes</guilabel> tab displays the following columns by default:
       </para>
       <itemizedlist>
           <listitem>
             <para>ਪ੍ਰੋਸੈੱਸ ਨਾਂ</para>
           </listitem>
           <listitem>
-            <para>ਉਪਭੋਗੀ</para>
+            <para>ਹਾਲਤ</para>
           </listitem>
           <listitem>
-            <para>ਮੈਮੋਰੀ</para>
-          </listitem>
-          <listitem>
-            <para>X ਸਰਵਰ ਮੈਮੋਰੀ</para>
+            <para>%CPU</para>
           </listitem>
           <listitem>
             <para>ਨਾਈਸ</para>
@@ -310,16 +399,16 @@
           <listitem>
             <para>ID</para>
           </listitem>
+          <listitem>
+            <para>ਮੈਮੋਰੀ</para>
+          </listitem>
       </itemizedlist>
         <para>ਪ੍ਰੋਸੈੱਸ ਲਿਸਟ 'ਚ ਕਾਲਮ ਵੇਖਣੇ ਕਿੰਝ ਬਦਲਣ ਹਨ, ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ <xref linkend="gnome-system-monitor-prefs-proclist"/> ਵੇਖੋ।</para>
 
       <sect3 id="gnome-system-monitor-display-processlist-child">
-        <title>ਮੁੱਢਲਾ (ਪੇਰੈੱਟ) ਪ੍ਰੋਸੈੱਸ, ਚਾਲਈਡ ਪ੍ਰੋਸੈੱਸ, ਅਤੇ ਥਰਿੱਡ</title>
+        <title>Parent Processes and Child Processes</title>
         <para>
-          A parent process is a process that spawns another process. The spawned process is a child process of the original parent process. By default, <application>System Monitor</application> shows process dependencies. For information about how to change the default display behavior, see <xref linkend="gnome-system-monitor-modify-processlist-viewdeps"/>.
-        </para>
-        <para>
-          A thread is a portion of a process that can run independently of and concurrently with other portions of the process. By default, <application>System Monitor</application> does not show threads. For information about how to change the default display behavior, see <xref linkend="gnome-system-monitor-modify-processlist-viewthreads"/>.
+          A parent process is a process that spawns another process. The spawned process is a child process of the original parent process. By default, <application>System Monitor</application> does not show process dependencies. For information about how to change the default display behavior, see <xref linkend="gnome-system-monitor-modify-processlist-viewdeps"/>.
         </para>
       </sect3>
 
@@ -361,7 +450,7 @@
       <orderedlist>
         <listitem>
           <para>
-            Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
           </para>
         </listitem>
         <listitem>
@@ -396,12 +485,12 @@
         <orderedlist>
           <listitem>
             <para>
-              Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
             </para>
           </listitem>
           <listitem>
             <para>
-              Click on the <guilabel>View</guilabel> drop-down list, then select <guilabel>All Processes</guilabel>.
+              Choose <guimenu>View</guimenu><guimenuitem>All Processes</guimenuitem>.
             </para>
           </listitem>
         </orderedlist>
@@ -415,12 +504,12 @@
         <orderedlist>
           <listitem>
             <para>
-              Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
             </para>
           </listitem>
           <listitem>
             <para>
-              Click on the <guilabel>View</guilabel> drop-down list, then select <guilabel>My Processes</guilabel>.
+              Choose <guimenu>View</guimenu><guimenuitem>My Processes</guimenuitem>.
             </para>
           </listitem>
         </orderedlist>
@@ -434,36 +523,36 @@
         <orderedlist>
           <listitem>
             <para>
-              Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
             </para>
           </listitem>
           <listitem>
             <para>
-              Click on the <guilabel>View</guilabel> drop-down list, then select <guilabel>Active Processes</guilabel>.
+              Choose <guimenu>View</guimenu><guimenuitem>Active Processes</guimenuitem>.
             </para>
           </listitem>
         </orderedlist>
       </sect3>
 
       <sect3 id="gnome-system-monitor-modify-processlist-viewdeps">
-        <title>ਪ੍ਰੋਸੈੱਸ ਨਿਰਭਰਤਾ ਵੇਖਣੀ</title>
+        <title>To Show Dependencies</title>
         <para>
           To show process dependencies in the process list, perform the following steps:
         </para>
         <orderedlist>
           <listitem>
             <para>
-              Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
             </para>
           </listitem>
           <listitem>
             <para>
-              Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Process Dependencies</guimenuitem></menuchoice>.
+              Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Dependencies</guimenuitem></menuchoice>.
             </para>
           </listitem>
         </orderedlist>
         <para>
-          If the <guimenuitem>Process Dependencies</guimenuitem> menu item is selected, the processes are listed as follows:
+          If the <guimenuitem>Dependencies</guimenuitem> menu item is selected, the processes are listed as follows:
         </para>
         <itemizedlist>
           <listitem>
@@ -478,7 +567,7 @@
           </listitem>
         </itemizedlist>
         <para>
-          If the <guimenuitem>Process Dependencies</guimenuitem> menu item is not selected: 
+          If the <guimenuitem>Dependencies</guimenuitem> menu item is not selected: 
         </para>
         <itemizedlist>
           <listitem>
@@ -494,207 +583,6 @@
         </itemizedlist>
       </sect3>
 
-      <sect3 id="gnome-system-monitor-modify-processlist-viewthreads">
-        <title>ਸਭ ਥਰਿੱਡ ਵੇਖਣੇ</title>
-        <para>
-          To show threads in the process list, perform the following steps:
-        </para>
-        <orderedlist>
-          <listitem>
-            <para>
-              Select the <guilabel>Process Listing</guilabel> tab to display the process list.
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Threads</guimenuitem></menuchoice>.
-            </para>
-          </listitem>
-        </orderedlist>
-      </sect3>
-
-      <sect3 id="gnome-system-monitor-modify-hide-process">
-        <title>ਇੱਕ ਪ੍ਰੋਸੈੱਸ ਓਹਲੇ ਕਰਨਾ</title>
-        <para>ਇੱਕ ਪ੍ਰੋਸੈੱਸ ਨੂੰ ਓਹਲੇ ਕਰਨ ਵਾਸਤੇ ਹੇਠ ਦਿੱਤੇ ਪਗ਼ ਹਨ:</para>
-        <orderedlist>
-          <listitem>
-            <para>
-              Select the <guilabel>Process Listing</guilabel> tab to display the process list.
-            </para>
-          </listitem>
-          <listitem>
-            <para>ਪ੍ਰੋਸੈੱਸ, ਜੋ ਤੁਸੀਂ ਓਹਲੇ ਕਰਨੇ ਚਾਹੁੰਦੇ ਹੋ, ਚੁਣੋ।</para>
-          </listitem>
-            <listitem>
-              <para>
-                Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Hide Process</guimenuitem></menuchoice>.
-              </para>
-              <para>
-                By default, a confirmation alert is displayed. For information about how to display or hide the confirmation alert, see <xref linkend="gnome-system-monitor-prefs-proclist"/>.
-              </para>
-            </listitem>
-            <listitem>
-              <para>
-                Click on the <guibutton>Hide Process</guibutton> button to confirm that you want to hide the process. 
-              </para>
-            </listitem>
-        </orderedlist>
-      </sect3>
-
-      <sect3 id="gnome-system-monitor-modify-processlist-hidden">
-        <title>To Re-Display Hidden Processes</title>
-        <para>
-          To re-display hidden processes in the process list, perform the following steps:
-        </para>
-        <orderedlist>
-          <listitem>
-            <para>
-              Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Hidden Processes</guimenuitem></menuchoice>. If no processes are currently hidden, an information alert is displayed. If any processes are currently hidden, the <guilabel>Manage Hidden Processes</guilabel> dialog is displayed. 
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              Select the processes that you want to re-display in the process list.
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              Click on the <guibutton>Remove From List</guibutton> button. The processes are no longer hidden, and are displayed in the process list.
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              Click <guibutton>Close</guibutton> to close the <guilabel>Manage Hidden Processes</guilabel> dialog.
-            </para>
-          </listitem>
-        </orderedlist>
-      </sect3>
-
-    </sect2>
-
-    <sect2 id="gnome-system-monitor-find-process">
-      <title>ਇੱਕ ਪ੍ਰੋਸੈੱਸ ਲੱਭਣਾ</title>
-      <para>
-        To find a process in the process list, perform the following steps:
-      </para>
-      <orderedlist>
-        <listitem>
-          <para>
-            Select the <guilabel>Process Listing</guilabel> tab to display the process list.
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Type the name of the process in the <guilabel>Search</guilabel> text box. Wildcards are not supported.
-          </para>
-        </listitem>
-        <listitem>
-          <para><keycap>Enter</keycap> ਸਵਿੱਚ ਦੱਬੋ।</para>
-          <para>
-            If the process exists, <application>System Monitor</application> highlights the process name in the process list. Press <keycap>Return</keycap> repeatedly to highlight other occurrences of the process name in the process list.
-          </para>
-          <para>
-            If the process does not exist, <application>System Monitor</application> displays an error dialog.
-          </para>
-        </listitem>
-      </orderedlist>
-    </sect2>
-
-    <sect2 id="gnome-system-monitor-show-info">
-      <title>To Show or Hide Additional Process Information</title>
-      <para>
-        To show additional information about a process, perform the following steps:
-      </para>
-      <orderedlist>
-        <listitem>
-          <para>
-            Select the <guilabel>Process Listing</guilabel> tab to display the process list.
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Select the process in the process list. 
-          </para>
-        </listitem>
-        <listitem>
-          <para><guibutton>ਹੋਰ ਜਾਣਕਾਰੀ</guibutton> ਬਟਨ ਦੱਬੋ।</para>
-        </listitem>
-      </orderedlist>
-      <para>
-        <application>System Monitor</application> displays the following additional process information:
-      </para>
-      <variablelist>
-        <varlistentry>
-          <term><guilabel>ਪ੍ਰੋਸੈੱਸ ਜਾਣਕਾਰੀ</guilabel></term>
-          <listitem>
-            <itemizedlist>
-              <listitem>
-                <para>
-                  <guilabel>ਕਮਾਂਡ</guilabel>
-                </para>
-                <para>
-                  The name of the command that started the process.
-                </para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>ਹਾਲਤ</guilabel>
-                </para>
-                <para>
-                  The current status of the process: sleeping or running.
-                </para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>ਤਰਜੀਹ</guilabel>
-                </para>
-                <para>
-                  The priority of the process, and the associated nice value.
-                </para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </varlistentry>
-        <varlistentry>
-          <term><guilabel>ਮੈਮੋਰੀ ਵਰਤੋਂ</guilabel></term>
-          <listitem>
-            <itemizedlist>
-              <listitem>
-                <para>
-                  <guilabel>ਕੁੱਲ</guilabel>
-                </para>
-                <para>
-                  The total amount of memory used by the process.
-                </para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>RSS</guilabel>
-                </para>
-                <para>
-                  The amount of RSS or physical memory used by the process.
-                </para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>ਸਾਂਝੀ</guilabel>
-                </para>
-                <para>
-                  The amount of shared memory used by the process.
-                </para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </varlistentry>
-      </variablelist>
-      <para>
-        To hide the additional process information, click on the <guibutton>Less Info</guibutton> button.
-      </para>
-      <tip>
-        <para>
-          You can also double-click on the process in the process list, to show or hide the additional process information. 
-        </para>
-      </tip>
     </sect2>
 
     <sect2 id="gnome-system-monitor-memory-map">
@@ -705,7 +593,7 @@
       <orderedlist>
         <listitem>
           <para>
-            Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
           </para>
         </listitem>
         <listitem>
@@ -844,7 +732,7 @@
       <orderedlist>
         <listitem>
           <para>
-            Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
           </para>
         </listitem>
         <listitem>
@@ -883,7 +771,7 @@
       <orderedlist>
         <listitem>
           <para>
-            Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
           </para>
         </listitem>
         <listitem>
@@ -912,7 +800,7 @@
       <orderedlist>
         <listitem>
           <para>
-            Select the <guilabel>Process Listing</guilabel> tab to display the process list.
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
           </para>
         </listitem>
         <listitem>
@@ -940,7 +828,7 @@
     <sect2 id="gnome-system-monitor-cpu">
       <title>CPU ਵਰਤੋਂ ਨਿਗਰਾਨੀ</title>
       <para>
-        To monitor CPU usage, select the <guilabel>Resource Monitor</guilabel> tab.
+        To monitor CPU usage, select the <guilabel>Resources</guilabel> tab.
       </para>
       <para>
         <application>System Monitor</application> displays the CPU usage history in graphical format. Underneath the graph, <application>System Monitor</application> also displays the current CPU usage, as a percentage.
@@ -951,7 +839,7 @@
     <sect2 id="gnome-system-monitor-memory">
       <title>ਮੈਮੋਰੀ ਅਤੇ ਸਵੈਪ ਵਰਤੋਂ ਨਿਗਰਾਨੀ</title>
       <para>
-        To monitor memory and swap usage, select the <guilabel>Resource Monitor</guilabel> tab.
+        To monitor memory and swap usage, select the <guilabel>Resources</guilabel> tab.
       </para>
       <para>
         <application>System Monitor</application> displays the memory usage history and the swap usage history in graphical format. Underneath the graph, <application>System Monitor</application> also displays the following numerical values: 
@@ -959,72 +847,102 @@
       <itemizedlist>
         <listitem>
           <para>
-            User memory
+            User memory out of total memory
           </para>
         </listitem>
         <listitem>
-          <para>ਕੁੱਲ ਮੈਮੋਰੀ</para>
-        </listitem>
-        <listitem>
-          <para>ਵਰਤੀ ਸਵੈਪ</para>
-        </listitem>
-        <listitem>
-          <para>ਕੁੱਲ ਸਵੈਪ</para>
+          <para>
+            Used swap out of total swap
+          </para>
         </listitem>
       </itemizedlist>
 
     </sect2>
-
-    <sect2 id="gnome-system-monitor-disk">
-      <title>ਡਿਸਕ ਥਾਂ ਵਰਤੋਂ ਨਿਗਰਾਨੀ</title>
+    
+    <sect2 id="gnome-system-monitor-network">
+      <title>To Monitor Network Activity</title>
       <para>
-        To monitor disk space usage, select the <guilabel>Resource Monitor</guilabel> tab.
+        To monitor network activity, select the <guilabel>Resources</guilabel> tab.
       </para>
       <para>
-        <application>System Monitor</application> displays the disk space usage information in tabular format. From left to right, the <guilabel>Devices</guilabel> table displays the following columns:
+        <application>System Monitor</application> displays the network history in graphical format. Underneath the graph, <application>System Monitor</application> also displays the following numerical values: 
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            Received data per second and total
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Sent data per second and total
+          </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+
+    <sect2 id="gnome-system-monitor-disk">
+      <title>To Monitor File Systems</title>
+      <para>
+        To monitor file systems, select the <guilabel>File Systems</guilabel> tab.
+      </para>
+      <para>
+        <application>System Monitor</application> displays mounted file systems in tabular format. From left to right, the table displays the following columns:
       </para>
       <variablelist>
         <varlistentry>
-          <term><guilabel>ਨਾਂ</guilabel></term>
+          <term>ਜੰਤਰ</term>
           <listitem>
-            <para>ਜੰਤਰ ਦਾ ਨਾਂ ਹੈ।</para>
+            <para>Location of block file</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>ਡਾਇਰੈਕਟਰੀ</guilabel></term>
+          <term>ਡਾਇਰੈਕਟਰੀ</term>
           <listitem>
-            <para>ਜੰਤਰ ਦਾ ਟਿਕਾਣਾ ਹੈ।</para>
+            <para>Mount point (directory to access) of device</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>ਕਿਸਮ</guilabel></term>
+          <term>ਕਿਸਮ</term>
           <listitem>
-            <para>ਜੰਤਰ ਦੀ ਕਿਸਮ ਹੈ।</para>
+            <para>Filesystem type</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>ਕੁੱਲ</guilabel></term>
+          <term>ਕੁੱਲ</term>
           <listitem>
-            <para>
-              The total amount of disk space available on the device.
-            </para>
+            <para>Total capacity</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>ਵਰਤੀ</guilabel></term>
+          <term>
+            Free
+          </term>
           <listitem>
-            <para>
-              The amount of disk space currently used on the device, expressed in bytes and as a percentage.
-            </para>
+            <para>Amount of space not in use</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            Available
+          </term>
+          <listitem>
+            <para>Amount of space which can be used</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>ਵਰਤੀ</term>
+          <listitem>
+            <para>Amount of space which is used (and percentage of Total)</para>
           </listitem>
         </varlistentry>
       </variablelist>
     </sect2>
 
     <sect2 id="gnome-system-monitor-customize">
-      <title>To Customize the Resource Monitor Tabbed Section</title>
+      <title>To Customize the Resources Tabbed Section</title>
       <para>
-        You can customize the <guilabel>Resource Monitor</guilabel> tabbed section in the following ways:
+        You can customize the <guilabel>Resources</guilabel> tabbed section in the following ways:
       </para>
       <itemizedlist>
         <listitem>
@@ -1058,7 +976,7 @@
           </listitem>
           <listitem>
             <para>
-              Select the <guilabel>Resource Monitor</guilabel> tab in the <guilabel>Preferences</guilabel> dialog.
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>Preferences</guilabel> dialog.
             </para>
           </listitem>
           <listitem>
@@ -1093,7 +1011,7 @@
           </listitem>
           <listitem>
             <para>
-              Select the <guilabel>Resource Monitor</guilabel> tab in the <guilabel>Preferences</guilabel> dialog.
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>Preferences</guilabel> dialog.
             </para>
           </listitem>
           <listitem>
@@ -1123,7 +1041,7 @@
         <orderedlist>
           <listitem>
             <para>
-              Select the <guilabel>Resource Monitor</guilabel> tab in the <guilabel>System Monitor</guilabel> window, to display the graphs and table that provide information about the usage of system resources.
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>System Monitor</guilabel> window, to display the graphs and table that provide information about the usage of system resources.
             </para>
           </listitem>
           <listitem>
@@ -1150,7 +1068,7 @@
         <orderedlist>
           <listitem>
             <para>
-              Select the <guilabel>Resource Monitor</guilabel> tab in the <guilabel>System Monitor</guilabel> window, to display the graphs and table that provide information about the usage of system resources.
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>System Monitor</guilabel> window, to display the graphs and table that provide information about the usage of system resources.
             </para>
           </listitem>
           <listitem>
@@ -1187,7 +1105,7 @@
     </itemizedlist>
 
     <sect2 id="gnome-system-monitor-prefs-proclist">
-      <title>ਕਾਰਜ (ਪ੍ਰੋਸੈੱਸ) ਲਿਸਟ</title>
+      <title>Processes</title>
         <variablelist>
           <varlistentry>
             <term>
@@ -1197,7 +1115,7 @@
               <itemizedlist>
                 <listitem>
                   <para>
-                    <guilabel>ਅੱਪਡੇਟ ਅੰਤਰਾਲ ... ਸਕਿੰਟ</guilabel>
+                    <guilabel>Update interval in seconds</guilabel>
                   </para>
                   <para>
                     Use this spin box to specify the interval at which you want to update the process list. 
@@ -1205,7 +1123,15 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Show warning dialog when ending or killing processes</guilabel>
+                    <guilabel>Enable smooth refresh</guilabel>
+                  </para>
+                  <para>
+                    Select this option to refresh smoothly.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Alert before ending or killing processes</guilabel>
                   </para>
                   <para>
                     Select this option to display a confirmation alert when you end a process or terminate a process.
@@ -1213,10 +1139,10 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>ਜਦੋਂ ਕਾਰਜ ਲੁਕਵੇਂ ਹੋਣ ਤਾਂ ਚੇਤਾਵਨੀ ਵਾਰਤਾਲਾਪ ਵੇਖਾਓ</guilabel>
+                    <guilabel>Solaris mode</guilabel>
                   </para>
                   <para>
-                    Select this option to display a confirmation alert when you hide a process.
+                    Select this to divide each process' CPU% in the Processes table by the number of CPUs.
                   </para>
                 </listitem>
               </itemizedlist>
@@ -1241,14 +1167,6 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>ਆਰਗੂਮਿੰਟ</guilabel>
-                  </para>
-                  <para>
-                    Select this option to display the name of the command, including arguments, that started the process.
-                  </para>
-                </listitem>
-                <listitem>
-                  <para>
                     <guilabel>ਉਪਭੋਗੀ</guilabel>
                   </para>
                   <para>
@@ -1265,15 +1183,7 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>ਮੈਮੋਰੀ</guilabel>
-                  </para>
-                  <para>
-                    Select this option to display the amount of system memory that is currently being used by the process.
-                  </para>
-                </listitem>
-                <listitem>
-                  <para>
-                    <guilabel>VM ਆਕਾਰ</guilabel>
+                    <guilabel>Virtual Memory</guilabel>
                   </para>
                   <para>
                     Select this option to display the amount of virtual memory that is allocated to the process.
@@ -1289,18 +1199,18 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>ਸਾਂਝੀ ਮੈਮੋਰੀ</guilabel>
+                    <guilabel>Writable Memory</guilabel>
                   </para>
                   <para>
-                    Select this option to display the amount of shared memory that is allocated to the process. Shared memory is memory that can be accessed by another process.
+                    Select this option to display the amount of memory that can be written by the process.
                   </para>
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>RSS ਮੈਮੋਰੀ</guilabel>
+                    <guilabel>ਸਾਂਝੀ ਮੈਮੋਰੀ</guilabel>
                   </para>
                   <para>
-                    Select this option to display the amount of physical memory, excluding swapped-out pages, that is used by the process.
+                    Select this option to display the amount of shared memory that is allocated to the process. Shared memory is memory that can be accessed by another process.
                   </para>
                 </listitem>
                 <listitem>
@@ -1321,6 +1231,22 @@
                 </listitem>
                 <listitem>
                   <para>
+                    <guilabel>CPU Time</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display the amount of CPU time that has been used by the process.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Started</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display when the process began running.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
                     <guilabel>ਨਾਈਸ</guilabel>
                   </para>
                   <para>
@@ -1335,6 +1261,30 @@
                     Select this option to display the process identifier, also known as the pid. The pid is a number that uniquely identifies the process. You can use the pid to manipulate the process on the command line.
                   </para>
                 </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>ਮੈਮੋਰੀ</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display the amount of system memory that is currently being used by the process.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Security Context</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display the security context in which the process is running.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Command Line</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display the command line that was used to start the process, including arguments.
+                  </para>
+                </listitem>
               </itemizedlist>
             </listitem>
           </varlistentry>
@@ -1342,7 +1292,7 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-prefs-resmon">
-      <title>ਸਰੋਤ (ਰੀਸੋਰਸ) ਨਿਗਰਾਨ</title>
+      <title>Resources</title>
         <variablelist>
           <varlistentry>
             <term><guilabel>ਗਰਾਫ਼</guilabel></term>
@@ -1350,7 +1300,7 @@
               <itemizedlist>
                 <listitem>
                   <para>
-                    <guilabel>ਅੱਪਡੇਟ ਅੰਤਰਾਲ ... ਸਕਿੰਟ</guilabel>
+                    <guilabel>Update interval in seconds</guilabel>
                   </para>
                   <para>
                     Use this spin box to specify how often you want to update the <application>System Monitor</application> graphs.
@@ -1376,15 +1326,23 @@
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term><guilabel>ਜੰਤਰ</guilabel></term>
+            <term><guilabel>File Systems</guilabel></term>
             <listitem>
               <itemizedlist>
                 <listitem>
                   <para>
-                    <guilabel>ਅੱਪਡੇਟ ਅੰਤਰਾਲ ... ਸਕਿੰਟ</guilabel>
+                    <guilabel>Update interval in seconds</guilabel>
                   </para>
                   <para>
-                    Use this spin box to specify how often you want to update the <guilabel>Devices</guilabel> table.
+                    Use this spin box to specify how often you want to update the <guilabel>File Systems</guilabel> table.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Show all filesystems</guilabel>
+                  </para>
+                  <para>
+                    Select this option to show all filesystems, including temporary and system ones.
                   </para>
                 </listitem>
               </itemizedlist>

@@ -145,12 +145,71 @@
  <!-- ============= Introduction ============================== -->
   <sect1 id="gnome-system-monitor-intro">
     <title>Въведение</title>
-    <para>Програмата <application>Наблюдение на системата</application> позволява да наблюдявате системните процеси и употребата на системни ресурси. Може също да използвате <application>Наблюдение на системата</application>, за да променяте поведението на системата Ви.</para>
-    <para>Прозорецът на <application>Наблюдение на системата</application> съдържа два раздела:</para>
+    <para>
+      The <application>System Monitor</application> application enables you to display basic system information and monitor system processes, usage of system resources, and file systems. You can also use <application>System Monitor</application> to modify the behavior of your system.
+    </para>
+    <para>
+      The <application>System Monitor</application> window contains four tabbed sections:
+    </para>
     <variablelist>
       <varlistentry>
         <term>
-          <guilabel>Процеси</guilabel>
+          <guilabel>System</guilabel>
+        </term>
+        <listitem>
+          <para>Displays various basic information about the computer's hardware and software.</para>
+          <variablelist>
+            <varlistentry>
+              <term>
+                Distribution
+              </term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Distribution version</para>
+                  </listitem>
+                  <listitem>
+                    <para>Linux Kernel version</para>
+                  </listitem>
+                  <listitem>
+                    <para>GNOME version</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                Hardware
+              </term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Installed memory</para>
+                  </listitem>
+                  <listitem>
+                    <para>Processors and speeds</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                System Status
+              </term>
+              <listitem>
+                <itemizedlist>
+                  <listitem>
+                    <para>Currently available disk space</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guilabel>Processes</guilabel>
         </term>
         <listitem>
           <para>Показва активните процеси и как те са свързани помежду си. Предоставя подробна информация относно индивидуалните процеси и Ви позволява да контролирате активните.</para>
@@ -158,7 +217,7 @@
       </varlistentry>
       <varlistentry>
         <term>
-          <guilabel>Ресурси</guilabel>
+          <guilabel>Resources</guilabel>
         </term>
         <listitem>
           <para>Показва текущата употреба на следните системни ресурси:</para>
@@ -170,9 +229,21 @@
               <para>Използване на паметта/страницирането</para>
             </listitem>
             <listitem>
-              <para>Свободно пространство на всяко устройство</para>
+              <para>
+                Network usage
+              </para>
             </listitem>
           </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guilabel>File Systems</guilabel>
+        </term>
+        <listitem>
+          <para>
+            Lists all mounted filesystems along with basic information about each.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -188,9 +259,11 @@
       <para>Може да стартирате <application>Наблюдение на системата</application> по следните начини:</para>
       <variablelist>
         <varlistentry>
-          <term>От менюто <guimenu>Програми</guimenu></term>
+          <term><guimenu>System</guimenu> menu</term>
           <listitem>
-            <para>Изберете <menuchoice><guimenu>Системни инструменти</guimenu><guimenuitem>Наблюдение на системата</guimenuitem></menuchoice>.</para>
+            <para>
+              Choose <menuchoice><guimenu>Administration</guimenu> <guimenuitem>System Monitor</guimenuitem></menuchoice>.
+            </para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -232,18 +305,35 @@
             <itemizedlist>
               <listitem>
                 <para>
-                  <guilabel>Процеси</guilabel>
+                  <guilabel>System</guilabel>
                 </para>
-                <para>Съдържа поле за <guilabel>Търсене</guilabel>, падащ списък за <guilabel>Изглед</guilabel>, табличен списък на процесите, бутон за <guilabel>Повече информация</guilabel> и бутон за <guilabel>Прекратяване на процес</guilabel>.</para>
-                <note>
-                  <para>Не бъркайте падащия списък <guilabel>Изглед</guilabel> при раздела <guilabel>Процеси</guilabel> с менюто от лентата с менюта.</para>
-                </note>
+                <para>
+                  Contains a list of basic system properties, such as system software versions and hardware specifications and status.
+                </para>
               </listitem>
               <listitem>
                 <para>
-                  <guilabel>Ресурси</guilabel>
+                  <guilabel>Processes</guilabel>
                 </para>
-                <para>Съдържа <guilabel>История за използването на процесора</guilabel>, <guilabel>История за използването на паметта/страницирането</guilabel> и списък с <guilabel>Устройства</guilabel>, организиран като таблица.</para>
+                <para>
+                  Contains a list of processes organized as a table, a list of load averages over the past few minutes, and an "End Process" button.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>Resources</guilabel>
+                </para>
+                <para>
+                  Contains a <guilabel>CPU History</guilabel> graph, a <guilabel>Memory and Swap History</guilabel> graph, and a <guilabel>Network History</guilabel> graph.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <guilabel>File Systems</guilabel>
+                </para>
+                <para>
+                  Contains a table of currently mounted file systems.
+                </para>
               </listitem>
             </itemizedlist>
           </listitem>
@@ -264,23 +354,34 @@
 
   <sect1 id="gnome-system-monitor-usage">
     <title>Употреба</title>
-                                                                                
+
+    <sect2 id="gnome-system-monitor-display-basic-info">
+      <title>To Display Basic System Information</title>
+      <para>
+        To display basic system information, select the <guilabel>System</guilabel> tab.
+      </para>
+      <para>
+        In the <guilabel>System</guilabel> tab, information is organized into three groups, 
+      </para>
+    </sect2>
+
     <sect2 id="gnome-system-monitor-display-processlist">
       <title>Показване на списъка с процесите</title>
-      <para>За да покажете списъка с процесите, изберете раздела <guilabel>Процеси</guilabel>. Разделът <guilabel>Процеси</guilabel> се показва по подразбиране при стартирането на <application>Наблюдение на системата</application>.</para>
-      <para>В раздела <guilabel>Процеси</guilabel>, процесите са организирани като таблица. Редовете на таблицата показват информация за процесите. Колоните представляват информационните полета за процесите, като например името на потребителя, който е собственик на процеса, заетата от него памет и т.н. От лявно на дясно, разделът <guilabel>Процеси</guilabel> показва следните колони по подразбиране:</para>
+      <para>
+        To display the process list, select the <guilabel>Processes</guilabel> tab.
+      </para>
+      <para>
+        In the <guilabel>Processes</guilabel> tab, the processes are organized as a table. The rows of the table display information about the processes. The columns represent information fields for the processes, such as the name of the user who owns the process, the amount of memory currently being used by the process, and so on. From left to right, the <guilabel>Processes</guilabel> tab displays the following columns by default:
+      </para>
       <itemizedlist>
           <listitem>
             <para>Име на процес</para>
           </listitem>
           <listitem>
-            <para>Потребител</para>
+            <para>Състояние</para>
           </listitem>
           <listitem>
-            <para>Памет</para>
-          </listitem>
-          <listitem>
-            <para>Памет на X сървъра</para>
+            <para>%CPU</para>
           </listitem>
           <listitem>
             <para>Стойност на nice</para>
@@ -288,13 +389,17 @@
           <listitem>
             <para>ID</para>
           </listitem>
+          <listitem>
+            <para>Памет</para>
+          </listitem>
       </itemizedlist>
         <para>За информация как да променяте показаните колони в списъка с процеси, вижте <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
 
       <sect3 id="gnome-system-monitor-display-processlist-child">
-        <title>Подчинени процеси и нишки</title>
-        <para>Родителски процес е този, който създава друг процес. Създаденият процес е дете на оригиналния родителски процес. По подразбиране <application>Наблюдаване на системата</application> показва зависимостите между процесите. За информацяи относно как да променяте стандартното поведение на преглед, вижте <xref linkend="gnome-system-monitor-modify-processlist-viewdeps"/>.</para>
-        <para>Нишката е част от процес, която може да върви независимо от и съвместно с други части от процеса. По подразбиране <application>Наблюдение на системата</application> не показва нишките. За информация относно как да промените стандартното поведение на преглед, вижте <xref linkend="gnome-system-monitor-modify-processlist-viewthreads"/>.</para>
+        <title>Parent Processes and Child Processes</title>
+        <para>
+          A parent process is a process that spawns another process. The spawned process is a child process of the original parent process. By default, <application>System Monitor</application> does not show process dependencies. For information about how to change the default display behavior, see <xref linkend="gnome-system-monitor-modify-processlist-viewdeps"/>.
+        </para>
       </sect3>
 
       <sect3 id="gnome-system-monitor-display-processlist-priority">
@@ -322,7 +427,9 @@
       <para>За да сортирате списъка с процесите, следвайте следните стъпки:</para>
       <orderedlist>
         <listitem>
-          <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+          <para>
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
+          </para>
         </listitem>
         <listitem>
           <para>По подразбиране процесите са изредени по име, по азбучен ред. За да обърнете азбучния ред, натиснете на горната част на колоната <guilabel>Име на процес</guilabel>.</para>
@@ -345,10 +452,14 @@
         <para>За да видите всички процеси в списъка с процесите, следвайте следните стъпки:</para>
         <orderedlist>
           <listitem>
-            <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+            <para>
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
+            </para>
           </listitem>
           <listitem>
-            <para>Натиснете върху падащия списък <guilabel>Изглед</guilabel>, после изберете <guilabel>Всички процеси</guilabel>.</para>
+            <para>
+              Choose <guimenu>View</guimenu><guimenuitem>All Processes</guimenuitem>.
+            </para>
           </listitem>
         </orderedlist>
       </sect3>
@@ -358,10 +469,14 @@
         <para>За да видите процесите, собственост само на текущия потребител, следвайте следните стъпки:</para>
         <orderedlist>
           <listitem>
-            <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+            <para>
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
+            </para>
           </listitem>
           <listitem>
-            <para>Натиснете върху падащия списък <guilabel>Изглед</guilabel> и после изберете <guilabel>Мои процеси</guilabel>.</para>
+            <para>
+              Choose <guimenu>View</guimenu><guimenuitem>My Processes</guimenuitem>.
+            </para>
           </listitem>
         </orderedlist>
       </sect3>
@@ -371,26 +486,36 @@
         <para>За да покажете само активните процеси в списъка с процеси, следвайте следните стъпки:</para>
         <orderedlist>
           <listitem>
-            <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+            <para>
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
+            </para>
           </listitem>
           <listitem>
-            <para>Натиснете върху падащия списък <guilabel>Изглед</guilabel> и после изберете <guilabel>Активни процеси</guilabel>.</para>
+            <para>
+              Choose <guimenu>View</guimenu><guimenuitem>Active Processes</guimenuitem>.
+            </para>
           </listitem>
         </orderedlist>
       </sect3>
 
       <sect3 id="gnome-system-monitor-modify-processlist-viewdeps">
-        <title>Показване на процесните зависимости</title>
+        <title>To Show Dependencies</title>
         <para>За да видите зависимостите между процесите в списъка с процесите, следвайте следните стъпки:</para>
         <orderedlist>
           <listitem>
-            <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+            <para>
+              Select the <guilabel>Processes</guilabel> tab to display the process list.
+            </para>
           </listitem>
           <listitem>
-            <para>Изберете <menuchoice><guimenu>Изглед</guimenu><guimenuitem>Зависимости</guimenuitem></menuchoice>.</para>
+            <para>
+              Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Dependencies</guimenuitem></menuchoice>.
+            </para>
           </listitem>
         </orderedlist>
-        <para>Ако елементът <guimenuitem>Зависимости</guimenuitem> е избран, процесите са изписани както следва:</para>
+        <para>
+          If the <guimenuitem>Dependencies</guimenuitem> menu item is selected, the processes are listed as follows:
+        </para>
         <itemizedlist>
           <listitem>
             <para>Родителските процеси се индикират с триъгълен символ в ляво от името на процеса. Натиснете върху тригълния символ, за да покажете или скриете асоциираните процеси деца.</para>
@@ -399,7 +524,9 @@
             <para>Процесите деца са изписани при техните родителски процеси.</para>
           </listitem>
         </itemizedlist>
-        <para>Ако елементът <guimenuitem>Зависимости</guimenuitem> не е избран:</para>
+        <para>
+          If the <guimenuitem>Dependencies</guimenuitem> menu item is not selected: 
+        </para>
         <itemizedlist>
           <listitem>
             <para>Родителските процеси и процесите деца не са различими.</para>
@@ -410,149 +537,6 @@
         </itemizedlist>
       </sect3>
 
-      <sect3 id="gnome-system-monitor-modify-processlist-viewthreads">
-        <title>Показване на нишки</title>
-        <para>За да покажете нишките в списъка с процесите, следвайте следните стъпки:</para>
-        <orderedlist>
-          <listitem>
-            <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
-          </listitem>
-          <listitem>
-            <para>Изберете <menuchoice><guimenu>Изглед</guimenu><guimenuitem>Нишки</guimenuitem></menuchoice>.</para>
-          </listitem>
-        </orderedlist>
-      </sect3>
-
-      <sect3 id="gnome-system-monitor-modify-hide-process">
-        <title>Скриване на процес</title>
-        <para>За да скриете процес, следвайте следните стъпки:</para>
-        <orderedlist>
-          <listitem>
-            <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
-          </listitem>
-          <listitem>
-            <para>Изберете процеса, който искате да скриете.</para>
-          </listitem>
-            <listitem>
-              <para>Изберете <menuchoice><guimenu>Редактиране</guimenu><guimenuitem>Скриване на процес</guimenuitem></menuchoice></para>
-              <para>По подразбиране се появява прозорец за подтвърждение. За информация относно как да показвате и скривате това уведомяване, вижте <xref linkend="gnome-system-monitor-prefs-proclist"/>.</para>
-            </listitem>
-            <listitem>
-              <para>Натиснете бутона <guibutton>Скриване на процес</guibutton>, за да подтвърдите, че искате да скриете процеса.</para>
-            </listitem>
-        </orderedlist>
-      </sect3>
-
-      <sect3 id="gnome-system-monitor-modify-processlist-hidden">
-        <title>Махане на скриването от процес</title>
-        <para>За да покажете отново скрит процес в списъка с процесите, следвайте следните стъпки:</para>
-        <orderedlist>
-          <listitem>
-            <para>Изберете <menuchoice><guimenu>Редактиране</guimenu><guimenuitem>Скрити процеси</guimenuitem></menuchoice>. Ако на момента няма скрити процеси се показва предупредителна информация. Ако някой процес на момента е скрит, се показва прозореца <guilabel>Управление на скрити процеси</guilabel>.</para>
-          </listitem>
-          <listitem>
-            <para>Изберете процесите, които искате отново да се показват в списъка с процесите.</para>
-          </listitem>
-          <listitem>
-            <para>Натиснете бутона <guibutton>Премахване от списъка</guibutton>. Процесите вече не са скрити и се показват отново в списъка с процесите.</para>
-          </listitem>
-          <listitem>
-            <para>Натиснете <guibutton>Затваряне</guibutton>, за да затворите прозореца за <guilabel>Управление на скрити процеси</guilabel>.</para>
-          </listitem>
-        </orderedlist>
-      </sect3>
-
-    </sect2>
-
-    <sect2 id="gnome-system-monitor-find-process">
-      <title>Търсене за процес</title>
-      <para>За да откриете процес в списъка с процеси, следвайте следните стъпки:</para>
-      <orderedlist>
-        <listitem>
-          <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
-        </listitem>
-        <listitem>
-          <para>Въведете името на процеса в полето за <guilabel>Търсене</guilabel>. Не се поддържат wildcard символи.</para>
-        </listitem>
-        <listitem>
-          <para>Натиснете <keycap>Enter</keycap>.</para>
-          <para>Ако процесът съществува, <application>Наблюдение на системата</application> осветява името на процеса в списъка с процесите. Натиснете продължително <keycap>Enter</keycap>, за да осветите други срещания на името на процеса в списъка с процесите.</para>
-          <para>Ако процесът не съществува, <application>Наблюдение на системата</application> показва съобщение за грешка.</para>
-        </listitem>
-      </orderedlist>
-    </sect2>
-
-    <sect2 id="gnome-system-monitor-show-info">
-      <title>Показване и скриване на допълнителна процесна информация</title>
-      <para>За да видите допълнителна процесна информация относно процес, следвайте следните стъпки:</para>
-      <orderedlist>
-        <listitem>
-          <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
-        </listitem>
-        <listitem>
-          <para>Изберете процеса от списъка с процесите.</para>
-        </listitem>
-        <listitem>
-          <para>Натиснете бутона <guibutton>Повече информация</guibutton>.</para>
-        </listitem>
-      </orderedlist>
-      <para><application>Наблюдение на системата</application> показва следната допълнителна процесна информация:</para>
-      <variablelist>
-        <varlistentry>
-          <term><guilabel>Информация за процес</guilabel></term>
-          <listitem>
-            <itemizedlist>
-              <listitem>
-                <para>
-                  <guilabel>Команда</guilabel>
-                </para>
-                <para>Името на командата, която е стартирала процеса</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>Състояние</guilabel>
-                </para>
-                <para>Текущият статус на процеса: заспал или стартиран</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>Приоритет</guilabel>
-                </para>
-                <para>Приоритетът на процеса и асоциираната стойност на nice.</para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </varlistentry>
-        <varlistentry>
-          <term><guilabel>Използвана памет</guilabel></term>
-          <listitem>
-            <itemizedlist>
-              <listitem>
-                <para>
-                  <guilabel>Общо</guilabel>
-                </para>
-                <para>Общото количество на използваната от процеса памет</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>RSS</guilabel>
-                </para>
-                <para>Количеството RSS или физическа памет използвана от процеса</para>
-              </listitem>
-              <listitem>
-                <para>
-                  <guilabel>Споделени</guilabel>
-                </para>
-                <para>Количеството на споделената памет използвана от процеса</para>
-              </listitem>
-            </itemizedlist>
-          </listitem>
-        </varlistentry>
-      </variablelist>
-      <para>За да скриете допълнителната процесна информация, натиснете на бутона <guibutton>По-малко информация</guibutton>.</para>
-      <tip>
-        <para>Можете също така да натиснете два пъти върху процес от списъка, за да показвате и скривате допълнителната процесна информация.</para>
-      </tip>
     </sect2>
 
     <sect2 id="gnome-system-monitor-memory-map">
@@ -560,7 +544,9 @@
       <para>За да показвате картите на паметта за процес, следвайте следните стъпки:</para>
       <orderedlist>
         <listitem>
-          <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+          <para>
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
+          </para>
         </listitem>
         <listitem>
           <para>Изберете процеса от списъка с процесите.</para>
@@ -661,7 +647,9 @@
       <para>За да промените приоритета на процеса, следвайте следните стъпки:</para>
       <orderedlist>
         <listitem>
-          <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+          <para>
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
+          </para>
         </listitem>
         <listitem>
           <para>Изберете процеса, за който искате да промените приоритета.</para>
@@ -686,7 +674,9 @@
       <para>За да прекратите процес, следвайте следните стъпки:</para>
       <orderedlist>
         <listitem>
-          <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+          <para>
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
+          </para>
         </listitem>
         <listitem>
           <para>Изберете процеса, който искате да прекратите.</para>
@@ -707,7 +697,9 @@
       <para>За да прекратите процес, следвайте следните стъпки:</para>
       <orderedlist>
         <listitem>
-          <para>Изберете раздела <guilabel>Процеси</guilabel>, за да се покаже списъка с процеси.</para>
+          <para>
+            Select the <guilabel>Processes</guilabel> tab to display the process list.
+          </para>
         </listitem>
         <listitem>
           <para>Изберете процеса, който искате да терминирате.</para>
@@ -725,75 +717,119 @@
 
     <sect2 id="gnome-system-monitor-cpu">
       <title>Наблюдение на натоварването на процесора</title>
-      <para>За да наблюдавате натоварването на процесора, изберете раздела <guilabel>Ресурси</guilabel>.</para>
+      <para>
+        To monitor CPU usage, select the <guilabel>Resources</guilabel> tab.
+      </para>
       <para><application>Наблюдение на системата</application> показва историята на използването на процесора в графичен формат. Под графиката, <application>Наблюдение на системата</application> показва също така текущото използване на процесора, като процентна стойност.</para>
     </sect2>
 
 
     <sect2 id="gnome-system-monitor-memory">
       <title>Наблюдение на използването на паметта/страницирането</title>
-      <para>За да наблюдавате използването на паметта и страницирането, изберете раздела <guilabel>Ресурси</guilabel>.</para>
+      <para>
+        To monitor memory and swap usage, select the <guilabel>Resources</guilabel> tab.
+      </para>
       <para><application>Наблюдение на системата</application> показва истроията на заетостта на паметта и страницирането в графичен формат. Под графиката, <application>Наблюдение на системата</application> показва също така и следните числови стойности:</para>
       <itemizedlist>
         <listitem>
           <para>
-            User memory
+            User memory out of total memory
           </para>
         </listitem>
         <listitem>
-          <para>Общо памет</para>
-        </listitem>
-        <listitem>
-          <para>Използвано място за странициране</para>
-        </listitem>
-        <listitem>
-          <para>Общо място за странициране</para>
+          <para>
+            Used swap out of total swap
+          </para>
         </listitem>
       </itemizedlist>
 
     </sect2>
+    
+    <sect2 id="gnome-system-monitor-network">
+      <title>To Monitor Network Activity</title>
+      <para>
+        To monitor network activity, select the <guilabel>Resources</guilabel> tab.
+      </para>
+      <para>
+        <application>System Monitor</application> displays the network history in graphical format. Underneath the graph, <application>System Monitor</application> also displays the following numerical values: 
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            Received data per second and total
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Sent data per second and total
+          </para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
 
     <sect2 id="gnome-system-monitor-disk">
-      <title>Наблюдение използването на дисковото пространство</title>
-      <para>За да наблюдавате използването на дисковото пространство, изберете раздела <guilabel>Ресурси</guilabel>.</para>
-      <para><application>Наблюдение на системата</application> показва информацията за дисковото пространство в табуларна форма. От ляво на дясно, таблицата <guilabel>Устройства</guilabel> показва следните колони:</para>
+      <title>To Monitor File Systems</title>
+      <para>
+        To monitor file systems, select the <guilabel>File Systems</guilabel> tab.
+      </para>
+      <para>
+        <application>System Monitor</application> displays mounted file systems in tabular format. From left to right, the table displays the following columns:
+      </para>
       <variablelist>
         <varlistentry>
-          <term><guilabel>Име</guilabel></term>
+          <term>Устройство</term>
           <listitem>
-            <para>Името на устройството</para>
+            <para>Location of block file</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Папка</guilabel></term>
+          <term>Папка</term>
           <listitem>
-            <para>Местоположението на устройството</para>
+            <para>Mount point (directory to access) of device</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Тип</guilabel></term>
+          <term>Тип</term>
           <listitem>
-            <para>Видът на устройството</para>
+            <para>Filesystem type</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Общо</guilabel></term>
+          <term>Общо</term>
           <listitem>
-            <para>Общото количество дисково пространство, налично на устройството</para>
+            <para>Total capacity</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term><guilabel>Използвано</guilabel></term>
+          <term>
+            Free
+          </term>
           <listitem>
-            <para>Количеството дисково пространство, което в момента е заедно на устройството, изразено в байтове и като процентна стойност.</para>
+            <para>Amount of space not in use</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            Available
+          </term>
+          <listitem>
+            <para>Amount of space which can be used</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Използвано</term>
+          <listitem>
+            <para>Amount of space which is used (and percentage of Total)</para>
           </listitem>
         </varlistentry>
       </variablelist>
     </sect2>
 
     <sect2 id="gnome-system-monitor-customize">
-      <title>Персонализиране на раздела за ресурси</title>
-      <para>Може да персонализирате раздела <guilabel>Ресурси</guilabel> по следните начини:</para>
+      <title>To Customize the Resources Tabbed Section</title>
+      <para>
+        You can customize the <guilabel>Resources</guilabel> tabbed section in the following ways:
+      </para>
       <itemizedlist>
         <listitem>
           <para><xref linkend="gnome-system-monitor-customize-background"/>
@@ -821,7 +857,9 @@
             <para>Изберете <menuchoice><guimenu>Редактиране</guimenu><guimenuitem>Настройки</guimenuitem></menuchoice>. Появява се прозорецът <guilabel>Настройки</guilabel>.</para>
           </listitem>
           <listitem>
-            <para>Изберете раздела <guilabel>Ресурси</guilabel> в прозореца <guilabel>Настройки</guilabel>.</para>
+            <para>
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>Preferences</guilabel> dialog.
+            </para>
           </listitem>
           <listitem>
             <para>Натиснете бутона <guilabel>Фонов цвят</guilabel>. Появява се прозореца <guilabel>Избор на цвят</guilabel>.</para>
@@ -846,7 +884,9 @@
             <para>Изберете <menuchoice><guimenu>Редактиране</guimenu><guimenuitem>Настройки</guimenuitem></menuchoice>. Появява се прозорецът <guilabel>Настройки</guilabel>.</para>
           </listitem>
           <listitem>
-            <para>Изберете раздела <guilabel>Ресурси</guilabel> в прозореца <guilabel>Настройки</guilabel>.</para>
+            <para>
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>Preferences</guilabel> dialog.
+            </para>
           </listitem>
           <listitem>
             <para>Натиснете бутона <guilabel>Цвят на мрежа</guilabel>. Появява се прозорецът <guilabel>Избор на цвят</guilabel>.</para>
@@ -868,7 +908,9 @@
         <para>За да промените цвета на линията, която представя използването на процесора в графиката за процесорната история, следвайте следните стъпки:</para>
         <orderedlist>
           <listitem>
-            <para>Изберете раздела <guilabel>Ресурси</guilabel> в прозореца на <guilabel>Наблюдение на системата</guilabel>, за да покажете графиките и таблицата, които предоставят информация за използването на системните ресурси.</para>
+            <para>
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>System Monitor</guilabel> window, to display the graphs and table that provide information about the usage of system resources.
+            </para>
           </listitem>
           <listitem>
             <para>Натиснете цветния бутон за <guibutton>Процесора</guibutton>. Появява се прозорецът <guilabel>Избор на цвят</guilabel>.</para>
@@ -887,7 +929,9 @@
         <para>За да промените цвета на линиите представящи паметта и страницирането в графиката, следвайте следните стъпки:</para>
         <orderedlist>
           <listitem>
-            <para>Изберете раздела <guilabel>Ресурси</guilabel> в прозореца на <guilabel>Наблюдение на системата</guilabel>, за да покажете графиките и таблицата, които предоставят информация за използването на системните ресурси.</para>
+            <para>
+              Select the <guilabel>Resources</guilabel> tab in the <guilabel>System Monitor</guilabel> window, to display the graphs and table that provide information about the usage of system resources.
+            </para>
           </listitem>
           <listitem>
             <para>
@@ -920,7 +964,7 @@
     </itemizedlist>
 
     <sect2 id="gnome-system-monitor-prefs-proclist">
-      <title>Процеси</title>
+      <title>Processes</title>
         <variablelist>
           <varlistentry>
             <term>
@@ -930,21 +974,31 @@
               <itemizedlist>
                 <listitem>
                   <para>
-                    <guilabel>Интервал на обновяване ... секунди</guilabel>
+                    <guilabel>Update interval in seconds</guilabel>
                   </para>
                   <para>Използвайте това поле, за да определите интервала, на който искате да се обновява списъка с процеси.</para>
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Показване на предупредителен прозорец при спиране на процес</guilabel>
+                    <guilabel>Enable smooth refresh</guilabel>
+                  </para>
+                  <para>
+                    Select this option to refresh smoothly.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Alert before ending or killing processes</guilabel>
                   </para>
                   <para>Изберете тази опция, за да се показва подтвърждение, когато прекратявате процес.</para>
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Показване на предупредителен прозорец при скриване на процес</guilabel>
+                    <guilabel>Solaris mode</guilabel>
                   </para>
-                  <para>Изберете тази опция, за да се появява подтвърждение, когато скривате процес.</para>
+                  <para>
+                    Select this to divide each process' CPU% in the Processes table by the number of CPUs.
+                  </para>
                 </listitem>
               </itemizedlist>
             </listitem>
@@ -964,12 +1018,6 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Аргументи</guilabel>
-                  </para>
-                  <para>Изберете тази опция, за да покажете името на командата, включително аргументите, която е стартирала процеса.</para>
-                </listitem>
-                <listitem>
-                  <para>
                     <guilabel>Потребител</guilabel>
                   </para>
                   <para>Изберете тази опция, за да се показва името на потребителя, който е собственик на процеса.</para>
@@ -982,13 +1030,7 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Памет</guilabel>
-                  </para>
-                  <para>Изберете тази опция, за да се показва количеството системна памет, което е заето от процеса.</para>
-                </listitem>
-                <listitem>
-                  <para>
-                    <guilabel>Размер на ВП</guilabel>
+                    <guilabel>Virtual Memory</guilabel>
                   </para>
                   <para>Изберете тази опция, за да се показва количеството виртуална памет, което е алокирано към процеса.</para>
                 </listitem>
@@ -1000,15 +1042,17 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Споделена памет</guilabel>
+                    <guilabel>Writable Memory</guilabel>
                   </para>
-                  <para>Изберете тази опция, за да се показва количеството споделена памет, което е алокирано към процеса. Споделената памет е памет, която може да бъде достъпвана и от друг процес.</para>
+                  <para>
+                    Select this option to display the amount of memory that can be written by the process.
+                  </para>
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>RSS памет</guilabel>
+                    <guilabel>Споделена памет</guilabel>
                   </para>
-                  <para>Изберете тази опция, за да се показва количеството физическа памет (без страницирането), което се използва от процеса.</para>
+                  <para>Изберете тази опция, за да се показва количеството споделена памет, което е алокирано към процеса. Споделената памет е памет, която може да бъде достъпвана и от друг процес.</para>
                 </listitem>
                 <listitem>
                   <para>
@@ -1024,6 +1068,22 @@
                 </listitem>
                 <listitem>
                   <para>
+                    <guilabel>CPU Time</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display the amount of CPU time that has been used by the process.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Started</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display when the process began running.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
                     <guilabel>Стойност на nice</guilabel>
                   </para>
                   <para>Изберете тази опция, за да се показва стойността на nice за процеса. Стойността на nice определя приоритета на процеса: колкото по-ниска е тя, толкова по-висок е приоритетът.</para>
@@ -1034,6 +1094,28 @@
                   </para>
                   <para>Изберете тази опция, за да се показва идентификатора за процеса, също познат и като pid. PID е номер, който идентифицира по уникален начин процеса. Може да използвате pid номера, за да манипулирате процеса от командния ред.</para>
                 </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Памет</guilabel>
+                  </para>
+                  <para>Изберете тази опция, за да се показва количеството системна памет, което е заето от процеса.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Security Context</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display the security context in which the process is running.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Command Line</guilabel>
+                  </para>
+                  <para>
+                    Select this option to display the command line that was used to start the process, including arguments.
+                  </para>
+                </listitem>
               </itemizedlist>
             </listitem>
           </varlistentry>
@@ -1041,7 +1123,7 @@
     </sect2>
 
     <sect2 id="gnome-system-monitor-prefs-resmon">
-      <title>Ресурси</title>
+      <title>Resources</title>
         <variablelist>
           <varlistentry>
             <term><guilabel>Графики</guilabel></term>
@@ -1049,7 +1131,7 @@
               <itemizedlist>
                 <listitem>
                   <para>
-                    <guilabel>Интервал на обновяване ... секунди</guilabel>
+                    <guilabel>Update interval in seconds</guilabel>
                   </para>
                   <para>Използвайте полето, за да определите колко често да се опресняват графиките.</para>
                 </listitem>
@@ -1069,14 +1151,24 @@
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term><guilabel>Устройства</guilabel></term>
+            <term><guilabel>File Systems</guilabel></term>
             <listitem>
               <itemizedlist>
                 <listitem>
                   <para>
-                    <guilabel>Интервал на обновяване ... секунди</guilabel>
+                    <guilabel>Update interval in seconds</guilabel>
                   </para>
-                  <para>Използвайте това поле, за да определите колко често искате да се опреснява таблицата <guilabel>Устройства</guilabel>.</para>
+                  <para>
+                    Use this spin box to specify how often you want to update the <guilabel>File Systems</guilabel> table.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <guilabel>Show all filesystems</guilabel>
+                  </para>
+                  <para>
+                    Select this option to show all filesystems, including temporary and system ones.
+                  </para>
                 </listitem>
               </itemizedlist>
             </listitem>
