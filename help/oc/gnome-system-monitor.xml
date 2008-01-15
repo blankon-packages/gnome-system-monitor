@@ -418,7 +418,7 @@
           </listitem>
         </varlistentry>
         <varlistentry> 
-          <term>Statusbar</term> 
+          <term>Barra d'estat</term> 
           <listitem> 
             <para>
               The statusbar displays information about current <application>System Monitor</application> activity and contextual information about the menu items. 

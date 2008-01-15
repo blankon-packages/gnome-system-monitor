@@ -39,6 +39,7 @@
 #include "util.h"
 #include "disks.h"
 #include "sysinfo.h"
+#include "gsm_color_button.h"
 
 static void	cb_toggle_tree (GtkAction *action, gpointer data);
 
@@ -53,7 +54,7 @@ static const GtkActionEntry menu_entries[] =
 
 	{ "Lsof", GTK_STOCK_FIND, N_("Search for _Open Files"), "<control>O",
 	  N_("Search for open files"), G_CALLBACK(cb_show_lsof) },
-	{ "Quit", GTK_STOCK_QUIT, N_("_Quit"), "<control>Q",
+	{ "Quit", GTK_STOCK_QUIT, NULL, NULL,
 	  N_("Quit the program"), G_CALLBACK (cb_app_exit) },
 
 
@@ -62,14 +63,17 @@ static const GtkActionEntry menu_entries[] =
 	{ "ContProcess", NULL, N_("_Continue Process"), "<control>C",
 	  N_("Continue process if stopped"), G_CALLBACK(cb_kill_sigcont) },
 
-	{ "EndProcess", NULL, N_("End _Process"), "<control>E",
+	{ "EndProcess", NULL, N_("_End Process"), "<control>E",
 	  N_("Force process to finish normally"), G_CALLBACK (cb_end_process) },
 	{ "KillProcess", NULL, N_("_Kill Process"), "<control>K",
 	  N_("Force process to finish immediately"), G_CALLBACK (cb_kill_process) },
-	{ "ChangePriority", NULL, N_("_Change Priority..."), "<control>R",
+	{ "ChangePriority", NULL, N_("_Change Priority..."), "<control>N",
 	  N_("Change the order of priority of process"), G_CALLBACK (cb_renice) },
-	{ "Preferences", GTK_STOCK_PREFERENCES, N_("Prefere_nces"), NULL,
+	{ "Preferences", GTK_STOCK_PREFERENCES, NULL, NULL,
 	  N_("Configure the application"), G_CALLBACK (cb_edit_preferences) },
+
+	{ "Refresh", NULL, N_("_Refresh"), "<control>R",
+	  N_("Refresh the process list"), G_CALLBACK(cb_user_refresh) },
 
 	{ "MemoryMaps", NULL, N_("_Memory Maps"), "<control>M",
 	  N_("Open the memory maps associated with a process"), G_CALLBACK (cb_show_memory_maps) },
@@ -78,7 +82,7 @@ static const GtkActionEntry menu_entries[] =
 
 	{ "HelpContents", GTK_STOCK_HELP, N_("_Contents"), "F1",
 	  N_("Open the manual"), G_CALLBACK (cb_help_contents) },
-	{ "About", GTK_STOCK_ABOUT, N_("_About"), NULL,
+	{ "About", GTK_STOCK_ABOUT, NULL, NULL,
 	  N_("About this application"), G_CALLBACK (cb_about) }
 };
 
@@ -127,6 +131,8 @@ static const char ui_info[] =
 "      <separator />"
 "      <menuitem name=\"ViewMemoryMapsMenu\" action=\"MemoryMaps\" />"
 "      <menuitem name=\"ViewOpenFilesMenu\" action=\"OpenFiles\" />"
+"      <separator />"
+"      <menuitem name=\"ViewRefresh\" action=\"Refresh\" />"
 "    </menu>"
 "    <menu name=\"HelpMenu\" action=\"Help\">"
 "      <menuitem name=\"HelpContentsMenu\" action=\"HelpContents\" />"
@@ -233,6 +239,7 @@ create_sys_view (ProcData *procdata)
 	GtkWidget *label,*cpu_label, *spacer;
 	GtkWidget *table;
 	GtkWidget *color_picker;
+	GtkWidget *mem_legend_box, *net_legend_box, *cpu_legend_box;
 	GtkSizeGroup *sizegroup;
 	LoadGraph *cpu_graph, *mem_graph, *net_graph;
 	gint i;
@@ -249,15 +256,9 @@ create_sys_view (ProcData *procdata)
 
 	label = make_title_label (_("CPU History"));
 	gtk_box_pack_start (GTK_BOX (cpu_box), label, FALSE, FALSE, 0);
-	
-	cpu_hbox = gtk_hbox_new (FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (cpu_box), cpu_hbox, TRUE, TRUE, 0);
-
-	spacer = gtk_label_new ("    ");
-	gtk_box_pack_start (GTK_BOX (cpu_hbox), spacer, FALSE, FALSE, 0);
 
 	cpu_graph_box = gtk_vbox_new (FALSE, 6);
-	gtk_box_pack_start (GTK_BOX (cpu_hbox), cpu_graph_box, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (cpu_box), cpu_graph_box, TRUE, TRUE, 0);
 
 	cpu_graph = load_graph_new (LOAD_GRAPH_CPU, procdata);
 	gtk_box_pack_start (GTK_BOX (cpu_graph_box),
@@ -268,69 +269,74 @@ create_sys_view (ProcData *procdata)
 
 	sizegroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
+	hbox = gtk_hbox_new(FALSE, 0);
+	spacer = gtk_label_new ("");
+	gtk_widget_set_size_request(GTK_WIDGET(spacer), 57, -1);
+	gtk_box_pack_start (GTK_BOX (hbox), spacer, 
+			    FALSE, FALSE, 0);
+
+
+	gtk_box_pack_start (GTK_BOX (cpu_graph_box), hbox, 
+			    FALSE, FALSE, 0);
+
+	/*cpu_legend_box = gtk_hbox_new(TRUE, 10);
+	gtk_box_pack_start (GTK_BOX (hbox), cpu_legend_box, 
+			    TRUE, TRUE, 0);*/
+
 	GtkWidget* cpu_table = gtk_table_new(std::min(procdata->config.num_cpus / 4, 1),
 					     std::min(procdata->config.num_cpus, 4),
 					     TRUE);
 	gtk_table_set_row_spacings(GTK_TABLE(cpu_table), 6);
-	gtk_table_set_col_spacings(GTK_TABLE(cpu_table), 12);
-	gtk_box_pack_start(GTK_BOX(cpu_graph_box), cpu_table, FALSE, FALSE, 0);
+	gtk_table_set_col_spacings(GTK_TABLE(cpu_table), 6);
+	gtk_box_pack_start(GTK_BOX(hbox), cpu_table, TRUE, TRUE, 0);
 
 	for (i=0;i<procdata->config.num_cpus; i++) {
 		GtkWidget *temp_hbox;
 		gchar *text;
 		
-		temp_hbox = gtk_hbox_new (FALSE, 6);
+		temp_hbox = gtk_hbox_new (FALSE, 0);
 		gtk_table_attach(GTK_TABLE(cpu_table), temp_hbox,
 				 i % 4, i % 4 + 1,
 				 i / 4, i / 4 + 1,
-				 GTK_FILL, GTK_FILL,
+				 static_cast<GtkAttachOptions>(GTK_EXPAND | GTK_FILL), 
+				 static_cast<GtkAttachOptions>(GTK_EXPAND | GTK_FILL),
 				 0, 0);
-		gtk_size_group_add_widget (sizegroup, temp_hbox);
-		g_signal_connect (G_OBJECT (temp_hbox), "size_request",
+		//gtk_size_group_add_widget (sizegroup, temp_hbox);
+		/*g_signal_connect (G_OBJECT (temp_hbox), "size_request",
 					 G_CALLBACK(size_request), &cpu_size);
-
-		color_picker = gtk_color_button_new_with_color (
-			&load_graph_get_colors(cpu_graph)[i]);
-
+*/
+		color_picker = gsm_color_button_new (
+			&load_graph_get_colors(cpu_graph)[i], GSMCP_TYPE_CPU);
 		g_signal_connect (G_OBJECT (color_picker), "color_set",
 			    G_CALLBACK (cb_cpu_color_changed), GINT_TO_POINTER (i));
-		gtk_box_pack_start (GTK_BOX (temp_hbox), color_picker, FALSE, FALSE, 0);
-		
+		gtk_box_pack_start (GTK_BOX (temp_hbox), color_picker, FALSE, TRUE, 0);
+		gtk_widget_set_size_request(GTK_WIDGET(color_picker), 32, -1);
 		if(procdata->config.num_cpus == 1) {
-			text = g_strdup (_("CPU:"));
-		}
-		else {
-			text = g_strdup_printf (_("CPU%d:"), i+1);
+			text = g_strdup (_("CPU"));
+		} else {
+			text = g_strdup_printf (_("CPU%d"), i+1);
 		}
 		label = gtk_label_new (text);
 		gtk_box_pack_start (GTK_BOX (temp_hbox), label, FALSE, FALSE, 6);
 		g_free (text);
-		
+
 		cpu_label = gtk_label_new (NULL);
-		gtk_box_pack_start (GTK_BOX (temp_hbox), cpu_label, FALSE, FALSE, 0);
+		gtk_misc_set_alignment (GTK_MISC (cpu_label), 0.0, 0.5);
+		gtk_box_pack_start (GTK_BOX (temp_hbox), cpu_label, TRUE, TRUE, 0);
 		load_graph_get_labels(cpu_graph)->cpu[i] = cpu_label;
 		
 	}
-	
-	
-	
-	procdata->cpu_graph = cpu_graph;
 
+	procdata->cpu_graph = cpu_graph;
 
 	mem_box = gtk_vbox_new (FALSE, 6);
 	gtk_box_pack_start (GTK_BOX (vbox), mem_box, TRUE, TRUE, 0);
 
 	label = make_title_label (_("Memory and Swap History"));
 	gtk_box_pack_start (GTK_BOX (mem_box), label, FALSE, FALSE, 0);
-	
-	mem_hbox = gtk_hbox_new (FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (mem_box), mem_hbox, TRUE, TRUE, 0);
-
-	spacer = gtk_label_new ("    ");
-	gtk_box_pack_start (GTK_BOX (mem_hbox), spacer, FALSE, FALSE, 0);
 
 	mem_graph_box = gtk_vbox_new (FALSE, 6);
-	gtk_box_pack_start (GTK_BOX (mem_hbox), mem_graph_box, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (mem_box), mem_graph_box, TRUE, TRUE, 0);
 
 
 	mem_graph = load_graph_new (LOAD_GRAPH_MEM, procdata);
@@ -339,124 +345,66 @@ create_sys_view (ProcData *procdata)
 			    TRUE,
 			    TRUE,
 			    0);
-	
-	table = gtk_table_new (2, 7, FALSE);
-	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-	gtk_table_set_col_spacings (GTK_TABLE (table), 12);
-	gtk_box_pack_start (GTK_BOX (mem_graph_box), table, 
+
+	hbox = gtk_hbox_new(FALSE, 0);
+	spacer = gtk_label_new ("");
+	gtk_widget_set_size_request(GTK_WIDGET(spacer), 54, -1);
+	gtk_box_pack_start (GTK_BOX (hbox), spacer, 
 			    FALSE, FALSE, 0);
 
-	color_picker = gtk_color_button_new_with_color (
-		&load_graph_get_colors(mem_graph)[0]);
+
+	gtk_box_pack_start (GTK_BOX (mem_graph_box), hbox, 
+			    FALSE, FALSE, 0);
+
+	mem_legend_box = gtk_hbox_new(TRUE, 10);
+	gtk_box_pack_start (GTK_BOX (hbox), mem_legend_box, 
+			    TRUE, TRUE, 0);
+
+	table = gtk_table_new (2, 7, FALSE);
+	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+	gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+	gtk_box_pack_start (GTK_BOX (mem_legend_box), table, 
+			    TRUE, TRUE, 0);
+
+	color_picker = load_graph_get_mem_color_picker(mem_graph);
 	g_signal_connect (G_OBJECT (color_picker), "color_set",
 			    G_CALLBACK (cb_mem_color_changed), procdata);
-	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 2, GTK_SHRINK, GTK_SHRINK, 0, 0);
 	
-	label = gtk_label_new (_("User memory:"));
+	label = gtk_label_new (_("Memory"));
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_table_attach (GTK_TABLE (table), label, 1, 2, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_table_attach (GTK_TABLE (table), label, 1, 7, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
 	
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(mem_graph)->memused),
-				0.0,
-				0.5);
 	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(mem_graph)->memused,
+			  load_graph_get_labels(mem_graph)->memory,
+			  1,
 			  2,
-			  3,
-			  0,
 			  1,
-			  GTK_FILL,
-			  GTK_FILL,
-			  0,
-			  0);
-	// xgettext: user memory: 123 MiB of 512MiB
-	label = gtk_label_new (_("of"));
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_table_attach (GTK_TABLE (table), label, 3, 4, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
-	
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(mem_graph)->memtotal),
-				0.0,
-				0.5);
-
-	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(mem_graph)->memtotal,
-			  4,
-			  5,
-			  0,
-			  1,
-			  GTK_FILL,
-			  GTK_FILL,
-			  0,
-			  0);
-	
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(mem_graph)->mempercent),
-					  1.0,
-					  0.5);
-	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(mem_graph)->mempercent,
-			  5,
-			  6,
-			  0,
-			  1,
+			  2,
 			  GTK_FILL,
 			  GTK_FILL,
 			  0,
 			  0);
 
-	color_picker = gtk_color_button_new_with_color (
-		&load_graph_get_colors(mem_graph)[1]);
+	table = gtk_table_new (2, 7, FALSE);
+	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+	gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+	gtk_box_pack_start (GTK_BOX (mem_legend_box), table, 
+			    TRUE, TRUE, 0);
+
+	color_picker = load_graph_get_swap_color_picker(mem_graph);
 	g_signal_connect (G_OBJECT (color_picker), "color_set",
 			    G_CALLBACK (cb_swap_color_changed), procdata);
-	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
-			  
-	label = gtk_label_new (_("Used swap:"));
+	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 2, GTK_SHRINK, GTK_SHRINK, 0, 0);
+		  
+	label = gtk_label_new (_("Swap"));
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_table_attach (GTK_TABLE (table), label, 1, 2, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_table_attach (GTK_TABLE (table), label, 1, 7, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
 	
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(mem_graph)->swapused ),
-				0.0,
-				0.5);
 	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(mem_graph)->swapused,
-			  2,
-			  3,
+			  load_graph_get_labels(mem_graph)->swap,
 			  1,
 			  2,
-			  GTK_FILL,
-			  GTK_FILL,
-			  0,
-			  0);
-	// xgettext: swap: 10MiB of 1GiB
-	label = gtk_label_new (_("of"));
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_table_attach (GTK_TABLE (table), label, 3, 4, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
-	
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(mem_graph)->swaptotal),
-				0.0,
-				0.5);
-	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(mem_graph)->swaptotal,
-			  4,
-			  5,
-			  1,
-			  2,
-			  GTK_FILL,
-			  GTK_FILL,
-			  0,
-			  0);
-
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(mem_graph)->swappercent),
-				1.0,
-				0.5);
-	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(mem_graph)->swappercent,
-			  5,
-			  6,
 			  1,
 			  2,
 			  GTK_FILL,
@@ -473,14 +421,8 @@ create_sys_view (ProcData *procdata)
 	label = make_title_label (_("Network History"));
 	gtk_box_pack_start (GTK_BOX (net_box), label, FALSE, FALSE, 0);
 
-	net_hbox = gtk_hbox_new (FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (net_box), net_hbox, TRUE, TRUE, 0);
-
-	spacer = gtk_label_new ("    ");
-	gtk_box_pack_start (GTK_BOX (net_hbox), spacer, FALSE, FALSE, 0);
-
 	net_graph_box = gtk_vbox_new (FALSE, 6);
-	gtk_box_pack_start (GTK_BOX (net_hbox), net_graph_box, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (net_box), net_graph_box, TRUE, TRUE, 0);
 
 	net_graph = load_graph_new (LOAD_GRAPH_NET, procdata);
 	gtk_box_pack_start (GTK_BOX (net_graph_box),
@@ -489,98 +431,130 @@ create_sys_view (ProcData *procdata)
 			    TRUE,
 			    0);
 
-	table = gtk_table_new (2, 5, FALSE);
-	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-	gtk_table_set_col_spacings (GTK_TABLE (table), 12);
-	gtk_box_pack_start (GTK_BOX (net_graph_box), table,
+	hbox = gtk_hbox_new(FALSE, 0);
+	spacer = gtk_label_new ("");
+	gtk_widget_set_size_request(GTK_WIDGET(spacer), 54, -1);
+	gtk_box_pack_start (GTK_BOX (hbox), spacer, 
 			    FALSE, FALSE, 0);
 
-	color_picker = gtk_color_button_new_with_color (
-		&load_graph_get_colors(net_graph)[0]);
+
+	gtk_box_pack_start (GTK_BOX (net_graph_box), hbox, 
+			    FALSE, FALSE, 0);
+
+	net_legend_box = gtk_hbox_new(TRUE, 10);
+	gtk_box_pack_start (GTK_BOX (hbox), net_legend_box, 
+			    TRUE, TRUE, 0);
+
+	table = gtk_table_new (2, 4, FALSE);
+	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+	gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+	gtk_box_pack_start (GTK_BOX (net_legend_box), table,
+			    TRUE, TRUE, 0);
+
+	color_picker = gsm_color_button_new (
+		&load_graph_get_colors(net_graph)[0], GSMCP_TYPE_NETWORK_IN);
 	g_signal_connect (G_OBJECT (color_picker), "color_set",
 			    G_CALLBACK (cb_net_in_color_changed), procdata);
-	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 2, GTK_SHRINK, GTK_SHRINK, 0, 0);
 
-	label = gtk_label_new (_("Received:"));
+	label = gtk_label_new (_("Receiving"));
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 	gtk_table_attach (GTK_TABLE (table), label, 1, 2, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
 
+	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_in),
+				1.0,
+				0.5);
+/*
 	hbox = gtk_hbox_new (FALSE, 0);
 	g_signal_connect (G_OBJECT (hbox), "size_request",
 			  G_CALLBACK(size_request), &net_size);
-
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_in),
-				0.0,
-				0.5);
 	gtk_box_pack_start (GTK_BOX (hbox),
 			    load_graph_get_labels(net_graph)->net_in,
-			    FALSE,
-			    FALSE,
+			    TRUE,
+			    TRUE,
 			    0);
+*/
+	gtk_widget_set_size_request(GTK_WIDGET(load_graph_get_labels(net_graph)->net_in), 65, -1);
+	gtk_table_attach (GTK_TABLE (table), load_graph_get_labels(net_graph)->net_in, 2, 3, 0, 1, 
+			  static_cast<GtkAttachOptions>(GTK_EXPAND | GTK_FILL), GTK_FILL, 0, 0);
 
-	gtk_table_attach (GTK_TABLE (table), hbox, 2, 3, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
-
-	label = gtk_label_new (_("Total:"));
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_table_attach (GTK_TABLE (table), label, 3, 4, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_in_total),
-				0.0,
-				0.5);
-	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(net_graph)->net_in_total,
-			  4,
-			  5,
-			  0,
-			  1,
-			  GTK_FILL,
-			  GTK_FILL,
-			  0,
-			  0);
-
-	color_picker = gtk_color_button_new_with_color (
-		&load_graph_get_colors(net_graph)[1]);
-	g_signal_connect (G_OBJECT (color_picker), "color_set",
-			    G_CALLBACK (cb_net_out_color_changed), procdata);
-	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
-
-	label = gtk_label_new (_("Sent:"));
+	label = gtk_label_new (_("Total Received"));
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 	gtk_table_attach (GTK_TABLE (table), label, 1, 2, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
 
-	hbox = gtk_hbox_new (FALSE, 0);
-	g_signal_connect (G_OBJECT (hbox), "size_request",
-			  G_CALLBACK(size_request), &net_size);
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_out),
-				0.0,
-				0.5);
-	gtk_box_pack_start (GTK_BOX (hbox),
-			    load_graph_get_labels(net_graph)->net_out,
-			    FALSE,
-			    FALSE,
-			    0);
-
-	gtk_table_attach (GTK_TABLE (table), hbox, 2, 3, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
-
-	label = gtk_label_new (_("Total:"));
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_table_attach (GTK_TABLE (table), label, 3, 4, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
-
-	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_out_total),
-				0.0,
+	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_in_total),
+				1.0,
 				0.5);
 	gtk_table_attach (GTK_TABLE (table),
-			  load_graph_get_labels(net_graph)->net_out_total,
-			  4,
-			  5,
+			  load_graph_get_labels(net_graph)->net_in_total,
+			  2,
+			  3,
 			  1,
 			  2,
 			  GTK_FILL,
 			  GTK_FILL,
 			  0,
 			  0);
+
+	spacer = gtk_label_new ("");
+	gtk_widget_set_size_request(GTK_WIDGET(spacer), 38, -1);
+	gtk_table_attach (GTK_TABLE (table), spacer, 3, 4, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+
+	table = gtk_table_new (2, 3, FALSE);
+	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+	gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+	gtk_box_pack_start (GTK_BOX (net_legend_box), table,
+			    TRUE, TRUE, 0);
+
+	color_picker = gsm_color_button_new (
+		&load_graph_get_colors(net_graph)[1], GSMCP_TYPE_NETWORK_OUT);
+	g_signal_connect (G_OBJECT (color_picker), "color_set",
+			    G_CALLBACK (cb_net_out_color_changed), procdata);
+	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 2, GTK_SHRINK, GTK_SHRINK, 0, 0);
+
+	label = gtk_label_new (_("Sending"));
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+	gtk_table_attach (GTK_TABLE (table), label, 1, 2, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+
+	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_out),
+				1.0,
+				0.5);
+/*
+	hbox = gtk_hbox_new (FALSE, 0);
+	g_signal_connect (G_OBJECT (load_graph_get_labels(net_graph)->net_out), "size_request",
+			  G_CALLBACK(size_request), &net_size);
+
+	gtk_box_pack_start (GTK_BOX (hbox),
+			    load_graph_get_labels(net_graph)->net_out,
+			    TRUE,
+			    TRUE,
+			    0);
+*/
+	gtk_widget_set_size_request(GTK_WIDGET(load_graph_get_labels(net_graph)->net_out), 65, -1);
+	gtk_table_attach (GTK_TABLE (table), load_graph_get_labels(net_graph)->net_out, 2, 3, 0, 1, 
+			  static_cast<GtkAttachOptions>(GTK_EXPAND | GTK_FILL), GTK_FILL, 0, 0);
+
+	label = gtk_label_new (_("Total Sent"));
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+	gtk_table_attach (GTK_TABLE (table), label, 1, 2, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
+
+	gtk_misc_set_alignment (GTK_MISC (load_graph_get_labels(net_graph)->net_out_total),
+				1.0,
+				0.5);
+	gtk_table_attach (GTK_TABLE (table),
+			  load_graph_get_labels(net_graph)->net_out_total,
+			  2,
+			  3,
+			  1,
+			  2,
+			  GTK_FILL,
+			  GTK_FILL,
+			  0,
+			  0);
+
+	spacer = gtk_label_new ("");
+	gtk_widget_set_size_request(GTK_WIDGET(spacer), 38, -1);
+	gtk_table_attach (GTK_TABLE (table), spacer, 3, 4, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
 
 	procdata->net_graph = net_graph;
 
@@ -713,7 +687,7 @@ create_main_window (ProcData *procdata)
 
 
 	/* create the main notebook */
-	notebook = gtk_notebook_new ();
+	procdata->notebook = notebook = gtk_notebook_new ();
   	gtk_box_pack_start (GTK_BOX (main_box), 
 	                    notebook, 
 	                    TRUE, 
@@ -797,7 +771,8 @@ update_sensitivity(ProcData *data)
 	const char * const processes_actions[] = { "ShowActiveProcesses",
 						   "ShowAllProcesses",
 						   "ShowMyProcesses",
-						   "ShowDependencies"
+						   "ShowDependencies",
+						   "Refresh"
 	};
 
 	size_t i;

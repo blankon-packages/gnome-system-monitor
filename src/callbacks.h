@@ -23,6 +23,7 @@
 
 #include <gtk/gtk.h>
 #include "procman.h"
+#include "gsm_color_button.h"
 #include <libgnomevfs/gnome-vfs.h>
 
 
@@ -45,13 +46,11 @@ void		cb_logout (GtkButton *button, gpointer data);
 
 void		cb_info_button_pressed (GtkButton *button, gpointer user_data);
 
-void		cb_cpu_color_changed (GtkColorButton *widget, gpointer user_data);
-void		cb_mem_color_changed (GtkColorButton *widget, gpointer user_data);
-void		cb_swap_color_changed (GtkColorButton *widget, gpointer user_data);
-void		cb_net_in_color_changed (GtkColorButton *widget, gpointer user_data);
-void		cb_net_out_color_changed (GtkColorButton *widget, gpointer user_data);
-void		cb_bg_color_changed (GtkColorButton *widget, gpointer user_data);
-void		cb_frame_color_changed (GtkColorButton *widget, gpointer user_data);
+void		cb_cpu_color_changed (GSMColorButton *widget, gpointer user_data);
+void		cb_mem_color_changed (GSMColorButton *widget, gpointer user_data);
+void		cb_swap_color_changed (GSMColorButton *widget, gpointer user_data);
+void		cb_net_in_color_changed (GSMColorButton *widget, gpointer user_data);
+void		cb_net_out_color_changed (GSMColorButton *widget, gpointer user_data);
 
 void		cb_row_selected (GtkTreeSelection *selection, gpointer data);
 
@@ -66,6 +65,7 @@ void		cb_switch_page (GtkNotebook *nb, GtkNotebookPage *page,
 				gint num, gpointer data);
 
 gint		cb_update_disks (gpointer data);
+gint		cb_user_refresh (GtkAction* action, gpointer data);
 gint		cb_timeout (gpointer data);
 
 void		cb_volume_mounted_or_unmounted(GnomeVFSVolumeMonitor *vfsvolumemonitor,

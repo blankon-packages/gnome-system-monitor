@@ -4,7 +4,7 @@
 #include <glib/gtypes.h>
 #include <glibtop/cpu.h>
 
-typedef struct _LoadGraph LoadGraph;
+struct LoadGraph;
 typedef struct _LoadGraphLabels LoadGraphLabels;
 
 #include "procman.h"
@@ -20,12 +20,8 @@ enum
 struct _LoadGraphLabels
 {
 	GtkWidget *cpu[GLIBTOP_NCPU];
-	GtkWidget *memused;
-	GtkWidget *memtotal;
-	GtkWidget *mempercent;
-	GtkWidget *swapused;
-	GtkWidget *swaptotal;
-	GtkWidget *swappercent;
+	GtkWidget *memory;
+	GtkWidget *swap;
 	GtkWidget *net_in;
 	GtkWidget *net_in_total;
 	GtkWidget *net_out;
@@ -63,5 +59,12 @@ load_graph_get_labels (LoadGraph *g) G_GNUC_CONST;
 
 GtkWidget*
 load_graph_get_widget (LoadGraph *g) G_GNUC_CONST;
+
+GtkWidget*
+load_graph_get_mem_color_picker(LoadGraph *g) G_GNUC_CONST;
+
+GtkWidget*
+load_graph_get_swap_color_picker(LoadGraph *g) G_GNUC_CONST;
+
 
 #endif /* _PROCMAN_LOAD_GRAPH_H_ */

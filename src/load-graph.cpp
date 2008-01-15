@@ -28,10 +28,10 @@
 #include "procman.h"
 #include "load-graph.h"
 #include "util.h"
+#include "gsm_color_button.h"
 
-#define NUM_POINTS 100
-#define GRAPH_MIN_HEIGHT 80
-
+#define NUM_POINTS 60
+#define GRAPH_MIN_HEIGHT 40
 
 enum {
 	CPU_TOTAL,
@@ -39,12 +39,25 @@ enum {
 	N_CPU_STATES
 };
 
-struct _LoadGraph {
+struct LoadGraph {
+
+
+	unsigned num_bars() const;
+
+	double fontsize;
+	double rmargin;
+	double indent;
 
 	guint n;
 	gint type;
 	guint speed;
 	guint draw_width, draw_height;
+	guint render_counter;
+	guint frames_per_unit;
+	guint graph_dely;
+	guint real_draw_height;
+	double graph_delx;
+	guint graph_buffer_offset;
 
 	GdkColor *colors;
 
@@ -55,16 +68,19 @@ struct _LoadGraph {
 	GtkWidget *disp;
 
 	cairo_surface_t *buffer;
+	cairo_surface_t *graph_buffer;
+	cairo_surface_t *background_buffer;
 
 	guint timer_index;
 
 	gboolean draw;
 
 	LoadGraphLabels labels;
+	GtkWidget *mem_color_picker;
+	GtkWidget *swap_color_picker;
 
 	/* union { */
 		struct {
-			gboolean initialized;
 			guint now; /* 0 -> current, 1 -> last
 				    now ^ 1 each time */
 			/* times[now], times[now ^ 1] is last */
@@ -74,7 +90,7 @@ struct _LoadGraph {
 		struct {
 			guint64 last_in, last_out;
 			GTimeVal time;
-			unsigned max;
+			unsigned int max;
 			unsigned values[NUM_POINTS];
 			size_t cur;
 		} net;
@@ -83,159 +99,204 @@ struct _LoadGraph {
 
 
 
-#define FRAME_WIDTH 4
+unsigned LoadGraph::num_bars() const
+{
+	unsigned n;
 
+	// keep 100 % num_bars == 0
+	switch (static_cast<int>(this->draw_height / (this->fontsize + 14)))
+	{
+	case 0:
+	case 1:
+		n = 1;
+		break;
+	case 2:
+	case 3:
+		n = 2;
+		break;
+	case 4:
+		n = 4;
+		break;
+	default:
+		n = 5;
+	}
+
+	return n;
+}
+
+
+
+#define FRAME_WIDTH 4
+void draw_background(LoadGraph *g) {
+	double dash[2] = { 1.0, 2.0 };
+	cairo_t *cr;
+	cairo_t* tmp_cr;
+	guint i;
+	unsigned num_bars;
+	char *caption;
+	cairo_text_extents_t extents;
+
+
+	num_bars = g->num_bars();
+	g->graph_dely = (g->draw_height - 15) / num_bars; /* round to int to avoid AA blur */
+	g->real_draw_height = g->graph_dely * num_bars;
+	g->graph_delx = (g->draw_width - 2.0 - g->rmargin - g->indent) / (NUM_POINTS - 3);
+	g->graph_buffer_offset = (int) (1.5 * g->graph_delx) + FRAME_WIDTH ;
+
+	cr = cairo_create (g->buffer);
+	g->background_buffer = cairo_surface_create_similar (cairo_get_target (cr),
+							     CAIRO_CONTENT_COLOR_ALPHA,
+							     g->draw_width + (2*FRAME_WIDTH),
+							     g->draw_height + (2*FRAME_WIDTH));  // ** We need the whole area as we are now setting the background colour here
+	
+	tmp_cr = cairo_create (g->background_buffer);
+
+	// set the background colour
+	GtkStyle *style = gtk_widget_get_style (ProcData::get_instance()->notebook);
+	gdk_cairo_set_source_color (tmp_cr, &style->bg[GTK_STATE_NORMAL]);
+	cairo_paint (tmp_cr);
+
+	/* draw frame */
+	cairo_translate (tmp_cr, FRAME_WIDTH, FRAME_WIDTH);
+	
+	/* Draw background rectangle */
+	cairo_set_source_rgb (tmp_cr, 1.0, 1.0, 1.0);
+	cairo_rectangle (tmp_cr, g->rmargin + g->indent, 0,
+			 g->draw_width - g->rmargin - g->indent, g->real_draw_height);
+	cairo_fill(tmp_cr);
+	
+	cairo_set_line_width (tmp_cr, 1.0);
+	cairo_set_dash (tmp_cr, dash, 2, 0);
+	cairo_set_font_size (tmp_cr, g->fontsize);
+
+	for (i = 0; i <= num_bars; ++i) {
+		double y;
+
+		if (i == 0)
+		  y = 0.5 + g->fontsize / 2.0;
+		else if (i == num_bars)
+		  y = i * g->graph_dely + 0.5;
+		else
+		  y = i * g->graph_dely + g->fontsize / 2.0;
+		gdk_cairo_set_source_color (tmp_cr, &style->fg[GTK_STATE_NORMAL]);
+		if (g->type == LOAD_GRAPH_NET) {
+			// operation orders matters so it's 0 if i == num_bars
+			unsigned rate = g->net.max - (i * g->net.max / num_bars);
+			const std::string caption(procman::format_rate(rate));
+			cairo_text_extents (tmp_cr, caption.c_str(), &extents);
+			cairo_move_to (tmp_cr, g->indent - extents.width + 20, y);
+			cairo_show_text (tmp_cr, caption.c_str());
+		} else {
+			// operation orders matters so it's 0 if i == num_bars
+			caption = g_strdup_printf("%d %%", 100 - i * (100 / num_bars));
+			cairo_text_extents (tmp_cr, caption, &extents);
+			cairo_move_to (tmp_cr, g->indent - extents.width + 20, y);
+			cairo_show_text (tmp_cr, caption);
+			g_free (caption);
+		}
+
+		cairo_set_source_rgba (tmp_cr, 0, 0, 0, 0.75);
+		cairo_move_to (tmp_cr, g->rmargin + g->indent - 3, i * g->graph_dely + 0.5);
+		cairo_line_to (tmp_cr, g->draw_width - 0.5, i * g->graph_dely + 0.5);
+	}
+	cairo_stroke (tmp_cr);
+
+	cairo_set_dash (tmp_cr, dash, 2, 1.5);
+
+	const unsigned total_seconds = g->speed * (NUM_POINTS - 2) / 1000;
+
+	for (unsigned int i = 0; i < 7; i++) {
+		double x = (i) * (g->draw_width - g->rmargin - g->indent) / 6;
+		cairo_set_source_rgba (tmp_cr, 0, 0, 0, 0.75);
+		cairo_move_to (tmp_cr, (ceil(x) + 0.5) + g->rmargin + g->indent, 0.5);
+		cairo_line_to (tmp_cr, (ceil(x) + 0.5) + g->rmargin + g->indent, g->real_draw_height + 4.5);
+		cairo_stroke(tmp_cr);
+		unsigned seconds = total_seconds - i * total_seconds / 6;
+		const char* format;
+		if (i == 0)
+			format = dngettext(GETTEXT_PACKAGE, "%u second", "%u seconds", seconds);
+		else
+			format = "%u";
+		caption = g_strdup_printf(format, seconds);
+		cairo_text_extents (tmp_cr, caption, &extents);
+		cairo_move_to (tmp_cr, ((ceil(x) + 0.5) + g->rmargin + g->indent) - (extents.width/2), g->draw_height);
+		gdk_cairo_set_source_color (tmp_cr, &style->fg[GTK_STATE_NORMAL]);
+		cairo_show_text (tmp_cr, caption);
+		g_free (caption);
+	}
+
+	cairo_stroke (tmp_cr);
+	cairo_destroy (tmp_cr);
+	cairo_destroy (cr); 
+}
 
 /* Redraws the backing buffer for the load graph and updates the window */
 void
 load_graph_draw (LoadGraph *g)
 {
-	const double fontsize = 8.0;
-	const double rmargin = 3.5 * fontsize;
-	const double indent = 8.0;
-	double dash[2] = { 1.0, 2.0 };
 	cairo_t *cr;
-	int dely;
-	double delx;
-	int real_draw_height;
 	guint i, j;
-	unsigned num_bars;
-	GtkWidget *notebook;
-
-	// keep 100 % num_bars == 0
-	switch (static_cast<int>(g->draw_height / (fontsize + 14)))
-	  {
-	  case 1:
-	    num_bars = 1;
-	    break;
-	  case 2:
-	  case 3:
-	    num_bars = 2;
-	    break;
-	  case 4:
-	    num_bars = 4;
-	    break;
-	  default:
-	    num_bars = 5;
-	  }
-
-	dely = g->draw_height / num_bars; /* round to int to avoid AA blur */
-	real_draw_height = dely * num_bars;
-
-	/* GtkStyle gives us the theme background color, this should be in
-	 * load_graph_new but something causes load_graph_new to use the
-	 * default GTK color scheme rather than the current theme color
-	 * we also have to trawl through parent widgets to get to gtknotebook
-	 * *sigh*
-	 */
-	notebook = g->main_widget;
-	while (g_ascii_strncasecmp(gtk_widget_get_name(notebook),
-				   "GtkNotebook", 12)) {
-		notebook = gtk_widget_get_parent(notebook);
-		if (notebook == NULL) {
-			// Fall back to using the main_widget for styles
-			notebook = g->main_widget;
-			break;
-		}
-	}
-
-	GtkStyle *style = gtk_widget_get_style(notebook);
 
 	cr = cairo_create (g->buffer);
 
-	/* clear */
-	gdk_cairo_set_source_color (cr, &style->bg[GTK_STATE_NORMAL]);
+	/* draw the graph */
+	if ((g->render_counter == 0)) {  
+		cairo_surface_destroy(g->graph_buffer);
+		cairo_t* tmp_cr;
+
+		g->graph_buffer = cairo_surface_create_similar (cairo_get_target (cr),
+							 	CAIRO_CONTENT_COLOR_ALPHA,
+								g->draw_width,
+								g->draw_height);
+		tmp_cr = cairo_create (g->graph_buffer);
+
+		cairo_set_line_width (tmp_cr, 1.5);
+		cairo_set_line_cap (tmp_cr, CAIRO_LINE_CAP_ROUND);
+		cairo_set_line_join (tmp_cr, CAIRO_LINE_JOIN_ROUND);
+
+		for (j = 0; j < g->n; ++j) {
+			cairo_move_to (tmp_cr,
+				       g->draw_width - 2.0,
+				       (1.0f - g->data[0][j]) * g->real_draw_height);
+			gdk_cairo_set_source_color (tmp_cr, &(g->colors [j]));
+
+			for (i = 1; i < NUM_POINTS; ++i) {
+				if (g->data[i][j] == -1.0f)
+					continue;
+
+				cairo_curve_to (tmp_cr, 
+					       (g->draw_width - (i-1) * g->graph_delx) - (g->graph_delx/2),
+					       (1.0f - g->data[i-1][j]) * g->real_draw_height,
+					       (g->draw_width - i * g->graph_delx) + (g->graph_delx/2),
+					       (1.0f - g->data[i][j]) * g->real_draw_height,
+					       g->draw_width - i * g->graph_delx,
+					       (1.0f - g->data[i][j]) * g->real_draw_height);
+			}
+
+			cairo_stroke (tmp_cr);
+
+		}
+		cairo_destroy (tmp_cr);
+	} 
+
+	/* Composite and clip the surfaces together */
+	if (g->background_buffer == NULL) {
+		draw_background(g);
+	}
+	cairo_set_source_surface (cr, g->background_buffer, 0, 0);
 	cairo_paint (cr);
 
-	/* draw frame */
-	cairo_translate (cr, FRAME_WIDTH, FRAME_WIDTH);
-	
-	/* Draw background rectangle */
-	cairo_set_source_rgb (cr, 1.0, 1.0, 1.0);
-	cairo_rectangle (cr, rmargin + indent, 0,
-			 g->draw_width - rmargin - indent, real_draw_height);
-	cairo_fill(cr);
-
-	cairo_set_source_rgb (cr, 0, 0, 0);
-	cairo_set_line_width (cr, 1.0);
-	cairo_set_dash(cr, dash, 2, 0);
-	cairo_set_font_size(cr, fontsize);
-
-	for (i = 0; i <= num_bars; ++i) {
-		char *caption;
-		double y;
-		cairo_text_extents_t extents;
-
-		if (i == 0)
-		  y = 0.5 + fontsize / 2.0;
-		else if (i == num_bars)
-		  y = i * dely + 0.5;
-		else
-		  y = i * dely + fontsize / 2.0;
-
-		caption = g_strdup_printf("%3d %%", 100 - i * (100 / num_bars));
-		cairo_text_extents (cr, caption, &extents);
-		cairo_move_to(cr, indent - extents.width / 2, y);
-		cairo_show_text(cr, caption);
-		g_free(caption);
-
-		cairo_move_to (cr, rmargin, i * dely + 0.5);
-		cairo_line_to (cr, g->draw_width - 0.5, i * dely + 0.5);
-	}
-	cairo_stroke (cr);
-
-	cairo_set_dash(cr, dash, 2, 1.5);
-
-	for (unsigned i = 0; i < 7; i++) {
-		double x = (i + 1) * (g->draw_width - rmargin + indent) / 8;
-		cairo_move_to (cr, (ceil(x) + 0.5) + rmargin + indent, 0.5);
-		cairo_line_to (cr, (ceil(x) + 0.5) + rmargin + indent, real_draw_height + 0.5);
-	}
-
-	cairo_move_to (cr, rmargin + indent + 0.5, 0.5);
-	cairo_line_to (cr, rmargin + indent + 0.5, real_draw_height + 0.5);
-
-	cairo_move_to (cr, g->draw_width - 0.5, 0.5);
-	cairo_line_to (cr, g->draw_width - 0.5, real_draw_height + 0.5);
-
-	cairo_stroke (cr);
-
-	cairo_set_dash(cr, NULL, 0, 0);
-
-	/* draw the graph */
-	cairo_set_line_width (cr, 2.0);
-	cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
-	cairo_set_line_join (cr, CAIRO_LINE_JOIN_MITER);
-
-	delx = (g->draw_width - 2.0 - rmargin - indent) / (NUM_POINTS - 1);
-
-	for (j = 0; j < g->n; ++j) {
-		cairo_move_to (cr,
-			       g->draw_width - 2.0,
-			       (1.0f - g->data[0][j]) * real_draw_height);
-		gdk_cairo_set_source_color (cr, &(g->colors [j]));
-
-		for (i = 1; i < NUM_POINTS; ++i) {
-			if (g->data[i][j] == -1.0f)
-				continue;
-
-			cairo_curve_to (cr, 
-				       (g->draw_width - (i-1) * delx) - (delx/2),
-				       (1.0f - g->data[i-1][j]) * real_draw_height,
-				       (g->draw_width - i * delx) + (delx/2),
-				       (1.0f - g->data[i][j]) * real_draw_height,
-				       g->draw_width - i * delx,
-				       (1.0f - g->data[i][j]) * real_draw_height);
-		}
-
-		cairo_stroke (cr);
-	}
-
+	cairo_set_source_surface (cr, g->graph_buffer, g->graph_buffer_offset - g->render_counter, FRAME_WIDTH);
+	cairo_rectangle (cr, g->rmargin + g->indent + FRAME_WIDTH + 1, FRAME_WIDTH - 1,
+			 g->draw_width - g->rmargin - g->indent - 1 , g->real_draw_height + FRAME_WIDTH - 1);
+	cairo_fill (cr);
 	cairo_destroy (cr);
 
 	/* repaint */
 	gtk_widget_queue_draw (g->disp);
 }
+
+static int load_graph_update (gpointer user_data);  // predeclare load_graph_update so we can compile ;)
 
 static gboolean
 load_graph_configure (GtkWidget *widget,
@@ -248,6 +309,18 @@ load_graph_configure (GtkWidget *widget,
 	g->draw_width = widget->allocation.width - 2 * FRAME_WIDTH;
 	g->draw_height = widget->allocation.height - 2 * FRAME_WIDTH;
 
+	// FIXME:
+	// g->frames_per_unit = g->draw_width/(NUM_POINTS);
+	// knock FRAMES down to 5 until cairo gets faster
+	g->frames_per_unit = 5;
+
+	if(g->timer_index) {
+		g_source_remove (g->timer_index);
+		g->timer_index = g_timeout_add (g->speed / g->frames_per_unit,
+						load_graph_update,
+						g);
+	}
+
 	cr = gdk_cairo_create (widget->window);
 
 	if (g->buffer)
@@ -259,6 +332,11 @@ load_graph_configure (GtkWidget *widget,
 						  widget->allocation.height);
 
 	cairo_destroy (cr);
+
+	if (g->background_buffer != NULL) {
+		cairo_surface_destroy(g->background_buffer);
+		g->background_buffer = NULL;
+	}
 
 	load_graph_draw (g);
 
@@ -276,11 +354,7 @@ load_graph_expose (GtkWidget *widget,
 	cr = gdk_cairo_create(widget->window);
 
 	cairo_set_source_surface(cr, g->buffer, 0, 0);
-	cairo_rectangle(cr,
-			event->area.x, event->area.y,
-			event->area.width, event->area.height);
-	cairo_fill(cr);
-
+	cairo_paint(cr);
 	cairo_destroy(cr);
 
 	return TRUE;
@@ -310,26 +384,27 @@ get_load (LoadGraph *g)
 		}
 	}
 
-	if (G_UNLIKELY(!g->cpu.initialized)) {
-		/* No data yet */
-		g->cpu.initialized = TRUE;
-	} else {
-		for (i = 0; i < g->n; i++) {
-			float load;
-			float total, used;
-			gchar *text;
+	// on the first call, LAST is 0
+	// which means data is set to the average load since boot
+	// that value has no meaning, we just want all the
+	// graphs to be aligned, so the CPU graph needs to start
+	// immediately
 
-			total = NOW[i][CPU_TOTAL] - LAST[i][CPU_TOTAL];
-			used  = NOW[i][CPU_USED]  - LAST[i][CPU_USED];
+	for (i = 0; i < g->n; i++) {
+		float load;
+		float total, used;
+		gchar *text;
 
-			load = used / MAX(total, 1.0f);
-			g->data[0][i] = load;
+		total = NOW[i][CPU_TOTAL] - LAST[i][CPU_TOTAL];
+		used  = NOW[i][CPU_USED]  - LAST[i][CPU_USED];
 
-			/* Update label */
-			text = g_strdup_printf("%.1f%%", load * 100.0f);
-			gtk_label_set_text(GTK_LABEL(g->labels.cpu[i]), text);
-			g_free(text);
-		}
+		load = used / MAX(total, 1.0f);
+		g->data[0][i] = load;
+
+		/* Update label */
+		text = g_strdup_printf("%.1f%%", load * 100.0f);
+		gtk_label_set_text(GTK_LABEL(g->labels.cpu[i]), text);
+		g_free(text);
 	}
 
 	g->cpu.now ^= 1;
@@ -339,11 +414,34 @@ get_load (LoadGraph *g)
 }
 
 
+namespace
+{
+
+  void set_memory_label_and_picker(GtkLabel* label, GSMColorButton* picker,
+				   guint64 used, guint64 total, double percent)
+  {
+    char* used_text;
+    char* total_text;
+    char* text;
+
+    used_text = SI_gnome_vfs_format_file_size_for_display(used);
+    total_text = SI_gnome_vfs_format_file_size_for_display(total);
+    // xgettext: 540MiB (53 %) of 1.0 GiB
+    text = g_strdup_printf(_("%s (%.1f %%) of %s"), used_text, 100.0 * percent, total_text);
+    gtk_label_set_text(label, text);
+    g_free(used_text);
+    g_free(total_text);
+    g_free(text);
+
+    if (picker)
+      gsm_color_button_set_fraction(picker, percent);
+  }
+}
+
 static void
 get_memory (LoadGraph *g)
 {
 	float mempercent, swappercent;
-	gchar *text1, *text2, *text3;
 
 	glibtop_mem mem;
 	glibtop_swap swap;
@@ -355,25 +453,13 @@ get_memory (LoadGraph *g)
 	swappercent = (swap.total ? (float)swap.used / (float)swap.total : 0.0f);
 	mempercent  = (float)mem.user  / (float)mem.total;
 
-	text1 = SI_gnome_vfs_format_file_size_for_display (mem.total);
-	text2 = SI_gnome_vfs_format_file_size_for_display (mem.user);
-	text3 = g_strdup_printf ("  %.1f %%", mempercent * 100.0f);
-	gtk_label_set_text (GTK_LABEL (g->labels.memused), text2);
-	gtk_label_set_text (GTK_LABEL (g->labels.memtotal), text1);
-	gtk_label_set_text (GTK_LABEL (g->labels.mempercent), text3);
-	g_free (text1);
-	g_free (text2);
-	g_free (text3);
+	set_memory_label_and_picker(GTK_LABEL(g->labels.memory),
+				    GSM_COLOR_BUTTON(g->mem_color_picker),
+				    mem.user, mem.total, mempercent);
 
-	text1 = SI_gnome_vfs_format_file_size_for_display (swap.total);
-	text2 = SI_gnome_vfs_format_file_size_for_display (swap.used);
-	text3 = g_strdup_printf ("  %.1f %%", swappercent * 100.0f);
-	gtk_label_set_text (GTK_LABEL (g->labels.swapused), text2);
-	gtk_label_set_text (GTK_LABEL (g->labels.swaptotal), text1);
-	gtk_label_set_text (GTK_LABEL (g->labels.swappercent), text3);
-	g_free (text1);
-	g_free (text2);
-	g_free (text3);
+	set_memory_label_and_picker(GTK_LABEL(g->labels.swap),
+				    GSM_COLOR_BUTTON(g->swap_color_picker),
+				    swap.used, swap.total, swappercent);
 
 	g->data[0][0] = mempercent;
 	g->data[0][1] = swappercent;
@@ -397,10 +483,44 @@ net_scale (LoadGraph *g, unsigned din, unsigned dout)
 		new_max = *std::max_element(&g->net.values[0],
 					    &g->net.values[NUM_POINTS]);
 
-	// round up
+	//
+	// Round network maximum
+	//
+
+	const unsigned bak_max(new_max);
+
+	// round up to get some extra space
 	new_max = 11U * new_max / 10U;
 	// make sure max is not 0 to avoid / 0
-	new_max = std::max(new_max, 1U);
+	// default to 1 KiB
+	new_max = std::max(new_max, 1024U);
+
+	// decompose new_max = coef10 * 2**(base10 * 10)
+	// where coef10 and base10 are integers and coef10 < 2**10
+	//
+	// e.g: ceil(100.5 KiB) = 101 KiB = 101 * 2**(1 * 10)
+	//      where base10 = 1, coef10 = 101, pow2 = 16
+
+	unsigned pow2 = std::floor(log2(new_max));
+	unsigned base10 = pow2 / 10;
+	unsigned coef10 = std::ceil(new_max / double(1UL << (base10 * 10)));
+	g_assert(new_max <= (coef10 * (1UL << (base10 * 10))));
+
+	// then decompose coef10 = x * 10**factor10
+	// where factor10 is integer and x < 10
+	// so we new_max has only 1 significant digit
+
+	unsigned factor10 = std::pow(10.0, std::floor(std::log10(coef10)));
+	coef10 = std::ceil(coef10 / double(factor10)) * factor10;
+
+	// then make coef10 divisible by num_bars
+	if (coef10 % g->num_bars() != 0)
+		coef10 = coef10 + (g->num_bars() - coef10 % g->num_bars());
+	g_assert(coef10 % g->num_bars() == 0);
+
+	new_max = coef10 * (1UL << (base10 * 10));
+	procman_debug("bak %u new_max %u pow2 %u coef10 %u", bak_max, new_max, pow2, coef10);
+	g_assert(bak_max <= new_max);
 
 	if (new_max == g->net.max)
 		return;
@@ -422,6 +542,12 @@ net_scale (LoadGraph *g, unsigned din, unsigned dout)
 	procman_debug("dmax = %u max = %u new_max = %u", dmax, g->net.max, new_max);
 
 	g->net.max = new_max;
+
+	// force the graph background to be redrawn now that scale has changed
+	if (g->background_buffer != NULL) {
+		cairo_surface_destroy(g->background_buffer);
+		g->background_buffer = NULL;
+	}
 }
 
 static void
@@ -433,7 +559,7 @@ get_net (LoadGraph *g)
 	guint64 in = 0, out = 0;
 	GTimeVal time;
 	unsigned din, dout;
-	gchar *text1, *text2;
+	gchar *text1;
 
 	ifnames = glibtop_get_netlist(&netlist);
 
@@ -476,23 +602,14 @@ get_net (LoadGraph *g)
 
 	net_scale(g, din, dout);
 
-	text1 = SI_gnome_vfs_format_file_size_for_display (din);
-	// xgettext: rate, 10MiB/s
-	text2 = g_strdup_printf (_("%s/s"), text1);
-	gtk_label_set_text (GTK_LABEL (g->labels.net_in), text2);
-	g_free (text1);
-	g_free (text2);
+
+	gtk_label_set_text (GTK_LABEL (g->labels.net_in), procman::format_rate(din).c_str());
 
 	text1 = SI_gnome_vfs_format_file_size_for_display (in);
 	gtk_label_set_text (GTK_LABEL (g->labels.net_in_total), text1);
 	g_free (text1);
 
-	text1 = SI_gnome_vfs_format_file_size_for_display (dout);
-	// xgettext: rate, 10MiB/s
-	text2 = g_strdup_printf (_("%s/s"), text1);
-	gtk_label_set_text (GTK_LABEL (g->labels.net_out), text2);
-	g_free (text1);
-	g_free (text2);
+	gtk_label_set_text (GTK_LABEL (g->labels.net_out), procman::format_rate(dout).c_str());
 
 	text1 = SI_gnome_vfs_format_file_size_for_display (out);
 	gtk_label_set_text (GTK_LABEL (g->labels.net_out_total), text1);
@@ -533,24 +650,31 @@ load_graph_update (gpointer user_data)
 {
 	LoadGraph * const g = static_cast<LoadGraph*>(user_data);
 
-	shift_right(g);
+	if (g->render_counter == 0) {
+		shift_right(g);
 
-	switch (g->type) {
-	case LOAD_GRAPH_CPU:
-		get_load(g);
-		break;
-	case LOAD_GRAPH_MEM:
-		get_memory(g);
-		break;
-	case LOAD_GRAPH_NET:
-		get_net(g);
-		break;
-	default:
-		g_assert_not_reached();
+		switch (g->type) {
+		case LOAD_GRAPH_CPU:
+			get_load(g);
+			break;
+		case LOAD_GRAPH_MEM:
+			get_memory(g);
+			break;
+		case LOAD_GRAPH_NET:
+			get_net(g);
+			break;
+		default:
+			g_assert_not_reached();
+		}
 	}
 
 	if (g->draw)
 		load_graph_draw (g);
+
+	g->render_counter++;
+
+	if (g->render_counter >= g->frames_per_unit)
+		g->render_counter = 0;
 
 	return TRUE;
 }
@@ -604,6 +728,11 @@ load_graph_new (gint type, ProcData *procdata)
 
 	g = g_new0 (LoadGraph, 1);
 
+	g->frames_per_unit = 1;  // this will be changed but needs initialising
+	g->fontsize = 8.0;
+	g->rmargin = 3.5 * g->fontsize;
+	g->indent = 24.0;
+
 	g->type = type;
 	switch (type) {
 	case LOAD_GRAPH_CPU:
@@ -619,12 +748,8 @@ load_graph_new (gint type, ProcData *procdata)
 
 	case LOAD_GRAPH_MEM:
 		g->n = 2;
-		g->labels.memused = gtk_label_new(NULL);
-		g->labels.memtotal = gtk_label_new(NULL);
-		g->labels.mempercent = gtk_label_new(NULL);
-		g->labels.swapused = gtk_label_new(NULL);
-		g->labels.swaptotal = gtk_label_new(NULL);
-		g->labels.swappercent = gtk_label_new(NULL);
+		g->labels.memory = gtk_label_new(NULL);
+		g->labels.swap = gtk_label_new(NULL);
 		break;
 
 	case LOAD_GRAPH_NET:
@@ -649,6 +774,10 @@ load_graph_new (gint type, ProcData *procdata)
 	case LOAD_GRAPH_MEM:
 		g->colors[0] = procdata->config.mem_color;
 		g->colors[1] = procdata->config.swap_color;
+		g->mem_color_picker = gsm_color_button_new (&g->colors[0], 
+							    GSMCP_TYPE_PIE);
+		g->swap_color_picker = gsm_color_button_new (&g->colors[1], 
+							     GSMCP_TYPE_PIE);
 		break;
 	case LOAD_GRAPH_NET:
 		g->colors[0] = procdata->config.net_in_color;
@@ -657,7 +786,9 @@ load_graph_new (gint type, ProcData *procdata)
 	}
 
 	g->timer_index = 0;
-
+	g->render_counter = 10;
+	g->background_buffer = NULL;
+	g->graph_buffer = NULL;
 	g->draw = FALSE;
 
 	g->main_widget = gtk_vbox_new (FALSE, FALSE);
@@ -683,7 +814,7 @@ load_graph_new (gint type, ProcData *procdata)
 
 	load_graph_start(g);
 	load_graph_stop(g);
-
+	
 	return g;
 }
 
@@ -694,7 +825,7 @@ load_graph_start (LoadGraph *g)
 
 		load_graph_update(g);
 
-		g->timer_index = g_timeout_add (g->speed,
+		g->timer_index = g_timeout_add (g->speed / g->frames_per_unit,
 						load_graph_update,
 						g);
 	}
@@ -722,9 +853,13 @@ load_graph_change_speed (LoadGraph *g,
 
 	if(g->timer_index) {
 		g_source_remove (g->timer_index);
-		g->timer_index = g_timeout_add (g->speed,
+		g->timer_index = g_timeout_add (g->speed / g->frames_per_unit,
 						load_graph_update,
 						g);
+	}
+	if (g->background_buffer != NULL) {
+		cairo_surface_destroy(g->background_buffer);
+		g->background_buffer = NULL;
 	}
 }
 
@@ -745,4 +880,16 @@ GtkWidget*
 load_graph_get_widget (LoadGraph *g)
 {
 	return g->main_widget;
+}
+
+GtkWidget*
+load_graph_get_mem_color_picker(LoadGraph *g)
+{
+	return g->mem_color_picker;
+}
+
+GtkWidget*
+load_graph_get_swap_color_picker(LoadGraph *g)
+{
+	return g->swap_color_picker;
 }

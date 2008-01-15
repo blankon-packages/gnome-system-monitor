@@ -677,11 +677,13 @@ ProcInfo::ProcInfo(pid_t pid)
 	/* FIXME : wrong. name and arguments may change with exec* */
 	get_process_name (info, procstate.cmd, arguments[0]);
 
-	char* tooltip = g_strjoinv(" ", arguments);
-	info->tooltip = g_markup_escape_text(tooltip, -1);
+	std::string tooltip = make_string(g_strjoinv(" ", arguments));
+	if (tooltip.empty())
+	  tooltip = procstate.cmd;
 
-	info->arguments = g_strescape(tooltip, "\\\"");
-	g_free(tooltip);
+	info->tooltip = g_markup_escape_text(tooltip.c_str(), -1);
+
+	info->arguments = g_strescape(tooltip.c_str(), "\\\"");
 	g_strfreev(arguments);
 
 	guint64 cpu_time = proctime.rtime;
@@ -938,6 +940,6 @@ ProcInfo::set_icon(Glib::RefPtr<Gdk::Pixbuf> icon)
   GtkTreeModel *model;
   model = gtk_tree_view_get_model(GTK_TREE_VIEW(ProcData::get_instance()->tree));
   gtk_tree_store_set(GTK_TREE_STORE(model), &this->node,
-		     COL_PIXBUF, this->pixbuf->gobj(),
+		     COL_PIXBUF, (this->pixbuf ? this->pixbuf->gobj() : NULL),
 		     -1);
 }
