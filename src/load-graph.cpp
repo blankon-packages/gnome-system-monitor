@@ -30,73 +30,6 @@
 #include "util.h"
 #include "gsm_color_button.h"
 
-#define NUM_POINTS 60
-#define GRAPH_MIN_HEIGHT 40
-
-enum {
-	CPU_TOTAL,
-	CPU_USED,
-	N_CPU_STATES
-};
-
-struct LoadGraph {
-
-
-	unsigned num_bars() const;
-
-	double fontsize;
-	double rmargin;
-	double indent;
-
-	guint n;
-	gint type;
-	guint speed;
-	guint draw_width, draw_height;
-	guint render_counter;
-	guint frames_per_unit;
-	guint graph_dely;
-	guint real_draw_height;
-	double graph_delx;
-	guint graph_buffer_offset;
-
-	GdkColor *colors;
-
-	gfloat* data_block;
-	gfloat* data[NUM_POINTS];
-
-	GtkWidget *main_widget;
-	GtkWidget *disp;
-
-	cairo_surface_t *buffer;
-	cairo_surface_t *graph_buffer;
-	cairo_surface_t *background_buffer;
-
-	guint timer_index;
-
-	gboolean draw;
-
-	LoadGraphLabels labels;
-	GtkWidget *mem_color_picker;
-	GtkWidget *swap_color_picker;
-
-	/* union { */
-		struct {
-			guint now; /* 0 -> current, 1 -> last
-				    now ^ 1 each time */
-			/* times[now], times[now ^ 1] is last */
-			guint64 times[2][GLIBTOP_NCPU][N_CPU_STATES];
-		} cpu;
-
-		struct {
-			guint64 last_in, last_out;
-			GTimeVal time;
-			unsigned int max;
-			unsigned values[NUM_POINTS];
-			size_t cur;
-		} net;
-	/* }; */
-};
-
 
 
 unsigned LoadGraph::num_bars() const
@@ -140,7 +73,7 @@ void draw_background(LoadGraph *g) {
 	num_bars = g->num_bars();
 	g->graph_dely = (g->draw_height - 15) / num_bars; /* round to int to avoid AA blur */
 	g->real_draw_height = g->graph_dely * num_bars;
-	g->graph_delx = (g->draw_width - 2.0 - g->rmargin - g->indent) / (NUM_POINTS - 3);
+	g->graph_delx = (g->draw_width - 2.0 - g->rmargin - g->indent) / (LoadGraph::NUM_POINTS - 3);
 	g->graph_buffer_offset = (int) (1.5 * g->graph_delx) + FRAME_WIDTH ;
 
 	cr = cairo_create (g->buffer);
@@ -182,7 +115,7 @@ void draw_background(LoadGraph *g) {
 		if (g->type == LOAD_GRAPH_NET) {
 			// operation orders matters so it's 0 if i == num_bars
 			unsigned rate = g->net.max - (i * g->net.max / num_bars);
-			const std::string caption(procman::format_rate(rate));
+			const std::string caption(procman::format_rate(rate, g->net.max));
 			cairo_text_extents (tmp_cr, caption.c_str(), &extents);
 			cairo_move_to (tmp_cr, g->indent - extents.width + 20, y);
 			cairo_show_text (tmp_cr, caption.c_str());
@@ -203,7 +136,7 @@ void draw_background(LoadGraph *g) {
 
 	cairo_set_dash (tmp_cr, dash, 2, 1.5);
 
-	const unsigned total_seconds = g->speed * (NUM_POINTS - 2) / 1000;
+	const unsigned total_seconds = g->speed * (LoadGraph::NUM_POINTS - 2) / 1000;
 
 	for (unsigned int i = 0; i < 7; i++) {
 		double x = (i) * (g->draw_width - g->rmargin - g->indent) / 6;
@@ -236,6 +169,7 @@ load_graph_draw (LoadGraph *g)
 {
 	cairo_t *cr;
 	guint i, j;
+	gdouble tmp;
 
 	cr = cairo_create (g->buffer);
 
@@ -260,7 +194,7 @@ load_graph_draw (LoadGraph *g)
 				       (1.0f - g->data[0][j]) * g->real_draw_height);
 			gdk_cairo_set_source_color (tmp_cr, &(g->colors [j]));
 
-			for (i = 1; i < NUM_POINTS; ++i) {
+			for (i = 1; i < LoadGraph::NUM_POINTS; ++i) {
 				if (g->data[i][j] == -1.0f)
 					continue;
 
@@ -286,7 +220,10 @@ load_graph_draw (LoadGraph *g)
 	cairo_set_source_surface (cr, g->background_buffer, 0, 0);
 	cairo_paint (cr);
 
-	cairo_set_source_surface (cr, g->graph_buffer, g->graph_buffer_offset - g->render_counter, FRAME_WIDTH);
+	tmp = (float)(g->draw_width - g->rmargin - g->indent) / (float)LoadGraph::NUM_POINTS;
+	tmp = tmp / g->frames_per_unit;
+	tmp = tmp * g->render_counter;
+	cairo_set_source_surface (cr, g->graph_buffer, g->graph_buffer_offset - tmp, FRAME_WIDTH);
 	cairo_rectangle (cr, g->rmargin + g->indent + FRAME_WIDTH + 1, FRAME_WIDTH - 1,
 			 g->draw_width - g->rmargin - g->indent - 1 , g->real_draw_height + FRAME_WIDTH - 1);
 	cairo_fill (cr);
@@ -310,9 +247,8 @@ load_graph_configure (GtkWidget *widget,
 	g->draw_height = widget->allocation.height - 2 * FRAME_WIDTH;
 
 	// FIXME:
-	// g->frames_per_unit = g->draw_width/(NUM_POINTS);
+	// g->frames_per_unit = g->draw_width/(LoadGraph::NUM_POINTS);
 	// knock FRAMES down to 5 until cairo gets faster
-	g->frames_per_unit = 5;
 
 	if(g->timer_index) {
 		g_source_remove (g->timer_index);
@@ -473,7 +409,7 @@ net_scale (LoadGraph *g, unsigned din, unsigned dout)
 
 	unsigned dmax = std::max(din, dout);
 	g->net.values[g->net.cur] = dmax;
-	g->net.cur = (g->net.cur + 1) % NUM_POINTS;
+	g->net.cur = (g->net.cur + 1) % LoadGraph::NUM_POINTS;
 
 	unsigned new_max;
 	// both way, new_max is the greatest value
@@ -481,7 +417,7 @@ net_scale (LoadGraph *g, unsigned din, unsigned dout)
 		new_max = dmax;
 	else
 		new_max = *std::max_element(&g->net.values[0],
-					    &g->net.values[NUM_POINTS]);
+					    &g->net.values[LoadGraph::NUM_POINTS]);
 
 	//
 	// Round network maximum
@@ -532,7 +468,7 @@ net_scale (LoadGraph *g, unsigned din, unsigned dout)
 
 	const float scale = 1.0f * g->net.max / new_max;
 
-	for (size_t i = 0; i < NUM_POINTS; i++) {
+	for (size_t i = 0; i < LoadGraph::NUM_POINTS; i++) {
 		if (g->data[i][0] >= 0.0f) {
 			g->data[i][0] *= scale;
 			g->data[i][1] *= scale;
@@ -617,33 +553,6 @@ get_net (LoadGraph *g)
 }
 
 
-/*
-  Shifts data right
-
-  data[i+1] = data[i]
-
-  data[i] are float*, so we just move the pointer, not the data.
-  But moving data loses data[n-1], so we save data[n-1] and reuse
-  it as new data[0]. In fact, we rotate data[].
-
-*/
-
-static void
-shift_right(LoadGraph *g)
-{
-	unsigned i;
-	float* last_data;
-
-	/* data[NUM_POINTS - 1] becomes data[0] */
-	last_data = g->data[NUM_POINTS - 1];
-
-	/* data[i+1] = data[i] */
-	for(i = NUM_POINTS - 1; i != 0; --i)
-		g->data[i] = g->data[i-1];
-
-	g->data[0] = last_data;
-}
-
 /* Updates the load graph when the timeout expires */
 static gboolean
 load_graph_update (gpointer user_data)
@@ -651,7 +560,7 @@ load_graph_update (gpointer user_data)
 	LoadGraph * const g = static_cast<LoadGraph*>(user_data);
 
 	if (g->render_counter == 0) {
-		shift_right(g);
+		std::rotate(&g->data[0], &g->data[LoadGraph::NUM_POINTS - 1], &g->data[LoadGraph::NUM_POINTS]);
 
 		switch (g->type) {
 		case LOAD_GRAPH_CPU:
@@ -679,56 +588,62 @@ load_graph_update (gpointer user_data)
 	return TRUE;
 }
 
-static void
-load_graph_unalloc (LoadGraph *g)
-{
-	g_free(g->data_block);
 
-	if (g->buffer) {
-		cairo_surface_destroy (g->buffer);
-		g->buffer = NULL;
-	}
+
+LoadGraph::~LoadGraph()
+{
+  load_graph_stop(this);
+
+  if (this->timer_index)
+    g_source_remove(this->timer_index);
+
+  if (this->buffer) {
+    cairo_surface_destroy(this->buffer);
+    this->buffer = NULL;
+  }
 }
 
-static void
-load_graph_alloc (LoadGraph *g)
-{
-	guint i, j;
 
-	/* Allocate data in a contiguous block */
-	g->data_block = g_new(float, g->n * NUM_POINTS);
-
-	for (i = 0; i < NUM_POINTS; ++i) {
-		g->data[i] = g->data_block + i * g->n;
-		for (j = 0; j < g->n; ++j)
-			g->data[i][j] = -1.0f;
-	}
-}
 
 static gboolean
 load_graph_destroy (GtkWidget *widget, gpointer data_ptr)
 {
 	LoadGraph * const g = static_cast<LoadGraph*>(data_ptr);
 
-	load_graph_stop (g);
-
-	if (g->timer_index)
-		g_source_remove (g->timer_index);
-
-	load_graph_unalloc(g);
+	delete g;
 
 	return FALSE;
 }
 
-LoadGraph *
-load_graph_new (gint type, ProcData *procdata)
+
+LoadGraph::LoadGraph(guint type)
+  : fontsize(0.0),
+    rmargin(0.0),
+    indent(0.0),
+    n(0),
+    type(0),
+    speed(0),
+    draw_width(0),
+    draw_height(0),
+    render_counter(0),
+    frames_per_unit(0),
+    graph_dely(0),
+    real_draw_height(0),
+    graph_delx(0.0),
+    graph_buffer_offset(0),
+    main_widget(NULL),
+    disp(NULL),
+    buffer(NULL),
+    graph_buffer(NULL),
+    background_buffer(NULL),
+    timer_index(0),
+    draw(FALSE),
+    mem_color_picker(NULL),
+    swap_color_picker(NULL)
 {
-	LoadGraph *g;
-	guint i = 0;
+	LoadGraph * const g = this;
 
-	g = g_new0 (LoadGraph, 1);
-
-	g->frames_per_unit = 1;  // this will be changed but needs initialising
+	g->frames_per_unit = 5;  // this will be changed but needs initialising
 	g->fontsize = 8.0;
 	g->rmargin = 3.5 * g->fontsize;
 	g->indent = 24.0;
@@ -736,12 +651,10 @@ load_graph_new (gint type, ProcData *procdata)
 	g->type = type;
 	switch (type) {
 	case LOAD_GRAPH_CPU:
-		if (procdata->config.num_cpus == 0)
-			g->n = 1;
-		else
-			g->n = procdata->config.num_cpus;
+		memset(&this->cpu, 0, sizeof g->cpu);
+		g->n = ProcData::get_instance()->config.num_cpus;
 
-		for(i = 0; i < G_N_ELEMENTS(g->labels.cpu); ++i)
+		for(guint i = 0; i < G_N_ELEMENTS(g->labels.cpu); ++i)
 			g->labels.cpu[i] = gtk_label_new(NULL);
 
 		break;
@@ -753,6 +666,7 @@ load_graph_new (gint type, ProcData *procdata)
 		break;
 
 	case LOAD_GRAPH_NET:
+		memset(&this->net, 0, sizeof g->net);
 		g->n = 2;
 		g->net.max = 1;
 		g->labels.net_in = gtk_label_new(NULL);
@@ -762,37 +676,37 @@ load_graph_new (gint type, ProcData *procdata)
 		break;
 	}
 
-	g->speed  = procdata->config.graph_update_interval;
+	g->speed  = ProcData::get_instance()->config.graph_update_interval;
 
-	g->colors = g_new0 (GdkColor, g->n);
+	g->colors.resize(g->n);
 
 	switch (type) {
 	case LOAD_GRAPH_CPU:
-		memcpy(g->colors, procdata->config.cpu_color,
+		memcpy(&g->colors[0], ProcData::get_instance()->config.cpu_color,
 		       g->n * sizeof g->colors[0]);
 		break;
 	case LOAD_GRAPH_MEM:
-		g->colors[0] = procdata->config.mem_color;
-		g->colors[1] = procdata->config.swap_color;
+		g->colors[0] = ProcData::get_instance()->config.mem_color;
+		g->colors[1] = ProcData::get_instance()->config.swap_color;
 		g->mem_color_picker = gsm_color_button_new (&g->colors[0], 
 							    GSMCP_TYPE_PIE);
 		g->swap_color_picker = gsm_color_button_new (&g->colors[1], 
 							     GSMCP_TYPE_PIE);
 		break;
 	case LOAD_GRAPH_NET:
-		g->colors[0] = procdata->config.net_in_color;
-		g->colors[1] = procdata->config.net_out_color;
+		g->colors[0] = ProcData::get_instance()->config.net_in_color;
+		g->colors[1] = ProcData::get_instance()->config.net_out_color;
 		break;
 	}
 
 	g->timer_index = 0;
-	g->render_counter = 10;
+	g->render_counter = g->frames_per_unit;
 	g->background_buffer = NULL;
 	g->graph_buffer = NULL;
 	g->draw = FALSE;
 
 	g->main_widget = gtk_vbox_new (FALSE, FALSE);
-	gtk_widget_set_size_request(g->main_widget, -1, GRAPH_MIN_HEIGHT);
+	gtk_widget_set_size_request(g->main_widget, -1, LoadGraph::GRAPH_MIN_HEIGHT);
 	gtk_widget_show (g->main_widget);
 
 	g->disp = gtk_drawing_area_new ();
@@ -808,14 +722,18 @@ load_graph_new (gint type, ProcData *procdata)
 
 	gtk_box_pack_start (GTK_BOX (g->main_widget), g->disp, TRUE, TRUE, 0);
 
-	load_graph_alloc (g);
+
+	/* Allocate data in a contiguous block */
+	g->data_block = std::vector<float>(g->n * LoadGraph::NUM_POINTS, -1.0f);
+
+	for (guint i = 0; i < LoadGraph::NUM_POINTS; ++i)
+	  g->data[i] = &g->data_block[0] + i * g->n;
 
 	gtk_widget_show_all (g->main_widget);
 
 	load_graph_start(g);
 	load_graph_stop(g);
-	
-	return g;
+
 }
 
 void
@@ -861,12 +779,6 @@ load_graph_change_speed (LoadGraph *g,
 		cairo_surface_destroy(g->background_buffer);
 		g->background_buffer = NULL;
 	}
-}
-
-GdkColor*
-load_graph_get_colors (LoadGraph *g)
-{
-	return g->colors;
 }
 
 

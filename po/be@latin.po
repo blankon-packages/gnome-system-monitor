@@ -1,78 +1,67 @@
-# translation of lt.po to Lithuanian
-# Lithuanian translation of procman
-# Copyright (C) 2003-2007, 2008 Free Software Foundation, Inc.
+# Biełaruski pierakład gnome-system-monitor.
+# Copyright (C) Ihar Hrachyshka, 2008.
+# This file is distributed under the same license as the gnome-system-monitor package.
+# Ihar Hrachyshka <booxter@lacinka.org>, 2008.
 #
-# Tomas Kuliavas <tokul@users.sourceforge.net>, 2003.
-# Žygimantas Beručka <zygis@gnome.org>, 2003-2007.
-# Justina Klingaitė <justina.klingaite@gmail.com>, 2005.
-# Gintautas Miliauskas <gintas@akl.lt>, 2006, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: lt\n"
+"Project-Id-Version: gnome-system-monitor.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-02 02:56+0200\n"
-"PO-Revision-Date: 2008-03-02 02:56+0200\n"
-"Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
-"Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
+"POT-Creation-Date: 2008-03-09 16:25+0200\n"
+"PO-Revision-Date: 2008-03-09 16:54+0200\n"
+"Last-Translator: Ihar Hrachyshka <booxter@lacinka.org>\n"
+"Language-Team: Belarusian Latin <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
-"100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../gnome-system-monitor.desktop.in.in.h:1 ../src/callbacks.cpp:156
 #: ../src/interface.cpp:619 ../src/procman.cpp:674
 msgid "System Monitor"
-msgstr "Sistemos monitorius"
+msgstr "Systemny naziralnik"
 
 #: ../gnome-system-monitor.desktop.in.in.h:2 ../src/callbacks.cpp:157
 msgid "View current processes and monitor system state"
-msgstr "Parodo paleistus procesus ir sistemos būklę"
+msgstr "Prahladaj dziejnyja pracesy i adsočvaj stan systemy"
 
 #: ../src/callbacks.cpp:166
 msgid "translator-credits"
-msgstr ""
-"Paskutinieji vertėjai:\n"
-"Justina Klingaitė  <justina.klinagite@gmail.com>,\n"
-"Žygimantas Beručka <zygis@gnome.org>\n"
-"Gintautas Miliauskas <gintas@akl.lt>\n"
-"\n"
-"Ankstesnysis vertėjas:\n"
-"Tomas Kuliavas <tokul@users.sf.net>"
+msgstr "Ihar Hračyška <booxter@lacinka.org>"
 
 #: ../src/disks.cpp:279 ../src/memmaps.cpp:500
 msgid "Device"
-msgstr "Įrenginys"
+msgstr "Aparat"
 
 #: ../src/disks.cpp:280
 msgid "Directory"
-msgstr "Aplankas"
+msgstr "Kataloh"
 
 #: ../src/disks.cpp:281 ../src/gsm_color_button.c:211 ../src/openfiles.cpp:235
 msgid "Type"
-msgstr "Tipas"
+msgstr "Typ"
 
 #: ../src/disks.cpp:282
 msgid "Total"
-msgstr "Iš viso"
+msgstr "Ahułam"
 
 #: ../src/disks.cpp:283
 msgid "Free"
-msgstr "Laisva"
+msgstr "Volna"
 
 #: ../src/disks.cpp:284
 msgid "Available"
-msgstr "Prieinama"
+msgstr "Dastupna"
 
 #: ../src/disks.cpp:285
 msgid "Used"
-msgstr "Naudojama"
+msgstr "Zaniata"
 
 #: ../src/disks.cpp:292 ../src/interface.cpp:702 ../src/procdialogs.cpp:680
 #: ../src/procdialogs.cpp:684
 msgid "File Systems"
-msgstr "Failų sistemos"
+msgstr "Fajłavyja systemy"
 
 #. xgettext: ? stands for unknown
 #: ../src/e_date.c:155
@@ -81,192 +70,186 @@ msgstr "?"
 
 #: ../src/e_date.c:162
 msgid "Today %l:%M %p"
-msgstr "Šiandien %k:%M"
+msgstr "Siońnia, %l:%M %p"
 
 #: ../src/e_date.c:171
 msgid "Yesterday %l:%M %p"
-msgstr "Vakar %k:%M"
+msgstr "Učora, %l:%M %p"
 
 #: ../src/e_date.c:183
 msgid "%a %l:%M %p"
-msgstr "%a %k:%M"
+msgstr "%a %l:%M %p"
 
 #: ../src/e_date.c:191
 msgid "%b %d %l:%M %p"
-msgstr "%b %d %k:%M"
+msgstr "%b %d %l:%M %p"
 
 #: ../src/e_date.c:193
 msgid "%b %d %Y"
-msgstr "%Y %b %d"
+msgstr "%b %d %Y"
 
 #: ../src/gnome-system-monitor.schemas.in.h:1
 msgid ""
 "0 for the System Info, 1 for the processes list, 2 for the resources and 3 "
 "for the disks list"
 msgstr ""
-"0 - Sistemos informacija, 1 - procesų sąrašas, 2 - resursai, 3 - diskų "
-"sąrašas"
 
 #: ../src/gnome-system-monitor.schemas.in.h:2
 msgid "Default graph cpu color"
-msgstr "Numatytoji cpu grafiko spalva"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:3
 msgid "Default graph incoming network traffic color"
-msgstr "Numatytoji gaunamo tinklo srauto grafiko spalva "
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:4
 msgid "Default graph mem color"
-msgstr "Numatytoji atminties grafiko spalva"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:5
 msgid "Default graph outgoing network traffic color"
-msgstr "Numatytoji perduodamo tinklo srauto grafiko spalva"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:6
 msgid "Default graph swap color"
-msgstr "Numatytoji mainų srities grafiko spalva"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:7
 msgid ""
 "Determines which processes to show by default. 0 is All, 1 is user, and 2 is "
 "active"
-msgstr "Nurodo rodomus procesus. 0 – visus, 1 – naudotojo, 2 – aktyvius"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:8
 msgid "Disk view columns order"
-msgstr "Diskų rodinio stulpelių tvarka"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:9
 msgid "Enable/Disable smooth refresh"
-msgstr "Įjungti/išjungti tolygų atnaujinimą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:10
 msgid ""
 "If TRUE, system-monitor operates in 'Solaris mode' where a task's cpu usage "
 "is divided by the total number of CPUs. Else it operates in 'Irix mode'."
 msgstr ""
-"Jeigu TEIGIAMA, system-monitor veikia „Solaris veiksenoje“, kur užduoties "
-"cpu naudojimas yra padalintas iš viso CPU skaičiaus. Priešingu atveju ji "
-"veikia „Irix veiksenoje“."
 
 #: ../src/gnome-system-monitor.schemas.in.h:11
 msgid "Main Window height"
-msgstr "Pagrindinio lango aukštis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:12
 msgid "Main Window width"
-msgstr "Pagrindinio lango plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:13
 msgid "Process view columns order"
-msgstr "Procesų rodinio stulpelių tvarka"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:14
 msgid "Process view sort column"
-msgstr "Procesų rodinio rikiavimo stulpelis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:15
 msgid "Process view sort order"
-msgstr "Procesų rodinio rikiavimo tvarka"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:16
 msgid "Saves the currently viewed tab"
-msgstr "Išsaugo dabar žiūrimą kortelę"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:18
 #, no-c-format
 msgid "Show process 'CPU %' column on startup"
-msgstr "Rodyti proceso „CPU %“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:19
 msgid "Show process 'CPU time' column on startup"
-msgstr "Rodyti proceso „CPU laiko“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:20
 msgid "Show process 'PID' column on startup"
-msgstr "Rodyti proceso „PID“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:21
 msgid "Show process 'SELinux security context' column on startup"
-msgstr "Rodyti proceso „SELinux saugumo konteksto“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:22
 msgid "Show process 'X server memory' column on startup"
-msgstr "Rodyti proceso „X serverio atminties“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:23
 msgid "Show process 'arguments' column on startup"
-msgstr "Rodyti proceso „parametrų“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:24
 msgid "Show process 'estimated memory usage' column on startup"
 msgstr ""
-"Rodyti proceso „apskaičiuotos atminties naudojimo“ stulpelį paleidus programą"
 
 #: ../src/gnome-system-monitor.schemas.in.h:25
 msgid "Show process 'name' column on startup"
-msgstr "Rodyti proceso „pavadinimo“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:26
 msgid "Show process 'nice' column on startup"
-msgstr "Rodyti proceso „prioriteto“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:27
 msgid "Show process 'owner' column on startup"
-msgstr "Rodyti proceso „savininko“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:28
 msgid "Show process 'resident memory' column on startup"
-msgstr "Rodyti proceso „rezidentinės atminties“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:29
 msgid "Show process 'shared memory' column on startup"
-msgstr "Rodyti proceso „bendros atminties“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:30
 msgid "Show process 'start time' column on startup"
-msgstr "Rodyti proceso „paleidimo laiko“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:31
 msgid "Show process 'status' column on startup"
-msgstr "Rodyti proceso „būsenos“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:32
 msgid "Show process 'virtual memory' column on startup"
-msgstr "Rodyti proceso „virtualios atminties“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:33
 msgid "Show process 'writable memory' column on startup"
-msgstr "Rodyti proceso „rašomos atminties“ stulpelį paleidus programą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:34
 msgid "Show process dependencies in tree form"
-msgstr "Rodyti proceso priklausomybes medžio forma"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:35
 msgid "Show warning dialog when killing processes"
-msgstr "„Žudant“ procesus rodyti perspėjimo dialogą"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:36
 msgid "Solaris mode for CPU percentage"
-msgstr "CPU procentų Solaris veiksena"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:37
 msgid "Time in milliseconds between updates of the devices list"
-msgstr "Laikas milisekundėmis tarp įrenginių sąrašo atnaujinimų"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:38
 msgid "Time in milliseconds between updates of the graphs"
-msgstr "Laikas milisekundėmis tarp grafikų atnaujinimų"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:39
 msgid "Time in milliseconds between updates of the process view"
-msgstr "Laikas milisekundėmis tarp procesų vaizdo atnaujinimų"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:40
 msgid "Whether information about all filesystems should be displayed"
-msgstr "Ar informacija apie visas failų sistemas turėtų būti rodoma"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:41
 msgid ""
@@ -274,260 +257,257 @@ msgid ""
 "'autofs' and 'procfs'). Useful for getting a list of all currently mounted "
 "filesystems."
 msgstr ""
-"Ar informacija apie visas failų sistemas turėtų būti rodoma (įskaitant tokių "
-"tipų kaip „autofs“ ir „procfs“). Tai naudinga norint gauti šiuo metu "
-"prijungtų failų sistemų sąrašą."
 
 #: ../src/gnome-system-monitor.schemas.in.h:43
 #, no-c-format
 msgid "Width of process 'CPU %' column"
-msgstr "Proceso „CPU %“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:44
 msgid "Width of process 'CPU time' column"
-msgstr "Proceso „CPU laiko“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:45
 msgid "Width of process 'PID' column"
-msgstr "Proceso „PID“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:46
 msgid "Width of process 'SELinux security context' column"
-msgstr "Proceso „SELinux saugumo konteksto“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:47
 msgid "Width of process 'X server memory' column"
-msgstr "Proceso „X serverio atminties“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:48
 msgid "Width of process 'arguments' column"
-msgstr "Proceso „parametrų“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:49
 msgid "Width of process 'estimated memory usage' column"
-msgstr "Proceso „apskaičiuotos atminties naudojimo“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:50
 msgid "Width of process 'name' column"
-msgstr "Proceso „pavadinimo“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:51
 msgid "Width of process 'nice' column"
-msgstr "Proceso „prioriteto“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:52
 msgid "Width of process 'owner' column"
-msgstr "Proceso „savininko“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:53
 msgid "Width of process 'resident memory' column"
-msgstr "Proceso „rezidentinės atminties“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:54
 msgid "Width of process 'shared memory' column"
-msgstr "Proceso „bendros atminties“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:55
 msgid "Width of process 'start time' column"
-msgstr "Proceso „paleidimo laiko“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:56
 msgid "Width of process 'status' column"
-msgstr "Proceso „būsenos“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:57
 msgid "Width of process 'virtual memory' column"
-msgstr "Proceso „virtualios atminties“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gnome-system-monitor.schemas.in.h:58
 msgid "Width of process 'writable memory' column"
-msgstr "Proceso „rašomos atminties“ stulpelio plotis"
+msgstr ""
 
 #: ../src/gsm_color_button.c:188
 msgid "Fraction"
-msgstr "Trupmena"
+msgstr ""
 
 #: ../src/gsm_color_button.c:189
 msgid "Percentage full for pie colour pickers"
-msgstr "Pilni procentai skritulių spalvų pasirinkimui"
+msgstr ""
 
 #: ../src/gsm_color_button.c:196
 msgid "Title"
-msgstr "Antraštė"
+msgstr "Zahałovak"
 
 #: ../src/gsm_color_button.c:197
 msgid "The title of the color selection dialog"
-msgstr "Spalvų pasirinkimo dialogo antraštė"
+msgstr "Zahałovak akna vybaru koleru"
 
 #: ../src/gsm_color_button.c:198 ../src/gsm_color_button.c:602
 msgid "Pick a Color"
-msgstr "Pasirinkite spalvą"
+msgstr "Abiary koler"
 
 #: ../src/gsm_color_button.c:204
 msgid "Current Color"
-msgstr "Esama spalva"
+msgstr "Dziejny koler"
 
 #: ../src/gsm_color_button.c:205
 msgid "The selected color"
-msgstr "Pasirinkta spalva"
+msgstr "Abrany koler"
 
 #: ../src/gsm_color_button.c:212
 msgid "Type of color picker"
-msgstr "Spalvų parinkiklio tipas"
+msgstr "Typ vybaru koleru"
 
 #: ../src/gsm_color_button.c:522
 msgid "Received invalid color data\n"
-msgstr "Gauti netaisyklingi spalvų duomenys\n"
+msgstr "Atrymanyja niapravilnyja źviestki ab kolery\n"
 
 #. xgettext: noun, top level menu.
 #. "File" did not make sense for system-monitor
 #: ../src/interface.cpp:50
 msgid "_Monitor"
-msgstr "_Monitorius"
+msgstr "_Naziralnik"
 
 #: ../src/interface.cpp:51
 msgid "_Edit"
-msgstr "_Keisti"
+msgstr "_Redahuj"
 
 #: ../src/interface.cpp:52
 msgid "_View"
-msgstr "R_odymas"
+msgstr "_Vyhlad"
 
 #: ../src/interface.cpp:53
 msgid "_Help"
-msgstr "_Žinynas"
+msgstr "_Dapamoha"
 
 #: ../src/interface.cpp:55
 msgid "Search for _Open Files"
-msgstr "Ieškoti at_vertų failų"
+msgstr "Šukaj _adčynienyja fajły"
 
 #: ../src/interface.cpp:56
 msgid "Search for open files"
-msgstr "Ieškoti atvertų failų"
+msgstr "Šukaj adčynienyja fajły"
 
 #: ../src/interface.cpp:58
 msgid "Quit the program"
-msgstr "Uždaryti programą"
+msgstr "Vyjdzi z prahramy"
 
 #: ../src/interface.cpp:61
 msgid "_Stop Process"
-msgstr "_Sustabdyti procesą"
+msgstr "_Spyni praces"
 
 #: ../src/interface.cpp:62
 msgid "Stop process"
-msgstr "Sustabdyti procesą"
+msgstr "Spyni praces"
 
 #: ../src/interface.cpp:63
 msgid "_Continue Process"
-msgstr "_Tęsti procesą"
+msgstr "_Praciahvaj praces"
 
 #: ../src/interface.cpp:64
 msgid "Continue process if stopped"
-msgstr "Tęsti procesą, jei jis buvo sustabdytas"
+msgstr "Praciahvaj praces, kali toj spynieny"
 
 #: ../src/interface.cpp:66 ../src/procdialogs.cpp:84
 msgid "_End Process"
-msgstr "Sustabdyti proc_esą"
+msgstr "_Zakonč praces"
 
 #: ../src/interface.cpp:67
 msgid "Force process to finish normally"
-msgstr "Priversti procesą užbaigti darbą normaliai"
+msgstr "Prymuś praces vykanać narmalnaje zakančeńnie"
 
 #: ../src/interface.cpp:68 ../src/procdialogs.cpp:75
 msgid "_Kill Process"
-msgstr "_Nutraukti procesą"
+msgstr "_Zabi praces"
 
 #: ../src/interface.cpp:69
 msgid "Force process to finish immediately"
-msgstr "Tuojau pat priverstinai nutraukti proceso darbą"
+msgstr "Prymuś praces vykanać imhniennaje zakančeńnie"
 
 #: ../src/interface.cpp:70
 msgid "_Change Priority..."
-msgstr "_Keisti prioritetą..."
+msgstr "_Źmiani pryjarytet..."
 
 #: ../src/interface.cpp:71
 msgid "Change the order of priority of process"
-msgstr "Pakeisti proceso prioriteto tvarką"
+msgstr "Źmiani pryjarytetnaść pracesu"
 
 #: ../src/interface.cpp:73
 msgid "Configure the application"
-msgstr "Konfigūruoti programą"
+msgstr "Skanfihuruj aplikacyju"
 
 #: ../src/interface.cpp:75
 msgid "_Refresh"
-msgstr "_Atnaujinti"
+msgstr "_Adnavi"
 
 #: ../src/interface.cpp:76
 msgid "Refresh the process list"
-msgstr "Atnaujinti procesų sąrašą"
+msgstr "Adnavi śpis pracesaŭ"
 
 #: ../src/interface.cpp:78
 msgid "_Memory Maps"
-msgstr "_Atminties sritys"
+msgstr "_Mapy pamiaci"
 
 #: ../src/interface.cpp:79
 msgid "Open the memory maps associated with a process"
-msgstr "Atverti atminties sritis, susijusias su procesu"
+msgstr "Pakažy mapy pamiaci, źviazanyja z pracesam"
 
 #: ../src/interface.cpp:80
 msgid "Open _Files"
-msgstr "Atverti _failai"
+msgstr "Adčynienyja _fajły"
 
 #: ../src/interface.cpp:81
 msgid "View the files opened by a process"
-msgstr "Rodyti, kokius failus atvėręs šis procesas"
+msgstr "Pakažy fajły, adčynienyja pracesam"
 
 #: ../src/interface.cpp:83
 msgid "_Contents"
-msgstr "_Turinys"
+msgstr "_Źmieściva"
 
 #: ../src/interface.cpp:84
 msgid "Open the manual"
-msgstr "Atverti žinyną"
+msgstr "Adčyni padručnik"
 
 #: ../src/interface.cpp:86
 msgid "About this application"
-msgstr "Apie šią programą"
+msgstr "Pra hetuju prahramu"
 
 #: ../src/interface.cpp:91
 msgid "_Dependencies"
-msgstr "P_riklausomybės"
+msgstr "_Zaležnaści"
 
 #: ../src/interface.cpp:92
 msgid "Show parent/child relationship between processes"
-msgstr "Rodyti tėvų/vaikų ryšius tarp procesų"
+msgstr "Pakažy radavod pracesaŭ"
 
 #: ../src/interface.cpp:99
 msgid "_Active Processes"
-msgstr "_Aktyvūs procesai"
+msgstr "_Aktyŭnyja pracesy"
 
 #: ../src/interface.cpp:100
 msgid "Show active processes"
-msgstr "Rodyti aktyvius procesus"
+msgstr "Pakažy aktyŭnyja pracesy"
 
 #: ../src/interface.cpp:101
 msgid "A_ll Processes"
-msgstr "V_isi procesai"
+msgstr "_Usie pracesy"
 
 #: ../src/interface.cpp:102
 msgid "Show all processes"
-msgstr "Rodyti visus procesus"
+msgstr "Pakažy ŭsie pracesy"
 
 #: ../src/interface.cpp:103
 msgid "M_y Processes"
-msgstr "M_ano procesai"
+msgstr "_Maje pracesy"
 
 #: ../src/interface.cpp:104
 msgid "Show user own process"
-msgstr "Rodyti naudotojui priklausančius procesus"
+msgstr "Pakažy pracesy karystalnika"
 
 #: ../src/interface.cpp:189
 msgid "End _Process"
-msgstr "Už_baigti procesą"
+msgstr "Zakonč _praces"
 
 #: ../src/interface.cpp:243
 msgid "CPU History"
-msgstr "CPU retrospektyva"
+msgstr "Historyja raboty CPU"
 
 #: ../src/interface.cpp:300
 msgid "CPU"
@@ -540,11 +520,11 @@ msgstr "CPU%d"
 
 #: ../src/interface.cpp:320
 msgid "Memory and Swap History"
-msgstr "Atminties ir mainų srities retrospektyva"
+msgstr "Historyja pamiaci j swapu"
 
 #: ../src/interface.cpp:359 ../src/proctable.cpp:224
 msgid "Memory"
-msgstr "Atmintis"
+msgstr "Pamiać"
 
 #: ../src/interface.cpp:385
 msgid "Swap"
@@ -552,53 +532,52 @@ msgstr "Swap"
 
 #: ../src/interface.cpp:406
 msgid "Network History"
-msgstr "Tinklo retrospektyva"
+msgstr "Historyja sietkavaj raboty"
 
 #: ../src/interface.cpp:445
 msgid "Receiving"
-msgstr "Gaunama"
+msgstr "Atrymańnie"
 
 #: ../src/interface.cpp:466
 msgid "Total Received"
-msgstr "Viso gauta"
+msgstr "Usiaho atrymana"
 
 #: ../src/interface.cpp:500
 msgid "Sending"
-msgstr "Siunčiama"
+msgstr "Vysyłańnie"
 
 #: ../src/interface.cpp:522
 msgid "Total Sent"
-msgstr "Iš viso išsiųsta"
+msgstr "Usiaho vysłana"
 
 #: ../src/interface.cpp:690
 msgid "System"
-msgstr "Sistema"
+msgstr "Systema"
 
 #: ../src/interface.cpp:694 ../src/procdialogs.cpp:512
 msgid "Processes"
-msgstr "Procesai"
+msgstr "Pracesy"
 
 #: ../src/interface.cpp:698 ../src/procdialogs.cpp:627
 msgid "Resources"
-msgstr "Ištekliai"
+msgstr "Resursy"
 
 #: ../src/load-graph.cpp:150
 #, c-format
 msgid "%u second"
 msgid_plural "%u seconds"
-msgstr[0] "%u sekundė"
-msgstr[1] "%u sekundės"
-msgstr[2] "%u sekundžių"
+msgstr[0] ""
+msgstr[1] ""
 
 #. xgettext: 540MiB (53 %) of 1.0 GiB
-#: ../src/load-graph.cpp:363
+#: ../src/load-graph.cpp:366
 #, c-format
 msgid "%s (%.1f %%) of %s"
-msgstr "%s (%.1f %%) iš %s"
+msgstr "%s (%.1f%%) ad %s"
 
 #: ../src/lsof.cpp:247
 msgid "Process"
-msgstr "Procesas"
+msgstr "Praces"
 
 #: ../src/lsof.cpp:259
 msgid "PID"
@@ -606,126 +585,126 @@ msgstr "PID"
 
 #: ../src/lsof.cpp:269 ../src/memmaps.cpp:478
 msgid "Filename"
-msgstr "Failo pavadinimas"
+msgstr "Nazva fajłu"
 
 #. gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 #: ../src/lsof.cpp:286
 msgid "Search for Open Files"
-msgstr "Ieškoti atvertų failų"
+msgstr "Šukaj adčynienyja fajły"
 
 #: ../src/lsof.cpp:314
 msgid "_Name contains:"
-msgstr "_Pavadinime yra:"
+msgstr "_Nazva ŭtrymlivaje:"
 
 #: ../src/lsof.cpp:330
 msgid "Case insensitive matching"
-msgstr "Raidžių registro atitikimas nesvarbus"
+msgstr "Nia ŭličvaj pamieru litar"
 
 #: ../src/lsof.cpp:338
 msgid "S_earch results:"
-msgstr "Pai_eškos rezultatai:"
+msgstr "_Vyniki pošuku:"
 
 #. xgettext: virtual memory start
 #: ../src/memmaps.cpp:480
 msgid "VM Start"
-msgstr "VM pradžia"
+msgstr "Pačatak VM"
 
 #. xgettext: virtual memory end
 #: ../src/memmaps.cpp:482
 msgid "VM End"
-msgstr "VM pabaiga"
+msgstr "Kaniec VM"
 
 #. xgettext: virtual memory syze
 #: ../src/memmaps.cpp:484
 msgid "VM Size"
-msgstr "VM dydis"
+msgstr "Pamier VM"
 
 #: ../src/memmaps.cpp:485
 msgid "Flags"
-msgstr "Parametrai"
+msgstr "Ściažki"
 
 #. xgettext: virtual memory offset
 #: ../src/memmaps.cpp:487
 msgid "VM Offset"
-msgstr "VM poslinkis"
+msgstr "Zruch VM"
 
 #. xgettext: memory that has not been modified since
 #. it has been allocated
 #: ../src/memmaps.cpp:490
 msgid "Private clean"
-msgstr "Privati švari"
+msgstr "Pryvatnaja čystaja"
 
 #. xgettext: memory that has been modified since it
 #. has been allocated
 #: ../src/memmaps.cpp:493
 msgid "Private dirty"
-msgstr "Privati nešvari"
+msgstr "Pryvatnaja brudnaja"
 
 #. xgettext: shared memory that has not been modified
 #. since it has been allocated
 #: ../src/memmaps.cpp:496
 msgid "Shared clean"
-msgstr "Bendra švari"
+msgstr "Supolnaja čystaja"
 
 #. xgettext: shared memory that has been modified
 #. since it has been allocated
 #: ../src/memmaps.cpp:499
 msgid "Shared dirty"
-msgstr "Bendra nešvari"
+msgstr "Supolnaja brudnaja"
 
 #: ../src/memmaps.cpp:501
 msgid "Inode"
-msgstr "Inodas"
+msgstr "Inod"
 
 #. gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
 #: ../src/memmaps.cpp:610
 msgid "Memory Maps"
-msgstr "Atminties sritys"
+msgstr "Mapy pamiaci"
 
 #: ../src/memmaps.cpp:629
 #, c-format
 msgid "_Memory maps for process \"%s\" (PID %u):"
-msgstr "Proceso „%s“ (PID %u) _atminties sritys:"
+msgstr "_Mapy pamiaci pracesu \"%s\" (PID %u):"
 
 #: ../src/openfiles.cpp:33
 msgid "file"
-msgstr "failas"
+msgstr "fajł"
 
 #: ../src/openfiles.cpp:35
 msgid "pipe"
-msgstr "konvejeris"
+msgstr "kanvejer"
 
 #: ../src/openfiles.cpp:37
 msgid "network connection"
-msgstr "tinklo prisijungimas"
+msgstr "sietkavaje spałučeńnie"
 
 #: ../src/openfiles.cpp:39
 msgid "local socket"
-msgstr "vietinė jungtis"
+msgstr "lakalny sokiet"
 
 #: ../src/openfiles.cpp:41
 msgid "unknown type"
-msgstr "nežinomas tipas"
+msgstr "nieviadomy typ"
 
 #. Translators: "FD" here means "File Descriptor". Please use
 #. a very short translation if possible, and at most
 #. 2-3 characters for it to be able to fit in the UI.
 #: ../src/openfiles.cpp:234
 msgid "FD"
-msgstr "FA"
+msgstr "FD"
 
 #: ../src/openfiles.cpp:236
 msgid "Object"
-msgstr "Objektas"
+msgstr "Abjekt"
 
 #: ../src/openfiles.cpp:320
 msgid "Open Files"
-msgstr "Atverti failai"
+msgstr "Adčynienyja fajły"
 
 #: ../src/openfiles.cpp:342
 #, c-format
 msgid "_Files opened by process \"%s\" (PID %u):"
-msgstr "Proceso „%s“ (PID %u) atverti _failai:"
+msgstr "_Fajły, adčynienyja pracesam \"%s\" (PID %u):"
 
 #: ../src/procactions.cpp:75
 #, c-format
@@ -733,7 +712,7 @@ msgid ""
 "Cannot change the priority of process with pid %d to %d.\n"
 "%s"
 msgstr ""
-"Negalima pakeisti proceso (PID %d) prioriteto į %d.\n"
+"Niemahčyma źmianić pryjarytetnaść pracesu (PID %d) na %d.\n"
 "%s"
 
 #: ../src/procactions.cpp:155
@@ -742,13 +721,13 @@ msgid ""
 "Cannot kill process with pid %d with signal %d.\n"
 "%s"
 msgstr ""
-"Negalima nutraukti proceso (PID %d) su signalu %d.\n"
+"Niemahčyma zabić praces (PID %d) syhnałam %d.\n"
 "%s"
 
 #. xgettext: primary alert message
 #: ../src/procdialogs.cpp:70
 msgid "Kill the selected process?"
-msgstr "Tuojau pat nutraukti pažymėto proceso darbą?"
+msgstr "Zabić zaznačany praces?"
 
 #. xgettext: secondary alert message
 #: ../src/procdialogs.cpp:72
@@ -756,15 +735,12 @@ msgid ""
 "Killing a process may destroy data, break the session or introduce a "
 "security risk. Only unresponding processes should be killed."
 msgstr ""
-"Priverstinai nutraukdami proceso darbą, Jūs galite prarasti Jūsų duomenis, "
-"sugadinti šiuo metu veikiančią sesiją arba sukelti pavojų Jūsų sistemos "
-"saugumui. Priverstinai nutraukiami turėtų būti tik procesai, kurių darbas "
-"sutriko."
+"Z zabojstva pracesu moža vyniknuć strata źviestak, avaryja sesii ci niebiaśpiečnaja ryzyka. Zabivać varta tolki pracesy, jakija nijak nie reahujuć na karystalnika."
 
 #. xgettext: primary alert message
 #: ../src/procdialogs.cpp:79
 msgid "End the selected process?"
-msgstr "Užbaigti pažymėtą procesą?"
+msgstr "Zakonč zaznačany praces?"
 
 #. xgettext: secondary alert message
 #: ../src/procdialogs.cpp:81
@@ -772,130 +748,127 @@ msgid ""
 "Ending a process may destroy data, break the session or introduce a security "
 "risk. Only unresponding processes should be ended."
 msgstr ""
-"Užbaigdami proceso darbą, Jūs galite prarasti Jūsų duomenis, sugadinti šiuo "
-"metu veikiančią sesiją arba sukelti pavojų Jūsų sistemos saugumui. "
-"Užbaigiami turėtų būti tie procesai, kurių darbas sutriko."
+"Z zakančeńnia pracesu moža vyniknuć strata źviestak, avaryja sesii ci niebiaśpiečnaja ryzyka. Zabivać varta tolki pracesy, jakija nijak nie reahujuć na karystalnika."
 
 #: ../src/procdialogs.cpp:113
 msgid "(Very High Priority)"
-msgstr "(Labai aukštas prioritetas)"
+msgstr "(Vielmi vysoki pryjarytet)"
 
 #: ../src/procdialogs.cpp:115
 msgid "(High Priority)"
-msgstr "(Aukštas prioritetas)"
+msgstr "(Vysoki pryjarytet)"
 
 #: ../src/procdialogs.cpp:117
 msgid "(Normal Priority)"
-msgstr "(Normalus prioritetas)"
+msgstr "(Zvyčajny pryjarytet)"
 
 #: ../src/procdialogs.cpp:119
 msgid "(Low Priority)"
-msgstr "(Žemas prioritetas)"
+msgstr "(Nizki pryjarytet)"
 
 #: ../src/procdialogs.cpp:121
 msgid "(Very Low Priority)"
-msgstr "(Labai žemas prioritetas)"
+msgstr "(Vielmi nizki pryjarytet)"
 
 #: ../src/procdialogs.cpp:173
 msgid "Change Priority"
-msgstr "Keisti prioritetą"
+msgstr "Źmiani pryjarytet"
 
 #: ../src/procdialogs.cpp:194
 msgid "Change _Priority"
-msgstr "Keisti _prioritetą"
+msgstr "Źmiani _pryjarytet"
 
 #: ../src/procdialogs.cpp:215
 msgid "_Nice value:"
-msgstr "_Nice reikšmė:"
+msgstr "_Dalikatnaść (nice):"
 
 #: ../src/procdialogs.cpp:231
 msgid "Note:"
-msgstr "Pastaba:"
+msgstr "Uvaha:"
 
 #: ../src/procdialogs.cpp:232
 msgid ""
 "The priority of a process is given by its nice value. A lower nice value "
 "corresponds to a higher priority."
 msgstr ""
-"Proceso prioritetas yra nustatomas pagal jam suteiktą nice vertę. Žemesnė "
-"nice vertė reiškia aukštesnį prioritetą."
+"Pryjarytet pracesu akreślivajecca jaho dalikatnaściu. Čym mienš dalikatny praces, tym jon pryjarytetniejšy."
 
 #: ../src/procdialogs.cpp:392
 msgid "Process i_nformation shown in list:"
-msgstr "Sąraše rodoma proceso i_nformacija:"
+msgstr "_Źviestki ab pracesy:"
 
 #: ../src/procdialogs.cpp:444
 msgid "Icon"
-msgstr "Piktograma"
+msgstr "Ikona"
 
 #: ../src/procdialogs.cpp:489
 msgid "System Monitor Preferences"
-msgstr "Sistemos monitoriaus nustatymai"
+msgstr "Nałady systemnaha naziralnika"
 
 #: ../src/procdialogs.cpp:519
 msgid "Behavior"
-msgstr "Veikimas"
+msgstr "Pavodziny"
 
 #: ../src/procdialogs.cpp:538 ../src/procdialogs.cpp:653
 #: ../src/procdialogs.cpp:703
 msgid "_Update interval in seconds:"
-msgstr "_Atnaujinimo intervalas sekundėmis:"
+msgstr "_Intervał adnaŭleńnia ŭ sekundach:"
 
 #: ../src/procdialogs.cpp:563
 msgid "Enable _smooth refresh"
-msgstr "Įjungti _tolygų atnaujinimą"
+msgstr "Uklučy _hładkaje adnaŭleńnie"
 
 #: ../src/procdialogs.cpp:577
 msgid "Alert before ending or _killing processes"
-msgstr "Perspėti prieš užbaigiant arba nutrau_kiant procesus"
+msgstr "Aścierahaj ad zakančeńnia j _zabojstva pracesaŭ"
 
 #: ../src/procdialogs.cpp:591
 msgid "Solaris mode"
-msgstr "Solaris veiksena"
+msgstr "Režym Solaris"
 
 #: ../src/procdialogs.cpp:609
 msgid "Information Fields"
-msgstr "Informacijos laukeliai"
+msgstr "Pali źviestak"
 
 #: ../src/procdialogs.cpp:634
 msgid "Graphs"
-msgstr "Diagramos"
+msgstr "Hrafiki"
 
 #: ../src/procdialogs.cpp:723
 msgid "Show _all filesystems"
-msgstr "Rodyti _visas failų sistemas"
+msgstr "_Pakažy ŭsie fajłavyja systemy"
 
 #: ../src/proctable.cpp:209
 msgid "Process Name"
-msgstr "Proceso pavadinimas"
+msgstr "Nazva pracesu"
 
 #: ../src/proctable.cpp:210
 msgid "User"
-msgstr "Naudotojas"
+msgstr "Karystalnik"
 
 #: ../src/proctable.cpp:211
 msgid "Status"
-msgstr "Būsena"
+msgstr "Stan"
 
 #: ../src/proctable.cpp:212
 msgid "Virtual Memory"
-msgstr "Virtuali atmintis"
+msgstr "Virtualnaja pamiać"
 
 #: ../src/proctable.cpp:213
 msgid "Resident Memory"
-msgstr "Rezidentinė atmintis"
+msgstr "Rezydentavaja pamiać"
 
 #: ../src/proctable.cpp:214
 msgid "Writable Memory"
-msgstr "Rašoma atmintis"
+msgstr "Zapisvalnaja pamiać"
 
 #: ../src/proctable.cpp:215
 msgid "Shared Memory"
-msgstr "Bendra atmintis"
+msgstr "Supolnaja pamiać"
 
 #: ../src/proctable.cpp:216
 msgid "X Server Memory"
-msgstr "X serverio atmintis"
+msgstr "Pamiać servera X"
 
 #: ../src/proctable.cpp:217
 #, no-c-format
@@ -904,15 +877,15 @@ msgstr "% CPU"
 
 #: ../src/proctable.cpp:218
 msgid "CPU Time"
-msgstr "CPU laikas"
+msgstr "Čas CPU"
 
 #: ../src/proctable.cpp:219
 msgid "Started"
-msgstr "Paleista"
+msgstr "Uklučany"
 
 #: ../src/proctable.cpp:220
 msgid "Nice"
-msgstr "Nice"
+msgstr "Dalikatnaść"
 
 #: ../src/proctable.cpp:221
 msgid "ID"
@@ -920,31 +893,30 @@ msgstr "ID"
 
 #: ../src/proctable.cpp:222
 msgid "Security Context"
-msgstr "Saugumo kontekstas"
+msgstr "Kantekst biaśpieki"
 
 #: ../src/proctable.cpp:223
 msgid "Command Line"
-msgstr "Komandų eilutė"
+msgstr "Zahadny radok"
 
 #: ../src/proctable.cpp:926
 #, c-format
 msgid "Load averages for the last 1, 5, 15 minutes: %0.2f, %0.2f, %0.2f"
-msgstr ""
-"Paskutiniųjų 1, 5 ir 15 minučių apkrovos vidurkiai: %0.2f, %0.2f, %0.2f"
+msgstr "Siaredniaja napružanaść systemy ŭ apošnija 1, 5, 15 chvilinaŭ: %0.2f, %0.2f, %0.2f"
 
 #: ../src/sysinfo.cpp:75
 #, c-format
 msgid "Release %s"
-msgstr "Leidimas %s"
+msgstr "Vydańnie %s"
 
 #: ../src/sysinfo.cpp:109
 msgid "Unknown CPU model"
-msgstr "Nežinomas CPU modelis"
+msgstr "Nieviadomaja madel CPU"
 
 #: ../src/sysinfo.cpp:503
 #, c-format
 msgid "Kernel %s"
-msgstr "Branduolys %s"
+msgstr "Jadro %s"
 
 #: ../src/sysinfo.cpp:511
 #, c-format
@@ -953,58 +925,56 @@ msgstr "GNOME %s"
 
 #. hardware section
 #: ../src/sysinfo.cpp:520
-#, c-format
 msgid "<b>Hardware</b>"
-msgstr "<b>Aparatinė įranga</b>"
+msgstr "<b>Aparatura</b>"
 
 #: ../src/sysinfo.cpp:541
 msgid "Memory:"
-msgstr "Atmintis:"
+msgstr "Pamiać:"
 
 #: ../src/sysinfo.cpp:561
 #, c-format
 msgid "Processor %d:"
-msgstr "Procesorius %d:"
+msgstr "Pracesar %d:"
 
 #: ../src/sysinfo.cpp:566
 msgid "Processor:"
-msgstr "Procesorius:"
+msgstr "Pracesar:"
 
 #. disk space section
 #: ../src/sysinfo.cpp:586
-#, c-format
 msgid "<b>System Status</b>"
-msgstr "<b>Sistemos būsena</b>"
+msgstr "<b>Stan systemy</b>"
 
 #: ../src/sysinfo.cpp:607
 msgid "Available disk space:"
-msgstr "Laisva vieta diske:"
+msgstr "Dastupnaja prastora na dysku:"
 
 #: ../src/util.cpp:31
 msgid "Running"
-msgstr "Paleista"
+msgstr "Pracuje"
 
 #: ../src/util.cpp:35
 msgid "Stopped"
-msgstr "Sustabdyta"
+msgstr "Spynieny"
 
 #: ../src/util.cpp:39
 msgid "Zombie"
-msgstr "Zombis"
+msgstr "Miarćviak"
 
 #: ../src/util.cpp:43
 msgid "Uninterruptible"
-msgstr "Nepertraukiamas"
+msgstr "Nielha pierapynić"
 
 #: ../src/util.cpp:47
 msgid "Sleeping"
-msgstr "Miega"
+msgstr "Śpić"
 
 #. xgettext: weeks, days
 #: ../src/util.cpp:102
 #, c-format
 msgid "%uw%ud"
-msgstr "%uw%ud"
+msgstr "%ut%ud"
 
 #. xgettext: days, hours (0 -> 23)
 #: ../src/util.cpp:106
@@ -1028,9 +998,8 @@ msgstr "%u:%02u.%02u"
 #, c-format
 msgid "%u byte"
 msgid_plural "%u bytes"
-msgstr[0] "%u baitas"
-msgstr[1] "%u baitai"
-msgstr[2] "%u baitų"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/util.cpp:169
 #, c-format
@@ -1049,7 +1018,7 @@ msgstr "%.1f GiB"
 
 #: ../src/util.cpp:349
 msgid "<i>N/A</i>"
-msgstr "<i>N/A</i>"
+msgstr "<i>Niama</i>"
 
 #. xgettext: rate, 10MiB/s
 #: ../src/util.cpp:466

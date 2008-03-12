@@ -215,31 +215,17 @@ make_title_label (const char *text)
   return label;
 }
 
-/* Make sure the cpu labels don't jump around. From the clock applet */
-static void
-size_request(GtkWidget* box, GtkRequisition* req, void* data)
-{
-  gint* size = static_cast<gint*>(data);
-  req->width = *size = std::max(req->width, *size);
-}
-
-
-
 
 static GtkWidget *
 create_sys_view (ProcData *procdata)
 {
-  static gint net_size;
-  static gint cpu_size;
-
 	GtkWidget *vbox, *hbox;
 	GtkWidget *cpu_box, *mem_box, *net_box;
-	GtkWidget *cpu_hbox, *mem_hbox, *net_hbox;
 	GtkWidget *cpu_graph_box, *mem_graph_box, *net_graph_box;
 	GtkWidget *label,*cpu_label, *spacer;
 	GtkWidget *table;
 	GtkWidget *color_picker;
-	GtkWidget *mem_legend_box, *net_legend_box, *cpu_legend_box;
+	GtkWidget *mem_legend_box, *net_legend_box;
 	GtkSizeGroup *sizegroup;
 	LoadGraph *cpu_graph, *mem_graph, *net_graph;
 	gint i;
@@ -260,7 +246,7 @@ create_sys_view (ProcData *procdata)
 	cpu_graph_box = gtk_vbox_new (FALSE, 6);
 	gtk_box_pack_start (GTK_BOX (cpu_box), cpu_graph_box, TRUE, TRUE, 0);
 
-	cpu_graph = load_graph_new (LOAD_GRAPH_CPU, procdata);
+	cpu_graph = new LoadGraph(LOAD_GRAPH_CPU);
 	gtk_box_pack_start (GTK_BOX (cpu_graph_box),
 			    load_graph_get_widget(cpu_graph),
 			    TRUE,
@@ -305,8 +291,7 @@ create_sys_view (ProcData *procdata)
 		/*g_signal_connect (G_OBJECT (temp_hbox), "size_request",
 					 G_CALLBACK(size_request), &cpu_size);
 */
-		color_picker = gsm_color_button_new (
-			&load_graph_get_colors(cpu_graph)[i], GSMCP_TYPE_CPU);
+		color_picker = gsm_color_button_new (&cpu_graph->colors.at(i), GSMCP_TYPE_CPU);
 		g_signal_connect (G_OBJECT (color_picker), "color_set",
 			    G_CALLBACK (cb_cpu_color_changed), GINT_TO_POINTER (i));
 		gtk_box_pack_start (GTK_BOX (temp_hbox), color_picker, FALSE, TRUE, 0);
@@ -339,7 +324,7 @@ create_sys_view (ProcData *procdata)
 	gtk_box_pack_start (GTK_BOX (mem_box), mem_graph_box, TRUE, TRUE, 0);
 
 
-	mem_graph = load_graph_new (LOAD_GRAPH_MEM, procdata);
+	mem_graph = new LoadGraph(LOAD_GRAPH_MEM);
 	gtk_box_pack_start (GTK_BOX (mem_graph_box),
 			    load_graph_get_widget(mem_graph),
 			    TRUE,
@@ -424,7 +409,7 @@ create_sys_view (ProcData *procdata)
 	net_graph_box = gtk_vbox_new (FALSE, 6);
 	gtk_box_pack_start (GTK_BOX (net_box), net_graph_box, TRUE, TRUE, 0);
 
-	net_graph = load_graph_new (LOAD_GRAPH_NET, procdata);
+	net_graph = new LoadGraph(LOAD_GRAPH_NET);
 	gtk_box_pack_start (GTK_BOX (net_graph_box),
 			    load_graph_get_widget(net_graph),
 			    TRUE,
@@ -452,7 +437,7 @@ create_sys_view (ProcData *procdata)
 			    TRUE, TRUE, 0);
 
 	color_picker = gsm_color_button_new (
-		&load_graph_get_colors(net_graph)[0], GSMCP_TYPE_NETWORK_IN);
+		&net_graph->colors.at(0), GSMCP_TYPE_NETWORK_IN);
 	g_signal_connect (G_OBJECT (color_picker), "color_set",
 			    G_CALLBACK (cb_net_in_color_changed), procdata);
 	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 2, GTK_SHRINK, GTK_SHRINK, 0, 0);
@@ -507,7 +492,7 @@ create_sys_view (ProcData *procdata)
 			    TRUE, TRUE, 0);
 
 	color_picker = gsm_color_button_new (
-		&load_graph_get_colors(net_graph)[1], GSMCP_TYPE_NETWORK_OUT);
+		&net_graph->colors.at(1), GSMCP_TYPE_NETWORK_OUT);
 	g_signal_connect (G_OBJECT (color_picker), "color_set",
 			    G_CALLBACK (cb_net_out_color_changed), procdata);
 	gtk_table_attach (GTK_TABLE (table), color_picker, 0, 1, 0, 2, GTK_SHRINK, GTK_SHRINK, 0, 0);
@@ -632,6 +617,13 @@ create_main_window (ProcData *procdata)
 
 	app = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(app), _("System Monitor"));
+
+	GdkScreen* screen = gtk_widget_get_screen(app);
+	GdkColormap* colormap = gdk_screen_get_rgba_colormap(screen);
+
+	/* use rgba colormap, if available */
+	if (colormap)
+		gtk_widget_set_default_colormap(colormap);
 
 	main_box = gtk_vbox_new (FALSE, 0);
 	gtk_container_add(GTK_CONTAINER(app), main_box);

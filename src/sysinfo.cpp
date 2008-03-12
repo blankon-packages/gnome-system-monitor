@@ -1,6 +1,7 @@
 #include <config.h>
 
 #include <glib.h>
+#include <glibmm.h>
 #include <glib/gi18n.h>
 
 #include <libxml/parser.h>
@@ -18,8 +19,6 @@
 #include <sys/wait.h>
 #include <math.h>
 #include <errno.h>
-
-#include "regex.h"
 
 #include <string>
 #include <vector>
@@ -64,6 +63,24 @@ namespace {
 
     virtual ~SysInfo()
     { }
+
+    virtual void set_distro_labels(GtkWidget* name, GtkWidget* release)
+    {
+      g_object_set(G_OBJECT(name),
+		   "label",
+		   ("<big><big><b>" + this->distro_name + "</b></big></big>").c_str(),
+		   NULL);
+
+
+      char* markup = g_strdup_printf(_("Release %s"), this->distro_release.c_str());
+
+      g_object_set(G_OBJECT(release),
+		   "label",
+		   markup,
+		   NULL);
+
+      g_free(markup);
+    }
 
   private:
 
@@ -196,17 +213,36 @@ namespace {
   {
   public:
     LSBSysInfo()
-      : re("^.+?:\\s*(.+)\\s*$")
+      : re(Glib::Regex::create("^.+?:\\s*(.+)\\s*$"))
     {
-      this->lsb_release();
+      // start();
     }
+
+    virtual void set_distro_labels(GtkWidget* name, GtkWidget* release)
+    {
+      this->name = name;
+      this->release = release;
+
+      this->start();
+    }
+
 
   private:
 
+    sigc::connection child_watch;
+    int lsb_fd;
+    GtkWidget* name;
+    GtkWidget* release;
+
     void strip_description(string &s) const
     {
-      // make a copy to avoid aliasing
-      this->re.PartialMatch(string(s), &s);
+      const GRegexMatchFlags flags = static_cast<GRegexMatchFlags>(0);
+      GMatchInfo* info = 0;
+
+      if (g_regex_match(this->re->gobj(), s.c_str(), flags, &info)) {
+	s = make_string(g_match_info_fetch(info, 1));
+	g_match_info_free(info);
+      }
     }
 
     std::istream& get_value(std::istream &is, string &s) const
@@ -216,7 +252,73 @@ namespace {
       return is;
     }
 
-    void lsb_release()
+
+    void read_lsb(Glib::Pid pid, int status)
+    {
+      this->child_watch.disconnect();
+
+      if (!WIFEXITED(status) or WEXITSTATUS(status) != 0) {
+	g_error("Child %d failed with status %d", int(pid), status);
+	return;
+      }
+
+      Glib::RefPtr<Glib::IOChannel> channel = Glib::IOChannel::create_from_fd(this->lsb_fd);
+      Glib::ustring content;
+
+      while (channel->read_to_end(content) == Glib::IO_STATUS_AGAIN)
+	;
+
+      channel->close();
+      Glib::spawn_close_pid(pid);
+
+      procman_debug("lsb_release output = '%s'", content.c_str());
+
+      string release, codename;
+      std::istringstream input(content);
+
+      this->get_value(input, this->distro_name)
+	and this->get_value(input, release)
+	and this->get_value(input, codename);
+
+      this->distro_release = release;
+      if (codename != "")
+	this->distro_release += " (" + codename + ')';
+
+      this->SysInfo::set_distro_labels(this->name, this->release);
+    }
+
+
+    void start()
+    {
+      std::vector<string> argv(2);
+      argv[0] = "lsb_release";
+      argv[1] = "-irc";
+
+      Glib::SpawnFlags flags = Glib::SPAWN_DO_NOT_REAP_CHILD
+	| Glib::SPAWN_SEARCH_PATH
+	| Glib::SPAWN_STDERR_TO_DEV_NULL;
+
+      Glib::Pid child;
+
+      try {
+	Glib::spawn_async_with_pipes("/", // wd
+				     argv,
+				     flags,
+				     sigc::slot<void>(), // child setup
+				     &child,
+				     0, // stdin
+				     &this->lsb_fd); // stdout
+      } catch (Glib::SpawnError &e) {
+	g_error("g_spawn_async_with_pipes error: %s", e.what().c_str());
+	return;
+      }
+
+      sigc::slot<void,GPid, int> slot = sigc::mem_fun(this, &LSBSysInfo::read_lsb);
+      this->child_watch = Glib::signal_child_watch().connect(slot, child);
+    }
+
+
+    void sync_lsb_release()
     {
       char *out= 0;
       GError *error = 0;
@@ -246,7 +348,7 @@ namespace {
     }
 
   private:
-    const pcrecpp::RE re;
+    Glib::RefPtr<Glib::Regex> re;
   };
 
 
@@ -374,10 +476,7 @@ procman_create_sysinfo_view(void)
 
   /* distro section */
 
-  markup = g_strdup_printf("<big><big><b>%s</b></big></big>",
-    data->distro_name.c_str());
-  distro_frame = gtk_frame_new(markup);
-  g_free(markup);
+  distro_frame = gtk_frame_new("???");
   gtk_frame_set_label_align(GTK_FRAME(distro_frame), 0.0, 0.5);
   gtk_label_set_use_markup(
 			   GTK_LABEL(gtk_frame_get_label_widget(GTK_FRAME(distro_frame))),
@@ -395,15 +494,11 @@ procman_create_sysinfo_view(void)
   GtkWidget* distro_inner_box = gtk_vbox_new(FALSE, 6);
   gtk_box_pack_start(GTK_BOX(distro_box), distro_inner_box, FALSE, FALSE, 0);
 
-  if (data->distro_release != "")
-    {
-      // xgettext: Release 2.6.19
-      markup = g_strdup_printf(_("Release %s"), data->distro_release.c_str());
-      distro_release_label = gtk_label_new(markup);
+      distro_release_label = gtk_label_new("???");
       gtk_misc_set_alignment(GTK_MISC(distro_release_label), 0.0, 0.5);
-      g_free(markup);
       gtk_box_pack_start(GTK_BOX(distro_inner_box), distro_release_label, FALSE, FALSE, 0);
-    }
+
+  data->set_distro_labels(gtk_frame_get_label_widget(GTK_FRAME(distro_frame)), distro_release_label);
 
   markup = g_strdup_printf(_("Kernel %s"), data->kernel.c_str());
   GtkWidget* kernel_label = gtk_label_new(markup);

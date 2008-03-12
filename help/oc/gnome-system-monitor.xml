@@ -1282,7 +1282,7 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Virtual Memory</guilabel>
+                    <guilabel>Memòria virtuala</guilabel>
                   </para>
                   <para>
                     Select this option to display the amount of virtual memory that is allocated to the process.
@@ -1378,7 +1378,7 @@
                 </listitem>
                 <listitem>
                   <para>
-                    <guilabel>Command Line</guilabel>
+                    <guilabel>Linha de comanda</guilabel>
                   </para>
                   <para>
                     Select this option to display the command line that was used to start the process, including arguments.

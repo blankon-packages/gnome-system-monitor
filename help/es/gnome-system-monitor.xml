@@ -29,7 +29,7 @@
       <year>2002</year> 
       <year>2004</year> 
       <holder>Bill Day</holder> 
-    </copyright><copyright><year>2007</year><holder>Jorge González (jorgegonz@svn.gnome.org)</holder></copyright> 
+    </copyright><copyright><year>2007-2008.</year><holder>Jorge González (jorgegonz@svn.gnome.org)</holder></copyright> 
 
 <!-- translators: uncomment this:
   <copyright>
@@ -261,7 +261,7 @@
 	
     <sect2 id="gnome-system-monitor-when-you-start">
       <title>Cuando inicie el Monitor del sistema</title>	
-      <para>Se mostrará la siguiente ventana cuando inicie el <application>Monitor del sistema</application>.</para>
+      <para>Se mostrará la siguiente ventana cuando inicie el <application>Monitor del sistema</application>:</para>
       <figure id="gnome-system-monitor-window"> 
         <title>Ventana del Monitor del sistema</title>
         <screenshot> 
@@ -491,7 +491,7 @@
           <para>Seleccione la solapa de <guilabel>Procesos</guilabel> para mostrar la lista de procesos.</para>
         </listitem>
         <listitem>
-          <para>Seleccione el proceso en la lista de procesos:</para>
+          <para>Seleccione el proceso en la lista de procesos.</para>
         </listitem>
         <listitem>
           <para>Elija <menuchoice><guimenu>Ver</guimenu><guimenuitem>Mapas de memoria</guimenuitem></menuchoice>.</para>
@@ -676,7 +676,7 @@
     <sect2 id="gnome-system-monitor-network">
       <title>Monitorizar la actividad de la red</title>
       <para>Para monitorizar la actividad de red, seleccione la solapa <guilabel>Recursos</guilabel>.</para>
-      <para>El <application>Monitor del sistema</application> muestra el uso histórico de la redde forma gráfica. Debajo de la gráfica, el <application>Monitor del sistema</application> también muestra los siguientes valores numéricos:</para>
+      <para>El <application>Monitor del sistema</application> muestra el uso histórico de la red de forma gráfica. Debajo de la gráfica, el <application>Monitor del sistema</application> también muestra los siguientes valores numéricos:</para>
       <itemizedlist>
         <listitem>
           <para>Recibo de datos por segundo y total</para>
@@ -976,7 +976,7 @@
                   <para>
                     <guilabel>Prioridad</guilabel>
                   </para>
-                  <para>Seleccione esta opción para mostrar el valor de prioridad del proceso. El valor de prioridad establece la prioridad del proceso: a menor valor de prioridad, mayor prioridad</para>
+                  <para>Seleccione esta opción para mostrar el valor de prioridad del proceso. El valor de prioridad establece la prioridad del proceso: a menor valor de prioridad, mayor prioridad.</para>
                 </listitem>
                 <listitem>
                   <para>

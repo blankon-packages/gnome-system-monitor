@@ -126,6 +126,7 @@ DATADIRNAME = @DATADIRNAME@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DOC_USER_FORMATS = @DOC_USER_FORMATS@
+DSYMUTIL = @DSYMUTIL@
 ECHO = @ECHO@
 ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
@@ -187,6 +188,7 @@ MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
 MSGMERGE = @MSGMERGE@
+NMEDIT = @NMEDIT@
 OBJEXT = @OBJEXT@
 OMF_DIR = @OMF_DIR@
 PACKAGE = @PACKAGE@
@@ -196,8 +198,6 @@ PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
-PCRECPP_CFLAGS = @PCRECPP_CFLAGS@
-PCRECPP_LIBS = @PCRECPP_LIBS@
 PKG_CONFIG = @PKG_CONFIG@
 POFILES = @POFILES@
 POSUB = @POSUB@
@@ -265,11 +265,9 @@ INCLUDES = \
 	-DPROCMAN_DATADIR=\""$(datadir)/procman/"\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\" \
-	@PROCMAN_CFLAGS@ \
-	@PCRECPP_CFLAGS@
+	@PROCMAN_CFLAGS@
 
 gnome_system_monitor_SOURCES = \
-	regex.h \
 	procman.cpp  procman.h \
 	interface.cpp interface.h \
 	callbacks.cpp callbacks.h \
@@ -295,7 +293,7 @@ gnome_system_monitor_SOURCES = \
 	e_date.c e_date.h \
         gsm_color_button.c gsm_color_button.h
 
-gnome_system_monitor_LDADD = @PROCMAN_LIBS@ @PCRECPP_LIBS@ libbacon.la
+gnome_system_monitor_LDADD = @PROCMAN_LIBS@ libbacon.la
 noinst_LTLIBRARIES = libbacon.la
 libbacon_la_SOURCES = \
 	bacon-message-connection.c \
