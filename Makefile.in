@@ -108,6 +108,7 @@ CYGPATH_W = @CYGPATH_W@
 DATADIRNAME = @DATADIRNAME@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
+DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
 DOC_USER_FORMATS = @DOC_USER_FORMATS@
 DSYMUTIL = @DSYMUTIL@
 ECHO = @ECHO@
@@ -264,7 +265,6 @@ DISTCLEANFILES = \
   intltool-update \
   gnome-system-monitor.desktop
 
-DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
